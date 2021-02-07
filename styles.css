@@ -10,6 +10,14 @@ body{
     font-family: 'Courier New', Courier, monospace;
 }
 
+h1{
+    font-size: 2em;
+}
+
+p{
+    line-height: 25px;
+}
+
 header{
     display: flex;
     justify-content: space-between;
@@ -75,8 +83,8 @@ header nav.change{
 .front__page{
     height: 90vh;
     padding: 20px;
-    display: flex;
-    justify-content: space-evenly;
+    display: flex;    
+    justify-content: space-between;
     flex-direction: row-reverse;
 }
 
@@ -85,9 +93,16 @@ header nav.change{
     margin-bottom: 20px;
 }
 
+.front__info, .profile__img{
+    margin-top: 20px;
+}
+
 .front__info{
-    width: 500px;
     margin-right: 50px;
+}
+
+.profile__img{
+    
 }
 
 .profile__img > img{
@@ -96,7 +111,6 @@ header nav.change{
     border-radius: 5px;
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.2);
 }
-
 
 .about__me{
     height: 100vh;
@@ -166,6 +180,16 @@ header nav.change{
 
     .main__logo{
         transform: translateY(4px);
+    }
+
+    .background__img{
+        background: chocolate;
+        height: 150px;
+        width: 100%;
+        z-index: -1;
+        top: 69px;
+        position: absolute;
+        background-image: url(./images/profile.jpg);
     }
 
     .front__page{
