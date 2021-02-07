@@ -77,7 +77,6 @@ header nav.change{
     background: rgb(255, 86, 86);
     padding: 20px;
     display: flex;
-    justify-content: space-between;
 }
 
 .front__page h1{
@@ -87,7 +86,7 @@ header nav.change{
 
 .front__info{
     width: 500px;
-    margin-right: 50px;
+    margin-left: 50px;
 }
 
 .profile__img > img{
@@ -101,6 +100,7 @@ header nav.change{
 .about__me{
     height: 100vh;
     background: rgb(86, 230, 255);
+    padding: 20px;
 }
 
 .my__work{
@@ -115,6 +115,11 @@ header nav.change{
 
 
 @media only screen and ( max-width: 768px ){
+
+    body{
+        font-size: 1em;
+    }
+
     header nav{
         position: absolute;
         color: #fff;
@@ -153,9 +158,17 @@ header nav.change{
         transform: translateY(4px);
     }
 
+    .profile__img > img{
+        width: 180px;
+        height: 180px;
+        border-radius: 100%;
+        background: red;
+        padding: 5px;
+    }
+
+
     .front__page{
-        flex-direction: column-reverse;
-        height: 100%;
+        flex-direction: column;
     }
 
 
