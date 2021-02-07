@@ -74,9 +74,10 @@ header nav.change{
 
 .front__page{
     height: 90vh;
-    background: rgb(255, 86, 86);
     padding: 20px;
     display: flex;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
 }
 
 .front__page h1{
@@ -86,7 +87,7 @@ header nav.change{
 
 .front__info{
     width: 500px;
-    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .profile__img > img{
@@ -99,19 +100,27 @@ header nav.change{
 
 .about__me{
     height: 100vh;
-    background: rgb(86, 230, 255);
     padding: 20px;
 }
 
 .my__work{
     height: 100vh;
-    background: #333;
+    padding: 20px;
 }
 
 .contact__me{
     height: 100vh;
-    background: rgb(23, 121, 20);
+    padding: 20px;
 }
+
+
+
+
+
+
+
+
+
 
 
 @media only screen and ( max-width: 768px ){
@@ -128,7 +137,7 @@ header nav.change{
         padding: 20px;
         margin: 0;
         width: 100%;
-        height: 89.2vh;
+        height: 90vh;
         display: flex;
         text-align: center;
         justify-content: center;
@@ -144,6 +153,7 @@ header nav.change{
 
     header nav ul li{
         margin-bottom: 20px;
+        font-size: 2em;
     }
 
     .hamburguesa.change{
@@ -158,19 +168,29 @@ header nav.change{
         transform: translateY(4px);
     }
 
+    .front__page{
+        flex-direction: column;
+    }
+    
+    .profile__img{
+        margin: 10px auto;
+    }
+
     .profile__img > img{
         width: 180px;
         height: 180px;
         border-radius: 100%;
-        background: red;
+        background: #3772FF;
         padding: 5px;
+        box-shadow: none;
+        
     }
 
-
-    .front__page{
-        flex-direction: column;
+    .front__info{
+        margin: 30px 0;
+        width: 100%;
+        text-align: justify;
     }
-
 
 }
 
