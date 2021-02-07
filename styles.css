@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -28,6 +29,11 @@ header nav ul li{
 header nav ul li a{
     color: #fff;
     text-decoration: none;
+    transition: .4s;
+}
+
+header nav ul li a:hover{
+    color: red;
 }
 
 .main__logo{
@@ -45,7 +51,7 @@ header nav ul li a{
     width: 35px;
     height: 3px;
     margin: 5px 0;
-    transition: 0.3s;
+    transition: 0.4s;
 }
 
 .change .linea1{
@@ -61,7 +67,7 @@ header nav ul li a{
 }
 
 header nav.change{
-    transition: .3s;
+    transition: .4s;
     transform: translate(0%, 56%)
 }
 
@@ -69,7 +75,28 @@ header nav.change{
 .front__page{
     height: 90vh;
     background: rgb(255, 86, 86);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
 }
+
+.front__page h1{
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.front__info{
+    width: 500px;
+    margin-right: 50px;
+}
+
+.profile__img > img{
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.2);
+}
+
 
 .about__me{
     height: 100vh;
@@ -115,7 +142,7 @@ header nav.change{
     }
 
     .hamburguesa.change{
-        animation: crazyRotation 1s;
+        animation: crazyRotation .5s;
     }
 
     .hamburguesa{
@@ -125,6 +152,13 @@ header nav.change{
     .main__logo{
         transform: translateY(4px);
     }
+
+    .front__page{
+        flex-direction: column-reverse;
+        height: 100%;
+    }
+
+
 }
 
 @keyframes crazyRotation{
