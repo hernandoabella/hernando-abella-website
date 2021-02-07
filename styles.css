@@ -101,8 +101,15 @@ header nav.change{
     margin-right: 50px;
 }
 
-.profile__img{
-    
+.more{
+    display: block;
+    width: 120px;
+    text-align: center;
+    cursor: pointer;
+    margin: 50px 0px;
+    padding: 10px;
+    border: 1px dashed #333;
+    border-radius: 5px;
 }
 
 .profile__img > img{
