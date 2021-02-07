@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 1.3em;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    background: #333;
+    padding: 20px;
+}
+
+header nav ul{
+    display: flex;
+}
+
+header nav ul li{
+    list-style-type: none;
+    margin-left: 20px;
+}
+
+header nav ul li a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.main__logo{
+    color: #fff;
+    text-decoration: none;
+}
+
+.hamburguesa{
+    display: none;
+    cursor: pointer;
+}
+
+.linea{
+    background: #fff;
+    width: 35px;
+    height: 3px;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+.change .linea1{
+    transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.change .linea2{
+    opacity: 0;
+}
+
+.change .linea3{
+    transform: rotate(45deg) translate(-5px, -5px);
+}
+
+header nav.change{
+    transition: .3s;
+    transform: translate(0%, 56%)
+}
+
+
+.front__page{
+    height: 90vh;
+    background: rgb(255, 86, 86);
+}
+
+.about__me{
+    height: 100vh;
+    background: rgb(86, 230, 255);
+}
+
+.my__work{
+    height: 100vh;
+    background: #333;
+}
+
+.contact__me{
+    height: 100vh;
+    background: rgb(23, 121, 20);
+}
+
+
+@media only screen and ( max-width: 768px ){
+    header nav{
+        position: absolute;
+        color: #fff;
+        background: rgb(87, 87, 87);
+        left: 0px;
+        padding: 20px;
+        margin: 0;
+        width: 100%;
+        height: 89.2vh;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        transform: translate(0%, -56%);
+    }
+
+    
+    header nav ul{
+        flex-direction: column;
+    }
+
+    header nav ul li{
+        margin-bottom: 20px;
+    }
+
+    .hamburguesa.change{
+        animation: crazyRotation 1s;
+    }
+
+    .hamburguesa{
+        display: block;
+    }
+
+    .main__logo{
+        transform: translateY(4px);
+    }
+}
+
+@keyframes crazyRotation{
+    100%{
+        transform: rotate(-360deg);
+    }
+}
