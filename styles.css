@@ -18,10 +18,14 @@ p{
     line-height: 25px;
 }
 
+.font__color{
+    color: rgb(0, 132, 255);
+}
+
 header{
     display: flex;
     justify-content: space-between;
-    background: #333;
+    background: #000;
     padding: 20px;
 }
 
@@ -100,11 +104,19 @@ header nav.change{
     margin-right: 50px;
 }
 
+.front__info a{
+    margin-right: 20px;
+}
+
 .social__media{
     position: absolute;
     bottom: 0px;
     right: 0px;
     padding: 20px;
+}
+
+.change .social__media > a{
+    background: blue;
 }
 
 .social__media > a{
@@ -126,7 +138,8 @@ header nav.change{
 }
 
 .more:hover{
-    background: red;
+    background: rgb(0, 132, 255);
+    color: #fff;
 }
 
 .profile__img > img{
@@ -137,6 +150,17 @@ header nav.change{
 }
 
 .about__me{
+    height: 100vh;
+    padding: 20px;
+    background: #F3C677;
+}
+
+.about__me h2{
+    text-align: center;
+    padding: 20px;
+}
+
+.services{
     height: 100vh;
     padding: 20px;
 }
