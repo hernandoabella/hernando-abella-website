@@ -19,13 +19,13 @@ p{
 }
 
 .font__color{
-    color: rgb(0, 132, 255);
+    color: #F9564F;
 }
 
 header{
     display: flex;
     justify-content: space-between;
-    background: #000;
+    background: #0C0A3E;
     padding: 20px;
 }
 
@@ -45,7 +45,7 @@ header nav ul li a{
 }
 
 header nav ul li a:hover{
-    color: red;
+    color: #F3C677;
 }
 
 .main__logo{
@@ -163,6 +163,13 @@ header nav.change{
 .services{
     height: 100vh;
     padding: 20px;
+    background: #F9564F;
+    color: #fff;
+}
+
+.services h2{
+    text-align: center;
+    padding: 20px;
 }
 
 .my__work{
@@ -170,12 +177,68 @@ header nav.change{
     padding: 20px;
 }
 
+.my__work h2{
+    text-align: center;
+    padding: 20px;
+
+}
+
 .contact__me{
     height: 100vh;
     padding: 20px;
+    background: #7B1E7A;
+    color: #fff;
+}
+
+.contact__me h2{
+    text-align: center;
+    padding: 20px;
+}
+
+.form__info{
+    text-align: center;
+    
+}
+
+.formulario{
+    background: #0C0A3E;
+    width: 300px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.swipe{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
 }
 
 
+input, textarea, button{
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.enviar{
+    cursor: pointer;
+    outline: none;
+    border: none;
+    transition: .4s;
+}
+
+.enviar:hover{
+    background: red;
+    color: #fff;
+    
+}
+
+
+.form__info div{
+    margin-bottom: 20px;
+}
 
 
 
@@ -186,6 +249,8 @@ header nav.change{
 
 
 @media only screen and ( max-width: 768px ){
+
+   
 
     body{
         font-size: 1em;
@@ -275,9 +340,19 @@ header nav.change{
         margin-top: 30px;
     }
 
-    .social__media{
-        
+    .swipe{
+        flex-direction: column-reverse;
     }
+
+    .formulario{
+        margin: 20px auto;
+    }
+
+    .form__info{
+        flex-direction: column-reverse;
+    }
+
+   
 
 }
 
