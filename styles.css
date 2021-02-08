@@ -90,7 +90,7 @@ header nav.change{
 
 .front__page h1{
     color: #000;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .front__info, .profile__img{
@@ -189,6 +189,8 @@ header nav.change{
         transform: translateY(4px);
     }
 
+    /* Imagen de Portada */
+
     .background__img{
         background: chocolate;
         height: 150px;
@@ -196,11 +198,18 @@ header nav.change{
         z-index: -1;
         top: 69px;
         position: absolute;
-        background-image: url(./images/profile.jpg);
+        background-image: url(./images/background.jpg);
     }
+
+    /* Imagen de Portada */
 
     .front__page{
         flex-direction: column;
+    }
+
+    .front__page h1{
+        margin-bottom: 30px;
+        text-align: center;
     }
     
     .profile__img{
@@ -214,13 +223,15 @@ header nav.change{
         background: #3772FF;
         padding: 5px;
         box-shadow: none;
-        
     }
 
     .front__info{
-        margin: 30px 0;
         width: 100%;
         text-align: justify;
+    }
+
+    .more{
+        margin-top: 30px;
     }
 
 }
