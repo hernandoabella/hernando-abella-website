@@ -179,12 +179,24 @@ header nav.change{
     height: 100vh;
     padding: 20px;
     background: #2A9D8F;
+    color: #fff;
 }
 
 .my__work h2{
     text-align: center;
     padding: 20px;
 
+}
+
+
+.grid__container{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.project > img{
+    width: 200px;
 }
 
 .contact__me{
@@ -375,8 +387,6 @@ input, textarea, button{
     .info__text{
         display: none;
     }
-
-   
 
 }
 
