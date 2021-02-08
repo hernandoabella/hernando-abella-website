@@ -87,7 +87,7 @@ header nav.change{
     height: 90vh;
     padding: 20px;
     display: flex;    
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-direction: row-reverse;
 }
 
@@ -200,7 +200,7 @@ header nav.change{
 
 .form__info{
     width: 50%;
-    margin-right: 20px;
+    margin-right: 50px;
 }
 
 .formulario{
@@ -226,7 +226,7 @@ input, textarea, button{
     width: 100%;
     border-radius: 5px;
     outline: none;
-    padding: 5px;
+    padding: 10px;
     margin-bottom: 10px;
     border: none;
 }
@@ -245,7 +245,7 @@ input, textarea, button{
 }
 
 .form__info div{
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .textarea{
@@ -358,7 +358,11 @@ input, textarea, button{
 
     .formulario{
         margin: 30px auto;
-        width: 100%;
+        width: 80%;
+    }
+
+    input, textarea, button{
+        padding: 5px;
     }
 
     .form__info{
