@@ -89,7 +89,7 @@ header nav.change{
 
 .front__page h1{
     color: #000;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .front__info, .profile__img{
@@ -103,7 +103,7 @@ header nav.change{
 .social__media{
     position: absolute;
     bottom: 0px;
-    left: 0px;
+    right: 0px;
     padding: 20px;
 }
 
@@ -113,19 +113,25 @@ header nav.change{
 }
 
 .more{
-    display: block;
-    width: 120px;
+    display: inline-block;
     text-align: center;
     cursor: pointer;
-    margin: 50px 0px;
+    margin: 30px 0px;
     padding: 10px;
-    border: 1px dashed #333;
+    border: 2px dashed #333;
     border-radius: 5px;
+    transition: .4s;
+    text-decoration: none;
+    color: #000;
+}
+
+.more:hover{
+    background: red;
 }
 
 .profile__img > img{
-    width: 300px;
-    height: 300px;
+    width: 280px;
+    height: 280px;
     border-radius: 5px;
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.2);
 }
@@ -184,7 +190,7 @@ header nav.change{
     }
 
     header nav ul li{
-        margin-bottom: 20px;
+        margin-bottom: 50px;
         font-size: 2em;
     }
 
