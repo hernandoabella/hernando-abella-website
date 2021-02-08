@@ -79,7 +79,6 @@ header nav.change{
     transform: translate(0%, 56%)
 }
 
-
 .front__page{
     height: 90vh;
     padding: 20px;
@@ -99,6 +98,18 @@ header nav.change{
 
 .front__info{
     margin-right: 50px;
+}
+
+.social__media{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding: 20px;
+}
+
+.social__media > a{
+    color: #000;
+    font-size: 1.3em;
 }
 
 .more{
@@ -232,6 +243,10 @@ header nav.change{
 
     .more{
         margin-top: 30px;
+    }
+
+    .social__media{
+        
     }
 
 }
