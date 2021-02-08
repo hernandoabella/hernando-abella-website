@@ -102,6 +102,7 @@ header nav.change{
 
 .front__info{
     margin-right: 50px;
+    width: 700px;
 }
 
 .front__info a{
@@ -122,6 +123,11 @@ header nav.change{
 .social__media > a{
     color: #000;
     font-size: 1.3em;
+}
+
+.info__text > p{
+    width: 300px;
+    text-align: justify;
 }
 
 .more{
@@ -209,7 +215,7 @@ header nav.change{
 
 .swipe{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin-top: 20px;
 }
 
@@ -220,6 +226,7 @@ input, textarea, button{
     outline: none;
     padding: 5px;
     margin-bottom: 10px;
+    border: none;
 }
 
 .enviar{
