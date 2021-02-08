@@ -125,10 +125,7 @@ header nav.change{
     font-size: 1.3em;
 }
 
-.info__text > p{
-    width: 300px;
-    text-align: justify;
-}
+
 
 .more{
     display: inline-block;
@@ -202,23 +199,28 @@ header nav.change{
 }
 
 .form__info{
-    text-align: center;
-    
+    width: 50%;
+    margin-right: 20px;
 }
 
 .formulario{
     background: #0C0A3E;
-    width: 300px;
+    background-image: url(/images/background.jpg);
+    width: 500px;
     border-radius: 5px;
     padding: 10px;
 }
 
 .swipe{
     display: flex;
-    justify-content: space-evenly;
-    margin-top: 20px;
+    justify-content: space-between;
+    margin: 50px;
 }
 
+
+input, textarea{
+    margin-top: 10px;
+}
 
 input, textarea, button{
     width: 100%;
@@ -242,18 +244,20 @@ input, textarea, button{
     
 }
 
-
 .form__info div{
     margin-bottom: 20px;
+}
+
+.textarea{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 1.3em;
 }
 
 
 
 
 
-
-
-
+/*MOBILE VIEW*/
 
 @media only screen and ( max-width: 768px ){
 
@@ -349,14 +353,22 @@ input, textarea, button{
 
     .swipe{
         flex-direction: column-reverse;
+        margin: 0;
     }
 
     .formulario{
-        margin: 20px auto;
+        margin: 30px auto;
+        width: 100%;
     }
 
     .form__info{
         flex-direction: column-reverse;
+        width: 100%;
+        text-align: center;
+    }
+
+    .info__text{
+        display: none;
     }
 
    
