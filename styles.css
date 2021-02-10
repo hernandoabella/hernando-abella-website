@@ -53,6 +53,11 @@ header nav ul li a:hover{
     text-decoration: none;
 }
 
+.main__logo img{
+    width: 50px;
+    height: 50px;
+}
+
 .hamburguesa{
     display: none;
     cursor: pointer;
@@ -313,17 +318,24 @@ input, textarea, button{
 
     .hamburguesa{
         display: block;
+        top: 10px;
+        position: relative;
     }
 
     .main__logo{
         transform: translateY(4px);
     }
 
+    .main__logo img{
+        width: 40px;
+        height: 40px;
+    }
+
     /* Imagen de Portada */
 
     .background__img{
         background: chocolate;
-        height: 150px;
+        height: 200px;
         width: 100%;
         z-index: -1;
         top: 69px;
