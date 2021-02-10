@@ -198,10 +198,19 @@ header nav.change{
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
+    background: red;
+    justify-content: space-around;
+    height: 70vh;
+}
+
+.grid__container > *{
+    background: blue;
 }
 
 .project > img{
-    width: 200px;
+    width: 250px;
+    border-radius: 5px;
+    
 }
 
 .contact__me{
