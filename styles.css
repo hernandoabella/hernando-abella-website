@@ -200,11 +200,18 @@ header nav.change{
     text-align: center;
 }
 
-.service{}
 
 .service__grid{
     margin-top: 20px;
     display: flex;
+}
+
+.service{
+    width: 33.33%;
+    background: red;
+    margin: 20px;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 .my__work{
@@ -221,19 +228,19 @@ header nav.change{
 }
 
 .grid__container{
+    margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
 .project{
-    margin: 4px;
+    margin: 20px;
 }
 
 .project > img{
     border-radius: 5px;
-    width: 200px;
-    height: 160px;
+    width: 250px;
 }
 
 .contact__me{
@@ -310,8 +317,6 @@ input, textarea, button{
 /*MOBILE VIEW*/
 
 @media only screen and ( max-width: 768px ){
-
-   
 
     body{
         font-size: 1em;
@@ -434,19 +439,28 @@ input, textarea, button{
         display: none;
     }
 
+
     .grid__container{
         flex-direction: column;
     }
 
+    .service__grid{
+        flex-direction: column;
+    }
+
+    .service{
+        width: 100%;
+        margin: 20px auto;
+    }
+
     .project > img{
-        
+        width: 100%;
     }
 
     .project{
-        margin: auto;
+       
     }
 
- 
 
 }
 
