@@ -32,6 +32,7 @@ header{
 header nav ul{
     display: flex;
     text-transform: uppercase;
+    letter-spacing: 5px;
 }
 
 header nav ul li{
@@ -53,6 +54,7 @@ header nav ul li a:hover{
     color: #fff;
     text-decoration: none;
     transition: .4s;
+    outline: none;
 }
 
 .main__logo img{
@@ -214,19 +216,20 @@ header nav.change{
 
 }
 
-
 .grid__container{
-    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 50px auto;
 }
 
 .project{
-    
-    
+    margin: 4px;
 }
 
-
 .project > img{
-    width: 100px;
+    border-radius: 5px;
+    width: 300px;
 }
 
 .contact__me{
@@ -427,6 +430,7 @@ input, textarea, button{
     }
 
     .grid__container{
+        flex-direction: column;
     }
 
     .project > img{
@@ -434,8 +438,7 @@ input, textarea, button{
     }
 
     .project{
-        background: blue;
-        margin: 0 auto;
+        margin: auto;
     }
 
  
