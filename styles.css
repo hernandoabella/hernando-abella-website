@@ -1,13 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    font-family: 'Lora', serif;
 }
 
 body{
     font-size: 1.3em;
-    font-family: 'Courier New', Courier, monospace;
 }
 
 h1{
@@ -32,7 +34,8 @@ header{
 header nav ul{
     display: flex;
     text-transform: uppercase;
-    letter-spacing: 5px;
+    letter-spacing: 2px;
+    margin-top: 15px;   
 }
 
 header nav ul li{
@@ -99,6 +102,7 @@ header nav.change{
     display: flex;    
     justify-content: space-evenly;
     flex-direction: row-reverse;
+    background: #f9b9ff;
 }
 
 
@@ -219,8 +223,7 @@ header nav.change{
 .grid__container{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    margin: 50px auto;
+    justify-content: space-around;
 }
 
 .project{
@@ -229,7 +232,8 @@ header nav.change{
 
 .project > img{
     border-radius: 5px;
-    width: 300px;
+    width: 200px;
+    height: 160px;
 }
 
 .contact__me{
@@ -316,7 +320,7 @@ input, textarea, button{
     header nav{
         position: absolute;
         color: #fff;
-        background: rgb(87, 87, 87);
+        background: #0a092e;
         left: 0px;
         padding: 20px;
         margin: 0;
@@ -376,6 +380,7 @@ input, textarea, button{
 
     .front__page{
         flex-direction: column;
+        height: 538px;
     }
 
     .front__page h1{
