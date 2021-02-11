@@ -195,22 +195,31 @@ header nav.change{
 
 .services p{
     margin-top: 20px;
-    text-align: center;
 }
 
 
 .service__grid{
-    margin-top: 20px;
+    margin: 20px auto;
     display: flex;
 }
 
 .service{
     width: 33.33%;
+    background: rgb(24, 122, 134);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    text-align: justify;
+}
+
+.image__center{
+    width: 100px;
+    margin: 0 auto;
 }
 
 .service img{
-    width: 30px;
-    margin: 0 auto;
+    width: 100px;  
+    margin:  auto 0;  
 }
 
 
@@ -316,7 +325,7 @@ input, textarea, button{
 
 /*MOBILE VIEW*/
 
-@media only screen and ( max-width: 1000px ){
+@media only screen and ( max-width: 1280px ){
 
     .project__seven{
         display: none;
@@ -328,7 +337,7 @@ input, textarea, button{
 
 }
 
-@media only screen and ( max-width: 900px ){
+@media only screen and ( max-width: 1080px ){
 
     .project__five{
         display: none;
@@ -462,22 +471,9 @@ input, textarea, button{
         display: none;
     }
 
-    .grid__container{
-        flex-direction: column;
-    }
+   
 
-    .service__grid{
-        flex-direction: column;
-    }
-
-    .service{
-        width: 200px;
-        margin: 20px auto;
-    }
-
-    .project > img{
-        width: 100%;
-    }
+    
 
 
 
