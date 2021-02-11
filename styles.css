@@ -316,6 +316,29 @@ input, textarea, button{
 
 /*MOBILE VIEW*/
 
+@media only screen and ( max-width: 1000px ){
+
+    .project__seven{
+        display: none;
+    }
+
+    .project__eight{
+        display: none;
+    }
+
+}
+
+@media only screen and ( max-width: 900px ){
+
+    .project__five{
+        display: none;
+    }
+
+    .project__six{
+        display: none;
+    }
+}
+
 @media only screen and ( max-width: 768px ){
 
     body{
@@ -439,7 +462,6 @@ input, textarea, button{
         display: none;
     }
 
-
     .grid__container{
         flex-direction: column;
     }
@@ -449,7 +471,7 @@ input, textarea, button{
     }
 
     .service{
-        width: 100%;
+        width: 200px;
         margin: 20px auto;
     }
 
@@ -457,12 +479,19 @@ input, textarea, button{
         width: 100%;
     }
 
-    .project{
-       
-    }
 
 
 }
+
+
+
+
+
+
+
+
+
+
 
 @keyframes crazyRotation{
     100%{
