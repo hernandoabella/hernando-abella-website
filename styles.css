@@ -11,6 +11,10 @@ body{
 
 }
 
+.encabezado{
+    background: pink;
+}
+
 #myBtn {
     display: none; /* Hidden by default */
     position: fixed; /* Fixed/sticky position */
@@ -25,8 +29,32 @@ body{
     padding: 15px; /* Some padding */
     border-radius: 10px; /* Rounded corners */
     font-size: 18px; /* Increase font size */
-  }
+}
   
-  #myBtn:hover {
+#myBtn:hover {
     background-color: #555; /* Add a dark-grey background on hover */
+}
+
+.row {
+    display: flex;
+}
+  
+/* Create three equal columns that sits next to each other */
+.column {
+    flex: 33.33%;
+    padding: 5px;
+}
+
+.column > div{
+    background: red;
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 500px) {
+    .column{
+      width: 100%;
+    }
   }
