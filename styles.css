@@ -165,6 +165,10 @@ a{
     margin: 20px;
 }
 
+.proyectos{
+    margin: 20px;
+}
+
 .proyectos h2{
     margin: 40px;
     text-align: center;
@@ -245,8 +249,8 @@ footer a{
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media only screen and ( max-width: 500px ){
-   .proyectos .column > div{
+@media only screen and ( max-width: 768px ){ 
+   .proyectos > div{
       width: 100%;
     }
 }
