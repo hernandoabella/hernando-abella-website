@@ -95,7 +95,7 @@ a{
     margin: auto;
     width: 180px;
     height: 180px;
-    background: #000;
+    background: #fff;
     border-radius: 100px;
 }
 
@@ -105,6 +105,10 @@ a{
     padding: 10px;
     margin: auto;
     border-radius: 100px;
+}
+
+.backbar{
+    padding: 20px;
 }
 
 .ver__mas{
@@ -144,7 +148,8 @@ a{
   
 /* Create three equal columns that sits next to each other */
 .column {
-    flex: 33.33%;
+    display: flex;
+    width: 33.33%;
     padding: 5px;
     text-align: center;
 }
@@ -221,6 +226,10 @@ input, textarea{
     border-radius: 5px;
 }
 
+textarea{
+    resize: none;
+}
+
 button{
     padding: 10px;
     border-radius: 5px;
@@ -250,7 +259,12 @@ footer a{
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media only screen and ( max-width: 768px ){ 
-   .proyectos > div{
-      width: 100%;
-    }
+.row{
+    flex-direction: column;
+}
+
+.column{
+    width: 100%;
+}
+
 }
