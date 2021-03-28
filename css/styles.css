@@ -109,6 +109,29 @@ a{
 
 .backbar{
     padding: 20px;
+    background: #000;
+}
+
+.fa-arrow-left{
+    color: #fff;
+    transition: .3s;
+}
+
+.fa-arrow-left:hover{
+    color: pink;
+}
+
+.introduccion__aprende{
+    margin: 50px;
+    text-align: center;
+}
+
+.introduccion__aprende h2{
+    margin: 20px;
+}
+
+.introduccion__aprende p{
+    margin: 20px;
 }
 
 .ver__mas{
