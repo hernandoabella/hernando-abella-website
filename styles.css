@@ -5,34 +5,137 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
 }
 
-body{
-
+h1{
+    text-align: center;
+    margin: 40px;
+    letter-spacing: 5px;
+    text-shadow: 1px 1px 2px #000;
+    font-style: italic;
 }
 
 .encabezado{
-    background: pink;
+    background: #000;
+    color: #fff;
+    display: flex;
+    padding: 20px;
+    align-items: flex-start;
+}
+
+.navegacion__principal{
+    margin: auto;
+}
+
+.navegacion__principal ul{
+    display: flex;
+}
+
+.navegacion__principal ul li{
+    list-style-type: none;
+    margin-right: 20px;
+}
+
+.navegacion__principal ul li a{
+    color: #fff;
+    transition: .3s;
+}
+
+.navegacion__principal ul li a:hover{
+    color: rgb(0, 204, 255);
+}
+
+a{
+    text-decoration: none;
 }
 
 #myBtn {
     display: none; /* Hidden by default */
     position: fixed; /* Fixed/sticky position */
-    bottom: 20px; /* Place the button at the bottom of the page */
-    right: 30px; /* Place the button 30px from the right */
+    bottom: 70px; /* Place the button at the bottom of the page */
+    right: 10px; /* Place the button 30px from the right */
     z-index: 99; /* Make sure it does not overlap */
     border: none; /* Remove borders */
     outline: none; /* Remove outline */
-    background-color: red; /* Set a background color */
+    background-color: rgb(0, 0, 0); /* Set a background color */
     color: white; /* Text color */
     cursor: pointer; /* Add a mouse pointer on hover */
-    padding: 15px; /* Some padding */
-    border-radius: 10px; /* Rounded corners */
-    font-size: 18px; /* Increase font size */
+    padding: 10px; /* Some padding */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 10px; /* Increase font size */
+    transition: .3s;
+    opacity: .5;
 }
   
 #myBtn:hover {
-    background-color: #555; /* Add a dark-grey background on hover */
+    opacity: 1;
+    background-color: #000; /* Add a dark-grey background on hover */
+}
+
+.sobre__mi > h2{
+    text-align: center;
+    margin: 40px;
+}  
+
+.sobre__mi p{
+    margin: 50px;
+    text-align: center;
+}
+
+.circulo__contenedor{
+    margin: auto;
+    background: url('./images/unverse1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 40px;
+}
+
+.circulo__avatar{
+    margin: auto;
+    width: 180px;
+    height: 180px;
+    background: #000;
+    border-radius: 100px;
+}
+
+.circulo__avatar > img{
+    width: 180px;
+    height: 180px;
+    padding: 10px;
+    margin: auto;
+    border-radius: 100px;
+}
+
+.ver__mas{
+    background: rgb(0, 0, 0);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    display: block;
+    width: 150px;
+    text-align: center;
+    margin: 50px auto;
+    transition: .3s;
+}
+
+.ver__mas:hover{
+    background: rgb(43, 43, 43);
+    color: #fff;
+}
+
+.aprende__conmigo{
+    margin: 20px;
+}
+
+.aprende__conmigo h2{
+    margin: 40px;
+    text-align: center;
+}
+
+.aprende__conmigo p{
+    text-align: center;
+    margin: 10px;
 }
 
 .row {
@@ -43,18 +146,107 @@ body{
 .column {
     flex: 33.33%;
     padding: 5px;
+    text-align: center;
 }
 
 .column > div{
-    background: red;
     width: 100%;
-    height: 200px;
+    height: 250px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.column h5{
+    font-style: italic;
+}
+
+.column div > i{
+    font-size: 100px;
+    margin: 20px;
+}
+
+.proyectos h2{
+    margin: 40px;
+    text-align: center;
+}
+
+.proyectos p{
+    margin: 40px;
+    text-align: center;
+}
+
+.proyectos .column > div{
+    background: rgb(0, 0, 0);
+    color: #fff;
+    height: 100px;
+}
+
+hr{
+    width: 50%;
+    margin: 50px auto;
+    color: rgb(0, 0, 0);
+}
+
+.formulario__de__contacto h2{
+    text-align: center;
+    margin: 40px;
+}
+
+.formulario__de__contacto p{
+    text-align: center;
+    margin: 20px;
+}
+
+form{
+    margin: 40px auto;
+    width: 400px;
+    background: rgb(0, 0, 0);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+input, textarea{
+    outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid green;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 20px;
     border-radius: 5px;
 }
 
+button{
+    padding: 10px;
+    border-radius: 5px;
+    background: #fff;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover{
+    color: green;
+    background: violet;
+}
+
+footer{
+    background: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a{
+    color: #fff;
+}
+
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 500px) {
-    .column{
+@media only screen and ( max-width: 500px ){
+   .proyectos .column > div{
       width: 100%;
     }
-  }
+}
