@@ -198,19 +198,45 @@ a{
 }
 
 .proyectos h2{
-    margin: 40px;
     text-align: center;
 }
 
 .proyectos p{
-    margin: 40px;
+    margin: 20px;
     text-align: center;
 }
 
 .proyectos .column > div{
     background: rgb(0, 0, 0);
     color: #fff;
-    height: 100px;
+}
+
+.informacion__proyecto a{
+    background:rgb(0, 204, 255);
+    padding: 10px;
+    display: block;
+    width: 20%;
+    border-radius: 5px;
+    text-align: center;
+    margin: auto;
+    transition: .3s;
+}
+
+.informacion__proyecto a:hover{
+    background: violet;
+}
+
+.estrellas__de__dificultad{
+    width: 100px;
+    margin: 20px;
+    position: relative;
+    right: -290px;
+    top: -10px;
+}
+
+.estrellas__de__dificultad img{
+    width: 15px;
+    height: 15px;
 }
 
 hr{
@@ -279,6 +305,13 @@ footer{
 footer a{
     color: #fff;
 }
+
+
+
+
+
+
+
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media only screen and ( max-width: 768px ){ 
