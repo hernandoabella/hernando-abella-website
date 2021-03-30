@@ -85,10 +85,15 @@ a{
 
 .circulo__contenedor{
     margin: auto;
-    background: url('./images/unverse1.jpg');
+    background: #ffffff;
+    background: url(../images/unverse1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     padding: 40px;
+}
+
+.circulo__contenedor h2{
+    color: #fff;
 }
 
 .circulo__avatar{
@@ -130,10 +135,6 @@ a{
     margin: 20px;
 }
 
-.introduccion__aprende p{
-    margin: 20px;
-}
-
 .ver__mas{
     background: rgb(0, 0, 0);
     color: #fff;
@@ -142,8 +143,12 @@ a{
     display: block;
     width: 150px;
     text-align: center;
-    margin: 50px auto;
+    margin: 20px auto;
     transition: .3s;
+}
+
+.panel__de__cursos{
+    margin: 40px;
 }
 
 .ver__mas:hover{
@@ -162,7 +167,61 @@ a{
 
 .aprende__conmigo p{
     text-align: center;
-    margin: 10px;
+    margin: 40px;
+}
+
+.curso{
+    border: 3px solid #000;
+}
+
+.curso a{
+    background: #000;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    display: block;
+    margin: 40px auto;
+    width: 30%;
+    text-align: center;
+    transition: .3s;
+}
+
+.curso a:hover{
+    transform: scale(2);
+}
+
+.curso img{
+    margin: 20px;
+}
+
+.html__logo{
+    width: 100px;
+    height: 100px;
+}
+
+.css__logo{
+    width: 100px;
+    height: 110px;
+}
+
+.javascript__logo{
+    width: 100px;
+    height: 100px;
+}
+
+.php__logo{
+    width: 150px;
+    height: 100px;
+}
+
+.mysql__logo{
+    width: 150px;
+    height: 100px;
+}
+
+.laravel__logo{
+    width: 120px;
+    height: 90px;
 }
 
 .row {
@@ -179,7 +238,7 @@ a{
 
 .column > div{
     width: 100%;
-    height: 250px;
+    height: 300px;
     border-radius: 5px;
     padding: 10px;
 }
@@ -199,17 +258,33 @@ a{
 
 .proyectos h2{
     text-align: center;
+    margin: 40px;
 }
 
 .proyectos p{
-    margin: 20px;
+    margin: 40px;
     text-align: center;
 }
 
 .proyectos .column > div{
     background: rgb(0, 0, 0);
+    background: url(../images/unverse1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     color: #fff;
 }
+
+.redes__sociales{
+    position: absolute;
+    right: 10px;
+}
+
+.redes__sociales a{
+    color: #fff;
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
 
 .informacion__proyecto a{
     background:rgb(0, 204, 255);
@@ -252,7 +327,7 @@ hr{
 
 .formulario__de__contacto p{
     text-align: center;
-    margin: 20px;
+    margin: 40px;
 }
 
 form{
