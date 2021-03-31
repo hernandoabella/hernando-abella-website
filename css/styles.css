@@ -8,6 +8,10 @@
     scroll-behavior: smooth;
 }
 
+body{
+    background:rgb(189, 242, 255);
+}
+
 h1{
     text-align: center;
     margin: 40px;
@@ -79,13 +83,13 @@ a{
 }  
 
 .sobre__mi p{
-    margin: 50px;
+    margin: 20px;
     text-align: center;
+    line-height: 30px;
 }
 
 .circulo__contenedor{
     margin: auto;
-    background: #ffffff;
     background: url(../images/unverse1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -167,7 +171,7 @@ a{
 
 .aprende__conmigo p{
     text-align: center;
-    margin: 40px;
+    margin: 20px;
 }
 
 .curso{
@@ -262,8 +266,9 @@ a{
 }
 
 .proyectos p{
-    margin: 40px;
+    margin: 20px;
     text-align: center;
+    line-height: 30px;
 }
 
 .proyectos .column > div{
@@ -309,7 +314,7 @@ a{
     top: -10px;
 }
 
-.estrellas__de__dificultad img{
+.estrellas__de__dificultad > img{
     width: 15px;
     height: 15px;
 }
@@ -317,7 +322,8 @@ a{
 hr{
     width: 50%;
     margin: 50px auto;
-    color: rgb(0, 0, 0);
+    border-color: #000;
+    border-style: dashed;
 }
 
 .formulario__de__contacto h2{
@@ -365,7 +371,10 @@ button{
     transition: .3s;
 }
 
-
+.demostracion{
+    margin: 20px auto;
+    width: 120px;
+}
 
 .codigo__del__proyecto{
     margin: 20px;
@@ -373,6 +382,11 @@ button{
 
 .codigo__del__proyecto h2{
     font-style: italic;
+    margin-bottom: 20px;
+}
+
+.codigo__del__proyecto p{
+    margin-bottom: 20px;
 }
 
 .codigo__html{
@@ -380,15 +394,17 @@ button{
     color: #fff;
     padding: 10px;
     border-radius: 5px;
-    margin: 20px 0px;
+    margin: 20px auto;
+    width: 800px;
 }
 
 .codigo__css{
-    background: blue;
+    background: #264de4;
     color: #fff;
     padding: 10px;
     border-radius: 5px;
-    margin: 20px 0px;
+    margin: 20px auto;
+    width: 800px;
 }
 
 .codigo__javascript{
@@ -396,50 +412,9 @@ button{
     color: #323330;
     padding: 10px;
     border-radius: 5px;
-    margin: 20px 0px;
+    margin: 20px auto;
+    width: 800px;
 }
-
-.syntaxhighlighter table{
-    border-radius: 5px;
-}
-
-.tooltip {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .tooltip .tooltiptext {
-    visibility: hidden;
-    width: 140px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px;
-    position: absolute;
-    z-index: 1;
-    bottom: 150%;
-    left: 50%;
-    margin-left: -75px;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  
-  .tooltip .tooltiptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
-  }
-  
-  .tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
-  }
 
 footer{
     background: #000;
@@ -453,12 +428,6 @@ footer a{
 }
 
 
-
-
-
-
-
-
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media only screen and ( max-width: 768px ){ 
 .row{
@@ -466,6 +435,18 @@ footer a{
 }
 
 .column{
+    width: 100%;
+}
+
+.codigo__html{
+    width: 100%;
+}
+
+.codigo__css{
+    width: 100%;
+}
+
+.codigo__javascript{
     width: 100%;
 }
 

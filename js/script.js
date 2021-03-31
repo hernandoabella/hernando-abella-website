@@ -18,26 +18,3 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
-$(".hover").mouseleave(
-    function () {
-      $(this).removeClass("hover");
-    }
-  );
-
-
-// Copy clipboard
-
-function myFunction() {
-    var copyText = document.getElementById(".copyBoard");
-    copyText.select();
-    copyText.setSelectionRange(0, 99999);
-    document.execCommand("copy");
-    
-    var tooltip = document.getElementById("myTooltip");
-    tooltip.innerHTML = "Copied: " + copyText.value;
-  }
-  
-  function outFunc() {
-    var tooltip = document.getElementById("myTooltip");
-    tooltip.innerHTML = "Copy to clipboard";
-  }
