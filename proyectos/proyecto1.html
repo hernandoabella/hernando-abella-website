@@ -76,36 +76,45 @@
             }
             </pre>
         </div>
+
+        
+        <p>Click on the button to copy the text from the text field. Try to paste the text (e.g. ctrl+v) afterwards in a different window, to see the effect.</p>
+
+        <input type="text" value="Hello World" id="myInput">
+
+        <div class="tooltip">
+        <button onclick="myFunction()" onmouseout="outFunc()">
+        <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+        Copy text
+        </button>
+        </div>
         
         <div class="codigo__javascript">
-            <p>javascript</p>
-            <div class="tooltip">
-            <button onclick="myFunction()" onmouseout="outFunc()">
-            <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
-            Copy text
-            </button>
-            </div>
+            <p>JAVASCRIPT</p>
+           
             <div id="highlighterMainDiv_815777" class="syntaxhighlighter jscript"><div id="toolbarContainer_815777" class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td>&nbsp;</td></tr><tr><td class="gutter"><div class="line number1 index0 alt2">01</div><div class="line number2 index1 alt1">02</div><div class="line number3 index2 alt2">03</div><div class="line number4 index3 alt1">04</div><div class="line number5 index4 alt2">05</div><div class="line number6 index5 alt1">06</div><div class="line number7 index6 alt2">07</div><div class="line number8 index7 alt1">08</div><div class="line number9 index8 alt2">09</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div></td><td id="codeContainer_815777" class="code"><div id="container_815777" class="container"><div class="line number1 index0 alt2"><code class="jscript keyword">var</code> <code class="jscript plain">acc = document.getElementsByClassName(</code><code class="jscript string">"accordion"</code><code class="jscript plain">);</code></div><div class="line number2 index1 alt1"><code class="jscript keyword">var</code> <code class="jscript plain">i;</code></div><div class="line number3 index2 alt2">&nbsp;</div><div class="line number4 index3 alt1"><code class="jscript keyword">for</code> <code class="jscript plain">(i = 0; i &lt; acc.length; i++) {</code></div><div class="line number5 index4 alt2"><code class="jscript spaces">&nbsp;&nbsp;</code><code class="jscript plain">acc[i].addEventListener(</code><code class="jscript string">"click"</code><code class="jscript plain">, </code><code class="jscript keyword">function</code><code class="jscript plain">() {</code></div><div class="line number6 index5 alt1"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jscript comments">/* Toggle between adding and removing the "active" class,</code></div><div class="line number7 index6 alt2"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jscript comments">to highlight the button that controls the panel */</code></div><div class="line number8 index7 alt1"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jscript keyword">this</code><code class="jscript plain">.classList.toggle(</code><code class="jscript string">"active"</code><code class="jscript plain">);</code></div><div class="line number9 index8 alt2">&nbsp;</div><div class="line number10 index9 alt1"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jscript comments">/* Toggle between hiding and showing the active panel */</code></div><div class="line number11 index10 alt2"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jscript keyword">var</code> <code class="jscript plain">panel = </code><code class="jscript keyword">this</code><code class="jscript plain">.nextElementSibling;</code></div><div class="line number12 index11 alt1"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jscript keyword">if</code> <code class="jscript plain">(panel.style.display === </code><code class="jscript string">"block"</code><code class="jscript plain">) {</code></div><div class="line number13 index12 alt2"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jscript plain">panel.style.display = </code><code class="jscript string">"none"</code><code class="jscript plain">;</code></div><div class="line number14 index13 alt1"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jscript plain">} </code><code class="jscript keyword">else</code> <code class="jscript plain">{</code></div><div class="line number15 index14 alt2"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jscript plain">panel.style.display = </code><code class="jscript string">"block"</code><code class="jscript plain">;</code></div><div class="line number16 index15 alt1"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jscript plain">}</code></div><div class="line number17 index16 alt2"><code class="jscript spaces">&nbsp;&nbsp;</code><code class="jscript plain">});</code></div><div class="line number18 index17 alt1"><code class="jscript plain">}</code></div></div></td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr></tbody></table></div>
 
-            <pre id="presourcecode_815777" class="displaysourcecode" >
-            var acc = document.getElementsByClassName("accordion");
-            var i;
+            <pre id="presourcecode_815777" class="displaysourcecode">
+            <div class="miInput">
+                var acc = document.getElementsByClassName("accordion");
+                var i;
 
-            for (i = 0; i &lt; acc.length; i++) {
-            acc[i].addEventListener("click", function() {
-                /* Toggle between adding and removing the "active" class,
-                to highlight the button that controls the panel */
-                this.classList.toggle("active");
+                for (i = 0; i &lt; acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                    /* Toggle between adding and removing the "active" class,
+                    to highlight the button that controls the panel */
+                    this.classList.toggle("active");
 
-                /* Toggle between hiding and showing the active panel */
-                var panel = this.nextElementSibling;
-                if (panel.style.display === "block") {
-                panel.style.display = "none";
-                } else {
-                panel.style.display = "block";
+                    /* Toggle between hiding and showing the active panel */
+                    var panel = this.nextElementSibling;
+                    if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                    } else {
+                    panel.style.display = "block";
+                    }
+                });
                 }
-            });
-            }
+            </div>
             </pre>
         </div>
     </section>
@@ -113,6 +122,6 @@
     <footer>
         <p>&copy; 2021 Hernando Abella</p>
     </footer>
-    <script src="./script.js"></script>
+    <script src="../script.js"></script>
 </body>
 </html>

@@ -28,7 +28,7 @@ $(".hover").mouseleave(
 // Copy clipboard
 
 function myFunction() {
-    var copyText = document.getElementById("myInput");
+    var copyText = document.getElementById(".copyBoard");
     copyText.select();
     copyText.setSelectionRange(0, 99999);
     document.execCommand("copy");

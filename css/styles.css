@@ -365,10 +365,7 @@ button{
     transition: .3s;
 }
 
-button:hover{
-    color: green;
-    background: violet;
-}
+
 
 .codigo__del__proyecto{
     margin: 20px;
