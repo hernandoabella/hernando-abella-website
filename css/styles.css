@@ -376,7 +376,8 @@ button{
 }
 
 .codigo__html{
-    background: orangered;
+    background: #e34c26;
+    color: #fff;
     padding: 10px;
     border-radius: 5px;
     margin: 20px 0px;
@@ -384,16 +385,22 @@ button{
 
 .codigo__css{
     background: blue;
+    color: #fff;
     padding: 10px;
     border-radius: 5px;
     margin: 20px 0px;
 }
 
 .codigo__javascript{
-    background: rgb(255, 230, 0);
+    background: #f0db4f;
+    color: #323330;
     padding: 10px;
     border-radius: 5px;
     margin: 20px 0px;
+}
+
+.syntaxhighlighter table{
+    border-radius: 5px;
 }
 
 .tooltip {
