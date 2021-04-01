@@ -9,8 +9,9 @@
 }
 
 body{
-    background:rgb(189, 242, 255);
+    background: #fff;
 }
+
 
 h1{
     text-align: center;
@@ -160,6 +161,18 @@ a{
     color: #fff;
 }
 
+.fa-html5{
+    color: #e34c26;
+}
+
+.fa-css3-alt{
+    color: #264de4;
+}
+
+.fa-js{
+    color: #F0DB4F;
+}
+
 .aprende__conmigo{
     margin: 20px;
 }
@@ -257,7 +270,7 @@ a{
 }
 
 .proyectos{
-    margin: 20px;
+    margin: 60px;
 }
 
 .proyectos h2{
@@ -266,9 +279,8 @@ a{
 }
 
 .proyectos p{
-    margin: 20px;
+    margin: 40px;
     text-align: center;
-    line-height: 30px;
 }
 
 .proyectos .column > div{
@@ -288,30 +300,43 @@ a{
     color: #fff;
     font-size: 1.5em;
     margin-right: 10px;
+    transition: .3s;
+}
+
+.redes__sociales a:hover{
+    color: #999;
+}
+
+.informacion__proyecto h4{
+    margin-top: 70px;
+}
+
+.informacion__proyecto p{
+    margin-top: 20px;
 }
 
 
 .informacion__proyecto a{
-    background:rgb(0, 204, 255);
+    background: #222;
+    color: #fff;
     padding: 10px;
     display: block;
-    width: 20%;
     border-radius: 5px;
     text-align: center;
-    margin: auto;
+    margin: 60px auto;
     transition: .3s;
+    width: 330px;
 }
 
 .informacion__proyecto a:hover{
-    background: violet;
+    background: #000;
 }
 
 .estrellas__de__dificultad{
     width: 100px;
     margin: 20px;
-    position: relative;
-    right: -290px;
-    top: -10px;
+    
+    
 }
 
 .estrellas__de__dificultad > img{
