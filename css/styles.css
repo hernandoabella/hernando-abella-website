@@ -344,7 +344,7 @@ form{
     padding: 20px;
 }
 
-input, textarea{
+form > input, form textarea{
     outline: none;
     border-top: none;
     border-left: none;
@@ -373,7 +373,12 @@ button{
 
 .demostracion{
     margin: 20px auto;
-    width: 120px;
+    width: 600px;
+    padding: 10px;
+}
+
+.demostracion p{
+    margin-top: 20px;
 }
 
 .codigo__del__proyecto{
@@ -448,6 +453,10 @@ footer a{
 
 .codigo__javascript{
     width: 100%;
+}
+
+.demostracion{
+    width: auto;
 }
 
 }
