@@ -410,10 +410,7 @@ button{
     margin: 20px;
 }
 
-.codigo__del__proyecto h2{
-    font-style: italic;
-    margin-bottom: 20px;
-}
+
 
 .codigo__del__proyecto p{
     margin-bottom: 20px;
@@ -428,10 +425,6 @@ button{
     width: 600px;
 }
 
-.codigo__html h4{
-    margin-top: 20px;
-    font-style: italic;
-}
 
 .codigo__css{
     background: #264de4;
@@ -442,10 +435,6 @@ button{
     width: 600px;
 }
 
-.codigo__css h4{
-    margin-top: 20px;
-    font-style: italic;
-}
 
 .codigo__javascript{
     background: #f0db4f;
@@ -455,14 +444,6 @@ button{
     margin: 20px auto;
     width: 600px;
 }
-
-.codigo__javascript h4{
-    margin-top: 20px;
-    font-style: italic;
-}
-
-
-
 
 
 footer{
