@@ -425,7 +425,12 @@ button{
     padding: 10px;
     border-radius: 5px;
     margin: 20px auto;
-    width: 800px;
+    width: 600px;
+}
+
+.codigo__html h4{
+    margin-top: 20px;
+    font-style: italic;
 }
 
 .codigo__css{
@@ -434,7 +439,12 @@ button{
     padding: 10px;
     border-radius: 5px;
     margin: 20px auto;
-    width: 800px;
+    width: 600px;
+}
+
+.codigo__css h4{
+    margin-top: 20px;
+    font-style: italic;
 }
 
 .codigo__javascript{
@@ -443,8 +453,17 @@ button{
     padding: 10px;
     border-radius: 5px;
     margin: 20px auto;
-    width: 800px;
+    width: 600px;
 }
+
+.codigo__javascript h4{
+    margin-top: 20px;
+    font-style: italic;
+}
+
+
+
+
 
 footer{
     background: #000;
@@ -456,7 +475,6 @@ footer{
 footer a{
     color: #fff;
 }
-
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media only screen and ( max-width: 768px ){ 

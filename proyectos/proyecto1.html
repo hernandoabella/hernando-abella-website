@@ -6,19 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hernando Abella</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/line-numbers/prism-line-numbers.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/vs.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"></script>
-    <!-- and it's easy to individually load additional languages -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/languages/go.min.js"></script>
-
 </head>
 <body>
     <div class="backbar">
         <a href="../practica.html"><i class="fas fa-arrow-left"></i></a>
     </div>
-
-    
 
     <section class="codigo__del__proyecto">
 
@@ -97,89 +92,90 @@
         </div>
 
         <div class="codigo__html">
-            <h6>HTML</h6>
-            <div class="codigo">
-                <pre>
-                    <code class="language-html">
-                    &lt;div class="slidecontainer"&gt;
-                    &lt;input type="range" min="1" max="100" value="50" class="slider" id="myRange"&gt;
-                    &lt;/div&gt;
-                    </code>
-                </pre>    
+            <div class="codigo__swipe">
+                <h4>HTML</h4>
             </div>
+            
+            <pre class="line-numbers"><code class="language-html">&lt;div class="slidecontainer"&gt;
+        &lt;input type="range" min="1" max="100" value="50" class="slider" id="myRange"&gt;
+    &lt;/div&gt;</code></pre>  
+
         </div>
 
         <div class="codigo__css">
-            <h6>CSS</h6>
+            <div class="codigo__swipe">
+                <h4>CSS</h4>
+            </div>
             <div class="codigo">
-                <pre>
+                <pre class="line-numbers">
                     <code class="language-css">
-                        .slidecontainer {
-                            width: 100%; /* Width of the outside container */
-                          }
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+}
                           
-                          /* The slider itself */
-                          .slider {
-                            -webkit-appearance: none;  /* Override default CSS styles */
-                            appearance: none;
-                            width: 100%; /* Full-width */
-                            height: 25px; /* Specified height */
-                            background: #d3d3d3; /* Grey background */
-                            outline: none; /* Remove outline */
-                            opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-                            -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-                            transition: opacity .2s;
-                          }
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 25px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
                           
-                          /* Mouse-over effects */
-                          .slider:hover {
-                            opacity: 1; /* Fully shown on mouse-over */
-                          }
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
                           
-                          /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-                          .slider::-webkit-slider-thumb {
-                            -webkit-appearance: none; /* Override default look */
-                            appearance: none;
-                            width: 25px; /* Set a specific slider handle width */
-                            height: 25px; /* Slider handle height */
-                            background: #4CAF50; /* Green background */
-                            cursor: pointer; /* Cursor on hover */
-                          }
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #4CAF50; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
                           
-                          .slider::-moz-range-thumb {
-                            width: 25px; /* Set a specific slider handle width */
-                            height: 25px; /* Slider handle height */
-                            background: #4CAF50; /* Green background */
-                            cursor: pointer; /* Cursor on hover */
-                          }
+.slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #4CAF50; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
                     </code>
                 </pre>
             </div>
         </div>
         
         <div class="codigo__javascript">
-         <h6>JAVASCRIPT</h6>
-
+        <div class="codigo__swipe">
+            <h4>JAVASCRIPT</h4>
+        </div>
         <div class="codigo">
-            <pre>
-                <code class="language-javascript">
-                    var slider = document.getElementById("myRange");
-                    var output = document.getElementById("demo");
-                    output.innerHTML = slider.value; // Display the default slider value
+            <pre class="line-numbers"><code class="language-javascript">var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value; // Display the default slider value
     
-                    // Update the current slider value (each time you drag the slider handle)
-                    slider.oninput = function() {
-                    output.innerHTML = this.value;
-                    }
-                </code>
-            </pre>
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+output.innerHTML = this.value;
+}</code></pre>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2021 Hernando Abella</p>
     </footer>
-    <script>hljs.highlightAll();</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script>Prism.fileHighlight()</script>
     <script src="../js/script.js"></script>
    
 </body>
