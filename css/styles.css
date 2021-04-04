@@ -366,6 +366,7 @@ hr{
 .fragmento{
     width: 30px;
     height: 30px;
+    background: gray;
 }
 
 .formulario__de__contacto h2{
