@@ -8,21 +8,20 @@
     scroll-behavior: smooth;
 }
 
-body{
-    background: #fff;
-}
-
-
 h1{
     text-align: center;
-    padding: 40px;
+    padding: 20px;
     letter-spacing: 5px;
     text-shadow: 1px 1px 2px #000;
     font-style: italic;
 }
 
+h2{
+    color:#363537;
+}
+
 .encabezado{
-    background: #000;
+    background: #363537;
     color: #fff;
     display: flex;
     padding: 20px;
@@ -48,34 +47,17 @@ h1{
 }
 
 .navegacion__principal ul li a:hover{
-    color: rgb(0, 204, 255);
+    color: #48B869;
 }
 
 a{
     text-decoration: none;
 }
 
-#myBtn {
-    display: none; /* Hidden by default */
-    position: fixed; /* Fixed/sticky position */
-    bottom: 70px; /* Place the button at the bottom of the page */
-    right: 10px; /* Place the button 30px from the right */
-    z-index: 99; /* Make sure it does not overlap */
-    border: none; /* Remove borders */
-    outline: none; /* Remove outline */
-    background-color: rgb(0, 0, 0); /* Set a background color */
-    color: white; /* Text color */
-    cursor: pointer; /* Add a mouse pointer on hover */
-    padding: 10px; /* Some padding */
-    border-radius: 5px; /* Rounded corners */
-    font-size: 10px; /* Increase font size */
-    transition: .3s;
-    opacity: .5;
-}
-  
-#myBtn:hover {
-    opacity: 1;
-    background-color: #000; /* Add a dark-grey background on hover */
+.sobre__mi{
+    color: #fff;
+    padding: 50px;
+    background: url(../images/btp1.jpg);
 }
 
 .sobre__mi > h2{
@@ -91,21 +73,14 @@ a{
 
 .circulo__contenedor{
     margin: auto;
-    background: url(../images/unverse1.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 40px;
-}
-
-.circulo__contenedor h2{
-    color: #fff;
+    padding: 60px;
 }
 
 .circulo__avatar{
     margin: auto;
     width: 180px;
     height: 180px;
-    background: #fff;
+    background: #48B869;
     border-radius: 100px;
 }
 
@@ -119,7 +94,7 @@ a{
 
 .backbar{
     padding: 20px;
-    background: #000;
+    background: #363537;
 }
 
 .fa-arrow-left{
@@ -127,9 +102,6 @@ a{
     transition: .3s;
 }
 
-.fa-arrow-left:hover{
-    color: pink;
-}
 
 .introduccion__aprende{
     margin: 50px;
@@ -141,15 +113,12 @@ a{
 }
 
 .ver__mas{
-    background: rgb(0, 0, 0);
+    background: #48B869;
     color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    display: block;
-    width: 150px;
-    text-align: center;
-    margin: 20px auto;
     transition: .3s;
+    padding: 10px;
+    display: block;
+    margin: auto;
 }
 
 .panel__de__cursos{
@@ -157,24 +126,14 @@ a{
 }
 
 .ver__mas:hover{
-    background: rgb(43, 43, 43);
+    background: #363537;
     color: #fff;
 }
 
-.fa-html5{
-    color: #e34c26;
-}
-
-.fa-css3-alt{
-    color: #264de4;
-}
-
-.fa-js{
-    color: #F0DB4F;
-}
 
 .aprende__conmigo{
-    margin: 20px;
+    padding: 50px;
+    color: #000;
 }
 
 .aprende__conmigo h2{
@@ -251,26 +210,15 @@ a{
     width: 33.33%;
     padding: 5px;
     text-align: center;
+    margin: 10px;
 }
 
 .column > div{
     width: 100%;
-    height: 300px;
-    border-radius: 5px;
-    padding: 10px;
-}
-
-.column h5{
-    font-style: italic;
-}
-
-.column div > i{
-    font-size: 100px;
-    margin: 20px;
 }
 
 .proyectos{
-    margin: 60px;
+    padding: 50px;
 }
 
 .proyectos h2{
@@ -285,26 +233,27 @@ a{
 
 .proyectos .column > div{
     background: rgb(0, 0, 0);
-    background: url(../images/unverse1.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
     color: #fff;
 }
 
 .redes__sociales{
-    position: absolute;
-    right: 10px;
+    position: relative;
+    top: 50px;
+    left: 100px;
+    width: 220px;
+    float: right;
+    transition: .3s;
 }
 
 .redes__sociales a{
-    color: #fff;
+    color: #363537;
     font-size: 1.5em;
     margin-right: 10px;
     transition: .3s;
 }
 
 .redes__sociales a:hover{
-    color: #999;
+    color: #48B869;
 }
 
 .informacion__proyecto h4{
@@ -342,13 +291,6 @@ a{
     height: 15px;
 }
 
-hr{
-    width: 50%;
-    margin: 50px auto;
-    border-color: #000;
-    border-style: dashed;
-}
-
 .snippets{
     padding: 50px;
 }
@@ -363,10 +305,8 @@ hr{
     margin: 40px;
 }
 
-.fragmento{
-    width: 30px;
-    height: 30px;
-    background: rgb(207, 207, 207);
+.formulario__de__contacto{
+    padding: 50px;
 }
 
 .formulario__de__contacto h2{
@@ -382,7 +322,7 @@ hr{
 form{
     margin: 40px auto;
     width: 400px;
-    background: rgb(0, 0, 0);
+    background: #363537;
     border-radius: 5px;
     padding: 20px;
 }
@@ -406,7 +346,8 @@ textarea{
 button{
     padding: 10px;
     border-radius: 5px;
-    background: #fff;
+    background: #48B869;
+    color: #fff;
     font-weight: bold;
     outline: none;
     border: none;
@@ -460,7 +401,7 @@ button{
 }
 
 footer{
-    background: #000;
+    background: #363537;
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -469,6 +410,41 @@ footer{
 footer a{
     color: #fff;
 }
+
+.tarjeta__aprende{
+    width: 300px;
+    background: #48B869;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.tarjeta__aprende h3{
+    text-align: center;
+    letter-spacing: 5px;
+    color: #363537;
+    margin: 20px;
+}
+
+.tarjeta__aprende i{
+    color: #363537;
+    font-size: 2em;
+}
+
+.tarjeta__aprende img.html__image{
+    width: 100px;
+}
+
+.tarjeta__aprende img.css__image{
+    width: 100px;
+}
+
+.tarjeta__aprende img.javascript__image{
+    width: 100px;
+}
+
+
+
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media only screen and ( max-width: 768px ){ 
