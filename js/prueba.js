@@ -111,5 +111,65 @@
 
 // console.log(aproximadamenteIgual(Math.PI / 2.0, 1.5708)); // true
 
+// let frutas = ["Manzana", "Naranja", "Cereza"];
+// frutas.forEach(miFuncion);
+
+// function miFuncion(articulo, indice) {
+//   console.log(indice + ":" + articulo + "\n"); 
+// }
+
+// miFuncion();
+
+// // 0:Manzana
+// // 1:Naranja
+// // 2:Cereza 
+// // undefined:undefined
+
+// // Para cada elemento en el arreglo: actualiza el valor con 10 veces del valor original.
+
+// var numeros = [65, 44, 12, 4];
+// numeros.forEach(miFuncion);
+
+// function miFuncion(articulo, indice, arreglo) {
+//   arreglo[indice] = articulo * 10;
+// }
+
+// console.log(numeros); // [ 650, 440, 120, 40 ]
+
+// Obtén la suma de todos los números en el arreglo
+
+// let suma = 0;
+// const numeros = [65, 44, 12, 4];
+// numeros.forEach(miFuncion);
+
+// function miFuncion(articulo) {
+//   suma += articulo;
+//   console.log(suma);
+// }
+
+// miFuncion();
+// // 65 
+// // 109
+// // 121
+// // 125
+// // NaN
+
+// let miArreglo = Array.from("ABCDEFG");
+
+// console.log(miArreglo);
+
+// //[
+// //   'A', 'B', 'C',
+// //   'D', 'E', 'F',
+// //   'G'
+// //  ]
+
+// // Comprueba si el arreglo frutas incluye "Mango":
+
+// var frutas = ["Banana", "Naranja", "Manzana", "Mango"];
+// var n = frutas.includes("Mango");
+
+// console.log(n); // true
+
 
 
