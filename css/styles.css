@@ -54,20 +54,7 @@ a{
 }
 
 .sobre__mi{
-    color: #fff;
-    padding: 50px;
-    background: url(../images/btp1.jpg);
-}
-
-.sobre__mi > h2{
-    text-align: center;
-    margin: 40px;
-}  
-
-.sobre__mi p{
-    margin: 20px;
-    text-align: center;
-    line-height: 30px;
+        background: url(../images/btp1.jpg);
 }
 
 .circulo__contenedor{
@@ -207,13 +194,11 @@ a{
     display: flex;
 }
   
-/* Create three equal columns that sits next to each other */
 .column {
     display: flex;
     width: 33.33%;
-    padding: 5px;
+    padding: 10px;
     text-align: center;
-    margin: 10px;
 }
 
 .column > div{
@@ -232,18 +217,21 @@ a{
     color: #fff;
 }
 
+.proyectos h3{
+    clear: both;
+}
+
 .proyectos p{
     margin: 40px;
     text-align: center;
 }
 
 .redes__sociales{
-    position: relative;
-    top: 50px;
-    left: 100px;
-    width: 220px;
-    float: right;
+    width: 250px;
     transition: .3s;
+    margin: 30px auto;
+    padding: 10px;
+    text-align: center;
 }
 
 .redes__sociales a{
@@ -283,8 +271,8 @@ a{
 }
 
 .estrellas__de__dificultad{
-    width: 100px;
     margin: 20px;
+    float: right;
 }
 
 .estrellas__de__dificultad > img{
@@ -353,7 +341,7 @@ textarea{
 button{
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #fff;
+    border: none;
     background: #2a9d8f;
     color: #fff;
     font-weight: bold;
@@ -364,7 +352,6 @@ button{
 }
 
 button:hover{
-    border: 1px solid #2a9d8f;
     background: #fff;
     color: #2a9d8f;
 }
@@ -437,7 +424,7 @@ footer a{
 .tarjeta__aprende h3{
     text-align: center;
     letter-spacing: 5px;
-    margin: 20px;
+    margin: 50px;
 }
 
 .tarjeta__aprende p{
@@ -470,6 +457,18 @@ footer a{
 
 .tarjeta__aprende img.javascript__image{
     width: 100px;
+}
+
+.tarjeta__aprende img.php__image{
+    width: 150px;
+}
+
+.tarjeta__aprende img.mysql__image{
+    width: 150px;
+}
+
+.tarjeta__aprende img.laravel__image{
+    width: 120px;
 }
 
 .tarjeta__proyectos{
@@ -529,8 +528,27 @@ hr{
     background: #264653;
 }
 
+.paginacion{
+    color: #fff;
+    margin: 50px auto;
+    text-align: center;
+}
 
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+.paginacion a{
+    color: #fff;
+    padding: 10px;
+    display: inline-block;
+    transition: .3s;
+}
+
+.paginacion a:hover{
+    background:#2a9d8f;
+}
+
+.paginacionNumeroActivo{
+    background: #2a9d8f;
+}
+
 @media only screen and ( max-width: 768px ){ 
 .row{
     flex-direction: column;
