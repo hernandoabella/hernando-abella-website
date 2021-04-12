@@ -171,5 +171,46 @@
 
 // console.log(n); // true
 
+// // Busca en un arreglo el elemento "Manzana".
 
+// let miFuncion = () => {
+//     const frutas = ["Banana", "Naranja", "Manzana", "Mango"];
+//     let a = frutas.indexOf("Manzana");
+//     console.log(a);
+// }
 
+// miFuncion();
+
+// // Busca en un arreglo el elemento "Manzana" comenzando la búsqueda desde la posición 4
+
+// let miFuncion = () => {
+//     let frutas = ["Banana", "Naranja", "Manzana", "Mango", "Banana", "Naranja", "Manzana", "Mango"];
+//     let a = frutas.indexOf("Manzana", 4);
+//     console.log(a);
+// }
+
+// miFuncion();
+
+// Comprueba si "frutas" es un arreglo
+
+// let miFuncion = () => {
+//     let frutas = ["Banana", "Naranja", "Manzana", "Mango"];
+//     console.log(Array.isArray(frutas));
+// }
+
+// miFuncion();
+
+// const miFuncion = () => {
+//     const frutas = ["Banana", "Naranja", "Manzana", "Mango"];
+//     console.log(frutas.join(""));
+// }
+
+// miFuncion(); // BananaNaranjaManzanaMango
+
+// const miFuncion = () => {
+//     const frutas = ["Banana", "Naranja", "Manzana", "Mango"];
+//     const x = frutas.join(" y ");
+//     console.log(x);
+//   }
+
+// miFuncion(); // Banana y Naranja y Manzana y Mango
