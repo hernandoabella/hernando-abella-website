@@ -107,8 +107,7 @@ a{
     display: block;
     width: 200px;
     text-align: center;
-    margin: 10px auto;
-    border-radius: 5px;
+    margin: 50px auto;
 }
 
 .ver__mas:hover{
@@ -228,7 +227,7 @@ a{
     clear: both;
 }
 
-.proyectos p{
+.proyectos > p{
     margin: 40px;
     text-align: center;
 }
@@ -236,7 +235,6 @@ a{
 .tarjeta__proyectos{
     background: #264653;
     color: #fff;
-    border-radius: 5px;
 }
 
 .tarjeta__proyectos h3{
@@ -244,18 +242,23 @@ a{
     padding: 30px;
 }
 
-.tarjeta__proyectos i{
-    font-size: 2em;
-    color:#fff;
-    background: #2a9d8f;
-    border-radius: 5%;
-    padding: 10px;
-    transition: .3s;
+.tarjeta__proyectos p{
+    margin-bottom: 50px;
 }
 
-.tarjeta__proyectos i:hover{
+.tarjeta__proyectos a{
+    color:#fff;
+    background: #2a9d8f;
+    padding: 10px;
+    transition: .3s;
+    display: block;
+    border: 1px solid #2a9d8f;
+}
+
+.tarjeta__proyectos a:hover{
     background: #fff;
     color: #264653;
+    border: 1px solid #264653;
 }
 
 .redes__sociales{
