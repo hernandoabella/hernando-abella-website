@@ -213,9 +213,12 @@ a{
     justify-content: space-between;
 }
 
+.fecha__proyectos{
+    font-size: .4em;
+}
+
 .proyectos{
     padding: 30px;
-
 }
 
 .proyectos h2{
