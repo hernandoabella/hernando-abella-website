@@ -15,8 +15,8 @@ h1{
     background: #264653;
 }
 
-h2{
-    color: #000;
+.logo{
+    width: 100px;
 }
 
 .encabezado{
@@ -479,12 +479,6 @@ footer a{
     color: #264653;
 }
 
-hr{
-    width: 80%;
-    margin: auto;
-    background: #264653;
-}
-
 .paginacion{
     margin: 50px auto;
     text-align: center;
@@ -492,18 +486,20 @@ hr{
 }
 
 .paginacion a{
-    color: #000;
+    color: #177E89;
     padding: 10px;
     display: inline-block;
     transition: .3s;
 }
 
 .paginacion a:hover{
-    background:#4d9efa;
+    background:#177E89;
+    color: #fff;
 }
 
 .paginacionNumeroActivo{
-    background: #2a9d8f;
+    background: #177E89;
+    color: #fff !important;
 }
 
 @media only screen and ( max-width: 768px ){ 
