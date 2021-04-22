@@ -19,7 +19,7 @@
 .e_e h3{
     text-align: center;
     margin: 20px;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
     color: #457b9d;
 }
 
@@ -27,7 +27,6 @@
     letter-spacing: 1px;
     text-align: justify;
     line-height: 30px;
-    margin: 20px;
 }
 
 .e_e hr{
@@ -35,6 +34,12 @@
     margin: auto;
     border: 1px solid #457b9d;
     border-width: 2px;
+}
+
+
+.e_e ul li{
+    margin: 20px;
+    list-style: square;
 }
 
 .logo{
@@ -71,7 +76,7 @@ a{
 .circulo__avatar > img{
     width: 180px;
     height: 180px;
-    padding: 10px;
+    padding: 5px;
     margin: auto;
     border-radius: 100px;
 }
@@ -96,8 +101,36 @@ a{
     margin: 20px;
 }
 
-.ver__mas{
-    background: #457b9d;
+.panel__de__cursos{
+    margin: 40px;
+}
+
+.aprende__conmigo{
+    padding: 30px;
+    color: #1d3557;
+    background: #a8dadc;
+}
+
+.aprende__conmigo hr{
+    width: 100px;
+    margin: auto;
+    border-width: 2px;
+    border: 1px solid #1d3557;
+}
+
+.aprende__conmigo h2{
+    margin: 40px;
+    text-align: center;
+    color: #1d3557;
+}
+
+.aprende__conmigo p{
+    text-align: center;
+    margin: 20px;
+}
+
+.aprende__conmigo .ver__mas{
+    background: #1d3557;
     color: #f1faee;
     border: none;
     transition: .3s;
@@ -108,38 +141,9 @@ a{
     margin: 50px auto;
 }
 
-.ver__mas:hover{
+.aprende__conmigo .ver__mas:hover{
     background: #f1faee;
     color: #1d3557;
-}
-
-
-.panel__de__cursos{
-    margin: 40px;
-}
-
-.aprende__conmigo{
-    padding: 30px;
-    color: #F0FFF1;
-    background: #1d3557;
-}
-
-.aprende__conmigo hr{
-    width: 100px;
-    margin: auto;
-    border-width: 2px;
-    border: 1px solid #f1faee;
-}
-
-.aprende__conmigo h2{
-    margin: 40px;
-    text-align: center;
-    color: #fff;
-}
-
-.aprende__conmigo p{
-    text-align: center;
-    margin: 20px;
 }
 
 .curso{
@@ -212,7 +216,7 @@ a{
 }
 
 .flex__sake{
-    background: #177E89;
+    background: #1d3557;
     padding: 10px;
     display: flex;
     justify-content: space-between;
@@ -250,9 +254,24 @@ a{
     text-align: center;
 }
 
-.tarjeta__proyectos{
-    background: #084C61;
+.proyectos .ver__mas{
+    background: #1d3557;
     color: #fff;
+    padding: 10px;
+    display: block;
+    text-align: center;
+    margin: 60px auto;
+    transition: .3s;
+    width: 200px;
+}
+
+.proyectos .ver__mas:hover{
+
+}
+
+.tarjeta__proyectos{
+    background: #457b9d;
+    color: #f1faee;
 }
 
 .tarjeta__proyectos h3{
@@ -266,21 +285,21 @@ a{
 
 .tarjeta__proyectos a{
     color:#fff;
-    background: #177E89;
+    background: #1d3557;
     padding: 10px;
     transition: .3s;
     display: block;
-    border: 1px solid #2a9d8f;
+    border: 1px solid #1d3557;
 }
 
 .tarjeta__proyectos a:hover{
     background: #fff;
-    color: #177E89;
-    border: 1px solid #177E89;
+    color: #1d3557;
+    border: 1px solid #1d3557;
 }
 
 .redes__sociales{
-    width: 250px;
+    width: 300px;
     transition: .3s;
     margin: 30px auto;
     padding: 10px;
@@ -330,14 +349,14 @@ a{
 
 .snippets{
     padding: 50px;
-    background: #12262e;
-    color: #fff;
+    background: #a8dadc;
+    color: #1d3557;
 }
 
 .snippets h2{
     text-align: center;
     margin: 40px;
-    color: #fff;
+    color: #1d3557;
 }
 
 .snippets p{
@@ -345,7 +364,29 @@ a{
     margin: 40px;
 }
 
+.snippets .ver__mas{
+    background: #1d3557;
+    color: #f1faee;
+    border: none;
+    transition: .3s;
+    padding: 10px;
+    display: block;
+    width: 170px;
+    text-align: center;
+    margin: 50px auto;
+}
 
+.snippets .ver__mas:hover{
+    background: #457b9d;
+    color: #f1faee;
+}
+
+.snippets hr{
+    width: 100px;
+    border-width: 2px;
+    border: 1px solid #1d3557;
+    margin: auto;
+}
 
 .demostracion{
     margin: 20px auto;
@@ -424,7 +465,7 @@ footer a{
 
 .tarjeta__aprende i{
     color: #fff;
-    background: #2a9d8f;
+    background: #457b9d;
     padding: 10px;
     font-size: 2em;
     float: left;
@@ -433,8 +474,8 @@ footer a{
 }
 
 .tarjeta__aprende i:hover{
-    color: #2a9d8f;
-    background: #fff;
+    color: #f1faee;
+    background: #1d3557;
 }
 
 .tarjeta__aprende img.html__image{
@@ -465,8 +506,8 @@ footer a{
 
 .tarjeta__snippets{
     width: 300px;
-    background: #264653;
-    color: #fff;
+    background: #1d3557;
+    color: #f1faee;
     padding: 20px;
 }
 
@@ -477,15 +518,18 @@ footer a{
 .tarjeta__snippets i{
     text-align: center;
     font-size: 2em;
-    color: #fff;
-    background: #2a9d8f;
+    color: #1d3557;
+    background: #f1faee;
     padding: 10px;
     transition: .3s;
+    width: 100%;
+    border-radius: 50px 10px 50px 10px;
 }
 
 .tarjeta__snippets i:hover{
-    background: #fff;
-    color: #264653;
+    background: #457b9d;
+    color: #f1faee;
+    border-radius: 10px 50px 10px 50px;
 }
 
 .paginacion{
