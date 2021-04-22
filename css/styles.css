@@ -182,17 +182,17 @@ a{
 
 .html__logo{
     width: 100px;
-    height: 100px;
+    
 }
 
 .css__logo{
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    
 }
 
 .javascript__logo{
     width: 100px;
-    height: 100px;
+   
 }
 
 .php__logo{
@@ -276,7 +276,7 @@ a{
 }
 
 .proyectos .ver__mas:hover{
-
+    background: #457b9d;
 }
 
 .tarjeta__proyectos{
@@ -482,21 +482,18 @@ footer a{
     margin: 20px;
 }
 
-.tarjeta__aprende i{
+.tarjeta__aprende a{
     color: #fff;
     background: #457b9d;
     padding: 10px;
-    font-size: 2em;
-    float: left;
-    border-radius: 50px 0px 50px 0px;
     transition: .3s;
     width: 100%;
+    display: block;
 }
 
-.tarjeta__aprende i:hover{
+.tarjeta__aprende a:hover{
     color: #f1faee;
     background: #1d3557;
-    border-radius: 0px 50px 0px 50px;
 }
 
 .tarjeta__aprende img.html__image{
@@ -504,7 +501,7 @@ footer a{
 }
 
 .tarjeta__aprende img.css__image{
-    width: 100px;
+    width: 107px;
 }
 
 .tarjeta__aprende img.javascript__image{
@@ -542,37 +539,13 @@ footer a{
     padding: 10px;
     transition: .3s;
     width: 100%;
-    border-radius: 50px 0px 50px 0px;
 }
 
 .tarjeta__snippets i:hover{
     background: #457b9d;
     color: #f1faee;
-    border-radius: 0px 50px 0px 50px;
 }
 
-.paginacion{
-    margin: 50px auto;
-    text-align: center;
-    width: 200px;
-}
-
-.paginacion a{
-    color: #177E89;
-    padding: 10px;
-    display: inline-block;
-    transition: .3s;
-}
-
-.paginacion a:hover{
-    background:#177E89;
-    color: #fff;
-}
-
-.paginacionNumeroActivo{
-    background: #177E89;
-    color: #fff !important;
-}
 
 @media only screen and ( max-width: 768px ){ 
 .row{
