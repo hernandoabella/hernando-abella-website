@@ -1,0 +1,124 @@
+*{
+    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background:rgb(5, 85, 12);
+    padding: 10px;
+    color: #fff;
+}
+
+hr{
+    margin: 10px 0px;
+    border-color: rgb(43, 167, 54);
+    width: 100%;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    background-color: #f1f1f1;
+}
+  
+.header h2 {
+    text-align: center;
+}
+  
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background: rgb(5, 85, 12);
+}
+  
+.progress-bar {
+    height: 8px;
+    background: rgb(47, 187, 59);
+    width: 0%;
+}
+  
+.content {
+    padding: 100px 0;
+    margin: 50px auto 0 auto;
+    width: 80%;
+}
+
+.flexStuff{
+    display: flex;
+}
+
+aside.sideBar{
+    width: 20%;
+    position: fixed;
+    top: 46px;
+}
+
+aside ul li{
+    list-style-type: none;
+}
+
+aside ul li a{
+    display: block;
+    transition: .3s;
+    text-decoration: none;
+    text-align: center;
+    color: #000;
+}
+
+aside ul li a:hover{
+    background: rgb(67, 248, 83);
+    color: #000;
+    border-left: 1px solid rgb(47, 187, 59);
+    border-width: 10px;
+    padding: 10px;
+}
+
+.activeItem{
+    background: rgb(67, 248, 83);
+    color: #000;
+    border-left: 1px solid rgb(47, 187, 59);
+    border-width: 5px;
+}
+
+.articles{
+    background: rgb(67, 248, 83);
+    width: 80%;
+    position: absolute;
+    right: 0;
+    top: 46px;
+    padding: 20px;
+}
+
+section{
+    padding: 10px;
+    background: rgb(56, 209, 69);
+    margin-bottom: 10px;
+}
+
+section h2{
+    margin-bottom: 10px;
+    color: rgb(5, 85, 12);
+    border-bottom: 1px solid rgb(47, 187, 59);
+    border-width: 5px;
+    width: 0%;
+    transition: width 3s;
+}
+
+section a{
+    display: block;
+    margin-top: 10px;
+    background: rgb(5, 85, 12);
+    color: #fff;
+    padding: 10px;
+    transition: .3s;
+}
+
+section a:hover{
+    color:rgb(5, 85, 12);
+    background: #fff;
+    padding: 20px;
+}

@@ -1,0 +1,57 @@
+.searchBar {
+    background: rgb(14, 226, 14);
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    margin: auto;
+  }
+  
+  .searchBar>input {
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .card {
+    background: rgb(140, 255, 140);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .pagination {
+    background: violet;
+    margin: auto;
+    width: 300px;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .pagination a {
+    padding: 10px;
+    transition: .3s;
+    text-decoration: none;
+  }
+  
+  .pagination a:hover {
+    background: rgb(192, 91, 192);
+  }
+  
+  .pagActive {
+    background: blue;
+    color: #fff;
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+  .column {
+    width: 33.33%;
+    padding: 10px;
+  }
+  
+  @media screen and (max-width: 500px) {
+    .column {
+      width: 100%;
+    }
+  }
