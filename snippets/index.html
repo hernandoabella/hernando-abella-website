@@ -8,26 +8,45 @@
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="./listFiltering.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
     <div class="backbar">
-        <a href="../index.html"><i class="fas fa-arrow-left"></i></a>
+        <div class="flexyHeada">
+            <div><a href="../index.html"><i class="fas fa-arrow-left"></i></a></div>
+        <div><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar fragmento..."></div>
+        </div>
     </div>
 
     <section class="snippets">
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+        <h1>Fragmentos de código para todas tus necesidades</h1>
 
-<ul id="myUL">
-  <li><a href="#">Adele</a></li>
-  <li><a href="#">Agnes</a></li>
+        <ul id="myUL">
+            <li><a href="https://www.redtube.com">1 — stuff</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><a href="#">10</a></li>
+            <li><a href="#">11</a></li>
+            <li><a href="#">12</a></li>
+            <li><a href="#">13</a></li>
+        </ul>
 
-  <li><a href="#">Billy</a></li>
-  <li><a href="#">Bob</a></li>
-
-  <li><a href="#">Calvin</a></li>
-  <li><a href="#">Christina</a></li>
-  <li><a href="#">Cindy</a></li>
-</ul>
+        <div id="paginator" class="pagination">
+            <a href="#" data-page="1"><i class="fas fa-angle-double-left"></i></a>
+            <a href="#" class="pagActive" data-page="1">1</a>
+            <a href="#" data-page="2">2</a>
+            <a href="#" data-page="3">3</a>
+            <a href="#" data-page="4">4</a>
+            <a href="#" data-page="5">5</a>
+            <a href="#" data-page="6">6</a>
+            <a href="#" data-page="6"><i class="fas fa-angle-double-right"></i></a>
+          </div>
     </section>
 
 

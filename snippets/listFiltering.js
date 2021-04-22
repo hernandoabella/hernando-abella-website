@@ -1,19 +1,31 @@
-function myFunction() {
-    // Declare variables
-    var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById('myInput');
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("myUL");
-    li = ul.getElementsByTagName('li');
-  
-    // Loop through all list items, and hide those who don't match the search query
-    for (i = 0; i < li.length; i++) {
-      a = li[i].getElementsByTagName("a")[0];
-      txtValue = a.textContent || a.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        li[i].style.display = "";
-      } else {
-        li[i].style.display = "none";
-      }
+$(document).ready(function() {
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    showPage(1, value);
+  });
+
+  pageSize = 10;
+
+  showPage = function(page, searchTerm) {
+    let $filteredCards = $("li a");
+    if (searchTerm) {
+      $filteredCards = $filteredCards.filter(function() {
+        return $(this).text().toLowerCase().indexOf(searchTerm) > -1;
+      });
     }
+    $("li a").parent().hide(); // in here add .parent()
+    $filteredCards.each(function(n) {
+      if (n >= pageSize * (page - 1) && n < pageSize * page)
+        $(this).parent().show(); // also in here
+    });
   }
+
+  showPage(1);
+
+  $("#paginator a").click(function() {
+    $("#paginator a").removeClass("pagActive");
+    $(this).addClass("pagActive");
+    showPage(parseInt($(this).data('page')), $("#myInput").val().toLowerCase());
+  });
+
+});

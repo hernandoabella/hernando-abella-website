@@ -1,12 +1,20 @@
+.flexyHeada{
+  display: flex;
+  justify-content: space-between;
+}
+
+.flexyHeada:nth-child(1) i{
+  margin-top: 12px;
+}
+
 #myInput {
-  background-image: url('/css/searchicon.png'); /* Add a search icon to input */
-  background-position: 10px 12px; /* Position the search icon */
-  background-repeat: no-repeat; /* Do not repeat the icon image */
-  width: 100%; /* Full-width */
-  font-size: 16px; /* Increase font-size */
-  padding: 12px 20px 12px 40px; /* Add some padding */
-  border: 1px solid #ddd; /* Add a grey border */
-  margin-bottom: 12px; /* Add some space below the input */
+  width: 400px; 
+  padding: 10px;
+}
+
+h1{
+  font-size: 2em;
+  padding: 10px;
 }
 
 #myUL {
@@ -14,19 +22,40 @@
   list-style-type: none;
   padding: 0;
   margin: 0;
+  clear: both;
 }
 
 #myUL li a {
-  border: 1px solid #ddd; /* Add a border to all links */
-  margin-top: -1px; /* Prevent double borders */
-  background-color: #f6f6f6; /* Grey background color */
-  padding: 12px; /* Add some padding */
-  text-decoration: none; /* Remove default text underline */
-  font-size: 18px; /* Increase the font-size */
-  color: black; /* Add a black text color */
-  display: block; /* Make it into a block element to fill the whole list */
+  border: 1px solid #ddd; 
+  margin: 10px;
+  background-color: #f6f6f6; 
+  padding: 12px; 
+  text-decoration: none; 
+  font-size: 18px; 
+  color: black; 
+  display: block; 
 }
 
-#myUL li a:hover:not(.header) {
-  background-color: #eee; /* Add a hover effect to all links, except for headers */
+.pagination {
+  margin: 20px auto;
+  width: 300px;
+  text-align: center;
+  padding: 10px;
+}
+
+.pagination a {
+  padding: 10px;
+  transition: .3s;
+  text-decoration: none;
+  color: #000;
+}
+
+.pagination a:hover {
+  background: rgb(192, 91, 192);
+  color: #fff;
+}
+
+a.pagActive {
+  background: blue;
+  color: #fff;
 }
