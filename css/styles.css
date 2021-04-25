@@ -136,7 +136,7 @@ a{
 
 .aprende__conmigo p{
     text-align: center;
-    margin: 20px;
+    margin: 40px;
 }
 
 .aprende__conmigo .ver__mas{
@@ -412,14 +412,17 @@ a{
 .code__container{
     background: #a8dadc;
     padding: 10px;
-    width: 1000px;
+    width: 90%;
     border-radius: 5px;
-    margin: auto;
+    margin: 30px auto;
 }
 
 .code__container hr{
-    border: 1px solid #f1faee;
+    border: 1px solid #457b9d;
     border-width: 5px;
+    margin: 50px auto;
+    border-radius: 5px;
+    width: 80%;
 }
 
 .code__container h5{
@@ -431,6 +434,7 @@ h5.html__tag{
     color: #fff;
     width: 60px;
     text-align: center;
+    border-radius: 5px;
 }  
 
 h5.css__tag{
@@ -438,12 +442,14 @@ h5.css__tag{
     color: #fff;
     text-align: center;
     width: 60px;
+    border-radius: 5px;
 }
 
 h5.javascript__tag{
-    background: #323330;
-    color: #f0db4f;
+    background: #f0db4f;
+    color: #323330;
     text-align: center;
+    border-radius: 5px;
     width: 100px;
 }
 
@@ -466,6 +472,7 @@ h5.javascript__tag{
     padding: 10px;
     margin: 20px auto;
     width: 80%;
+    border-radius: 5px;
 }
 
 .codigo__css{
@@ -474,6 +481,7 @@ h5.javascript__tag{
     padding: 10px;
     margin: 20px auto;
     width: 80%;
+    border-radius: 5px;
 }
 
 .codigo__javascript{
@@ -482,6 +490,7 @@ h5.javascript__tag{
     padding: 10px;
     margin: 20px auto;
     width: 80%;
+    border-radius: 5px;
 }
 
 /* Style the list */
@@ -540,6 +549,7 @@ footer a{
     color: #1d3557;
     padding: 10px;
     text-align: center;
+    border-radius: 5px;
 }
 
 .tarjeta__aprende h3{
@@ -561,6 +571,7 @@ footer a{
     transition: .3s;
     width: 100%;
     display: block;
+    border-radius: 5px;
 }
 
 .tarjeta__aprende a:hover{
@@ -598,6 +609,7 @@ footer a{
     background: #1d3557;
     color: #f1faee;
     padding: 20px;
+    border-radius: 5px;
 }
 
 .tarjeta__snippets h3{
@@ -612,6 +624,7 @@ footer a{
     transition: .3s;
     width: 100%;
     display: block;
+    border-radius: 5px;
 }
 
 .tarjeta__snippets a:hover{
@@ -665,6 +678,14 @@ footer a{
 
 .footerFlex{
     flex-direction: column;
+}
+
+footer div{
+    margin-bottom: 20px;
+}
+
+.code__container{
+    width: 100%;
 }
 
 }
