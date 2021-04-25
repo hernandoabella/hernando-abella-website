@@ -409,8 +409,51 @@ a{
     margin-top: 20px;
 }
 
+.code__container{
+    background: #a8dadc;
+    padding: 10px;
+    width: 1000px;
+    border-radius: 5px;
+    margin: auto;
+}
+
+.code__container hr{
+    border: 1px solid #f1faee;
+    border-width: 5px;
+}
+
+.code__container h5{
+    padding: 10px;
+}
+
+h5.html__tag{
+    background: #e34c26;
+    color: #fff;
+    width: 60px;
+    text-align: center;
+}  
+
+h5.css__tag{
+    background: #264de4;
+    color: #fff;
+    text-align: center;
+    width: 60px;
+}
+
+h5.javascript__tag{
+    background: #323330;
+    color: #f0db4f;
+    text-align: center;
+    width: 100px;
+}
+
 .codigo__del__proyecto{
-    margin: 20px;
+    padding: 50px;
+}
+
+.codigo__del__proyecto h2{
+    font-size: 2em;
+    color: #457b9d;
 }
 
 .codigo__del__proyecto p{
@@ -421,28 +464,55 @@ a{
     background: #e34c26;
     color: #fff;
     padding: 10px;
-    border-radius: 5px;
     margin: 20px auto;
-    width: 600px;
+    width: 80%;
 }
 
 .codigo__css{
     background: #264de4;
     color: #fff;
     padding: 10px;
-    border-radius: 5px;
     margin: 20px auto;
-    width: 600px;
+    width: 80%;
 }
 
 .codigo__javascript{
     background: #f0db4f;
     color: #323330;
     padding: 10px;
-    border-radius: 5px;
     margin: 20px auto;
-    width: 600px;
+    width: 80%;
 }
+
+/* Style the list */
+ul.breadcrumb {
+    list-style: none;
+  }
+  
+  /* Display list items side by side */
+  ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+  }
+  
+  /* Add a slash symbol (/) before/behind each list item */
+  ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+  }
+  
+  /* Add a color to all links inside the list */
+  ul.breadcrumb li a {
+    color: #457b9d;
+    text-decoration: none;
+  }
+  
+  /* Add a color on mouse-over */
+  ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+  }
 
 .footerFlex{
     display: flex;
@@ -549,6 +619,24 @@ footer a{
     color: #f1faee;
 }
 
+.download a{
+    background: #457b9d;
+    border: 1px solid #457b9d;
+    color: #f1faee;
+    padding: 10px;
+    display: block;
+    text-align: center;
+    width: 200px;
+    transition: .3s;
+}
+
+.download a:hover{
+    background: #f1faee;
+    color: #457b9d;
+    border: 1px solid #457b9d;
+}
+
+/* diseño responsive */
 
 @media only screen and ( max-width: 768px ){ 
 .row{
