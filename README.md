@@ -29,4 +29,12 @@ Estos proyectos te permiten practicar y entender el código real para que puedas
 - Reserva de asientos para peliculas
 - Sistema de listado de libros
 - Sistema para venta de frutas
+-
+- 
+- 
 
+## Notas
+
+Cosas por hacer:
+
+Este proyecto tiene muchas cosas pendientes por hacer en la dinámica del tiempo correspondiente. La sig lista de cosas por hacer están en pendiente y necesario realizarlas para su debida competencia.

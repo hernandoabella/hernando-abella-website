@@ -1,23 +1,24 @@
 .searchBar {
     border-radius: 5px;
-    margin: auto;
-  }
+    margin: 20px auto;
+    padding: 10px;
+}
   
-  .searchBar>input {
+  .searchBar > input {
     padding: 10px;
     border-radius: 5px;
+    width: 300px;
+    float: right;
+    margin-bottom: 20px;
+  }
+
+  .rowContainer{
+    clear: both;
   }
   
-  .card {
-    background: rgb(140, 255, 140);
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-  }
   
   .pagination {
-    background: violet;
-    margin: auto;
+    margin: 50px auto;
     width: 300px;
     text-align: center;
     padding: 10px;
@@ -30,12 +31,15 @@
   }
   
   .pagination a:hover {
-    background: rgb(192, 91, 192);
+    background: #1d3557;
+    color: #fff;
+    border-radius: 5px;
   }
   
   .pagActive {
-    background: blue;
+    background: #1d3557;
     color: #fff;
+    border-radius: 5px;
   }
   
   .row {

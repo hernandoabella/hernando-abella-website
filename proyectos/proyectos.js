@@ -7,16 +7,16 @@ $(document).ready(function() {
     pageSize = 9;
   
     showPage = function(page, searchTerm) {
-      let $filteredCards = $(".card");
+      let $filteredCards = $(".tarjeta__proyectos");
       if (searchTerm) {
         $filteredCards = $filteredCards.filter(function() {
           return $(this).text().toLowerCase().indexOf(searchTerm) > -1;
         });
       }
-      $(".card").parent().hide(); // in here add .parent()
+      $(".tarjeta__proyectos").parent().hide(); 
       $filteredCards.each(function(n) {
         if (n >= pageSize * (page - 1) && n < pageSize * page)
-          $(this).parent().show(); // also in here
+          $(this).parent().show(); 
       });
     }
   
