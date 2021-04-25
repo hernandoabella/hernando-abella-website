@@ -23,15 +23,27 @@ He logrado simplificar el aprendizaje para evitar limitaciones, aprende conmigo 
 
 Estos proyectos te permiten practicar y entender el código real para que puedas lograr tus propias aplicaciones de la mejor forma.
 
-- Contador de caracteres
-- Aplicacion del clima
-- Convierte tu edad en dias
-- Reserva de asientos para peliculas
-- Sistema de listado de libros
-- Sistema para venta de frutas
--
-- 
-- 
+1. Contador de caracteres
+2. Aplicacion del clima
+3. Convierte tu edad en dias
+4. Reserva de asientos para peliculas
+5. Sistema de listado de libros
+6. Sistema para venta de frutas
+7. 
+8.
+9.
+10. 
+11. 
+12.
+13.
+14.
+15.
+16.
+17.
+18.
+19.
+20.
+
 
 ## Notas
 
