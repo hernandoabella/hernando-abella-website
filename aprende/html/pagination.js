@@ -1,6 +1,6 @@
 // When the user scrolls the page, execute myFunction 
 window.onscroll = function() {
-    myFunction()
+    myFunction();
 };
 
 function myFunction() {
@@ -45,7 +45,6 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// select item siblings
 $(document).ready(() => {
   $('aside ul li a').click(function(){
     $(this).removeClass('activeItem')
