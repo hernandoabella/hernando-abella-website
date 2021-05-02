@@ -44,8 +44,6 @@ Estos proyectos te permiten practicar y entender el código real para que puedas
 19.
 20.
 
-
-
 ## Notas
 
 Cosas por hacer:
