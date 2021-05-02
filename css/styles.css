@@ -416,10 +416,8 @@ a{
 
 .code__container hr{
     border: 1px solid #457b9d;
-    border-width: 5px;
     margin: 50px auto;
-    border-radius: 5px;
-    width: 80%;
+    width: 50%;
 }
 
 .code__container h5{
@@ -652,6 +650,7 @@ footer a{
     display: flex;
     justify-content: space-between;
 }
+
 
 /* diseño responsive */
 
