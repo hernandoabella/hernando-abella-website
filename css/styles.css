@@ -140,7 +140,7 @@ a{
 }
 
 .aprende__conmigo .ver__mas{
-    background: #1d3557;
+    background: #457b9d;
     border: 1px solid #1d3557;
     color: #f1faee;
     transition: .3s;
@@ -266,7 +266,7 @@ a{
 }
 
 .proyectos .ver__mas{
-    background: #1d3557;
+    background: #13263f;
     color: #fff;
     padding: 10px;
     display: block;
@@ -277,11 +277,11 @@ a{
 }
 
 .proyectos .ver__mas:hover{
-    background: #457b9d;
+    background: #1d3557;
 }
 
 .tarjeta__proyectos{
-    background: #457b9d;
+    background: #13263f;
     color: #f1faee;
 }
 
@@ -410,9 +410,6 @@ a{
 }
 
 .code__container{
-    background: #a8dadc;
-    padding: 10px;
-    width: 90%;
     border-radius: 5px;
     margin: 30px auto;
 }
@@ -496,6 +493,7 @@ h5.javascript__tag{
 /* Style the list */
 ul.breadcrumb {
     list-style: none;
+    margin-top: 10px;
   }
   
   /* Display list items side by side */
@@ -525,7 +523,7 @@ ul.breadcrumb {
 
 .footerFlex{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 footer{
@@ -649,9 +647,18 @@ footer a{
     border: 1px solid #457b9d;
 }
 
+
+.flexNav{
+    display: flex;
+    justify-content: space-between;
+}
+
 /* diseño responsive */
 
 @media only screen and ( max-width: 768px ){ 
+
+  
+
 .row{
     flex-direction: column;
 }
@@ -687,5 +694,9 @@ footer div{
 .code__container{
     width: 100%;
 }
+
+.flexNav{
+    flex-direction: column;
+}  
 
 }
