@@ -8,6 +8,10 @@
     scroll-behavior: smooth;
 }
 
+.card__icon img{
+    width: 100px;
+}
+
 .contactInformation{
     display: flex;
     justify-content: space-between;
@@ -55,8 +59,6 @@
 .logo{
     width: 50px;
 }
-
-
 
 /*header*/
 
@@ -287,7 +289,7 @@ a{
 
 .tarjeta__proyectos h3{
     text-align: center;
-    padding: 30px;
+    padding: 20px;
 }
 
 .tarjeta__proyectos p{
