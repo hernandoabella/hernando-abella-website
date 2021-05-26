@@ -21,6 +21,27 @@
 
     <section class="codigo__del__proyecto">
         <h2>Aplicación del clima</h2>
+        <div class="demostracion">
+            <div id="contenedorBusqueda">
+                <input type="text" placeholder="Ingresa el nombre de una ciudad" id="entradaBusqueda">
+                <button id="buscar"><i class="fas fa-search"></i></button>
+            </div>
+        
+            <div id="contenedorClima">
+                <div>
+                    <h2 id="encabezadoCiudad"></h2>
+                    
+                    <div class="swipe">
+                        <div id="temperatura"></div>
+                        <div><img id="iconoClima"></div>
+                    </div>
+        
+                    <div id="descripcionClima"></div>
+                    <div id="velocidadViento"></div>
+                    <div id="humedad"></div>
+                </div>
+            </div>
+        </div>
         <br>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi placeat sunt adipisci? Consequuntur aperiam velit facilis quis ex autem veniam incidunt eveniet animi? Ab perspiciatis sapiente quia quasi deleniti unde.</p>
         <br>
@@ -40,31 +61,14 @@
         <div class="code__container">
             <h5 class="html__tag">HTML</h5>
             <div class="codigo__html">
-                <pre class="line-numbers"><code class="language-html">&lt;div class="slidecontainer"&gt;
-                    &lt;input type="range" min="1" max="100" value="50" class="slider" id="myRange"&gt;
-                &lt;/div&gt;</code></pre>
+                <pre class="line-numbers"><code class="language-html"></code></pre>
             </div>
             
             <hr>
 
             <h5 class="css__tag">CSS</h5>
             <div class="codigo__css">
-                <pre class="line-numbers"><code class="language-css">.slidecontainer {
-                    width: 100%; /* Width of the outside container */
-                }
-                                                        
-                    /* The slider itself */
-                    .slider {
-                    -webkit-appearance: none;  /* Override default CSS styles */
-                    appearance: none;
-                    width: 100%; /* Full-width */
-                    height: 25px; /* Specified height */
-                    background: #d3d3d3; /* Grey background */
-                    outline: none; /* Remove outline */
-                    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-                    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-                    transition: opacity .2s;
-                }</code></pre>
+                <pre class="line-numbers"><code class="language-css"></code></pre>
             </div>
 
             <hr>
@@ -72,14 +76,7 @@
             <h5 class="javascript__tag">JAVASCRIPT</h5>
             
             <div class="codigo__javascript">
-                <pre class="line-numbers"><code class="language-javascript">var slider = document.getElementById("myRange");
-                    var output = document.getElementById("demo");
-                    output.innerHTML = slider.value; // Display the default slider value
-                        
-                    // Update the current slider value (each time you drag the slider handle)
-                    slider.oninput = function() {
-                    output.innerHTML = this.value;
-                    }</code></pre>
+                <pre class="line-numbers"><code class="language-javascript"></code></pre>
             </div>
         </div>
         
