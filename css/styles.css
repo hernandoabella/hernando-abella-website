@@ -374,7 +374,7 @@ a{
 
 .snippets p{
     text-align: center;
-    margin: 40px;
+    padding: 40px;
 }
 
 .snippets .ver__mas{
@@ -533,6 +533,12 @@ footer{
     text-align: center;
 }
 
+footer hr{
+    width: 100px;
+    margin: 20px auto;
+    border-width: 10px;
+}
+
 footer a{
     color: #fff;
 }
@@ -607,11 +613,21 @@ footer a{
     background: #f1faee;
     color: #1d3557;
     padding: 20px;
-    border-radius: 5px;
 }
 
 .tarjeta__snippets h3{
     text-align: center;
+}
+
+.tarjeta__snippets p{
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.tarjeta__snippets i{
+    margin: 20px;
+    font-size: 2em;
+    color: 1d3557;
 }
 
 .tarjeta__snippets a{
@@ -622,7 +638,6 @@ footer a{
     transition: .3s;
     width: 100%;
     display: block;
-    border-radius: 5px;
 }
 
 .tarjeta__snippets a:hover{
