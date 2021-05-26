@@ -312,7 +312,6 @@ a{
 }
 
 .redes__sociales{
-    width: 300px;
     transition: .3s;
     margin: 30px auto;
     padding: 10px;
@@ -528,24 +527,40 @@ ul.breadcrumb {
 
 footer{
     background: #1d3557;
-    color: #fff;
+    color: #f1faee;
     padding: 20px;
     text-align: center;
 }
 
 footer hr{
-    width: 100px;
+    width: 80px;
     margin: 20px auto;
-    border-width: 10px;
+    border: 2px solid #457b9d;
 }
 
 footer a{
-    color: #fff;
+    color: #f1faee;
 }
 
 .footerFlex div div{
     margin: 10px;
 }
+
+footer div.footerLine1 i{
+    color: #457b9d;
+
+}
+
+footer div.redes__sociales a{
+    color: #f1faee;
+}
+
+footer div.redes__sociales a:hover{
+    font-size: 2em;
+    color: #457b9d;
+}
+
+
 
 .tarjeta__aprende{
     width: 300px;
@@ -705,6 +720,10 @@ footer a{
 
 footer div{
     margin-bottom: 20px;
+}
+
+footer div.redes__sociales{
+    width: auto;
 }
 
 .code__container{

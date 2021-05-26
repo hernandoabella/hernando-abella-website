@@ -8,13 +8,14 @@
 }
 
 #myInput {
-  width: 400px; 
+  width: 300px; 
   padding: 10px;
 }
 
 h1{
   font-size: 2em;
-  padding: 10px;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 #myUL {
@@ -36,26 +37,45 @@ h1{
   display: block; 
 }
 
-.pagination {
-  margin: 20px auto;
-  width: 300px;
-  text-align: center;
-  padding: 10px;
+/* acordeon */
+
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
 }
 
-.pagination a {
-  padding: 10px;
-  transition: .3s;
-  text-decoration: none;
-  color: #000;
+.active, .accordion:hover {
+  background-color: #ccc;
 }
 
-.pagination a:hover {
-  background: rgb(192, 91, 192);
-  color: #fff;
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
 }
 
-a.pagActive {
-  background: blue;
-  color: #fff;
+.active:after {
+  content: "\2212";
 }
+
+.panel {
+  padding: 0 18px;
+  margin-bottom: 20px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+/* acordeon */

@@ -12,48 +12,53 @@
 </head>
 <body>
     <div class="backbar">
-        <div class="flexyHeada">
-            <div><a href="../index.html"><i class="fas fa-arrow-left"></i></a></div>
-        <div><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar fragmento..."></div>
-        </div>
+        <a href="../index.html"><i class="fas fa-arrow-left"></i></a>
     </div>
+
 
     <section class="snippets">
         <h1>Fragmentos de código para todas tus necesidades</h1>
 
         <ul id="myUL">
-            <li><a href="https://www.redtube.com">1 — stuff</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#">6</a></li>
-            <li><a href="#">7</a></li>
-            <li><a href="#">8</a></li>
-            <li><a href="#">9</a></li>
-            <li><a href="#">10</a></li>
-            <li><a href="#">11</a></li>
-            <li><a href="#">12</a></li>
-            <li><a href="#">13</a></li>
+            <li>
+                <button class="accordion">Section 1</button>
+                <div class="panel">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </li>
+            <li>
+                <button class="accordion">Section 2</button>
+                <div class="panel">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </li>
+            <li>
+                <button class="accordion">Section 3</button>
+                <div class="panel">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </li>
+            <li>
+                <button class="accordion">Section 3</button>
+                <div class="panel">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </li>
+            <li>
+                <button class="accordion">Section 3</button>
+                <div class="panel">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </li>
         </ul>
 
-        <div id="paginator" class="pagination">
-            <a href="#" data-page="1"><i class="fas fa-angle-double-left"></i></a>
-            <a href="#" class="pagActive" data-page="1">1</a>
-            <a href="#" data-page="2">2</a>
-            <a href="#" data-page="3">3</a>
-            <a href="#" data-page="4">4</a>
-            <a href="#" data-page="5">5</a>
-            <a href="#" data-page="6">6</a>
-            <a href="#" data-page="6"><i class="fas fa-angle-double-right"></i></a>
-          </div>
     </section>
 
 
     <footer>
         <p>&copy; 2021 Hernando Abella</p>
     </footer>
-    <script src="listFiltering.js"></script>
+    <script src="./listFiltering.js"></script>
     <script src="../js/script.js"></script>
 </body>
 </html>
