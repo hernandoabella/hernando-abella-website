@@ -604,8 +604,8 @@ footer a{
 
 .tarjeta__snippets{
     width: 300px;
-    background: #1d3557;
-    color: #f1faee;
+    background: #f1faee;
+    color: #1d3557;
     padding: 20px;
     border-radius: 5px;
 }
@@ -616,8 +616,8 @@ footer a{
 
 .tarjeta__snippets a{
     text-align: center;
-    color: #1d3557;
-    background: #f1faee;
+    color: #f1faee;
+    background: #457b9d;
     padding: 10px;
     transition: .3s;
     width: 100%;
