@@ -10,6 +10,35 @@
     </script>
 </head>
 <body>
+
+
+
+    <!-- Temporal Responsive navigation -->
+
+    <div class="topnav" id="myTopnav">
+        <a href="index.html" class="active">HA</a>
+        <a onclick="myFunction()" href="#">Sobre mi</a>
+        <a href="#aprende__conmigo">Aprende conmigo</a>
+        <a href="#practica">Práctica</a>
+        <a href="#fragmentos">Snippets</a>
+        <a href="https://www.paypal.com/donate?hosted_button_id=LWK6VN665RSEL" target="_blank">Donar</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+        </script>
+      <!-- Temporal Responsive navigation -->
+
     <section class="sobre__mi" id="sobre__mi">
 
         <div class="circulo__contenedor">
@@ -19,7 +48,7 @@
             
             <div class="e_e">
                 <h1>Hernando Abella</h1>
-                <h3>Senior Full Stack Engineer</h3>
+                <h3>-Web Developer</h3>
                 <div class="redes__sociales">
                     <a href="https://www.facebook.com/hernandoabellaoficial" target="_blank"><i class="fab fa-facebook"></i></a>
                     <a href="https://www.twitter.com/hernandoabella" target="_blank"><i class="fab fa-twitter"></i></a>
@@ -34,7 +63,7 @@
         </div>
     </section>
 
-    <section class="aprende__conmigo">
+    <section id="aprende__conmigo" class="aprende__conmigo">
         <h2>Aprende conmigo</h2>
         <hr>
         <p>Conseguir el trabajo de tus sueños está a tu alcance</p>
@@ -68,7 +97,7 @@
         <a href="./aprende" class="ver__mas">Ver más</a>
     </section>
       
-    <section class="proyectos">
+    <section id="practica" class="proyectos">
         <h2>Practica con proyectos reales</h2>
         <hr>
         <p>Mejora tus habilidades creando divertidos proyectos de la web.</p>
@@ -134,7 +163,7 @@
         <a href="./proyectos/" class="ver__mas">Explorar proyectos</a>
     </section>  
 
-    <section class="snippets">
+    <section id="fragmentos" class="snippets">
         <h2>Fragmentos de código</h2>
         <hr>
         <p>Fragmentos de código para todas las necesidades de tus desarrollos</p>
