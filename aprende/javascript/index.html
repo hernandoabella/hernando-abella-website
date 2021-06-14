@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hernando Abella | Tutorial de JS</title>
+    <title>Hernando Abella | Tutorial de JavaScript</title>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="./pagination.css">
     <link type="text/css" rel="stylesheet" href="http://ajblk.github.io/SyntaxHighlightGenerator-v3.0/styles/shCoreDefault.css"/>
@@ -388,11 +388,79 @@
             </section>
         
             <section id="item4">
-                <h2>item4</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
+            <p>All the modern browsers come with built-in support for JavaScript. Frequently, you may need to enable or disable this support manually. This chapter explains the procedure of enabling and disabling JavaScript support in your browsers: Internet Explorer, Firefox, chrome, and Opera.</p>
+            <h4>JavaScript in Internet Explorer</h4>
+            <p>Here are simple steps to turn on or turn off JavaScript in your Internet Explorer −</p>                
+
+            <ul>
+                <li>Follow Tools → Internet Options from the menu.</li>
+                <li>Select Security tab from the dialog box.</li>
+                <li>Click the Custom Level button.</li>
+                <li>Scroll down till you find Scripting option.</li>
+                <li>Select Enable radio button under Active scripting.                </li>
+                <li>Finally click OK and come out</li>
+            </ul>
+
+            <p>To disable JavaScript support in your Internet Explorer, you need to select Disable radio button under Active scripting.            </p>
+
+            <h4>JavaScript in Firefox</h4>
+            <p>Here are the steps to turn on or turn off JavaScript in Firefox −</p>
+
+            <ul>
+                <li>Open a new tab → type about: config in the address bar.</li>
+                <li>Then you will find the warning dialog. Select I’ll be careful, I promise!</li>
+                <li>Then you will find the list of configure options in the browser.</li>
+                <li>In the search bar, type javascript.enabled.                </li>
+                <li>There you will find the option to enable or disable javascript by right-clicking on the value of that option → select toggle.                </li>
+            </ul>
+
+            <p>If javascript.enabled is true; it converts to false upon clicking toogle. If javascript is disabled; it gets enabled upon clicking toggle.</p>
+
+            <h4>JavaScript in Chrome</h4>
+            <p>Here are the steps to turn on or turn off JavaScript in Chrome −</p>
+
+            <ul>
+                <li>Click the Chrome menu at the top right hand corner of your browser.</li>
+                <li>Select Settings.</li>
+                <li>Click Show advanced settings at the end of the page.</li>
+                <li>Under the Privacy section, click the Content settings button.</li>
+                <li>In the "Javascript" section, select "Do not allow any site to run JavaScript" or "Allow all sites to run JavaScript (recommended)".</li>
+            </ul>
+
+            <h4>JavaScript in Opera</h4>
+
+            <p>Here are the steps to turn on or turn off JavaScript in Opera −</p>
+
+            <ul>
+                <li>Follow Tools → Preferences from the menu.</li>
+                <li>Select Advanced option from the dialog box.</li>
+                <li>Select Content from the listed items.</li>
+                <li>Select Enable JavaScript checkbox.</li>
+                <li>Finally click OK and come out.</li>
+            </ul>
+
+            <p>To disable JavaScript support in your Opera, you should not select the Enable JavaScript checkbox.</p>
+
+            <h4>Warning for Non-JavaScript Browsers</h4>
+            <p>If you have to do something important using JavaScript, then you can display a warning message to the user using <noscript> tags.</p>
+            <p>You can add a noscript block immediately after the script block as follows −</p>
+
+            <div class="codigo__html">
+                <div class="decor__bar html"></div>
+                <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;body&gt;
+      &lt;script language = &quot;javascript&quot; type = &quot;text/javascript&quot;&gt;
+         &lt;!--
+            document.write(&quot;Hello World!&quot;)
+         //--&gt;
+      &lt;/script&gt;
+      
+      &lt;noscript&gt;
+         Sorry...JavaScript is needed to go ahead.
+      &lt;/noscript&gt;      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</div>
             </section>
         
             <section id="item5">
