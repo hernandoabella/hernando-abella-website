@@ -85,9 +85,9 @@ aside ul li a:hover{
 
 section{
     padding: 20px;
-    background: #fcf0a2;
+    border-top: 1px solid #f0db4f;
+    border-width: 5px;
     margin-bottom: 50px;
-    border-radius: 5px;
 }
 
 section h2{

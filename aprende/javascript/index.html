@@ -817,11 +817,501 @@
             </section>
         
             <section id="item7">
-                <h2>item7</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
+                <h3>What is an Operator?</h3>
+                <p>Let us take a simple expression 4 + 5 is equal to 9. Here 4 and 5 are called operands and ‘+’ is called the operator. JavaScript supports the following types of operators.</p>
+
+                <ul>
+                    <li>Arithmetic Operators</li>
+                    <li>Comparison Operators</li>
+                    <li>Logical (or Relational) Operators</li>
+                    <li>Assignment Operators</li>
+                    <li>Conditional (or ternary) Operators</li>
+                </ul>
+
+                <p>Lets have a look on all operators one by one.</p>
+
+                <h4>Arithmetic Operators</h4>
+                <p>JavaScript supports the following arithmetic operators −</p>
+                <p>Assume variable A holds 10 and variable B holds 20, then −</p>
+
+                <table>
+                    <tr>
+                      <th>#</th>
+                      <th>Operador</th>
+                      <th>Descripción</th>
+                      <th>Ejemplo</th>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>+ (Addition)</td>
+                      <td>Adds two operands</td>
+                      <td>A + B will give 30</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>- (Subtraction)</td>
+                      <td>Subtracts the second operand from the first</td>
+                      <td>A - B will give -10</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>* (Multiplication)</td>
+                      <td>Multiply both operands</td>
+                      <td>A * B will give 200</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>/ (Division)</td>
+                      <td>Divide the numerator by the denominator</td>
+                      <td>B / A will give 2</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>% (Modulus)</td>
+                      <td>Outputs the remainder of an integer division</td>
+                      <td>B % A will give 0</td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>++ (Increment)</td>
+                      <td>Increases an integer value by one</td>
+                      <td>A++ will give 11</td>
+                    </tr>
+                    <tr>
+                      <td>7</td>
+                      <td>-- (Decrement)</td>
+                      <td>Decreases an integer value by one</td>
+                      <td>A-- will give 9</td>
+                    </tr>
+                  </table>
+
+                  <p>Note − Addition operator (+) works for Numeric as well as Strings. e.g. "a" + 10 will give "a10".</p>
+
+                  <p>Example</p>
+                  <p>The following code shows how to use arithmetic operators in JavaScript.</p>
+            
+                  <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;body&gt;
+   
+      &lt;script type = &quot;text/javascript&quot;&gt;
+         &lt;!--
+            var a = 33;
+            var b = 10;
+            var c = &quot;Test&quot;;
+            var linebreak = &quot;&lt;br /&gt;&quot;;
+         
+            document.write(&quot;a + b = &quot;);
+            result = a + b;
+            document.write(result);
+            document.write(linebreak);
+         
+            document.write(&quot;a - b = &quot;);
+            result = a - b;
+            document.write(result);
+            document.write(linebreak);
+         
+            document.write(&quot;a / b = &quot;);
+            result = a / b;
+            document.write(result);
+            document.write(linebreak);
+         
+            document.write(&quot;a % b = &quot;);
+            result = a % b;
+            document.write(result);
+            document.write(linebreak);
+         
+            document.write(&quot;a + b + c = &quot;);
+            result = a + b + c;
+            document.write(result);
+            document.write(linebreak);
+         
+            a = ++a;
+            document.write(&quot;++a = &quot;);
+            result = ++a;
+            document.write(result);
+            document.write(linebreak);
+         
+            b = --b;
+            document.write(&quot;--b = &quot;);
+            result = --b;
+            document.write(result);
+            document.write(linebreak);
+         //--&gt;
+      &lt;/script&gt;
+      
+      Set the variables to different values and then try...
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>  
+
+        <h3>Output</h3>
+
+        <p>a + b = 43</p>
+        <p>a - b = 23</p>
+        <p>a / b = 3.3</p>
+        <p>a % b = 3</p>
+        <p>a + b + c = 43Test</p>
+        <p>++a = 35</p>
+        <p>--b = 8</p>
+        <p>Set the variables to different values and then try...</p>
+
+        <h4>Comparison Operators</h4>
+                  
+        <p>JavaScript supports the following comparison operators −</p>
+        <p>Assume variable A holds 10 and variable B holds 20, then −</p>    
+                
+        <table>
+            <tr>
+              <th>#</th>
+              <th>Operador</th>
+              <th>Descripción</th>
+              <th>Ejemplo</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>== (Equal)</td>
+              <td>Checks if the value of two operands are equal or not, if yes, then the condition becomes true.</td>
+              <td>(A == B) is not true.</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>!= (Not Equal)</td>
+              <td>Checks if the value of two operands are equal or not, if the values are not equal, then the condition becomes true.</td>
+              <td>(A != B) is true.</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>> (Greater than)</td>
+              <td>Checks if the value of the left operand is greater than the value of the right operand, if yes, then the condition becomes true.</td>
+              <td>(A > B) is not true.</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>< (Less than)</td>
+              <td>Checks if the value of the left operand is less than the value of the right operand, if yes, then the condition becomes true.</td>
+              <td>(A < B) is true.</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>>= (Greater than or Equal to)</td>
+              <td>Checks if the value of the left operand is greater than or equal to the value of the right operand, if yes, then the condition becomes true.</td>
+              <td>(A >= B) is not true.</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td><= (Less than or Equal to)</td>
+              <td>Checks if the value of the left operand is less than or equal to the value of the right operand, if yes, then the condition becomes true.</td>
+              <td>(A <= B) is true.</td>
+            </tr>
+          </table>
+    
+          <h4>Example</h4>
+          <p>The following code shows how to use comparison operators in JavaScript.</p>
+            
+          <div class="codigo__html">
+            <div class="decor__bar html"></div>
+            <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                &lt;body&gt;  
+                   &lt;script type = &quot;text/javascript&quot;&gt;
+                      &lt;!--
+                         var a = 10;
+                         var b = 20;
+                         var linebreak = &quot;&lt;br /&gt;&quot;;
+                   
+                         document.write(&quot;(a == b) =&gt; &quot;);
+                         result = (a == b);
+                         document.write(result);
+                         document.write(linebreak);
+                      
+                         document.write(&quot;(a &lt; b) =&gt; &quot;);
+                         result = (a &lt; b);
+                         document.write(result);
+                         document.write(linebreak);
+                      
+                         document.write(&quot;(a &gt; b) =&gt; &quot;);
+                         result = (a &gt; b);
+                         document.write(result);
+                         document.write(linebreak);
+                      
+                         document.write(&quot;(a != b) =&gt; &quot;);
+                         result = (a != b);
+                         document.write(result);
+                         document.write(linebreak);
+                      
+                         document.write(&quot;(a &gt;= b) =&gt; &quot;);
+                         result = (a &gt;= b);
+                         document.write(result);
+                         document.write(linebreak);
+                      
+                         document.write(&quot;(a &lt;= b) =&gt; &quot;);
+                         result = (a &lt;= b);
+                         document.write(result);
+                         document.write(linebreak);
+                      //--&gt;
+                   &lt;/script&gt;      
+                   Set the variables to different values and different operators and then try...
+                &lt;/body&gt;
+             &lt;/html&gt;</code></pre>
+</div>   
+          
+          
+          
+          
+
+          <h4>Output</h4>
+
+          <p>(a == b) => false</p>
+          <p>(a < b) => true</p>
+          <p>(a > b) => false</p>
+          <p>(a != b) => true</p>
+          <p>(a >= b) => false</p>
+          <p>a <= b) => true</p>
+          <p>Set the variables to different values and different operators and then try...</p>
+    
+
+          <h4>Logical Operators</h4>
+          <p>JavaScript supports the following logical operators −</p>
+          <p>Assume variable A holds 10 and variable B holds 20, then −</p>
+
+          <table>
+              <tr>
+                  <th>#</th>
+                  <th>Operador</th>
+                  <th>Descripción</th>
+                  <th>Ejemplo</th>
+              </tr>
+              <tr>
+                  <td>1</td>
+                  <td>&& (Logical AND)</td>
+                  <td>If both the operands are non-zero, then the condition becomes true.</td>
+                  <td>(A && B) is true.</td>
+              </tr>
+              <tr>
+                  <td>2</td>
+                  <td>|| (Logical OR)</td>
+                  <td>If any of the two operands are non-zero, then the condition becomes true.</td>
+                  <td>(A || B) is true.</td>
+              </tr>
+              <tr>
+                  <td>3</td>
+                  <td>! (Logical NOT)</td>
+                  <td>Reverses the logical state of its operand. If a condition is true, then the Logical NOT operator will make it false.</td>
+                  <td>! (A && B) is false.</td>
+
+                  <h4>Ejemplo</h4>
+                  <p>Try the following code to learn how to implement Logical Operators in JavaScript.</p>
+              </tr>
+          </table>
+
+          <div class="codigo__html">
+            <div class="decor__bar html"></div>
+            <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                &lt;body&gt;   
+                   &lt;script type = &quot;text/javascript&quot;&gt;
+                      &lt;!--
+                         var a = true;
+                         var b = false;
+                         var linebreak = &quot;&lt;br /&gt;&quot;;
+                   
+                         document.write(&quot;(a &amp;&amp; b) =&gt; &quot;);
+                         result = (a &amp;&amp; b);
+                         document.write(result);
+                         document.write(linebreak);
+                      
+                         document.write(&quot;(a || b) =&gt; &quot;);
+                         result = (a || b);
+                         document.write(result);
+                         document.write(linebreak);
+                      
+                         document.write(&quot;!(a &amp;&amp; b) =&gt; &quot;);
+                         result = (!(a &amp;&amp; b));
+                         document.write(result);
+                         document.write(linebreak);
+                      //--&gt;
+                   &lt;/script&gt;      
+                   &lt;p&gt;Set the variables to different values and different operators and then try...&lt;/p&gt;
+                &lt;/body&gt;
+             &lt;/html&gt;</code></pre>
+</div>   
+
+          <h4>Output</h4>
+          <p>(a && b) => false</p>
+          <p>(a || b) => true</p>
+          <p>!(a && b) => true</p>
+          <p>Set the variables to different values and different operators and then try...</p>
+
+                <h4>Bitwise Operators</h4>
+
+                <p>JavaScript supports the following bitwise operators −</p>
+                <p>Assume variable A holds 2 and variable B holds 3, then −</p>
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Operador</th>
+                        <th>Descripción</th>
+                        <th>Ejemplo</th>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>& (Bitwise AND)</td>
+                        <td>It performs a Boolean AND operation on each bit of its integer arguments.</td>
+                        <td>(A & B) is 2</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>| (BitWise OR)</td>
+                        <td>It performs a Boolean OR operation on each bit of its integer arguments</td>
+                        <td>(A | B) is 3</td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>^ (Bitwise XOR)</td>
+                        <td>It performs a Boolean exclusive OR operation on each bit of its integer arguments. Exclusive OR means that either operand one is true or operand two is true, but not both.</td>
+                        <td>(A ^ B) is 1</td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td>~ (Bitwise Not)</td>
+                        <td>It is a unary operator and operates by reversing all the bits in the operand.</td>
+                        <td>(~B) is -4.</td>
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td><< (Left Shift)</td>
+                        <td>It moves all the bits in its first operand to the left by the number of places specified in the second operand. New bits are filled with zeros. Shifting a value left by one position is equivalent to multiplying it by 2, shifting two positions is equivalent to multiplying by 4, and so on.</td>
+                        <td>(A << 1) is 4.</td>
+                    </tr>
+
+                    <tr>
+                        <td>6</td>
+                        <td>>> (Right Shift)</td>
+                        <td>Binary Right Shift Operator. The left operand’s value is moved right by the number of bits specified by the right operand.</td>
+                        <td>(A >> 1) is 1.</td>
+                    </tr>
+
+                    <tr>
+                        <td>7</td>
+                        <td>>>> (Right shift with Zero)</td>
+                        <td>This operator is just like the >> operator, except that the bits shifted in on the left are always zero.</td>
+                        <td>(A >>> 1) is 1.</td>
+                    </tr>
+                </table>
+
+                <h4>Example</h4>
+                <p>Try the following code to implement Bitwise operator in JavaScript.</p>
+    
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                        &lt;body&gt;   
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              &lt;!--
+                                 var a = 2; // Bit presentation 10
+                                 var b = 3; // Bit presentation 11
+                                 var linebreak = &quot;&lt;br /&gt;&quot;;
+                              
+                                 document.write(&quot;(a &amp; b) =&gt; &quot;);
+                                 result = (a &amp; b);
+                                 document.write(result);
+                                 document.write(linebreak);
+                              
+                                 document.write(&quot;(a | b) =&gt; &quot;);
+                                 result = (a | b);
+                                 document.write(result);
+                                 document.write(linebreak);
+                              
+                                 document.write(&quot;(a ^ b) =&gt; &quot;);
+                                 result = (a ^ b);
+                                 document.write(result);
+                                 document.write(linebreak);
+                              
+                                 document.write(&quot;(~b) =&gt; &quot;);
+                                 result = (~b);
+                                 document.write(result);
+                                 document.write(linebreak);
+                              
+                                 document.write(&quot;(a &lt;&lt; b) =&gt; &quot;);
+                                 result = (a &lt;&lt; b);
+                                 document.write(result);
+                                 document.write(linebreak);
+                              
+                                 document.write(&quot;(a &gt;&gt; b) =&gt; &quot;);
+                                 result = (a &gt;&gt; b);
+                                 document.write(result);
+                                 document.write(linebreak);
+                              //--&gt;
+                           &lt;/script&gt;      
+                           &lt;p&gt;Set the variables to different values and different operators and then try...&lt;/p&gt;
+                        &lt;/body&gt;
+                     &lt;/html&gt;</code></pre>
+    </div>  
+
+                    <p>(a & b) => 2</p>
+                    <p>(a | b) => 3</p>
+                    <p>(a ^ b) => 1</p>
+                    <p>(~b) => -4</p>
+                    <p>(a << b) => 16</p>
+                    <p>(a >> b) => 0</p>
+                    <p>Set the variables to different values and different operators and then try...</p>
+           
+
+                    <h4>Assignment Operators</h4>
+                    <p>JavaScript supports the following assignment operators −</p>
+
+                    <table>
+                        <tr>
+                            <th>#</th>
+                            <th>Operador</th>
+                            <th>Descripción</th>
+                            <th>Ejemplo</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                    </table>
+           
             </section>
         
             <section id="item8">
