@@ -530,7 +530,7 @@ h5.javascript__tag{
     top: 15px;
 }
 
-.codigo__javascript{
+.decor__bar.javascript{
     background: #f0db4f;
     width: 100%;
     height: 15px;
@@ -731,6 +731,28 @@ footer div.redes__sociales a:hover{
     display: flex;
     justify-content: space-between;
 }
+
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #f1faee;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f1faee;
+  }
+
+
+
+
+
 
 
 /* diseño responsive */

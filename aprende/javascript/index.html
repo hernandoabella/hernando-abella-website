@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hernando Abella | Tutorial de JavaScript</title>
+    <title>Hernando Abella | Tutorial de JS</title>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="./pagination.css">
     <link type="text/css" rel="stylesheet" href="http://ajblk.github.io/SyntaxHighlightGenerator-v3.0/styles/shCoreDefault.css"/>
@@ -140,7 +140,7 @@
     
         <div class="articles">
             <section id="item1">
-                <h3>Tutorial de JavaScript</h3>
+                <h2>Tutorial de JavaScript</h2>
 
                 <p>JavaScript is a lightweight, interpreted programming language. It is designed for creating network-centric applications. It is complimentary to and integrated with Java. JavaScript is very easy to implement because it is integrated with HTML. It is open and cross-platform.</p>
                 <h4>Why to Learn Javascript</h4>
@@ -432,7 +432,7 @@
             <p>Here are the steps to turn on or turn off JavaScript in Opera −</p>
 
             <ul>
-                <li>Follow Tools → Preferences from the menu.</li>
+                <li>Follow Tools → Preferences from the menu.                </li>
                 <li>Select Advanced option from the dialog box.</li>
                 <li>Select Content from the listed items.</li>
                 <li>Select Enable JavaScript checkbox.</li>
@@ -442,41 +442,378 @@
             <p>To disable JavaScript support in your Opera, you should not select the Enable JavaScript checkbox.</p>
 
             <h4>Warning for Non-JavaScript Browsers</h4>
-            <p>If you have to do something important using JavaScript, then you can display a warning message to the user using <noscript> tags.</p>
+            <p>If you have to do something important using JavaScript, then you can display a warning message to the user using &lt;noscript&gt; tags.</p>
             <p>You can add a noscript block immediately after the script block as follows −</p>
+            
+            <div class="codigo__html">
+                <div class="decor__bar html"></div>
+                <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                    &lt;body&gt;
+                       &lt;script language = &quot;javascript&quot; type = &quot;text/javascript&quot;&gt;
+                          &lt;!--
+                             document.write(&quot;Hello World!&quot;)
+                          //--&gt;
+                       &lt;/script&gt;
+                       
+                       &lt;noscript&gt;
+                          Sorry...JavaScript is needed to go ahead.
+                       &lt;/noscript&gt;      
+                    &lt;/body&gt;
+                 &lt;/html&gt;</code></pre>
+</div>
+
+            <p>Now, if the user's browser does not support JavaScript or JavaScript is not enabled, then the message from </noscript> will be displayed on the screen.</p>
+            </section>
+        
+            <section id="item5">
+                <p>There is a flexibility given to include JavaScript code anywhere in an HTML document. However the most preferred ways to include JavaScript in an HTML file are as follows −</p>
+
+                <ul>
+                    <li>Script in &lt;head&gt;...&lt;/head&gt; section.</li>
+                    <li>Script in &lt;body&gt;...&lt;/body&gt; section.</li>
+                    <li>Script in &lt;body&gt;...&lt;/body&gt; and &lt;head&gt;...&lt;/head&gt; sections.</li>
+                    <li>Script in an external file and then include in &lt;head&gt;...&lt;/head&gt; section.</li>                    
+                </ul>
+
+                <p>In the following section, we will see how we can place JavaScript in an HTML file in different ways.</p>
+                
+                <h4>JavaScript in &lt;head&gt;...&lt;/head&gt; section</h4>
+                <p>If you want to have a script run on some event, such as when a user clicks somewhere, then you will place that script in the head as follows −</p>
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;head&gt;      
+      &lt;script type = &quot;text/javascript&quot;&gt;
+         &lt;!--
+            function sayHello() {
+               alert(&quot;Hello World&quot;)
+            }
+         //--&gt;
+      &lt;/script&gt;     
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;input type = &quot;button&quot; onclick = &quot;sayHello()&quot; value = &quot;Say Hello&quot; /&gt;
+   &lt;/body&gt;  
+&lt;/html&gt;</code></pre>
+    </div>
+
+    <p>This code will produce the following results −</p>
+
+    <html>
+   <head>      
+      <script type = "text/javascript">
+         
+            function sayHello() {
+               alert("Hello World")
+            }
+        
+      </script>     
+   </head>
+   
+   <body>
+      <input type = "button" onclick = "sayHello()" value = "Say Hello" />
+   </body>  
+</html>
+
+            <h4>JavaScript in &lt;body&gt;...&lt;/body&gt; section</h4>
+
+            <p>If you need a script to run as the page loads so that the script generates content in the page, then the script goes in the <body> portion of the document. In this case, you would not have any function defined using JavaScript. Take a look at the following code.</p>
+            
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;head&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;script type = &quot;text/javascript&quot;&gt;
+         &lt;!--
+            document.write(&quot;Hello World&quot;)
+         //--&gt;
+      &lt;/script&gt;
+      
+      &lt;p&gt;This is web page body &lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>    
+
+            <p>This code will produce the following results −</p>
+
+            <script type = "text/javascript">
+                    document.write("Hello World")
+            </script>
+            
+            <p>This is web page body</p>
+
+            <h4>JavaScript in &lt;body&gt; and &lt;head&gt; Sections</h4>
+            <p>You can put your JavaScript code in &lt;head&gt; and &lt;body&gt; section altogether as follows &minus;</p>
 
             <div class="codigo__html">
                 <div class="decor__bar html"></div>
                 <pre class="line-numbers"><code class="language-html">&lt;html&gt;
-   &lt;body&gt;
-      &lt;script language = &quot;javascript&quot; type = &quot;text/javascript&quot;&gt;
-         &lt;!--
-            document.write(&quot;Hello World!&quot;)
-         //--&gt;
-      &lt;/script&gt;
-      
-      &lt;noscript&gt;
-         Sorry...JavaScript is needed to go ahead.
-      &lt;/noscript&gt;      
-   &lt;/body&gt;
-&lt;/html&gt;</code></pre>
-</div>
-            </section>
+                    &lt;head&gt;
+                       &lt;script type = &quot;text/javascript&quot;&gt;
+                          &lt;!--
+                             function sayHello() {
+                                alert(&quot;Hello World&quot;)
+                             }
+                          //--&gt;
+                       &lt;/script&gt;
+                    &lt;/head&gt;
+                    
+                    &lt;body&gt;
+                       &lt;script type = &quot;text/javascript&quot;&gt;
+                          &lt;!--
+                             document.write(&quot;Hello World&quot;)
+                          //--&gt;
+                       &lt;/script&gt;
+                       
+                       &lt;input type = &quot;button&quot; onclick = &quot;sayHello()&quot; value = &quot;Say Hello&quot; /&gt;
+                    &lt;/body&gt;
+                 &lt;/html&gt;</code></pre>
+</div>    
+  
+                <p>This code will produce the following result −</p>
+
+      <script type = "text/javascript">
         
-            <section id="item5">
-                <h2>item5</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
+            function sayHello() {
+               alert("Hello World")
+            }
+        
+      </script>
+  
+      <script type="text/javascript">
+            document.write("Hello World")
+      </script>
+      <br>
+      <br>
+      <input type="button" onclick="sayHello()" value="Say Hello" />
+            
+            <h4>JavaScript in External File</h4>
+
+            <p>As you begin to work more extensively with JavaScript, you will be likely to find that there are cases where you are reusing identical JavaScript code on multiple pages of a site.</p>
+            <p>You are not restricted to be maintaining identical code in multiple HTML files. The script tag provides a mechanism to allow you to store JavaScript in an external file and then include it into your HTML files.</p>
+            <p>Here is an example to show how you can include an external JavaScript file in your HTML code using script tag and its src attribute.</p>
+
+            <div class="codigo__html">
+                <div class="decor__bar html"></div>
+                <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                    &lt;head&gt;
+                       &lt;script type = &quot;text/javascript&quot; src = &quot;filename.js&quot; &gt;&lt;/script&gt;
+                    &lt;/head&gt;
+                    
+                    &lt;body&gt;
+                       .......
+                    &lt;/body&gt;
+                 &lt;/html&gt;</code></pre>
+</div>    
+            <p>To use JavaScript from an external file source, you need to write all your JavaScript source code in a simple text file with the extension ".js" and then include that file as shown above.</p>
+            <p>For example, you can keep the following content in filename.js file and then you can use sayHello function in your HTML file after including the filename.js file.</p>
+
+            <div class="codigo__javascript">
+                <div class="decor__bar javascript"></div>
+                <pre class="line-numbers"><code class="language-javascript">function sayHello() {
+    alert("Hola Mundo");
+}</code></pre>
+</div>    
             </section>
         
             <section id="item6">
-                <h2>item6</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
+                <h3>Variables</h3>
+
+                <h4>JavaScript Datatypes</h4>
+                <p>One of the most fundamental characteristics of a programming language is the set of data types it supports. These are the type of values that can be represented and manipulated in a programming language.</p>
+                <p>JavaScript allows you to work with three primitive data types −</p>
+                <ul>
+                    <li>Numbers, eg. 123, 120.50 etc.</li>
+                    <li>Strings of text e.g. "This text string" etc.</li>
+                    <li>Boolean e.g. true or false.</li>
+                </ul>
+
+                <p>JavaScript also defines two trivial data types, null and undefined, each of which defines only a single value. In addition to these primitive data types, JavaScript supports a composite data type known as object. We will cover objects in detail in a separate chapter.</p>
+                <p>Note − JavaScript does not make a distinction between integer values and floating-point values. All numbers in JavaScript are represented as floating-point values. JavaScript represents numbers using the 64-bit floating-point format defined by the IEEE 754 standard.</p>
+
+                <h4>JavaScript Variables</h4>
+                <p>Like many other programming languages, JavaScript has variables. Variables can be thought of as named containers. You can place data into these containers and then refer to the data simply by naming the container.</p>
+                <p>Before you use a variable in a JavaScript program, you must declare it. Variables are declared with the var keyword as follows.</p>
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;script type = &quot;text/javascript&quot;&gt;
+                        &lt;!--
+                           var money;
+                           var name;
+                        //--&gt;
+                     &lt;/script&gt;</code></pre>
+    </div>  
+
+                <p>You can also declare multiple variables with the same var keyword as follows −</p>
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;script type = &quot;text/javascript&quot;&gt;
+                        &lt;!--
+                           var money;
+                           var name;
+                        //--&gt;
+                     &lt;/script&gt;</code></pre>
+    </div>  
+
+                <p>Storing a value in a variable is called variable initialization. You can do variable initialization at the time of variable creation or at a later point in time when you need that variable.</p>
+                <p>For instance, you might create a variable named money and assign the value 2000.50 to it later. For another variable, you can assign a value at the time of initialization as follows.</p>
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;script type = &quot;text/javascript&quot;&gt;
+                        &lt;!--
+                           var name = &quot;Ali&quot;;
+                           var money;
+                           money = 2000.50;
+                        //--&gt;
+                     &lt;/script&gt;</code></pre>
+    </div>  
+
+                <p>Note − Use the var keyword only for declaration or initialization, once for the life of any variable name in a document. You should not re-declare same variable twice.</p>
+                <p>JavaScript is untyped language. This means that a JavaScript variable can hold a value of any data type. Unlike many other languages, you don't have to tell JavaScript during variable declaration what type of value the variable will hold. The value type of a variable can change during the execution of a program and JavaScript takes care of it automatically.</p>
+
+                <h4>JavaScript Variable Scope</h4>
+                <p>The scope of a variable is the region of your program in which it is defined. JavaScript variables have only two scopes.</p>
+
+                <ul>
+                    <li>Global Variables − A global variable has global scope which means it can be defined anywhere in your JavaScript code.</li>
+                    <li>Local Variables − A local variable will be visible only within a function where it is defined. Function parameters are always local to that function.</li>
+                </ul>
+
+                <p>Within the body of a function, a local variable takes precedence over a global variable with the same name. If you declare a local variable or function parameter with the same name as a global variable, you effectively hide the global variable. Take a look into the following example.</p>
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;body onload = checkscope();&gt;   
+      &lt;script type = &quot;text/javascript&quot;&gt;
+         &lt;!--
+            var myVar = &quot;global&quot;;      // Declare a global variable
+            function checkscope( ) {
+               var myVar = &quot;local&quot;;    // Declare a local variable
+               document.write(myVar);
+            }
+         //--&gt;
+      &lt;/script&gt;     
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>  
+
+
+                <p>This produces the following result −</p>
+
+                <p>local</p>
+
+                <h4>JavaScript Variable Names</h4>
+                <p>While naming your variables in JavaScript, keep the following rules in mind.</p>
+
+                <ul>
+                    <li>You should not use any of the JavaScript reserved keywords as a variable name. These keywords are mentioned in the next section. For example, break or boolean variable names are not valid.</li>
+                    <li>JavaScript variable names should not start with a numeral (0-9). They must begin with a letter or an underscore character. For example, 123test is an invalid variable name but _123test is a valid one.</li>
+                    <li>JavaScript variable names are case-sensitive. For example, Name and name are two different variables.</li>
+                </ul>
+
+                <h4>JavaScript Reserved Words</h4>
+                <p>A list of all the reserved words in JavaScript are given in the following table. They cannot be used as JavaScript variables, functions, methods, loop labels, or any object names.</p>
+
+                <table>
+                    <tr>
+                      <td>abstract</td>
+                      <td>else</td>
+                      <td>instanceof</td>
+                      <td>switch</td>
+                    </tr>
+                    <tr>
+                        <td>boolean</td>
+                        <td>enum</td>
+                        <td>int</td>
+                        <td>synchronized</td>
+                    </tr>
+                    <tr>
+                        <td>break</td>
+                        <td>export</td>
+                        <td>interface</td>
+                        <td>this</td>
+                    </tr>
+                    <tr>
+                        <td>byte</td>
+                        <td>extends</td>
+                        <td>long</td>
+                        <td>throw</td>
+                    </tr>
+                    <tr>
+                        <td>case</td>
+                        <td>false</td>
+                        <td>native</td>
+                        <td>throws</td>
+                    </tr>
+                    <tr>
+                        <td>catch</td>
+                        <td>final</td>
+                        <td>new</td>
+                        <td>transient</td>
+                    </tr>
+                    <tr>
+                        <td>char</td>
+                        <td>finally</td>
+                        <td>null</td>
+                        <td>true</td>
+                    </tr>
+                    <tr>
+                        <td>class</td>
+                        <td>float</td>
+                        <td>package</td>
+                        <td>try</td>
+                    </tr>
+                    <tr>
+                        <td>const</td>
+                        <td>for</td>
+                        <td>private</td>
+                        <td>typeof</td>
+                    </tr>
+                    <tr>
+                        <td>continue</td>
+                        <td>function</td>
+                        <td>protected</td>
+                        <td>var</td>
+                    </tr>
+                    <tr>
+                        <td>debugger</td>
+                        <td>goto</td>
+                        <td>public</td>
+                        <td>void</td>
+                    </tr>
+                    <tr>
+                        <td>default</td>
+                        <td>if</td>
+                        <td>return</td>
+                        <td>volatile</td>
+                    </tr>
+                    <tr>
+                        <td>delete</td>
+                        <td>implements</td>
+                        <td>short</td>
+                        <td>while</td>
+                    </tr>
+                    <tr>
+                        <td>do</td>
+                        <td>import</td>
+                        <td>static</td>
+                        <td>with</td>
+                    </tr>
+                    <tr>
+                        <td>double</td>
+                        <td>in</td>
+                        <td>super</td>
+                    </tr>
+                  </table>
             </section>
         
             <section id="item7">
@@ -584,6 +921,94 @@
             </section>
 
             <section id="item20">
+                <h2>item20</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
+                <a href="#">link</a>
+            </section>
+            
+            <section id="item21">
+                <h2>item20</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
+                <a href="#">link</a>
+            </section>
+
+            <section id="item22">
+                <h2>item20</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
+                <a href="#">link</a>
+            </section>
+
+            <section id="item23">
+                <h2>item20</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
+                <a href="#">link</a>
+            </section>
+
+            <section id="item24">
+                <h2>item20</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
+                <a href="#">link</a>
+            </section>
+
+            <section id="item25">
+                <h2>item20</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
+                <a href="#">link</a>
+            </section>
+
+            <section id="item26">
+                <h2>item20</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
+                <a href="#">link</a>
+            </section>
+
+            <section id="item27">
+                <h2>item20</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
+                <a href="#">link</a>
+            </section>
+
+            <section id="item28">
+                <h2>item20</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
+                <a href="#">link</a>
+            </section>
+
+            <section id="item29">
+                <h2>item20</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
+                <a href="#">link</a>
+            </section>
+
+            <section id="item30">
+                <h2>item20</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
+                <a href="#">link</a>
+            </section>
+
+            <section id="item31">
                 <h2>item20</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
