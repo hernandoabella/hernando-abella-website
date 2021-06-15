@@ -1275,100 +1275,1066 @@
                         </tr>
                         <tr>
                             <td>1</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>= (Simple Assignment )</td>
+                            <td>Assigns values from the right side operand to the left side operand</td>
+                            <td>C = A + B will assign the value of A + B into C</td>
                         </tr>
                         <tr>
                             <td>2</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>+= (Add and Assignment)</td>
+                            <td>It adds the right operand to the left operand and assigns the result to the left operand.</td>
+                            <td>C += A is equivalent to C = C + A</td>
                         </tr>
                         <tr>
                             <td>3</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>−= (Subtract and Assignment)</td>
+                            <td>It subtracts the right operand from the left operand and assigns the result to the left operand.</td>
+                            <td>C -= A is equivalent to C = C - A</td>
                         </tr>
                         <tr>
                             <td>4</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>*= (Multiply and Assignment)</td>
+                            <td>It multiplies the right operand with the left operand and assigns the result to the left operand.</td>
+                            <td>C *= A is equivalent to C = C * A</td>
                         </tr>
                         <tr>
                             <td>5</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>/= (Divide and Assignment)</td>
+                            <td>It divides the left operand with the right operand and assigns the result to the left operand.</td>
+                            <td>C /= A is equivalent to C = C / A</td>
                         </tr>
                         <tr>
                             <td>6</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>%= (Modules and Assignment)</td>
+                            <td>It takes modulus using two operands and assigns the result to the left operand.</td>
+                            <td>C %= A is equivalent to C = C % A</td>
                         </tr>
 
                     </table>
+
+                    <p>Note − Same logic applies to Bitwise operators so they will become like <<=, >>=, >>=, &=, |= and ^=.</p>
            
+                    <h4>Example</h4>
+
+                    <p>Try the following code to implement assignment operator in JavaScript.</p>
+            
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                            &lt;body&gt;   
+                               &lt;script type = &quot;text/javascript&quot;&gt;
+                                  &lt;!--
+                                     var a = 33;
+                                     var b = 10;
+                                     var linebreak = &quot;&lt;br /&gt;&quot;;
+                                  
+                                     document.write(&quot;Value of a =&gt; (a = b) =&gt; &quot;);
+                                     result = (a = b);
+                                     document.write(result);
+                                     document.write(linebreak);
+                                  
+                                     document.write(&quot;Value of a =&gt; (a += b) =&gt; &quot;);
+                                     result = (a += b);
+                                     document.write(result);
+                                     document.write(linebreak);
+                                  
+                                     document.write(&quot;Value of a =&gt; (a -= b) =&gt; &quot;);
+                                     result = (a -= b);
+                                     document.write(result);
+                                     document.write(linebreak);
+                                  
+                                     document.write(&quot;Value of a =&gt; (a *= b) =&gt; &quot;);
+                                     result = (a *= b);
+                                     document.write(result);
+                                     document.write(linebreak);
+                                  
+                                     document.write(&quot;Value of a =&gt; (a /= b) =&gt; &quot;);
+                                     result = (a /= b);
+                                     document.write(result);
+                                     document.write(linebreak);
+                                  
+                                     document.write(&quot;Value of a =&gt; (a %= b) =&gt; &quot;);
+                                     result = (a %= b);
+                                     document.write(result);
+                                     document.write(linebreak);
+                                  //--&gt;
+                               &lt;/script&gt;      
+                               &lt;p&gt;Set the variables to different values and different operators and then try...&lt;/p&gt;
+                            &lt;/body&gt;
+                         &lt;/html&gt;</code></pre>
+        </div>  
+                    
+                        <h4>Salida</h4>
+
+                        <p>Value of a => (a = b) => 10</p>
+                        <p>Value of a => (a += b) => 20</p>
+                        <p>Value of a => (a -= b) => 10</p>
+                        <p>Value of a => (a *= b) => 100</p>
+                        <p>Value of a => (a /= b) => 10</p>
+                        <p>Value of a => (a %= b) => 0</p>
+                        <p>Set the variables to different values and different operators and then try...</p>
+                      
+                        <h4>Miscellaneous Operator</h4>
+
+                        <p>We will discuss two operators here that are quite useful in JavaScript: the conditional operator (? :) and the typeof operator.</p>
+                        
+                        <h3>Conditional Operator (? :)</h3>
+                        
+                        <p>The conditional operator first evaluates an expression for a true or false value and then executes one of the two given statements depending upon the result of the evaluation.</p>
+
+                        <table>
+                            <tr>
+                                <th>#</th>
+                                <th>Operador</th>
+                                <th>Descripción</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>? : (Conditional )</td>
+                                <td>If Condition is true? Then value X : Otherwise value Y</td>
+                            </tr>
+                        </table>
+            
+                        <h4>Example</h4>
+
+                        <p>Try the following code to understand how the Conditional Operator works in JavaScript.</p>
+
+
+                        <div class="codigo__html">
+                            <div class="decor__bar html"></div>
+                            <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                                &lt;body&gt;   
+                                   &lt;script type = &quot;text/javascript&quot;&gt;
+                                      &lt;!--
+                                         var a = 10;
+                                         var b = 20;
+                                         var linebreak = &quot;&lt;br /&gt;&quot;;
+                                      
+                                         document.write (&quot;((a &gt; b) ? 100 : 200) =&gt; &quot;);
+                                         result = (a &gt; b) ? 100 : 200;
+                                         document.write(result);
+                                         document.write(linebreak);
+                                      
+                                         document.write (&quot;((a &lt; b) ? 100 : 200) =&gt; &quot;);
+                                         result = (a &lt; b) ? 100 : 200;
+                                         document.write(result);
+                                         document.write(linebreak);
+                                      //--&gt;
+                                   &lt;/script&gt;      
+                                   &lt;p&gt;Set the variables to different values and different operators and then try...&lt;/p&gt;
+                                &lt;/body&gt;
+                             &lt;/html&gt;</code></pre>
+            </div> 
+            
+                        <h4>Salida</h4>
+
+                        <p>((a > b) ? 100 : 200) => 200</p>
+                        <p>((a < b) ? 100 : 200) => 100</p>
+                        <p>Set the variables to different values and different operators and then try...</p>
+            
+            
+                        <h4>typeof Operator</h4>
+
+                        <p>The typeof operator is a unary operator that is placed before its single operand, which can be of any type. Its value is a string indicating the data type of the operand.</p>
+
+                        <p>The typeof operator evaluates to "number", "string", or "boolean" if its operand is a number, string, or boolean value and returns true or false based on the evaluation.</p>
+
+                        <p>Here is a list of the return values for the typeof Operator.</p>
+            
+                        <table>
+                            <tr>
+                                <th>Type</th>
+                                <th>String Returned by typeof</th>
+                            </tr>
+                            <tr>
+                                <td>Number</td>
+                                <td>"number"</td>
+                            </tr>
+                            <tr>
+                                <td>String</td>
+                                <td>"string"</td>
+                            </tr>
+                            <tr>
+                                <td>Boolean</td>
+                                <td>"boolean"</td>
+                            </tr>
+                            <tr>
+                                <td>Object</td>
+                                <td>"object"</td>
+                            </tr>
+                            <tr>
+                                <td>Function</td>
+                                <td>"function"</td>
+                            </tr>
+                            <tr>
+                                <td>Undefined</td>
+                                <td>"undefined"</td>
+                            </tr>
+                            <tr>
+                                <td>Null</td>
+                                <td>"object"</td>
+                            </tr>
+                        </table>
+            
+                        <h4>Example</h4>
+                        <p>The following code shows how to implement typeof operator</p>
+                        
+                        <div class="codigo__html">
+                            <div class="decor__bar html"></div>
+                            <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                                &lt;body&gt;      
+                                   &lt;script type = &quot;text/javascript&quot;&gt;
+                                      &lt;!--
+                                         var a = 10;
+                                         var b = &quot;String&quot;;
+                                         var linebreak = &quot;&lt;br /&gt;&quot;;
+                                      
+                                         result = (typeof b == &quot;string&quot; ? &quot;B is String&quot; : &quot;B is Numeric&quot;);
+                                         document.write(&quot;Result =&gt; &quot;);
+                                         document.write(result);
+                                         document.write(linebreak);
+                                      
+                                         result = (typeof a == &quot;string&quot; ? &quot;A is String&quot; : &quot;A is Numeric&quot;);
+                                         document.write(&quot;Result =&gt; &quot;);
+                                         document.write(result);
+                                         document.write(linebreak);
+                                      //--&gt;
+                                   &lt;/script&gt;      
+                                   &lt;p&gt;Set the variables to different values and different operators and then try...&lt;/p&gt;
+                                &lt;/body&gt;
+                             &lt;/html&gt;</code></pre>
+            </div> 
+            
+                <h4>Salida</h4>
+                <p>Result => B is String</p>
+                <p>Result => A is Numeric</p>
+                <p>Set the variables to different values and different operators and then try...</p>
+                
             </section>
         
             <section id="item8">
-                <h2>item8</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
+                <h2>JavaScript - if...else Statement</h2>
+                
+                <p>While writing a program, there may be a situation when you need to adopt one out of a given set of paths. In such cases, you need to use conditional statements that allow your program to make correct decisions and perform right actions.</p>
+                <p>JavaScript supports conditional statements which are used to perform different actions based on different conditions. Here we will explain the if..else statement</p>
+
+                <h3>Flow Chart of if-else</h3>
+                <p>The following flow chart shows how the if-else statement works</p>
+            
+                <img src="/images/decision_making.jpg" alt="">
+            
+                <p>JavaScript supports the following forms of if..else statement −</p>
+            
+                <ul>
+                    <li>if statement</li>
+                    <li>if...else statement</li>
+                    <li>if...else if... statement.</li>
+                </ul>
+            
+                <h3>if statement</h3>
+                <p>The if statement is the fundamental control statement that allows JavaScript to make decisions and execute statements conditionally.</p>
+            
+                <h4>Syntax</h4>
+                <p>The syntax for a basic if statement is as follows −</p>
+            
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">if (expression) {
+   Statement(s) to be executed if expression is true
+}</code></pre>
+    </div>    
+                <p>Here a JavaScript expression is evaluated. If the resulting value is true, the given statement(s) are executed. If the expression is false, then no statement would be not executed. Most of the times, you will use comparison operators while making decisions.</p>
+            
+                <h4>Example</h4>
+                <p>Try the following example to understand how the if statement works.</p>
+            
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;body&gt;     
+      &lt;script type = &quot;text/javascript&quot;&gt;
+         &lt;!--
+            var age = 20;
+         
+            if( age &gt; 18 ) {
+               document.write(&quot;&lt;b&gt;Qualifies for driving&lt;/b&gt;&quot;);
+            }
+         //--&gt;
+      &lt;/script&gt;      
+      &lt;p&gt;Set the variable to different value and then try...&lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>
+                <h4>Output</h4>  
+
+                <p><b>Qualifies for driving</b></p>
+                <p>Set the variable to different value and then try...</p>
+            
+                <h4>if...else statement</h4>
+                <p>The 'if...else' statement is the next form of control statement that allows JavaScript to execute statements in a more controlled way.</p>
+
+                <h4>Syntax</h4>
+
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">if (expression) {
+   Statement(s) to be executed if expression is true
+} else {
+   Statement(s) to be executed if expression is false
+}</code></pre>
+    </div> 
+                <p>Here JavaScript expression is evaluated. If the resulting value is true, the given statement(s) in the ‘if’ block, are executed. If the expression is false, then the given statement(s) in the else block are executed.</p>
+                <h4>Example</h4>
+                <p>Try the following code to learn how to implement an if-else statement in JavaScript.</p>
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                        &lt;body&gt;   
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              &lt;!--
+                                 var age = 15;
+                              
+                                 if( age &gt; 18 ) {
+                                    document.write(&quot;&lt;b&gt;Qualifies for driving&lt;/b&gt;&quot;);
+                                 } else {
+                                    document.write(&quot;&lt;b&gt;Does not qualify for driving&lt;/b&gt;&quot;);
+                                 }
+                              //--&gt;
+                           &lt;/script&gt;     
+                           &lt;p&gt;Set the variable to different value and then try...&lt;/p&gt;
+                        &lt;/body&gt;
+                     &lt;/html&gt;</code></pre>
+    </div> 
+
+                <h4>Output</h4>
+                <p>Does not qualify for driving</p>
+                <p>Set the variable to different value and then try...</p>
+
+                <h4>if...else if... statement</h4>
+                <p>The if...else if... statement is an advanced form of if…else that allows JavaScript to make a correct decision out of several conditions.</p>
+            
+                <h4>Syntax</h4>
+                <p>The syntax of an if-else-if statement is as follows −</p>
+            
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">if (expression 1) {
+   Statement(s) to be executed if expression 1 is true
+} else if (expression 2) {
+   Statement(s) to be executed if expression 2 is true
+} else if (expression 3) {
+   Statement(s) to be executed if expression 3 is true
+} else {
+   Statement(s) to be executed if no expression is true
+}</code></pre>
+    </div> 
+                <p>There is nothing special about this code. It is just a series of if statements, where each if is a part of the else clause of the previous statement. Statement(s) are executed based on the true condition, if none of the conditions is true, then the else block is executed.</p>
+
+                <h4>Example</h4>
+
+                <p>Try the following code to learn how to implement an if-else-if statement in JavaScript.</p>
+            
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;body&gt;   
+      &lt;script type = &quot;text/javascript&quot;&gt;
+         &lt;!--
+            var book = &quot;maths&quot;;
+            if( book == &quot;history&quot; ) {
+               document.write(&quot;&lt;b&gt;History Book&lt;/b&gt;&quot;);
+            } else if( book == &quot;maths&quot; ) {
+               document.write(&quot;&lt;b&gt;Maths Book&lt;/b&gt;&quot;);
+            } else if( book == &quot;economics&quot; ) {
+               document.write(&quot;&lt;b&gt;Economics Book&lt;/b&gt;&quot;);
+            } else {
+               document.write(&quot;&lt;b&gt;Unknown Book&lt;/b&gt;&quot;);
+            }
+         //--&gt;
+      &lt;/script&gt;      
+      &lt;p&gt;Set the variable to different value and then try...&lt;/p&gt;
+   &lt;/body&gt;
+&lt;html&gt;</code></pre>
+    </div> 
+
+            <h4>Salida</h4>
+
+            <p>Maths Book</p>
+            <p>Set the variable to different value and then try...</p>
+            
+            
+
             </section>
         
             <section id="item9">
-                <h2>item9</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
+                <h2>JavaScript - Switch Case</h2>
+                <p>You can use multiple if...else…if statements, as in the previous chapter, to perform a multiway branch. However, this is not always the best solution, especially when all of the branches depend on the value of a single variable.</p>
+                <p>Starting with JavaScript 1.2, you can use a switch statement which handles exactly this situation, and it does so more efficiently than repeated if...else if statements.</p>
+
+                <h4>Flow Chart</h4>
+                <p>The following flow chart explains a switch-case statement works.</p>
+                <img src="/images/switch_case.jpg" alt="">
+
+                <h4>Syntax</h4>
+                <p>The objective of a switch statement is to give an expression to evaluate and several different statements to execute based on the value of the expression. The interpreter checks each case against the value of the expression until a match is found. If nothing matches, a default condition will be used.</p>
+
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">switch (expression) {
+   case condition 1: statement(s)
+   break;
+   
+   case condition 2: statement(s)
+   break;
+   ...
+   
+   case condition n: statement(s)
+   break;
+   
+   default: statement(s)
+}
+</code></pre>
+    </div> 
+
+            <p>The break statements indicate the end of a particular case. If they were omitted, the interpreter would continue executing each statement in each of the following cases.</p>
+            <p>We will explain break statement in Loop Control chapter.</p>
+
+            <h4>Example</h4>
+
+            <p>Try the following example to implement switch-case statement.</p>
+
+            <div class="codigo__html">
+                <div class="decor__bar html"></div>
+                <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;body&gt;   
+      &lt;script type = &quot;text/javascript&quot;&gt;
+         &lt;!--
+            var grade = 'A';
+            document.write(&quot;Entering switch block&lt;br /&gt;&quot;);
+            switch (grade) {
+               case 'A': document.write(&quot;Good job&lt;br /&gt;&quot;);
+               break;
+            
+               case 'B': document.write(&quot;Pretty good&lt;br /&gt;&quot;);
+               break;
+            
+               case 'C': document.write(&quot;Passed&lt;br /&gt;&quot;);
+               break;
+            
+               case 'D': document.write(&quot;Not so good&lt;br /&gt;&quot;);
+               break;
+            
+               case 'F': document.write(&quot;Failed&lt;br /&gt;&quot;);
+               break;
+            
+               default:  document.write(&quot;Unknown grade&lt;br /&gt;&quot;)
+            }
+            document.write(&quot;Exiting switch block&quot;);
+         //--&gt;
+      &lt;/script&gt;      
+      &lt;p&gt;Set the variable to different value and then try...&lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</div> 
+
+            <h4>Salida</h4>
+            <p>Entering switch block</p>
+            <p>Good job</p>
+            <p>Exiting switch block</p>
+            <p>Set the variable to different value and then try...</p>
+
+            <p>Break statements play a major role in switch-case statements. Try the following code that uses switch-case statement without any break statement.</p>
+
+            <div class="codigo__html">
+                <div class="decor__bar html"></div>
+                <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                    &lt;body&gt;      
+                       &lt;script type = &quot;text/javascript&quot;&gt;
+                          &lt;!--
+                             var grade = 'A';
+                             document.write(&quot;Entering switch block&lt;br /&gt;&quot;);
+                             switch (grade) {
+                                case 'A': document.write(&quot;Good job&lt;br /&gt;&quot;);
+                                case 'B': document.write(&quot;Pretty good&lt;br /&gt;&quot;);
+                                case 'C': document.write(&quot;Passed&lt;br /&gt;&quot;);
+                                case 'D': document.write(&quot;Not so good&lt;br /&gt;&quot;);
+                                case 'F': document.write(&quot;Failed&lt;br /&gt;&quot;);
+                                default: document.write(&quot;Unknown grade&lt;br /&gt;&quot;)
+                             }
+                             document.write(&quot;Exiting switch block&quot;);
+                          //--&gt;
+                       &lt;/script&gt;      
+                       &lt;p&gt;Set the variable to different value and then try...&lt;/p&gt;
+                    &lt;/body&gt;
+                 &lt;/html&gt;</code></pre>
+</div> 
+
+            <h4>Salida</h4>
+
+            <p>Entering switch block</p>
+            <p>Good job</p>
+            <p>Pretty good</p>
+            <p>Passed</p>
+            <p>Not so good</p>
+            <p>Failed</p>
+            <p>Unknown grade</p>
+            <p>Exiting switch block</p>
+            <p>Set the variable to different value and then try...</p>
+
             </section>
         
             <section id="item10">
-                <h2>item10</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
+                <h2>While Loops</h2>
+                <p>While writing a program, you may encounter a situation where you need to perform an action over and over again. In such situations, you would need to write loop statements to reduce the number of lines.</p>
+                <p>JavaScript supports all the necessary loops to ease down the pressure of programming.</p>
+
+                <h4>The while Loop</h4>
+                
+                <p>The most basic loop in JavaScript is the while loop which would be discussed in this chapter. The purpose of a while loop is to execute a statement or code block repeatedly as long as an expression is true. Once the expression becomes false, the loop terminates.</p>
+
+                <h3>Flow chart</h3>
+
+                <p>The flow chart of while loop looks as follows −</p>
+
+                <img src="/images/while_loop.jpg" alt="">
+
+                <h4>Syntax</h4>
+
+                <p>The syntax of while loop in JavaScript is as follows −</p>
+
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">while (expression) {
+                        Statement(s) to be executed if expression is true
+                     }</code></pre>
+    </div>
+
+                <h4>Example</h4>
+                <p>Try the following example to implement while loop</p>
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                        &lt;body&gt;
+                           
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              &lt;!--
+                                 var count = 0;
+                                 document.write(&quot;Starting Loop &quot;);
+                              
+                                 while (count &lt; 10) {
+                                    document.write(&quot;Current Count : &quot; + count + &quot;&lt;br /&gt;&quot;);
+                                    count++;
+                                 }
+                              
+                                 document.write(&quot;Loop stopped!&quot;);
+                              //--&gt;
+                           &lt;/script&gt;
+                           
+                           &lt;p&gt;Set the variable to different value and then try...&lt;/p&gt;
+                        &lt;/body&gt;
+                     &lt;/html&gt;</code></pre>
+    </div> 
+
+                <h4>Output</h4>
+
+                <p>Starting Loop</p>
+                <p>Current Count : 0</p>
+                <p>Current Count : 1</p>
+                <p>Current Count : 2</p>
+                <p>Current Count : 3</p>
+                <p>Current Count : 4</p>
+                <p>Current Count : 5</p>
+                <p>Current Count : 6</p>
+                <p>Current Count : 7</p>
+                <p>Current Count : 8</p>
+                <p>Current Count : 9</p>
+                <p>Loop stopped!</p>
+                <p>Set the variable to different value and then try...</p>
+
+                <h4>The do...while Loop</h4>
+
+                <p>The do...while loop is similar to the while loop except that the condition check happens at the end of the loop. This means that the loop will always be executed at least once, even if the condition is false.</p>
+
+                <h5>Flow Chart</h5>
+                <p>The flow chart of a do-while loop would be as follows −</p>
+
+                <img src="/images/do_while_loop.jpg" alt="">
+
+                <h4>Syntax</h4>
+
+                <p>The syntax for do-while loop in JavaScript is as follows −</p>
+
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">do {
+   Statement(s) to be executed;
+} while (expression);</code></pre>
+    </div> 
+
+                <p>Note − Don’t miss the semicolon used at the end of the do...while loop.</p>
+                <h4>Example</h4>
+                <p>Try the following example to learn how to implement a do-while loop in JavaScript.</p>
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                        &lt;body&gt;   
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              &lt;!--
+                                 var count = 0;
+                                 
+                                 document.write(&quot;Starting Loop&quot; + &quot;&lt;br /&gt;&quot;);
+                                 do {
+                                    document.write(&quot;Current Count : &quot; + count + &quot;&lt;br /&gt;&quot;);
+                                    count++;
+                                 }
+                                 
+                                 while (count &lt; 5);
+                                 document.write (&quot;Loop stopped!&quot;);
+                              //--&gt;
+                           &lt;/script&gt;      
+                           &lt;p&gt;Set the variable to different value and then try...&lt;/p&gt;
+                        &lt;/body&gt;
+                     &lt;/html&gt;</code></pre>
+    </div> 
+
+                    <h4>Output</h4>
+
+                    <p>Starting Loop</p>
+                    <p>Current Count : 0</p>
+                    <p>Current Count : 1</p>
+                    <p>Current Count : 2</p>
+                    <p>Current Count : 3</p>
+                    <p>Current Count : 4</p>
+                    <p>Loop Stopped!</p>
+                    <p>Set the variable to different value and then try...</p>
+
+
             </section>
             
             <section id="item11">
-                <h2>item11</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
+                <h2>For Loop</h2>
+                
+                <p>The 'for' loop is the most compact form of looping. It includes the following three important parts −</p>
+
+                <ul>
+                    <li>The loop initialization where we initialize our counter to a starting value. The initialization statement is executed before the loop begins.</li>
+                    <li>The test statement which will test if a given condition is true or not. If the condition is true, then the code given inside the loop will be executed, otherwise the control will come out of the loop.</li>
+                    <li>The iteration statement where you can increase or decrease your counter.</li>
+                </ul>
+
+                <p>You can put all the three parts in a single line separated by semicolons.</p>
+
+                <h4>Flow Chart</h4>
+                <p>The flow chart of a for loop in JavaScript would be as follows −</p>
+
+                <img src="/images/for_loop.jpg" alt="">
+
+                <h4>Syntax</h4>
+
+                <p>The syntax of for loop is JavaScript is as follows −</p>
+
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">for (initialization; test condition; iteration statement) {
+   Statement(s) to be executed if test condition is true
+}</code></pre>
+    </div> 
+                <h4>Example</h4>
+
+                <p>Try the following example to learn how a for loop works in JavaScript.</p>
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                        &lt;body&gt;      
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              &lt;!--
+                                 var count;
+                                 document.write(&quot;Starting Loop&quot; + &quot;&lt;br /&gt;&quot;);
+                              
+                                 for(count = 0; count &lt; 10; count++) {
+                                    document.write(&quot;Current Count : &quot; + count );
+                                    document.write(&quot;&lt;br /&gt;&quot;);
+                                 }         
+                                 document.write(&quot;Loop stopped!&quot;);
+                              //--&gt;
+                           &lt;/script&gt;      
+                           &lt;p&gt;Set the variable to different value and then try...&lt;/p&gt;
+                        &lt;/body&gt;
+                     &lt;/html&gt;</code></pre>
+    </div> 
+
+                <h4>Output</h4>
+                <p>Starting Loop</p>
+                <p>Current Count : 0</p>
+                <p>Current Count : 1</p>
+                <p>Current Count : 2</p>
+                <p>Current Count : 3</p>
+                <p>Current Count : 4</p>
+                <p>Current Count : 5</p>
+                <p>Current Count : 6</p>
+                <p>Current Count : 7</p>
+                <p>Current Count : 8</p>
+                <p>Current Count : 9</p>
+                <p>Loop stopped!</p>
+                <p>Set the variable to different value and then try...</p>
+
             </section>
 
             <section id="item12">
-                <h2>item12</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
+                <h2>JavaScript for...in loop</h2>
+                <p>The for...in loop is used to loop through an object's properties. As we have not discussed Objects yet, you may not feel comfortable with this loop. But once you understand how objects behave in JavaScript, you will find this loop very useful.</p>
+                <h4>Syntax</h4>
+                <p>The syntax of ‘for..in’ loop is −</p>
+            
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">for (variablename in object) {
+   statement or block to execute
+}</code></pre>
+    </div> 
+            
+                <p>In each iteration, one property from object is assigned to variablename and this loop continues till all the properties of the object are exhausted.</p>
+
+                <h4>Example</h4>
+
+                <p>Try the following example to implement ‘for-in’ loop. It prints the web browser’s Navigator object.</p>
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                        &lt;body&gt;      
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              &lt;!--
+                                 var aProperty;
+                                 document.write(&quot;Navigator Object Properties&lt;br /&gt; &quot;);        
+                                 for (aProperty in navigator) {
+                                    document.write(aProperty);
+                                    document.write(&quot;&lt;br /&gt;&quot;);
+                                 }
+                                 document.write (&quot;Exiting from the loop!&quot;);
+                              //--&gt;
+                           &lt;/script&gt;      
+                           &lt;p&gt;Set the variable to different object and then try...&lt;/p&gt;
+                        &lt;/body&gt;
+                     &lt;/html&gt;</code></pre>
+    </div> 
+            
+                <h4>Output</h4>
+
+                <p>Navigator Object Properties</p>
+                <p>serviceWorker</p>
+                <p>webkitPersistentStorage</p>
+                <p>webkitTemporaryStorage</p>
+                <p>geolocation</p>
+                <p>doNotTrack </p>
+                <p>onLine</p>
+                <p>languages </p>
+                <p>language</p>
+                <p>userAgent</p>
+                <p>product</p>
+                <p>platform</p>
+                <p>appVersion</p>
+                <p>appName</p>
+                <p>appCodeName</p>
+                <p>hardwareConcurrency</p>
+                <p>maxTouchPoints</p>
+                <p>vendorSub</p>
+                <p>vendor</p>
+                <p>productSub</p>
+                <p>cookieEnabled</p>
+                <p>mimeTypes</p>
+                <p>plugins</p>
+                <p>javaEnabled</p>
+                <p>getStorageUpdates</p>
+                <p>getGamepads</p>
+                <p>webkitGetUserMedia</p>
+                <p>vibrate</p>
+                <p>getBattery </p>
+                <p>sendBeacon</p>
+                <p>registerProtocolHandler </p>
+                <p>unregisterProtocolHandler</p>
+                <p>Exiting from the loop!</p>
+                <p>Set the variable to different object and then try...</p>
             </section>
 
             <section id="item13">
-                <h2>item13</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
+                <h2>JavaScript - Loop Control</h2>
+                <p>JavaScript provides full control to handle loops and switch statements. There may be a situation when you need to come out of a loop without reaching its bottom. There may also be a situation when you want to skip a part of your code block and start the next iteration of the loop.</p>
+                <p>To handle all such situations, JavaScript provides break and continue statements. These statements are used to immediately come out of any loop or to start the next iteration of any loop respectively.</p>
+
+                <h4>The break Statement</h4>
+                <p>The break statement, which was briefly introduced with the switch statement, is used to exit a loop early, breaking out of the enclosing curly braces.</p>
+                <h4>Flow Chart</h4>
+                <p>The flow chart of a break statement would look as follows −</p>
+
+                <img src="/images/break_statement.jpg" alt="">
+
+                <h4>Example</h4>
+
+                <p>The following example illustrates the use of a break statement with a while loop. Notice how the loop breaks out early once x reaches 5 and reaches to document.write (..) statement just below to the closing curly brace −</p>
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                        &lt;body&gt;     
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              &lt;!--
+                              var x = 1;
+                              document.write(&quot;Entering the loop&lt;br /&gt; &quot;);
+                              
+                              while (x &lt; 20) {
+                                 if (x == 5) {
+                                    break;   // breaks out of loop completely
+                                 }
+                                 x = x + 1;
+                                 document.write( x + &quot;&lt;br /&gt;&quot;);
+                              }         
+                              document.write(&quot;Exiting the loop!&lt;br /&gt; &quot;);
+                              //--&gt;
+                           &lt;/script&gt;
+                           
+                           &lt;p&gt;Set the variable to different value and then try...&lt;/p&gt;
+                        &lt;/body&gt;
+                     &lt;/html&gt;</code></pre>
+    </div> 
+
+                <h4>Output</h4>
+
+                <p>Entering the loop</p>
+                <p>2</p>
+                <p>3</p>
+                <p>4</p>
+                <p>5</p>
+                <p>Exiting the loop!</p>
+                <p>Set the variable to different value and then try...</p>
+
+                <p>We already have seen the usage of break statement inside a switch statement</p>
+
+                <h4>The continue Statement</h4>
+
+                <p>The continue statement tells the interpreter to immediately start the next iteration of the loop and skip the remaining code block. When a continue statement is encountered, the program flow moves to the loop check expression immediately and if the condition remains true, then it starts the next iteration, otherwise the control comes out of the loop.</p>
+
+                <h4>Example</h4>
+
+                <p>This example illustrates the use of a continue statement with a while loop. Notice how the continue statement is used to skip printing when the index held in variable x reaches 5 −</p>
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                        &lt;body&gt;      
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              &lt;!--
+                                 var x = 1;
+                                 document.write(&quot;Entering the loop&lt;br /&gt; &quot;);
+                              
+                                 while (x &lt; 10) {
+                                    x = x + 1;
+                                    
+                                    if (x == 5) {
+                                       continue;   // skip rest of the loop body
+                                    }
+                                    document.write( x + &quot;&lt;br /&gt;&quot;);
+                                 }         
+                                 document.write(&quot;Exiting the loop!&lt;br /&gt; &quot;);
+                              //--&gt;
+                           &lt;/script&gt;      
+                           &lt;p&gt;Set the variable to different value and then try...&lt;/p&gt;
+                        &lt;/body&gt;
+                     &lt;/html&gt;</code></pre>
+    </div> 
+
+                <h4>Output</h4>
+
+                <p>Entering the loop</p>
+                <p>2</p>
+                <p>3</p>
+                <p>4</p>
+                <p>5</p>
+                <p>6</p>
+                <p>7</p>
+                <p>8</p>
+                <p>9</p>
+                <p>10</p>
+                <p>Exiting the loop!</p>
+                <p>Set the variable to different value and then try...</p>
+
+                <h4>Using Labels to Control the Flow</h4>
+
+                <p>Starting from JavaScript 1.2, a label can be used with break and continue to control the flow more precisely. A label is simply an identifier followed by a colon (:) that is applied to a statement or a block of code. We will see two different examples to understand how to use labels with break and continue.</p>
+
+                <p>Note − Line breaks are not allowed between the ‘continue’ or ‘break’ statement and its label name. Also, there should not be any other statement in between a label name and associated loop.</p>
+
+                <p>Try the following two examples for a better understanding of Labels.</p>
+
+                <h4>Example 1</h4>
+
+                <p>The following example shows how to implement Label with a break statement.</p>
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;body&gt;      
+      &lt;script type = &quot;text/javascript&quot;&gt;
+         &lt;!--
+            document.write(&quot;Entering the loop!&lt;br /&gt; &quot;);
+            outerloop:        // This is the label name         
+            for (var i = 0; i &lt; 5; i++) {
+               document.write(&quot;Outerloop: &quot; + i + &quot;&lt;br /&gt;&quot;);
+               innerloop:
+               for (var j = 0; j &lt; 5; j++) {
+                  if (j &gt; 3 ) break ;           // Quit the innermost loop
+                  if (i == 2) break innerloop;  // Do the same thing
+                  if (i == 4) break outerloop;  // Quit the outer loop
+                  document.write(&quot;Innerloop: &quot; + j + &quot; &lt;br /&gt;&quot;);
+               }
+            }        
+            document.write(&quot;Exiting the loop!&lt;br /&gt; &quot;);
+         //--&gt;
+      &lt;/script&gt;      
+   &lt;/body&gt;
+    </div> 
+            <h4>Output</h4>
+
+            <p>Entering the loop!</p>
+            <p>Outerloop: 0</p>
+            <p>Innerloop: 0 </p>
+            <p>Innerloop: 1</p>
+            <p>Innerloop: 2</p>
+            <p>Innerloop: 3</p>
+            <p>Outerloop: 1</p>
+            <p>Innerloop: 0</p>
+            <p>Innerloop: 1</p>
+            <p>Innerloop: 2</p>
+            <p>Innerloop: 3</p>
+            <p>Outerloop: 2</p>
+            <p>Outerloop: 3</p>
+            <p>Innerloop: 0</p>
+            <p>Innerloop: 1</p>
+            <p>Innerloop: 2</p>
+            <p>Innerloop: 3</p>
+            <p>Outerloop: 4</p>
+            <p>Exiting the loop!</p>
+
+            <h4>Example 2</h4>
+
+            <div class="codigo__html">
+                <div class="decor__bar html"></div>
+                <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                    &lt;body&gt;
+                    
+                       &lt;script type = &quot;text/javascript&quot;&gt;
+                          &lt;!--
+                          document.write(&quot;Entering the loop!&lt;br /&gt; &quot;);
+                          outerloop:     // This is the label name
+                          
+                          for (var i = 0; i &lt; 3; i++) {
+                             document.write(&quot;Outerloop: &quot; + i + &quot;&lt;br /&gt;&quot;);
+                             for (var j = 0; j &lt; 5; j++) {
+                                if (j == 3) {
+                                   continue outerloop;
+                                }
+                                document.write(&quot;Innerloop: &quot; + j + &quot;&lt;br /&gt;&quot;);
+                             }
+                          }
+                          
+                          document.write(&quot;Exiting the loop!&lt;br /&gt; &quot;);
+                          //--&gt;
+                       &lt;/script&gt;
+                       
+                    &lt;/body&gt;
+                 &lt;/html&gt;</div> 
+
+                <h4>Output</h4>
+
+                <p>Entering the loop!</p>
+                <p>Outerloop: 0</p>
+                <p>Innerloop: 0</p>
+                <p>Innerloop: 1</p>
+                <p>Innerloop: 2</p>
+                <p>Outerloop: 1</p>
+                <p>Innerloop: 0</p>
+                <p>Innerloop: 1</p>
+                <p>Innerloop: 2</p>
+                <p>Outerloop: 2</p>
+                <p>Innerloop: 0</p>
+                <p>Innerloop: 1</p>
+                <p>Innerloop: 2</p>
+                <p>Exiting the loop!</p>
+
             </section>
 
             <section id="item14">
-                <h2>item14</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
-            </section>
+                <h2>Functions</h2>
+                
+                <p>A function is a group of reusable code which can be called anywhere in your program. This eliminates the need of writing the same code again and again. It helps programmers in writing modular codes. Functions allow a programmer to divide a big program into a number of small and manageable functions.</p>
+                <p>Like any other advanced programming language, JavaScript also supports all the features necessary to write modular code using functions. You must have seen functions like alert() and write() in the earlier chapters. We were using these functions again and again, but they had been written in core JavaScript only once.</p>
+                <p>JavaScript allows us to write our own functions as well. This section explains how to write your own functions in JavaScript.</p>
+
+                <h4>Function Definition</h4>
+                <p>Before we use a function, we need to define it. The most common way to define a function in JavaScript is by using the function keyword, followed by a unique function name, a list of parameters (that might be empty), and a statement block surrounded by curly braces.</p>
+
+                <h4>Syntax</h4>
+                
+                <p>The basic syntax is shown here</p>
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;script type = &quot;text/javascript&quot;&gt;
+                        &lt;!--
+                           function functionname(parameter-list) {
+                              statements
+                           }
+                        //--&gt;
+                     &lt;/script&gt;</code></pre></div> 
+
+                    <h4>Example</h4>
+
+                    <p>Try the following example. it defines a function called sayHello that takes no parameters -</p>
+            
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;script type = &quot;text/javascript&quot;&gt;
+                            &lt;!--
+                               function sayHello() {
+                                  alert(&quot;Hello there&quot;);
+                               }
+                            //--&gt;
+                         &lt;/script&gt;</code></pre></div>
+            
+
+                <h4>Calling a Function</h4>    
+                <p>To invoke a function somewhere later in the script, you would simply need to write the name of that function as shown in the following code.</p>
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                        &lt;head&gt;   
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              function sayHello() {
+                                 document.write (&quot;Hello there!&quot;);
+                              }
+                           &lt;/script&gt;
+                           
+                        &lt;/head&gt;
+                        
+                        &lt;body&gt;
+                           &lt;p&gt;Click the following button to call the function&lt;/p&gt;      
+                           &lt;form&gt;
+                              &lt;input type = &quot;button&quot; onclick = &quot;sayHello()&quot; value = &quot;Say Hello&quot;&gt;
+                           &lt;/form&gt;      
+                           &lt;p&gt;Use different text in write method and then try...&lt;/p&gt;
+                        &lt;/body&gt;
+                     &lt;/html&gt;</code></pre></div>
+
+                <h4>Output</h4>
+
+                              
+
+            
+                </section>
 
             <section id="item15">
                 <h2>item15</h2>
