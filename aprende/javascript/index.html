@@ -2172,31 +2172,35 @@
 
                 <h4>Example 1</h4>
 
-                <p>The following example shows how to implement Label with a break statement.</p>
-
                 <div class="codigo__html">
                     <div class="decor__bar html"></div>
                     <pre class="line-numbers"><code class="language-html">&lt;html&gt;
-   &lt;body&gt;      
-      &lt;script type = &quot;text/javascript&quot;&gt;
-         &lt;!--
-            document.write(&quot;Entering the loop!&lt;br /&gt; &quot;);
-            outerloop:        // This is the label name         
-            for (var i = 0; i &lt; 5; i++) {
-               document.write(&quot;Outerloop: &quot; + i + &quot;&lt;br /&gt;&quot;);
-               innerloop:
-               for (var j = 0; j &lt; 5; j++) {
-                  if (j &gt; 3 ) break ;           // Quit the innermost loop
-                  if (i == 2) break innerloop;  // Do the same thing
-                  if (i == 4) break outerloop;  // Quit the outer loop
-                  document.write(&quot;Innerloop: &quot; + j + &quot; &lt;br /&gt;&quot;);
-               }
-            }        
-            document.write(&quot;Exiting the loop!&lt;br /&gt; &quot;);
-         //--&gt;
-      &lt;/script&gt;      
-   &lt;/body&gt;
+                        &lt;body&gt;      
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              &lt;!--
+                                 document.write(&quot;Entering the loop!&lt;br /&gt; &quot;);
+                                 outerloop:        // This is the label name         
+                                 for (var i = 0; i &lt; 5; i++) {
+                                    document.write(&quot;Outerloop: &quot; + i + &quot;&lt;br /&gt;&quot;);
+                                    innerloop:
+                                    for (var j = 0; j &lt; 5; j++) {
+                                       if (j &gt; 3 ) break ;           // Quit the innermost loop
+                                       if (i == 2) break innerloop;  // Do the same thing
+                                       if (i == 4) break outerloop;  // Quit the outer loop
+                                       document.write(&quot;Innerloop: &quot; + j + &quot; &lt;br /&gt;&quot;);
+                                    }
+                                 }        
+                                 document.write(&quot;Exiting the loop!&lt;br /&gt; &quot;);
+                              //--&gt;
+                           &lt;/script&gt;      
+                        &lt;/body&gt;
+                     &lt;/html&gt;</code></pre>
     </div> 
+
+                <p>The following example shows how to implement Label with a break statement.</p>
+
+
+                
             <h4>Output</h4>
 
             <p>Entering the loop!</p>
@@ -2246,7 +2250,8 @@
                        &lt;/script&gt;
                        
                     &lt;/body&gt;
-                 &lt;/html&gt;</div> 
+                 &lt;/html&gt;</code></pre>
+</div> 
 
                 <h4>Output</h4>
 
@@ -2331,41 +2336,967 @@
 
                 <h4>Output</h4>
 
-                              
+                <p>Click the following button to call the function</p>
+                <button>Say Hello</button>
+                <p>Use different text in write method and then try...</p>
 
-            
+                <h4>Function Parameters</h4>
+                <p>Till now, we have seen functions without parameters. But there is a facility to pass different parameters while calling a function. These passed parameters can be captured inside the function and any manipulation can be done over those parameters. A function can take multiple parameters separated by comma.</p>
+                
+                <h4>Example</h4>
+                <p>Try the following example. We have modified our sayHello function here. Now it takes two parameters.</p>
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                        &lt;head&gt;   
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              function sayHello(name, age) {
+                                 document.write (name + &quot; is &quot; + age + &quot; years old.&quot;);
+                              }
+                           &lt;/script&gt;      
+                        &lt;/head&gt;
+                        
+                        &lt;body&gt;
+                           &lt;p&gt;Click the following button to call the function&lt;/p&gt;      
+                           &lt;form&gt;
+                              &lt;input type = &quot;button&quot; onclick = &quot;sayHello('Zara', 7)&quot; value = &quot;Say Hello&quot;&gt;
+                           &lt;/form&gt;      
+                           &lt;p&gt;Use different parameters inside the function and then try...&lt;/p&gt;
+                        &lt;/body&gt;
+                     &lt;/html&gt;</code></pre></div>
+
+                    <h4>Output</h4>
+                    <p>Click the following button to call the function</p>
+                    <button>Say Hello</button>
+                    <p>Use different parameters inside the function and then try...</p>          
+
+                    <h4>The return Statement</h4>
+                    
+                    <p>A JavaScript function can have an optional return statement. This is required if you want to return a value from a function. This statement should be the last statement in a function</p>
+                    <p>For example, you can pass two numbers in a function and then you can expect the function to return their multiplication in your calling program.</p>
+
+                    <h4>Example</h4>
+
+                    <p>Try the following example. It defines a function that takes two parameters and concatenates them before returning the resultant in the calling program.</p>
+
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                            &lt;head&gt;  
+                               &lt;script type = &quot;text/javascript&quot;&gt;
+                                  function concatenate(first, last) {
+                                     var full;
+                                     full = first + last;
+                                     return full;
+                                  }
+                                  function secondFunction() {
+                                     var result;
+                                     result = concatenate('Zara', 'Ali');
+                                     document.write (result );
+                                  }
+                               &lt;/script&gt;      
+                            &lt;/head&gt;
+                            
+                            &lt;body&gt;
+                               &lt;p&gt;Click the following button to call the function&lt;/p&gt;      
+                               &lt;form&gt;
+                                  &lt;input type = &quot;button&quot; onclick = &quot;secondFunction()&quot; value = &quot;Call Function&quot;&gt;
+                               &lt;/form&gt;      
+                               &lt;p&gt;Use different parameters inside the function and then try...&lt;/p&gt;  
+                           &lt;/body&gt;
+                         &lt;/html&gt;</code></pre></div>
+
+                    <h4>Salida</h4>     
+                    <p>Click the following button to call the function</p>
+                    <button>Call Function</button>
+                    <p>Use different parameters inside the function and then try...</p>
+                    
+                    <ul>
+                        <li>JavaScript Nested Functions</li>
+                        <li>JavaScript Function( ) Constructor</li>
+                        <li>JavaScript Function Literals</li>
+                    </ul>
                 </section>
 
             <section id="item15">
-                <h2>item15</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
+                <h2>Events</h2>
+                <h4>What is an Event ?</h4>
+                <p>JavaScript's interaction with HTML is handled through events that occur when the user or the browser manipulates a page.</p>
+                <p>When the page loads, it is called an event. When the user clicks a button, that click too is an event. Other examples include events like pressing any key, closing a window, resizing a window, etc.</p>
+                <p>Developers can use these events to execute JavaScript coded responses, which cause buttons to close windows, messages to be displayed to users, data to be validated, and virtually any other type of response imaginable.</p>
+                <p>Events are a part of the Document Object Model (DOM) Level 3 and every HTML element contains a set of events which can trigger JavaScript Code.</p>
+                <p>Please go through this small tutorial for a better understanding HTML Event Reference. Here we will see a few examples to understand a relation between Event and JavaScript −</p>
+            
+                <h4>onclick Event Type</h4>
+
+                <p>This is the most frequently used event type which occurs when a user clicks the left button of his mouse. You can put your validation, warning etc., against this event type.</p>
+
+                <h4>Example</h4>
+
+                <p>Try the following example.</p>
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                        &lt;head&gt;   
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              &lt;!--
+                                 function sayHello() {
+                                    alert(&quot;Hello World&quot;)
+                                 }
+                              //--&gt;
+                           &lt;/script&gt;      
+                        &lt;/head&gt;
+                        
+                        &lt;body&gt;
+                           &lt;p&gt;Click the following button and see result&lt;/p&gt;      
+                           &lt;form&gt;
+                              &lt;input type = &quot;button&quot; onclick = &quot;sayHello()&quot; value = &quot;Say Hello&quot; /&gt;
+                           &lt;/form&gt;      
+                        &lt;/body&gt;
+                     &lt;/html&gt;</code></pre></div>
+            
+                <h4>Salida</h4>
+                <p>Click the following button and see result</p>
+                <button>Say Hello</button>
+
+                <h4>onsubmit Event Type</h4>
+
+                <p>onsubmit is an event that occurs when you try to submit a form. You can put your form validation against this event type.</p>
+
+                <h4>Example</h4>
+
+                <p>The following example shows how to use onsubmit. Here we are calling a validate() function before submitting a form data to the webserver. If validate() function returns true, the form will be submitted, otherwise it will not submit the data.</p>
+
+                <p>Try the following example.</p>
+            
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                        &lt;head&gt;   
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              &lt;!--
+                                 function validation() {
+                                    all validation goes here
+                                    .........
+                                    return either true or false
+                                 }
+                              //--&gt;
+                           &lt;/script&gt;      
+                        &lt;/head&gt;
+                        
+                        &lt;body&gt;   
+                           &lt;form method = &quot;POST&quot; action = &quot;t.cgi&quot; onsubmit = &quot;return validate()&quot;&gt;
+                              .......
+                              &lt;input type = &quot;submit&quot; value = &quot;Submit&quot; /&gt;
+                           &lt;/form&gt;      
+                        &lt;/body&gt;
+                     &lt;/html&gt;</code></pre></div>                 
+            
+            
+                <h4>onmouseover and onmouseout</h4>          
+                <p>These two event types will help you create nice effects with images or even with text as well. The onmouseover event triggers when you bring your mouse over any element and the onmouseout triggers when you move your mouse out from that element. Try the following example.</p>
+                
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                        &lt;head&gt;   
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              &lt;!--
+                                 function over() {
+                                    document.write (&quot;Mouse Over&quot;);
+                                 }            
+                                 function out() {
+                                    document.write (&quot;Mouse Out&quot;);
+                                 }            
+                              //--&gt;
+                           &lt;/script&gt;      
+                        &lt;/head&gt;
+                        
+                        &lt;body&gt;
+                           &lt;p&gt;Bring your mouse inside the division to see the result:&lt;/p&gt;      
+                           &lt;div onmouseover = &quot;over()&quot; onmouseout = &quot;out()&quot;&gt;
+                              &lt;h2&gt; This is inside the division &lt;/h2&gt;
+                           &lt;/div&gt;         
+                        &lt;/body&gt;
+                     &lt;/html&gt;</code></pre></div> 
+            
+            
+                <h4>Salida</h4>                 
+            
+                <p>Mouse Over</p>
+            
+                <h4>HTML 5 Standard Events</h4>
+
+                <p>The standard HTML 5 events are listed here for your reference. Here script indicates a Javascript function to be executed against that event.</p>
+
+                <table>
+                    <tr>
+                        <th>Atributo</th>
+                        <th>Valor</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>Offline</td>
+                        <td>script</td>
+                        <td>Triggers when the document goes offline</td>
+                    </tr>
+                    <tr>
+                        <td>Onabort</td>
+                        <td>script</td>
+                        <td>Triggers on an abort event</td>
+                    </tr>
+                    <tr>
+                        <td>onafterprint</td>
+                        <td>script</td>
+                        <td>Triggers after the document is printed</td>
+                    </tr>
+                    <tr>
+                        <td>onbeforeonload</td>
+                        <td>script</td>
+                        <td>Triggers before the document loads</td>
+                    </tr>
+                    <tr>
+                        <td>onbeforeprint</td>
+                        <td>script</td>
+                        <td>Triggers before the document is printed</td>
+                    </tr>
+                    <tr>
+                        <td>onblur</td>
+                        <td>script</td>
+                        <td>Triggers when the window loses focus</td>
+                    </tr>
+                    <tr>
+                        <td>oncanplay</td>
+                        <td>script</td>
+                        <td>Triggers when media can start play, but might has to stop for buffering</td>
+                    </tr>
+                    <tr>
+                        <td>oncanplaythrough</td>
+                        <td>script</td>
+                        <td>Triggers when media can be played to the end, without stopping for buffering</td>
+                    </tr>
+                    <tr>
+                        <td>onchange</td>
+                        <td>script</td>
+                        <td>Triggers when an element changes</td>
+                    </tr>
+                    <tr>
+                        <td>onclick</td>
+                        <td>script</td>
+                        <td>Triggers on a mouse click</td>
+                    </tr>
+                    <tr>
+                        <td>oncontextmenu</td>
+                        <td>script</td>
+                        <td>Triggers when a context menu is triggered</td>
+                    </tr>
+                    <tr>
+                        <td>ondblclick</td>
+                        <td>script</td>
+                        <td>Triggers on a mouse double-click</td>
+                    </tr>
+                    <tr>
+                        <td>ondrag</td>
+                        <td>script</td>
+                        <td>Triggers when an element is dragged</td>
+                    </tr>
+                    <tr>
+                        <td>ondragend</td>
+                        <td>script</td>
+                        <td>Triggers at the end of a drag operation</td>
+                    </tr>
+                    <tr>
+                        <td>ondragenter</td>
+                        <td>script</td>
+                        <td>Triggers when an element has been dragged to a valid drop target</td>
+                    </tr>
+                    <tr>
+                        <td>ondragleave</td>
+                        <td>script</td>
+                        <td>Triggers when an element is being dragged over a valid drop target</td>
+                    </tr>
+                    <tr>
+                        <td>ondragover</td>
+                        <td>script</td>
+                        <td>Triggers at the start of a drag operation</td>
+                    </tr>
+                    <tr>
+                        <td>ondragstart</td>
+                        <td>script</td>
+                        <td>Triggers at the start of a drag operation</td>
+                    </tr>
+                    <tr>
+                        <td>ondrop</td>
+                        <td>script</td>
+                        <td>Triggers when dragged element is being dropped</td>
+                    </tr>
+                    <tr>
+                        <td>ondurationchange</td>
+                        <td>script</td>
+                        <td>Triggers when the length of the media is changed</td>
+                    </tr>
+                    <tr>
+                        <td>onemptied</td>
+                        <td>script</td>
+                        <td>Triggers when a media resource element suddenly becomes empty.</td>
+                    </tr>
+                    <tr>
+                        <td>onended</td>
+                        <td>script</td>
+                        <td>Triggers when media has reach the end</td>
+                    </tr>
+                    <tr>
+                        <td>onerror</td>
+                        <td>script</td>
+                        <td>Triggers when an error occur</td>
+                    </tr>
+                    <tr>
+                        <td>onfocus</td>
+                        <td>script</td>
+                        <td>Triggers when the window gets focus</td>
+                    </tr>
+                    <tr>
+                        <td>onformchange</td>
+                        <td>script</td>
+                        <td>Triggers when a form changes</td>
+                    </tr>
+                    <tr>
+                        <td>onhaschange</td>
+                        <td>script</td>
+                        <td>Triggers when the document has change</td>
+                    </tr>
+                    <tr>
+                        <td>oninput</td>
+                        <td>script</td>
+                        <td>Triggers when an element gets user input</td>
+                    </tr>
+                    <tr>
+                        <td>oninvalid</td>
+                        <td>script</td>
+                        <td>Triggers when an element is invalid</td>
+                    </tr>
+                    <tr>
+                        <td>onkeydown</td>
+                        <td>script</td>
+                        <td>Triggers when a key is pressed</td>
+                    </tr>
+                    <tr>
+                        <td>onkeypress</td>
+                        <td>script</td>
+                        <td>Triggers when a key is pressed and released</td>
+                    </tr>
+                    <tr>
+                        <td>onkeyup</td>
+                        <td>script</td>
+                        <td>Triggers when a key is released</td>
+                    </tr>
+                    <tr>
+                        <td>onload</td>
+                        <td>script</td>
+                        <td>Triggers when the document loads</td>
+                    </tr>
+                    <tr>
+                        <td>onloadeddata</td>
+                        <td>script</td>
+                        <td>Triggers when media data is loaded</td>
+                    </tr>
+                    <tr>
+                        <td>onloadedmetadata</td>
+                        <td>script</td>
+                        <td>Triggers when the duration and other media data of a media element is loaded</td>
+                    </tr>
+                    <tr>
+                        <td>onloadstart</td>
+                        <td>script</td>
+                        <td>Triggers when the browser starts to load the media data</td>
+                    </tr>
+                    <tr>
+                        <td>onmessage</td>
+                        <td>script</td>
+                        <td>Triggers when the message is triggered</td>
+                    </tr>
+                    <tr>
+                        <td>onmousedown</td>
+                        <td>script</td>
+                        <td>Triggers when a mouse button is pressed</td>
+                    </tr>
+                    <tr>
+                        <td>onmousemove</td>
+                        <td>script</td>
+                        <td>Triggers when the mouse pointer moves</td>
+                    </tr>
+                    <tr>
+                        <td>onmouseout</td>
+                        <td>script</td>
+                        <td>Triggers when the mouse pointer moves out of an element</td>
+                    </tr>
+                    <tr>
+                        <td>onmouseover</td>
+                        <td>script</td>
+                        <td>Triggers when the mouse pointer moves over an element</td>
+                    </tr>
+                    <tr>
+                        <td>onmouseup</td>
+                        <td>script</td>
+                        <td>Triggers when a mouse button is released</td>
+                    </tr>
+                    <tr>
+                        <td>onmousewheel</td>
+                        <td>script</td>
+                        <td>Triggers when the mouse wheel is being rotated</td>
+                    </tr>
+                    <tr>
+                        <td>onoffline</td>
+                        <td>script</td>
+                        <td>Triggers when the document goes offline</td>
+                    </tr>
+                    <tr>
+                        <td>onoine</td>
+                        <td>script</td>
+                        <td>Triggers when the document comes online</td>
+                    </tr>
+                    <tr>
+                        <td>ononline</td>
+                        <td>script</td>
+                        <td>Triggers when the document comes online</td>
+                    </tr>
+                    <tr>
+                        <td>onpagehide</td>
+                        <td>script</td>
+                        <td>Triggers when the window is hidden</td>
+                    </tr>
+                    <tr>
+                        <td>onpageshow</td>
+                        <td>script</td>
+                        <td>Triggers when the window becomes visible</td>
+                    </tr>
+                    <tr>
+                        <td>onpause</td>
+                        <td>script</td>
+                        <td>Triggers when media data is paused</td>
+                    </tr>
+                    <tr>
+                        <td>onplay</td>
+                        <td>script</td>
+                        <td>Triggers when media data is going to start playing</td>
+                    </tr>
+                    <tr>
+                        <td>onplaying</td>
+                        <td>script</td>
+                        <td>Triggers when media data has start playing</td>
+                    </tr>
+                    <tr>
+                        <td>onpopstate</td>
+                        <td>script</td>
+                        <td>Triggers when the window's history changes</td>
+                    </tr>
+                    <tr>
+                        <td>onprogress</td>
+                        <td>script</td>
+                        <td>Triggers when the browser is fetching the media data</td>
+                    </tr>
+                    <tr>
+                        <td>onratechange</td>
+                        <td>script</td>
+                        <td>Triggers when the media data's playing rate has changed</td>
+                    </tr>
+                    <tr>
+                        <td>onreadystatechange</td>
+                        <td>script</td>
+                        <td>Triggers when the ready-state changes</td>
+                    </tr>
+                    <tr>
+                        <td>onredo</td>
+                        <td>script</td>
+                        <td>Triggers when the document performs a redo</td>
+                    </tr>
+                    <tr>
+                        <td>onresize</td>
+                        <td>script</td>
+                        <td>Triggers when the window is resized</td>
+                    </tr>
+                    <tr>
+                        <td>onscroll</td>
+                        <td>script</td>
+                        <td>Triggers when an element's scrollbar is being scrolled</td>
+                    </tr>
+                    <tr>
+                        <td>onseeked</td>
+                        <td>script</td>
+                        <td>Triggers when a media element's seeking attribute is no longer true, and the seeking has ended</td>
+                    </tr>
+                    <tr>
+                        <td>onseeking</td>
+                        <td>script</td>
+                        <td>Triggers when a media element's seeking attribute is true, and the seeking has begun</td>
+                    </tr>
+                    <tr>
+                        <td>onselect</td>
+                        <td>script</td>
+                        <td>Triggers when an element is selected</td>
+                    </tr>
+                    <tr>
+                        <td>onstalled</td>
+                        <td>script</td>
+                        <td>Triggers when there is an error in fetching media data</td>
+                    </tr>
+                    <tr>
+                        <td>onstorage</td>
+                        <td>script</td>
+                        <td>Triggers when a document loads</td>
+                    </tr>
+                    <tr>
+                        <td>onsubmit</td>
+                        <td>script</td>
+                        <td>Triggers when a form is submitted</td>
+                    </tr>
+                    <tr>
+                        <td>onsuspend</td>
+                        <td>script</td>
+                        <td>Triggers when the browser has been fetching media data, but stopped before the entire media file was fetched</td>
+                    </tr>
+                    <tr>
+                        <td>ontimeupdate</td>
+                        <td>script</td>
+                        <td>Triggers when media changes its playing position</td>
+                    </tr>
+                    <tr>
+                        <td>onundo</td>
+                        <td>script</td>
+                        <td>Triggers when a document performs an undo</td>
+                    </tr>
+                    <tr>
+                        <td>onunload</td>
+                        <td>script</td>
+                        <td>Triggers when the user leaves the document</td>
+                    </tr>
+                    <tr>
+                        <td>onvolumechange</td>
+                        <td>script</td>
+                        <td>Triggers when media changes the volume, also when volume is set to "mute"</td>
+                    </tr>
+                    <tr>
+                        <td>onwaiting</td>
+                        <td>script</td>
+                        <td>Triggers when media has stopped playing, but is expected to resume</td>
+                    </tr>
+                </table>
+            
+            
+            
             </section>
 
             <section id="item16">
-                <h2>item16</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
+                <h2>Cookies</h2>
+                <p>Web Browsers and Servers use HTTP protocol to communicate and HTTP is a stateless protocol. But for a commercial website, it is required to maintain session information among different pages. For example, one user registration ends after completing many pages. But how to maintain users' session information across all the web pages.</p>
+                <p>In many situations, using cookies is the most efficient method of remembering and tracking preferences, purchases, commissions, and other information required for better visitor experience or site statistics.</p>
+
+                <h4>How It Works ?</h4>
+                <p>Your server sends some data to the visitor's browser in the form of a cookie. The browser may accept the cookie. If it does, it is stored as a plain text record on the visitor's hard drive. Now, when the visitor arrives at another page on your site, the browser sends the same cookie to the server for retrieval. Once retrieved, your server knows/remembers what was stored earlier.</p>
+                <p>Cookies are a plain text data record of 5 variable-length fields −</p>
+                
+                <ul>
+                    <li>Expires − The date the cookie will expire. If this is blank, the cookie will expire when the visitor quits the browser.</li>
+                    <li>Domain − The domain name of your site.</li>
+                    <li>Path − The path to the directory or web page that set the cookie. This may be blank if you want to retrieve the cookie from any directory or page.</li>
+                    <li>Secure − If this field contains the word "secure", then the cookie may only be retrieved with a secure server. If this field is blank, no such restriction exists.</li>
+                    <li>Name=Value − Cookies are set and retrieved in the form of key-value pairs</li>
+                </ul>
+
+                <p>Cookies were originally designed for CGI programming. The data contained in a cookie is automatically transmitted between the web browser and the web server, so CGI scripts on the server can read and write cookie values that are stored on the client.</p>
+                <p>JavaScript can also manipulate cookies using the cookie property of the Document object. JavaScript can read, create, modify, and delete the cookies that apply to the current web page.</p>
+
+                <h4>Storing Cookies</h4>
+                <p>The simplest way to create a cookie is to assign a string value to the document.cookie object, which looks like this.</p>
+
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">document.cookie = "key1 = value1;key2 = value2;expires = date";</code></pre>
+    </div> 
+                <p>Here the expires attribute is optional. If you provide this attribute with a valid date or time, then the cookie will expire on a given date or time and thereafter, the cookies' value will not be accessible.</p>
+                <p>Note − Cookie values may not include semicolons, commas, or whitespace. For this reason, you may want to use the JavaScript escape() function to encode the value before storing it in the cookie. If you do this, you will also have to use the corresponding unescape() function when you read the cookie value.</p>
+
+                <h4>Example</h4>
+                <p>Try the following. It sets a customer name in an input cookie.</p>
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                        &lt;head&gt;   
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              &lt;!--
+                                 function WriteCookie() {
+                                    if( document.myform.customer.value == &quot;&quot; ) {
+                                       alert(&quot;Enter some value!&quot;);
+                                       return;
+                                    }
+                                    cookievalue = escape(document.myform.customer.value) + &quot;;&quot;;
+                                    document.cookie = &quot;name=&quot; + cookievalue;
+                                    document.write (&quot;Setting Cookies : &quot; + &quot;name=&quot; + cookievalue );
+                                 }
+                              //--&gt;
+                           &lt;/script&gt;      
+                        &lt;/head&gt;
+                        
+                        &lt;body&gt;      
+                           &lt;form name = &quot;myform&quot; action = &quot;&quot;&gt;
+                              Enter name: &lt;input type = &quot;text&quot; name = &quot;customer&quot;/&gt;
+                              &lt;input type = &quot;button&quot; value = &quot;Set Cookie&quot; onclick = &quot;WriteCookie();&quot;/&gt;
+                           &lt;/form&gt;   
+                        &lt;/body&gt;
+                     &lt;/html&gt;</code></pre></div> 
+
+                <h4>Output</h4>
+                
+                <p>Enter name:</p>
+                <input type="text">
+                <button>Set Cookie</button>
+
+                <p>Now your machine has a cookie called name. You can set multiple cookies using multiple key = value pairs separated by comma.</p>
+
+                <h4>Reading Cookies</h4>    
+                <p>Reading a cookie is just as simple as writing one, because the value of the document.cookie object is the cookie. So you can use this string whenever you want to access the cookie. The document.cookie string will keep a list of name=value pairs separated by semicolons, where name is the name of a cookie and value is its string value.</p>
+                <p>You can use strings' split() function to break a string into key and values as follows −</p>
+
+                <h4>Example</h4>
+                <p>Try the following example to get all the cookies.</p>
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                        &lt;head&gt;   
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              &lt;!--
+                                 function ReadCookie() {
+                                    var allcookies = document.cookie;
+                                    document.write (&quot;All Cookies : &quot; + allcookies );
+                                    
+                                    // Get all the cookies pairs in an array
+                                    cookiearray = allcookies.split(';');
+                                    
+                                    // Now take key value pair out of this array
+                                    for(var i=0; i&lt;cookiearray.length; i++) {
+                                       name = cookiearray[i].split('=')[0];
+                                       value = cookiearray[i].split('=')[1];
+                                       document.write (&quot;Key is : &quot; + name + &quot; and Value is : &quot; + value);
+                                    }
+                                 }
+                              //--&gt;
+                           &lt;/script&gt;      
+                        &lt;/head&gt;
+                        
+                        &lt;body&gt;     
+                           &lt;form name = &quot;myform&quot; action = &quot;&quot;&gt;
+                              &lt;p&gt; click the following button and see the result:&lt;/p&gt;
+                              &lt;input type = &quot;button&quot; value = &quot;Get Cookie&quot; onclick = &quot;ReadCookie()&quot;/&gt;
+                           &lt;/form&gt;      
+                        &lt;/body&gt;
+                     &lt;/html&gt;</code></pre></div> 
+
+
+                <p>Note − Here length is a method of Array class which returns the length of an array. We will discuss Arrays in a separate chapter. By that time, please try to digest it.</p>     
+
+                <p>click the following button and see the result:</p>                                 
+                <button>Get Cookie</button>        
+                
+                <p>Note − There may be some other cookies already set on your machine. The above code will display all the cookies set on your machine.</p>
+
+                <h4>Setting Cookies Expiry Date</h4>
+                <p>You can extend the life of a cookie beyond the current browser session by setting an expiration date and saving the expiry date within the cookie. This can be done by setting the ‘expires’ attribute to a date and time.</p>
+
+                <h4>Example</h4>
+                <p>Try the following example. It illustrates how to extend the expiry date of a cookie by 1 Month.</p>
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;head&gt;   
+      &lt;script type = &quot;text/javascript&quot;&gt;
+         &lt;!--
+            function WriteCookie() {
+               var now = new Date();
+               now.setMonth( now.getMonth() + 1 );
+               cookievalue = escape(document.myform.customer.value) + &quot;;&quot;
+               
+               document.cookie = &quot;name=&quot; + cookievalue;
+               document.cookie = &quot;expires=&quot; + now.toUTCString() + &quot;;&quot;
+               document.write (&quot;Setting Cookies : &quot; + &quot;name=&quot; + cookievalue );
+            }
+         //--&gt;
+      &lt;/script&gt;      
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;form name = &quot;myform&quot; action = &quot;&quot;&gt;
+         Enter name: &lt;input type = &quot;text&quot; name = &quot;customer&quot;/&gt;
+         &lt;input type = &quot;button&quot; value = &quot;Set Cookie&quot; onclick = &quot;WriteCookie()&quot;/&gt;
+      &lt;/form&gt;      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+
+            <h4>Salida</h4>
+
+            <p>Enter name:</p>
+            <input type="text">
+            <button>Set Cookie</button>
+
+            <h4>Deleting a Cookie</h4>
+            <p>Sometimes you will want to delete a cookie so that subsequent attempts to read the cookie return nothing. To do this, you just need to set the expiry date to a time in the past.</p>
+
+            <h4>Example</h4>
+            <p>Try the following example. It illustrates how to delete a cookie by setting its expiry date to one month behind the current date.</p>
+
+            <div class="codigo__html">
+                <div class="decor__bar html"></div>
+                <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                    &lt;head&gt;   
+                       &lt;script type = &quot;text/javascript&quot;&gt;
+                          &lt;!--
+                             function WriteCookie() {
+                                var now = new Date();
+                                now.setMonth( now.getMonth() - 1 );
+                                cookievalue = escape(document.myform.customer.value) + &quot;;&quot;
+                                
+                                document.cookie = &quot;name=&quot; + cookievalue;
+                                document.cookie = &quot;expires=&quot; + now.toUTCString() + &quot;;&quot;
+                                document.write(&quot;Setting Cookies : &quot; + &quot;name=&quot; + cookievalue );
+                             }
+                           //--&gt;
+                       &lt;/script&gt;      
+                    &lt;/head&gt;
+                    
+                    &lt;body&gt;
+                       &lt;form name = &quot;myform&quot; action = &quot;&quot;&gt;
+                          Enter name: &lt;input type = &quot;text&quot; name = &quot;customer&quot;/&gt;
+                          &lt;input type = &quot;button&quot; value = &quot;Set Cookie&quot; onclick = &quot;WriteCookie()&quot;/&gt;
+                       &lt;/form&gt;      
+                    &lt;/body&gt;
+                 &lt;/html&gt;</code></pre></div>
+
+                <h4>Salida</h4>
+                <p>Enter name:</p>
+                <input type="text">
+                <button>Set Cookie</button>
+
             </section>
 
             <section id="item17">
-                <h2>item17</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
+                <h2>Page Redirection</h2>
+                <h4>What is Page Redirection ?</h4>
+
+                <p>You might have encountered a situation where you clicked a URL to reach a page X but internally you were directed to another page Y. It happens due to page redirection. This concept is different from JavaScript Page Refresh.</p>
+                <p>There could be various reasons why you would like to redirect a user from the original page. We are listing down a few of the reasons −</p>
+
+                <ul>
+                    <li>You did not like the name of your domain and you are moving to a new one. In such a scenario, you may want to direct all your visitors to the new site. Here you can maintain your old domain but put a single page with a page redirection such that all your old domain visitors can come to your new domain.</li>
+                    <li>You have built-up various pages based on browser versions or their names or may be based on different countries, then instead of using your server-side page redirection, you can use client-side page redirection to land your users on the appropriate page.</li>
+                    <li>The Search Engines may have already indexed your pages. But while moving to another domain, you would not like to lose your visitors coming through search engines. So you can use client-side page redirection. But keep in mind this should not be done to fool the search engine, it could lead your site to get banned.</li>
+                </ul>
+            
+                <h4>How Page Re-direction Works ?</h4>
+                <p>The implementations of Page-Redirection are as follows.</p>
+
+                <h4>Example 1</h4>
+                <p>It is quite simple to do a page redirect using JavaScript at client side. To redirect your site visitors to a new page, you just need to add a line in your head section as follows.</p>
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                        &lt;head&gt;
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              &lt;!--
+                                 function Redirect() {
+                                    window.location = &quot;https://www.tutorialspoint.com&quot;;
+                                 }
+                              //--&gt;
+                           &lt;/script&gt;
+                        &lt;/head&gt;
+                        
+                        &lt;body&gt;
+                           &lt;p&gt;Click the following button, you will be redirected to home page.&lt;/p&gt;
+                           
+                           &lt;form&gt;
+                              &lt;input type = &quot;button&quot; value = &quot;Redirect Me&quot; onclick = &quot;Redirect();&quot; /&gt;
+                           &lt;/form&gt;
+                           
+                        &lt;/body&gt;
+                     &lt;/html&gt;</code></pre></div>
+
+                <h4>Salida</h4>
+                <p>Click the following button, you will be redirected to home page.</p>
+                <button>Redirect Me</button> 
+                
+                <h4>Example 2</h4>
+                <p>You can show an appropriate message to your site visitors before redirecting them to a new page. This would need a bit time delay to load a new page. The following example shows how to implement the same. Here setTimeout() is a built-in JavaScript function which can be used to execute another function after a given time interval.</p>
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                        &lt;head&gt;
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              &lt;!--
+                                 function Redirect() {
+                                    window.location = &quot;https://www.tutorialspoint.com&quot;;
+                                 }            
+                                 document.write(&quot;You will be redirected to main page in 10 sec.&quot;);
+                                 setTimeout('Redirect()', 10000);
+                              //--&gt;
+                           &lt;/script&gt;
+                        &lt;/head&gt;
+                        
+                        &lt;body&gt;
+                        &lt;/body&gt;
+                     &lt;/html&gt;</code></pre></div>                 
+
+                <h4>Salida</h4>   
+                
+                <p>You will be redirected to main page in 10 sec.</p>
+                <p>You will be redirected to tutorialspoint.com main page in 10 seconds!</p>
+
+                <h3>Example 3</h3>
+                <p>The following example shows how to redirect your site visitors onto a different page based on their browsers.</p>
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                        &lt;head&gt;     
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              &lt;!--
+                                 var browsername = navigator.appName;
+                                 if( browsername == &quot;Netscape&quot; ) {
+                                    window.location = &quot;http://www.location.com/ns.htm&quot;;
+                                 } else if ( browsername ==&quot;Microsoft Internet Explorer&quot;) {
+                                    window.location = &quot;http://www.location.com/ie.htm&quot;;
+                                 } else {
+                                    window.location = &quot;http://www.location.com/other.htm&quot;;
+                                 }
+                              //--&gt;
+                           &lt;/script&gt;      
+                        &lt;/head&gt;
+                        
+                        &lt;body&gt;
+                        &lt;/body&gt;
+                     &lt;/html&gt;</code></pre></div>                 
+
             </section>
 
             <section id="item18">
-                <h2>item18</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
+                <h2>JavaScript - Dialog Boxes</h2>
+                <p>JavaScript supports three important types of dialog boxes. These dialog boxes can be used to raise and alert, or to get confirmation on any input or to have a kind of input from the users. Here we will discuss each dialog box one by one.</p>
+                
+                <h4>Alert Dialog Box</h4>
+                <p>An alert dialog box is mostly used to give a warning message to the users. For example, if one input field requires to enter some text but the user does not provide any input, then as a part of validation, you can use an alert box to give a warning message.</p>
+                <p>Nonetheless, an alert box can still be used for friendlier messages. Alert box gives only one button "OK" to select and proceed.</p>
+            
+                <h4>Example</h4>
+            
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                        &lt;head&gt;   
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              &lt;!--
+                                 function Warn() {
+                                    alert (&quot;This is a warning message!&quot;);
+                                    document.write (&quot;This is a warning message!&quot;);
+                                 }
+                              //--&gt;
+                           &lt;/script&gt;     
+                        &lt;/head&gt;
+                        
+                        &lt;body&gt;
+                           &lt;p&gt;Click the following button to see the result: &lt;/p&gt;      
+                           &lt;form&gt;
+                              &lt;input type = &quot;button&quot; value = &quot;Click Me&quot; onclick = &quot;Warn();&quot; /&gt;
+                           &lt;/form&gt;     
+                        &lt;/body&gt;
+                     &lt;/html&gt;</code></pre></div>   
+            
+            <h4>Salida</h4>
+
+            <p>Click the following button to see the result:</p>
+            <button>Click me</button>
+
+            <h4>Confirmation Dialog Box</h4>
+
+            <p>A confirmation dialog box is mostly used to take user's consent on any option. It displays a dialog box with two buttons: OK and Cancel.</p>
+            <p>If the user clicks on the OK button, the window method confirm() will return true. If the user clicks on the Cancel button, then confirm() returns false. You can use a confirmation dialog box as follows.</p>
+
+            <h4>Example</h4>
+
+            <div class="codigo__html">
+                <div class="decor__bar html"></div>
+                <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                    &lt;head&gt;   
+                       &lt;script type = &quot;text/javascript&quot;&gt;
+                          &lt;!--
+                             function getConfirmation() {
+                                var retVal = confirm(&quot;Do you want to continue ?&quot;);
+                                if( retVal == true ) {
+                                   document.write (&quot;User wants to continue!&quot;);
+                                   return true;
+                                } else {
+                                   document.write (&quot;User does not want to continue!&quot;);
+                                   return false;
+                                }
+                             }
+                          //--&gt;
+                       &lt;/script&gt;     
+                    &lt;/head&gt;
+                    
+                    &lt;body&gt;
+                       &lt;p&gt;Click the following button to see the result: &lt;/p&gt;      
+                       &lt;form&gt;
+                          &lt;input type = &quot;button&quot; value = &quot;Click Me&quot; onclick = &quot;getConfirmation();&quot; /&gt;
+                       &lt;/form&gt;      
+                    &lt;/body&gt;
+                 &lt;/html&gt;</code></pre></div> 
+
+                <h4>Salida</h4>   
+                
+                <p>Click the following button to see the result:</p>
+                <button>Click Me</button>
+
+                <h4>Prompt Dialog Box</h4>
+                
+                <p>The prompt dialog box is very useful when you want to pop-up a text box to get user input. Thus, it enables you to interact with the user. The user needs to fill in the field and then click OK.</p>
+                <p>This dialog box is displayed using a method called prompt() which takes two parameters: (i) a label which you want to display in the text box and (ii) a default string to display in the text box.</p>
+                <p>This dialog box has two buttons: OK and Cancel. If the user clicks the OK button, the window method prompt() will return the entered value from the text box. If the user clicks the Cancel button, the window method prompt() returns null.</p>
+
+                <h4>Example</h4>             
+
+                <p>The following example shows how to use a prompt dialog box −</p>
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                        &lt;head&gt;     
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              &lt;!--
+                                 function getValue() {
+                                    var retVal = prompt(&quot;Enter your name : &quot;, &quot;your name here&quot;);
+                                    document.write(&quot;You have entered : &quot; + retVal);
+                                 }
+                              //--&gt;
+                           &lt;/script&gt;      
+                        &lt;/head&gt;
+                        
+                        &lt;body&gt;
+                           &lt;p&gt;Click the following button to see the result: &lt;/p&gt;      
+                           &lt;form&gt;
+                              &lt;input type = &quot;button&quot; value = &quot;Click Me&quot; onclick = &quot;getValue();&quot; /&gt;
+                           &lt;/form&gt;      
+                        &lt;/body&gt;
+                     &lt;/html&gt;</code></pre></div> 
+
+
+                <h4>Salida</h4>     
+
+                
+
+            
             </section>
 
             <section id="item19">
