@@ -87,52 +87,52 @@
                         <a href="#item20">Page printing</a>
                     </li>
                     <li>
-                        <a href="#item20">Objetos</a>
+                        <a href="#item21">Objetos</a>
                     </li>
                     <li>
-                        <a href="#item20">Números</a>
+                        <a href="#item22">Números</a>
                     </li>
                     <li>
-                        <a href="#item20">Boolean</a>
+                        <a href="#item23">Boolean</a>
                     </li>
                     <li>
-                        <a href="#item20">Strings</a>
+                        <a href="#item24">Strings</a>
                     </li>
                     <li>
-                        <a href="#item20">Arrays</a>
+                        <a href="#item25">Arrays</a>
                     </li>
                     <li>
-                        <a href="#item20">Date</a>
+                        <a href="#item26">Date</a>
                     </li>
                     <li>
-                        <a href="#item20">Math</a>
+                        <a href="#item27">Math</a>
                     </li>
                     <li>
-                        <a href="#item20">RegExp</a>
+                        <a href="#item28">RegExp</a>
                     </li>
                     <li>
-                        <a href="#item20">HTML DOM</a>
+                        <a href="#item29">HTML DOM</a>
                     </li>
                     <li>
-                        <a href="#item20">Manejo de errores</a>
+                        <a href="#item30">Manejo de errores</a>
                     </li>
                     <li>
-                        <a href="#item20">Validaciones</a>
+                        <a href="#item31">Validaciones</a>
                     </li>
                     <li>
-                        <a href="#item20">Animaciones</a>
+                        <a href="#item32">Animaciones</a>
                     </li>
                     <li>
-                        <a href="#item20">Multimedia</a>
+                        <a href="#item33">Multimedia</a>
                     </li>
                     <li>
-                        <a href="#item20">Debugging</a>
+                        <a href="#item34">Debugging</a>
                     </li>
                     <li>
-                        <a href="#item20">Image Map</a>
+                        <a href="#item35">Image Map</a>
                     </li>
                     <li>
-                        <a href="#item20">Browsers</a>
+                        <a href="#item36">Browsers</a>
                     </li>
                 </ul>
             </nav>
@@ -3294,82 +3294,1401 @@
 
                 <h4>Salida</h4>     
 
-                
+                <p>Click the following button to see the result:</p>
+                <p>[click Me]</p>
 
-            
+                                 
             </section>
 
             <section id="item19">
-                <h2>item19</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
+                <h2>Void Keyword</h2>
+
+                <p>void is an important keyword in JavaScript which can be used as a unary operator that appears before its single operand, which may be of any type. This operator specifies an expression to be evaluated without returning a value.</p>
+
+                <h4>Syntax</h4>
+                <p>The syntax of void can be either of the following two -</p>
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;head&gt;
+                        &lt;script type = &quot;text/javascript&quot;&gt;
+                           &lt;!--
+                              void func()
+                              javascript:void func()
+                              or:
+                              void(func())
+                              javascript:void(func())
+                           //--&gt;
+                        &lt;/script&gt;
+                     &lt;/head&gt;</code></pre></div>
+
+
+                <h4>Example 1</h4>        
+
+                <p>The most common use of this operator is in a client-side javascript: URL, where it allows you to evaluate an expression for its side-effects without the browser displaying the value of the evaluated expression.</p>
+                <p>Here the expression alert ('Warning!!!') is evaluated but it is not loaded back into the current document −</p>        
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                        &lt;head&gt;      
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              &lt;!--
+                              //--&gt;
+                           &lt;/script&gt;   
+                        &lt;/head&gt;
+                        
+                        &lt;body&gt;   
+                           &lt;p&gt;Click the following, This won't react at all...&lt;/p&gt;
+                           &lt;a href = &quot;javascript:void(alert('Warning!!!'))&quot;&gt;Click me!&lt;/a&gt;     
+                        &lt;/body&gt;
+                     &lt;/html&gt;</code></pre></div>        
+
+                <h4>Salida</h4>
+                <p>Click the following, This won't react at all...</p>     
+                <p>[Click me!]</p>   
+
+                <h4>Ejemplo 2</h4>
+                
+                <p>Take a look at the following example. The following link does nothing because the expression "0" has no effect in JavaScript. Here the expression "0" is evaluated, but it is not loaded back into the current document.</p>
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                        &lt;head&gt;   
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              &lt;!--
+                              //--&gt;
+                           &lt;/script&gt;      
+                        &lt;/head&gt;
+                        
+                        &lt;body&gt;   
+                           &lt;p&gt;Click the following, This won't react at all...&lt;/p&gt;
+                           &lt;a href = &quot;javascript:void(0)&quot;&gt;Click me!&lt;/a&gt;      
+                        &lt;/body&gt;
+                     &lt;/html&gt;</code></pre></div>
+
+
+                <h4>Salida</h4>        
+
+                <p>Click the following, This won't react at all...</p>
+                <p>[Click me!]</p>        
+
+                <h4>Example 3</h4>        
+
+                <p>Another use of void is to purposely generate the undefined value as follows.</p>        
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                        &lt;head&gt;      
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              &lt;!--
+                                 function getValue() {
+                                    var a,b,c;
+                                    
+                                    a = void ( b = 5, c = 7 );
+                                    document.write('a = ' + a + ' b = ' + b +' c = ' + c );
+                                 }
+                              //--&gt;
+                           &lt;/script&gt;      
+                        &lt;/head&gt;
+                        
+                        &lt;body&gt;
+                           &lt;p&gt;Click the following to see the result:&lt;/p&gt;
+                           &lt;form&gt;
+                              &lt;input type = &quot;button&quot; value = &quot;Click Me&quot; onclick = &quot;getValue();&quot; /&gt;
+                           &lt;/form&gt;     
+                        &lt;/body&gt;
+                     &lt;/html&gt;</code></pre></div> 
+
+                    <h4>Salida</h4> 
+                     
+                    <p>Click the following to see the result:</p>
+                    <p>[Click Me]</p>             
+
             </section>
 
             <section id="item20">
-                <h2>item20</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
+                <h2>Page Printing</h2>
+                <p>Many times you would like to place a button on your webpage to print the content of that web page via an actual printer. JavaScript helps you to implement this functionality using the print function of window object.</p>
+                <p>The JavaScript print function window.print() prints the current web page when executed. You can call this function directly using the onclick event as shown in the following example.</p>
+
+                <h4>Example</h4>
+                <p>Try the following example.</p>
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                        &lt;head&gt;      
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              &lt;!--
+                              //--&gt;
+                           &lt;/script&gt;
+                        &lt;/head&gt;
+                        
+                        &lt;body&gt;      
+                           &lt;form&gt;
+                              &lt;input type = &quot;button&quot; value = &quot;Print&quot; onclick = &quot;window.print()&quot; /&gt;
+                           &lt;/form&gt;   
+                        &lt;/body&gt;
+                     &lt;html&gt;</code></pre></div> 
+
+
+                <h4>Output</h4>        
+
+                <p>[Print]</p>
+
+                <p>Although it serves the purpose of getting a printout, it is not a recommended way. A printer friendly page is really just a page with text, no images, graphics, or advertising.</p>
+                <p>You can make a page printer friendly in the following ways −</p>
+
+                <ul>
+                    <li>Make a copy of the page and leave out unwanted text and graphics, then link to that printer friendly page from the original.</li>
+                    <li>If you do not want to keep an extra copy of a page, then you can mark your printable text using proper comments like <!-- PRINT STARTS HERE -->..... <!-- PRINT ENDS HERE --> and then you can use PERL or any other script in the background to purge printable text and display for final printing. We at Tutorialspoint use this method to provide print facility to our site visitors.</li>
+                </ul>
+
+                <h4>How to Print a Page?</h4>
+                <p>If you don’t find the above facilities on a web page, then you can use the browser's standard toolbar to get print the web page. Follow the link as follows.</p>
+                <p>File →  Print → Click OK  button.</p>
             </section>
             
             <section id="item21">
-                <h2>item20</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
+                <h2>Objetos</h2>
+
+                <p>JavaScript is an Object Oriented Programming (OOP) language. A programming language can be called object-oriented if it provides four basic capabilities to developers −</p>
+
+                <ul>
+                    <li>Encapsulation − the capability to store related information, whether data or methods, together in an object.</li>
+                    <li>Aggregation − the capability to store one object inside another object.</li>
+                    <li>Inheritance − the capability of a class to rely upon another class (or number of classes) for some of its properties and methods.</li>
+                    <li>Polymorphism − the capability to write one function or method that works in a variety of different ways.</li>
+                </ul>
+
+                <p>Objects are composed of attributes. If an attribute contains a function, it is considered to be a method of the object, otherwise the attribute is considered a property.</p>
+
+                <h4>Object Properties</h4>
+
+                <p>Object properties can be any of the three primitive data types, or any of the abstract data types, such as another object. Object properties are usually variables that are used internally in the object's methods, but can also be globally visible variables that are used throughout the page.</p>
+                <p>The syntax for adding a property to an object is −</p>
+
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">objectName.objectProperty = propertyValue;
+</code></pre>
+    </div> 
+
+                <p>For example − The following code gets the document title using the "title" property of the document object.</p>
+
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">var str = document.title;</code></pre>
+    </div> 
+
+
+                <h4>Object Methods</h4>
+
+                <p>Methods are the functions that let the object do something or let something be done to it. There is a small difference between a function and a method – at a function is a standalone unit of statements and a method is attached to an object and can be referenced by the this keyword.</p>
+                <p>Methods are useful for everything from displaying the contents of the object to the screen to performing complex mathematical operations on a group of local properties and parameters.</p>
+                <p>For example − Following is a simple example to show how to use the write() method of document object to write any content on the document.</p>
+
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">document.write("This is test");</code></pre>
+    </div> 
+
+                <h4>User-Defined Objects</h4>
+
+                <p>All user-defined objects and built-in objects are descendants of an object called Object.</p>
+
+                <h4>El operador new</h4>
+
+                <p>The new operator is used to create an instance of an object. To create an object, the new operator is followed by the constructor method.</p>
+                <p>In the following example, the constructor methods are Object(), Array(), and Date(). These constructors are built-in JavaScript functions.</p>
+
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">var employee = new Object();
+                        var books = new Array("C++", "Perl", "Java");
+                        var day = new Date("August 15, 1947</code></pre>
+    </div> 
+
+                <h4>The Object() Constructor</h4>
+                <p>A constructor is a function that creates and initializes an object. JavaScript provides a special constructor function called Object() to build the object. The return value of the Object() constructor is assigned to a variable.</p>
+                <p>The variable contains a reference to the new object. The properties assigned to the object are not variables and are not defined with the var keyword.</p>
+
+                <h4>Ejemplo 1</h4>         
+                <p>Try the following example; it demonstrates how to create an Object.</p>       
+            
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                        &lt;head&gt;
+                           &lt;title&gt;User-defined objects&lt;/title&gt;     
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              var book = new Object();   // Create the object
+                              book.subject = &quot;Perl&quot;;     // Assign properties to the object
+                              book.author  = &quot;Mohtashim&quot;;
+                           &lt;/script&gt;      
+                        &lt;/head&gt;
+                        
+                        &lt;body&gt;  
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              document.write(&quot;Book name is : &quot; + book.subject + &quot;&lt;br&gt;&quot;);
+                              document.write(&quot;Book author is : &quot; + book.author + &quot;&lt;br&gt;&quot;);
+                           &lt;/script&gt;   
+                        &lt;/body&gt;
+                     &lt;/html&gt;</code></pre></div> 
+            
+                <h4>Salida</h4>  
+                <p>Book name is : Perl </p>
+                <p>Book author is : Mohtashim</p>      
+            
+                <h4>Example 2</h4>   
+                <p>This example demonstrates how to create an object with a User-Defined Function. Here this keyword is used to refer to the object that has been passed to a function.</p>     
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                        &lt;head&gt;   
+                        &lt;title&gt;User-defined objects&lt;/title&gt;
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              function book(title, author) {
+                                 this.title = title; 
+                                 this.author  = author;
+                              }
+                           &lt;/script&gt;      
+                        &lt;/head&gt;
+                        
+                        &lt;body&gt;   
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              var myBook = new book(&quot;Perl&quot;, &quot;Mohtashim&quot;);
+                              document.write(&quot;Book title is : &quot; + myBook.title + &quot;&lt;br&gt;&quot;);
+                              document.write(&quot;Book author is : &quot; + myBook.author + &quot;&lt;br&gt;&quot;);
+                           &lt;/script&gt;      
+                        &lt;/body&gt;
+                     &lt;/html&gt;</code></pre></div>
+            
+            
+                <h4>Salida</h4>              
+                <p>Book title is : Perl </p>
+                <p>Book author is : Mohtashim</p>           
+                
+                <h4>Defining Methods for an Object</h4>
+                <p>The previous examples demonstrate how the constructor creates the object and assigns properties. But we need to complete the definition of an object by assigning methods to it.</p>
+                <h4>Example</h4>
+                <p>Try the following example; it shows how to add a function along with an object.</p>
+            
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   
+                        &lt;head&gt;
+                        &lt;title&gt;User-defined objects&lt;/title&gt;
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              // Define a function which will work as a method
+                              function addPrice(amount) {
+                                 this.price = amount; 
+                              }
+                              
+                              function book(title, author) {
+                                 this.title = title;
+                                 this.author  = author;
+                                 this.addPrice = addPrice;  // Assign that method as property.
+                              }
+                           &lt;/script&gt;      
+                        &lt;/head&gt;
+                        
+                        &lt;body&gt;   
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              var myBook = new book(&quot;Perl&quot;, &quot;Mohtashim&quot;);
+                              myBook.addPrice(100);
+                              
+                              document.write(&quot;Book title is : &quot; + myBook.title + &quot;&lt;br&gt;&quot;);
+                              document.write(&quot;Book author is : &quot; + myBook.author + &quot;&lt;br&gt;&quot;);
+                              document.write(&quot;Book price is : &quot; + myBook.price + &quot;&lt;br&gt;&quot;);
+                           &lt;/script&gt;      
+                        &lt;/body&gt;
+                     &lt;/html&gt;</code></pre></div>              
+            
+            
+            
+                <h4>Salida</h4>   
+                
+                <p>Book title is : Perl</p>
+                <p>Book author is : Mohtashim</p>
+                <p>Book price is : 100</p>
+            
+                <h4>The 'with' Keyword</h4>
+                <p>The ‘with’ keyword is used as a kind of shorthand for referencing an object's properties or methods.</p>
+                <p>The object specified as an argument to with becomes the default object for the duration of the block that follows. The properties and methods for the object can be used without naming the object.</p>
+                
+                <h4>Syntax</h4>
+
+                <p>The syntax for with object is as follows −</p>
+            
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">with (object) {
+                        properties used without the object name and dot
+                     }</code></pre>
+    </div>               
+            <h4>Example</h4>
+            
+            <p>Try the following example.</p>
+
+            <div class="codigo__html">
+                <div class="decor__bar html"></div>
+                <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;head&gt;
+   &lt;title&gt;User-defined objects&lt;/title&gt;   
+      &lt;script type = &quot;text/javascript&quot;&gt;
+         // Define a function which will work as a method
+         function addPrice(amount) {
+            with(this) {
+               price = amount;
+            }
+         }
+         function book(title, author) {
+            this.title = title;
+            this.author = author;
+            this.price = 0;
+            this.addPrice = addPrice;  // Assign that method as property.
+         }
+      &lt;/script&gt;      
+   &lt;/head&gt;
+   
+   &lt;body&gt;   
+      &lt;script type = &quot;text/javascript&quot;&gt;
+         var myBook = new book(&quot;Perl&quot;, &quot;Mohtashim&quot;);
+         myBook.addPrice(100);
+         
+         document.write(&quot;Book title is : &quot; + myBook.title + &quot;&lt;br&gt;&quot;);
+         document.write(&quot;Book author is : &quot; + myBook.author + &quot;&lt;br&gt;&quot;);
+         document.write(&quot;Book price is : &quot; + myBook.price + &quot;&lt;br&gt;&quot;);
+      &lt;/script&gt;      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div> 
+
+            <h4>Salida</h4>
+
+            <p>Book title is : Perl </p>
+            <p>Book author is : Mohtashim</p>
+            <p>Book price is : 100</p>
+
+            <h4>JavaScript Native Objects</h4>
+
+            <p>JavaScript has several built-in or native objects. These objects are accessible anywhere in your program and will work the same way in any browser running in any operating system.</p>
+            <p>Here is the list of all important JavaScript Native Objects −</p>
+
+            <ul>
+                <li>JavaScript Number Object</li>
+                <li>JavaScript Boolean Object</li>
+                <li>JavaScript String Object</li>
+                <li>JavaScript Array Object</li>
+                <li>JavaScript Date Object</li>
+                <li>JavaScript Math Object</li>
+                <li>JavaScript RegExp Object</li>
+            </ul>
             </section>
 
             <section id="item22">
-                <h2>item20</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
+                <h2>El objecto Number</h2>
+
+                <p>The Number object represents numerical date, either integers or floating-point numbers. In general, you do not need to worry about Number objects because the browser automatically converts number literals to instances of the number class.</p>
+
+                <h4>Syntax</h4>
+                <p>The syntax for creating a number object is as follows −</p>
+
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">var val = new Number(number);
+</code></pre>
+    </div>     
+
+                <p>In the place of number, if you provide any non-number argument, then the argument cannot be converted into a number, it returns NaN (Not-a-Number).</p>
+
+                <h4>Number Properties</h4>
+
+                <p>Here is a list of each property and their description.</p>
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Propiedad</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>MAX_VALUE</td>
+                        <td>The largest possible value a number in JavaScript can have 1.7976931348623157E+308</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>MIN_VALUE</td>
+                        <td>The smallest possible value a number in JavaScript can have 5E-324</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>NaN</td>
+                        <td>Equal to a value that is not a number.</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>NEGATIVE_INFINITY</td>
+                        <td>A value that is less than MIN_VALUE.</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>POSITIVE_INFINITY</td>
+                        <td>A value that is greater than MAX_VALUE.</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>prototype</td>
+                        <td>A static property of the Number object. Use the prototype property to assign new properties and methods to the Number object in the current document.</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>constructor</td>
+                        <td>Returns the function that created this object's instance. By default this is the Number object.</td>
+                    </tr>
+                </table>
+
+                <p>In the following sections, we will take a few examples to demonstrate the properties of Number.</p>
+
+                <h4>Number Methods</h4>
+                <p>The Number object contains only the default methods that are a part of every object's definition.</p>
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Método</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>toExponential()</td>
+                        <td>Forces a number to display in exponential notation, even if the number is in the range in which JavaScript normally uses standard notation.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>toFixed()</td>
+                        <td>Formats a number with a specific number of digits to the right of the decimal.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>toLocaleString()</td>
+                        <td>Returns a string value version of the current number in a format that may vary according to a browser's local settings.</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>toPrecision()</td>
+                        <td>Defines how many total digits (including digits to the left and right of the decimal) to display of a number.</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>toString()</td>
+                        <td>Returns the string representation of the number's value.</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>valueOf()</td>
+                        <td>Returns the number's value.</td>
+                    </tr>
+                </table>
+
+                <p>In the following sections, we will have a few examples to explain the methods of Number.</p>
             </section>
 
             <section id="item23">
-                <h2>item20</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
+                <h2>El objeto Boolean</h2>
+                <p>The Boolean object represents two values, either "true" or "false". If value parameter is omitted or is 0, -0, null, false, NaN, undefined, or the empty string (""), the object has an initial value of false.</p>
+                
+                <h4>Syntax</h4>
+                <p>Use the following syntax to create a boolean object.</p>
+
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">var val = new Boolean(value);
+</code></pre>
+    </div> 
+
+
+                <h4>Boolean Properties</h4>
+
+                <p>Here is a list of the properties of Boolean object −</p>
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Propiedad</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>constructor</td>
+                        <td>Returns a reference to the Boolean function that created the object.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>prototype</td>
+                        <td>The prototype property allows you to add properties and methods to an object.</td>
+                    </tr>
+                </table>
+
+                <p>In the following sections, we will have a few examples to illustrate the properties of Boolean object.</p>
+
+                <h4>Métodos Booleanos</h4>
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Método</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>toSource()</td>
+                        <td>Returns a string containing the source of the Boolean object; you can use this string to create an equivalent object.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>toString()</td>
+                        <td>Returns a string of either "true" or "false" depending upon the value of the object.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>valueOf()</td>
+                        <td>Returns the primitive value of the Boolean object.</td>
+                    </tr>
+                </table>
+
+                <p>In the following sections, we will have a few examples to demonstrate the usage of the Boolean methods.</p>
+
             </section>
 
             <section id="item24">
-                <h2>item20</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
+                <h2>The Strings Object</h2>
+                
+                <p>The String object lets you work with a series of characters; it wraps Javascript's string primitive data type with a number of helper methods.</p>
+                <p>As JavaScript automatically converts between string primitives and String objects, you can call any of the helper methods of the String object on a string primitive.</p>
+
+                <h4>Syntax</h4>
+                <p>Use the following syntax to create a String object −</p>
+
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">var val = new String(string);</code></pre>
+    </div> 
+
+                <p>The String parameter is a series of characters that has been properly encoded.</p>
+
+                <h4>String Properties</h4>
+                <p>Here is a list of the properties of String object and their description.</p>
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Propiedad</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>constructor</td>
+                        <td>Returns a reference to the String function that created the object.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>length</td>
+                        <td>Returns the length of the string.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>prototype</td>
+                        <td>The prototype property allows you to add properties and methods to an object.</td>
+                    </tr>
+                </table>
+
+                <p>In the following sections, we will have a few examples to demonstrate the usage of String properties.</p>
+
+                <h4>String Methods</h4>
+                <p>Here is a list of the methods available in String object along with their description.</p>
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Método</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>charAt()</td>
+                        <td>Returns the character at the specified index.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>charCodeAt()</td>
+                        <td>Returns a number indicating the Unicode value of the character at the given index.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>concat()</td>
+                        <td>Combines the text of two strings and returns a new string.</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>indexOf()</td>
+                        <td>Returns the index within the calling String object of the first occurrence of the specified value, or -1 if not found.</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>lastIndexOf()</td>
+                        <td>Returns the index within the calling String object of the last occurrence of the specified value, or -1 if not found.</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>localeCompare()</td>
+                        <td>Returns a number indicating whether a reference string comes before or after or is the same as the given string in sort order.</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>match()</td>
+                        <td>Used to match a regular expression against a string.</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>replace()</td>
+                        <td>Used to find a match between a regular expression and a string, and to replace the matched substring with a new substring.</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>search()</td>
+                        <td>Executes the search for a match between a regular expression and a specified string.</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>slice()</td>
+                        <td>Extracts a section of a string and returns a new string.</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>split()</td>
+                        <td>Splits a String object into an array of strings by separating the string into substrings.</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>substr()</td>
+                        <td>Returns the characters in a string beginning at the specified location through the specified number of characters.</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>substring()</td>
+                        <td>Returns the characters in a string between two indexes into the string.</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>toLocaleLowerCase()</td>
+                        <td>The characters within a string are converted to lower case while respecting the current locale.</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>toLocaleUpperCase()</td>
+                        <td>The characters within a string are converted to upper case while respecting the current locale.</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>toLowerCase()</td>
+                        <td>Returns the calling string value converted to lower case.</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>toString()</td>
+                        <td>Returns a string representing the specified object.</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>toUpperCase()</td>
+                        <td>Returns the calling string value converted to uppercase.</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>valueOf()</td>
+                        <td>Returns the primitive value of the specified object.</td>
+                    </tr>
+                </table>
+
+                <h4>String HTML Wrappers</h4>
+                <p>Here is a list of the methods that return a copy of the string wrapped inside an appropriate HTML tag.</p>
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Método</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>anchor()</td>
+                        <td>Creates an HTML anchor that is used as a hypertext target.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>big()</td>
+                        <td>Creates a string to be displayed in a big font as if it were in a &lt;big&gt; tag.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>blink()</td>
+                        <td>Creates a string to blink as if it were in a &lt;blink&gt; tag.</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>bold()</td>
+                        <td>Creates a string to be displayed as bold as if it were in a &lt;b&gt; tag.</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>fixed()</td>
+                        <td>Causes a string to be displayed in fixed-pitch font as if it were in a &lt;tt&gt; tag</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>fontcolor()</td>
+                        <td>Causes a string to be displayed in the specified color as if it were in a &lt;font color="color"&gt; tag.</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>fontsize()</td>
+                        <td>Causes a string to be displayed in the specified font size as if it were in a &lt;font size=&quot;size&quot;&gt; tag.</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>italics()</td>
+                        <td>Causes a string to be italic, as if it were in an <i> tag.</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>link()</td>
+                        <td>Creates an HTML hypertext link that requests another URL</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>small()</td>
+                        <td>Causes a string to be displayed in a small font, as if it were in a &lt;small&gt; tag.</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>strike()</td>
+                        <td>Causes a string to be displayed as struck-out text, as if it were in a &lt;strike&gt; tag.</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>sub()</td>
+                        <td>Causes a string to be displayed as a subscript, as if it were in a <sub> tag</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>sup()</td>
+                        <td>Causes a string to be displayed as a superscript, as if it were in a <sup> tag</td>
+                    </tr>
+                </table>
+
+                <p>In the following sections, we will have a few examples to demonstrate the usage of String methods.</p>
+
             </section>
 
             <section id="item25">
-                <h2>item20</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
+                <h4>The Arrays Object</h4>
+                <p>The Array object lets you store multiple values in a single variable. It stores a fixed-size sequential collection of elements of the same type. An array is used to store a collection of data, but it is often more useful to think of an array as a collection of variables of the same type.</p>
+            
+                <h4>Syntax</h4>
+                <p>Use the following syntax to create an Array object −</p>
+            
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">var fruits = new Array( "apple", "orange", "mango" );</code></pre></div> 
+            
+            
+                <p>The Array parameter is a list of strings or integers. When you specify a single numeric parameter with the Array constructor, you specify the initial length of the array. The maximum length allowed for an array is 4,294,967,295.</p>
+                
+                <p>You can create array by simply assigning values as follows −</p>
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">var fruits = new Array( "apple", "orange", "mango" );</code></pre></div>     
+                    
+                <p>You will use ordinal numbers to access and to set values inside an array as follows.</p>
+                
+                <p>fruits[0] is the first element</p>
+                <p>fruits[1] is the second element</p>
+                <p>fruits[2] is the third element</p>
+            
+                <h4>Array Properties</h4>
+                <p>Here is a list of the properties of the Array object along with their description.</p>
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Propiedad</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>constructor</td>
+                        <td>Returns a reference to the array function that created the object.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>index</td>
+                        <td>The property represents the zero-based index of the match in the string</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>input</td>
+                        <td>This property is only present in arrays created by regular expression matches.</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>length</td>
+                        <td>Reflects the number of elements in an array.</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>prototype</td>
+                        <td>The prototype property allows you to add properties and methods to an object.</td>
+                    </tr>
+                </table>
+
+                <p>In the following sections, we will have a few examples to illustrate the usage of Array properties.</p>
+
+                <h4>Array Methods</h4>
+                <p>Here is a list of the methods of the Array object along with their description.</p>
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Método</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>concat()</td>
+                        <td>Returns a new array comprised of this array joined with other array(s) and/or value(s).</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>every()</td>
+                        <td>Returns true if every element in this array satisfies the provided testing function.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>filter()</td>
+                        <td>Creates a new array with all of the elements of this array for which the provided filtering function returns true.</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>forEach()</td>
+                        <td>Calls a function for each element in the array.</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>indexOf()</td>
+                        <td>Returns the first (least) index of an element within the array equal to the specified value, or -1 if none is found.</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>join()</td>
+                        <td>Joins all elements of an array into a string</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>lastIndexOf()</td>
+                        <td>Returns the last (greatest) index of an element within the array equal to the specified value, or -1 if none is found.</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>map()</td>
+                        <td>Creates a new array with the results of calling a provided function on every element in this array.</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>pop()</td>
+                        <td>Removes the last element from an array and returns that element.</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>push()</td>
+                        <td>Adds one or more elements to the end of an array and returns the new length of the array.</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>reduce()</td>
+                        <td>Apply a function simultaneously against two values of the array (from left-to-right) as to reduce it to a single value.</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>reduceRight()</td>
+                        <td>Apply a function simultaneously against two values of the array (from right-to-left) as to reduce it to a single value</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>reverse()</td>
+                        <td>Reverses the order of the elements of an array -- the first becomes the last, and the last becomes the first.</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>shift()</td>
+                        <td>Removes the first element from an array and returns that element.</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>slice()</td>
+                        <td>Extracts a section of an array and returns a new array.</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>some()</td>
+                        <td>Returns true if at least one element in this array satisfies the provided testing function.</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>toSource()</td>
+                        <td>Represents the source code of an object</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>sort()</td>
+                        <td>Sorts the elements of an array</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>splice()</td>
+                        <td>Adds and/or removes elements from an array.</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>toString()</td>
+                        <td>Returns a string representing the array and its elements.</td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>unshift()</td>
+                        <td>Adds one or more elements to the front of an array and returns the new length of the array.</td>
+                    </tr>
+                </table>
+
+                <p>In the following sections, we will have a few examples to demonstrate the usage of Array methods.</p>
+
             </section>
 
             <section id="item26">
-                <h2>item20</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
+                <h2>JavaScript - The Date Object</h2>
+                
+                <p>The Date object is a datatype built into the JavaScript language. Date objects are created with the new Date( ) as shown below.</p>
+                <p>Once a Date object is created, a number of methods allow you to operate on it. Most methods simply allow you to get and set the year, month, day, hour, minute, second, and millisecond fields of the object, using either local time or UTC (universal, or GMT) time.</p>
+                <p>The ECMAScript standard requires the Date object to be able to represent any date and time, to millisecond precision, within 100 million days before or after 1/1/1970. This is a range of plus or minus 273,785 years, so JavaScript can represent date and time till the year 275755.</p>
+
+                <h4>Syntax</h4>
+                <p>You can use any of the following syntaxes to create a Date object using Date() constructor.</p>
+
+                <p>new Date( )</p>
+                <p>new Date(milliseconds)</p>
+                <p>new Date(datestring)</p>
+                <p>new Date(year,month,date[,hour,minute,second,millisecond ])</p>
+
+                <p>Note − Parameters in the brackets are always optional.</p>
+                <p>Here is a description of the parameters −</p>
+
+                <ul>
+                    <li>No Argument − With no arguments, the Date() constructor creates a Date object set to the current date and time.</li>
+                    <li>milliseconds − When one numeric argument is passed, it is taken as the internal numeric representation of the date in milliseconds, as returned by the getTime() method. For example, passing the argument 5000 creates a date that represents five seconds past midnight on 1/1/70.</li>
+                    <li>datestring − When one string argument is passed, it is a string representation of a date, in the format accepted by the Date.parse() method.</li>
+                    <li>7 agruments − To use the last form of the constructor shown above. Here is a description of each argument −</li>
+                    <ul>
+                        <li>year − Integer value representing the year. For compatibility (in order to avoid the Y2K problem), you should always specify the year in full; use 1998, rather than 98.</li>
+                        <li>month − Integer value representing the month, beginning with 0 for January to 11 for December.</li>
+                        <li>date − Integer value representing the day of the month.</li>
+                        <li>hour − Integer value representing the hour of the day (24-hour scale).</li>
+                        <li>minute − Integer value representing the minute segment of a time reading.</li>
+                        <li>second − Integer value representing the second segment of a time reading.</li>
+                        <li>millisecond − Integer value representing the millisecond segment of a time reading.</li>
+                    </ul>
+                </ul>
+
+            <h4>Date Properties</h4>
+            <p>Here is a list of the properties of the Date object along with their description.</p>
+
+            <table>
+                <tr>
+                    <th>#</th>
+                    <th>Propiedad</th>
+                    <th>Descripción</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>constructor</td>
+                    <td>Specifies the function that creates an object's prototype.</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>prototype</td>
+                    <td>The prototype property allows you to add properties and methods to an object</td>
+                </tr>
+            </table>
+
+            <p>In the following sections, we will have a few examples to demonstrate the usage of different Date properties</p>
+
+            <h4>Date Methods</h4>
+            <p>Here is a list of the methods used with Date and their description.</p>
+
+            <table>
+                <tr>
+                    <th>#</th>
+                    <th>Método</th>
+                    <th>Descripción</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Date()</td>
+                    <td>Returns today's date and time</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>getDate()</td>
+                    <td>Returns the day of the month for the specified date according to local time.</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>getDay()</td>
+                    <td>Returns the day of the week for the specified date according to local time.</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>getFullYear()</td>
+                    <td>Returns the year of the specified date according to local time.</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>getHours()</td>
+                    <td>Returns the hour in the specified date according to local time.</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>getMilliseconds()</td>
+                    <td>Returns the milliseconds in the specified date according to local time.</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>getMinutes()</td>
+                    <td>Returns the minutes in the specified date according to local time</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>getMonth()</td>
+                    <td>Returns the month in the specified date according to local time.</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>getSeconds()</td>
+                    <td>Returns the seconds in the specified date according to local time.</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>getTime()</td>
+                    <td>Returns the numeric value of the specified date as the number of milliseconds since January 1, 1970, 00:00:00 UTC.</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>getTimezoneOffset()</td>
+                    <td>Returns the time-zone offset in minutes for the current locale.</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>getUTCDate()</td>
+                    <td>Returns the day (date) of the month in the specified date according to universal time.</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>getUTCDay()</td>
+                    <td>Returns the day of the week in the specified date according to universal time.</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>getUTCFullYear()</td>
+                    <td>Returns the year in the specified date according to universal time.</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>getUTCHours()</td>
+                    <td>Returns the hours in the specified date according to universal time.</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>getUTCMilliseconds()</td>
+                    <td>Returns the milliseconds in the specified date according to universal time</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>getUTCMinutes()</td>
+                    <td>Returns the minutes in the specified date according to universal time.</td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>getUTCMonth()</td>
+                    <td>Returns the month in the specified date according to universal time.</td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                    <td>getUTCSeconds()</td>
+                    <td>Returns the seconds in the specified date according to universal time.</td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>getYear()</td>
+                    <td>Deprecated - Returns the year in the specified date according to local time. Use getFullYear instead.</td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                    <td>setDate()</td>
+                    <td>Sets the day of the month for a specified date according to local time.</td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td>setFullYear()</td>
+                    <td>Sets the full year for a specified date according to local time.</td>
+                </tr>
+                <tr>
+                    <td>23</td>
+                    <td>setHours()</td>
+                    <td>Sets the hours for a specified date according to local time.</td>
+                </tr>
+                <tr>
+                    <td>24</td>
+                    <td>setMilliseconds()</td>
+                    <td>Sets the milliseconds for a specified date according to local time.</td>
+                </tr>
+                <tr>
+                    <td>25</td>
+                    <td>setMinutes()</td>
+                    <td>Sets the minutes for a specified date according to local time.</td>
+                </tr>
+                <tr>
+                    <td>26</td>
+                    <td>setMonth()</td>
+                    <td>Sets the month for a specified date according to local time.</td>
+                </tr>
+                <tr>
+                    <td>27</td>
+                    <td>setSeconds()</td>
+                    <td>Sets the seconds for a specified date according to local time.</td>
+                </tr>
+                <tr>
+                    <td>28</td>
+                    <td>setTime()</td>
+                    <td>Sets the Date object to the time represented by a number of milliseconds since January 1, 1970, 00:00:00 UTC.</td>
+                </tr>
+                <tr>
+                    <td>29</td>
+                    <td>setUTCDate()</td>
+                    <td>Sets the day of the month for a specified date according to universal time.</td>
+                </tr>
+                <tr>
+                    <td>30</td>
+                    <td>setUTCFullYear()</td>
+                    <td>Sets the full year for a specified date according to universal time.</td>
+                </tr>
+                <tr>
+                    <td>31</td>
+                    <td>setUTCHours()</td>
+                    <td>Sets the hour for a specified date according to universal time.</td>
+                </tr>
+                <tr>
+                    <td>32</td>
+                    <td>setUTCMilliseconds()</td>
+                    <td>Sets the milliseconds for a specified date according to universal time.</td>
+                </tr>
+                <tr>
+                    <td>33</td>
+                    <td>setUTCMinutes()</td>
+                    <td>Sets the minutes for a specified date according to universal time.</td>
+                </tr>
+                <tr>
+                    <td>34</td>
+                    <td>setUTCMonth()</td>
+                    <td>Sets the month for a specified date according to universal time.</td>
+                </tr>
+                <tr>
+                    <td>35</td>
+                    <td>setUTCSeconds()</td>
+                    <td>Sets the seconds for a specified date according to universal time.</td>
+                </tr>
+                <tr>
+                    <td>36</td>
+                    <td>setYear()</td>
+                    <td>Deprecated - Sets the year for a specified date according to local time. Use setFullYear instead.</td>
+                </tr>
+                <tr>
+                    <td>37</td>
+                    <td>toDateString()</td>
+                    <td>Returns the "date" portion of the Date as a human-readable string.</td>
+                </tr>
+                <tr>
+                    <td>38</td>
+                    <td>toGMTString()</td>
+                    <td>Deprecated - Converts a date to a string, using the Internet GMT conventions. Use toUTCString instead.</td>
+                </tr>
+                <tr>
+                    <td>39</td>
+                    <td>toLocaleDateString()</td>
+                    <td>Returns the "date" portion of the Date as a string, using the current locale's conventions.</td>
+                </tr>
+                <tr>
+                    <td>40</td>
+                    <td>toLocaleFormat()</td>
+                    <td>Converts a date to a string, using a format string.</td>
+                </tr>
+                <tr>
+                    <td>41</td>
+                    <td>toLocaleString()</td>
+                    <td>Converts a date to a string, using the current locale's conventions.</td>
+                </tr>
+                <tr>
+                    <td>42</td>
+                    <td>toLocaleTimeString()</td>
+                    <td>Returns the "time" portion of the Date as a string, using the current locale's conventions.</td>
+                </tr>
+                <tr>
+                    <td>43</td>
+                    <td>toSource()</td>
+                    <td>Returns a string representing the source for an equivalent Date object; you can use this value to create a new object.</td>
+                </tr>
+                <tr>
+                    <td>44</td>
+                    <td>toString()</td>
+                    <td>Returns a string representing the specified Date object.</td>
+                </tr>
+                <tr>
+                    <td>45</td>
+                    <td>toTimeString()</td>
+                    <td>Returns the "time" portion of the Date as a human-readable string.</td>
+                </tr>
+                <tr>
+                    <td>46</td>
+                    <td>toUTCString()</td>
+                    <td>Converts a date to a string, using the universal time convention.</td>
+                </tr>
+                <tr>
+                    <td>47</td>
+                    <td>valueOf()</td>
+                    <td>Returns the primitive value of a Date object.</td>
+                </tr>
+
+            </table>
+
+            <p>Converts a date to a string, using the universal time convention.</p>
+            <h4>Date Static Methods</h4>
+
+            <p>In addition to the many instance methods listed previously, the Date object also defines two static methods. These methods are invoked through the Date() constructor itself.</p>
+
+            <table>
+                <tr>
+                    <th>#</th>
+                    <th>Método</th>
+                    <th>Descripción</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Date.parse()</td>
+                    <td>Parses a string representation of a date and time and returns the internal millisecond representation of that date.</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Date.UTC()</td>
+                    <td>Returns the millisecond representation of the specified UTC date and time.</td>
+                </tr>
+            </table>
+
+            <p>In the following sections, we will have a few examples to demonstrate the usages of Date Static methods.</p>
+
             </section>
 
             <section id="item27">
-                <h2>item20</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
-            </section>
+                <h2>JavaScript - The Math Object</h2>
+                
+                <p>The math object provides you properties and methods for mathematical constants and functions. Unlike other global objects, Math is not a constructor. All the properties and methods of Math are static and can be called by using Math as an object without creating it.</p>
+                <p>Thus, you refer to the constant pi as Math.PI and you call the sine function as Math.sin(x), where x is the method's argument.</p>
+                <h4>Syntax</h4>
+                <p>The syntax to call the properties and methods of Math are as follows</p>
+            
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">var pi_val = Math.PI;
+var sine_val = Math.sin(30);</code></pre></div> 
+            
+
+                <h4>Math Properties</h4>           
+                <p>Here is a list of all the properties of Math and their description.</p>
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Propiedad</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>E \</td>
+                        <td>Euler's constant and the base of natural logarithms, approximately 2.718.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</section>
 
             <section id="item28">
                 <h2>item20</h2>
@@ -3403,6 +4722,53 @@
                 <a href="#">link</a>
             </section>
 
+            <section id="item32">
+                <h2>item20</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
+                <a href="#">link</a>
+            </section>
+
+            <section id="item33">
+                <h2>item20</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
+                <a href="#">link</a>
+            </section>
+
+            <section id="item34">
+                <h2>item20</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
+                <a href="#">link</a>
+            </section>
+
+            <section id="item35">
+                <h2>item20</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
+                <a href="#">link</a>
+            </section>
+
+            <section id="item36">
+                <h2>item20</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
+                <a href="#">link</a>
+            </section>
+
+            <section id="item37">
+                <h2>item20</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
+                <a href="#">link</a>
+            </section>
         </div>
     </div>
 
