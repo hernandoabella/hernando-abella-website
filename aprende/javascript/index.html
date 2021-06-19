@@ -4687,26 +4687,187 @@ var sine_val = Math.sin(30);</code></pre></div>
                         <th>Descripción</th>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>1</td>
+                        <td>abs()</td>
+                        <td>Returns the absolute value of a number.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>acos()</td>
+                        <td>Returns the arccosine (in radians) of a number.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>asin()</td>
+                        <td>Returns the arcsine (in radians) of a number.</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>atan()</td>
+                        <td>Returns the arctangent (in radians) of a number.</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>atan2()</td>
+                        <td>Returns the arctangent of the quotient of its arguments.</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>ceil()</td>
+                        <td>Returns the smallest integer greater than or equal to a number.</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>cos()</td>
+                        <td>Returns the cosine of a number.</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>exp()</td>
+                        <td>Returns EN, where N is the argument, and E is Euler's constant, the base of the natural logarithm.</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>floor()</td>
+                        <td>Returns the largest integer less than or equal to a number.</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>log()</td>
+                        <td>Returns the natural logarithm (base E) of a number.</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>max()</td>
+                        <td>Returns the largest of zero or more numbers.</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>min()</td>
+                        <td>Returns the smallest of zero or more numbers.</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>pow()</td>
+                        <td>Returns base to the exponent power, that is, base exponent.</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>random()</td>
+                        <td>Returns a pseudo-random number between 0 and 1.</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>round()</td>
+                        <td>Returns the value of a number rounded to the nearest integer.</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>sin()</td>
+                        <td>Returns the sine of a number</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>sqrt()</td>
+                        <td>Returns the square root of a number.</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>tan()</td>
+                        <td>Returns the tangent of a number.</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>toSource()</td>
+                        <td>Returns the string "Math".</td>
                     </tr>
                 </table>
 
-
-
-
-
-
+                <p>In the following sections, we will have a few examples to demonstrate the usage of the methods associated with Math.</p>
 
 </section>
 
             <section id="item28">
-                <h2>item20</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
+                <h2>Regular Expressions and RegExp Object</h2>
+
+                <p>A regular expression is an object that describes a pattern of characters</p>
+                <p>The JavaScript RegExp class represents regular expressions, and both String and RegExp define methods that use regular expressions to perform powerful pattern-matching and search-and-replace functions on text.</p>
+
+                <h4>Syntax</h4>
+                <p>A regular expression could be defined with the RegExp () constructor, as follows −</p>
+
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">var pattern = new RegExp(pattern, attributes);
+or simply
+var pattern = /pattern/attributes;</code></pre></div>
+
+                <p>Here is the description of the parameters −</p>
+                <ul>
+                    <li>pattern − A string that specifies the pattern of the regular expression or another regular expression.</li>
+                    <li>attributes − An optional string containing any of the "g", "i", and "m" attributes that specify global, case-insensitive, and multi-line matches, respectively.</li>
+                </ul>
+
+                <h4>Brackets</h4>
+                <p>Brackets ([]) have a special meaning when used in the context of regular expressions. They are used to find a range of characters.</p>
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Expresión</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>[...]</td>
+                        <td>Any one character between the brackets.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>[^...]</td>
+                        <td>Any one character not between the brackets.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>[0-9]</td>
+                        <td>It matches any decimal digit from 0 through 9.</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>[a-z]</td>
+                        <td>It matches any character from lowercase a through lowercase z.</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>[A-Z]</td>
+                        <td>It matches any character from uppercase A through uppercase Z.</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>[a-Z]</td>
+                        <td>It matches any character from lowercase a through uppercase Z.</td>
+                    </tr>
+                </table>
+
+                <p>The ranges shown above are general; you could also use the range [0-3] to match any decimal digit ranging from 0 through 3, or the range [b-v] to match any lowercase character ranging from b through v.</p>
+                <h4>Quantifiers</h4>
+                <p>The frequency or position of bracketed character sequences and single characters can be denoted by a special character. Each special character has a specific connotation. The +, *, ?, and $ flags all follow a character sequence.</p>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </section>
 
             <section id="item29">
