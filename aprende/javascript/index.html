@@ -4853,94 +4853,1281 @@ var pattern = /pattern/attributes;</code></pre></div>
                 <h4>Quantifiers</h4>
                 <p>The frequency or position of bracketed character sequences and single characters can be denoted by a special character. Each special character has a specific connotation. The +, *, ?, and $ flags all follow a character sequence.</p>
     
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Expresión</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>p+</td>
+                        <td>It matches any string containing one or more p's.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>p*</td>
+                        <td>It matches any string containing zero or more p's.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>p?</td>
+                        <td>It matches any string containing at most one p.</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>p{N}</td>
+                        <td>It matches any string containing a sequence of N p's</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>p{2,3}</td>
+                        <td>It matches any string containing a sequence of two or three p's.</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>p{2, }</td>
+                        <td>It matches any string containing a sequence of at least two p's.</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>p$</td>
+                        <td>It matches any string with p at the end of it.</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>^p</td>
+                        <td>It matches any string with p at the beginning of it.</td>
+                    </tr>
+                </table>
 
+                <h4>Examples</h4>
+                <p>Following examples explain more about matching characters.</p>
 
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Expresión</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>[^a-zA-Z]</td>
+                        <td>It matches any string not containing any of the characters ranging from a through z and A through Z.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>p.p</td>
+                        <td>It matches any string containing p, followed by any character, in turn followed by another p.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>^.{2}$</td>
+                        <td>It matches any string containing exactly two characters.</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>&lt;b&gt;(.*)&lt;/b&gt;</td>
+                        <td>It matches any string enclosed within &lt;b&gt; and &lt;/b&gt;.</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>p(hp)*</td>
+                        <td>It matches any string containing a p followed by zero or more instances of the sequence hp.</td>
+                    </tr>
+                </table>
+                <h4>Literal characters</h4>
 
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Carácter</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Alphanumeric</td>
+                        <td>Itself</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>\0</td>
+                        <td>The NUL character (\u0000)</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>\t</td>
+                        <td>Tab (\u0009)/td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>\n</td>
+                        <td>Newline (\u000A)</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>\v</td>
+                        <td>Vertical tab (\u000B)</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>\f</td>
+                        <td>Form feed (\u000C)</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>\r</td>
+                        <td>Carriage return (\u000D)</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>\xnn</td>
+                        <td>The Latin character specified by the hexadecimal number nn; for example, \x0A is the same as \n</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>\uxxxx</td>
+                        <td>The Unicode character specified by the hexadecimal number xxxx; for example, \u0009 is the same as \t</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>\cX</td>
+                        <td>The control character ^X; for example, \cJ is equivalent to the newline character \n</td>
+                    </tr>
+                </table>
 
+                <h4>Metacharacters</h4>
+                <p>A metacharacter is simply an alphabetical character preceded by a backslash that acts to give the combination a special meaning.</p>
+                <p>For instance, you can search for a large sum of money using the '\d' metacharacter: /([\d]+)000/, Here \d will search for any string of numerical character.</p>
+                <p>The following table lists a set of metacharacters which can be used in PERL Style Regular Expressions.</p>
 
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Carácter</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>.</td>
+                        <td>a single character</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>\s</td>
+                        <td>a whitespace character (space, tab, newline)</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>\S</td>
+                        <td>non-whitespace character</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>\d</td>
+                        <td>a digit (0-9)</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>\D</td>
+                        <td>a non-digit</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>\w</td>
+                        <td>a word character (a-z, A-Z, 0-9, _)</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>\W</td>
+                        <td>a non-word character</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>[\b]</td>
+                        <td>a literal backspace (special case).</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>[aeiou]</td>
+                        <td>matches a single character in the given set</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>[^aeiou]</td>
+                        <td>matches a single character outside the given set</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>(foo|bar|baz)</td>
+                        <td>matches any of the alternatives specified</td>
+                    </tr>
+                </table>
 
+                <h4>Modifiers</h4>
+                <p>Several modifiers are available that can simplify the way you work with regexps, like case sensitivity, searching in multiple lines, etc.</p>
 
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Modifier</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>i</td>
+                        <td>Perform case-insensitive matching.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>m</td>
+                        <td>Specifies that if the string has newline or carriage return characters, the ^ and $ operators will now match against a newline boundary, instead of a string boundary</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>g</td>
+                        <td>Performs a global matchthat is, find all matches rather than stopping after the first match</td>
+                    </tr>
+                    
+                </table>
 
+                <h4>RegExp Properties</h4>
+                <p>Here is a list of the properties associated with RegExp and their description.</p>
+                
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Propiedad</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>constructor</td>
+                        <td>Specifies the function that creates an object's prototype.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>global</td>
+                        <td>Specifies if the "g" modifier is set.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>ignoreCase</td>
+                        <td>Specifies if the "i" modifier is set.</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>lastIndex</td>
+                        <td>The index at which to start the next match.</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>multiline</td>
+                        <td>Specifies if the "m" modifier is set.</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>source</td>
+                        <td>The text of the pattern.</td>
+                    </tr>
+                </table>
 
+                <p>In the following sections, we will have a few examples to demonstrate the usage of RegExp properties.</p>
+                <h4>RegExp Methods</h4>
+                <p>Here is a list of the methods associated with RegExp along with their description.</p>
 
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Método</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>exec()</td>
+                        <td>Executes a search for a match in its string parameter.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>test()</td>
+                        <td>Tests for a match in its string parameter.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>toSource()</td>
+                        <td>Returns an object literal representing the specified object; you can use this value to create a new object.</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>toString()</td>
+                        <td>Returns a string representing the specified object.Returns a string representing the specified object.</td>
+                    </tr>
+                </table>
 
-
-
-
-
+                <p>In the following sections, we will have a few examples to demonstrate the usage of RegExp methods.</p>
             </section>
 
             <section id="item29">
-                <h2>item20</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
+                <h2>JavaScript - Document Object Model or DOM</h2>
+                <p>Every web page resides inside a browser window which can be considered as an object.</p>
+                <p>A Document object represents the HTML document that is displayed in that window. The Document object has various properties that refer to other objects which allow access to and modification of document content.</p>
+                <p>The way a document content is accessed and modified is called the Document Object Model, or DOM. The Objects are organized in a hierarchy. This hierarchical structure applies to the organization of objects in a Web document.</p>
+                <ul>
+                    <li>Window object − Top of the hierarchy. It is the outmost element of the object hierarchy.</li>
+                    <li>Document object − Each HTML document that gets loaded into a window becomes a document object. The document contains the contents of the page.</li>
+                    <li>Form object − Everything enclosed in the &lt;form&gt;...&lt;/form&gt; tags sets the form object.</li>
+                    <li>Form control elements − The form object contains all the elements defined for that object such as text fields, buttons, radio buttons, and checkboxes.</li>
+                </ul>
+            
+                <p>Here is a simple hierarchy of a few important objects −</p>
+
+                <img src="/images/html-dom.jpg" alt="">
+
+                <p>There are several DOMs in existence. The following sections explain each of these DOMs in detail and describe how you can use them to access and modify document content.</p>
+                <ul>
+                    <li>The Legacy DOM − This is the model which was introduced in early versions of JavaScript language. It is well supported by all browsers, but allows access only to certain key portions of documents, such as forms, form elements, and images.</li>
+                    <li>The W3C DOM − This document object model allows access and modification of all document content and is standardized by the World Wide Web Consortium (W3C). This model is supported by almost all the modern browsers.</li>
+                    <li>The IE4 DOM − This document object model was introduced in Version 4 of Microsoft's Internet Explorer browser. IE 5 and later versions include support for most basic W3C DOM features.</li>
+                </ul>
+            
+                <h4>DOM compatibility</h4>
+                <p>If you want to write a script with the flexibility to use either W3C DOM or IE 4 DOM depending on their availability, then you can use a capability-testing approach that first checks for the existence of a method or property to determine whether the browser has the capability you desire. For example −</p>
+            
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">if (document.getElementById) {
+   // If the W3C method exists, use it
+} else if (document.all) {
+   // If the all[] array exists, use it
+} else {
+   // Otherwise use the legacy DOM
+}</code></pre></div>
+            
             </section>
 
             <section id="item30">
-                <h2>item20</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
+                <h2>Errors & Exceptions Handling</h2>
+                
+            <p>There are three types of errors in programming: (a) Syntax Errors, (b) Runtime Errors, and (c) Logical Errors.</p>
+
+            <h4>Syntax Errors</h4>
+            <p>Syntax errors, also called parsing errors, occur at compile time in traditional programming languages and at interpret time in JavaScript.</p>
+            <p>For example, the following line causes a syntax error because it is missing a closing parenthesis.</p>
+
+            <div class="codigo__html">
+                <div class="decor__bar html"></div>
+                <pre class="line-numbers"><code class="language-html">&lt;script type = &quot;text/javascript&quot;&gt;
+                    &lt;!--
+                       window.print(;
+                    //--&gt;
+                 &lt;/script&gt;</code></pre></div>
+
+            <p>When a syntax error occurs in JavaScript, only the code contained within the same thread as the syntax error is affected and the rest of the code in other threads gets executed assuming nothing in them depends on the code containing the error.</p>
+            
+            <h4>Runtime Errors</h4>
+            <p>Runtime errors, also called exceptions, occur during execution (after compilation/interpretation).</p>
+            <p>For example, the following line causes a runtime error because here the syntax is correct, but at runtime, it is trying to call a method that does not exist.</p>
+
+            <div class="codigo__html">
+                <div class="decor__bar html"></div>
+                <pre class="line-numbers"><code class="language-html">&lt;script type = &quot;text/javascript&quot;&gt;
+   &lt;!--
+      window.printme();
+   //--&gt;
+&lt;/script&gt;</code></pre></div>        
+
+            <p>Exceptions also affect the thread in which they occur, allowing other JavaScript threads to continue normal execution.</p>
+
+            <h4>Logical Errors</h4>
+            <p>Logic errors can be the most difficult type of errors to track down. These errors are not the result of a syntax or runtime error. Instead, they occur when you make a mistake in the logic that drives your script and you do not get the result you expected.</p>
+            <p>You cannot catch those errors, because it depends on your business requirement what type of logic you want to put in your program.</p>
+            <h4>The try...catch...finally Statement</h4>
+            <p>The latest versions of JavaScript added exception handling capabilities. JavaScript implements the try...catch...finally construct as well as the throw operator to handle exceptions.</p>
+            <p>You can catch programmer-generated and runtime exceptions, but you cannot catch JavaScript syntax errors.</p>
+            <p>Here is the try...catch...finally block syntax −</p>
+
+            <div class="codigo__html">
+                <div class="decor__bar html"></div>
+                <pre class="line-numbers"><code class="language-html">&lt;script type = &quot;text/javascript&quot;&gt;
+   &lt;!--
+      try {
+         // Code to run
+         [break;]
+      } 
+      
+      catch ( e ) {
+         // Code to run if an exception occurs
+         [break;]
+      }
+      
+      [ finally {
+         // Code that is always executed regardless of 
+         // an exception occurring
+      }]
+   //--&gt;
+&lt;/script&gt;</code></pre></div>        
+            <p>The try block must be followed by either exactly one catch block or one finally block (or one of both). When an exception occurs in the try block, the exception is placed in e and the catch block is executed. The optional finally block executes unconditionally after try/catch.</p>
+            <h4>Examples</h4>
+            <p>Here is an example where we are trying to call a non-existing function which in turn is raising an exception. Let us see how it behaves without try...catch−</p>
+
+            <div class="codigo__html">
+                <div class="decor__bar html"></div>
+                <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                    &lt;head&gt;      
+                       &lt;script type = &quot;text/javascript&quot;&gt;
+                          &lt;!--
+                             function myFunc() {
+                                var a = 100;
+                                alert(&quot;Value of variable a is : &quot; + a );
+                             }
+                          //--&gt;
+                       &lt;/script&gt;      
+                    &lt;/head&gt;
+                    
+                    &lt;body&gt;
+                       &lt;p&gt;Click the following to see the result:&lt;/p&gt;
+                       
+                       &lt;form&gt;
+                          &lt;input type = &quot;button&quot; value = &quot;Click Me&quot; onclick = &quot;myFunc();&quot; /&gt;
+                       &lt;/form&gt;      
+                    &lt;/body&gt;
+                 &lt;/html&gt;</code></pre></div> 
+
+            <h4>Output</h4>
+
+            <p>click the following to see the result:</p>
+            <p>[[click me]]</p>
+
+            <p>Now let us try to catch this exception using try...catch and display a user-friendly message. You can also suppress this message, if you want to hide this error from a user.</p>
+
+            <div class="codigo__html">
+                <div class="decor__bar html"></div>
+                <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                    &lt;head&gt;
+                       
+                       &lt;script type = &quot;text/javascript&quot;&gt;
+                          &lt;!--
+                             function myFunc() {
+                                var a = 100;
+                                try {
+                                   alert(&quot;Value of variable a is : &quot; + a );
+                                } 
+                                catch ( e ) {
+                                   alert(&quot;Error: &quot; + e.description );
+                                }
+                             }
+                          //--&gt;
+                       &lt;/script&gt;
+                       
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                       &lt;p&gt;Click the following to see the result:&lt;/p&gt;
+                       
+                       &lt;form&gt;
+                          &lt;input type = &quot;button&quot; value = &quot;Click Me&quot; onclick = &quot;myFunc();&quot; /&gt;
+                       &lt;/form&gt;
+                       
+                    &lt;/body&gt;
+                 &lt;/html&gt;</code></pre></div> 
+
+            <h4>Output</h4>                 
+                            
+            <p>Click the following to see the result:</p>
+            <p>[click me]</p>
+            <p>You can use finally block which will always execute unconditionally after the try/catch. Here is an example.</p>
+
+            <div class="codigo__html">
+                <div class="decor__bar html"></div>
+                <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                    &lt;head&gt;
+                       
+                       &lt;script type = &quot;text/javascript&quot;&gt;
+                          &lt;!--
+                             function myFunc() {
+                                var a = 100;
+                                
+                                try {
+                                   alert(&quot;Value of variable a is : &quot; + a );
+                                }
+                                catch ( e ) {
+                                   alert(&quot;Error: &quot; + e.description );
+                                }
+                                finally {
+                                   alert(&quot;Finally block will always execute!&quot; );
+                                }
+                             }
+                          //--&gt;
+                       &lt;/script&gt;
+                       
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                       &lt;p&gt;Click the following to see the result:&lt;/p&gt;
+                       
+                       &lt;form&gt;
+                          &lt;input type = &quot;button&quot; value = &quot;Click Me&quot; onclick = &quot;myFunc();&quot; /&gt;
+                       &lt;/form&gt;
+                       
+                    &lt;/body&gt;
+                 &lt;/html&gt;</code></pre></div>                
+
+            <h4>Output</h4>                 
+
+            <p>Click the following to see the result:</p>
+            <p>[click me]</p>                 
+
+            <h4>The throw Statement</h4>                 
+            <p>You can use throw statement to raise your built-in exceptions or your customized exceptions. Later these exceptions can be captured and you can take an appropriate action.</p>
+            <h4>Example</h4>
+            <p>The following example demonstrates how to use a throw statement.</p>
+
+            <div class="codigo__html">
+                <div class="decor__bar html"></div>
+                <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                    &lt;head&gt;
+                       
+                       &lt;script type = &quot;text/javascript&quot;&gt;
+                          &lt;!--
+                             function myFunc() {
+                                var a = 100;
+                                var b = 0;
+                                
+                                try {
+                                   if ( b == 0 ) {
+                                      throw( &quot;Divide by zero error.&quot; ); 
+                                   } else {
+                                      var c = a / b;
+                                   }
+                                }
+                                catch ( e ) {
+                                   alert(&quot;Error: &quot; + e );
+                                }
+                             }
+                          //--&gt;
+                       &lt;/script&gt;
+                       
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                       &lt;p&gt;Click the following to see the result:&lt;/p&gt;
+                       
+                       &lt;form&gt;
+                          &lt;input type = &quot;button&quot; value = &quot;Click Me&quot; onclick = &quot;myFunc();&quot; /&gt;
+                       &lt;/form&gt;
+                       
+                    &lt;/body&gt;
+                 &lt;/html&gt;</code></pre></div>                 
+                <h4>Output</h4>  
+                
+                <p>Click the following to see the result:</p>
+                <p>[click me]</p>  
+
+                <p>You can raise an exception in one function using a string, integer, Boolean, or an object and then you can capture that exception either in the same function as we did above, or in another function using a try...catch block.</p>             
+                <h4>The onerror() Method</h4>  
+                <p>The onerror event handler was the first feature to facilitate error handling in JavaScript. The error event is fired on the window object whenever an exception occurs on the page.</p>
+                
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;head&gt;
+      
+      &lt;script type = &quot;text/javascript&quot;&gt;
+         &lt;!--
+            window.onerror = function () {
+               alert(&quot;An error occurred.&quot;);
+            }
+         //--&gt;
+      &lt;/script&gt;
+      
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;p&gt;Click the following to see the result:&lt;/p&gt;
+      
+      &lt;form&gt;
+         &lt;input type = &quot;button&quot; value = &quot;Click Me&quot; onclick = &quot;myFunc();&quot; /&gt;
+      &lt;/form&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>                 
+
+            <h4>Output</h4>  
+                            
+            <p>Click the following to see the result:</p>
+            <p>[click me]</p>
+
+            <p>The onerror event handler provides three pieces of information to identify the exact nature of the error −</p>
+            <ul>
+                <li>Error message − The same message that the browser would display for the given error</li>
+                <li>URL − The file in which the error occurred</li>
+                <li>Line number− The line number in the given URL that caused the error</li>
+            </ul>
+
+            <p>Here is the example to show how to extract this information.</p>
+
+            <h4>Example</h4>
+
+            <div class="codigo__html">
+                <div class="decor__bar html"></div>
+                <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;head&gt;
+   
+      &lt;script type = &quot;text/javascript&quot;&gt;
+         &lt;!--
+            window.onerror = function (msg, url, line) {
+               alert(&quot;Message : &quot; + msg );
+               alert(&quot;url : &quot; + url );
+               alert(&quot;Line number : &quot; + line );
+            }
+         //--&gt;
+      &lt;/script&gt;
+      
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;p&gt;Click the following to see the result:&lt;/p&gt;
+      
+      &lt;form&gt;
+         &lt;input type = &quot;button&quot; value = &quot;Click Me&quot; onclick = &quot;myFunc();&quot; /&gt;
+      &lt;/form&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+
+
+            <h4>Output</h4>   
+            <p>Click the following to see the result:</p>
+            <p>[click me]</p>
+
+            <p>You can display extracted information in whatever way you think it is better.</p>
+            <p>You can use an onerror method, as shown below, to display an error message in case there is any problem in loading an image.</p>
+
+            <div class="codigo__html">
+                <div class="decor__bar html"></div>
+                <pre class="line-numbers"><code class="language-html">&lt;img src=&quot;myimage.gif&quot; onerror=&quot;alert('An error occurred loading the image.')&quot; /&gt;</code></pre></div>
+                <p>You can use onerror with many HTML tags to display appropriate messages in case of errors.</p>
             </section>
 
             <section id="item31">
-                <h2>item20</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
+                <h2>Form Validation</h2>
+                
+                <p>Form validation normally used to occur at the server, after the client had entered all the necessary data and then pressed the Submit button. If the data entered by a client was incorrect or was simply missing, the server would have to send all the data back to the client and request that the form be resubmitted with correct information. This was really a lengthy process which used to put a lot of burden on the server.</p>
+                <p>JavaScript provides a way to validate form's data on the client's computer before sending it to the web server. Form validation generally performs two functions.</p>
+                <ul>
+                    <li>Basic Validation − First of all, the form must be checked to make sure all the mandatory fields are filled in. It would require just a loop through each field in the form and check for data.</li>
+                    <li>Data Format Validation − Secondly, the data that is entered must be checked for correct form and value. Your code must include appropriate logic to test correctness of data.</li>
+                </ul>
+            
+                <h4>Example</h4>
+                <p>We will take an example to understand the process of validation. Here is a simple form in html format.</p>
+            
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;   
+                        &lt;head&gt;
+                           &lt;title&gt;Form Validation&lt;/title&gt;      
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              &lt;!--
+                                 // Form validation code will come here.
+                              //--&gt;
+                           &lt;/script&gt;      
+                        &lt;/head&gt;
+                        
+                        &lt;body&gt;
+                           &lt;form action = &quot;/cgi-bin/test.cgi&quot; name = &quot;myForm&quot; onsubmit = &quot;return(validate());&quot;&gt;
+                              &lt;table cellspacing = &quot;2&quot; cellpadding = &quot;2&quot; border = &quot;1&quot;&gt;
+                                 
+                                 &lt;tr&gt;
+                                    &lt;td align = &quot;right&quot;&gt;Name&lt;/td&gt;
+                                    &lt;td&gt;&lt;input type = &quot;text&quot; name = &quot;Name&quot; /&gt;&lt;/td&gt;
+                                 &lt;/tr&gt;
+                                 
+                                 &lt;tr&gt;
+                                    &lt;td align = &quot;right&quot;&gt;EMail&lt;/td&gt;
+                                    &lt;td&gt;&lt;input type = &quot;text&quot; name = &quot;EMail&quot; /&gt;&lt;/td&gt;
+                                 &lt;/tr&gt;
+                                 
+                                 &lt;tr&gt;
+                                    &lt;td align = &quot;right&quot;&gt;Zip Code&lt;/td&gt;
+                                    &lt;td&gt;&lt;input type = &quot;text&quot; name = &quot;Zip&quot; /&gt;&lt;/td&gt;
+                                 &lt;/tr&gt;
+                                 
+                                 &lt;tr&gt;
+                                    &lt;td align = &quot;right&quot;&gt;Country&lt;/td&gt;
+                                    &lt;td&gt;
+                                       &lt;select name = &quot;Country&quot;&gt;
+                                          &lt;option value = &quot;-1&quot; selected&gt;[choose yours]&lt;/option&gt;
+                                          &lt;option value = &quot;1&quot;&gt;USA&lt;/option&gt;
+                                          &lt;option value = &quot;2&quot;&gt;UK&lt;/option&gt;
+                                          &lt;option value = &quot;3&quot;&gt;INDIA&lt;/option&gt;
+                                       &lt;/select&gt;
+                                    &lt;/td&gt;
+                                 &lt;/tr&gt;
+                                 
+                                 &lt;tr&gt;
+                                    &lt;td align = &quot;right&quot;&gt;&lt;/td&gt;
+                                    &lt;td&gt;&lt;input type = &quot;submit&quot; value = &quot;Submit&quot; /&gt;&lt;/td&gt;
+                                 &lt;/tr&gt;
+                                 
+                              &lt;/table&gt;
+                           &lt;/form&gt;      
+                        &lt;/body&gt;
+                     &lt;/html&gt;</code></pre></div>
+            
+            
+                    <h4>Salida</h4>    
+            
+                    <form action = "/cgi-bin/test.cgi" name = "myForm" onsubmit = "return(validate());">
+                        <table cellspacing = "2" cellpadding = "2" border = "1">
+                           
+                           <tr>
+                              <td align="right">Name</td>
+                              <td><input type = "text" name = "Name" /></td>
+                           </tr>
+                           
+                           <tr>
+                              <td align = "right">EMail</td>
+                              <td><input type = "text" name = "EMail" /></td>
+                           </tr>
+                           
+                           <tr>
+                              <td align = "right">Zip Code</td>
+                              <td><input type = "text" name = "Zip" /></td>
+                           </tr>
+                           
+                           <tr>
+                              <td align = "right">Country</td>
+                              <td>
+                                 <select name = "Country">
+                                    <option value = "-1" selected>[choose yours]</option>
+                                    <option value = "1">USA</option>
+                                    <option value = "2">UK</option>
+                                    <option value = "3">INDIA</option>
+                                 </select>
+                              </td>
+                           </tr>
+                           
+                           <tr>
+                              <td align = "right"></td>
+                              <td><input type = "submit" value = "Submit" /></td>
+                           </tr>
+                           
+                        </table>
+                     </form>     
+            
+            <h4>Basic Form Validation</h4>
+            <p>First let us see how to do a basic form validation. In the above form, we are calling validate() to validate data when onsubmit event is occurring. The following code shows the implementation of this validate() function.</p>
+            
+            <div class="codigo__html">
+                <div class="decor__bar html"></div>
+                <pre class="line-numbers"><code class="language-html">&lt;script type = &quot;text/javascript&quot;&gt;
+                    &lt;!--
+                       // Form validation code will come here.
+                       function validate() {
+                       
+                          if( document.myForm.Name.value == &quot;&quot; ) {
+                             alert( &quot;Please provide your name!&quot; );
+                             document.myForm.Name.focus() ;
+                             return false;
+                          }
+                          if( document.myForm.EMail.value == &quot;&quot; ) {
+                             alert( &quot;Please provide your Email!&quot; );
+                             document.myForm.EMail.focus() ;
+                             return false;
+                          }
+                          if( document.myForm.Zip.value == &quot;&quot; || isNaN( document.myForm.Zip.value ) ||
+                             document.myForm.Zip.value.length != 5 ) {
+                             
+                             alert( &quot;Please provide a zip in the format #####.&quot; );
+                             document.myForm.Zip.focus() ;
+                             return false;
+                          }
+                          if( document.myForm.Country.value == &quot;-1&quot; ) {
+                             alert( &quot;Please provide your country!&quot; );
+                             return false;
+                          }
+                          return( true );
+                       }
+                    //--&gt;
+                 &lt;/script&gt;</code></pre></div>
+            
+            
+            <h4>Data Format Validation</h4>
+            <p>Now we will see how we can validate our entered form data before submitting it to the web server.</p>
+            <p>The following example shows how to validate an entered email address. An email address must contain at least a ‘@’ sign and a dot (.). Also, the ‘@’ must not be the first character of the email address, and the last dot must at least be one character after the ‘@’ sign.</p>
+            <h4>Example</h4>
+            <p>Try the following code for email validation</p>
+                       
+            <div class="codigo__html">
+                <div class="decor__bar html"></div>
+                <pre class="line-numbers"><code class="language-html">&lt;script type = &quot;text/javascript&quot;&gt;
+                    &lt;!--
+                       function validateEmail() {
+                          var emailID = document.myForm.EMail.value;
+                          atpos = emailID.indexOf(&quot;@&quot;);
+                          dotpos = emailID.lastIndexOf(&quot;.&quot;);
+                          
+                          if (atpos &lt; 1 || ( dotpos - atpos &lt; 2 )) {
+                             alert(&quot;Please enter correct email ID&quot;)
+                             document.myForm.EMail.focus() ;
+                             return false;
+                          }
+                          return( true );
+                       }
+                    //--&gt;
+                 &lt;/script&gt;</code></pre></div>
+     
             </section>
 
             <section id="item32">
-                <h2>item20</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
+                <h2>Animation</h2>
+                <p>You can use JavaScript to create a complex animation having, but not limited to, the following elements −</p>
+                <ul>
+                    <li>Fireworks</li>
+                    <li>Fade Effect</li>
+                    <li>Roll-in or Roll-out</li>
+                    <li>Page-in or Page-out</li>
+                    <li>Object movements</li>
+                </ul>
+                <p>You might be interested in existing JavaScript based animation library: Script.Aculo.us.</p>
+                <p>This tutorial provides a basic understanding of how to use JavaScript to create an animation.</p>
+                <p>JavaScript can be used to move a number of DOM elements (<img />, <div> or any other HTML element) around the page according to some sort of pattern determined by a logical equation or function.</p>
+                <p>JavaScript provides the following two functions to be frequently used in animation programs</p>
+                <ul>
+                    <li>setTimeout( function, duration) − This function calls function after duration milliseconds from now.</li>
+                    <li>setInterval(function, duration) − This function calls function after every duration milliseconds.</li>
+                    <li>clearTimeout(setTimeout_variable) − This function calls clears any timer set by the setTimeout() functions.</li>
+                </ul>
+                <p>JavaScript can also set a number of attributes of a DOM object including its position on the screen. You can set top and left attribute of an object to position it anywhere on the screen. Here is its syntax.</p>
+
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">// Set distance from left edge of the screen.
+object.style.left = distance in pixels or points; 
+
+or
+
+// Set distance from top edge of the screen.
+object.style.top = distance in pixels or points; </code></pre></div>
+
+                <h4>Manual Animation</h4>   
+                <p>So let's implement one simple animation using DOM object properties and JavaScript functions as follows. The following list contains different DOM methods.</p>     
+                <ul>
+                    <li>We are using the JavaScript function getElementById() to get a DOM object and then assigning it to a global variable imgObj.</li>
+                    <li>We have defined an initialization function init() to initialize imgObj where we have set its position and left attributes</li>
+                    <li>We are calling initialization function at the time of window load.</li>
+                    <li>Finally, we are calling moveRight() function to increase the left distance by 10 pixels. You could also set it to a negative value to move it to the left side.</li>
+                </ul>
+
+                <h4>Example</h4>
+                <p>Try the following example.</p>
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;   
+                        &lt;head&gt;
+                           &lt;title&gt;JavaScript Animation&lt;/title&gt;      
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              &lt;!--
+                                 var imgObj = null;
+                                 
+                                 function init() {
+                                    imgObj = document.getElementById('myImage');
+                                    imgObj.style.position= 'relative'; 
+                                    imgObj.style.left = '0px'; 
+                                 }
+                                 function moveRight() {
+                                    imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+                                 }
+                                 
+                                 window.onload = init;
+                              //--&gt;
+                           &lt;/script&gt;
+                        &lt;/head&gt;
+                        
+                        &lt;body&gt;   
+                           &lt;form&gt;
+                              &lt;img id = &quot;myImage&quot; src = &quot;/images/html.gif&quot; /&gt;
+                              &lt;p&gt;Click button below to move the image to right&lt;/p&gt;
+                              &lt;input type = &quot;button&quot; value = &quot;Click Me&quot; onclick = &quot;moveRight();&quot; /&gt;
+                           &lt;/form&gt;      
+                        &lt;/body&gt;
+                     &lt;/html&gt;</code></pre></div>
+
+                <h4>Salida</h4> 
+                [imagenes]
+                click bvutton below to move the image to moveRight
+                [click me]
+
+                <h4>Automated Animation</h4>
+                <p>In the above example, we saw how an image moves to right with every click. We can automate this process by using the JavaScript function setTimeout() as follows −</p>                
+                <p>Here we have added more methods. So let's see what is new here −</p>
+
+                <ul>
+                    <li>The moveRight() function is calling setTimeout() function to set the position of imgObj.</li>
+                    <li>We have added a new function stop() to clear the timer set by setTimeout() function and to set the object at its initial position.</li>
+                </ul>
+
+                <h4>Example</h4>
+                <p>Try the following example code.</p>
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;   
+                        &lt;head&gt;
+                           &lt;title&gt;JavaScript Animation&lt;/title&gt;      
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              &lt;!--
+                                 var imgObj = null;
+                                 var animate ;
+                                 
+                                 function init() {
+                                    imgObj = document.getElementById('myImage');
+                                    imgObj.style.position= 'relative'; 
+                                    imgObj.style.left = '0px'; 
+                                 }
+                                 function moveRight() {
+                                    imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+                                    animate = setTimeout(moveRight,20);    // call moveRight in 20msec
+                                 }
+                                 function stop() {
+                                    clearTimeout(animate);
+                                    imgObj.style.left = '0px'; 
+                                 }
+                                 
+                                 window.onload = init;
+                              //--&gt;
+                           &lt;/script&gt;
+                        &lt;/head&gt;
+                        
+                        &lt;body&gt;   
+                           &lt;form&gt;
+                              &lt;img id = &quot;myImage&quot; src = &quot;/images/html.gif&quot; /&gt;
+                              &lt;p&gt;Click the buttons below to handle animation&lt;/p&gt;
+                              &lt;input type = &quot;button&quot; value = &quot;Start&quot; onclick = &quot;moveRight();&quot; /&gt;
+                              &lt;input type = &quot;button&quot; value = &quot;Stop&quot; onclick = &quot;stop();&quot; /&gt;
+                           &lt;/form&gt;      
+                        &lt;/body&gt;
+                     &lt;/html&gt;</code></pre></div>
+
+                     [imagenes]
+                     <p>Click the buttons below to handle animation</p>
+                     [start][stop]
+                     
+                     <h4>Rollover with a Mouse Event</h4>
+                     <p>Here is a simple example showing image rollover with a mouse event.</p> 
+                     <p>Let's see what we are using in the following example −</p>
+
+                    <ul>
+                        <li>At the time of loading this page, the ‘if’ statement checks for the existence of the image object. If the image object is unavailable, this block will not be executed.</li>
+                        <li>The Image() constructor creates and preloads a new image object called image1</li>
+                        <li>The src property is assigned the name of the external image file called /images/html.gif.</li>
+                        <li>Similarly, we have created image2 object and assigned /images/http.gif in this object.</li>
+                        <li>The # (hash mark) disables the link so that the browser does not try to go to a URL when clicked. This link is an image.</li>
+                        <li>The onMouseOver event handler is triggered when the user's mouse moves onto the link, and the onMouseOut event handler is triggered when the user's mouse moves away from the link (image).</li>
+                        <li>When the mouse moves over the image, the HTTP image changes from the first image to the second one. When the mouse is moved away from the image, the original image is displayed.</li>
+                        <li>When the mouse is moved away from the link, the initial image html.gif will reappear on the screen.</li>
+                    </ul>
+
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   
+                            &lt;head&gt;
+                               &lt;title&gt;Rollover with a Mouse Events&lt;/title&gt;
+                               
+                               &lt;script type = &quot;text/javascript&quot;&gt;
+                                  &lt;!--
+                                     if(document.images) {
+                                        var image1 = new Image();     // Preload an image
+                                        image1.src = &quot;/images/html.gif&quot;;
+                                        var image2 = new Image();     // Preload second image
+                                        image2.src = &quot;/images/http.gif&quot;;
+                                     }
+                                  //--&gt;
+                               &lt;/script&gt;
+                            &lt;/head&gt;
+                            
+                            &lt;body&gt;
+                               &lt;p&gt;Move your mouse over the image to see the result&lt;/p&gt;
+                               
+                               &lt;a href = &quot;#&quot; onMouseOver = &quot;document.myImage.src = image2.src;&quot;
+                                  onMouseOut = &quot;document.myImage.src = image1.src;&quot;&gt;
+                                  &lt;img name = &quot;myImage&quot; src = &quot;/images/html.gif&quot; /&gt;
+                               &lt;/a&gt;
+                            &lt;/body&gt;
+                         &lt;/html&gt;</code></pre></div>
+
+
+                    <p>Move your mouse over the image to see the result</p>
+                    <p>[imagenes]</p>
+
             </section>
 
             <section id="item33">
-                <h2>item20</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
+                <h2>Multimedia</h2>
+                <p>The JavaScript navigator object includes a child object called plugins. This object is an array, with one entry for each plug-in installed on the browser. The navigator.plugins object is supported only by Netscape, Firefox, and Mozilla only.</p>
+                <h4>Example</h4>
+                <p>Here is an example that shows how to list down all the plug-on installed in your browser −</p>
+            
+            
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+                        &lt;head&gt;
+                           &lt;title&gt;List of Plug-Ins&lt;/title&gt;
+                        &lt;/head&gt;
+                        
+                        &lt;body&gt;
+                           &lt;table border = &quot;1&quot;&gt;
+                              &lt;tr&gt;
+                                 &lt;th&gt;Plug-in Name&lt;/th&gt;
+                                 &lt;th&gt;Filename&lt;/th&gt;
+                                 &lt;th&gt;Description&lt;/th&gt;
+                              &lt;/tr&gt;
+                              
+                              &lt;script language = &quot;JavaScript&quot; type = &quot;text/javascript&quot;&gt;
+                                 for (i = 0; i&lt;navigator.plugins.length; i++) {
+                                    document.write(&quot;&lt;tr&gt;&lt;td&gt;&quot;);
+                                    document.write(navigator.plugins[i].name);
+                                    document.write(&quot;&lt;/td&gt;&lt;td&gt;&quot;);
+                                    document.write(navigator.plugins[i].filename);
+                                    document.write(&quot;&lt;/td&gt;&lt;td&gt;&quot;);
+                                    document.write(navigator.plugins[i].description);
+                                    document.write(&quot;&lt;/td&gt;&lt;/tr&gt;&quot;);
+                                 }
+                              &lt;/script&gt;
+                           &lt;/table&gt;      
+                        &lt;/body&gt;
+                     &lt;/html&gt;</code></pre></div>
+            
+            
+                <h4>Output</h4> 
+            
+                [table]
+
+                <h4>Checking for Plug-Ins</h4>
+                <p>Each plug-in has an entry in the array. Each entry has the following properties −</p>
+
+                <ul>
+                    <li>name − is the name of the plug-in.</li>
+                    <li>filename − is the executable file that was loaded to install the plug-in.</li>
+                    <li>description − is a description of the plug-in, supplied by the developer.</li>
+                    <li>mimeTypes − is an array with one entry for each MIME type supported by the plug-in.</li>
+                </ul>
+
+                <p>You can use these properties in a script to find out the installed plug-ins, and then using JavaScript, you can play appropriate multimedia file. Take a look at the following example.</p>
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;   
+   &lt;head&gt;
+      &lt;title&gt;Using Plug-Ins&lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;   
+      &lt;script language = &quot;JavaScript&quot; type = &quot;text/javascript&quot;&gt;
+         media = navigator.mimeTypes[&quot;video/quicktime&quot;];
+         
+         if (media) {
+            document.write(&quot;&lt;embed src = 'quick.mov' height = 100 width = 100&gt;&quot;);
+         } else {
+            document.write(&quot;&lt;img src = 'quick.gif' height = 100 width = 100&gt;&quot;);
+         }
+      &lt;/script&gt;      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+
+
+                <h4>Output</h4>
+                [images]
+            <p>NOTE − Here we are using HTML <embed> tag to embed a multimedia file.</p>
+            
+            <h4>Controlling Multimedia</h4>
+            <p>Let us take one real example which works in almost all the browsers −</p>
+            
+            <div class="codigo__html">
+                <div class="decor__bar html"></div>
+                <pre class="line-numbers"><code class="language-html">&lt;html&gt;   
+   &lt;head&gt;
+      &lt;title&gt;Using Embeded Object&lt;/title&gt;
+      
+      &lt;script type = &quot;text/javascript&quot;&gt;
+         &lt;!--
+            function play() {
+               if (!document.demo.IsPlaying()) {
+                  document.demo.Play();
+               }
+            }
+            function stop() {
+               if (document.demo.IsPlaying()) {
+                  document.demo.StopPlay();
+               }
+            }
+            function rewind() {
+               if (document.demo.IsPlaying()) {
+                  document.demo.StopPlay();
+               }
+               document.demo.Rewind();
+            }
+         //--&gt;
+      &lt;/script&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;      
+      &lt;embed id = &quot;demo&quot; name = &quot;demo&quot;
+         src = &quot;http://www.amrood.com/games/kumite.swf&quot;
+         width = &quot;318&quot; height = &quot;300&quot; play = &quot;false&quot; loop = &quot;false&quot;
+         pluginspage = &quot;http://www.macromedia.com/go/getflashplayer&quot;
+         swliveconnect = &quot;true&quot;&gt;
+      
+      &lt;form name = &quot;form&quot; id = &quot;form&quot; action = &quot;#&quot; method = &quot;get&quot;&gt;
+         &lt;input type = &quot;button&quot; value = &quot;Start&quot; onclick = &quot;play();&quot; /&gt;
+         &lt;input type = &quot;button&quot; value = &quot;Stop&quot; onclick = &quot;stop();&quot; /&gt;
+         &lt;input type = &quot;button&quot; value = &quot;Rewind&quot; onclick = &quot;rewind();&quot; /&gt;
+      &lt;/form&gt;      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>    
+
+
+<h4>Output</h4>
+<p>If you are using Mozilla, Firefox or Netscape, then</p>
+
+[start][stop][rewind]
             </section>
 
             <section id="item34">
-                <h2>item20</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
+                <h2>Depuración</h2>
+                <p>Every now and then, developers commit mistakes while coding. A mistake in a program or a script is referred to as a bug.</p>
+                <p>The process of finding and fixing bugs is called debugging and is a normal part of the development process. This section covers tools and techniques that can help you with debugging tasks..</p>
+                <h4>Error Messages in IE</h4>
+                <p>The most basic way to track down errors is by turning on error information in your browser. By default, Internet Explorer shows an error icon in the status bar when an error occurs on the page.</p>
+                <img src="/images/error_icon.gif" alt="">
+                <p>Double-clicking this icon takes you to a dialog box showing information about the specific error that occurred.</p>
+                <p>Since this icon is easy to overlook, Internet Explorer gives you the option to automatically show the Error dialog box whenever an error occurs.</p>
+                <p>To enable this option, select Tools → Internet Options → Advanced tab. and then finally check the "Display a Notification About Every Script Error" box option as shown below −</p>
+                <img src="/images/internet_options.gif" alt="">
+                <h4>Error Messages in Firefox or Mozilla</h4>
+                <p>Other browsers like Firefox, Netscape, and Mozilla send error messages to a special window called the JavaScript Console or Error Consol. To view the console, select Tools → Error Consol or Web Development.</p>
+                <p>Unfortunately, since these browsers give no visual indication when an error occurs, you must keep the Console open and watch for errors as your script executes.</p>
+
+                <img src="/images/error_console.gif" alt="">
+
+                <h4>Error Notifications</h4>
+                <p>Error notifications that show up on Console or through Internet Explorer dialog boxes are the result of both syntax and runtime errors. These error notification include the line number at which the error occurred.</p>
+                <p>If you are using Firefox, then you can click on the error available in the error console to go to the exact line in the script having error.</p>
+                <h4>How to debug a Script</h4>
+                <p>There are various ways to debug your JavaScript −</p>
+                <h4>Use a JavaScript Validator</h4>
+                <p>One way to check your JavaScript code for strange bugs is to run it through a program that checks it to make sure it is valid and that it follows the official syntax rules of the language. These programs are called validating parsers or just validators for short, and often come with commercial HTML and JavaScript editors.</p>
+                <p>The most convenient validator for JavaScript is Douglas Crockford's JavaScript Lint, which is available for free at Douglas Crockford's JavaScript Lint.</p>
+                <p>Simply visit that web page, paste your JavaScript (Only JavaScript) code into the text area provided, and click the jslint button. This program will parse through your JavaScript code, ensuring that all the variable and function definitions follow the correct syntax. It will also check JavaScript statements, such as if and while, to ensure they too follow the correct format</p>
+
+                <h4>Add Debugging Code to Your Programs</h4>
+                <p>You can use the alert() or document.write() methods in your program to debug your code. For example, you might write something as follows −</p>
+
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">var debugging = true;
+var whichImage = "widget";
+
+if( debugging )
+   alert( "Calls swapImage() with argument: " + whichImage );
+   var swapStatus = swapImage( whichImage );
+
+if( debugging )
+   alert( "Exits swapImage() with swapStatus=" + swapStatus );</code></pre></div>
+
+                <p>By examining the content and order of the alert() as they appear, you can examine the health of your program very easily.</p>
+                
+                <h4>Use a JavaScript Debugger</h4>
+                <p>A debugger is an application that places all aspects of script execution under the control of the programmer. Debuggers provide fine-grained control over the state of the script through an interface that allows you to examine and set values as well as control the flow of execution.</p>
+                <p>Once a script has been loaded into a debugger, it can be run one line at a time or instructed to halt at certain breakpoints. Once execution is halted, the programmer can examine the state of the script and its variables in order to determine if something is amiss. You can also watch variables for changes in their values.</p>
+                <p>The latest version of the Mozilla JavaScript Debugger (code-named Venkman) for both Mozilla and Netscape browsers can be downloaded at http://www.hacksrus.com/~ginda/venkman</p>        
+
+                <h4>Useful Tips for Developers</h4>        
+                <ul>
+                    <li>Use plenty of comments. Comments enable you to explain why you wrote the script the way you did and to explain particularly difficult sections of code.</li>
+                    <li>Always use indentation to make your code easy to read. Indenting statements also makes it easier for you to match up beginning and ending tags, curly braces, and other HTML and script elements.</li>
+                    <li>Write modular code. Whenever possible, group your statements into functions. Functions let you group related statements, and test and reuse portions of code with minimal effort.</li>
+                    <li>Be consistent in the way you name your variables and functions. Try using names that are long enough to be meaningful and that describe the contents of the variable or the purpose of the function.</li>
+                    <li>Use consistent syntax when naming variables and functions. In other words, keep them all lowercase or all uppercase; if you prefer Camel-Back notation, use it consistently.</li>
+                    <li>Test long scripts in a modular fashion. In other words, do not try to write the entire script before testing any portion of it. Write a piece and get it to work before adding the next portion of code.</li>
+                    <li>Use descriptive variable and function names and avoid using single-character names.</li>
+                    <li>Watch your quotation marks. Remember that quotation marks are used in pairs around strings and that both quotation marks must be of the same style (either single or double).</li>
+                    <li>Watch your equal signs. You should not used a single = for comparison purpose</li>
+                    <li>Declare variables explicitly using the var keyword.</li>
+                </ul>
+
             </section>
 
             <section id="item35">
-                <h2>item20</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
+                <h2>Image Map</h2>
+                <p>You can use JavaScript to create client-side image map. Client-side image maps are enabled by the usemap attribute for the &lt;img /&gt; tag and defined by special &lt;map&gt; and &lt;area&gt; extension tags</p>
+                <p>The image that is going to form the map is inserted into the page using the &lt;img /&gt; element as normal, except that it carries an extra attribute called usemap. The value of the usemap attribute is the value of the name attribute on the &lt;map&gt; element, which you are about to meet, preceded by a pound or hash sign.</p>
+                <p>The &lt;map&gt; element actually creates the map for the image and usually follows directly after the &lt;img /&gt; element. It acts as a container for the &lt;area /&gt; elements that actually define the clickable hotspots. The &lt;map&gt; element carries only one attribute, the name attribute, which is the name that identifies the map. This is how the &lt;img /&gt; element knows which &lt;map&gt; element to use.</p>
+                <p>The &lt;area&gt; element specifies the shape and the coordinates that define the boundaries of each clickable hotspot.</p>
+                <p>The following code combines imagemaps and JavaScript to produce a message in a text box when the mouse is moved over different parts of an image.</p>
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;   
+                        &lt;head&gt;
+                           &lt;title&gt;Using JavaScript Image Map&lt;/title&gt;
+                           
+                           &lt;script type = &quot;text/javascript&quot;&gt;
+                              &lt;!--
+                                 function showTutorial(name) {
+                                    document.myform.stage.value = name
+                                 }
+                              //--&gt;
+                           &lt;/script&gt;
+                        &lt;/head&gt;
+                        
+                        &lt;body&gt;
+                           &lt;form name = &quot;myform&quot;&gt;
+                              &lt;input type = &quot;text&quot; name = &quot;stage&quot; size = &quot;20&quot; /&gt;
+                           &lt;/form&gt;
+                           
+                           &lt;!-- Create  Mappings --&gt;
+                           &lt;img src = &quot;/images/usemap.gif&quot; alt = &quot;HTML Map&quot; border = &quot;0&quot; usemap = &quot;#tutorials&quot;/&gt;
+                           
+                           &lt;map name = &quot;tutorials&quot;&gt;
+                              &lt;area shape=&quot;poly&quot; 
+                                 coords = &quot;74,0,113,29,98,72,52,72,38,27&quot;
+                                 href = &quot;/perl/index.htm&quot; alt = &quot;Perl Tutorial&quot;
+                                 target = &quot;_self&quot; 
+                                 onMouseOver = &quot;showTutorial('perl')&quot; 
+                                 onMouseOut = &quot;showTutorial('')&quot;/&gt;
+                              
+                              &lt;area shape = &quot;rect&quot; 
+                                 coords = &quot;22,83,126,125&quot;
+                                 href = &quot;/html/index.htm&quot; alt = &quot;HTML Tutorial&quot; 
+                                 target = &quot;_self&quot; 
+                                 onMouseOver = &quot;showTutorial('html')&quot; 
+                                 onMouseOut = &quot;showTutorial('')&quot;/&gt;
+                              
+                              &lt;area shape = &quot;circle&quot; 
+                                 coords = &quot;73,168,32&quot;
+                                 href = &quot;/php/index.htm&quot; alt = &quot;PHP Tutorial&quot;
+                                 target = &quot;_self&quot; 
+                                 onMouseOver = &quot;showTutorial('php')&quot; 
+                                 onMouseOut = &quot;showTutorial('')&quot;/&gt;
+                           &lt;/map&gt;
+                        &lt;/body&gt;
+                     &lt;/html&gt;</code></pre></div>  
+
+                <h4>Output</h4>
+                <p>You can feel the map concept by placing the mouse cursor on the image object.</p>                 
+                [INPUT]
+                [IMAGENES]
+
             </section>
 
             <section id="item36">
-                <h2>item20</h2>
+                <h2>Browsers Compatibility</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
                 <a href="#">link</a>
             </section>
 
-            <section id="item37">
-                <h2>item20</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione tempora voluptas neque a labore ducimus deleniti. Quidem distinctio cupiditate illo praesentium, amet neque reprehenderit soluta excepturi quas error quibusdam?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
-                <a href="#">link</a>
-            </section>
+          
         </div>
     </div>
 
