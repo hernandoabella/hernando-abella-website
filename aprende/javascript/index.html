@@ -6125,6 +6125,99 @@ if( debugging )
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur explicabo recusandae deserunt ipsa facere cupiditate fuga, ut eos earum optio, cumque aliquam exercitationem illo, officiis saepe sunt odit perspiciatis.</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam sint commodi quisquam nemo temporibus repellat, cumque explicabo, numquam voluptates et doloremque ut, sapiente optio eius. Eius ratione temporibus accusantium?</p>
                 <a href="#">link</a>
+
+                <p>It is important to understand the differences between different browsers in order to handle each in the way it is expected. So it is important to know which browser your web page is running in.</p>
+                <p>To get information about the browser your webpage is currently running in, use the built-in navigator object.</p>
+            
+                <h4>Navigator Properties</h4>
+                <p>There are several Navigator related properties that you can use in your Web page. The following is a list of the names and descriptions of each.</p>
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Propiedad</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>appCodeName</td>
+                        <td>This property is a string that contains the code name of the browser, Netscape for Netscape and Microsoft Internet Explorer for Internet Explorer.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>appVersion</td>
+                        <td>This property is a string that contains the version of the browser as well as other useful information such as its language and compatibility.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>language</td>
+                        <td>This property contains the two-letter abbreviation for the language that is used by the browser. Netscape only.</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>mimTypes[]</td>
+                        <td>This property is an array that contains all MIME types supported by the client. Netscape only.</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>platform[]</td>
+                        <td>This property is a string that contains the platform for which the browser was compiled."Win32" for 32-bit Windows operating systems</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>plugins[]</td>
+                        <td>This property is an array containing all the plug-ins that have been installed on the client. Netscape only.</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>userAgent[]</td>
+                        <td>This property is a string that contains the code name and version of the browser. This value is sent to the originating server to identify the client.</td>
+                    </tr>
+                </table>
+
+
+                <h4>Navigator Methods</h4>
+                <p>There are several Navigator-specific methods. Here is a list of their names and descriptions.</p>
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Método</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>javaEnabled()</td>
+                        <td>This method determines if JavaScript is enabled in the client. If JavaScript is enabled, this method returns true; otherwise, it returns false.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>plugings.refresh</td>
+                        <td>This method makes newly installed plug-ins available and populates the plugins array with all new plug-in names. Netscape only.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>preference(name,value)</td>
+                        <td>This method allows a signed script to get and set some Netscape preferences. If the second parameter is omitted, this method will return the value of the specified preference; otherwise, it sets the value. Netscape only.</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>taintEnabled()</td>
+                        <td>This method returns true if data tainting is enabled; false otherwise.</td>
+                    </tr>
+                </table>
+
+                <h4>Browser Detection</h4>
+                <p>There is a simple JavaScript which can be used to find out the name of a browser and then accordingly an HTML page can be served to the user.</p>
+
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html"></code></pre></div>
+
+
+                    <h4>Salida</h4>
+                    <p>Mozilla based browser</p>
+                    <p>Browser version info : 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36</p>
             </section>
 
           
