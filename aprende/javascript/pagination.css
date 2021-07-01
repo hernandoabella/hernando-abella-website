@@ -91,13 +91,15 @@ section{
 }
 
 section h2{
-    margin-bottom: 15px;
+    margin: 50px;
     color: #323330;
     border-width: 5px;
+    text-align: center;
 }
 
 section h3{
     margin: 20px 0px;
+    text-align: center;
 }
 
 section h4{
