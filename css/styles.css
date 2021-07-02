@@ -803,4 +803,8 @@ footer div.redes__sociales{
     flex-direction: column;
 }  
 
+.download a{
+    margin-top: 20px;
+}
+
 }
