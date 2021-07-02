@@ -25,14 +25,14 @@ function buscarClima(entrada){
 
 function iniciar(resultFromServer){
     contenedorClima.style.display = 'block';
-
+    
     switch (resultFromServer.weather[0].main) {
         case 'Clear':
             document.body.style.backgroundImage = "url('clearPicture.jpg')";
             break;
         
         case 'Clouds':
-            document.body.style.backgroundImage = "url('cloudyPicture.jpg')";
+            document.body.style.backgroundColor = "url('cloudyPicture.jpg')";
             break;
 
         case 'Rain':
