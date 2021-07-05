@@ -21,28 +21,32 @@
     </div>
 
     <section class="codigo__del__proyecto">
-        <h1>Aplicación del clima</h1>
+        
         <div class="demostracion">
-            <div id="contenedorBusqueda">
-                <input type="text" placeholder="Ingresa el nombre de una ciudad" id="entradaBusqueda">
-                <button id="buscar"><i class="fas fa-search"></i></button>
-            </div>
-        
-            <div id="contenedorClima">
-                <div>
-                    <h2 id="encabezadoCiudad"></h2>
-                    
-                    <div class="swipe">
-                        <div id="temperatura"></div>
-                        <div><img id="iconoClima"></div>
+            <div class="demo__container">
+                <div id="contenedorClima">
+                    <div>
+                        <div class="top__search">
+                            <input type="text" placeholder="Localización" id="entradaBusqueda">
+                            <button id="buscar"><i class="fas fa-search"></i></button>
+                        </div>
+                        <h4 id="encabezadoCiudad"><i class="fas fa-map-marker-alt"></i> Santa Marta</h4>
+                        
+                        <div class="flexyWeather">
+                            <div id="temperatura">28°</div>
+                        <div><img id="iconoClima" src="http://openweathermap.org/img/w/04n.png"></div>
+                        </div>
+                        
+                        <div id="descripcionClima">Nubes</div>
+                        <div id="velocidadViento">1 metro/s</div>
+                        <div id="humedad">77%</div>
                     </div>
-        
-                    <div id="descripcionClima"></div>
-                    <div id="velocidadViento"></div>
-                    <div id="humedad"></div>
                 </div>
             </div>
         </div>
+        
+        <br>
+        <h1>Aplicación del clima</h1>
         <br>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi placeat sunt adipisci? Consequuntur aperiam velit facilis quis ex autem veniam incidunt eveniet animi? Ab perspiciatis sapiente quia quasi deleniti unde.</p>
         <br>

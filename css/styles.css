@@ -8,6 +8,10 @@
     scroll-behavior: smooth;
 }
 
+#frontPage{
+    background: #F0FFF1;
+}
+
 .card__icon img{
     width: 100px;
 }
@@ -451,15 +455,7 @@ a{
     margin: auto;
 }
 
-.demostracion{
-    margin: 20px auto;
-    padding: 10px;
-    
-}
 
-.demostracion p{
-    margin-top: 20px;
-}
 
 .code__container{
     border-radius: 5px;
@@ -638,6 +634,7 @@ footer div.redes__sociales a:hover{
     width: 100%;
     display: block;
     border-radius: 5px;
+    margin-top: 30px;
 }
 
 .tarjeta__aprende a:hover{
@@ -669,6 +666,8 @@ footer div.redes__sociales a:hover{
 .tarjeta__aprende img.laravel__image{
     width: 120px;
 }
+
+
 
 .tarjeta__snippets{
     width: 300px;
@@ -747,10 +746,38 @@ table {
     background-color: #f1faee;
   }
 
+  
+#youtube{
+    background: #F00000;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #DC281E, #F00000);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #DC281E, #F00000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
+    color: #fff;
+    padding: 50px;
+}
 
+#youtube h2{
+    text-align: center;
+    padding: 40px;
+}
 
+#youtube hr{
+    width: 100px;
+    margin: auto;
+    border-width: 2px;
+    border: 1px solid #fff;
+}
 
+#youtube p{
+    margin: 40px;
+    text-align: center;
+}
+
+.tarjeta__video{
+    padding: 10px;
+    background: #fff;
+    border-radius: 5px;
+}
 
 
 /* diseño responsive */

@@ -1,4 +1,5 @@
 // Declaración de variables
+
 let id = '71f6779186cc32448b4c412eea65b982';
 let unidades = 'metric'; 
 let metodoBuscar; // q significa buscar como una cadena de caracteres
@@ -24,7 +25,8 @@ function buscarClima(entrada){
 }
 
 function iniciar(resultFromServer){
-    contenedorClima.style.display = 'block';
+    contenedorClima.style.display = 'flex';
+
     
     switch (resultFromServer.weather[0].main) {
         case 'Clear':
@@ -88,4 +90,5 @@ entrada.addEventListener("keyup", e =>{
         e.preventDefault();
         buscar.click();
     }
+
 }, false);

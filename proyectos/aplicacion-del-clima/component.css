@@ -1,68 +1,55 @@
-/* #encabezadoCiudad{
-    margin-bottom: 10px;
-}
-
-#descripcionClima{
-    font-size: 1.3em;
-    margin-bottom: 10px;
-}
-
-#velocidadViento{
-    margin-bottom: 10px;
+#temperatura{
+    font-size: 2em;
+    font-weight: bolder;
 }
 
 #contenedorClima{
-    background: rgba(31, 166, 255, 0.356);
-    box-shadow: 1px 1px 5px #000;
-    padding: 50px;
-    border-radius: 5px;
     text-align: center;
-    width: 400px;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    display: none;
-}
-
-#contenedorBusqueda{
-    padding: 20px;
-    float: right;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-}
-
-#contenedorBusqueda input{
-    padding: 10px;
-    border: none;
-    text-transform: uppercase;
+    background: #396afc;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2948ff, #396afc);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2948ff, #396afc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 5px;
     width: 300px;
-    border-radius: 5px;
-    outline: none;
-    font-weight: bold;;
-}
-
-#contenedorBusqueda button{
+    height: 400px;
+    margin: auto;
     padding: 10px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    transition: .3s;
-    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#contenedorBusqueda button:hover{
-    background: #331E38;
+.fa-map-marker-alt{
     color: #fff;
 }
 
-#temperatura{
-    font-size: 2em;
+#encabezadoCiudad{
+    
 }
 
-.swipe{
+.flexyWeather{
     display: flex;
-    width: 80px;
-    margin: auto;
-} */
+    justify-content: center;
+    flex-direction: row-reverse;
+}
+
+.top__search{
+    position: relative;
+    top: -100px;
+    right: -40px;
+}
+
+.top__search input{
+    padding: 5px;
+}
+
+.top__search button{
+    padding: 5px;
+    cursor: pointer;
+}
+
+.demostracion{
+    margin: 20px auto;
+    padding: 20px;
+    
+
+}
