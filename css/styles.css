@@ -131,22 +131,43 @@ a{
 .circulo__contenedor{
     margin: auto;
     padding: 60px;
+    display: flex;
 }
+
+.sideone{
+    width: 50%;
+}
+
+.sidetwo{
+    width: 50%;
+}
+
+.sidetwo h1{
+    color: #457b9d;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.sidetwo p{
+    text-align: justify;
+    line-height: 30px;
+}
+
 
 .circulo__avatar{
     margin: auto;
-    width: 180px;
-    height: 180px;
+    width: 280px;
+    height: 280px;
     background: #457b9d;
-    border-radius: 100px;
+    border-radius: 100%;
 }
 
 .circulo__avatar > img{
-    width: 180px;
-    height: 180px;
+    width: 280px;
+    height: 280px;
     padding: 5px;
     margin: auto;
-    border-radius: 100px;
+    border-radius: 100%;
 }
 
 .backbar{
@@ -610,7 +631,6 @@ footer div.redes__sociales a:hover{
     color: #1d3557;
     padding: 10px;
     text-align: center;
-    border-radius: 5px;
 }
 
 .tarjeta__aprende h3{
@@ -632,7 +652,6 @@ footer div.redes__sociales a:hover{
     transition: .3s;
     width: 100%;
     display: block;
-    border-radius: 5px;
     margin-top: 30px;
 }
 
@@ -783,7 +802,20 @@ background: linear-gradient(to right, #DC281E, #F00000); /* W3C, IE 10+/ Edge, F
 
 @media only screen and ( max-width: 768px ){ 
 
-  
+.circulo__contenedor {
+    flex-direction: column;
+}
+
+.sideone{
+    width: 100%;
+}
+
+.sidetwo{
+    width: 100%;
+    text-align: center;
+}
+
+
 
 .row{
     flex-direction: column;
@@ -831,6 +863,10 @@ footer div.redes__sociales{
 
 .download a{
     margin-top: 20px;
+}
+
+.circulo__avatar{
+    margin-bottom: 20px;
 }
 
 }
