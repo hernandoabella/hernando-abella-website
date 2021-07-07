@@ -41,41 +41,49 @@ h1{
 
 
 .accordion {
-  background-color: #eee;
-  color: #444;
+  background: #1d3557;  /* fallback for old browsers */
+  color: #fff;
   cursor: pointer;
   padding: 18px;
   width: 100%;
   border: none;
-  text-align: left;
+  text-align: center;
   outline: none;
-  font-size: 15px;
+  font-size: 1.3em;
   transition: 0.4s;
+  text-align: center;
 }
 
-.active, .accordion:hover {
-  background-color: #ccc;
-}
-
-.accordion:after {
-  content: '\002B';
-  color: #777;
-  font-weight: bold;
-  float: right;
-  margin-left: 5px;
-}
-
-.active:after {
-  content: "\2212";
-}
 
 .panel {
   padding: 0 18px;
-  margin-bottom: 20px;
+  margin-bottom: 100px;
   background-color: white;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
 
+button.active{
+  background: #2d5286;
+}
+
 /* acordeon */
+
+.number__item{
+  background: #1d3557;
+  color: #fff;
+  padding: 30px;
+  width: 30px;
+  height: 30px;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.fa-arrow-down{
+  font-size: 2em;
+}
+
+li b{
+  font-size: .8em;
+}
