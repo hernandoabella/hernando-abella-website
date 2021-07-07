@@ -39,10 +39,10 @@ aside{
 }
 
 aside.sideBar{
-    width: 20%;
-    height: 585px;
+    width: 30%;
+    height: 350px;
     position: fixed;
-    top: 62px;
+    top: 100px;
 }
 
 aside ul li{
@@ -76,7 +76,7 @@ aside ul li a:hover{
 }
 
 .articles{
-    width: 80%;
+    width: 70%;
     position: absolute;
     right: 0;
     top: 70px;
@@ -126,3 +126,24 @@ section ul{
 section ul li{
     margin: 10px;
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #6a6d64; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #323330; 
+    
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #323330; 
+  }

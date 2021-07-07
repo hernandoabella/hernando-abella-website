@@ -195,6 +195,13 @@ a{
 .fa-arrow-left{
     color: #F0FFF1;
     transition: .3s;
+    padding: 10px;
+}
+
+.fa-arrow-left:hover{
+    background: #F0FFF1;
+    color: #1d3557;
+    
 }
 
 
