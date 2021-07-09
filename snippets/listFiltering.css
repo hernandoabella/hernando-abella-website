@@ -39,6 +39,7 @@ h1{
   font-size: 18px; 
   color: black; 
   display: block; 
+  
 }
 
 /* acordeon */
@@ -61,11 +62,12 @@ h1{
 
 .panel {
   padding: 0 18px;
-  margin-bottom: 100px;
+  margin-bottom: 30px;
   background-color: white;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
+  width: 100%;
 }
 
 button.active{
@@ -82,6 +84,8 @@ button.active{
   height: 30px;
   font-weight: bold;
   font-size: 2em;
+  border-radius: 100%;
+  position: absolute;
 }
 
 .fa-arrow-down{
@@ -90,4 +94,9 @@ button.active{
 
 li b{
   font-size: .8em;
+}
+
+.panel__de__codigos{
+  margin: auto;
+  width: 80%;
 }

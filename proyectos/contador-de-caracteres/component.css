@@ -113,6 +113,13 @@
     border-radius: 4rem;
     transition: opacity 200ms linear;
   }
+
+  
+.demostracion{
+  margin: 20px auto;
+  padding: 20px;
+  background: #457fca;
+}
   
   @media (hover: hover) {
     .btn:hover {
