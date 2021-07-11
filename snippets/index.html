@@ -33,9 +33,9 @@
                             <div class="decor__bar javascript"></div>
                             <pre class="line-numbers"><code class="language-javascript">const lanzarArreglo = valor => Array.isArray(valor) ? valor : [valor];
     
-    // Ejemplo
-    lanzarArreglo(1);               // [1]
-    lanzarArreglo([1, 2, 3]);       // [1, 2, 3]</code></pre></div>
+// Ejemplos
+lanzarArreglo(1);               // [1]
+lanzarArreglo([1, 2, 3]);       // [1, 2, 3]</code></pre></div>
                     </div>
                 </li>
                 <li>
@@ -45,11 +45,11 @@
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
                             <pre class="line-numbers"><code class="language-javascript">// `arreglo` es un arreglo
-    const estaVacio = arreglo => !Array.isArray(arreglo) || arreglo.length === 0;
+const estaVacio = arreglo => !Array.isArray(arreglo) || arreglo.length === 0;
     
-    // Examples
-    estaVacio([]);            // true
-    estaVacio([1, 2, 3]);     // false</code></pre></div>
+// Ejemplos
+estaVacio([]);            // true
+estaVacio([1, 2, 3]);     // false</code></pre></div>
                     </div>
                 </li>
                 <li>
@@ -59,22 +59,22 @@
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
                             <pre class="line-numbers"><code class="language-javascript">// `arreglo` es un arreglo
-    const clonar = arreglo => arreglo.slice(0);
+const clonar = arreglo => arreglo.slice(0);
     
-    // O
-    const clone = arreglo => [...arreglo];
+// O
+const clone = arreglo => [...arreglo];
     
-    // O
-    const clonar = arreglo => Array.from(arr);
+// O
+const clonar = arreglo => Array.from(arr);
     
-    // O
-    const clonar = arreglo => arreglo.map(x => x);
+// O
+const clonar = arreglo => arreglo.map(x => x);
     
-    // O
-    const clonar = arreglo => JSON.parse(JSON.stringify(arr));
+// O
+const clonar = arreglo => JSON.parse(JSON.stringify(arr));
     
-    // O
-    const clonar = arreglo => arreglo.concat([]);</code></pre></div>
+// O
+const clonar = arreglo => arreglo.concat([]);</code></pre></div>
                     </div>
                 </li>
             </ol>

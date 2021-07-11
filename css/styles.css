@@ -839,6 +839,7 @@ table {
     padding: 20px;
     background: #457b9d;
     color: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 #contacto hr{
@@ -858,9 +859,13 @@ form input{
     padding: 10px;
 }
 
+form input[type=""]:focus{
+    
+}
+
 form input[type=button]{
-    font-size: 1.3em;
-    width: 200px;
+    width: 100%;
+    font-size: 1.5em;
     transition: .3s;
     cursor: pointer;
     background: #13263f;
@@ -880,7 +885,6 @@ form label{
 }
 
 form textarea{
-    
     margin-bottom: 10px;
     resize: none;
     padding: 10px;
@@ -939,6 +943,10 @@ textarea, input{
     flex-direction: column;
 }
 
+footer{
+    padding: 20px;
+}
+
 footer div{
     margin-bottom: 20px;
 }
@@ -961,6 +969,31 @@ footer div.redes__sociales{
 
 .circulo__avatar{
     margin-bottom: 20px;
+}
+
+
+#aprende__conmigo{
+    padding: 20px;
+}
+
+#practica{
+    padding: 20px;
+}
+
+#fragmentos{
+    padding: 20px;
+}
+
+#youtube{
+    padding: 20px;
+}
+
+#contacto{
+    padding: 20px;
+}
+
+#contacto form{
+    width: 100%;
 }
 
 }
