@@ -837,10 +837,8 @@ table {
     margin: auto;
     width: 500px;
     padding: 20px;
-    border-radius: 50px;
-background: #e0e0e0;
-box-shadow: inset -20px 20px 60px #bebebe,
-            inset 20px -20px 60px #ffffff;
+    background: #457b9d;
+    color: #fff;
 }
 
 #contacto hr{
@@ -862,28 +860,27 @@ form input{
 
 form input[type=button]{
     font-size: 1.3em;
-    width: 100px;
+    width: 200px;
     transition: .3s;
     cursor: pointer;
+    background: #13263f;
     color: #fff;
-    background: #FF512F;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #DD2476, #FF512F);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #DD2476, #FF512F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    border: 1px solid #fff;
 }
 
 form input[type=button]:hover{
-    background: #FF512F;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #DD2476, #FF512F);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #DD2476, #FF512F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #fff;
+    color: #000;
+    border: 1px solid #13263f;
 }
 
 form label{
-    margin-top: 100px;
+    margin-bottom: 5px;
+    display: block;
 }
 
 form textarea{
-    width: 100%;
+    
     margin-bottom: 10px;
     resize: none;
     padding: 10px;
@@ -892,6 +889,7 @@ form textarea{
 
 textarea, input{
     outline: none;
+    width: 100%;
 }
 
 
