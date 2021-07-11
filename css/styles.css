@@ -221,25 +221,27 @@ a{
 .aprende__conmigo{
     padding: 30px;
     color: #1d3557;
-    background: #a8dadc;
+    background: url(/images/pexels-marta-branco-1194713.jpg);
+    background-size: cover;
 }
 
 .aprende__conmigo hr{
     width: 100px;
     margin: auto;
     border-width: 2px;
-    border: 1px solid #1d3557;
+    border: 1px solid #f1faee;
 }
 
 .aprende__conmigo h2{
     margin: 40px;
     text-align: center;
-    color: #1d3557;
+    color: #f1faee;
 }
 
 .aprende__conmigo p{
     text-align: center;
     margin: 40px;
+    color: #f1faee;
 }
 
 .aprende__conmigo .ver__mas{
@@ -460,14 +462,18 @@ a{
 
 .snippets{
     padding: 50px;
-    background: #a8dadc;
-    color: #1d3557;
+    background: #2193b0;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+    color: #f1faee;
 }
 
 .snippets h2{
     text-align: center;
     margin: 40px;
-    color: #1d3557;
+    color: #f1faee;
 }
 
 .snippets p{
@@ -495,7 +501,7 @@ a{
 .snippets hr{
     width: 100px;
     border-width: 5px;
-    border: 1px solid #1d3557;
+    border: 1px solid #f1faee;
     margin: auto;
 }
 
@@ -709,17 +715,17 @@ footer div.redes__sociales a:hover{
     width: 120px;
 }
 
-
-
 .tarjeta__snippets{
     width: 300px;
     background: #f1faee;
     color: #1d3557;
     padding: 20px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 
 .tarjeta__snippets h3{
     text-align: center;
+    font-size: 1.4em;
 }
 
 .tarjeta__snippets p{
@@ -727,10 +733,9 @@ footer div.redes__sociales a:hover{
     margin-bottom: 20px;
 }
 
-.tarjeta__snippets i{
+.tarjeta__snippets img{
+    width: 100px;
     margin: 20px;
-    font-size: 2em;
-    color: 1d3557;
 }
 
 .tarjeta__snippets a{
@@ -823,7 +828,8 @@ table {
 
 
 #contacto{
-    background: #f1faee;
+    background: url('/images/pexels-negative-space-33999.jpg');
+    background-size: cover;
     padding: 50px;
 }
 
@@ -859,9 +865,7 @@ form input{
     padding: 10px;
 }
 
-form input[type=""]:focus{
-    
-}
+
 
 form input[type=button]{
     width: 100%;

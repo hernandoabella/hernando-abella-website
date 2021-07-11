@@ -21,10 +21,17 @@
     </div>
 
     <section class="snippets">
-        
-
         <div class="panel__de__codigos">
             <ol id="myUL">
+
+                
+                    <div class="ribbon__shet">
+                        <div class="ribbon__container"></div>
+                        <img src="/images/matrix.png" alt="array">
+                        <b>Arreglos</b>
+                    </div>
+                
+
                 <li>
                     <b><span class="number__item">1</span></b> 
                     <button class="accordion">Lanzar un valor como un arreglo</button>
@@ -77,7 +84,117 @@ const clonar = arreglo => JSON.parse(JSON.stringify(arr));
 const clonar = arreglo => arreglo.concat([]);</code></pre></div>
                     </div>
                 </li>
+                <li>
+                    <b><span class="number__item">4</span></b> 
+                    <button class="accordion">Compara dos arreglos</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">// `a` y `b` son arreglos
+const esIgual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+
+// O
+const esIgual = (a, b) => a.length === b.length && a.every((v, i) => v === b[i]);
+
+// Ejemplos
+esIgual([1, 2, 3], [1, 2, 3]);      // true
+esIgual([1, 2, 3], [1, '2', 3]);    // false</code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">5</span></b> 
+                    <button class="accordion">Compara dos arreglos sin importar el orden</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">// `a` y `b` son arreglos
+const esIgual = (a, b) => JSON.stringify(a.sort()) === JSON.stringify(b.sort());
+
+// Ejemplos
+esIgual([1, 2, 3], [1, 2, 3]);      // true
+esIgual([1, 2, 3], [1, 3, 2]);      // true
+esIgual([1, 2, 3], [1, '2', 3]);    // false</code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">6</span></b> 
+                    <button class="accordion">Convierte un arreglo de objetos en un solo objeto</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const aObjeto = (arreglo, clave) => arreglo.reduce((a, b) => ({ ...a, [b[clave]]: b }), {});
+
+// Ejemplos
+aObjeto(
+    [
+        { id: '1', nombre: 'Alpha', genero: 'Masculino' },
+        { id: '2', nombre: 'Bravo', genero: 'Masculino' },
+        { id: '3', nombre: 'Charlie', genero: 'Femenino' },
+    ],
+    'id'
+);
+/* 
+{
+    '1': { id: '1', nombre: 'Alpha', genero: 'Male' },
+    '2': { id: '2', nombre: 'Bravo', genero: 'Male' },
+    '3': { id: '3', nombre: 'Charlie', genero: 'Femenino' },
+}
+*/</code></pre></div>
+                    </div>
+                </li>
+
+                <div class="ribbon__shet">
+                    <img src="/images/hierarchy.png" alt="dom">
+                    <b>DOM</b>
+                </div>
+                
+                <div class="ribbon__shet">
+                    <img src="/images/calendar.png" alt="array">
+                    <b>Fechas</b>
+                </div>
+
+                <div class="ribbon__shet">
+                    <img src="/images/function.png" alt="array">
+                    <b>Funciones</b>
+                </div>
+
+                <div class="ribbon__shet">
+                    <img src="/images/tools.png" alt="array">
+                    <b>Matemáticas</b>
+                </div>
+
+                <div class="ribbon__shet">
+                    <img src="/images/idea.png" alt="array">
+                    <b>Misceláneo</b>
+                </div>
+
+                <div class="ribbon__shet">
+                    <img src="/images/matrix.png" alt="array">
+                    <b>Números</b>
+                </div>
+
+                <div class="ribbon__shet">
+                    <img src="/images/matrix.png" alt="array">
+                    <b>Objetos</b>
+                </div>
+
+                <div class="ribbon__shet">
+                    <img src="/images/matrix.png" alt="array">
+                    <b>Random</b>
+                </div>
+
+                <div class="ribbon__shet">
+                    <img src="/images/matrix.png" alt="array">
+                    <b>String</b>
+                </div>
+
+                <div class="ribbon__shet">
+                    <img src="/images/matrix.png" alt="array">
+                    <b>Validador</b>
+                </div>
             </ol>
+
+           
         </div>
 
     </section>
