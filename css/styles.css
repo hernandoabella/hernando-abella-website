@@ -221,27 +221,26 @@ a{
 .aprende__conmigo{
     padding: 30px;
     color: #1d3557;
-    background: url(/images/pexels-marta-branco-1194713.jpg);
-    background-size: cover;
+    
 }
 
 .aprende__conmigo hr{
     width: 100px;
     margin: auto;
     border-width: 2px;
-    border: 1px solid #f1faee;
+    border: 1px solid #000;
 }
 
 .aprende__conmigo h2{
     margin: 40px;
     text-align: center;
-    color: #f1faee;
+    color: #000;
 }
 
 .aprende__conmigo p{
     text-align: center;
     margin: 40px;
-    color: #f1faee;
+    color: #000;
 }
 
 .aprende__conmigo .ver__mas{
@@ -256,8 +255,8 @@ a{
 }
 
 .aprende__conmigo .ver__mas:hover{
-    background: #f1faee;
-    color: #1d3557;
+    background: #1d3557;
+    color: #fff;
 }
 
 .curso{
@@ -342,7 +341,8 @@ a{
 
 .proyectos{
     padding: 30px;
-    background: #f1faee;
+    background: url(/images/AdobeStock_189224831.jpeg);
+    background-size: cover;
 }
 
 .proyectos hr{
@@ -355,7 +355,7 @@ a{
 .proyectos h2{
     text-align: center;
     margin: 40px;
-    color: #457b9d;
+    color: #f1faee;
     
 }
 
@@ -366,6 +366,7 @@ a{
 .proyectos > p{
     margin: 40px;
     text-align: center;
+    color: #f1faee;
 }
 
 .proyectos .ver__mas{
@@ -390,11 +391,12 @@ a{
 
 .tarjeta__proyectos h3{
     text-align: center;
-    padding: 20px;
+    padding: 50px;
+    font-size: 1.4em;
 }
 
 .tarjeta__proyectos p{
-    margin-bottom: 50px;
+    margin: 50px;
 }
 
 .tarjeta__proyectos a{
@@ -657,7 +659,9 @@ footer div.redes__sociales a:hover{
 
 .tarjeta__aprende{
     width: 300px;
-    background: #f1faee;
+    background: #13263f;
+
+    
     color: #1d3557;
     padding: 10px;
     text-align: center;
@@ -807,6 +811,26 @@ table {
     padding: 40px;
 }
 
+#youtube a{
+    color: #000;
+    margin:  50px auto;
+    display: block;
+    transition: .3s;
+    background: white;
+    text-align: center;
+    width: 200px;
+    padding: 10px;
+    border-radius: 100px;
+}
+
+#youtube a:hover{
+    color: #FFFFFF;
+background: #333333;
+text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
+color: #FFFFFF;
+background: #333333;
+}
+
 #youtube hr{
     width: 100px;
     margin: auto;
@@ -869,7 +893,7 @@ form input{
 
 form input[type=button]{
     width: 100%;
-    font-size: 1.5em;
+    font-size: 1.2em;
     transition: .3s;
     cursor: pointer;
     background: #13263f;
@@ -899,6 +923,69 @@ textarea, input{
     outline: none;
     width: 100%;
 }
+
+/* Create a sticky/fixed navbar */
+#navbar {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: 90px 10px; /* Large padding which will shrink on scroll (using JS) */
+    transition: 0.4s; /* Adds a transition effect when the padding is decreased */
+    position: fixed; /* Sticky/fixed navbar */
+    width: 100%;
+    top: 0; /* At the top */
+    z-index: 99;
+  }
+  
+  /* Style the navbar links */
+  #navbar a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+  }
+  
+  /* Style the logo */
+  #navbar #logo {
+    font-size: 35px;
+    font-weight: bold;
+    transition: 0.4s;
+  }
+  
+  /* Links on mouse-over */
+  #navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Style the active/current link */
+  #navbar a.active {
+    background-color: dodgerblue;
+    color: white;
+  }
+  
+  /* Display some links to the right */
+  #navbar-right {
+    float: right;
+  }
+  
+  /* Add responsiveness - on screens less than 580px wide, display the navbar vertically instead of horizontally */
+  @media screen and (max-width: 580px) {
+    #navbar {
+      padding: 20px 10px !important; /* Use !important to make sure that JavaScript doesn't override the padding on small screens */
+    }
+    #navbar a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    #navbar-right {
+      float: none;
+    }
+  }
 
 
 
@@ -991,6 +1078,7 @@ footer div.redes__sociales{
 #youtube{
     padding: 20px;
 }
+
 
 #contacto{
     padding: 20px;
