@@ -8,6 +8,10 @@
     scroll-behavior: smooth;
 }
 
+.btnFlex{
+    display: flex;
+}
+
 .card__icon img{
     width: 100px;
 }
@@ -168,7 +172,7 @@ a{
     color: #fff;
     display: block;
     padding: 10px;
-    width: 200px;
+    width: 180px;
     text-align: center;
     transition: .3s;
 }
@@ -328,7 +332,6 @@ a{
 }
 
 .flex__sake{
-    background: #264653;
     padding: 10px;
     display: flex;
     justify-content: space-between;
