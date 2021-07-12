@@ -8,10 +8,6 @@
     scroll-behavior: smooth;
 }
 
-#frontPage{
-    background: #F0FFF1;
-}
-
 .card__icon img{
     width: 100px;
 }
@@ -47,13 +43,6 @@
     line-height: 30px;
 }
 
-.e_e hr{
-    width: 100px;
-    margin: auto;
-    border: 1px solid #457b9d;
-    border-width: 2px;
-}
-
 
 .e_e ul li{
     margin: 20px;
@@ -68,7 +57,7 @@
 
   .topnav {
     overflow: hidden;
-    background-color: #457b9d;
+    background-color: #264653;
   }
   
   .topnav a {
@@ -125,7 +114,7 @@ a{
 }
 
 .sobre__mi{
-    background: #f1faee;
+    background: #fff;
 }
 
 .circulo__contenedor{
@@ -143,9 +132,11 @@ a{
 }
 
 .sidetwo h1{
-    color: #457b9d;
+    color: #2a9d8f;
     margin-bottom: 20px;
-    font-size: 2em;
+    font-size: 3em;
+    text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
+    0px -4px 10px rgba(255,255,255,0.3);
 }
 
 .sidetwo p{
@@ -158,8 +149,9 @@ a{
     margin: auto;
     width: 280px;
     height: 280px;
-    background: #457b9d;
+    background: #2a9d8f;
     border-radius: 100%;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 
 .circulo__avatar > img{
@@ -172,7 +164,7 @@ a{
 
 .go__to__learn{
     margin: 20px 0px;
-    background: #01447e;
+    background: #2a9d8f;
     color: #fff;
     display: block;
     padding: 10px;
@@ -183,13 +175,14 @@ a{
 
 
 .go__to__learn:hover{
-    background: #a8dadc;
-    color: #000;
+    background: #e76f51;
+    color: #fff;
+    transform: translate(0px, -2px);
 }
 
 .backbar{
     padding: 20px;
-    background: #1d3557;
+    background: #264653;
 }
 
 .fa-arrow-left{
@@ -212,6 +205,7 @@ a{
 
 .introduccion__aprende h2{
     margin: 20px;
+    font-size: 2em;
 }
 
 .panel__de__cursos{
@@ -221,6 +215,8 @@ a{
 .aprende__conmigo{
     padding: 30px;
     color: #1d3557;
+    background: #f4a261;
+    
     
 }
 
@@ -228,13 +224,14 @@ a{
     width: 100px;
     margin: auto;
     border-width: 2px;
-    border: 1px solid #000;
+    border: 1px solid #264653;
 }
 
 .aprende__conmigo h2{
     margin: 40px;
     text-align: center;
-    color: #000;
+    color: #264653;
+    font-size: 2em;
 }
 
 .aprende__conmigo p{
@@ -244,7 +241,7 @@ a{
 }
 
 .aprende__conmigo .ver__mas{
-    background: #457b9d;
+    background: #e76f51;
     color: #f1faee;
     transition: .3s;
     padding: 10px;
@@ -252,11 +249,13 @@ a{
     width: 170px;
     text-align: center;
     margin: 50px auto;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .aprende__conmigo .ver__mas:hover{
-    background: #1d3557;
+    background: #264653;
     color: #fff;
+    transform: translate(0px, -2px);
 }
 
 .curso{
@@ -329,34 +328,30 @@ a{
 }
 
 .flex__sake{
-    background: #1d3557;
+    background: #264653;
     padding: 10px;
     display: flex;
     justify-content: space-between;
-}
-
-.fecha__proyecto{
-    font-size: 1em;
+    flex-direction: row-reverse;
 }
 
 .proyectos{
     padding: 30px;
-    background: url(/images/AdobeStock_189224831.jpeg);
-    background-size: cover;
+    background: #fff;  /* fallback for old browsers */
 }
 
 .proyectos hr{
     width: 100px;
     border-width: 2px;
-    border: 1px solid #457b9d;
+    border: 1px solid #2a9d8f;
     margin: auto;
 }
 
 .proyectos h2{
     text-align: center;
     margin: 40px;
-    color: #f1faee;
-    
+    color: #2a9d8f;
+    font-size: 2em;
 }
 
 .proyectos h3{
@@ -366,11 +361,11 @@ a{
 .proyectos > p{
     margin: 40px;
     text-align: center;
-    color: #f1faee;
+    color: #000;
 }
 
 .proyectos .ver__mas{
-    background: #13263f;
+    background: #e76f51;
     color: #fff;
     padding: 10px;
     display: block;
@@ -378,40 +373,49 @@ a{
     margin: 60px auto;
     transition: .3s;
     width: 200px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .proyectos .ver__mas:hover{
-    background: #1d3557;
+    background: #264653;
+    transform: translate(0px, -2px);
 }
 
 .tarjeta__proyectos{
-    background: #13263f;
-    color: #f1faee;
+    background: #2a9d8f;
+    color: #fff;
+    border-radius: 25px;
+}
+
+.tarjeta__proyectos i{
+    color: #e9c46a;
 }
 
 .tarjeta__proyectos h3{
     text-align: center;
-    padding: 50px;
-    font-size: 1.4em;
+    padding: 20px;
+    
 }
 
 .tarjeta__proyectos p{
-    margin: 50px;
+    margin: 20px;
 }
 
 .tarjeta__proyectos a{
-    color:#fff;
-    background: #1d3557;
+    color:#000;
+    background: #e9c46a;
     padding: 10px;
     transition: .3s;
     display: block;
-    border: 1px solid #1d3557;
+    width: 150px;
+    margin: 20px auto;
+    border-radius: 100px;
 }
 
 .tarjeta__proyectos a:hover{
-    background: #f1faee;
-    color: #1d3557;
-    border: 1px solid #1d3557;
+    background: #e76f51;
+    color: #fff;
+    transform: translate(2px, 2px);
 }
 
 .redes__sociales{
@@ -464,18 +468,15 @@ a{
 
 .snippets{
     padding: 50px;
-    background: #2193b0;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
-    color: #f1faee;
+    background: #e76f51;
+    color: #fff;
 }
 
 .snippets h2{
     text-align: center;
     margin: 40px;
-    color: #f1faee;
+    color: #fff;
+    font-size: 2em;
 }
 
 .snippets p{
@@ -484,8 +485,8 @@ background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, F
 }
 
 .snippets .ver__mas{
-    background: #1d3557;
-    color: #f1faee;
+    background: #2a9d8f;
+    color: #fff;
     border: none;
     transition: .3s;
     padding: 10px;
@@ -493,11 +494,13 @@ background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, F
     width: 170px;
     text-align: center;
     margin: 50px auto;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .snippets .ver__mas:hover{
-    background: #457b9d;
-    color: #f1faee;
+    background: #264653;
+    color: #fff;
+    transform: translate(0px, -2px);
 }
 
 .snippets hr{
@@ -622,8 +625,8 @@ ul.breadcrumb {
 }
 
 footer{
-    background: #1d3557;
-    color: #f1faee;
+    background: #264653;
+    color: #fff;
     padding: 40px;
     text-align: center;
 }
@@ -631,11 +634,11 @@ footer{
 footer hr{
     width: 80px;
     margin: 20px auto;
-    border: 2px solid #457b9d;
+    border: 1px solid #e76f51;
 }
 
 footer a{
-    color: #f1faee;
+    color: #fff;
 }
 
 .footerFlex div div{
@@ -643,25 +646,23 @@ footer a{
 }
 
 footer div.footerLine1 i{
-    color: #457b9d;
+    color: #e76f51;
 
 }
 
 footer div.redes__sociales a{
-    color: #f1faee;
+    color: #fff;
 }
 
 footer div.redes__sociales a:hover{
-    color: #457b9d;
+    color: #e76f51;
 }
 
 
 
 .tarjeta__aprende{
     width: 300px;
-    background: #13263f;
-
-    
+    background: #e76f51;
     color: #1d3557;
     padding: 10px;
     text-align: center;
@@ -671,7 +672,7 @@ footer div.redes__sociales a:hover{
     text-align: center;
     letter-spacing: 5px;
     margin: 20px;
-    color: #457b9d;
+    color: #fff;
 }
 
 .tarjeta__aprende p{
@@ -679,20 +680,20 @@ footer div.redes__sociales a:hover{
 }
 
 .tarjeta__aprende a{
-    color: #fff;
-    background: #457b9d;
-    border: 1px solid #457b9d;
+    color: #000;
+    background: #e9c46a;
     padding: 10px;
     transition: .3s;
-    width: 100%;
+    width: 100px;
     display: block;
     margin-top: 30px;
+    border-radius: 20px;
+    margin: 20px auto;
 }
 
 .tarjeta__aprende a:hover{
-    color: #1d3557;
-    background: #f1faee;
-    border: 1px solid #1d3557;
+    color: #fff;
+    background: #f4a261;
 }
 
 .tarjeta__aprende img.html__image{
@@ -721,7 +722,7 @@ footer div.redes__sociales a:hover{
 
 .tarjeta__snippets{
     width: 300px;
-    background: #f1faee;
+    background: #fff;
     color: #1d3557;
     padding: 20px;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
@@ -744,7 +745,7 @@ footer div.redes__sociales a:hover{
 
 .tarjeta__snippets a{
     text-align: center;
-    color: #f1faee;
+    color: #fff;
     background: #457b9d;
     padding: 10px;
     transition: .3s;
@@ -754,13 +755,13 @@ footer div.redes__sociales a:hover{
 
 .tarjeta__snippets a:hover{
     background: #457b9d;
-    color: #f1faee;
+    color: #fff;
 }
 
 .download a{
     background: #457b9d;
     border: 1px solid #457b9d;
-    color: #f1faee;
+    color: #fff;
     padding: 10px;
     display: block;
     text-align: center;
@@ -769,7 +770,7 @@ footer div.redes__sociales a:hover{
 }
 
 .download a:hover{
-    background: #f1faee;
+    background: #fff;
     color: #457b9d;
     border: 1px solid #457b9d;
 }
@@ -788,13 +789,13 @@ table {
   }
   
   td, th {
-    border: 1px solid #f1faee;
+    border: 1px solid #fff;
     text-align: left;
     padding: 8px;
   }
   
   tr:nth-child(even) {
-    background-color: #f1faee;
+    background-color: #fff;
   }
 
   
@@ -809,26 +810,27 @@ table {
 #youtube h2{
     text-align: center;
     padding: 40px;
+    font-size: 2em;
 }
 
 #youtube a{
     color: #000;
+    background: #fff;
     margin:  50px auto;
     display: block;
     transition: .3s;
-    background: white;
+    background: fff;
     text-align: center;
     width: 200px;
     padding: 10px;
     border-radius: 100px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 #youtube a:hover{
-    color: #FFFFFF;
-background: #333333;
-text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
-color: #FFFFFF;
-background: #333333;
+    background: #e52d27;
+    color: #fff;
+    transform: translate(0px, -2px);
 }
 
 #youtube hr{
@@ -846,10 +848,12 @@ background: #333333;
 .tarjeta__video{
     padding: 10px;
     background: #fff;
-    border-radius: 5px;
+    border-radius: 25px;
 }
 
-
+.correo{
+    color: #2a9d8f;
+}
 
 #contacto{
     background: url('/images/pexels-negative-space-33999.jpg');
@@ -860,22 +864,24 @@ background: #333333;
 #contacto h2{
     padding: 40px;
     text-align: center;
-    color: #457b9d;
+    color: #2a9d8f;
+    font-size: 2em;
 }
 
 #contacto form{
     margin: auto;
     width: 500px;
     padding: 20px;
-    background: #457b9d;
+    background: #264653;
     color: #fff;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 25px;
 }
 
 #contacto hr{
     width: 100px;
     margin: auto;
-    border: 1px solid #457b9d;
+    border: 1px solid #2a9d8f;
     border-width: 2px;
 }
 
@@ -889,27 +895,29 @@ form input{
     padding: 10px;
 }
 
-
-
 form input[type=button]{
-    width: 100%;
-    font-size: 1.2em;
+    width: 100px;
+    margin: auto;
     transition: .3s;
     cursor: pointer;
-    background: #13263f;
+    background: #2a9d8f;
     color: #fff;
-    border: 1px solid #fff;
+    border: none;
+    font-weight: bold;
+    border-radius: 100px;
+    display: block;
 }
 
 form input[type=button]:hover{
-    background: #fff;
+    background: #f4a261;
     color: #000;
-    border: 1px solid #13263f;
 }
 
 form label{
     margin-bottom: 5px;
     display: block;
+    font-size: .8em;
+    color: #fff;
 }
 
 form textarea{
