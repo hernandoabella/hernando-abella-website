@@ -819,463 +819,544 @@ Does it look like a zipper?
 
                 <li>
                     <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Check if an element is a descendant of another</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isDescendant = (child, parent) => parent.contains(child);</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">2</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Check if an element is focused</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const hasFocus = ele => (ele === document.activeElement);</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">3</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Check if the touch events are supported</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const touchSupported = () => ('ontouchstart' in window || window.DocumentTouch && document instanceof window.DocumentTouch);</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">4</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Check if user scrolls to the bottom of the page</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isAtBottom = () => document.documentElement.clientHeight + window.scrollY >= document.documentElement.scrollHeight;</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">5</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Detect Internet Explorer browser</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isIE = !!document.documentMode;</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">6</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Detect macOS browser
+                    </button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isMacBrowser = /Mac|iPod|iPhone|iPad/.test(navigator.platform);</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">7</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Get all siblings of an element</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const siblings = ele => [].slice.call(ele.parentNode.children).filter((child) => (child !== ele));</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">8</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Get the position of an element relative to the document</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const getPosition = ele => (r = ele.getBoundingClientRect(), { left: r.left + window.scrollX, top: r.top + window.scrollY });
+
+// Example
+getPosition(document.body);     // { left: 0, top: 0 }</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">9</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Get the selected text</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const getSelectedText = () => window.getSelection().toString();</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">10</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Go back to the previous page</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">history.back();
+
+// Or
+history.go(-1);</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">11</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Hide an element</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">// Pick the method that is suitable for your use case
+const hide = ele => ele.style.display = 'none';
+
+// Or
+const hide = ele => ele.style.visibility = 'hidden';
+
+// Or
+const hide = ele => ele.hidden = true;</code></pre></div>
                     </div>
                 </li>
                 <li>
                     <b><span class="number__item">12</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Insert an element after other one</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const insertAfter = (ele, anotherEle) => anotherEle.parentNode.insertBefore(ele, anotherEle.nextSibling);
+
+// Or
+const insertAfter = (ele, anotherEle) => anotherEle.insertAdjacentElement('afterend', ele);</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">13</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Insert an element before other one</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const insertBefore = (ele, anotherEle) => anotherEle.parentNode.insertBefore(ele, anotherEle);
+
+// Or
+const insertBefore = (ele, anotherEle) => anotherEle.insertAdjacentElement('beforebegin', ele);</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">14</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Insert given HTML after an element</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const insertHtmlAfter = (html, ele) => ele.insertAdjacentHTML('afterend', html);</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">15</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Insert given HTML before an element</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const insertHtmlBefore = (html, ele) => ele.insertAdjacentHTML('beforebegin', html);</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">16</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Redirect to another page</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const goTo = url => location.href = url;</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">17</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Reload the current page</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const reload = () => location.reload();
+
+// Or
+const reload = () => (location.href = location.href);</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">18</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Replace an element</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const replace = (ele, newEle) => ele.parentNode.replaceChild(newEle, ele);</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">19</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Scroll to top of the page</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const goToTop = () => window.scrollTo(0, 0);</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">20</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Serialize form data</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const serialize = formEle => Array.from(new FormData(formEle)).reduce((p, [k, v]) => Object.assign({}, p, { [k]: p[k] ? (Array.isArray(p[k]) ? p[k] : [p[k]]).concat(v) : v}), {});</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">21</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Show an element</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const show = ele => ele.style.display = '';</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">22</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Strip HTML from a given text</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const stripHtml = html => (new DOMParser().parseFromString(html, 'text/html')).body.textContent || '';</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">23</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Toggle an element</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const toggle = ele => (ele.style.display = (ele.style.display === 'none') ? 'block' : 'none');
+
+// Or
+const toggle = ele => ele.hidden = !ele.hidden;</code></pre></div>
                     </div>
                 </li>
 
-                <li>
-                    <b><span class="number__item">24</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                
                 <div class="ribbon__shet">
                     <b>Fechas</b>
                 </div>
 
                 <li>
-                    <b><span class="number__item">25</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">1</span></b> 
+                    <button class="accordion">Add AM PM suffix to an hour</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">// `h` is an hour number between 0 and 23
+const suffixAmPm = h => `${h % 12 === 0 ? 12 : h % 12}${h < 12 ? 'am' : 'pm'}`;
+
+// Examples
+suffixAmPm(0);      // '12am'
+suffixAmPm(5);      // '5am'
+suffixAmPm(12);     // '12pm'
+suffixAmPm(15);     // '3pm'
+suffixAmPm(23);     // '11pm'</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">26</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">2</span></b> 
+                    <button class="accordion">Calculate the number of difference days between two dates</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const diffDays = (date, otherDate) => Math.ceil(Math.abs(date - otherDate) / (1000 * 60 * 60 * 24));
+
+// Example
+diffDays(new Date('2014-12-19'), new Date('2020-01-01'));   // 1839</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">27</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">3</span></b> 
+                    <button class="accordion">Calculate the number of months between two dates</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const monthDiff = (startDate, endDate) => Math.max(0, (endDate.getFullYear() - startDate.getFullYear()) * 12 - startDate.getMonth() + endDate.getMonth());
+
+// Example
+monthDiff(new Date('2020-01-01'), new Date('2021-01-01'));  // 12</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">28</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">4</span></b> 
+                    <button class="accordion">Compare two dates</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">// `a` and `b` are `Date` instances
+const compare = (a, b) => a.getTime() > b.getTime();
+
+// Example
+compare(new Date('2020-03-30'), new Date('2020-01-01'));    // true</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">29</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">5</span></b> 
+                    <button class="accordion">Convert a date to YYYY-MM-DD format</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">// `date` is a `Date` object
+const formatYmd = date => date.toISOString().slice(0, 10);
+
+// Example
+formatYmd(new Date());      // 2020-05-06</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">30</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">6</span></b> 
+                    <button class="accordion">Convert seconds to hh:mm:ss format</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">// `s` is number of seconds
+const formatSeconds = s => new Date(s * 1000).toISOString().substr(11, 8);
+
+// Or
+const formatSeconds = s => (new Date(s * 1000)).toUTCString().match(/(\d\d:\d\d:\d\d)/)[0];
+
+// Or
+const formatSeconds = s => [parseInt(s / 60 / 60), parseInt(s / 60 % 60), parseInt(s % 60)].join(':').replace(/\b(\d)\b/g, '0$1');
+
+// Examples
+formatSeconds(200);     // 00:03:20
+formatSeconds(500);     // 00:08:20</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">31</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">7</span></b> 
+                    <button class="accordion">Extract year, month, day, hour, minute, second and millisecond from a date</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">// `date` is a `Date` object
+const extract = date => date.toISOString().split(/[^0-9]/).slice(0, -1);
+
+// `extract` is an array of [year, month, day, hour, minute, second, millisecond]</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">32</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">8</span></b> 
+                    <button class="accordion">Format a date for the given locale</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">// `date` is a `Date` object
+// `locale` is a locale (en-US, pt-BR, for example)
+const format = (date, locale) => new Intl.DateTimeFormat(locale).format(date);
+
+// Example
+format(new Date(), 'pt-BR');    // 06/05/2020</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">33</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">9</span></b> 
+                    <button class="accordion">Get the current quarter of a date</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const getQuarter = (d = new Date()) => Math.ceil((d.getMonth() + 1) / 3);</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">34</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">10</span></b> 
+                    <button class="accordion">Get the current timestamp in seconds
+                    </button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const ts = () => Math.floor(new Date().getTime() / 1000);</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">35</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">11</span></b> 
+                    <button class="accordion">Get the day of the year from a date</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">// `date` is a Date object
+const dayOfYear = date => Math.floor((date - new Date(date.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
+
+// Example
+dayOfYear(new Date(2020, 04, 16));      // 137</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">36</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">12</span></b> 
+                    <button class="accordion">Get the first date in the month of a date</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const getFirstDate = (d = new Date()) => new Date(d.getFullYear(), d.getMonth(), 1);</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">37</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">13</span></b> 
+                    <button class="accordion">Get the last date in the month of a date</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const getLastDate = (d = new Date()) => new Date(d.getFullYear(), d.getMonth() + 1, 0);</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">38</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">14</span></b> 
+                    <button class="accordion">Get the month name of a date</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">// `date` is a Date object
+const getMonthName = date => ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',' November', 'December'][date.getMonth()];</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">39</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">15</span></b> 
+                    <button class="accordion">Get the number of days in given month</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">// `month` is zero-based index
+const daysInMonth = (month, year) => new Date(year, month, 0).getDate();</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">40</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">16</span></b> 
+                    <button class="accordion">Get the timezone string</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const getTimezone = () => Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+// Example
+getTimezone();      // 'Asia/Saigon'</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">41</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">17</span></b> 
+                    <button class="accordion">Get the tomorrow date</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const tomorrow = (d => new Date(d.setDate(d.getDate() + 1)))(new Date);
+
+// Or
+const tomorrow = new Date((new Date()).valueOf() + 1000 * 60 * 60 * 24);</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">42</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">18</span></b> 
+                    <button class="accordion">Get the total number of days in a year</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const numberOfDays = year => (((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0)) ? 366 : 365;
+
+// Or
+const numberOfDays = year => new Date(year, 1, 29).getDate() === 29 ? 366 : 365;</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">43</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">19</span></b> 
+                    <button class="accordion">Get the weekday of a date</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">44</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">// `date` is a Date object
+const getWeekday = date => ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][date.getDay()];</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">45</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">20</span></b> 
+                    <button class="accordion">Get the yesterday date
+                    </button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const yesterday = (d => new Date(d.setDate(d.getDate() - 1)))(new Date);
+
+// Or
+const yesterday = new Date((new Date()).valueOf() - 1000 * 60 * 60 * 24);</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">46</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">21</span></b> 
+                    <button class="accordion">Initialize the current date but set time to midnight</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const midnightOfToday = () => new Date(new Date().setHours(0, 0, 0, 0));</code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">22</span></b> 
+                    <button class="accordion">Sort an array of dates</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">// `arr` is an array of `Date` items
+const sortDescending = arr => arr.sort((a, b) => a.getTime() > b.getTime());
+const sortAscending = arr => arr.sort((a, b) => a.getTime() < b.getTime());</code></pre></div>
                     </div>
                 </li>
 
@@ -1285,167 +1366,298 @@ Does it look like a zipper?
 
                 <li>
                     <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Box handler</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const boxHandler = x => ({ next: f => boxHandler(f(x)), done: f => f(x) });
+
+// Example 1
+const getPercentNumber = str => boxHandler(str).next(str => str.replace(/\%/, '')).next(str => parseFloat(str)).done(res => res * 0.01);
+
+getPercentNumber('50%');    // 0.5
+
+// Example 2
+const getMoney = (price) => Number.parseFloat(price.replace(/\$/, ''));
+const getPercent = (percent) => Number.parseFloat(percent.replace(/\%/)) * 0.01;
+
+const getDiscountPrice = (price, discount) => boxHandler(getMoney(price)).done(cents => boxHandler(getPercent(discount)).next(save => cents - (cents * save))).done(res => res);
+
+getDiscountPrice('$6.00', '20%');    // 4.8</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">2</span></b> 
+                    <button class="accordion">Check if a value is a function</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isFunction = v => ['[object Function]', '[object GeneratorFunction]', '[object AsyncFunction]', '[object Promise]'].includes(Object.prototype.toString.call(v));
+
+// Examples
+isFunction(function() {});          // true
+isFunction(function*() {});         // true
+isFunction(async function() {});    // true</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">3</span></b> 
+                    <button class="accordion">Check if a value is a generator function
+</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isGeneratorFunction = v => Object.prototype.toString.call(v) === '[object GeneratorFunction]';
+
+// Examples
+isGeneratorFunction(function() {});     // false
+isGeneratorFunction(function*() {});    // true</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">4</span></b> 
+                    <button class="accordion">Check if a value is an async function</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isAsyncFunction = v => Object.prototype.toString.call(v) === '[object AsyncFunction]';
+
+// Examples
+isAsyncFunction(function() {});         // false
+isAsyncFunction(function*() {});        // false
+isAsyncFunction(async function() {});   // true</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">5</span></b> 
+                    <button class="accordion">Compose functions</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">// Compose functions from right to left
+const compose = (...fns) => x => fns.reduceRight((y, f) => f(y), x);
+
+// Example
+const lowercase = str => str.toLowerCase();
+const capitalize = str => `${str.charAt(0).toUpperCase()}${str.slice(1)}`;
+const reverse = str => str.split('').reverse().join('');
+
+const fn = compose(reverse, capitalize, lowercase);
+
+// We will execute `lowercase`, `capitalize` and `reverse` in order
+fn('Hello World') === 'dlrow olleH';</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">6</span></b> 
+                    <button class="accordion">Compose functions from left to right</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">// Compose functions from left to right
+const pipe = (...fns) => x => fns.reduce((y, f) => f(y), x);
+
+// Example
+const lowercase = str => str.toLowerCase();
+const capitalize = str => `${str.charAt(0).toUpperCase()}${str.slice(1)}`;
+const reverse = str => str.split('').reverse().join('');
+
+const fn = pipe(lowercase, capitalize, reverse);
+
+// We will execute `lowercase`, `capitalize` and `reverse` in order
+fn('Hello World') === 'dlrow olleH';</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">7</span></b> 
+                    <button class="accordion">Create a function that accepts a single argument</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const unary = fn => arg => fn(arg);
+
+// Example
+['1', '2', '3', '4', '5'].map(unary(parseInt));     // [1, 2, 3, 4, 5]</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">8</span></b> 
+                    <button class="accordion">Create an empty function</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const noop = () => {};
+
+// Or
+const noop = Function();
+// calling Function() might be detected as using eval by some security tools</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">9</span></b> 
+                    <button class="accordion">Curry a function</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const curry = (fn, ...args) => fn.length <= args.length ? fn(...args) : curry.bind(null, fn, ...args);
+
+// Example
+const sum = (a, b, c) => a + b + c;
+curry(sum)(1)(2)(3);    // 6
+curry(sum)(1, 2, 3);    // 6
+curry(sum, 1)(2, 3);    // 6
+curry(sum, 1)(2)(3);    // 6
+curry(sum, 1, 2)(3);    // 6
+curry(sum, 1, 2, 3);    // 6</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">10</span></b> 
+                    <button class="accordion">Delay the evaluation of a function</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">// returns a new version of `fn` that returns values as lazy evaluable
+const thunkfy = fn => (...args) => () => fn(...args);
+
+// Example
+const heavyComputation = x => doStuff(x);
+const unnecessarySlow = manyThings.map(heavyComputation)
+    .find(result => result.criteria);
+const probablyFaster = manyThings.map(thunkfy(heavyComputation))
+    .find(thunk => thunk().criteria);</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">11</span></b> 
+                    <button class="accordion">Execute a function once</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const once = fn => ((ran = false) => () => ran ? fn : (ran = !ran, fn = fn()))();
+
+// Example
+let n = 0;
+const incOnce = once(() => ++n);
+incOnce();      // n = 1
+incOnce();      // n = 1
+incOnce();      // n = 1</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">12</span></b> 
+                    <button class="accordion">Flip the arguments of a function</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">// Reverse the order of arguments
+const flip = fn => (...args) => fn(...args.reverse());
+
+// For binary functions
+const flip = fn => (b, a) => fn(a, b);
+
+// Or for curried functions
+const flip = fn => b => a => fn(a)(b);
+
+// Example
+const isParent = (parent, child) => parent.children.includes(child);
+const isChild = flip(isParent);</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">13</span></b> 
+                    <button class="accordion">Identity function</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const identity = x => x;</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">14</span></b> 
+                    <button class="accordion">Logical xor operator</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">// returns `true` if one of the arguments is truthy and the other is falsy
+
+const xor = (a, b) => (a && !b) || (!a && b);
+
+// Or
+const xor = (a, b) => !(!a && !b) && !(a && b);
+
+// Or
+const xor = (a, b) => Boolean(!a ^ !b);
+
+// Examples
+xor(true, true);        // false
+xor(false, false);      // false
+xor(true, false);       // true
+xor(false, true);       // true</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">15</span></b> 
+                    <button class="accordion">Memoize a function</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const memoize = fn => ((cache = {}) => arg => cache[arg] || (cache[arg] = fn(arg)))();
+
+// Example
+// Calculate Fibonacci numbers
+const fibo = memoize(n => n <= 2 ? 1 : fibo(n - 1) + fibo(n - 2));
+
+fibo(1);    // 1
+fibo(2);    // 1
+fibo(3);    // 2
+fibo(4);    // 3
+fibo(5);    // 5
+fibo(6);    // 8</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">16</span></b> 
+                    <button class="accordion">Partially apply a function</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const partial = (fn, ...a) => (...b) => fn(...a, ...b);
+
+// Example
+const sum = (x, y) => x + y;
+const inc = partial(sum, 1);
+inc(9);     // 10</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">17</span></b> 
+                    <button class="accordion">Uncurry a function
+                    </button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">// `fn` is a curried function
+// `n` is the depth of parameters
+const uncurry = (fn, n = 1) => (...args) => (acc => args => args.reduce((x, y) => x(y), acc))(fn)(args.slice(0, n));
+
+// Example
+const sum = a => b => c => a + b + c;
+uncurry(sum, 1)(1)(2)(3);       // 6
+uncurry(sum, 2)(1, 2)(3);       // 6
+uncurry(sum, 3)(1, 2, 3);       // 6</code></pre></div>
                     </div>
                 </li>
 
