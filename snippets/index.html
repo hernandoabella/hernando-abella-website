@@ -359,245 +359,702 @@ findLongest(['always','look','on','the','bright','side','of','life']);  // 6</co
                 </li>
                 <li>
                     <b><span class="number__item">20</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Find the maximum item of an array</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const max = arr => Math.max(...arr);</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">21</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Find the maximum item of an array by given key</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const maxBy = (arr, key) => arr.reduce((a, b) => a[key] >= b[key] ? a : b, {});
+
+// Example
+const people = [
+    { name: 'Bar', age: 24 },
+    { name: 'Baz', age: 32 },
+    { name: 'Foo', age: 42 },
+    { name: 'Fuzz', age: 36 },
+];
+maxBy(people, 'age');   // { name: 'Foo', age: 42 }</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">22</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Find the minimum item of an array</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const min = arr => Math.min(...arr);</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">23</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Find the minimum item of an array by given key</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const minBy = (arr, key) => arr.reduce((a, b) => a[key] < b[key] ? a : b, {});
+
+// Example
+const people = [
+    { name: 'Bar', age: 24 },
+    { name: 'Baz', age: 32 },
+    { name: 'Foo', age: 42 },
+    { name: 'Fuzz', age: 36 },
+];
+minBy(people, 'age');   // { name: 'Bar', age: 24 }</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">24</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Flatten an array</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const flat = arr => [].concat.apply([], arr.map(a => Array.isArray(a) ? flat(a) : a));
+// Or
+const flat = arr => arr.reduce((a, b) => Array.isArray(b) ? [...a, ...flat(b)] : [...a, b], []);
+
+// Or
+// See the browser compatibility at https://caniuse.com/#feat=array-flat
+const flat = arr => arr.flat();
+
+// Example
+flat(['cat', ['lion', 'tiger']]);   // ['cat', 'lion', 'tiger']</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">25</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Get all arrays of consecutive elements</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const getConsecutiveArrays = (arr, size) => size > arr.length ? [] : arr.slice(size - 1).map((_, i) => arr.slice(i, size + i));
+
+// Examples
+getConsecutiveArrays([1, 2, 3, 4, 5], 2);   // [[1, 2], [2, 3], [3, 4], [4, 5]]
+getConsecutiveArrays([1, 2, 3, 4, 5], 3);   // [[1, 2, 3], [2, 3, 4], [3, 4, 5]]
+getConsecutiveArrays([1, 2, 3, 4, 5], 6);   // []</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">26</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Get all n-th items of an array</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const getNthItems = (arr, nth) => arr.filter((_, i) => i % nth === nth - 1);
+
+// Examples
+getNthItems([1, 2, 3, 4, 5, 6, 7, 8, 9], 2);    // [2, 4, 6, 8]
+getNthItems([1, 2, 3, 4, 5, 6, 7, 8, 9], 3);    // [3, 6, 9]</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">27</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Get all subsets of an array</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const getSubsets = arr => arr.reduce((prev, curr) => prev.concat(prev.map(k => k.concat(curr))), [[]]);
+
+// Examples
+getSubsets([1, 2]);     // [[], [1], [2], [1, 2]]
+getSubsets([1, 2, 3]);  // [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]</code></pre></div>
                     </div>
                 </li>
                 <li>
                     <b><span class="number__item">28</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Get indices of a value in an array</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const indices = (arr, value) => arr.reduce((acc, v, i) => (v === value ? [...acc, i] : acc), []);
+
+// Or
+const indices = (arr, value) => arr.map((v, i) => v === value ? i : false).filter(Boolean);
+
+// Examples
+indices(['h', 'e', 'l', 'l', 'o'], 'l');    // [2, 3]
+indices(['h', 'e', 'l', 'l', 'o'], 'w');    // []</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">29</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Get the average of an array</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const average = arr => arr.reduce((a, b) => a + b, 0) / arr.length;</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">30</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Get the intersection of arrays</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const getIntersection = (a, ...arr) => [...new Set(a)].filter(v => arr.every(b => b.includes(v)));
+
+// Examples
+getIntersection([1, 2, 3], [2, 3, 4, 5]);               // [2, 3]
+getIntersection([1, 2, 3], [2, 3, 4, 5], [1, 3, 5]);    // [3]</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">31</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Get the rank of an array of numbers</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const ranking = (arr) => arr.map((x, y, z) => z.filter(w => w > x).length + 1);
+
+// Examples
+ranking([80, 65, 90, 50]);      // [2, 3, 1, 4]
+ranking([80, 80, 70, 50]);      // [1, 1, 3, 4]
+ranking([80, 80, 80, 50]);      // [1, 1, 1, 4]</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">32</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Get the sum of an array of numbers</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const sum = arr => arr.reduce((a, b) => a + b, 0);</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">33</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Get the unique values of an array</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const unique = arr => [...new Set(arr)];
+
+// Or
+const unique = arr => arr.filter((el, i, array) => array.indexOf(el) === i);
+
+// Or
+const unique = arr => arr.reduce((acc, el) => acc.includes(el) ? acc : [...acc, el], []);</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">34</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Get union of arrays</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const union = (...arr) => [...new Set(arr.flat())];
+
+// Example
+union([1, 2], [2, 3], [3]);     // [1, 2, 3]</code></pre></div>
                     </div>
                 </li>
                 <li>
                     <b><span class="number__item">35</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Group an array of objects by a key</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const groupBy = (arr, key) => arr.reduce((acc, item) => ((acc[item[key]] = [...(acc[item[key]] || []), item]), acc), {});
+
+// Example
+groupBy([
+    { branch: 'audi', model: 'q8', year: '2019' },
+    { branch: 'audi', model: 'rs7', year: '2020' },
+    { branch: 'ford', model: 'mustang', year: '2019' },
+    { branch: 'ford', model: 'explorer', year: '2020' },
+    { branch: 'bmw', model: 'x7', year: '2020' },
+], 'branch');
+
+/*
+{
+    audi: [
+        { branch: 'audi', model: 'q8', year: '2019' },
+        { branch: 'audi', model: 'rs7', year: '2020' }
+    ],
+    bmw: [
+        { branch: 'bmw', model: 'x7', year: '2020' }
+    ],
+    ford: [
+        { branch: 'ford', model: 'mustang', year: '2019' },
+        { branch: 'ford', model: 'explorer', year: '2020' }
+    ],
+}
+*/</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">36</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Merge two arrays</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">// Merge but don't remove the duplications
+const merge = (a, b) => a.concat(b);
+// Or
+const merge = (a, b) => [...a, ...b];
+
+// Merge and remove the duplications
+const merge = [...new Set(a.concat(b))];
+// Or
+const merge = [...new Set([...a, ...b])];</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">37</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Partition an array based on a condition</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const partition = (arr, criteria) => arr.reduce((acc, i) => (acc[criteria(i) ? 0 : 1].push(i), acc), [[], []]);
+
+// Example
+partition([1, 2, 3, 4, 5], n => n % 2);     // [[2, 4], [1, 3, 5]]</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">38</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Remove duplicate values in an array</button>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            <div class="decor__bar javascript">const removeDuplicate = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexOf(i));
+
+// Example
+removeDuplicate(['h', 'e', 'l', 'l', 'o', 'w', 'o', 'r', 'l', 'd']); //  ['h', 'e', 'w', 'r', 'd']</div>
                             <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">39</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Remove falsy values from array</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const removeFalsy = arr => arr.filter(Boolean);
+
+// Example
+removeFalsy([0, 'a string', '', NaN, true, 5, undefined, 'another string', false]); // ['a string', true, 5, 'another string']</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">40</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Shuffle an array
+                    </button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const shuffle = arr => arr.map(a => ({ sort: Math.random(), value: a })).sort((a, b) => a.sort - b.sort).map(a => a.value);
+
+// Or
+const shuffle = arr => arr.sort(() => .5 - Math.random());
+
+// Example
+shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);   // [9, 1, 10, 6, 8, 5, 2, 3, 7, 4]</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">41</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Sort an array of items by given key</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const sortBy = (arr, k) => arr.concat().sort((a, b) => (a[k] > b[k]) ? 1 : ((a[k] < b[k]) ? -1 : 0));
+
+// Example
+const people = [
+    { name: 'Foo', age: 42 },
+    { name: 'Bar', age: 24 },
+    { name: 'Fuzz', age: 36 },
+    { name: 'Baz', age: 32 },
+];
+sortBy(people, 'age');
+
+// returns
+//  [
+//      { name: 'Bar', age: 24 },
+//      { name: 'Baz', age: 32 },
+//      { name: 'Fuzz', age: 36 },
+//      { name: 'Foo', age: 42 },
+//  ]</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">42</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Sort an array of numbers</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const sort = arr => arr.sort((a, b) => a - b);
+
+// Example
+sort([1, 5, 2, 4, 3]);      // [1, 2, 3, 4, 5]</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">43</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Split an array into chunks</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const chunk = (arr, size) => arr.reduce((acc, e, i) => (i % size ? acc[acc.length - 1].push(e) : acc.push([e]), acc), []);
+
+// Examples
+chunk([1, 2, 3, 4, 5, 6, 7, 8], 3);     // [[1, 2, 3], [4, 5, 6], [7, 8]]
+chunk([1, 2, 3, 4, 5, 6, 7, 8], 4);     // [[1, 2, 3, 4], [5, 6, 7, 8]]</code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">44</span></b> 
+                    <button class="accordion">Swap the rows and columns of a matrix</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const transpose = matrix => matrix[0].map((col, i) => matrix.map(row => row[i]));
+
+// Or
+const transpose = matrix => matrix[0].map((col, c) => matrix.map((row, r) => matrix[r][c]));
+
+// Or
+const transpose = matrix => matrix.reduce((prev, next) => next.map((item, i) => (prev[i] || []).concat(next[i])), []);
+
+// Example
+transpose([             // [
+    [1, 2, 3],          //      [1, 4, 7],
+    [4, 5, 6],          //      [2, 5, 8],
+    [7, 8, 9],          //      [3, 6, 9],
+]);                     //  ]</code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">45</span></b> 
+                    <button class="accordion">Swap two array items</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">// `i` must be less than `j`
+const swapItems = (a, i, j) => a[i] && a[j] && [...a.slice(0, i), a[j], ...a.slice(i + 1, j), a[i], ...a.slice(j + 1)] || a;
+
+// Example
+swapItems([1, 2, 3, 4, 5], 1, 4);   // [1, 5, 3, 4, 2] </code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">46</span></b> 
+                    <button class="accordion">Unzip an array of arrays</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const unzip = arr => arr.reduce((acc, c) => (c.forEach((v, i) => acc[i].push(v)), acc), Array.from({ length: Math.max(...arr.map(a => a.length)) }, (_) => []));
+
+// Example
+unzip([['a', 1], ['b', 2], ['c', 3], ['d', 4], ['e', 5]]);  // [['a', 'b', 'c', 'd', 'e'], [1, 2, 3, 4, 5]]
+
+/*
+    a     1
+     b   2
+      c 3
+      d 4
+      e 5
+*/</code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">47</span></b> 
+                    <button class="accordion">Zip multiple arrays</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const zip = (...arr) => Array.from({ length: Math.max(...arr.map(a => a.length)) }, (_, i) => arr.map(a => a[i]));
+
+// Example
+zip(['a', 'b', 'c', 'd', 'e'], [1, 2, 3, 4, 5]);   // [['a', 1], ['b', 2], ['c', 3], ['d', 4], ['e', 5]]
+
+/*
+Does it look like a zipper?
+        a 1
+        b 2
+       c   3
+      d     4
+     e       5
+*/</code></pre></div>
                     </div>
                 </li>
 
                 <div class="ribbon__shet">
                     <b>DOM</b>
                 </div>
+
+                <li>
+                    <b><span class="number__item">1</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">1</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">1</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">1</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">1</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">1</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">1</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">1</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">1</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">1</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">1</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">1</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">1</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">1</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">1</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">1</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">1</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">1</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">1</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">1</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">1</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">1</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">1</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">1</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
                 
                 <div class="ribbon__shet">
                     <b>Fechas</b>
