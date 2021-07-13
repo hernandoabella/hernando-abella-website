@@ -5,9 +5,7 @@
 
 #contenedorClima{
     text-align: center;
-    background: #457fca;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #5691c8, #457fca);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #5691c8, #457fca); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #58a1ff;  /* fallback for old browsers */
     border-radius: 5px;
     width: 300px;
     height: 400px;
@@ -43,8 +41,13 @@
     cursor: pointer;
 }
 
-.demostracion{
+.app__background{
     margin: 20px auto;
     padding: 20px;
-    background: #457fca;
+    background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+}
+
+h1{
+    color: #2a9d8f;
+    font-size: 2em;
 }

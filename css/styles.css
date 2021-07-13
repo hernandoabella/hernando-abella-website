@@ -521,7 +521,7 @@ a{
 }
 
 .code__container hr{
-    border: 5px solid #457b9d;
+    border: 1px dashed #264653;
     margin: 50px auto;
     width: 100%;
 }
@@ -612,13 +612,13 @@ ul.breadcrumb {
   
   /* Add a color to all links inside the list */
   ul.breadcrumb li a {
-    color: #457b9d;
+    color: #2a9d8f;
     text-decoration: none;
   }
   
   /* Add a color on mouse-over */
   ul.breadcrumb li a:hover {
-    color: #01447e;
+    color: #264653;
     text-decoration: underline;
   }
 
@@ -762,8 +762,8 @@ footer div.redes__sociales a:hover{
 }
 
 .download a{
-    background: #457b9d;
-    border: 1px solid #457b9d;
+    background: #2a9d8f;
+    border: 1px solid #264653;
     color: #fff;
     padding: 10px;
     display: block;
@@ -774,8 +774,9 @@ footer div.redes__sociales a:hover{
 
 .download a:hover{
     background: #fff;
-    color: #457b9d;
-    border: 1px solid #457b9d;
+    color: #2a9d8f;
+    border: 1px solid #2a9d8f;
+    transform: translate(0px, -2px);
 }
 
 
