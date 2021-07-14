@@ -14,7 +14,7 @@
   
 .progress-container {
     width: 100%;
-    height: 8px;
+    height: 5px;
     background: #fcf0a2;
 }
   
@@ -39,7 +39,7 @@ aside{
 }
 
 aside.sideBar{
-    width: 30%;
+    width: 20%;
     height: 350px;
     position: fixed;
     top: 100px;
@@ -60,46 +60,47 @@ aside ul li a{
 }
 
 aside ul li a:hover{
-    background: #f0db4f;
-    color: #323330;
-    border-left: 1px solid #323330;
+    background: #264653;
+    color: #fff;
+    border-left: 1px solid #2a9d8f;
     border-width: 10px;
     padding: 10px;
     font-weight: bold;
 }
 
 .activeItem{
-    background: #fcf0a2;
-    color: #323330;
-    border-left: 1px solid #323330;
+    background: #2a9d8f;
+    color: #fff;
+    border-left: 1px solid #264653;
     border-width: 5px;
 }
 
 .articles{
-    width: 70%;
+    width: 80%;
     position: absolute;
     right: 0;
-    top: 70px;
+    top: 55px;
     padding: 20px;
 }
 
 section{
-    padding: 20px;
-    border-top: 1px solid #f0db4f;
+    padding: 10px;
     border-width: 5px;
     margin-bottom: 50px;
 }
 
-section h2{
-    margin: 50px;
-    color: #323330;
+section h1{
+    margin: 20px;
+    color: #2a9d8f;
     border-width: 5px;
     text-align: center;
+    font-size: 2em;
 }
 
 section h3{
     margin: 20px 0px;
     text-align: center;
+    color: #e76f51;
 }
 
 section h4{
@@ -127,6 +128,10 @@ section ul li{
     margin: 10px;
 }
 
+section ul li::before{
+    color: red;
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
@@ -134,16 +139,17 @@ section ul li{
   
   /* Track */
   ::-webkit-scrollbar-track {
-    background: #6a6d64; 
+    background: #2a9d8f; 
   }
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #323330; 
+    background: #264653;
+    
     
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #323330; 
+    background: #e76f51; 
   }

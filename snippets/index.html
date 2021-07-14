@@ -4015,300 +4015,276 @@ const isMongoId = str => str.length === 24 && str.split('').every(c => '01234567
                 </li>
                 <li>
                     <b><span class="number__item">25</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Check if a string is lower case</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isLowerCase = str => str === str.toLowerCase();</code></pre></div>
                     </div>
                 </li>
                 <li>
                     <b><span class="number__item">26</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Check if a string is upper case</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isUpperCase = str => str === str.toUpperCase();</code></pre></div>
                     </div>
                 </li>
                 <li>
                     <b><span class="number__item">27</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Check if a value is a business identifier code</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isBIC = value => /^[a-zA-Z]{6}[a-zA-Z0-9]{2}([a-zA-Z0-9]{3})?$/.test(value);</code></pre></div>
                     </div>
                 </li>
                 <li>
                     <b><span class="number__item">28</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Check if a value is a number</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isNumber = value => !isNaN(parseFloat(value)) && isFinite(value);</code></pre></div>
                     </div>
                 </li>
                 <li>
                     <b><span class="number__item">29</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Check if a value is a plain object</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isPlainObject = v => (!!v && typeof v === 'object' && (v.__proto__ === null || v.__proto__ === Object.prototype));
+
+// Examples
+isPlainObject(null);                    // false
+isPlainObject('hello world');           // false
+isPlainObject([]);                      // false
+isPlainObject(Object.create(null));     // false
+isPlainObject(function() {});           // false
+
+isPlainObject({});                      // true
+isPlainObject({ a: '1', b: '2' });      // true</code></pre></div>
                     </div>
                 </li>
                 <li>
                     <b><span class="number__item">30</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Check if a value is a regular expression</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isRegExp = value => Object.prototype.toString.call(value) === '[object RegExp]';</code></pre></div>
                     </div>
                 </li>
                 <li>
                     <b><span class="number__item">31</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Check if a value is a string
+                    </button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isString = value => Object.prototype.toString.call(value) === '[object String]';
+
+// Examples
+isString('hello world');                // true
+isString(new String('hello world'));    // true
+isString(10);                           // false</code></pre></div>
                     </div>
                 </li>
                 <li>
                     <b><span class="number__item">32</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Check if a value is an object</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isObject = v => (v !== null && typeof v === 'object');
+
+// Examples
+isObject(null);             // false
+isObject('hello world');    // false
+
+isObject({});               // true
+isObject([]);               // true </code></pre></div>
                     </div>
                 </li>
                 <li>
                     <b><span class="number__item">33</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Check if a value is base32 encoded</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isBase32 = value => value.length % 8 === 0 && /^[A-Z2-7]+=*$/.test(value);</code></pre></div>
                     </div>
                 </li>
                 <li>
                     <b><span class="number__item">34</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Check if a value is base58 encoded</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">// It doesn't accept the I, O, l characters 
+const isBase58 = value => /^[A-HJ-NP-Za-km-z1-9]*$/.test(value);</code></pre></div>
                     </div>
                 </li>
                 <li>
                     <b><span class="number__item">35</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Check if a value is base64 encoded</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isBase64 = value => /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$/.test(value);</code></pre></div>
                     </div>
                 </li>
                 <li>
                     <b><span class="number__item">36</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Check if a value is nil</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isNil = (value) => value == null;</code></pre></div>
                     </div>
                 </li><li>
                     <b><span class="number__item">37</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Check if a year is leap year</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isLeapYear = year => (((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0));
+
+// Or
+// Get the number of days in February
+const isLeapYear = year => new Date(year, 1, 29).getDate() === 29;</code></pre></div>
                     </div>
                 </li>
                 <li>
                     <b><span class="number__item">38</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Check if all array elements are equal to a given value</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isEqual = (arr, value) => arr.every(item => item === value);
+
+// Or
+// Ends earlier for false arrays
+const isEqual = (arr, value) => !arr.some(item => item !== value);
+
+// Examples
+isEqual(['foo', 'foo'], 'foo');     // true
+isEqual(['foo', 'bar'], 'foo');     // false
+isEqual(['bar', 'bar'], 'foo');     // false</code></pre></div>
                     </div>
                 </li>
                 <li>
                     <b><span class="number__item">39</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Check if all items in an array are equal</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const areEqual = arr => arr.length > 0 && arr.every(item => item === arr[0]);
+
+// Or
+const areEqual = arr => new Set(arr).size === 1;
+
+// Examples
+areEqual([1, 2, 3, 4]);                 // false
+areEqual(['hello', 'hello', 'hello']);  // true</code></pre></div>
                     </div>
                 </li>
                 <li>
                     <b><span class="number__item">40</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Check if an array contains a value matching some criterias</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const contains = (arr, criteria) => arr.some(v => criteria(v));
+
+// Or
+const contains = (arr, criteria) => arr.some(criteria);
+
+// Or
+const contains = (arr,criteria) => arr.filter(criteria).length > 0;
+
+// Examples
+contains([10, 20, 30], v => v > 25 );               // true
+contains([10, 20, 30], v => v > 100 || v < 15 );    // true
+contains([10, 20, 30], v => v > 100 );              // false</code></pre></div>
                     </div>
                 </li>
                 <li>
                     <b><span class="number__item">41</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Check if an array is not empty</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isNotEmpty = arr => Array.isArray(arr) && Object.keys(arr).length > 0;
+
+// Examples
+isNotEmpty([]);             // false
+isNotEmpty([1, 2, 3]);      // true</code></pre></div>
                     </div>
                 </li>
                 <li>
                     <b><span class="number__item">42</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Check if an array is subset of other array</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">// Check if `b` is subset of `a`
+const isSubset = (a, b) => (new Set(b)).size === (new Set(b.concat(a))).size;
+
+// Or
+const isSubset = (a, b) => b.join("|").includes(a.join("|"));
+
+// Examples
+isSubset([1, 2], [1, 2, 3, 4]);     // true
+isSubset([1, 2, 5], [1, 2, 3, 4]);  // false
+isSubset([6], [1, 2, 3, 4]);        // false</code></pre></div>
                     </div>
                 </li>
                 <li>
                     <b><span class="number__item">43</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Check if an object is a Promise</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isPromise = obj => !!obj && (typeof obj === 'object' || typeof obj === 'function') && typeof obj.then === 'function';</code></pre></div>
                     </div>
                 </li>
                 <li>
                     <b><span class="number__item">44</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Check if an object is an array</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isArray = obj => Array.isArray(obj);</code></pre></div>
                     </div>
                 </li>
                 <li>
                     <b><span class="number__item">45</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Check if an object is empty</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isEmpty = obj => Reflect.ownKeys(obj).length === 0 && obj.constructor === Object;
+
+// Or for enumerable property names only
+const isEmpty = obj => JSON.stringify(obj) === '{}';</code></pre></div>
                     </div>
                 </li>
                 <li>
                     <b><span class="number__item">46</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Validate a Gregorian date</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">// `m`: the month (zero-based index)
+// `d`: the day
+// `y`: the year
+const isValidDate = (m, d, y) => 0 <= m && m <= 11 && 0 < y && y < 32768 && 0 < d && d <= (new Date(y, m, 0)).getDate();</code></pre></div>
                     </div>
                 </li>
-                <li>
-                    <b><span class="number__item">47</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">48</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">49</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">50</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">51</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">52</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">53</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">54</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">55</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">56</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">57</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
+                
             </ol>
 
            
