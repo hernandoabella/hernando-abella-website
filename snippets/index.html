@@ -1668,107 +1668,120 @@ uncurry(sum, 3)(1, 2, 3);       // 6</code></pre></div>
 
                 <li>
                     <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Calculate the angle of a line defined by two points</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">// In radians
+const radiansAngle = (p1, p2) => Math.atan2(p2.y - p1.y, p2.x - p1.x);
+
+// In degrees
+const degreesAngle = (p1, p2) => Math.atan2(p2.y - p1.y, p2.x - p1.x) * 180 / Math.PI;</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">2</span></b> 
+                    <button class="accordion">Calculate the distance between two points</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const distance = (p1, p2) => Math.sqrt(Math.pow(p2.x - p1.x, 2) + Math.pow(p2.y - p1.y, 2));</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">3</span></b> 
+                    <button class="accordion">Calculate the linear interpolation between two numbers</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const lerp = (a, b, amount) => (1 - amount) * a + amount * b;</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">4</span></b> 
+                    <button class="accordion">Calculate the midpoint between two points</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const midpoint = (p1, p2) => [(p1.x + p2.x) / 2, (p1.y + p2.y) / 2];</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">5</span></b> 
+                    <button class="accordion">Check if a point is inside a rectangle</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isInside = (point, rect) => point.x > rect.left && point.x < rect.right && point.y > rect.top && point.y < rect.bottom;</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">6</span></b> 
+                    <button class="accordion">Check if a rectangle contains other one</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">// Returns true if `a` contains `b`
+// (x1, y1) and (x2, y2) are top-left and bottom-right corners
+const contains = (a, b) => (a.x1 <= b.x1 && a.y1 <= b.y1 && a.x2 >= b.x2 && a.y2 >= b.y2);</code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">7</span></b> 
+                    <button class="accordion">Check if a rectangle overlaps other one</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">// Returns true if `a` overlaps `b`
+// (x1, y1) and (x2, y2) are top-left and bottom-right corners
+const overlaps = (a, b) => (a.x1 < b.x2 && b.x1 < a.x2) || (a.y1 < b.y2 && b.y1 < a.y2);</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">8</span></b> 
+                    <button class="accordion">Convert degrees to radians</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const degsToRads = deg => deg * Math.PI / 180.0;</code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">9</span></b> 
+                    <button class="accordion">Convert radians to degrees</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const radsToDegs = rad => rad * 180 / Math.PI;</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">10</span></b> 
+                    <button class="accordion">Normalize the ratio of a number in a range</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const normalizeRatio = (value, min, max) => (value - min) / (max - min);</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">11</span></b> 
+                    <button class="accordion">Round a number to the nearest multiple of a given value</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const roundNearest = (value, nearest) => Math.round(value / nearest) * nearest;
+
+// Examples
+roundNearest(100, 30);      // 90
+roundNearest(200, 30);      // 210
+roundNearest(200, 40);      // 200</code></pre></div>
                     </div>
                 </li>
 
@@ -1780,243 +1793,378 @@ uncurry(sum, 3)(1, 2, 3);       // 6</code></pre></div>
 
                 <li>
                     <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Check if the code is running in NodeJS</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isNode = typeof process !== 'undefined' && process.versions != null && process.versions.node != null;</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">2</span></b> 
+                    <button class="accordion">Check if the code is running in the browser</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isBrowser = typeof window === 'object' && typeof document === 'object';</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">3</span></b> 
+                    <button class="accordion">Clear all cookies</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const clearCookies = document.cookie.split(';').forEach(c => document.cookie = c.replace(/^ +/, '').replace(/=.*/, `=;expires=${new Date().toUTCString()};path=/`));
+</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">4</span></b> 
+                    <button class="accordion">Convert 3 digits color to 6 digits color</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const toFullHexColor = color => `#${(color.startsWith('#') ? color.slice(1) : color).split('').map(c => `${c}${c}`).join('')}`;
+
+// Example
+toFullHexColor('123');      // '#112233'
+toFullHexColor('#123');     // '#112233'
+toFullHexColor('#abc');     // '#aabbcc'</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">5</span></b> 
+                    <button class="accordion">Convert Celsius to Fahrenheit</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const celsiusToFahrenheit = celsius => celsius * 9/5 + 32;
+
+// Examples
+celsiusToFahrenheit(15);    // 59
+celsiusToFahrenheit(0);     // 32
+celsiusToFahrenheit(-20);   // -4</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">6</span></b> 
+                    <button class="accordion">Convert cookie to object</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const cookies = document.cookie.split(';').map(item => item.split('=')).reduce((acc, [k, v]) => (acc[k.trim().replace('"', '')] = v) && acc, {});
+</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">7</span></b> 
+                    <button class="accordion">Convert Fahrenheit to Celsius</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const fahrenheitToCelsius = fahrenheit => (fahrenheit - 32) * 5/9;
+
+// Examples
+fahrenheitToCelsius(59);    // 15
+fahrenheitToCelsius(32);    // 0</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">8</span></b> 
+                    <button class="accordion">Convert hex to rgb</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const hexToRgb = hex => hex.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i, (_, r, g, b) => `#${r}${r}${g}${g}${b}${b}`).substring(1).match(/.{2}/g).map(x => parseInt(x, 16));
+
+// Examples
+hexToRgb('#00ffff');    // [0, 255, 255] 
+hexToRgb('#0ff');       // [0, 255, 255]</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">9</span></b> 
+                    <button class="accordion">Convert rgb color to hex</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const rgbToHex = (red, green, blue) => `#${((1 << 24) + (red << 16) + (green << 8) + blue).toString(16).slice(1)}`;
+
+// Or
+const rgbToHex = (red, green, blue) => `#${[red, green, blue].map(v => v.toString(16).padStart(2, '0')).join('')}`;
+
+// Example
+rgbToHex(0, 255, 255);      // '#00ffff' </code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">10</span></b> 
+                    <button class="accordion">Convert URL parameters to object</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const getUrlParams = query => Array.from(new URLSearchParams(query)).reduce((p, [k, v]) => Object.assign({}, p, { [k]: p[k] ? (Array.isArray(p[k]) ? p[k] : [p[k]]).concat(v) : v}), {});
+
+// Examples
+getUrlParams(location.search);              // Get the parameters of the current URL
+
+getUrlParams('foo=Foo&bar=Bar');            // { foo: "Foo", bar: "Bar" }
+
+// Duplicate key
+getUrlParams('foo=Foo&foo=Fuzz&bar=Bar');   // { foo: ["Foo", "Fuzz"], bar: "Bar" }</code></pre></div>
                     </div>
                 </li>
 
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">11</span></b> 
+                    <button class="accordion">Decode a JWT token</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const decode = token => decodeURIComponent(atob(token.split('.')[1].replace('-', '+').replace('_', '/')).split('').map(c => `%${('00' + c.charCodeAt(0).toString(16)).slice(-2)}`).join(''));
+
+// Example
+decode(`
+    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
+    eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0I
+    joxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+`);
+
+// { "sub": "1234567890", "name": "John Doe", "iat": 1516239022 }</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">12</span></b> 
+                    <button class="accordion">Detect dark mode</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">13</span></b> 
+                    <button class="accordion">Easing functions</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">// Some easing functions
+// See https://gist.github.com/gre/1650294 and https://easings.net
+
+const linear = t => t;
+
+const easeInQuad = t => t * t;
+const easeOutQuad = t => t * (2-t);
+const easeInOutQuad = t => t < .5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+
+const easeInCubic = t => t * t * t;
+const easeOutCubic = t => (--t) * t * t + 1;
+const easeInOutCubic = t => t < .5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+
+const easeInQuart = t => t * t * t * t;
+const easeOutQuart = t => 1 - (--t) * t * t * t;
+const easeInOutQuart = t => t < .5 ? 8 * t * t * t * t : 1 - 8 * (--t) * t * t * t;
+
+const easeInQuint = t => t * t * t * t * t;
+const easeOutQuint = t => 1 + (--t) * t * t * t * t;
+const easeInOutQuint = t => t < .5 ? 16 * t * t * t * t * t : 1 + 16 * (--t) * t * t * t * t;
+
+const easeInSine = t => 1 + Math.sin(Math.PI / 2 * t - Math.PI / 2);
+const easeOutSine = t => Math.sin(Math.PI / 2 * t);
+const easeInOutSine = t => (1 + Math.sin(Math.PI * t - Math.PI / 2)) / 2;
+
+const easeInElastic = t => (.04 - .04 / t) * Math.sin(25 * t) + 1;
+const easeOutElastic = t => .04 * t / (--t) * Math.sin(25 * t);
+const easeInOutElastic = t => (t -= .5) < 0 ? (.02 + .01 / t) * Math.sin(50 * t) : (.02 - .01 / t) * Math.sin(50 * t) + 1;</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">14</span></b> 
+                    <button class="accordion">Emulate a dice throw</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const throwdice = () => ~~(Math.random() * 6) + 1;
+
+// Examples
+throwdice();    // 4 
+throwdice();    // 1 
+throwdice();    // 6 </code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">15</span></b> 
+                    <button class="accordion">Encode a URL</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">// `encodeURIComponent` doesn't encode -_.!~*'()
+const encode = url => encodeURIComponent(url).replace(/!/g, '%21').replace(/~/g, '%7E').replace(/\*/g, '%2A').replace(/'/g, '%27').replace(/\(/g, '%28').replace(/\)/g, '%29').replace(/%20/g, '+');</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">16</span></b> 
+                    <button class="accordion">Generate an unique and increment id</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const uid = (() => (id = 0, () => id++))();
+
+// Examples
+uid();          // 0
+uid();          // 1
+uid();          // 2
+uid();          // 3</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">17</span></b> 
+                    <button class="accordion">Get the first defined and non null argument</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const coalesce = (...args) => args.find(item => item !== undefined && item !== null);
+
+// Or
+const coalesce = (...args) => args.find(item => ![undefined, null].includes(item));
+
+// Examples
+coalesce(undefined, null, 'helloworld', NaN);     // 'helloworld'</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">18</span></b> 
+                    <button class="accordion">Get the value of a cookie</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const cookie = name => `; ${document.cookie}`.split(`; ${name}=`).pop().split(';').shift();
+
+// Example
+cookie('_ga');      // GA1.2.825309271.1581874719</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">19</span></b> 
+                    <button class="accordion">Get the value of a param from a URL</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const getParam = (url, param) => new URLSearchParams(new URL(url).search).get(param);
+
+// Example
+getParam('http://domain.com?message=hello', 'message');     // 'hello'</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
+                    <b><span class="number__item">20</span></b> 
                     <button class="accordion">title</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const getTypeOf = obj => Object.prototype.toString.call(obj).match(/\[object (.*)\]/)[1];
+
+// Examples
+getTypeOf('hello world');           // String
+getTypeOf(1000);                    // Number
+getTypeOf(Infinity);                // Number
+getTypeOf(true);                    // Boolean
+getTypeOf(Symbol());                // Symbol
+getTypeOf(null);                    // Null
+getTypeOf(undefined);               // Undefined
+getTypeOf({});                      // Object
+getTypeOf([]);                      // Array
+getTypeOf(/[a-z]/g);                // RegExp
+getTypeOf(new Date(2021));          // Date
+getTypeOf(new Error());             // Error
+getTypeOf(function() {});           // Function
+getTypeOf((a, b) => a + b);         // Function
+getTypeOf(async () => {});          // AsyncFunction
+getTypeOf(document);                // HTMLDocument</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">21</span></b> 
+                    <button class="accordion">Redirect the page to HTTPS if it is in HTTP</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const redirectHttps = () => (location.protocol === 'https:') ? {} : location.replace(`https://${location.href.split('//')[1]}`);
+
+// Or
+const redirectHttps = () => (location.protocol === 'https:') ? {} : (location.protocol = 'https:');</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">22</span></b> 
+                    <button class="accordion">Run Promises in sequence</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">// `promises` is an array of `Promise`
+const run = promises => promises.reduce((p, c) => p.then(rp => c.then(rc => [...rp, rc])), Promise.resolve([]));
+
+// Example
+run(promises).then((results) => {
+    // `results` is an array of promise results in the same order
+});</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">23</span></b> 
+                    <button class="accordion">Swap two variables</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">[a, b] = [b, a];
+
+// Or
+a = [b, b = a][0];
+
+// Or
+a = (x => x)(b, b = a);
+
+// Or
+// (only works with numbers)
+a = b + (b = a, 0);
+
+a = b * (b = a, 1);</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">24</span></b> 
+                    <button class="accordion">Wait for an amount of time</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const wait = async (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));</code></pre></div>
                     </div>
                 </li>
+
 
                 <div class="ribbon__shet">
                     <b>Números</b>
@@ -2024,199 +2172,316 @@ uncurry(sum, 3)(1, 2, 3);       // 6</code></pre></div>
 
                 <li>
                     <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Add an ordinal suffix to a number</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">// `n` is a position number
+const addOrdinal = n => `${n}${['st', 'nd', 'rd'][((n + 90) % 100 - 10) % 10 - 1] || 'th'}`;
+
+// Or
+const addOrdinal = n => `${n}${[, 'st', 'nd', 'rd'][/1?.$/.exec(n)] || 'th'}`;
+
+// Or
+const addOrdinal = n => `${n}${[, 'st', 'nd', 'rd'][n % 100 >> 3^1 && n % 10] || 'th'}`;
+
+// Or
+const addOrdinal = n => `${n}${{one: 'st', two: 'nd', few: 'rd', other: 'th'}[new Intl.PluralRules('en', { type: 'ordinal' }).select(n)]}`;
+
+// Examples
+addOrdinal(1);      // '1st'
+addOrdinal(2);      // '2nd'
+addOrdinal(3);      // '3rd'
+addOrdinal(11);     // '11th'
+addOrdinal(12);     // '13th'
+addOrdinal(13);     // '13th'</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">2</span></b> 
+                    <button class="accordion">Calculate Fibonacci numbers
+                    </button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const fibo = (n, memo = {}) => memo[n] || (n <= 2 ? 1 : (memo[n] = fibo(n - 1, memo) + fibo(n - 2, memo)));
+
+// Examples
+fibo(1);    // 1
+fibo(2);    // 1
+fibo(3);    // 2
+fibo(4);    // 3
+fibo(5);    // 5
+fibo(6);    // 8</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">3</span></b> 
+                    <button class="accordion">Calculate the average of arguments</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const average = (...args) => args.reduce((a, b) => a + b) / args.length;
+
+// Example
+average(1, 2, 3, 4);    // 2.5</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">4</span></b> 
+                    <button class="accordion">Calculate the division of arguments</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const division = (...args) => args.reduce((a, b) => a / b);
+
+// Example
+division(1, 2, 3, 4);   // 0.04166666666666666</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">5</span></b> 
+                    <button class="accordion">Calculate the factorial of a number</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const factorial = n => n <= 1 ? 1 : n * factorial(n - 1);
+
+// Examples
+factorial(2);   // 2
+factorial(3);   // 6
+factorial(4);   // 24
+factorial(5);   // 120
+factorial(6);   // 720</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">6</span></b> 
+                    <button class="accordion">Calculate the mod of collection index</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const mod = (a, b) => ((a % b) + b) % b;
+
+// Examples
+mod(-1, 5);     // 4
+mod(3, 5);      // 3
+mod(6, 5);      // 1</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">7</span></b> 
+                    <button class="accordion">Calculate the remainder of division of arguments</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const remainder = (...args) => args.reduce((a, b) => a % b);
+
+// Example
+remainder(1, 2, 3, 4);      // 1</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">8</span></b> 
+                    <button class="accordion">Calculate the sum of arguments</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const sum = (...args) => args.reduce((a, b) => a + b);
+
+// Example
+sum(1, 2, 3, 4);    // 10</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">9</span></b> 
+                    <button class="accordion">Clamp a number between two values</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const clamp = (val, min = 0, max = 1) => Math.max(min, Math.min(max, val));
+
+// Example
+clamp(199, 10, 25);     // 25</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">10</span></b> 
+                    <button class="accordion">Compute the greatest common divisor between two numbers</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const gcd = (a, b) => b === 0 ? a : gcd(b, a % b);
+
+// Example
+gcd(10, 15);    // 5</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">11</span></b> 
+                    <button class="accordion">Convert a number to equivalent characters</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const toChars = n => `${n >= 26 ? toChars(Math.floor(n / 26) - 1) : ''}${'ABCDEFGHIJKLMNOPQRSTUVWXYZ'[n % 26]}`;
+
+// Examples
+toChars(0);     // A
+toChars(1);     // B
+toChars(25);    // Z
+
+toChars(26);     // AA
+toChars(27);     // AB
+toChars(51);     // AZ
+
+toChars(701);   // ZZ
+toChars(702);   // AAA
+toChars(703);   // AAB</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">12</span></b> 
+                    <button class="accordion">Convert a string to number</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const toNumber = str => +str;
+
+// Example
+toNumber('42');     // 42</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">13</span></b> 
+                    <button class="accordion">Convert decimal to binary recursively</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const decToBi = num => num === 0 ? 0 : num % 2 + 10 * decToBi(~~(num / 2));
+
+
+// Example
+decToBi(10);      //1010</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">14</span></b> 
+                    <button class="accordion">Get the arrays of digits from a number</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const digitize = n => `${n}`.split('').map(v => parseInt(v, 10));
+
+// Or
+const digitize = n => [...`${n}`].map(v => parseInt(v, 10));
+
+// Example
+digitize(123);    // [1, 2, 3]</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">15</span></b> 
+                    <button class="accordion">Multiply arguments</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const mul = (...args) => args.reduce((a, b) => a * b);
+
+// Example
+mul(1, 2, 3, 4);    // 24</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">16</span></b> 
+                    <button class="accordion">Prefix an integer with zeros</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const prefixWithZeros = (number, length) => (number / Math.pow(10, length)).toFixed(length).substr(2);
+
+// Or
+const prefixWithZeros = (number, length) => `${Array(length).join('0')}${number}`.slice(-length);
+
+// Or
+const prefixWithZeros = (number, length) => String(number).padStart(length, '0');
+
+// Example
+prefixWithZeros(42, 5);     // '00042'</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">17</span></b> 
+                    <button class="accordion">Round a number to a given number of digits</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const round = (n, decimals = 0) => Number(`${Math.round(`${n}e${decimals}`)}e-${decimals}`);
+
+// Examples
+round(1.234567, 3);     // 1.235
+round(1.234567, 4);     // 1.2346</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">18</span></b> 
+                    <button class="accordion">Subtract arguments</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const subtract = (...args) => args.reduce((a, b) => a - b);
+
+// Example
+subtract(1, 2, 3, 4);       // -8</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">19</span></b> 
+                    <button class="accordion">Truncate a number at decimal</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const truncate = n => ~~n;
+
+// Examples
+truncate(25.198726354);         // 25
+truncate(-25.198726354);        // -25</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">20</span></b> 
+                    <button class="accordion">Truncate a number to a given number of decimal places without rounding</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const toFixed = (n, fixed) => `${n}`.match(new RegExp(`^-?\\d+(?:\.\\d{0,${fixed}})?`))[0];
+
+// Or
+const toFixed = (n, fixed) => ~~(Math.pow(10, fixed) * n) / Math.pow(10, fixed);
+
+// Examples
+toFixed(25.198726354, 1);       // 25.1
+toFixed(25.198726354, 2);       // 25.19
+toFixed(25.198726354, 3);       // 25.198
+toFixed(25.198726354, 4);       // 25.1987
+toFixed(25.198726354, 5);       // 25.19872
+toFixed(25.198726354, 6);       // 25.198726</code></pre></div>
                     </div>
                 </li>
 
@@ -2227,121 +2492,197 @@ uncurry(sum, 3)(1, 2, 3);       // 6</code></pre></div>
 
                 <li>
                     <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Check if multiple objects are equal</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isEqual = (...objects) => objects.every(obj => JSON.stringify(obj) === JSON.stringify(objects[0]));
+
+// Examples
+isEqual({ foo: 'bar' }, { foo: 'bar' });    // true
+isEqual({ foo: 'bar' }, { bar: 'foo' });    // false</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">2</span></b> 
+                    <button class="accordion">Create an empty map that does not have properties</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">// `map` doesn't have any properties
+const map = Object.create(null);
+
+// The following `map` has `__proto__` property
+// const map = {};</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">3</span></b> 
+                    <button class="accordion">Create an object from the pairs of key and value</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const toObj = arr => Object.fromEntries(arr)
+
+// Or
+const toObj = arr => arr.reduce((a, c) => ((a[c[0]] = c[1]), a), {});
+
+// Example
+toObj([['a', 1], ['b', 2], ['c', 3]]);      // { a: 1, b: 2, c: 3 }</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">4</span></b> 
+                    <button class="accordion">Extract values of a property from an array of objects</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const pluck = (objs, property) => objs.map(obj => obj[property]);
+
+// Example
+pluck([
+    { name: 'John', age: 20 },
+    { name: 'Smith', age: 25 },
+    { name: 'Peter', age: 30 },
+], 'name');         // ['John', 'Smith', 'Peter']</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">5</span></b> 
+                    <button class="accordion">Get the value at given path of an object</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const getValue = (path, obj) => path.split('.').reduce((acc, c) => acc && acc[c], obj);
+
+// Example
+getValue('a.b', { a: { b: 'Hello World' } });   // 'Hello World';</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">6</span></b> 
+                    <button class="accordion">Immutably rename object keys</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const renameKeys = (keysMap, obj) => Object.keys(obj).reduce((acc, key) => ({ ...acc, ...{ [keysMap[key] || key]: obj[key] }}), {});
+
+// Examples
+const obj = { a: 1, b: 2, c: 3 };
+const keysMap = { a: 'd', b: 'e', c: 'f' };
+renameKeys(keysMap, obj);       // { d: 1, e: 2, f: 3 }</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">7</span></b> 
+                    <button class="accordion">Invert keys and values of an object</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const invert = obj => Object.keys(obj).reduce((res, k) => Object.assign(res, {[obj[k]]: k}), {});
+
+// Or
+const invert = obj => Object.fromEntries(Object.entries(obj).map(([k, v]) => [v, k]));
+
+// Example
+invert({ a: '1', b: '2', c: '3' });     // { 1: 'a', 2: 'b', 3: 'c' }</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">8</span></b> 
+                    <button class="accordion">Omit a subset of properties from an object</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const omit = (obj, keys) => Object.keys(obj).filter(k => !keys.includes(k)).reduce((res, k) => Object.assign(res, {[k]: obj[k]}), {});
+
+// Example
+omit({a: '1', b: '2', c: '3'}, ['a', 'b']);     // { c: '3' }</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">9</span></b> 
+                    <button class="accordion">Pick a subset of properties of an object</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const pick = (obj, keys) => Object.keys(obj).filter(k => keys.includes(k)).reduce((res, k) => Object.assign(res, {[k]: obj[k]}), {});
+
+// Example
+pick({ a: '1', b: '2', c: '3' }, ['a', 'b']);   // { a: '1', b: '2' }</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">10</span></b> 
+                    <button class="accordion">Remove all null and undefined properties from an object</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const removeNullUndefined = obj => Object.entries(obj).reduce((a, [k, v]) => (v == null ? a : (a[k] = v, a)), {});
+
+// Or
+const removeNullUndefined = obj => Object.entries(obj).filter(([_, v]) => v != null).reduce((acc, [k, v]) => ({ ...acc, [k]: v }), {});
+
+// Or
+const removeNullUndefined = obj => Object.fromEntries(Object.entries(obj).filter(([_, v]) => v != null));
+
+// Example
+removeNullUndefined({
+    foo: null,
+    bar: undefined,
+    fuzz: 42,
+});                         // { fuzz: 42 }</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">11</span></b> 
+                    <button class="accordion">Shallow copy an object</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const shallowCopy = obj => Object.assign({}, obj);
+
+// or
+const shallowCopy = obj => {...obj};</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">12</span></b> 
+                    <button class="accordion">Sort an object by its properties</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const sort = obj => Object.keys(obj).sort().reduce((p, c) => (p[c] = obj[c], p), {});
+
+// Example
+const colors = {
+    white: '#ffffff',
+    black: '#000000',
+    red: '#ff0000',
+    green: '#008000',
+    blue: '#0000ff',
+};
+sort(colors);
+/*
+{
+    black: '#000000',
+    blue: '#0000ff',
+    green: '#008000',
+    red: '#ff0000',
+    white: '#ffffff',
+}
+*/</code></pre></div>
                     </div>
                 </li>
 
@@ -2352,161 +2693,240 @@ uncurry(sum, 3)(1, 2, 3);       // 6</code></pre></div>
 
                 <li>
                     <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <button class="accordion">Generate a random boolean</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const randomBoolean = () => Math.random() >= 0.5;
+</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">2</span></b> 
+                    <button class="accordion">Generate a random floating point number in given range</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const randomFloat = (min, max) => Math.random() * (max - min) + min;</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">3</span></b> 
+                    <button class="accordion">Generate a random hex color</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const randomColor = () => `#${Math.random().toString(16).slice(2, 8).padEnd(6, '0')}`;
+
+// Or
+const randomColor = () => `#${(~~(Math.random()*(1<<24))).toString(16)}`;</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">4</span></b> 
+                    <button class="accordion">Generate a random integer in given range</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const randomInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">5</span></b> 
+                    <button class="accordion">Generate a random IP address</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const randomIp = () => Array(4).fill(0).map((_, i) => Math.floor(Math.random() * 255) + (i === 0 ? 1 : 0)).join('.');
+
+// Example
+randomIp();     // 175.89.174.131</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">6</span></b> 
+                    <button class="accordion">Generate a random sign</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const randomSign = () => Math.random() >= 0.5 ? 1 : -1;</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">7</span></b> 
+                    <button class="accordion">Generate a random string from given characters</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const generateString = (length, chars) => Array(length).fill('').map((v) => chars[Math.floor(Math.random() * chars.length)]).join('');
+
+// Example
+generateString(10, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">8</span></b> 
+                    <button class="accordion">Generate a random string using Node crypto module</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const randomStr = () => require('crypto').randomBytes(32).toString('hex');</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">9</span></b> 
+                    <button class="accordion">Generate a random string with given length</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const generateString = length => Array(length).fill('').map((v) => Math.random().toString(36).charAt(2)).join('');</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">10</span></b> 
+                    <button class="accordion">Generate a random UUID</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const uuid = (a) => a ? (a ^ Math.random() * 16 >> a / 4).toString(16) : ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, uuid);</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">11</span></b> 
+                    <button class="accordion">Generate an array of random integers in a given range</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const randomArrayInRange = (min, max, n) => Array.from({ length: n }, () => Math.floor(Math.random() * (max - min + 1)) + min);
+
+// Example
+randomArrayInRange(1, 100, 10);     // [11, 82, 41, 35, 76, 83, 43, 15, 60, 54]</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">12</span></b> 
+                    <button class="accordion">Get a random item and remove it from an array</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const randomItem = arr => arr.splice((Math.random() * arr.length) | 0, 1);
+
+// Example
+const arr = [1, 3, 5, 7, 9];
+randomItem(arr);    // 7
+                    // arr = [1, 3, 5, 9]</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">13</span></b> 
+                    <button class="accordion">Get a random item from an array</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const randomItem = arr => arr[(Math.random() * arr.length) | 0];</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">14</span></b> 
+                    <button class="accordion">Get random items of an array</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const randomItems = (arr, count) => arr.concat().reduce((p, _, __, arr) => (p[0] < count) ? [p[0] + 1, p[1].concat(arr.splice(Math.random() * arr.length | 0, 1))] : p, [0, []])[1];
+
+// Examples
+randomItems([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3);                        // [4, 8, 5]
+randomItems(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'], 4);     // ['e', 'c', 'h', 'j']</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">15</span></b> 
+                    <button class="accordion">Pick a random property of an object</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const randomProp = obj => Object.keys(obj)[(Math.random() * Object.keys(obj).length) | 0];
+
+// Example
+const colors = {
+    aqua: '#00ffff',
+    azure: '#f0ffff',
+    beige: '#f5f5dc',
+    black: '#000000',
+    blue: '#0000ff',
+    brown: '#a52a2a',
+    cyan: '#00ffff',
+    darkblue: '#00008b',
+    darkcyan: '#008b8b',
+    darkgrey: '#a9a9a9',
+    darkgreen: '#006400',
+    darkkhaki: '#bdb76b',
+    darkmagenta: '#8b008b',
+    darkolivegreen: '#556b2f',
+    darkorange: '#ff8c00',
+    darkorchid: '#9932cc',
+    darkred: '#8b0000',
+    darksalmon: '#e9967a',
+    darkviolet: '#9400d3',
+    fuchsia: '#ff00ff',
+    gold: '#ffd700',
+    green: '#008000',
+    indigo: '#4b0082',
+    khaki: '#f0e68c',
+    lightblue: '#add8e6',
+    lightcyan: '#e0ffff',
+    lightgreen: '#90ee90',
+    lightgrey: '#d3d3d3',
+    lightpink: '#ffb6c1',
+    lightyellow: '#ffffe0',
+    lime: '#00ff00',
+    magenta: '#ff00ff',
+    maroon: '#800000',
+    navy: '#000080',
+    olive: '#808000',
+    orange: '#ffa500',
+    pink: '#ffc0cb',
+    purple: '#800080',
+    violet: '#800080',
+    red: '#ff0000',
+    silver: '#c0c0c0',
+    white: '#ffffff',
+    yellow: '#ffff00',
+};
+randomProp(colors);     // 'red'</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">16</span></b> 
+                    <button class="accordion">Pick random lines from a text document</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const randomLines = (str, count) => str.split(/\r?\n/).reduce((p, _, __, arr) => (p[0] < count) ? [p[0] + 1, p[1].concat(arr.splice(Math.random() * arr.length | 0, 1))] : p, [0, []])[1];
+
+// Example
+randomLines(`one
+two
+three
+four
+five`, 2);
+
+// ['one', 'four']</code></pre></div>
                     </div>
                 </li>
 
@@ -2516,6 +2936,98 @@ uncurry(sum, 3)(1, 2, 3);       // 6</code></pre></div>
 
                 <li>
                     <b><span class="number__item">1</span></b> 
+                    <button class="accordion">Capitalize a string</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const capitalize = str => `${str.charAt(0).toUpperCase()}${str.slice(1)}`;
+
+// Or
+const capitalize = ([first, ...rest]) => `${first.toUpperCase()}${rest.join('')}`;
+
+// Example
+capitalize('hello world');      // 'Hello world'</code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">2</span></b> 
+                    <button class="accordion">Check if a path is relative</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isRelative = path => !/^([a-z]+:)?[\\/]/i.test(path);
+
+// Examples
+isRelative('/foo/bar/baz');         // false
+isRelative('C:\\foo\\bar\\baz');    // false
+isRelative('foo/bar/baz.txt');      // true
+isRelative('foo.md');               // true</code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">3</span></b> 
+                    <button class="accordion">Check if a string consists of a repeated character sequence</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const consistsRepeatedSubstring = str => `${str}${str}`.indexOf(str, 1) !== str.length;
+
+// Example
+consistsRepeatedSubstring('aa');            // true
+consistsRepeatedSubstring('aaa');           // true
+consistsRepeatedSubstring('ababab');        // true
+consistsRepeatedSubstring('abc');           // false</code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">4</span></b> 
+                    <button class="accordion">Check if a string is a palindrome</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isPalindrome = str => str === str.split('').reverse().join('');
+
+// Examples
+isPalindrome('abc');        // false
+isPalindrom('abcba');       // true</code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">5</span></b> 
+                    <button class="accordion">Check if a URL is absolute</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isAbsoluteUrl = url => /^[a-z][a-z0-9+.-]*:/.test(url);
+
+// Example
+isAbsoluteUrl('https://1loc.dev');          // true
+isAbsoluteUrl('https://1loc.dev/foo/bar');  // true
+isAbsoluteUrl('1loc.dev');                  // false
+isAbsoluteUrl('//1loc.dev');                // false</code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">6</span></b> 
+                    <button class="accordion">Check if two strings are anagram</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const areAnagram = (str1, str2) => str1.toLowerCase().split('').sort().join('') === str2.toLowerCase().split('').sort().join('');
+
+// Examples
+areAnagram('listen', 'silent');         // true
+areAnagram('they see', 'the eyes');     // true
+areAnagram('node', 'deno');             // true</code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">7</span></b> 
                     <button class="accordion">title</button>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -2525,327 +3037,435 @@ uncurry(sum, 3)(1, 2, 3);       // 6</code></pre></div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">8</span></b> 
+                    <button class="accordion">Convert a letter to associate emoji</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const letterToEmoji = c => String.fromCodePoint(c.toLowerCase().charCodeAt() + 127365);
+
+// Examples
+letterToEmoji('a');     // 🇦
+letterToEmoji('b');     // 🇧</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">9</span></b> 
+                    <button class="accordion">Convert a string to camelCase</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const toCamelCase = str => str.trim().replace(/[-_\s]+(.)?/g, (_, c) => c ? c.toUpperCase() : '');
+
+// Examples
+toCamelCase('background-color');            // backgroundColor
+toCamelCase('-webkit-scrollbar-thumb');     // WebkitScrollbarThumb
+toCamelCase('_hello_world');                // HelloWorld
+toCamelCase('hello_world');                 // helloWorld</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">10</span></b> 
+                    <button class="accordion">Convert a string to PascalCase</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const toPascalCase = str => (str.match(/[a-zA-Z0-9]+/g) || []).map(w => `${w.charAt(0).toUpperCase()}${w.slice(1)}`).join('');
+
+// Examples
+toPascalCase('hello world');    // 'HelloWorld'
+toPascalCase('hello.world');    // 'HelloWorld'
+toPascalCase('foo_bar-baz');    // FooBarBaz</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">11</span></b> 
+                    <button class="accordion">Convert a string to URL slug</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const slugify = string => string.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
+
+// Example
+slugify('Chapter One: Once upon a time...');    // 'chapter-one-once-upon-a-time'</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">12</span></b> 
+                    <button class="accordion">Convert a Windows file path to Unix path</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const toUnixPath = path => path.replace(/[\\/]+/g, '/').replace(/^([a-zA-Z]+:|\.\/)/, '');
+
+// Examples
+toUnixPath('./foo/bar/baz');        // foo/bar/baz
+toUnixPath('C:\\foo\\bar\\baz');    // /foo/bar/baz</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">13</span></b> 
+                    <button class="accordion">Convert camelCase to kebab-case and vice versa</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const kebabToCamel = str => str.replace(/-./g, m => m.toUpperCase()[1]);
+
+const camelToKebab = str => str.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
+
+// Examples
+kebabToCamel('background-color');   // 'backgroundColor'
+camelToKebab('backgroundColor');    // 'background-color'</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">14</span></b> 
+                    <button class="accordion">Convert snake_case to camelCase</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const snakeToCamel = str => str.toLowerCase().replace(/(_\w)/g, m => m.toUpperCase().substr(1));
+
+// Example
+snakeToCamel('HELLO_world');    // 'helloWorld'</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">15</span></b> 
+                    <button class="accordion">Convert the name of an Excel column to number</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const getIndex = col => col.split('').reduce((prev, next) => prev * 26 + parseInt(next, 36) - 9, 0);
+
+// Examples
+getIndex('A');      // 1
+getIndex('B');      // 2
+getIndex('C');      // 3
+getIndex('Z');      // 26
+
+getIndex('AA');     // 27
+getIndex('AB');     // 28
+getIndex('AC');     // 29
+getIndex('AZ');     // 52
+
+getIndex('AAA');    // 703
+getIndex('AAB');    // 704</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">16</span></b> 
+                    <button class="accordion">Count the number of words in a string</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const countWords = str => str.trim().split(/\s+/).length;
+
+// Example
+countWords('Hello World');        // 2
+countWords('Hello    World');     // 2
+countWords('  Hello  World  ');   // 2</code></pre></div>
                     </div>
                 </li>
 
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">17</span></b> 
+                    <button class="accordion">Count the occurrences of a character in a string</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
+                            <pre class="line-numbers"><code class="language-javascript">const countOccurrences = (str, char) => [...str].reduce((a, v) => (v === char ? a + 1 : a), 0);
 
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
+// Or
+const countOccurrences = (str, char) => str.split('').reduce((a, v) => (v === char ? a + 1 : a), 0);
 
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
+// Or
+const countOccurrences = (str, char) => [...str].filter(item => item === char).length;
 
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
+// Or
+const countOccurrences = (str, char) => str.split('').filter(item => item === char).length;
 
+// Examples
+countOccurrences('a.b.c.d.e', '.');     // 4</code></pre></div>
+                    </div>
+                </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">18</span></b> 
+                    <button class="accordion">Decapitalize a string</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
+                            <pre class="line-numbers"><code class="language-javascript">const decapitalize = str => `${str.charAt(0).toLowerCase()}${str.slice(1)}`;
 
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+// Or
+const decapitalize = ([first, ...rest]) => `${first.toLowerCase()}${rest.join('')}`;
+
+// Example
+decapitalize('Hello world');    // 'hello world'</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">19</span></b> 
+                    <button class="accordion">Escape HTML special characters</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const escape = str => str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/'/g, '&#39;').replace(/"/g, '&quot;');
+
+// Or
+const escape = str => str.replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[m]);</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">20</span></b> 
+                    <button class="accordion">Generate a hash of a string</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const hash = str => str.split('').reduce((prev, curr) => Math.imul(31, prev) + curr.charCodeAt(0) | 0, 0);
+
+// Or
+const hash = str => str.split('').reduce((prev, curr) => (((prev << 5) - prev) + curr.charCodeAt(0)) | 0, 0);
+
+// Example
+hash('hello');      // 99162322</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">21</span></b> 
+                    <button class="accordion">Get the base URL without any parameters</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const baseUrl = url => url.indexOf('?') === -1 ? url : url.slice(0, url.indexOf('?'));
+
+// Or
+// Note that `includes` isn't supported in IE 11
+const baseUrl = url => url.includes('?') ? url.slice(0, url.indexOf('?')) : url;
+
+// Example
+baseUrl('https://domain.com/path/sub/path?foo=bar&hello=world');    // 'https://domain.com/path/sub/path'</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">23</span></b> 
+                    <button class="accordion">Get the file extension from a file name</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const ext = fileName => fileName.split('.').pop();</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">24</span></b> 
+                    <button class="accordion">Get the file name from a URL</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const fileName = url => url.substring(url.lastIndexOf('/') + 1);
+
+// Example
+fileName('http://domain.com/path/to/document.pdf');     // 'document.pdf'</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">25</span></b> 
+                    <button class="accordion">Get the length of a string in bytes</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const bytes = str => new Blob([str]).size;
+
+// Examples
+bytes('hello world');       // 11
+bytes('🎉');                // 4</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">26</span></b> 
+                    <button class="accordion">Get the number of a character in a string</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const characterCount = (str, char) => str.split(char).length - 1;
+
+// Or
+const characterCount = (str, char) => str.replace((new RegExp(String.raw`[^${char}]`, 'g')), '').length;
+
+// Examples
+characterCount('192.168.1.1', '.');     // 3
+characterCount('star wars', 's');       // 2</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">27</span></b> 
+                    <button class="accordion">Make the first character of a string lowercase</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const lowercaseFirst = str => `${str.charAt(0).toLowerCase()}${str.slice(1)}`;
+
+// Example
+lowercaseFirst('Hello World');      // 'hello World'</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">28</span></b> 
+                    <button class="accordion">Normalize file path slashes</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const normalizePath = path => path.replace(/[\\/]+/g, '/');
+
+// Example
+normalizePath('\\foo\\bar\\baz\\');         // /foo/bar/baz/
+normalizePath('.//foo//bar///////baz/');    // ./foo/bar/baz/</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">29</span></b> 
+                    <button class="accordion">Prepend a line number to each line of a text document</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const prependNumbers = str => str.split(/\r?\n/).map((line, i) => `${(i + 1).toString().padStart(2, ' ')} ${line}`).join('\n');
+
+// Example
+prependNumbers(`one
+two
+three
+four`);
+
+/* Output */
+/*
+1 one
+2 two
+3 three
+4 four
+*/</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">30</span></b> 
+                    <button class="accordion">Remove duplicate lines of a text document</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const removeDuplicateLines = str => Array.from(new Set(str.split(/\r?\n/))).join('\n');
+
+// Example
+removeDuplicateLines(`one
+three
+two
+three
+one
+four`);
+
+/* Output */
+/*
+one
+three
+two
+four
+*/</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">31</span></b> 
+                    <button class="accordion">Remove empty lines of a text document</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const removeEmptyLines = str => str.split(/\r?\n/).filter(line => line.trim() !== '').join('\n');
+
+// Example
+removeEmptyLines(`red
+
+green
+blue
+
+yellow`);
+
+/* Output */
+/*
+red
+green
+blue
+yellow
+*/</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">32</span></b> 
+                    <button class="accordion">Remove spaces from a string</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const removeSpaces = str => str.replace(/\s/g, '');
+
+// Example
+removeSpaces('hel lo wor ld');      // 'helloworld'</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">33</span></b> 
+                    <button class="accordion">Repeat a string</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const repeat = (str, numberOfTimes) => str.repeat(numberOfTimes);
+
+// Or
+const repeat = (str, numberOfTimes) => Array(numberOfTimes + 1).join(str);</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">34</span></b> 
+                    <button class="accordion">Replace all line breaks with br elements</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const nl2br = str => str.replace(new RegExp('\r?\n', 'g'), '<br>');
+
+// In React
+str.split('\n').map((item, index) => <React.Fragment key={index}>{item}<br /></React.Fragment>)</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">35</span></b> 
+                    <button class="accordion">Replace all tab characters with spaces</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const replace = (str, numSpaces = 4) => str.replaceAll('\t', ' '.repeat(numSpaces));</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
+                    <b><span class="number__item">36</span></b> 
+                    <button class="accordion">Replace multiple spaces with a single space</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">// Replace spaces, tabs and new line characters
+const replaceSpaces = str => str.replace(/\s\s+/g, ' ');
+
+// Only replace spaces
+const replaceOnlySpaces = str => str.replace(/  +/g, ' ');
+
+// Example
+replaceSpaces('this\n   is     \ta    \rmessage');  // 'this is a message'</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
+                    <b><span class="number__item">37</span></b> 
                     <button class="accordion">title</button>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -2853,7 +3473,7 @@ uncurry(sum, 3)(1, 2, 3);       // 6</code></pre></div>
                             <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
                     </div>
                 </li><li>
-                    <b><span class="number__item">1</span></b> 
+                    <b><span class="number__item">38</span></b> 
                     <button class="accordion">title</button>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -2862,7 +3482,7 @@ uncurry(sum, 3)(1, 2, 3);       // 6</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
+                    <b><span class="number__item">39</span></b> 
                     <button class="accordion">title</button>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -2871,7 +3491,7 @@ uncurry(sum, 3)(1, 2, 3);       // 6</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
+                    <b><span class="number__item">40</span></b> 
                     <button class="accordion">title</button>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -2880,7 +3500,7 @@ uncurry(sum, 3)(1, 2, 3);       // 6</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
+                    <b><span class="number__item">41</span></b> 
                     <button class="accordion">title</button>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -2889,7 +3509,7 @@ uncurry(sum, 3)(1, 2, 3);       // 6</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
+                    <b><span class="number__item">42</span></b> 
                     <button class="accordion">title</button>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -2898,7 +3518,7 @@ uncurry(sum, 3)(1, 2, 3);       // 6</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
+                    <b><span class="number__item">43</span></b> 
                     <button class="accordion">title</button>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -2907,7 +3527,7 @@ uncurry(sum, 3)(1, 2, 3);       // 6</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
+                    <b><span class="number__item">44</span></b> 
                     <button class="accordion">title</button>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -2916,7 +3536,7 @@ uncurry(sum, 3)(1, 2, 3);       // 6</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
+                    <b><span class="number__item">45</span></b> 
                     <button class="accordion">title</button>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -2925,7 +3545,7 @@ uncurry(sum, 3)(1, 2, 3);       // 6</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
+                    <b><span class="number__item">46</span></b> 
                     <button class="accordion">title</button>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -2934,7 +3554,7 @@ uncurry(sum, 3)(1, 2, 3);       // 6</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
+                    <b><span class="number__item">47</span></b> 
                     <button class="accordion">title</button>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -2943,7 +3563,7 @@ uncurry(sum, 3)(1, 2, 3);       // 6</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
+                    <b><span class="number__item">48</span></b> 
                     <button class="accordion">title</button>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -2952,7 +3572,7 @@ uncurry(sum, 3)(1, 2, 3);       // 6</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
+                    <b><span class="number__item">49</span></b> 
                     <button class="accordion">title</button>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -2961,7 +3581,7 @@ uncurry(sum, 3)(1, 2, 3);       // 6</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
+                    <b><span class="number__item">50</span></b> 
                     <button class="accordion">title</button>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -2970,7 +3590,7 @@ uncurry(sum, 3)(1, 2, 3);       // 6</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
+                    <b><span class="number__item">51</span></b> 
                     <button class="accordion">title</button>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -2979,7 +3599,7 @@ uncurry(sum, 3)(1, 2, 3);       // 6</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
+                    <b><span class="number__item">52</span></b> 
                     <button class="accordion">title</button>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -2988,7 +3608,7 @@ uncurry(sum, 3)(1, 2, 3);       // 6</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
+                    <b><span class="number__item">53</span></b> 
                     <button class="accordion">title</button>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -2997,7 +3617,7 @@ uncurry(sum, 3)(1, 2, 3);       // 6</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
+                    <b><span class="number__item">54</span></b> 
                     <button class="accordion">title</button>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -3006,7 +3626,7 @@ uncurry(sum, 3)(1, 2, 3);       // 6</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
+                    <b><span class="number__item">55</span></b> 
                     <button class="accordion">title</button>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -3015,7 +3635,7 @@ uncurry(sum, 3)(1, 2, 3);       // 6</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
+                    <b><span class="number__item">56</span></b> 
                     <button class="accordion">title</button>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -3024,7 +3644,7 @@ uncurry(sum, 3)(1, 2, 3);       // 6</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
+                    <b><span class="number__item">57</span></b> 
                     <button class="accordion">title</button>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -3033,7 +3653,7 @@ uncurry(sum, 3)(1, 2, 3);       // 6</code></pre></div>
                     </div>
                 </li>
                 <li>
-                    <b><span class="number__item">1</span></b> 
+                    <b><span class="number__item">58</span></b> 
                     <button class="accordion">title</button>
                     <div class="panel">
                         <div class="codigo__javascript">
