@@ -3466,6 +3466,654 @@ replaceSpaces('this\n   is     \ta    \rmessage');  // 'this is a message'</code
                 </li>
                 <li>
                     <b><span class="number__item">37</span></b> 
+                    <button class="accordion">Replace the first given number of characters of a string with another character</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const mask = (str, num, mask) => `${str}`.slice(num).padStart(`${str}`.length, mask);
+
+// Example
+mask(1234567890, 3, '*');       // ***4567890</code></pre></div>
+                    </div>
+                </li><li>
+                    <b><span class="number__item">38</span></b> 
+                    <button class="accordion">Reverse a string</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const reverse = str => str.split('').reverse().join('');
+
+// Or
+const reverse = str => [...str].reverse().join('');
+
+// Or
+const reverse = str => str.split('').reduce((rev, char)=> `${char}${rev}`, '');
+
+// Or
+const reverse = str => (str === '') ? '' : `${reverse(str.substr(1))}${str.charAt(0)}`;
+
+// Example
+reverse('hello world');     // 'dlrow olleh'</code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">39</span></b> 
+                    <button class="accordion">Reverse the order of lines of a text</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const reverseLines = str => str.split(/\r?\n/).reverse().join('\n');
+
+// Example
+reverseLines(`one
+two
+three`);
+
+/* Output */
+/*
+three
+two
+one
+*/</code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">40</span></b> 
+                    <button class="accordion">Sort lines of a text document in the alphabetical order</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const sortLines = str => str.split(/\r?\n/).sort().join('\n');
+
+// Reverse the order
+const reverseSortedLines = str => str.split(/\r?\n/).sort().reverse().join('\n');
+
+// Example
+sortLines(`Thaddeus Mullen
+Kareem Marshall
+Ferdinand Valentine
+Hasad Lindsay
+Mufutau Berg
+Knox Tyson
+Kasimir Fletcher
+Colton Sharp
+Adrian Rosales
+Theodore Rogers`);
+
+/* Output */
+/*
+Adrian Rosales
+Colton Sharp
+Ferdinand Valentine
+Hasad Lindsay
+Kareem Marshall
+Kasimir Fletcher
+Knox Tyson
+Mufutau Berg
+Thaddeus Mullen
+Theodore Rogers
+*/</code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">41</span></b> 
+                    <button class="accordion">Sort the characters of a string in the alphabetical order</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const sort = str => str.split('').sort((a, b) => a.localeCompare(b)).join('');
+
+// Example
+sort('hello world');    // dehllloorw</code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">42</span></b> 
+                    <button class="accordion">Strip ANSI codes from a string</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const stripAnsiCodes = str => str.replace(/[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-ORZcf-nqry=><]/g, '');
+
+// Example
+stripAnsiCodes('\u001B[4mcake\u001B[0m');                                                               // 'cake'
+stripAnsiCodes('\u001B[0m\u001B[4m\u001B[42m\u001B[31mfoo\u001B[39m\u001B[49m\u001B[24mfoo\u001B[0m');  // 'foofoo'</code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">43</span></b> 
+                    <button class="accordion">Swap case of characters in a string</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const swapCase = str => str.split('').map(c => (c === c.toLowerCase() ? c.toUpperCase() : c.toLowerCase())).join('');
+
+// Example
+swapCase('Hello World');      // 'hELLO wORLD'</code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">44</span></b> 
+                    <button class="accordion">Trim slashes at the beginning and the end of a string</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const trimSlashes = str => str.replace(/^\/+|\/+$/g, '');
+
+// Or
+const trimSlashes = str => str.split('/').filter(Boolean).join('/');
+
+// Example
+trimSlashes('//hello/world///');    // hello/world</code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">45</span></b> 
+                    <button class="accordion">Trim some character</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const trim = (str, char) => str.split(char).filter(Boolean).join();
+
+// Examples
+trim('/hello world//', '/');        // hello world
+trim('"hello world"', '"');         // hello world
+trim('   hello world ', ' ');       // hello world</code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">46</span></b> 
+                    <button class="accordion">Trim the file extension from a file name</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const trimExt = fileName => fileName.indexOf('.') === -1 ? fileName : fileName.split('.').slice(0, -1).join('.');
+
+// Examples
+trimExt('document');            // document
+trimExt('document.pdf');        // document
+trimExt('document.2020.pdf');   // document.2020</code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">47</span></b> 
+                    <button class="accordion">Truncate a string at full words</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const truncate = (str, max, suffix) => str.length < max ? str : `${str.substr(0, str.substr(0, max - suffix.length).lastIndexOf(' '))}${suffix}`;
+
+// Example
+truncate('This is a long message', 20, '...');  // 'This is a long...'</code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">48</span></b> 
+                    <button class="accordion">Unescape HTML special characters</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const unescape = str => str.replace(/&amp;/g , '&').replace(/&lt;/g  , '<').replace(/&gt;/g  , '>').replace(/�*39;/g , "'").replace(/&quot;/g, '"');</code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">49</span></b> 
+                    <button class="accordion">Uppercase the first character of each word in a string</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const uppercaseWords = str => str.split(' ').map(w => `${w.charAt(0).toUpperCase()}${w.slice(1)}`).join(' ');
+
+// Or
+const uppercaseWords = str => str.replace(/^(.)|\s+(.)/g, c => c.toUpperCase());
+
+// Example
+uppercaseWords('hello world');      // 'Hello World'</code></pre></div>
+                    </div>
+                </li>
+                
+                <div class="ribbon__shet">
+                    <b>Validador</b>
+                </div>
+
+                <li>
+                    <b><span class="number__item">1</span></b> 
+                    <button class="accordion">Check if a date is a weekday</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">// `date` is a Date object
+const isWeekday = (date = new Date()) => date.getDay() % 6 !== 0;</code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">2</span></b> 
+                    <button class="accordion">Check if a date is a weekend</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">// `date` is a Date object
+const isWeekend = (date = new Date()) => date.getDay() % 6 === 0;</code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">3</span></b> 
+                    <button class="accordion">Check if a date is between two dates
+</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">// `min`, `max` and `date` are `Date` instances
+const isBetween = (date, min, max) => (date.getTime() >= min.getTime() && date.getTime() <= max.getTime());</code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">4</span></b> 
+                    <button class="accordion">Check if a date is today
+                    </button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">// `date` is a Date object
+const isToday = (date) => date.toISOString().slice(0, 10) === new Date().toISOString().slice(0, 10);</code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">5</span></b> 
+                    <button class="accordion">Check if a date occurs in the current year</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">// `date` is a Date object
+const isCurrentYear = (date) => date.getUTCFullYear() === new Date().getUTCFullYear();</code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">6</span></b> 
+                    <button class="accordion">Check if a flat array has duplicate values</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const hasDuplicateValues = arr => new Set(arr).size !== arr.length;
+
+// Examples
+hasDuplicateValues(['h', 'e', 'l', 'l', 'o']);      // true
+hasDuplicateValues(['w', 'o', 'r', 'd']);           // false</code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">7</span></b> 
+                    <button class="accordion">Check if a given integer is a prime number</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isPrime = num => (num > 1) && Array(Math.floor(Math.sqrt(num)) - 1).fill(0).map((_, i) => i + 2).every(i => num % i !== 0);</code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">8</span></b> 
+                    <button class="accordion">Check if a number is a power of 2</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isPowerOfTwo = number => (number & (number - 1)) === 0;
+
+// Examples
+isPowerOfTwo(256);      // true
+isPowerOfTwo(129);      // false</code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">9</span></b> 
+                    <button class="accordion">Check if a number is even</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isEven = number => number % 2 === 0;
+
+// Or
+const isEven = number => (number & 1) === 0;
+
+// Or
+const isEven = number => !(number & 1);
+
+// Or
+const isEven = number => Number.isInteger(number / 2);
+
+// Examples
+isEven(1);      // false
+isEven(2);      // true</code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">10</span></b> 
+                    <button class="accordion">Check if a number is in a given range</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const inRange = (num, a, b, threshold = 0) => (Math.min(a, b) - threshold <= num && num <= Math.max(a, b) + threshold);
+
+// Example
+inRange(10, 5, 15);         // true
+inRange(10, 5, 6);          // false
+inRange(10, 15, 5);         // true
+inRange(-10, -5, -15);      // true</code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">11</span></b> 
+                    <button class="accordion">Check if a number is negative</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isNegative = number => Math.sign(number) === -1;
+
+// Or
+const isNegative = number => number < 0;
+
+// Examples
+isNegative(-3);     // true
+isNegative(8);      // false</code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">12</span></b> 
+                    <button class="accordion">Check if a number is odd</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isOdd = number => number % 2 !== 0;
+
+// Or
+const isOdd = number => !!(number & 1);
+
+// Or
+const isOdd = number => !Number.isInteger(number / 2);
+
+// Examples
+isOdd(1);   // true
+isOdd(2);   // false</code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">13</span></b> 
+                    <button class="accordion">Check if a number is positive</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isPositive = number => Math.sign(number) === 1;
+
+// Examples
+isPositive(3);      // true
+isPositive(-8);     // false</code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">14</span></b> 
+                    <button class="accordion">Check if a string contains lower case characters</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const containsLowerCase = str => str !== str.toUpperCase();
+
+// Examples
+containsLowerCase('Hello World');   // true
+containsLowerCase('HELLO WORLD');   // false</code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">15</span></b> 
+                    <button class="accordion">Check if a string contains only ASCII characters</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isAscii = str => /^[\x00-\x7F]+$/.test(str);</code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">16</span></b> 
+                    <button class="accordion">Check if a string contains only digits</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isNumeric = str => !/[^0-9]/.test(str);
+
+// Examples
+isNumeric(2);               // true
+isNumeric('23');            // true
+isNumeric('00123');         // true
+
+isNumeric('1.23');          // false
+isNumeric('-Infinity');     // false
+isNumeric('Infinity');      // false
+isNumeric('NaN');           // false</code></pre></div>
+                    </div>
+                </li>
+
+                <li>
+                    <b><span class="number__item">17</span></b> 
+                    <button class="accordion">Check if a string contains only letters</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isAlpha = str => /^[A-Z]+$/i.test(str);
+
+// Examples
+isAlpha('helloworld');          // true
+isAlpha('HelloWorld');          // true
+isAlpha('hello world');         // false
+isAlpha('0123456789');          // false</code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">18</span></b> 
+                    <button class="accordion">Check if a string contains only letters and numbers</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isAlphanumeric = str => /^[0-9A-Z]+$/i.test(str);
+
+// Examples
+isAlphanumeric('helloworld');           // true
+isAlphanumeric('HelloWorld');           // true
+isAlphanumeric('hello world');          // false
+isAlphanumeric('hello123');             // true
+isAlphanumeric('hello 123');            // false</code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">19</span></b> 
+                    <button class="accordion">Check if a string contains upper case characters</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const containsUpperCase = str => str !== str.toLowerCase();
+
+// Examples
+containsUpperCase('Hello World');   // true
+containsUpperCase('hello world');   // false</code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">20</span></b> 
+                    <button class="accordion">Check if a string contains whitespace</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const containsWhitespace = str => str => /\s/.test(str);
+
+// Example
+containsWhitespace('hello world');      // true</code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">21</span></b> 
+                    <button class="accordion">Check if a string is a hexadecimal color</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isHexColor = color => /^#([0-9A-F]{3}|[0-9A-F]{4}|[0-9A-F]{6}|[0-9A-F]{8})$/i.test(color);
+
+// Examples
+isHexColor('#012');         // true
+isHexColor('#A1B2C3');      // true
+isHexColor('012');          // false
+isHexColor('#GHIJKL');      // false</code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">22</span></b> 
+                    <button class="accordion">Check if a string is a hexadecimal number</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isHexadecimal = str => /^[A-F0-9]+$/i.test(str);
+
+// Or
+const isHexadecimal = str => str.split('').every(c => '0123456789ABCDEFabcdef'.indexOf(c) !== -1);
+
+// Examples
+isHexadecimal('123');       // true
+isHexadecimal('A1B2C3');    // true
+isHexadecimal('#123');      // false</code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">23</span></b> 
+                    <button class="accordion">Check if a string is a MongoDB ObjectId</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isMongoId = str => str.length === 24 && /^[A-F0-9]+$/i.test(str);
+
+// Or
+const isMongoId = str => str.length === 24 && str.split('').every(c => '0123456789ABCDEFabcdef'.indexOf(c) !== -1);</code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">24</span></b> 
+                    <button class="accordion">Check if a string is an octal number</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript">const isOctal = str => /^(0o)?[0-7]+$/i.test(str);</code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">25</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">26</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">27</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">28</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">29</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">30</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">31</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">32</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">33</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">34</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">35</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+                <li>
+                    <b><span class="number__item">36</span></b> 
                     <button class="accordion">title</button>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -3473,6 +4121,15 @@ replaceSpaces('this\n   is     \ta    \rmessage');  // 'this is a message'</code
                             <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
                     </div>
                 </li><li>
+                    <b><span class="number__item">37</span></b> 
+                    <button class="accordion">title</button>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            <div class="decor__bar javascript"></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                    </div>
+                </li>
+                <li>
                     <b><span class="number__item">38</span></b> 
                     <button class="accordion">title</button>
                     <div class="panel">
@@ -3645,549 +4302,6 @@ replaceSpaces('this\n   is     \ta    \rmessage');  // 'this is a message'</code
                 </li>
                 <li>
                     <b><span class="number__item">57</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">58</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-
-
-
-                <div class="ribbon__shet">
-                    <b>Validador</b>
-                </div>
-
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li><li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">title</button>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
-                    </div>
-                </li>
-                <li>
-                    <b><span class="number__item">1</span></b> 
                     <button class="accordion">title</button>
                     <div class="panel">
                         <div class="codigo__javascript">
