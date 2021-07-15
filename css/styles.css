@@ -551,18 +551,6 @@ h5.javascript__tag{
     width: 100px;
 }
 
-.codigo__del__proyecto{
-    padding: 50px;
-}
-
-.codigo__del__proyecto h2{
-    font-size: 2em;
-    color: #457b9d;
-}
-
-.codigo__del__proyecto p{
-    margin-bottom: 20px;
-}
 
 .decor__bar.html{
     background: #e34c26;
@@ -768,7 +756,7 @@ footer div.redes__sociales a:hover{
     padding: 10px;
     display: block;
     text-align: center;
-    width: 200px;
+    width: 50px;
     transition: .3s;
 }
 
