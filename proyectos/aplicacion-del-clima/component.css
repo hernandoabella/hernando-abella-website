@@ -9,6 +9,8 @@ form,
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  margin: 20px;
+  color: #fff;
 }
 
 .header {
@@ -35,12 +37,12 @@ button {
 }
 
 input {
-  width: 12rem;
   margin: 0 0.5rem 0 1rem;
 }
 
 button {
   background-color: white;
+  cursor: pointer;
 }
 
 form > * {
@@ -51,12 +53,19 @@ form > * {
   text-align: center;
   color: #860000;
   font-weight: bold;
+  margin: 20px;
 }
 
 #displayCity{
     margin: 30px;
-    color: #264653;
+    color: #fff;
+    font-size: 3em;
 }
+
+.display p{
+  margin: 20px;
+}
+
 
 .s{
     width: 500px;
@@ -83,4 +92,8 @@ h1{
 
 .contenido__proyecto{
     padding: 20px;
+}
+
+footer{
+    padding: 20px !important;
 }

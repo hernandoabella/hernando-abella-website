@@ -533,7 +533,7 @@ a{
 h5.html__tag{
     background: #e34c26;
     color: #fff;
-    width: 60px;
+    display: inline-block;
     text-align: center;
 }  
 
@@ -541,14 +541,14 @@ h5.css__tag{
     background: #264de4;
     color: #fff;
     text-align: center;
-    width: 60px;
+    display: inline-block;
 }
 
 h5.javascript__tag{
     background: #f0db4f;
     color: #323330;
     text-align: center;
-    width: 100px;
+    display: inline-block;
 }
 
 

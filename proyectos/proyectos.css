@@ -50,6 +50,10 @@
     width: 33.33%;
     padding: 10px;
   }
+
+  footer{
+    padding: 20px !important;
+  }
   
   @media screen and (max-width: 500px) {
     .column {
