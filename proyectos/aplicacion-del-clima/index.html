@@ -23,24 +23,38 @@
     <section class="codigo__del__proyecto">
         <div class="app__background">
             <div class="app__container">
-                <div id="contenedorClima">
-                    <div>
-                        <div class="top__search">
-                            <input type="text" placeholder="Localización" id="entradaBusqueda">
-                            <button id="buscar"><i class="fas fa-search"></i></button>
-                        </div>
-                        <h4 id="encabezadoCiudad"><i class="fas fa-map-marker-alt"></i> Santa Marta</h4>
-                        
-                        <div class="flexyWeather">
-                            <div id="temperatura">28°</div>
-                        <div><img id="iconoClima" src="http://openweathermap.org/img/w/04n.png"></div>
-                        </div>
-                        
-                        <div id="descripcionClima">Nubes</div>
-                        <div id="velocidadViento">1 metro/s</div>
-                        <div id="humedad">77%</div>
-                    </div>
-                </div>
+                
+                <!-- app code goes here -->
+
+                
+                    <section>
+                      <section class="header">
+                        <h1 id="displayCity">Ciudad</h1>
+                        <img id="emoji" alt="emoji" />
+                      </section>
+                      <section class="temperatures">
+                        <section class="display">
+                          <p>Temperatura:</p>
+                          <h2 id="displayTemp"></h2>
+                        </section>
+                        <section class="display">
+                          <p>Se siente como:</p>
+                          <h2 id="displayFeels"></h2>
+                        </section>
+                      </section>
+                    </section>
+                    <section>
+                      <form>
+                        <label for="city">Ciudad:</label>
+                        <input id="city" required />
+                        <button>Buscar</button>
+                      </form>
+                      <p id="error"></p>
+                    </section>
+                 
+
+                <!-- app code goes here -->
+
             </div>
         </div>
         
@@ -56,7 +70,7 @@
                 <li>Aplicación del Clima</li>
             </ul>
             <div class="download">
-                <a href="./aplicacion_del_clima.rar" download>Descarga este proyecto</a>
+                <a href="./" download>Descarga este proyecto</a>
             </div>
         </div>
 

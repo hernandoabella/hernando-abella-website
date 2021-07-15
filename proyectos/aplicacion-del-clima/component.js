@@ -1,94 +1,104 @@
-// Declaración de variables
+const weatherURL = 'https://api.openweathermap.org/data/2.5/weather?q=';
+let query = 'london';
+const apiKey = '&appid=8fe4e4b12806b45a982605effb769a3b';
+const units = '&units=';
+let unit = 'metric';
+const c = '°C';
+const f = '°F';
 
-let id = '71f6779186cc32448b4c412eea65b982';
-let unidades = 'metric'; 
-let metodoBuscar; // q significa buscar como una cadena de caracteres
-let idioma = 'sp'; // Idioma español
-let contenedorClima = document.getElementById('contenedorClima');
-let buscar = document.getElementById('buscar');
+const displayCity = document.querySelector('#displayCity');
+const displayTemp = document.querySelector('#displayTemp');
+const displayFeels = document.querySelector('#displayFeels');
+const displayUnit = document.querySelector('#displayUnit');
 
-function obtenerBusqueda(entrada) {
-    if(entrada.length === 5 && Number.parseInt(entrada) + '' === entrada)
-        metodoBuscar = 'zip';
-    else 
-        metodoBuscar = 'q';
-}                                                                                                             
+const emoji = document.querySelector('#emoji');
 
-function buscarClima(entrada){
-    obtenerBusqueda(entrada);
-    fetch(`http://api.openweathermap.org/data/2.5/weather?${metodoBuscar}=${entrada}&APPID=${id}&units=${unidades}&lang=${idioma}`)
-        .then((result) => {
-            return result.json();
-        }).then((res) => {
-            iniciar(res);
-    });
-}
+const form = document.querySelector('form');
+const city = document.querySelector('#city');
+const errorP = document.querySelector('#error');
 
-function iniciar(resultFromServer){
-    contenedorClima.style.display = 'flex';
+const resetInput = () => {
+  city.value = '';
+};
 
-    
-    switch (resultFromServer.weather[0].main) {
-        case 'Clear':
-            document.body.style.backgroundImage = "url('clearPicture.jpg')";
-            break;
-        
-        case 'Clouds':
-            document.body.style.backgroundColor = "url('cloudyPicture.jpg')";
-            break;
+const checkEvent = (e) => {
+  if (e) {
+    e.preventDefault();
+    query = city.value.toLowerCase();
+  }
+};
 
-        case 'Rain':
-        case 'Drizzle':
-            document.body.style.backgroundImage = "url('rainPicture.jpg')";
-            break;
+const updateCity = (data) => {
+  displayCity.textContent = data.name;
+};
 
-        case 'Mist':
-            document.body.style.backgroundImage = "url('mistPicture.jpg')";
-            break;    
-        
-        case 'Thunderstorm':
-            document.body.style.backgroundImage = "url('stormPicture.jpg')";
-            break;
-        
-        case 'Snow':
-            document.body.style.backgroundImage = "url('snowPicture.jpg')";
-            break;
+const checkUnit = (unit) => {
+  switch (unit) {
+    case 'metric':
+      return c;
+    case 'imperial':
+      return f;
+  }
+};
 
-        default:
-            break;
+const updateTemp = (data) => {
+  displayTemp.textContent = data.main.temp + checkUnit(unit);
+};
+
+const updateFeels = (data) => {
+  displayFeels.textContent = data.main.feels_like + checkUnit(unit);
+};
+
+const updateError = (error = '') => {
+  errorP.textContent = error;
+};
+
+const updateEmoji = (data) => {
+  if (data.main.feels_like < 5) {
+    emoji.src = 'frozen.png';
+  } else if (data.main.feels_like < 10) {
+    emoji.src = 'grimace.png';
+  } else if (data.main.feels_like < 20) {
+    emoji.src = 'happy.png';
+  } else if (data.main.feels_like < 30) {
+    emoji.src = 'sunglasses.png';
+  } else {
+    emoji.src = 'hot.png';
+  }
+};
+
+const updateDOM = (data) => {
+  updateCity(data);
+  updateTemp(data);
+  updateFeels(data);
+  updateEmoji(data);
+  updateError();
+  resetInput();
+};
+
+const startThinking = () => {
+  displayCity.textContent = 'Thinking...';
+  displayTemp.textContent = '';
+  displayFeels.textContent = '';
+  emoji.src = 'think.png';
+};
+
+const getWeather = async (e) => {
+  try {
+    startThinking();
+    checkEvent(e);
+    const fullWeatherURL = `${weatherURL}${query}${apiKey}${units}${unit}`;
+    const response = await fetch(fullWeatherURL, { mode: 'cors' });
+    const data = await response.json();
+    if (data.message === 'city not found') {
+      throw new Error(data.message);
     }
+    updateDOM(data);
+  } catch (e) {
+    updateError(e);
+  }
+};
 
-    let descripcionClima = document.getElementById('descripcionClima');
-    let temperatura = document.getElementById('temperatura');
-    let humedad = document.getElementById('humedad');
-    let velocidadViento = document.getElementById('velocidadViento');
-    let encabezadoCiudad = document.getElementById('encabezadoCiudad');
+form.addEventListener('submit', getWeather);
 
-    let iconoClima = document.getElementById('iconoClima');
-    iconoClima.src = 'http://openweathermap.org/img/w/' + resultFromServer.weather[0].icon + '.png';
-
-    let resultadoDescripcion = resultFromServer.weather[0].description;
-    descripcionClima.innerText = resultadoDescripcion.charAt(0).toUpperCase() + resultadoDescripcion.slice(1);
-    temperatura.innerHTML = Math.floor(resultFromServer.main.temp) + '&#176;';
-    velocidadViento.innerHTML = '<b>' + 'Velocidad del viento: ' + '</b>' + Math.floor(resultFromServer.wind.speed) + ' metro/s';
-    encabezadoCiudad.innerHTML = resultFromServer.name;
-    humedad.innerHTML = '<b>' + 'Niveles de humedad: ' + '</b>' + resultFromServer.main.humidity +  '%';
-}
-
-buscar.addEventListener('click', () => {
-    let entrada = document.getElementById('entradaBusqueda').value;
-    if(entrada){
-        buscarClima(entrada);
-    }
-});
-
-let entrada = document.getElementById("entradaBusqueda");
-
-entrada.addEventListener("keyup", e =>{
-    
-    if(e.key === 'Enter'){
-        e.preventDefault();
-        buscar.click();
-    }
-
-}, false);
+getWeather();

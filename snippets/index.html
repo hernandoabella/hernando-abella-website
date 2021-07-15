@@ -144,38 +144,27 @@ aObjeto(
 
                 <li>
                     <b><span class="number__item">7</span></b> 
-                    <button class="accordion">Convert an array of strings to numbers</button>
+                    <button class="accordion">Convierte un arreglo de strings en números</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript">const toNumbers = arr => arr.map(Number);
+                            <pre class="line-numbers"><code class="language-javascript">const aNumeros = arreglo => arreglo.map(Number);
 
-// Or
-const toNumbers = arr => arr.map(x => +x);
+// O
+const aNumeros = arreglo => arreglo.map(x => +x);
 
-// Example
-toNumbers(['2', '3', '4']);     // [2, 3, 4]</code></pre></div>
+// Ejemplo
+aNumeros(['2', '3', '4']);     // [2, 3, 4]</code></pre></div>
                     </div>
                 </li>
 
                 <li>
                     <b><span class="number__item">8</span></b> 
-                    <button class="accordion">Count by the properties of an array of objects</button>
+                    <button class="accordion">Contar según las propiedades de un arreglo de objetos</button>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript">const countBy = (arr, prop) => arr.reduce((prev, curr) => (prev[curr[prop]] = ++prev[curr[prop]] || 1, prev), {});
-
-// Example
-countBy([
-    { branch: 'audi', model: 'q8', year: '2019' },
-    { branch: 'audi', model: 'rs7', year: '2020' },
-    { branch: 'ford', model: 'mustang', year: '2019' },
-    { branch: 'ford', model: 'explorer', year: '2020' },
-    { branch: 'bmw', model: 'x7', year: '2020' },
-], 'branch');
-
-// { 'audi': 2, 'ford': 2, 'bmw': 1 }</code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
                     </div>
                 </li>
 

@@ -15,13 +15,14 @@
 .progress-container {
     width: 100%;
     height: 5px;
-    background: #fcf0a2;
+    background: #264653;
 }
   
 .progress-bar {
-    height: 8px;
-    background: #f0db4f;
+    height: 5px;
+    background: #2a9d8f;
     width: 0%;
+    transition: .3s;
 }
   
 .content {
@@ -40,9 +41,9 @@ aside{
 
 aside.sideBar{
     width: 20%;
-    height: 350px;
+    height: 400px;
     position: fixed;
-    top: 100px;
+    top: 80px;
 }
 
 aside ul li{
@@ -91,7 +92,7 @@ section{
 
 section h1{
     margin: 20px;
-    color: #2a9d8f;
+    color: #e76f51;
     border-width: 5px;
     text-align: center;
     font-size: 2em;
@@ -100,11 +101,13 @@ section h1{
 section h3{
     margin: 20px 0px;
     text-align: center;
-    color: #e76f51;
+    color: #f4a261;
 }
+
 
 section h4{
     margin: 20px 0px;
+    color: #e9c46a;
 }
 
 section p{
@@ -114,10 +117,10 @@ section p{
 }
 
 section a{
-    display: block;
     margin-top: 10px;
     transition: .3s;
     cursor: pointer;
+    color: #2a9d8f;
 }
 
 section ul{
@@ -126,10 +129,6 @@ section ul{
 
 section ul li{
     margin: 10px;
-}
-
-section ul li::before{
-    color: red;
 }
 
 /* width */
