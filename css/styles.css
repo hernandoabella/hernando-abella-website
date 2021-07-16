@@ -146,7 +146,6 @@ a{
     line-height: 30px;
 }
 
-
 .circulo__avatar{
     margin: auto;
     width: 280px;
@@ -847,8 +846,6 @@ table {
 }
 
 #contacto{
-    background: url('/images/pexels-negative-space-33999.jpg');
-    background-size: cover;
     padding: 50px;
 }
 
