@@ -150,7 +150,7 @@ a{
     height: 280px;
     background: #2a9d8f;
     border-radius: 100%;
-    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .circulo__avatar > img{
@@ -801,7 +801,7 @@ table {
     font-size: 2em;
 }
 
-#youtube a{
+#youtube .ytBtn{
     color: #000;
     background: #fff;
     margin:  50px auto;
@@ -815,7 +815,7 @@ table {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-#youtube a:hover{
+#youtube .ytBtn:hover{
     background: #e52d27;
     color: #fff;
     transform: translate(0px, -2px);
@@ -837,6 +837,17 @@ table {
     padding: 10px;
     background: #fff;
     border-radius: 25px;
+}
+
+.tarjeta__video img{
+    width: 100%;
+    border-radius: 25px;
+    height: 220px;
+    transition: .3s;
+}
+
+.tarjeta__video img:hover{
+    opacity: .8;
 }
 
 .correo{
