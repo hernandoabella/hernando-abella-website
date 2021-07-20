@@ -1,24 +1,57 @@
-var indice = 1;
-mostrarSlides(indice);
+var visible = false ;
 
-function siguienteSlide(n) {
-  mostrarSlides(indice += n);
+function ver(){
+    var input = document.getElementById("password");
+    var ver = document.getElementById("ver");
+    
+    if(visible){
+        input.type = 'password';
+        visible = false; 
+        ver.style.color='#cc2b5e';
+    }else{
+        input.type = 'text';
+        visible = true; 
+        ver.style.color='#753a88';
+    }
 }
 
-function slideActual(n) {
-  mostrarSlides(indice = n);
-}
+function validar(){
 
-function mostrarSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  if (n > slides.length) {indice = 1}
-  if (n < 1) {indice = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  
-  slides[indice-1].style.display = "block";
-  
-}
+    var input = document.getElementById("password").value;
+    
+    input=input.trim();
 
+    document.getElementById("password").value=input;
+
+    document.getElementById("largo").innerText="Largo : " + input.length;
+    
+    if(input.length>=5){
+        document.getElementById("validar0").style.color="#cc2b5e";
+    }else{
+       document.getElementById("validar0").style.color="#753a88"; 
+    }
+    
+    if(input.length<=10){
+        document.getElementById("validar1").style.color="#cc2b5e";
+    }else{
+       document.getElementById("validar1").style.color="#753a88"; 
+    }
+    
+    if(input.match(/[0-9]/i)){
+       document.getElementById("validar2").style.color="#cc2b5e";
+    }else{
+       document.getElementById("validar2").style.color="#753a88"; 
+    }
+    
+    if(input.match(/[^A-Za-z0-9-' ']/i)){
+        document.getElementById("validar3").style.color="#cc2b5e";
+    }else{
+        document.getElementById("validar3").style.color="#753a88"; 
+    }
+    
+    if(input.match(' ')){
+        document.getElementById("validar4").style.color="#753a88";
+    }else{
+        document.getElementById("validar4").style.color="#cc2b5e"; 
+    }
+}

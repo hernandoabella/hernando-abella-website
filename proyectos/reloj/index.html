@@ -28,22 +28,9 @@
 
                     <div class="s">
                       
-                      <div class="contenedor">
-                        <div class="mySlides fade">
-                          <img src="./assets/imagen1.jpg" style="width:100%">
-                        </div>
-                      
-                        <div class="mySlides fade">
-                          <img src="./assets/imagen2.jpg" style="width:100%">
-                        </div>
-                      
-                        <div class="mySlides fade">
-                          <img src="./assets/imagen3.jpg" style="width:100%">
-                        </div>
-                    
-                        <a class="prev" onclick="siguienteSlide(-1)">&#10094;</a>
-                        <a class="next" onclick="siguienteSlide(1)">&#10095;</a>
-                    </div>
+                      <div class="container">
+                        <div id="reloj">00 : 00 : 00</div>
+                      </div>
                       
                     </div>
                 <!-- app code goes here -->
@@ -52,7 +39,7 @@
         </div>
         
         <section class="contenido__proyecto">
-            <h1>Deslizador de Imágenes</h1>
+            <h1>Reloj</h1>
         <br>
         <p>Esta aplicación te permite ver el clima de distintos lugares del mundo.</p>
         <br>
@@ -60,7 +47,7 @@
             <ul class="breadcrumb">
                 <li><a href="/index.html">Inicio</a></li>
                 <li><a href="/proyectos">Proyectos</a></li>
-                <li>Deslizador de Imágenes</li>
+                <li>Reloj</li>
             </ul>
             <div class="download">
                 <a href="./aplicacion-meteorologica.rar" download><i class="fas fa-download"></i></a>
@@ -72,95 +59,61 @@
         <div class="code__container">
             <h5 class="html__tag">HTML</h5>
             <div class="codigo__html">
-                <pre class="line-numbers"><code class="language-html">&lt;div class=&quot;contenedor&quot;&gt;
-        &lt;div class=&quot;mySlides fade&quot;&gt;
-          &lt;img src=&quot;assets/imagen1.jpeg&quot; style=&quot;width:100%&quot;&gt;
-        &lt;/div&gt;
-      
-        &lt;div class=&quot;mySlides fade&quot;&gt;
-          &lt;img src=&quot;assets/imagen2.jpg&quot; style=&quot;width:100%&quot;&gt;
-        &lt;/div&gt;
-      
-        &lt;div class=&quot;mySlides fade&quot;&gt;
-          &lt;img src=&quot;assets/imagen3.jpg&quot; style=&quot;width:100%&quot;&gt;
-        &lt;/div&gt;
-    
-        &lt;a class=&quot;prev&quot; onclick=&quot;siguienteSlide(-1)&quot;&gt;&amp;#10094;&lt;/a&gt;
-        &lt;a class=&quot;next&quot; onclick=&quot;siguienteSlide(1)&quot;&gt;&amp;#10095;&lt;/a&gt;
-    &lt;/div&gt;</code></pre>
+                <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Reloj | APP #05&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt; 
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div id=&quot;reloj&quot;&gt;00 : 00 : 00&lt;/div&gt;
+    &lt;/div&gt;
+ 
+    &lt;script src=&quot;./script.js&quot;&gt;&lt;/script&gt; 
+&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
             </div>
             
             <hr>
 
             <h5 class="css__tag">CSS</h5>
             <div class="codigo__css">
-                <pre class="line-numbers"><code class="language-css">* {
-  box-sizing: border-box;
-}
+                <pre class="line-numbers"><code class="language-css">@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@300&display=swap');
 
 body{
-  background: rgb(65, 87, 212);
+    font-family: 'Fraunces', serif;
+    font-size: 1.3em;
+    background: #e7e7de;
 }
 
-.contenedor {
-  max-width: 450px;
-  position: relative;
-  margin: 135px auto;
-  padding: 10px;
-  background: #fff;
-  border-radius: 5px;
-  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
+.container{
+    position: absolute;
+    background: #008891;
+    color: #fff;
+    padding: 20px;
+    font-size: 2em;
+    border-radius: 5px;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.25);
+    width: 265px;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 300px;
 }
 
-img{
-  border-radius: 5px;
-  height: 300px;
+#reloj{
+    background: #0f3057;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
 }
 
-.mySlides {
-  display: none;
-}
 
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-.next {
-  right: 10px;
-  border-radius: 3px 0 0 3px;
-}
-
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
 
 
 </code></pre>
@@ -171,29 +124,35 @@ img{
             <h5 class="javascript__tag">JAVASCRIPT</h5>
             
             <div class="codigo__javascript">
-                <pre class="line-numbers"><code class="language-javascript">var indice = 1;
-mostrarSlides(indice);
+                <pre class="line-numbers"><code class="language-javascript">const reloj = document.querySelector('#reloj');
 
-function siguienteSlide(n) {
-  mostrarSlides(indice += n);
+const mecanismo = () => {
+   
+   let tiempo = new Date();
+   let horas = (tiempo.getHours() % 12);
+   let minutos = tiempo.getMinutes();
+   let segundos = tiempo.getSeconds();
+
+   if (horas.length < 2) {
+      horas = '0' + horas;
+   }
+
+   if (minutos.length < 2) {
+      minutos = '0' + minutos;
+   }
+
+   if (segundos.length < 2) {
+      segundos = '0' + segundos;
+   }
+
+   let cadenaTxt = horas + ' : ' + minutos + ' : ' + segundos;
+
+   reloj.textContent = cadenaTxt;
 }
 
-function slideActual(n) {
-  mostrarSlides(indice = n);
-}
+setInterval(mecanismo, 1000);
 
-function mostrarSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  if (n > slides.length) {indice = 1}
-  if (n < 1) {indice = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  
-  slides[indice-1].style.display = "block";
-  
-}
+
 
 </code></pre>
             </div>

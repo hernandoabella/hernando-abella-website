@@ -1,24 +1,27 @@
-var indice = 1;
-mostrarSlides(indice);
+const reloj = document.querySelector('#reloj');
 
-function siguienteSlide(n) {
-  mostrarSlides(indice += n);
+const mecanismo = () => {
+   
+   let tiempo = new Date();
+   let horas = (tiempo.getHours() % 12);
+   let minutos = tiempo.getMinutes();
+   let segundos = tiempo.getSeconds();
+
+   if (horas.length < 2) {
+      horas = '0' + horas;
+   }
+
+   if (minutos.length < 2) {
+      minutos = '0' + minutos;
+   }
+
+   if (segundos.length < 2) {
+      segundos = '0' + segundos;
+   }
+
+   let cadenaTxt = horas + ' : ' + minutos + ' : ' + segundos;
+
+   reloj.textContent = cadenaTxt;
 }
 
-function slideActual(n) {
-  mostrarSlides(indice = n);
-}
-
-function mostrarSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  if (n > slides.length) {indice = 1}
-  if (n < 1) {indice = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  
-  slides[indice-1].style.display = "block";
-  
-}
-
+setInterval(mecanismo, 1000);

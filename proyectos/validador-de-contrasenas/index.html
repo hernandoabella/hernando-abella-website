@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hernando Abella</title>
+    <title>Hernando Abella | Validador de Contraseñas</title>
     <link rel="stylesheet" href="./component.css">
     <link type="text/css" rel="stylesheet" href="http://ajblk.github.io/SyntaxHighlightGenerator-v3.0/styles/shCoreDefault.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css">
@@ -26,33 +26,43 @@
                 
                 <!-- app code goes here -->
 
-                    <div class="s">
-                      
-                      <div class="contenedor">
-                        <div class="mySlides fade">
-                          <img src="./assets/imagen1.jpg" style="width:100%">
-                        </div>
-                      
-                        <div class="mySlides fade">
-                          <img src="./assets/imagen2.jpg" style="width:100%">
-                        </div>
-                      
-                        <div class="mySlides fade">
-                          <img src="./assets/imagen3.jpg" style="width:100%">
-                        </div>
-                    
-                        <a class="prev" onclick="siguienteSlide(-1)">&#10094;</a>
-                        <a class="next" onclick="siguienteSlide(1)">&#10095;</a>
-                    </div>
-                      
-                    </div>
+                <div class="contenedor">
+                  <input type="password" id="password" placeholder="Contraseña"
+              onInput="validar()">
+             
+             <br>
+                
+               <div id="set" >
+                 
+              <div id="largo">Largo : 0</div>
+                  
+              <i id="ver" onclick="ver()" class="far fa-eye"></i>
+                   
+               </div>
+                
+             <div id="validar0">
+               <i class="far fa-check-circle"></i>  <span>Más de 5 carácteres</span>
+             </div>
+              <div id="validar1">
+               <i class="far fa-check-circle"></i>  <span>Menos de 10 carácteres</span>
+             </div>
+              <div id="validar2">
+               <i class="far fa-check-circle"></i>  <span>Contiene números</span>
+             </div>
+              <div id="validar3">
+               <i class="far fa-check-circle"></i>   <span>Contiene carácteres especiales</span>
+               </div>
+                <div id="validar4">
+               <i class="far fa-check-circle"></i>  <span>No debe tener espacios</span>
+             </div>
+              </div>
                 <!-- app code goes here -->
 
             </div>
         </div>
         
         <section class="contenido__proyecto">
-            <h1>Deslizador de Imágenes</h1>
+            <h1>Validador de Contraseñas</h1>
         <br>
         <p>Esta aplicación te permite ver el clima de distintos lugares del mundo.</p>
         <br>
@@ -60,7 +70,7 @@
             <ul class="breadcrumb">
                 <li><a href="/index.html">Inicio</a></li>
                 <li><a href="/proyectos">Proyectos</a></li>
-                <li>Deslizador de Imágenes</li>
+                <li>Validador de Contraseñas</li>
             </ul>
             <div class="download">
                 <a href="./aplicacion-meteorologica.rar" download><i class="fas fa-download"></i></a>
@@ -72,98 +82,144 @@
         <div class="code__container">
             <h5 class="html__tag">HTML</h5>
             <div class="codigo__html">
-                <pre class="line-numbers"><code class="language-html">&lt;div class=&quot;contenedor&quot;&gt;
-        &lt;div class=&quot;mySlides fade&quot;&gt;
-          &lt;img src=&quot;assets/imagen1.jpeg&quot; style=&quot;width:100%&quot;&gt;
-        &lt;/div&gt;
-      
-        &lt;div class=&quot;mySlides fade&quot;&gt;
-          &lt;img src=&quot;assets/imagen2.jpg&quot; style=&quot;width:100%&quot;&gt;
-        &lt;/div&gt;
-      
-        &lt;div class=&quot;mySlides fade&quot;&gt;
-          &lt;img src=&quot;assets/imagen3.jpg&quot; style=&quot;width:100%&quot;&gt;
-        &lt;/div&gt;
+                <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Validador de Contraseña&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://use.fontawesome.com/releases/v5.3.1/css/all.css&quot; integrity=&quot;sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU&quot; crossorigin=&quot;anonymous&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
     
-        &lt;a class=&quot;prev&quot; onclick=&quot;siguienteSlide(-1)&quot;&gt;&amp;#10094;&lt;/a&gt;
-        &lt;a class=&quot;next&quot; onclick=&quot;siguienteSlide(1)&quot;&gt;&amp;#10095;&lt;/a&gt;
-    &lt;/div&gt;</code></pre>
+    &lt;div class=&quot;contenedor&quot;&gt;
+        &lt;input type=&quot;password&quot; id=&quot;password&quot; placeholder=&quot;Contraseña&quot;
+    onInput=&quot;validar()&quot;&gt;
+   
+   &lt;br&gt;
+      
+     &lt;div id=&quot;set&quot; &gt;
+       
+    &lt;div id=&quot;largo&quot;&gt;Largo : 0&lt;/div&gt;
+        
+    &lt;i id=&quot;ver&quot; onclick=&quot;ver()&quot; class=&quot;far fa-eye&quot;&gt;&lt;/i&gt;
+         
+     &lt;/div&gt;
+      
+   &lt;div id=&quot;validar0&quot;&gt;
+     &lt;i class=&quot;far fa-check-circle&quot;&gt;&lt;/i&gt;  &lt;span&gt;Más de 5 carácteres&lt;/span&gt;
+   &lt;/div&gt;
+    &lt;div id=&quot;validar1&quot;&gt;
+     &lt;i class=&quot;far fa-check-circle&quot;&gt;&lt;/i&gt;  &lt;span&gt;Menos de 10 carácteres&lt;/span&gt;
+   &lt;/div&gt;
+    &lt;div id=&quot;validar2&quot;&gt;
+     &lt;i class=&quot;far fa-check-circle&quot;&gt;&lt;/i&gt;  &lt;span&gt;Contiene números&lt;/span&gt;
+   &lt;/div&gt;
+    &lt;div id=&quot;validar3&quot;&gt;
+     &lt;i class=&quot;far fa-check-circle&quot;&gt;&lt;/i&gt;   &lt;span&gt;Contiene carácteres especiales&lt;/span&gt;
+     &lt;/div&gt;
+      &lt;div id=&quot;validar4&quot;&gt;
+     &lt;i class=&quot;far fa-check-circle&quot;&gt;&lt;/i&gt;  &lt;span&gt;No debe tener espacios&lt;/span&gt;
+   &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
             </div>
             
             <hr>
 
             <h5 class="css__tag">CSS</h5>
             <div class="codigo__css">
-                <pre class="line-numbers"><code class="language-css">* {
-  box-sizing: border-box;
-}
+                <pre class="line-numbers"><code class="language-css">@import url('https://fonts.googleapis.com/css2?family=Aleo:wght@300&display=swap');
 
 body{
-  background: rgb(65, 87, 212);
+    margin:0; 
+    padding:3px;
+    box-sizing: border-box;
+    user-select: none;
+    font-family: 'Aleo', serif;
+    background: #cc2b5e;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #753a88, #cc2b5e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #753a88, #cc2b5e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.contenedor {
-  max-width: 450px;
-  position: relative;
-  margin: 135px auto;
-  padding: 10px;
-  background: #fff;
-  border-radius: 5px;
-  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
+.contenedor{
+    background: #fff;
+    color: #000;
+    border-radius: 25px;
+    width: 400px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    padding: 10px;
 }
 
-img{
-  border-radius: 5px;
-  height: 300px;
+#set{
+    display: block ;
+    position: relative;
+    margin: auto;
 }
 
-.mySlides {
-  display: none;
+#largo{
+   display: inline-block;
+   position: relative ;
+   margin: 4%; 
+   margin-bottom: 2%;
+   color:#000; 
+   font-size: 18px;
+   text-indent: 40px;
+   font-weight: bolder;
 }
 
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
+#ver{
+    color: #753a88;
+    position: absolute;
+    font-size: 1.5em;
+    top: 14px;
+    left: 320px;
+    cursor: pointer;
+    transition: .2s;
 }
 
-.next {
-  right: 10px;
-  border-radius: 3px 0 0 3px;
+input[id='password']{
+    border: none; 
+    width:80%;
+    outline: none;
+    padding: 10px;
+    border-bottom: 5px solid #753a88;
+    display: block; 
+    position: relative;
+    font-size: 30px;
+    text-align: center;
+    top: 20px;
+    margin: 20px auto ;
+    user-select: auto;
+    font-family: 'Slabo 27px', serif;
+    transition-duration: 600ms;
 }
 
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+#validar0, #validar1, #validar2, #validar3, #validar4{
+   display: block;
+   position: relative;
+   margin: 4%;
+   font-size: 18px;
+   width: 92%;
+   text-align: justify;
+   color: rgb(255, 255, 255);
 }
 
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
+span{
+    margin: 10px;
 }
 
-@-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
-
-</code></pre>
+input:hover{
+    border-bottom: 5px solid #cc2b5e;
+}</code></pre>
             </div>
 
             <hr>
@@ -171,30 +227,63 @@ img{
             <h5 class="javascript__tag">JAVASCRIPT</h5>
             
             <div class="codigo__javascript">
-                <pre class="line-numbers"><code class="language-javascript">var indice = 1;
-mostrarSlides(indice);
+                <pre class="line-numbers"><code class="language-javascript">var visible = false ;
 
-function siguienteSlide(n) {
-  mostrarSlides(indice += n);
+function ver(){
+    var input = document.getElementById("password");
+    var ver = document.getElementById("ver");
+    
+    if(visible){
+        input.type = 'password';
+        visible = false; 
+        ver.style.color='#cc2b5e';
+    }else{
+        input.type = 'text';
+        visible = true; 
+        ver.style.color='#753a88';
+    }
 }
 
-function slideActual(n) {
-  mostrarSlides(indice = n);
-}
+function validar(){
 
-function mostrarSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  if (n > slides.length) {indice = 1}
-  if (n < 1) {indice = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  
-  slides[indice-1].style.display = "block";
-  
-}
+    var input = document.getElementById("password").value;
+    
+    input=input.trim();
 
+    document.getElementById("password").value=input;
+
+    document.getElementById("largo").innerText="Largo : " + input.length;
+    
+    if(input.length>=5){
+        document.getElementById("validar0").style.color="#cc2b5e";
+    }else{
+       document.getElementById("validar0").style.color="#753a88"; 
+    }
+    
+    if(input.length<=10){
+        document.getElementById("validar1").style.color="#cc2b5e";
+    }else{
+       document.getElementById("validar1").style.color="#753a88"; 
+    }
+    
+    if(input.match(/[0-9]/i)){
+       document.getElementById("validar2").style.color="#cc2b5e";
+    }else{
+       document.getElementById("validar2").style.color="#753a88"; 
+    }
+    
+    if(input.match(/[^A-Za-z0-9-' ']/i)){
+        document.getElementById("validar3").style.color="#cc2b5e";
+    }else{
+        document.getElementById("validar3").style.color="#753a88"; 
+    }
+    
+    if(input.match(' ')){
+        document.getElementById("validar4").style.color="#753a88";
+    }else{
+        document.getElementById("validar4").style.color="#cc2b5e"; 
+    }
+}
 </code></pre>
             </div>
         </div>
