@@ -223,7 +223,7 @@ a{
     width: 100px;
     margin: auto;
     border-width: 2px;
-    border: 1px solid #264653;
+    border: 5px dashed #264653;
 }
 
 .aprende__conmigo h2{
@@ -874,8 +874,8 @@ table {
 #contacto hr{
     width: 100px;
     margin: auto;
-    border: 1px solid #2a9d8f;
-    border-width: 2px;
+    border: 5px dashed #2a9d8f;
+    
 }
 
 #contacto p{
