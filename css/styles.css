@@ -474,7 +474,6 @@ a{
 
 .snippets h2{
     text-align: center;
-    margin: 40px;
     color: #fff;
     font-size: 2em;
 }
@@ -505,9 +504,8 @@ a{
 
 .snippets hr{
     width: 100px;
-    border-width: 5px;
-    border: 1px solid #f1faee;
-    margin: auto;
+    border: 5px dashed #f1faee;
+    margin: 20px auto;
 }
 
 
