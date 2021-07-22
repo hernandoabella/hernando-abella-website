@@ -1,150 +1,15 @@
-.flexyHeada{
-  display: flex;
-  justify-content: space-between;
+.panel{
+  margin-bottom: 30px;
 }
 
-.flexyHeada:nth-child(1) i{
-  margin-top: 12px;
-}
-
-#myInput {
-  width: 300px; 
-  padding: 10px;
-}
-
-#myUL {
-  /* Remove default list styling */
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  clear: both;
-}
-
-#myUL li a {
-  border: 1px solid #ddd; 
-  margin: 10px;
-  background: #f6f6f6; 
-  padding: 12px; 
-  text-decoration: none; 
-  font-size: 18px; 
-  color: black; 
-  display: block; 
-  
-  
-}
-
-/* acordeon */
-
-
-.accordion {
-  background: #f4a261;  /* fallback for old browsers */
-  color: #000;
-  cursor: pointer;
-  padding: 10px;
-  width: 100%;
-  border: none;
-  text-align: center;
-  outline: none;
-  font-size: 1.3em;
-  transition: 0.4s;
-  text-align: center;
+.snippets__title{
+  font-size: 1.4em;
   font-weight: bold;
-}
-
-
-.panel {
-  padding: 0 18px;
-  background-color: white;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-button.active{
-  background: #2a9d8f;
-  color: #fff;
-}
-
-button.active:hover{
-  background: #f4a261;
-}
-
-button:hover{
-  background: #264653;
-  color: #fff;
-}
-
-/* acordeon */
-
-.number__item{
-  background: #2a9d8f;
-  color: #fff;
-  font-weight: bold;
-  font-size: 2em;
-  padding: 10px;
-  position: relative;
-  left: -20px;
-  top: 15px;
-}
-
-.fa-arrow-down{
-  font-size: 2em;
-}
-
-li b{
-  font-size: .8em;
-}
-
-.panel__de__codigos{
-  margin: auto;
-  width: 80%;
+  letter-spacing: 5px;
+  text-decoration: underline;
+  text-shadow: 2px 2px 3px rgba(255,255,255,0.1);
 }
 
 footer{
   padding: 20px;
 }
-
-.ribbon__shet{
-  text-align: center;
-  font-size: 2em;
-  background: #264653;
-  width: 230px;
-  padding: 10px;
-  margin:  100px auto 50px auto;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  text-shadow: 4px 3px 0px rgba(100, 100, 111, 0.2), 9px 8px 0px rgba(0,0,0,0.15);
-}
-
-.ribbon__shet img{
-  width: 80px;
-  margin: auto;
-}
-
-div.ribbon__shet::before{
-  content: '';
-  width: 100px;
-  height: 100px;
-  background: #264653;
-  position: relative;
-  left: -30px;
-  top: -50px;
-  display: block;
-  opacity: 0.5;
-  border-radius: 100%;
-}
-
-div.ribbon__shet::after{
-  content: '';
-  width: 50px;
-  height: 50px;
-  background: #264653;
-  position: relative;
-  left: 110px;
-  top: 20px;
-  display: block;
-  opacity: 0.5;
-  border-radius: 100%;
-}
-

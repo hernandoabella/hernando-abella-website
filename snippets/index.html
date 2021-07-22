@@ -9,11 +9,8 @@
     <link rel="stylesheet" href="./listFiltering.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="shortcut icon" href="/images/favicon-32x32.png">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link type="text/css" rel="stylesheet" href="http://ajblk.github.io/SyntaxHighlightGenerator-v3.0/styles/shCoreDefault.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/toolbar/prism-toolbar.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/line-numbers/prism-line-numbers.min.css">
 </head>
 <body>
     <div class="backbar">
@@ -21,19 +18,18 @@
     </div>
 
     <section class="snippets">
+        <div class="snippets__title">Snippets</div>
         <div class="panel__de__codigos">
-            <ol id="myUL">
-
-                
+            
                     <div class="ribbon__shet">
                         <div class="ribbon__container"></div>
-                        <b>Arreglos</b>
+                        <h2>Arreglos</h2>
                     </div>
                 
 
-                <li>
-                    <b><span class="number__item">1</span></b> 
-                    <button class="accordion">Lanzar un valor como un arreglo</button>
+                
+                    
+                    <h3 class="accordion">Lanzar un valor como un arreglo</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
@@ -43,7 +39,7 @@
 lanzarArreglo(1);               // [1]
 lanzarArreglo([1, 2, 3]);       // [1, 2, 3]</code></pre></div>
                     </div>
-                </li>
+                
                 <li>
                     <b><span class="number__item">2</span></b> 
                     <button class="accordion">Comprueba si un arreglo esta vacío</button>
@@ -4280,6 +4276,8 @@ const isValidDate = (m, d, y) => 0 <= m && m <= 11 && 0 < y && y < 32768 && 0 < 
         </div>
 
     </section>
+    
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;style&gt; code { font-family: Consolas,&quot;courier new&quot;; color: crimson; background-color: #f1f1f1; padding: 2px; font-size: 105%; } &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;h1&gt;The code element + CSS&lt;/h1&gt; &lt;p&gt;The HTML &lt;code&gt;button&lt;/code&gt; tag defines a clickable button.&lt;/p&gt; &lt;p&gt;The CSS &lt;code&gt;background-color&lt;/code&gt; property defines the background color of an element.&lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</code></pre>
 
 
     <footer>
@@ -4288,9 +4286,8 @@ const isValidDate = (m, d, y) => 0 <= m && m <= 11 && 0 < y && y < 32768 && 0 < 
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/toolbar/prism-toolbar.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
+   
     <script src="./listFiltering.js"></script>
     <script src="../js/script.js"></script>
 </body>

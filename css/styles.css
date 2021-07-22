@@ -65,7 +65,7 @@
   .topnav a {
     float: left;
     display: block;
-    color: #f2f2f2;
+    color: #fff;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -74,13 +74,13 @@
   }
   
   .topnav a:hover {
-    background-color: #f1faee;
+    background-color: #fff;
     color: #1d3557;
   }
   
   .topnav a.active {
     background-color: #1d3557;
-    color: #f1faee;
+    color: #fff;
   }
   
   .topnav .icon {
@@ -553,7 +553,6 @@ h5.javascript__tag{
     background: #e34c26;
     width: 100%;
     height: 15px;
-    left: 5px;
     position: relative;
     top: 15px;
 }
@@ -562,7 +561,6 @@ h5.javascript__tag{
     background: #264de4;
     width: 100%;
     height: 15px;
-    left: 5px;
     position: relative;
     top: 15px;
 }
@@ -571,7 +569,6 @@ h5.javascript__tag{
     background: #f0db4f;
     width: 100%;
     height: 15px;
-    left: 5px;
     position: relative;
     top: 15px;
 }
