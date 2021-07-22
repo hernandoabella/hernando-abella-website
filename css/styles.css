@@ -649,6 +649,12 @@ footer div.redes__sociales a:hover{
     color: #1d3557;
     padding: 10px;
     text-align: center;
+    transition: .3s;
+}
+
+.tarjeta__aprende:hover{
+    border-radius: 25px;
+    
 }
 
 .tarjeta__aprende h3{
