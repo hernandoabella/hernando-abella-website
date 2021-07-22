@@ -1,5 +1,5 @@
 .panel{
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 .snippets__title{
@@ -12,6 +12,11 @@
 h2{
   margin: 30px;
   text-shadow: 5px 5px 10px rgba(0, 0, 0, .4);
+}
+
+h3{
+  text-align: right;
+  padding: 10px;
 }
 
 footer{

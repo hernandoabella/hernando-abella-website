@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./listFiltering.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="shortcut icon" href="/images/favicon-32x32.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css">
+    <link rel="stylesheet" href="./temaPrism.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/toolbar/prism-toolbar.min.css">
 </head>
 <body>
@@ -145,7 +145,18 @@ aNumeros(['2', '3', '4']);     // [2, 3, 4]</code></pre></div>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <div class="decor__bar javascript"></div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-javascript">const countBy = (arr, prop) => arr.reduce((prev, curr) => (prev[curr[prop]] = ++prev[curr[prop]] || 1, prev), {});
+
+// Example
+countBy([
+    { branch: 'audi', model: 'q8', year: '2019' },
+    { branch: 'audi', model: 'rs7', year: '2020' },
+    { branch: 'ford', model: 'mustang', year: '2019' },
+    { branch: 'ford', model: 'explorer', year: '2020' },
+    { branch: 'bmw', model: 'x7', year: '2020' },
+], 'branch');
+
+// { 'audi': 2, 'ford': 2, 'bmw': 1 }</code></pre></div>
                     </div>
               
                     <h3>Count the occurrences of a value in an array</h3> 
@@ -3802,7 +3813,7 @@ isSubset([6], [1, 2, 3, 4]);        // false</code></pre></div>
 const isEmpty = obj => JSON.stringify(obj) === '{}';</code></pre></div>
                     </div>
                 
-                    
+                    <b><span class="number__item">46</b> 
                     <h3 >Validate a Gregorian date</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
