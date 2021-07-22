@@ -160,3 +160,7 @@ h1{
 footer{
     padding: 20px !important;
 }
+
+section p{
+  line-height: 25px;
+}

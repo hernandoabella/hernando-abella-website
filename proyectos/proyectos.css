@@ -51,6 +51,10 @@
     padding: 10px;
   }
 
+  section p{
+    line-height: 25px;
+  }
+
   footer{
     padding: 20px !important;
   }

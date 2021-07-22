@@ -8,6 +8,10 @@ body{
    
 }
 
+p{
+  line-height: 25px;
+}
+
 .container{
     width: 400px;
     background: #fff;
@@ -184,4 +188,8 @@ h1{
 
 footer{
     padding: 20px !important;
+}
+
+section p{
+  line-height: 25px;
 }
