@@ -1,3 +1,4 @@
+
 *{
     margin: 0;
     padding: 0;
@@ -121,7 +122,7 @@ a{
 
 .circulo__contenedor{
     margin: auto;
-    padding: 60px;
+    padding: 60px 30px;
     display: flex;
 }
 
@@ -215,8 +216,6 @@ a{
     padding: 30px;
     color: #1d3557;
     background: #f4a261;
-    
-    
 }
 
 .aprende__conmigo hr{
@@ -334,7 +333,6 @@ a{
 }
 
 .proyectos{
-    padding: 30px;
     background: #fff;  /* fallback for old browsers */
 }
 
@@ -856,10 +854,6 @@ table {
     color: #2a9d8f;
 }
 
-#contacto{
-    padding: 50px;
-}
-
 #contacto h2{
     padding: 40px;
     text-align: center;
@@ -1006,29 +1000,10 @@ footer div.redes__sociales{
 }
 
 
-#aprende__conmigo{
-    padding: 20px;
-}
 
-#practica{
-    padding: 20px;
-}
-
-#fragmentos{
-    padding: 20px;
-}
-
-#youtube{
-    padding: 20px;
-}
-
-
-#contacto{
-    padding: 20px;
-}
 
 #contacto form{
-    width: 100%;
+    width: 80%;
 }
 
 }
