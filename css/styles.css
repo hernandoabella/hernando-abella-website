@@ -1,4 +1,3 @@
-
 *{
     margin: 0;
     padding: 0;
@@ -117,7 +116,8 @@ a{
 }
 
 .sobre__mi{
-    background: #fff;
+    background-image: url('/images/wave1.svg');
+    background-size: cover;
 }
 
 .circulo__contenedor{
@@ -171,6 +171,8 @@ a{
     width: 180px;
     text-align: center;
     transition: .3s;
+    border: 3px dashed #e76f51;
+    border-radius: 25px;
 }
 
 
@@ -213,9 +215,9 @@ a{
 }
 
 .aprende__conmigo{
-    padding: 30px;
     color: #1d3557;
     background: #f4a261;
+    padding-bottom: 50px;
 }
 
 .aprende__conmigo hr{
@@ -226,15 +228,15 @@ a{
 }
 
 .aprende__conmigo h2{
-    margin: 40px;
     text-align: center;
     color: #264653;
     font-size: 2em;
+    padding: 50px;
 }
 
 .aprende__conmigo p{
     text-align: center;
-    margin: 40px;
+    margin: 50px;
     color: #000;
 }
 
@@ -244,14 +246,14 @@ a{
     transition: .3s;
     padding: 10px;
     display: block;
-    width: 170px;
+    width: 100px;
     text-align: center;
     margin: 50px auto;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .aprende__conmigo .ver__mas:hover{
-    background: #264653;
+    background: #2a9d8f;
     color: #fff;
     transform: translate(0px, -2px);
 }
@@ -334,18 +336,21 @@ a{
 
 .proyectos{
     background: #fff;  /* fallback for old browsers */
+    background-image: url('/images/wave1.svg');
+    background-size: cover;
+    padding-bottom: 50px;
 }
 
 .proyectos hr{
     width: 100px;
     border-width: 2px;
-    border: 1px solid #2a9d8f;
+    border: 5px solid #2a9d8f;
     margin: auto;
 }
 
 .proyectos h2{
     text-align: center;
-    margin: 40px;
+    margin: 50px;
     color: #2a9d8f;
     font-size: 2em;
 }
@@ -355,7 +360,7 @@ a{
 }
 
 .proyectos > p{
-    margin: 40px;
+    margin: 50px;
     text-align: center;
     color: #000;
 }
@@ -368,7 +373,7 @@ a{
     text-align: center;
     margin: 60px auto;
     transition: .3s;
-    width: 200px;
+    width: 160px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
@@ -380,8 +385,10 @@ a{
 .tarjeta__proyectos{
     background: #2a9d8f;
     color: #fff;
-    border-radius: 25px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 50px;
+background: #264653;
+box-shadow: inset -20px 20px 60px #203c47,
+            inset 20px -20px 60px #2c515f;
 }
 
 .tarjeta__proyectos i{
@@ -465,20 +472,21 @@ a{
 }
 
 .snippets{
-    padding: 50px;
     background: #e76f51;
     color: #fff;
+    padding-bottom: 50px;
 }
 
 .snippets h2{
     text-align: center;
     color: #fff;
     font-size: 2em;
+    padding: 50px;
 }
 
 .snippets p{
     text-align: center;
-    padding-bottom: 40px;
+    padding: 50px;
 }
 
 .snippets .ver__mas{
@@ -503,7 +511,7 @@ a{
 .snippets hr{
     width: 100px;
     border: 5px dashed #f1faee;
-    margin: 40px auto;
+    margin: auto;
 }
 
 
@@ -615,11 +623,16 @@ footer{
 footer hr{
     width: 80px;
     margin: 20px auto;
-    border: 1px solid #e76f51;
+    border: 3px solid #e76f51;
 }
 
 footer a{
     color: #fff;
+    transition: .3s;
+}
+
+footer a:hover{
+    color: #e76f51;
 }
 
 .footerFlex div div{
@@ -709,10 +722,9 @@ footer div.redes__sociales a:hover{
 
 .tarjeta__snippets{
     width: 300px;
-    background: #fff;
     color: #1d3557;
     padding: 20px;
-    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    background: #f4a261;
 }
 
 .tarjeta__snippets h3{
@@ -792,12 +804,12 @@ table {
     background: -webkit-linear-gradient(to right, #b31217, #e52d27);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #b31217, #e52d27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: #fff;
-    padding: 50px;
+    padding-bottom: 50px;
 }
 
 #youtube h2{
     text-align: center;
-    padding: 40px;
+    padding: 50px;
     font-size: 2em;
 }
 
@@ -825,11 +837,11 @@ table {
     width: 100px;
     margin: auto;
     border-width: 2px;
-    border: 1px solid #fff;
+    border: 5px solid #fff;
 }
 
 #youtube p{
-    margin: 40px;
+    margin: 50px;
     text-align: center;
 }
 
@@ -854,8 +866,15 @@ table {
     color: #2a9d8f;
 }
 
+#contacto{
+    background-image: url('/images/wave1.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 50px;
+}
+
 #contacto h2{
-    padding: 40px;
+    padding: 50px;
     text-align: center;
     color: #2a9d8f;
     font-size: 2em;
@@ -864,11 +883,12 @@ table {
 #contacto form{
     margin: auto;
     width: 500px;
-    padding: 20px;
+    padding: 10px;
     background: #264653;
-    color: #fff;
+    color: rgb(68, 63, 63);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    border-radius: 25px;
+    border: 2px solid #e9c46a;
+    border-radius: 5px;
 }
 
 #contacto hr{
@@ -879,7 +899,7 @@ table {
 }
 
 #contacto p{
-    margin: 40px;
+    margin: 50px;
     text-align: center;
 }
 
@@ -893,8 +913,8 @@ form input[type=button]{
     margin: auto;
     transition: .3s;
     cursor: pointer;
-    background: #2a9d8f;
-    color: #fff;
+    background: #e9c46a;
+    color: #000;
     border: none;
     font-weight: bold;
     border-radius: 100px;
@@ -910,7 +930,7 @@ form label{
     margin-bottom: 5px;
     display: block;
     font-size: .8em;
-    color: #fff;
+    color: #f4a261;
 }
 
 form textarea{
