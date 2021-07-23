@@ -45,12 +45,12 @@ window.addEventListener("scroll", () => {
   });
 });
 
-$(document).ready(() => {
-  $('aside ul li a').click(function(){
-    $(this).removeClass('activeItem')
-    .parent()
-    .siblings()
-    .find('.activeItem')
-    .addClass('activeItem');
-  })
-})
+// $(document).ready(() => {
+//   $('aside ul li a').click(function(){
+//     $(this).removeClass('activeItem')
+//     .parent()
+//     .siblings()
+//     .find('.activeItem')
+//     .addClass('activeItem');
+//   })
+// })

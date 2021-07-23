@@ -5,7 +5,7 @@
     top: 0;
     z-index: 1;
     width: 100%;
-    background-color: #f1f1f1;
+    
 }
   
 .header h2 {
@@ -14,14 +14,15 @@
   
 .progress-container {
     width: 100%;
-    height: 8px;
-    background: #ff8b6e ;
+    height: 5px;
+    background: #264653;
 }
   
 .progress-bar {
-    height: 8px;
-    background: #e34c26;
+    height: 5px;
+    background: #2a9d8f;
     width: 0%;
+    transition: .3s;
 }
   
 .content {
@@ -34,15 +35,16 @@
     display: flex;
 }
 
+
 aside{
     overflow-y: scroll;
 }
 
 aside.sideBar{
     width: 20%;
-    height: 585px;
+    height: 400px;
     position: fixed;
-    top: 62px;
+    top: 80px;
 }
 
 aside ul li{
@@ -54,60 +56,101 @@ aside ul li a{
     transition: .3s;
     text-decoration: none;
     text-align: center;
-    color: #000;
+    color: #323330;
     padding: 10px;
     
 }
 
 aside ul li a:hover{
-    background: #e34c26;
+    background: #264653;
     color: #fff;
-    border-left: 1px solid #ff8b6e;
+    border-left: 1px solid #2a9d8f;
     border-width: 10px;
     padding: 10px;
+    font-weight: bold;
 }
 
 .activeItem{
-    background: #e34c26;
-    color: #fff;
-    border-left: 1px solid #ff8b6e;
-    border-width: 5px;
+    color: #2a9d8f;
 }
 
 .articles{
     width: 80%;
     position: absolute;
     right: 0;
-    top: 70px;
+    top: 55px;
     padding: 20px;
 }
 
 section{
-    padding: 20px;
-    background: #ffdad1;
+    padding: 10px;
+    border-width: 5px;
     margin-bottom: 50px;
-    border-radius: 5px;
+}
+
+section h1{
+    margin: 20px;
+    color: #e76f51;
+    border-width: 5px;
+    text-align: center;
+    font-size: 2em;
 }
 
 section h2{
-    margin-bottom: 15px;
-    color: #ff562c;
-    border-width: 5px;
-    width: 0%;
+    margin: 20px 0px;
 }
 
 section h3{
     margin: 20px 0px;
+    text-align: center;
+    color: #f4a261;
+}
+
+
+section h4{
+    margin: 20px 0px;
+    color: #e9c46a;
 }
 
 section p{
     line-height: 30px;
     text-align: justify;
+    margin-bottom: 10px;
 }
 
 section a{
-    display: block;
     margin-top: 10px;
     transition: .3s;
     cursor: pointer;
+    color: #2a9d8f;
 }
+
+section ul{
+    margin: 20px;
+}
+
+section ul li{
+    margin: 10px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #2a9d8f; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #264653;
+    
+    
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #e76f51; 
+  }

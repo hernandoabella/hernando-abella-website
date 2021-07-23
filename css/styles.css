@@ -6,6 +6,16 @@
     scroll-behavior: smooth;
 }
 
+.image__article{
+    width: 350px;
+    margin: 30px auto;
+}
+
+.image__article img{
+    width: 100%;
+    
+}
+
 .crowCentral{
     padding: 20px;
 }
@@ -122,8 +132,7 @@ a{
 }
 
 .sobre__mi{
-    background-image: url('/images/wave1.svg');
-    background-size: cover;
+    background: #fff;
 }
 
 .circulo__contenedor{
@@ -509,13 +518,6 @@ a{
     width: 100px;
     border: 5px dashed #465362;
     margin: auto;
-}
-
-
-
-.code__container{
-    border-radius: 5px;
-    margin: 30px auto;
 }
 
 .code__container hr{
