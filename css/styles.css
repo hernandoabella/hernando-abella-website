@@ -6,6 +6,10 @@
     scroll-behavior: smooth;
 }
 
+.crowCentral{
+    padding: 20px;
+}
+
 .btnFlex{
     display: flex;
 }
@@ -59,13 +63,14 @@
 
   .topnav {
     overflow: hidden;
-    background-color: #264653;
+    border-bottom: 1px solid rgb(243, 243, 243);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
   
   .topnav a {
     float: left;
     display: block;
-    color: #fff;
+    color: #000;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -74,13 +79,14 @@
   }
   
   .topnav a:hover {
-    background-color: #fff;
-    color: #1d3557;
+    background-color: #003049;
+    color: #fff;
   }
   
   .topnav a.active {
-    background-color: #1d3557;
-    color: #fff;
+    background: #fff;
+    color: #465362;
+    font-weight: bold;
   }
   
   .topnav .icon {
@@ -135,7 +141,7 @@ a{
 }
 
 .sidetwo h1{
-    color: #2a9d8f;
+    color: #465362;
     margin-bottom: 20px;
     font-size: 3em;
 }
@@ -149,7 +155,7 @@ a{
     margin: auto;
     width: 280px;
     height: 280px;
-    background: #2a9d8f;
+    background: #011936;
     border-radius: 100%;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
@@ -164,21 +170,18 @@ a{
 
 .go__to__learn{
     margin: 20px 0px;
-    background: #2a9d8f;
+    background: #011936;
     color: #fff;
     display: block;
     padding: 10px;
-    width: 180px;
+    width: 190px;
     text-align: center;
     transition: .3s;
-    border: 3px dashed #e76f51;
     border-radius: 25px;
 }
 
 
 .go__to__learn:hover{
-    background: #e76f51;
-    color: #fff;
     transform: translate(0px, -2px);
 }
 
@@ -216,22 +219,22 @@ a{
 
 .aprende__conmigo{
     color: #1d3557;
-    background: #f4a261;
     padding-bottom: 50px;
+    border-top: 1px solid rgb(243, 243, 243);;
 }
 
 .aprende__conmigo hr{
     width: 100px;
     margin: auto;
     border-width: 2px;
-    border: 5px dashed #264653;
+    border: 5px dashed #465362;
 }
 
 .aprende__conmigo h2{
     text-align: center;
-    color: #264653;
+    color: #465362;
     font-size: 2em;
-    padding: 50px;
+    padding-top: 50px;
 }
 
 .aprende__conmigo p{
@@ -241,8 +244,8 @@ a{
 }
 
 .aprende__conmigo .ver__mas{
-    background: #e76f51;
-    color: #f1faee;
+    background: #011936;
+    color: #fff;
     transition: .3s;
     padding: 10px;
     display: block;
@@ -253,7 +256,6 @@ a{
 }
 
 .aprende__conmigo .ver__mas:hover{
-    background: #2a9d8f;
     color: #fff;
     transform: translate(0px, -2px);
 }
@@ -336,22 +338,21 @@ a{
 
 .proyectos{
     background: #fff;  /* fallback for old browsers */
-    background-image: url('/images/wave1.svg');
-    background-size: cover;
+    
     padding-bottom: 50px;
 }
 
 .proyectos hr{
     width: 100px;
     border-width: 2px;
-    border: 5px solid #2a9d8f;
+    border: 5px solid #465362;
     margin: auto;
 }
 
 .proyectos h2{
     text-align: center;
     margin: 50px;
-    color: #2a9d8f;
+    color: #465362;
     font-size: 2em;
 }
 
@@ -366,7 +367,7 @@ a{
 }
 
 .proyectos .ver__mas{
-    background: #e76f51;
+    background: #011936;
     color: #fff;
     padding: 10px;
     display: block;
@@ -378,17 +379,14 @@ a{
 }
 
 .proyectos .ver__mas:hover{
-    background: #264653;
+    background: #f4a261;
     transform: translate(0px, -2px);
 }
 
 .tarjeta__proyectos{
-    background: #2a9d8f;
+    background: #011936;
     color: #fff;
-    border-radius: 50px;
-background: #264653;
-box-shadow: inset -20px 20px 60px #203c47,
-            inset 20px -20px 60px #2c515f;
+    border-radius: 25px;
 }
 
 .tarjeta__proyectos i{
@@ -408,7 +406,7 @@ box-shadow: inset -20px 20px 60px #203c47,
 
 .tarjeta__proyectos a{
     color:#000;
-    background: #e9c46a;
+    background: #F9DC5C;
     padding: 10px;
     transition: .3s;
     display: block;
@@ -418,9 +416,8 @@ box-shadow: inset -20px 20px 60px #203c47,
 }
 
 .tarjeta__proyectos a:hover{
-    background: #e76f51;
-    color: #fff;
-    transform: translate(2px, 2px);
+    transform: translate(2px, -2px);
+    background: #F4FFFD;
 }
 
 .redes__sociales{
@@ -472,16 +469,16 @@ box-shadow: inset -20px 20px 60px #203c47,
 }
 
 .snippets{
-    background: #e76f51;
-    color: #fff;
+    color: #000;
     padding-bottom: 50px;
+    border-top: 1px solid rgb(243, 243, 243);;
 }
 
 .snippets h2{
     text-align: center;
-    color: #fff;
+    color: #465362;
     font-size: 2em;
-    padding: 50px;
+    padding-top: 50px;
 }
 
 .snippets p{
@@ -490,7 +487,7 @@ box-shadow: inset -20px 20px 60px #203c47,
 }
 
 .snippets .ver__mas{
-    background: #2a9d8f;
+    background: #011936;
     color: #fff;
     border: none;
     transition: .3s;
@@ -503,14 +500,14 @@ box-shadow: inset -20px 20px 60px #203c47,
 }
 
 .snippets .ver__mas:hover{
-    background: #264653;
-    color: #fff;
+    background: #F9DC5C;
+    color: #000;
     transform: translate(0px, -2px);
 }
 
 .snippets hr{
     width: 100px;
-    border: 5px dashed #f1faee;
+    border: 5px dashed #465362;
     margin: auto;
 }
 
@@ -614,25 +611,30 @@ ul.breadcrumb {
 }
 
 footer{
-    background: #264653;
-    color: #fff;
-    padding: 40px;
+    color: #000;
+    padding: 50px;
     text-align: center;
+    border-top: 1px solid rgb(243, 243, 243);
+}
+
+footer h4{
+    font-size: 1.3em;
+    color: #ED254E;
 }
 
 footer hr{
     width: 80px;
     margin: 20px auto;
-    border: 3px solid #e76f51;
+    border: 3px solid #ED254E;
 }
 
 footer a{
-    color: #fff;
+    color: #000;
     transition: .3s;
 }
 
 footer a:hover{
-    color: #e76f51;
+    color: #ED254E;
 }
 
 .footerFlex div div{
@@ -640,32 +642,27 @@ footer a:hover{
 }
 
 footer div.footerLine1 i{
-    color: #e76f51;
+    color: #ED254E;
 
 }
 
 footer div.redes__sociales a{
-    color: #fff;
+    color: #000;
 }
 
 footer div.redes__sociales a:hover{
-    color: #e76f51;
+    color: #ED254E;
 }
 
 
 
 .tarjeta__aprende{
     width: 300px;
-    background: #e76f51;
+    background: #011936;
     color: #1d3557;
     padding: 10px;
     text-align: center;
     transition: .3s;
-}
-
-.tarjeta__aprende:hover{
-    border-radius: 25px;
-    
 }
 
 .tarjeta__aprende h3{
@@ -681,7 +678,7 @@ footer div.redes__sociales a:hover{
 
 .tarjeta__aprende a{
     color: #000;
-    background: #e9c46a;
+    background: #F4FFFD;
     padding: 10px;
     transition: .3s;
     width: 100px;
@@ -692,8 +689,9 @@ footer div.redes__sociales a:hover{
 }
 
 .tarjeta__aprende a:hover{
-    color: #fff;
-    background: #f4a261;
+    color: #000;
+    background: #F9DC5C;
+    transform: scale(1.3);
 }
 
 .tarjeta__aprende img.html__image{
@@ -722,9 +720,9 @@ footer div.redes__sociales a:hover{
 
 .tarjeta__snippets{
     width: 300px;
-    color: #1d3557;
+    color: #465362;
     padding: 20px;
-    background: #f4a261;
+    background: #011936;
 }
 
 .tarjeta__snippets h3{
@@ -809,7 +807,7 @@ table {
 
 #youtube h2{
     text-align: center;
-    padding: 50px;
+    padding-top: 50px;
     font-size: 2em;
 }
 
@@ -863,38 +861,35 @@ table {
 }
 
 .correo{
-    color: #2a9d8f;
+    color: #465362;
 }
 
 #contacto{
-    background-image: url('/images/wave1.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
+    border-top: 1px solid rgb(243, 243, 243);
     padding-bottom: 50px;
 }
 
 #contacto h2{
-    padding: 50px;
+    padding-top: 50px;
     text-align: center;
-    color: #2a9d8f;
+    color: #465362;
     font-size: 2em;
 }
 
 #contacto form{
     margin: auto;
     width: 500px;
-    padding: 10px;
-    background: #264653;
+    padding: 20px;
+    background: #011936;
     color: rgb(68, 63, 63);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    border: 2px solid #e9c46a;
     border-radius: 5px;
 }
 
 #contacto hr{
     width: 100px;
     margin: auto;
-    border: 5px dashed #2a9d8f;
+    border: 5px dashed #465362;
     
 }
 
@@ -913,7 +908,7 @@ form input[type=button]{
     margin: auto;
     transition: .3s;
     cursor: pointer;
-    background: #e9c46a;
+    background: #F9DC5C;
     color: #000;
     border: none;
     font-weight: bold;
@@ -922,7 +917,7 @@ form input[type=button]{
 }
 
 form input[type=button]:hover{
-    background: #f4a261;
+    background: #F4FFFD;
     color: #000;
 }
 
@@ -930,7 +925,7 @@ form label{
     margin-bottom: 5px;
     display: block;
     font-size: .8em;
-    color: #f4a261;
+    color: #bbbbbb;
 }
 
 form textarea{
