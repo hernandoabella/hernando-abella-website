@@ -1112,21 +1112,209 @@ código JS
                         <pre class="line-numbers"><code class="language-html">&lt;input&gt;</code></pre></div>
                 </div>
 
+                <p>Equivalente a usar:</p>
 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;text&quot;&gt;</code></pre></div>
+                </div>
 
+                <p>Al igual que con todos los demás campos que siguen, debe asignar un nombre al campo para que su contenido se envíe al servidor cuando se envíe el formulario:</p>
 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;text&quot; name=&quot;nombredeusuario&quot;&gt;</code></pre></div>
+                </div>
 
+                <p>El atributo placeholder se usa para que aparezca algún texto, en gris claro, cuando el campo está vacío. Útil para agregar una pista al usuario sobre lo que debe escribir:</p>
 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;text&quot; name=&quot;nombredeusuario&quot; placeholder=&quot;Tu nombre de usuario&quot;&gt;
+</code></pre></div>
+                </div>
 
+                <h3>Correo electrónico</h3>
+                <p>El uso type="email"validará en el lado del cliente (en el navegador) un correo electrónico para verificar su corrección (corrección semántica, sin garantizar que la dirección de correo electrónico exista) antes de enviarlo.</p>
 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;email&quot; name=&quot;email&quot; placeholder=&quot;Tu correo electr&oacute;nico&quot;&gt;
+</code></pre></div>
+                </div>
 
+                <h3>Clave</h3>
+                <p>El uso type="password" hará que cada clave ingresada aparezca como un asterisco (*) o un punto, útil para los campos que albergan una contraseña.</p>
 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;password&quot; name=&quot;password&quot; placeholder=&quot;Tu contrase&ntilde;a&quot;&gt;
+</code></pre></div>
+                </div>
 
+                <h3>Números</h3>
+                <p>Puede hacer que un elemento de entrada acepte solo números:</p>
 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;number&quot; name=&quot;age&quot; placeholder=&quot;Tu edad&quot;&gt;</code></pre></div>
+                </div>
 
+                <p>Puede especificar un valor mínimo y máximo aceptado:</p>
 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;number&quot; name=&quot;age&quot; placeholder=&quot;Tu edad&quot; min=&quot;18&quot; max=&quot;110&quot;&gt;</code></pre></div>
+                </div>
 
+                <p>El atributo step ayuda a identificar los pasos entre diferentes valores. Por ejemplo, esto acepta un valor entre 10 y 50, en pasos de 5:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;number&quot; name=&quot;a-number&quot;  min=&quot;10&quot; max=&quot;50&quot; step=&quot;5&quot;&gt;
+</code></pre></div>
+                </div>
+
+                <h3>Campo escondido</h3>
+                <p>Los campos se pueden ocultar al usuario. Todavía se enviarán al servidor al enviar el formulario:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;hidden&quot; name=&quot;some-hidden-field&quot; value=&quot;algun-valor&quot;&gt;
+</code></pre></div>
+                </div>
+
+                <p>Esto se usa comúnmente para almacenar valores como un token CSRF, usado para seguridad e identificación de usuarios, o incluso para detectar robots que envían spam, usando técnicas especiales.</p>
+                <p>También se puede utilizar para identificar una forma y su acción.</p>
+                <h3>Establecer un valor predeterminado</h3>
+
+                <p>Todos esos campos aceptan un valor predefinido. Si el usuario no lo cambia, este será el valor enviado al servidor:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;number&quot; name=&quot;age&quot; value=&quot;18&quot;&gt;
+</code></pre></div>
+                </div>
+
+                <p>Si establece un marcador de posición, ese valor aparecerá si el usuario borra el valor del campo de entrada:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;number&quot; name=&quot;age&quot; placeholder=&quot;Tu edad&quot; value=&quot;18&quot;&gt;
+</code></pre></div>
+                </div>
+
+                <h3>Enviar Formulario</h3>
+
+                <p>El campo type="submit" es un botón que, una vez presionado por el usuario, envía el formulario:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;submit&quot;&gt;
+</code></pre></div>
+                </div>
+
+                <p>El atributo value establece el texto en el botón, que si falta muestra el texto "Enviar":</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;submit&quot; value=&quot;Clic&quot;&gt;</code></pre></div>
+                </div>
+
+                <h3>Validación de formularios</h3>
+
+                <p>Los navegadores proporcionan la funcionalidad de validación del lado del cliente a los formularios.</p>
+                <p>Puede configurar los campos según sea necesario, asegurándose de que estén llenos y aplicar un formato específico para la entrada de cada campo.</p>
+                <p>Veamos ambas opciones.</p>
+
+                <h3>Establecer campos según sea necesario</h3>
+
+                <p>El atributo required le ayuda con la validación. Si el campo no está configurado, la validación del lado del cliente falla y el navegador no envía el formulario:</p>
                 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;text&quot; name=&quot;username&quot; required&gt;</code></pre></div>
+                </div>
+
+                <h3>Aplicar un formato específico</h3>
+
+                <p>Describí el campo type="email" de arriba. Valida automáticamente la dirección de correo electrónico de acuerdo con un formato establecido en la especificación.</p>
+
+                <p>En el campo type="number", mencioné el atributo min y max para limitar los valores ingresados ​​a un intervalo.</p>
+
+                <p>Puedes hacer más.</p>
+
+                <p>Puede aplicar un formato específico en cualquier campo.</p>
+
+                <p>El atributo pattern le da la capacidad de establecer una expresión regular para validar el valor.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;text&quot; name=&quot;username&quot; pattern=&quot;[a-zA-Z]{8}&quot;&gt;</code></pre></div>
+                </div>
+
+                <h2>Otros campos</h2>
+                <h3>Cargas de archivos</h3>
+                <p>Puede cargar archivos desde su computadora local y enviarlos al servidor usando un elemento de entrada type="file":</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;file&quot; name=&quot;documentos-secretos&quot;&gt;
+</code></pre></div>
+                </div>
+
+                <p>Puedes adjuntar varios archivos:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;file&quot; name=&quot;documentos-secretos&quot; multiple&gt;
+</code></pre></div>
+                </div>
+
+                <p>Puede especificar uno o más tipos de archivos permitidos mediante el atributo accept. Esto acepta imágenes:                </p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;file&quot; name=&quot;documentos-secretos&quot; accept=&quot;image/*&quot;&gt;
+</code></pre></div>
+                </div>
+
+                <p>Puede utilizar un tipo MIME específico, como application/jsono establecer una extensión de archivo como .pdf. O configure varias extensiones de archivo, como esta:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;file&quot; name=&quot;documentos-secretos&quot; accept=&quot;.jpg, .jpeg, .png&quot;&gt;
+</code></pre></div>
+                </div>
+
+                <h3>Botones</h3>
+                <p>Los campos de entrada (input) type="button" se pueden usar para agregar botones adicionales al formulario, que no son botones de envío:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;button&quot; value=&quot;Clic&quot;&gt;
+</code></pre></div>
+                </div>
 
             </section>
 
