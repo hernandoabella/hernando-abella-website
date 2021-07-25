@@ -6,11 +6,14 @@
     <title>Hernando Abella | Tutorial de HTML</title>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="./pagination.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css">
+    <link rel="stylesheet" href="./theme.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body>
-    <div class="backbar"><a href="/aprende/"><i class="fas fa-arrow-left"></i></a></div>
+    <div class="backbar">
+        <a href="/aprende/"><i class="fas fa-arrow-left"></i></a>
+        <span style="color: #fff; margin-left: 10px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Aprende HTML</span>
+    </div>
 
     <div class="header">
         <div class="progress-container">
@@ -75,7 +78,6 @@
         
     
         <div class="articles">
-            <h2>Tutorial de HTML</h2>
             <section id="item1">
                 <h1>Introducción a HTML</h1>
                 <p>HTML es una abreviatura de Hyper Text Markup Language, es uno de los bloques de construcción más fundamentales de la web.</p>
@@ -896,16 +898,143 @@ código JS
 
                 <h3>Article</h3>
                 <p>La etiqueta artículo identifica una cosa que pueda ser independiente de otras cosas en una página.</p>
-                <p></p>
+                <p>Por ejemplo, una lista de publicaciones de blog en la página de inicio.</p>
 
+                <p>O una lista de enlaces.</p>
 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;div&gt;
+    &lt;article&gt;
+        &lt;h2&gt;Publicaci&oacute;n del blog&lt;/h2&gt;
+        &lt;a ...&gt;Leer m&aacute;s&lt;/a&gt;
+    &lt;/article&gt;
+    &lt;article&gt;
+        &lt;h2&gt;Otra publicaci&oacute;n del blog&lt;/h2&gt;
+        &lt;a ...&gt;Leer m&aacute;s&lt;/a&gt;
+    &lt;/article&gt;
+&lt;/div&gt;</code></pre></div>
+                </div>
 
+                <p>No estamos limitados a listas: un artículo puede ser el elemento principal de una página.</p>
 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;article&gt;
+    &lt;h2&gt;Una publicaci&oacute;n del blog&lt;/h2&gt;
+    &lt;p&gt;Aqu&iacute; va el contenido...&lt;/p&gt;
+&lt;/article&gt;</code></pre></div>
+                </div>
 
+                <p>Dentro de una etiqueta article deberíamos tener un título ( h1 y h6). </p>
+                <h3>Section</h3>
+                <p>Representa una sección de un documento. Cada sección tiene una etiqueta de título ( h1- h6), luego el cuerpo de la sección .</p>
+                <h4>Ejemplo:</h4>
 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;section&gt;
+    &lt;h2&gt;Una secci&oacute;n de una p&aacute;gina&lt;/h2&gt;
+    &lt;p&gt;...&lt;/p&gt;
+    &lt;img ...&gt;
+&lt;/section&gt;</code></pre></div>
+                </div>
 
+                <p>Es útil dividir un artículo extenso en diferentes secciones.</p>
+                <p>No debe usarse como un elemento contenedor genérico. divestá hecho para esto.</p>
+                <h3>div</h3>
+                <p>div es el elemento contenedor genérico:</p>
 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;div&gt;
+    ...
+&lt;/div&gt;</code></pre></div>
+                </div>
 
+                <p>A menudo, agrega un atributo classo ida este elemento para permitirle diseñar con CSS.</p>
+                <p>Usamos diven cualquier lugar donde necesitemos un contenedor pero las etiquetas existentes no son adecuadas.</p>
+
+                <h2>Etiquetas relacionadas con la página</h2>
+                <h3>nav</h3>
+                <p>Esta etiqueta se utiliza para crear el marcado que define la navegación de la página. A esto normalmente agregamos una lista ul o ol:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;nav&gt;
+    &lt;ol&gt;
+        &lt;li&gt;&lt;a href=&quot;/&quot;&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;/blog&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/nav&gt;</code></pre></div>
+                </div>
+
+                <h3>aside</h3>
+                <p>La etiqueta aside se utiliza para agregar un contenido relacionado con el contenido principal.</p>  
+                <p>Un cuadro donde agregar una frase, por ejemplo. O una barra lateral.</p>
+                <h4>Ejemplo:</h4>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;div&gt;
+  &lt;p&gt;Algo de texto..&lt;/p&gt;
+  &lt;aside&gt;
+    &lt;p&gt;Una frase..&lt;/p&gt;
+  &lt;/aside&gt;
+  &lt;p&gt;Otro texto...&lt;/p&gt;
+&lt;/div&gt;
+</code></pre></div>
+                </div>
+
+                <p>El uso asidees una señal de que las cosas que contiene no forman parte del flujo regular de la sección en la que vive.</p>
+
+                <h3>header</h3>
+                <p>La etiqueta header representa una parte de la página que es la introducción. Por ejemplo, puede contener una o más etiquetas de encabezado ( h1- h6), el lema del artículo, una imagen.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;article&gt;
+  &lt;header&gt;
+      &lt;h1&gt;T&iacute;tulo del Art&iacute;culo&lt;/h1&gt;
+  &lt;/header&gt;
+  ...
+&lt;/div&gt;</code></pre></div>
+                </div>
+
+                <h3>main</h3>
+                <p>La etiqueta main representa la parte principal de una página:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;body&gt;
+  ....
+  &lt;main&gt;
+    &lt;p&gt;....&lt;/p&gt;
+  &lt;/main&gt;
+&lt;/body&gt;</code></pre></div>
+                </div>
+
+                <h3>footer</h3>
+                <p>La etiqueta footer se utiliza para determinar el pie de página de un artículo o el pie de página de la página:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;article&gt;
+ ....
+  &lt;footer&gt;
+    &lt;p&gt;Notas del footer..&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/div&gt;</code></pre></div>
+                </div>
 
 
 
@@ -913,10 +1042,92 @@ código JS
 
             <section id="item9">
                 <h1>Formularios</h1>
-                <p>HTML es la base de la maravilla llamada Web.</p>
-                <p>Hay un poder increíble detrás de este conjunto de reglas bastante simple y limitado, que nos permite a nosotros, desarrolladores, creadores, diseñadores, escritores y manipuladores, crear documentos, aplicaciones y experiencias para personas de todo el mundo.</p>
-                <p>El éxito de HTML se basa en una cosa: la <b>simplicidad</b>.</p>
-                <p>Las excepcionales herramientas de desarrollo integradas en cualquier navegador nos permiten inspeccionar e inspirarnos en HTML escrito por cualquier persona en el mundo.</p>
+                <p>Los formularios son la forma en que puede interactuar con una página o una aplicación, construida con tecnologías web.</p>
+                <p>Tiene un conjunto de controles, y cuando envía el formulario, ya sea con un clic en el botón "enviar" o mediante programación, el navegador enviará los datos al servidor.</p>
+                <p>De forma predeterminada, este envío de datos hace que la página se recargue después de que se envían los datos, pero usando JavaScript puede alterar este comportamiento.</p>
+
+                <p>Un formulario se crea usando la etiqueta form:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;form&gt;
+    ...
+&lt;/form&gt;</code></pre></div>
+                </div>
+
+                <p>Por defecto, los formularios se envían mediante el método HTTP GET. Lo cual tiene sus inconvenientes y, por lo general, desearás utilizar POST.</p>
+                <p>Puede configurar el formulario para que utilice POST cuando se envíe mediante el atributo  method:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;form method=&quot;POST&quot;&gt;
+    ...
+&lt;/form&gt;</code></pre></div>
+                </div>
+
+                <p>El formulario se envía, ya sea mediante GET o POST, a la misma URL donde reside.</p>
+
+                <p> Entonces, si el formulario está en la página https://hernandoabella.com/contacts, presionar el botón "enviar" hará una solicitud a esa misma URL.</p>
+                <p>Lo que puede resultar en que no suceda nada.</p>
+                <p>Necesita algo del lado del servidor para manejar la solicitud y, por lo general, "escucha" esos eventos de envío de formularios en una URL dedicada.</p>
+                <p>Puede especificar la URL a través del parámetro action:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;form action=&quot;/nuevo-contacto&quot; method=&quot;POST&quot;&gt;
+    ...
+&lt;/form&gt;</code></pre></div>
+                </div>
+
+                <p>Esto hará que el navegador envíe los datos del formulario mediante POST a la URL /nuevo-contacto en el mismo origen.</p>
+                <p>Si el origen (protocolo + dominio + puerto) es https://hernandoabella.com (el puerto 80 es el predeterminado), esto significa que se enviarán los datos del formulario https://www.hernandoabella.com/nuevo-contacto</p>
+
+                <p>Hablé de datos. ¿Qué datos?</p>
+
+                <p>Los datos son proporcionados por los usuarios a través del conjunto de controles que están disponibles en la plataforma web:</p>
+
+                <ul>
+                    <li>cuadros de entrada (texto de una sola línea)</li>
+                    <li>áreas de texto (texto de varias líneas)</li>
+                    <li>seleccionar cuadros (elija una opción de un menú desplegable)</li>
+                    <li>botones de radio (elija una opción de una lista siempre visible)</li>
+                    <li>casillas de verificación (elija cero, una o más opciones)</li>
+                    <li>cargas de archivos</li>
+                    <li>¡y más!</li>
+                </ul>
+
+                <p>Presentemos cada uno de ellos en la siguiente descripción general de los campos del formulario.</p>
+
+                <h3>La etiqueta input</h3>
+
+                <p>El campo input es uno de los elementos de formulario más utilizados. También es un elemento muy versátil y puede cambiar completamente el comportamiento en función del atributo type.</p>
+                <p>El comportamiento predeterminado es ser un control de entrada de texto de una sola línea:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input&gt;</code></pre></div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+
             </section>
 
             <section id="item10">
