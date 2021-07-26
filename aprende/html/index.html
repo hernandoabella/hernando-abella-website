@@ -1571,17 +1571,153 @@ código JS
 &lt;/select&gt;</code></pre></div>
                 </div>
 
-
-
-
             </section>
 
             <section id="item10">
                 <h1>Tablas</h1>
-                <p>HTML es la base de la maravilla llamada Web.</p>
-                <p>Hay un poder increíble detrás de este conjunto de reglas bastante simple y limitado, que nos permite a nosotros, desarrolladores, creadores, diseñadores, escritores y manipuladores, crear documentos, aplicaciones y experiencias para personas de todo el mundo.</p>
-                <p>El éxito de HTML se basa en una cosa: la <b>simplicidad</b>.</p>
-                <p>Las excepcionales herramientas de desarrollo integradas en cualquier navegador nos permiten inspeccionar e inspirarnos en HTML escrito por cualquier persona en el mundo.</p>
+                <p>En los primeros días de la web, las tablas eran una parte muy importante de los diseños de construcción</p>
+                <p>Más tarde fueron reemplazados por CSS y sus capacidades de diseño, y hoy tenemos herramientas poderosas como CSS Flexbox y CSS Grid para crear diseños. Las tablas ahora se usan solo para, adivinen qué, ¡construir tablas!</p>
+
+                <h3>La etiqueta table</h3>
+                <p>Usted define una tabla usando la etiqueta table:</p>
+            
+            <div class="panel">
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;table&gt;
+
+&lt;/table&gt;</code></pre></div>
+            </div>
+
+            <p>Dentro de la tabla definiremos los datos. Razonamos en términos de filas, lo que significa que agregamos filas a una tabla (no columnas). Definiremos columnas dentro de una fila.</p>
+
+            <h3>Filas</h3>
+            <p>Se agrega una fila usando la etiqueta tr, y eso es lo único que podemos agregar a un elemento table:</p>
+
+            <div class="panel">
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;table&gt;
+  &lt;tr&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre></div>
+            </div>
+
+            <p>Esta es una tabla con 3 filas.</p>
+
+            <p>La primera fila puede asumir el papel de encabezado.</p>
+
+            <h2>Encabezados de columna</h2>
+
+            <p>El encabezado de la tabla contiene el nombre de una columna, normalmente en negrita.</p>
+
+            <p>Piense en un documento de Excel / Hojas de cálculo de Google. El A-B-C-D...encabezado superior.</p>
+
+            <div class="image__article">
+                <img src="/images/Screen-Shot-5.png" alt="code-image">
+            </div>
+
+            <p>Definimos el encabezado usando la etiqueta th:</p>
+
+            <div class="panel">
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Columna 1&lt;/th&gt;
+    &lt;th&gt;Columna 2&lt;/th&gt;
+    &lt;th&gt;Columna 3&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre></div>
+            </div>
+
+            <h2>El contenido de la tabla</h2>
+            <p>El contenido de la table se define mediante las etiquetas td, dentro de los otros elementos tr:</p>
+
+            <div class="panel">
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Columna 1&lt;/th&gt;
+    &lt;th&gt;Columna 2&lt;/th&gt;
+    &lt;th&gt;Columna 3&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Fila 1 Columna 1&lt;/td&gt;
+    &lt;td&gt;Fila 1 Columna 2&lt;/td&gt;
+    &lt;td&gt;Fila 1 Columna 3&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Fila 2 Columna 1&lt;/td&gt;
+    &lt;td&gt;Fila 2 Columna 2&lt;/td&gt;
+    &lt;td&gt;Fila 2 Columna 3&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre></div>
+            </div>
+
+            <p>Así es como los navegadores lo renderizan, si no agrega ningún estilo CSS:</p>
+
+            <div class="image__article">
+                <img src="/images/Screen-Shot-6.png" alt="code-image">
+            </div>
+
+            <p>Añadiendo este CSS:</p>
+
+            <div class="panel">
+                <div class="codigo__css">
+                    <div class="decor__bar css"></div>
+                    <pre class="line-numbers"><code class="language-css">th, td {
+  padding: 10px;
+  border: 1px solid #333;
+}</code></pre></div>
+            </div>
+
+            <p>Hace que la tabla se parezca más a una tabla adecuada:</p>
+
+            <div class="image__article">
+                <img src="/images/Screen-Shot-7.png" alt="code-image">
+            </div>
+
+            <h3>Abarcar columnas y filas</h3>
+            <p>Una fila puede decidir abarcar más de 2 o más columnas, utilizando el atributo colspan:</p>
+
+            <div class="panel">
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Columna 1&lt;/th&gt;
+    &lt;th&gt;Columna 2&lt;/th&gt;
+    &lt;th&gt;Columna 3&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;Fila 1 Columnas 1-2&lt;/td&gt;
+    &lt;td&gt;Fila 1 Columna 3&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td colspan=&quot;3&quot;&gt;Fila 2 Columnas 1-3&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre></div>
+            </div>
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
             </section>
 
             <section id="item11">
