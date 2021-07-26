@@ -1316,6 +1316,264 @@ código JS
 </code></pre></div>
                 </div>
 
+                <p>Se utilizan para hacer algo mediante programación, utilizando JavaScript.</p>
+
+                <p>Hay un campo especial representado como un botón, cuya acción especial es borrar todo el formulario y devolver el estado de los campos al inicial:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;reset&quot;&gt;
+</code></pre></div>
+                </div>
+
+                <h3>Botones de radio</h3>
+                <p>Los botones de opción se utilizan para crear un conjunto de opciones, de las cuales se presiona una y todas las demás se desactivan.</p>
+                <p>El nombre proviene de radios de automóviles antiguos que tenían este tipo de interfaz.</p>
+                <p>Usted define un conjunto de entradas type="radio", todas con el mismo atributo name y atributo value diferente:</p>
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;radio&quot; name=&quot;color&quot; value=&quot;amarillo&quot;&gt;
+&lt;input type=&quot;radio&quot; name=&quot;color&quot; value=&quot;rojo&quot;&gt;
+&lt;input type=&quot;radio&quot; name=&quot;color&quot; value=&quot;azul&quot;&gt;</code></pre></div>
+                </div>
+
+                <p>Una vez que se envía el formulario, la propiedad color de datos tendrá un valor único.</p>
+                <p>Siempre hay un elemento marcado. El primer elemento es el que está marcado por defecto.</p>
+
+                <p>Puede establecer el valor preseleccionado mediante el atributo checked. Puede usarlo solo una vez por grupo de entradas de radio.</p>
+
+                <h3>Casillas de verificación</h3>
+                <p>Similar a las cajas de radio, pero permiten elegir múltiples valores, o ninguno en absoluto.</p>
+                <p>Usted define un conjunto de entradas type="checkbox", todas con el mismo atributo name y atributo value diferente:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;checkbox&quot; name=&quot;color&quot; value=&quot;amarillo&quot;&gt;
+&lt;input type=&quot;checkbox&quot; name=&quot;color&quot; value=&quot;rojo&quot;&gt;
+&lt;input type=&quot;checkbox&quot; name=&quot;color&quot; value=&quot;azul&quot;&gt;</code></pre></div>
+                </div>
+
+                <p>Todas esas casillas de verificación estarán desmarcadas de forma predeterminada. Utilice el atributo checked para habilitarlos al cargar la página.</p>
+                <p>Dado que este campo de entrada permite múltiples valores, al enviar el formulario, los valores se enviarán al servidor como una matriz.</p>
+
+
+                <h3>Fecha y hora</h3>
+                <p>Tenemos algunos tipos de entrada para aceptar valores de fecha.</p>
+
+                <p>El campo de entrada type="date" permite al usuario ingresar una fecha y muestra un selector de fecha si es necesario:</p>
+            
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;date&quot; name=&quot;birthday&quot;&gt;
+</code></pre></div>
+                </div>
+            
+                <p>El campo de entrada type="time" permite al usuario ingresar una hora y muestra un selector de hora si es necesario:</p>
+            
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;time&quot; name=&quot;tiempo-para-recoger&quot;&gt;</code></pre></div>
+                </div>
+            
+                <p>El campo de entrada type="month" permite al usuario ingresar un mes y un año:</p>
+            
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;month&quot; name=&quot;mes-de-lanzamiento&quot;&gt;</code></pre></div>
+                </div>
+            
+                <p>El campo de entrada type="week" permite al usuario ingresar una semana y un año:</p>
+            
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;week&quot; name=&quot;elegir-semana&quot;&gt;
+</code></pre></div>
+                </div>
+
+                <p>Todos esos campos permiten limitar el rango y el paso entre cada valor. Recomiendo consultar MDN para conocer los pequeños detalles sobre su uso.</p>
+                <p>El campo type="datetime-local" le permite elegir una fecha y una hora.</p>
+            
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;datetime-local&quot; name=&quot;fecha-y-hora&quot;&gt;
+</code></pre></div>
+                </div>
+
+                <h3>Selector de color</h3>
+
+                <p>Puede permitir que los usuarios elijan un color usando el elemento type="color":                </p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;color&quot; name=&quot;color-de-carro&quot;&gt;
+</code></pre></div>
+                </div>
+                <p>Establece un valor predeterminado mediante el atributo value:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;color&quot; name=&quot;color-carro&quot; value=&quot;#000000&quot;&gt;
+</code></pre></div>
+                </div>
+
+                <p>El navegador se encargará de mostrarle un selector de color al usuario.</p>
+
+                <h3>Range</h3>
+                <p>Este elemento de entrada muestra un elemento deslizante. Las personas pueden usarlo para pasar de un valor inicial a un valor final:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;range&quot; name=&quot;age&quot; min=&quot;0&quot; max=&quot;100&quot; value=&quot;30&quot;&gt;
+</code></pre></div>
+                </div>
+
+                <p>Puede proporcionar un paso opcional:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;range&quot; name=&quot;age&quot; min=&quot;0&quot; max=&quot;100&quot; value=&quot;30&quot; step=&quot;10&quot;&gt;
+</code></pre></div>
+                </div>
+
+                <h3>Teléfono</h3>
+                <p>El campo de entrada type="tel" se usa para ingresar un número de teléfono:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;tel&quot; name=&quot;numero-telefonico&quot;&gt;
+</code></pre></div>
+                </div>
+
+                <p>El principal punto de venta para usar telover textes en el móvil, donde el dispositivo puede elegir mostrar un teclado numérico.</p>
+                <p>Especifique un atributo pattern para validación adicional:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;tel&quot; pattern=&quot;[0-9]{3}-[0-9]{8}&quot; name=&quot;numero-telefonico&quot;&gt;
+</code></pre></div>
+                </div>
+
+                <h3>URL</h3>
+
+                <p>El campo type="url" se usa para ingresar una URL.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html"><input type="url" name="website">
+</code></pre></div>
+                </div>
+
+                <p>Puedes validarlo usando el atributo pattern:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;input type=&quot;url&quot; name=&quot;website&quot;  pattern=&quot;https://.*&quot;&gt;
+</code></pre></div>
+                </div>
+
+                <h3>La etiqueta textarea</h3>
+                <p>El elemento textarea permite a los usuarios ingresar texto de varias líneas. En comparación con input, requiere una etiqueta final:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;textarea&gt;&lt;/textarea&gt;</code></pre></div>
+                </div>
+
+                <p>Puede establecer las dimensiones usando CSS, pero también usando los atributos rows y cols:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;textarea rows=&quot;20&quot; cols=&quot;10&quot;&gt;&lt;/textarea&gt;
+</code></pre></div>
+                </div>
+
+                <p>Al igual que con las otras etiquetas de formulario, el atributo name determina el nombre en los datos enviados al servidor:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;textarea name=&quot;article&quot;&gt;&lt;/textarea&gt;
+</code></pre></div>
+                </div>
+
+                <h3>La etiqueta select</h3>
+                <p>Esta etiqueta se utiliza para crear un menú desplegable.</p>
+                <p>El usuario puede elegir una de las opciones disponibles.</p>
+                <p>Cada opción se crea usando la etiqueta option. Agrega un nombre a la selección y un valor a cada opción:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;select name=&quot;color&quot;&gt;
+    &lt;option value=&quot;rojo&quot;&gt;Rojo&lt;/option&gt;
+    &lt;option value=&quot;amarillo&quot;&gt;Amarillo&lt;/option&gt;
+&lt;/select&gt;</code></pre></div>
+                </div>
+
+
+                <p>Puede configurar una opción deshabilitada:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;select name=&quot;color&quot;&gt;
+    &lt;option value=&quot;rojo&quot; disabled&gt;Rojo&lt;/option&gt;
+    &lt;option value=&quot;amarillo&quot;&gt;Amarillo&lt;/option&gt;
+&lt;/select&gt;</code></pre></div>
+                </div>
+
+
+                <p>Puede tener una opción vacía:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;select name=&quot;color&quot;&gt;
+    &lt;option value=&quot;&quot;&gt;Ninguno&lt;/option&gt;
+    &lt;option value=&quot;rojo&quot;&gt;Rojo&lt;/option&gt;
+    &lt;option value=&quot;amarillo&quot;&gt;Amarillo&lt;/option&gt;
+&lt;/select&gt;</code></pre></div>
+                </div>
+
+                <p>Las opciones se pueden agrupar mediante la etiqueta optgroup. Cada grupo de opciones tiene un atributo label:</p>  
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;select name=&quot;color&quot;&gt;
+    &lt;optgroup label=&quot;Primarios&quot;&gt;
+        &lt;option value=&quot;rojo&quot;&gt;Rojo&lt;/option&gt;
+        &lt;option value=&quot;amarillo&quot;&gt;Amarillo&lt;/option&gt;
+        &lt;option value=&quot;azul&quot;&gt;Azul&lt;/option&gt;
+    &lt;/optgroup&gt;
+    &lt;optgroup label=&quot;Otros&quot;&gt;
+        &lt;option value=&quot;green&quot;&gt;Verde&lt;/option&gt;
+        &lt;option value=&quot;pink&quot;&gt;Rosado&lt;/option&gt;
+    &lt;/optgroup&gt;
+&lt;/select&gt;</code></pre></div>
+                </div>
+
+
+
+
             </section>
 
             <section id="item10">
