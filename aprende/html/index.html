@@ -2007,22 +2007,416 @@ código JS
                     <li>playing cuando el video se reanuda desde una pausa</li>
                     <li>ended cuando se alcanzó el final del archivo de video</li>
                 </ul>
+                
 
             </section>
 
             <section id="item12">
                 <h1>Iframes</h1>
+                <p>La etiqueta iframe nos permite incrustar contenido procedente de otros orígenes (otros sitios) en nuestra página web.</p>
+                <p>Técnicamente, un iframe crea un nuevo contexto de navegación anidado. Esto significa que nada en el iframe no interfiere con la página principal y viceversa. JavaScript y CSS no se "filtran" hacia / desde iframes.</p>
+                <p>Muchos sitios usan iframes para realizar varias cosas. Es posible que esté familiarizado con Codepen, Glitch u otros sitios que le permiten codificar en una parte de la página y verá el resultado en un cuadro. Eso es un iframe.</p>
+                <p>Creas uno de esta manera:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;iframe src=&quot;pagina.html&quot;&gt;&lt;/iframe&gt;
+</code></pre></div>
+                </div>
+
+                <p>También puede cargar una URL absoluta:</p> 
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;iframe src=&quot;https://sitio.com/pagina.html&quot;&gt;&lt;/iframe&gt;
+</code></pre></div>
+                </div>
+
+                <p>Puede establecer un conjunto de parámetros de ancho y alto (o establecerlos usando CSS); de lo contrario, el iframe usará los valores predeterminados, un cuadro de 300x150 píxeles:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;iframe src=&quot;page.html&quot; width=&quot;800&quot; height=&quot;400&quot;&gt;&lt;/iframe&gt;
+</code></pre></div>
+                </div>
+
+                <h3>Srcdoc</h3>
+                <p>El atributo srcdoc le permite especificar algo de HTML en línea para mostrar. Es una alternativa a src, pero reciente y no es compatible con Edge 18 y versiones anteriores, y en IE:</p>
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;iframe srcdoc=&quot;&lt;p&gt;Mi perro es un buen perro&lt;/p&gt;&quot;&gt;&lt;/iframe&gt;
+</code></pre></div>
+                </div>
                 
+                <h3>Sandbox</h3>
+                <p>El atributo sandbox nos permite limitar las operaciones permitidas en los iframes.</p>
+                <p>Si lo omitimos, todo está permitido:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;iframe src=&quot;pagina.html&quot;&gt;&lt;/iframe&gt;</code></pre></div>
+                </div>
+
+                <p>Si lo configuramos en "", no se permite nada:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;iframe src=&quot;pagina.html&quot; sandbox=&quot;&quot;&gt;&lt;/iframe&gt;</code></pre>
+</div>
+
+                <p>Podemos seleccionar qué permitir agregando opciones en el atributo sandbox. Puede permitir varios agregando un espacio entre ellos. Aquí hay una lista incompleta de las opciones que puede usar:</p>
+                <ul>
+                    <li>allow-forms: permitir enviar formularios</li>
+                    <li>allow-modalspermitir abrir ventanas modales, incluida la llamada alert()en JavaScript</li>
+                    <li>allow-orientation-lock permitir bloquear la orientación de la pantalla</li>
+                    <li>allow-popupspermitir ventanas emergentes, uso window.open()y target="_blank"enlaces</li>
+                    <li>allow-same-origin tratar el recurso que se está cargando como el mismo origen</li>
+                    <li>allow-scripts permite que el iframe cargado ejecute scripts (pero no cree ventanas emergentes).</li>
+                    <li>allow-top-navigation da acceso al iframe al contexto de navegación de nivel superior</li>
+                </ul>
+
+                <h3>Allow</h3>
+
+                <p>Actualmente es experimental y solo es compatible con navegadores basados ​​en Chromium, este es el futuro del uso compartido de recursos entre la ventana principal y el iframe.</p>
+            
+                <p>Es similar al atributo sandbox, pero nos permite permitir características específicas, que incluyen:</p>
+
+                <ul>
+                    <li>accelerometer da acceso a la interfaz del acelerómetro de la API de sensores</li>
+                    <li>ambient-light-sensor da acceso a la interfaz de Sensors API AmbientLightSensor</li>
+                    <li>autoplay permite la reproducción automática de archivos de audio y video</li>
+                    <li>camera permite acceder a la cámara desde la API getUserMedia</li>
+                    <li>display-capture permite acceder al contenido de la pantalla utilizando la API getDisplayMedia</li>
+                    <li>fullscreen permite acceder al modo de pantalla completa</li>
+                    <li>geolocation permite acceder a la API de geolocalización</li>
+                    <li>gyroscope da acceso a la interfaz del giroscopio de la API de sensores</li>
+                    <li>magnetometer da acceso a la interfaz del magnetómetro API Sensors</li>
+                    <li>microphone da acceso al micrófono del dispositivo mediante la API getUserMedia</li>
+                    <li>midi permite el acceso a la API Web MIDI</li>
+                    <li>payment da acceso a la API de solicitud de pago</li>
+                    <li>speaker permite el acceso a la reproducción de audio a través de los altavoces del dispositivo</li>
+                    <li>usb da acceso a la API WebUSB.</li>
+                    <li>vibrate da acceso a la API de vibración</li>
+                    <li>vr da acceso a la API de WebVR</li>
+                </ul>
+
+                <h3>Referer</h3>
+                <p>Al cargar un iframe, el navegador le envía información importante sobre quién lo está cargando en el Refererencabezado (fíjate en el sencillo r, un error tipográfico con el que debemos vivir).</p>
+                <p>El error ortográfico del referente se originó en la propuesta original del científico informático Phillip Hallam-Baker de incorporar el campo en la especificación HTTP. El error ortográfico fue grabado en piedra en el momento de su incorporación en el documento de estándares de Solicitud de Comentarios RFC 1945</p>
+
+                <p>El atributo referrerpolicy nos permite configurar el referente para enviarlo al iframe al cargarlo. El referente es un encabezado HTTP que le permite a la página saber quién lo está cargando. Estos son los valores permitidos:</p>
+
+                <ul>
+                    <li>no-referrer-when-downgrade es el valor predeterminado y no envía la referencia cuando la página actual se carga a través de HTTPS y el iframe se carga en el protocolo HTTP</li>
+                    <li>no-referrer no envía el encabezado de referencia</li>
+                    <li>origin se envía la referencia, y solo contiene el origen (puerto, protocolo, dominio), no el origen + ruta que es la predeterminada</li>
+                    <li>origin-when-cross-original cargar desde el mismo origen (puerto, protocolo, dominio) en el iframe, el referente se envía en su forma completa (origen + ruta). De lo contrario, solo se envía el origen</li>
+                    <li>same-origin la referencia se envía solo cuando se carga desde el mismo origen (puerto, protocolo, dominio) en el iframe</li>
+                    <li>strict-originenvía el origen como referencia si la página actual se carga a través de HTTPS y el iframe también se carga en el protocolo HTTPS. No envía nada si el iframe se carga a través de HTTP</li>
+                    <li>strict-origin-when-cross-originenvía el origen + ruta como referente cuando se trabaja en el mismo origen. Envía el origen como referencia si la página actual se carga a través de HTTPS y el iframe también se carga en el protocolo HTTPS. No envía nada si el iframe se carga a través de HTTP</li>
+                    <li>unsafe-url: envía el origen + ruta como referencia incluso cuando se cargan recursos desde HTTP y la página actual se carga a través de HTTPS</li>
+                </ul>
+
             </section>
 
             <section id="item13">
                 <h1>Imágenes</h1>
+                <p>Las imágenes se pueden mostrar usando la etiqueta img.</p>
+                <p>Esta etiqueta acepta un atributo src, que usamos para establecer la fuente de la imagen:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;img src=&quot;imagen.png&quot;&gt;
+</code></pre></div>
+                </div>
+         
+                <p>Podemos utilizar un amplio conjunto de imágenes. Los más comunes son PNG, JPEG, GIF, SVG y más recientemente WebP.</p>
+                <p>El estándar HTML requiere que alt esté presente, es un atributo para describir la imagen. Esto lo utilizan los lectores de pantalla y también los robots de los motores de búsqueda:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;img src=&quot;perro.png&quot; alt=&quot;Foto de un perro&quot;&gt;
+</code></pre></div>
+                </div>
+
+                <p>Puedes configurar los atributos width y height para establecer el espacio que ocupará el elemento, de modo que el navegador pueda tenerlo en cuenta y no cambie el diseño cuando esté completamente cargado. Toma un valor numérico, expresado en píxeles.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;img src=&quot;perro.png&quot; alt=&quot;Foto de un perro&quot; width=&quot;300&quot; height=&quot;200&quot;&gt;
+</code></pre></div>
+                </div>
+
+                <h3>La etiqueta figure</h3>
                 
+                <p>La etiqueta figure se usa a menudo junto con la etiqueta img.</p>
+                <p>figure es una etiqueta semántica que se usa a menudo cuando desea mostrar una imagen con un título. Lo usas así:</p>
+                
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;figure&gt;
+    &lt;img src=&quot;perro.png&quot;
+         alt=&quot;Un buen perro&quot;&gt;
+    &lt;figcaption&gt;Un buen perro&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre></div>
+                </div>
+
+                <p>La etiqueta figcaption envuelve el texto de la leyenda.</p>  
+
+                <h2>Imágenes responsivas usando srcset</h2>
+
+                <p>El atributo srcset le permite configurar imágenes receptivas que el navegador puede usar según la densidad de píxeles o el ancho de la ventana, de acuerdo con sus preferencias. De esta manera, solo puede descargar los recursos que necesita para renderizar la página, sin descargar una imagen más grande si está en un dispositivo móvil, por ejemplo.</p>
+
+                <p>Aquí hay un ejemplo, donde damos 4 imágenes adicionales para 4 tamaños de pantalla diferentes:</p>
+                
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;img src=&quot;perro.png&quot;
+    alt=&quot;Foto de un perro&quot;
+    srcset=&quot;perro-500.png 500w,
+               perro-800.png 800w,
+             perro-1000.png 1000w,
+             perro-1400.png 1400w&quot;&gt;</code></pre></div>
+                </div>
+
+                <p>En el srcset, usamos la w para indicar medida el ancho de la ventana.</p>
+                <p>Dado que lo hacemos, también necesitamos usar el atributo sizes:</p>
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;img src=&quot;perro.png&quot;
+    alt=&quot;Foto de un perro&quot;
+    sizes=&quot;(max-width: 500px) 100vw, (max-width: 900px) 50vw, 800px&quot;
+    srcset=&quot;dog-500.png 500w,
+               perro-800.png 800w,
+             perro-1000.png 1000w,
+             perro-1400.png 1400w&quot;&gt;</code></pre></div>
+                </div>
+
+                <p>En este ejemplo, la cadena (max-width: 500px) 100vw, (max-width: 900px) 50vw, 800px del atributo sizes describe el tamaño de la imagen en relación con la ventana gráfica, con varias condiciones separadas por un punto y coma.</p>
+
+                <p>La condición de los medios max-width: 500px establece el tamaño de la imagen en correlación con el ancho de la ventana gráfica. En resumen, si el tamaño de la ventana es &lt; 500px, representa la imagen al 100% del tamaño de la ventana.</p>
+
+                <p>Si el tamaño de la ventana es mayor pero &lt; 900px, representa la imagen al 50% del tamaño de la ventana.</p>
+
+                <p>Y si es aún más grande, renderiza la imagen a 800px.</p>
+
+                <p>La unidad de medida vw puede ser nueva para usted y, en resumen, podemos decir que 1 vwes el 1% del ancho de la ventana, por lo que 100vw es el 100% del ancho de la ventana.</p>
+
+                <p>Un sitio web útil para generar srcsetimágenes cada vez más pequeñas es <a href="https://responsivebreakpoints.com/">https://responsivebreakpoints.com/</a></p>
+
+                <h3>La etiqueta picture</h3>
+
+                <p>HTML también nos da la etiqueta picture, que hace un trabajo muy similar srcset y las diferencias son muy sutiles.</p>
+
+                <p>Se utiliza cuando picture, en lugar de ofrecer una versión más pequeña de un archivo, desea cambiarlo por completo. O sirva un formato de imagen diferente.</p>
+                <p>El mejor caso de uso que encontré es cuando se sirve una imagen WebP, que es un formato que aún no es ampliamente compatible. En la etiqueta picture, especifica una lista de imágenes, y se usarán en orden, por lo que en el siguiente ejemplo, los navegadores que admiten WebP usarán la primera imagen y, en caso contrario, utilizarán JPG:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;picture&gt;
+  &lt;source type=&quot;image/webp&quot; srcset=&quot;imagen.webp&quot;&gt;
+  &lt;img src=&quot;imagen.jpg&quot; alt=&quot;Una imagen&quot;&gt;
+&lt;/picture&gt;</code></pre></div>
+                </div>
+
+                <p>La etiqueta source define uno (o más) formatos para las imágenes. La imgetiqueta es la alternativa en caso de que el navegador sea muy antiguo y no admita la etiqueta picture.</p>
+
+                <p>En la etiqueta  source interior, picture puede agregar un atributo media para establecer consultas de medios.</p>
+            
+                <p>El ejemplo que sigue funciona como el ejemplo anterior con srcset:</p>
+                
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;picture&gt;
+  &lt;source media=&quot;(min-width: 500w)&quot; srcset=&quot;perro-500.png&quot; sizes=&quot;100vw&quot;&gt;
+  &lt;source media=&quot;(min-width: 800w)&quot; srcset=&quot;perro-800.png&quot; sizes=&quot;100vw&quot;&gt;
+  &lt;source media=&quot;(min-width: 1000w)&quot; srcset=&quot;perro-1000.png&quot;    sizes=&quot;800px&quot;&gt;
+  &lt;source media=&quot;(min-width: 1400w)&quot; srcset=&quot;perro-1400.png&quot;    sizes=&quot;800px&quot;&gt;
+  &lt;img src=&quot;dog.png&quot; alt=&quot;Una imagen de un perro&quot;&gt;
+&lt;/picture&gt;</code></pre></div>
+                </div>
+                
+                <p>Pero ese no es su caso de uso, porque como puede ver es mucho más detallado.</p>
+                <p>La etiqueta picture es reciente, pero ahora es compatible con todos los navegadores principales, excepto Opera Mini e IE (todas las versiones).</p>
+            
             </section>
 
             <section id="item14">
                 <h1>Accesibilidad</h1>
+
+                <p>Es importante que diseñemos nuestro HTML teniendo en cuenta la accesibilidad.</p>
+                <p>Tener HTML accesible significa que las personas con discapacidades pueden usar la Web. Hay usuarios totalmente ciegos o con discapacidad visual, personas con problemas de pérdida auditiva y una multitud de otras discapacidades diferentes.</p>
+                <p>Desafortunadamente, este tema no toma la importancia que necesita y no parece tan interesante como otros.</p>
+                <p>¿Qué pasa si una persona no puede ver su página, pero quiere consumir su contenido? Primero, ¿cómo lo hacen? No pueden usar el mouse, usan algo llamado lector de pantalla . No tienes que imaginarte eso. Puede probar uno ahora: Google proporciona la extensión gratuita ChromeVox Chrome . La accesibilidad también debe cuidar de permitir que las herramientas seleccionen elementos fácilmente o naveguen por las páginas.</p>
+                <p>Las páginas web y las aplicaciones web no siempre se construyen con la accesibilidad como uno de sus primeros objetivos, y tal vez la versión 1 no sea accesible, pero es posible hacer que una página web sea accesible después del hecho. Cuanto antes, mejor, pero nunca es demasiado tarde.</p>
+                <p>Es importante y en mi país, los sitios web creados por el gobierno u otras organizaciones públicas deben ser accesibles.</p>
+                <p>¿Qué significa esto para hacer que un HTML sea accesible? Permítanme ilustrar las principales cosas en las que debe pensar.</p>
+                <p>Nota: hay varias otras cosas de las que debe ocuparse, que pueden incluirse en el tema CSS, como los colores, el contraste y las fuentes. O cómo hacer que las imágenes SVG sean accesibles . No hablo de ellos aquí.</p>
+
+                <h3>Utilice HTML semántico</h3>
+                <p>El HTML semántico es muy importante y es una de las principales cosas de las que debe ocuparse. Permítanme ilustrar algunos escenarios comunes.</p>
+
+                <p>Es importante utilizar la estructura correcta para las etiquetas de encabezado. El más importante es h1, y usa números más altos para los menos importantes, pero todos los encabezados del mismo nivel deben tener el mismo significado (piénselo como una estructura de árbol)</p>
                 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">h1
+    h2
+        h3
+    h2
+    h2
+        h3
+            h4</code></pre></div>
+                </div>
+
+                <p>Utilice strong y en em lugar de by i. Visualmente tienen el mismo aspecto, pero los dos primeros tienen más significado asociado a ellos. b y i son elementos más visuales.</p>
+
+                <p>Las listas son importantes. Un lector de pantalla puede detectar una lista y proporcionar una descripción general, luego dejar que el usuario elija entrar en la lista o no.</p>
+                <p>Una tabla debe tener una etiqueta caption que describa su contenido:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;table&gt;
+  &lt;caption&gt;Edades de perros&lt;/caption&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Perro&lt;/th&gt;
+    &lt;th&gt;Edad&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Roger&lt;/td&gt;
+    &lt;td&gt;7&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre></div>
+                </div>
+                
+                <h3>Usar atributos alt para las imágenes</h3>  
+
+                <p>Todas las imágenes deben tener una etiqueta alt que describa el contenido de la imagen. No es solo una buena práctica, es requerido por el estándar HTML y su HTML sin él no está validado.</p>
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;img src=&quot;perro.png&quot; alt=&quot;Foto de un perro&quot;&gt;
+</code></pre></div>
+                </div>
+
+                <p>También es bueno para los motores de búsqueda, si es un incentivo para que lo agregue.</p>
+
+                <h3>Usa el atributo role</h3>
+
+                <p>El atributo role le permite asignar roles específicos a los diversos elementos de su página.</p>
+                <p>Puede asignar muchos roles diferentes: complementario, lista, elemento de lista, principal, navegación, región, pestaña, alerta, aplicación, artículo, banner, botón, celda, casilla de verificación, información de contenido, diálogo, documento, fuente, figura, formulario, cuadrícula, cuadrícula, encabezado, img, cuadro de lista, fila, grupo de filas, búsqueda, cambiar, tabla, panel de pestañas, cuadro de texto, temporizador.</p>
+                <p>Es mucho y para la referencia completa de cada uno de ellos les doy este enlace MDN . Pero no es necesario asignar un rol a cada elemento de la página. Los lectores de pantalla pueden inferir de la etiqueta HTML en la mayoría de los casos. Por ejemplo, usted no necesita agregar una etiqueta de papel para etiquetas semánticas como nav, button, form.</p>
+                <p>Tomemos el ejemplo de la etiqueta nav. Puede usarlo para definir la navegación de la página de esta manera:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;/&quot;&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;/blog&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre></div>
+                </div>
+
+                <p>Si se viera obligado a usar una divetiqueta en lugar de nav, usaría el rol navigation:</p>  
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;div role=&quot;navigation&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;/&quot;&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;/blog&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre></div>
+                </div>
+
+                <p>Así que aquí tienes un ejemplo práctico: rolese usa para asignar un valor significativo cuando la etiqueta no transmite ya el significado.</p>
+
+                <h3>Usa el atributo tabindex</h3>
+                <p>El atributo tabindex le permite cambiar el orden en que al presionar la tecla Tab se seleccionan los elementos "seleccionables". De forma predeterminada, solo los enlaces y elementos de formulario son "seleccionables" mediante la navegación con la tecla Tab (y no es necesario establecerlos tabindex).</p>
+                <p>Agregar tabindex="0" hace que un elemento sea seleccionable:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;div tabindex=&quot;0&quot;&gt;
+...
+&lt;/div&gt;</code></pre></div>
+                </div>
+
+                <p>En su lugar tabindex="-1", usar elimina un elemento de esta navegación basada en pestañas, y puede ser bastante útil.</p>
+
+                <h3>Usa los atributos aria</h3>
+                <p>ARIA es un acrónimo que significa Accessible Rich Internet Applications y define la semántica que se puede aplicar a los elementos.</p>
+                
+                <h3>aria-label</h3>
+                <p>Este atributo se usa para agregar una cadena para describir un elemento.</p>
+                <h4>Ejemplo:</h4>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;p aria-label=&quot;La descripci&oacute;n del producto&quot;&gt;...&lt;/p&gt;
+</code></pre></div>
+                </div>
+
+                <p>Utilizo este atributo en la barra lateral de mi blog, donde tengo un cuadro de entrada para la búsqueda sin una etiqueta explícita, ya que tiene un atributo de marcador de posición.</p>
+
+
+                <h3>aria-labelledby</h3>
+                <p>Este atributo establece una correlación entre el elemento actual y el que lo etiqueta.</p>
+
+                <p>Si sabe cómo inputse puede asociar un labelelemento a un elemento, eso es similar.</p>
+                <p>Pasamos la identificación del elemento que describe el elemento actual.</p>
+
+
+                <h4>Ejemplo:</h4>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">h3 id=&quot;descripcion&quot;&gt;La descripci&oacute;n del producto&lt;/h3&gt;
+
+&lt;p aria-labelledby=&quot;descripcion&quot;&gt;
+...
+&lt;/p&gt;</code></pre></div>
+                </div>
+
+
+                <h3>aria-describedby</h3>
+                <p>Este atributo nos permite asociar un elemento con otro elemento que sirve como descripción.</p>
+                <h4>Ejemplo:</h4>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;button aria-describedby=&quot;payNowDescription&quot; &gt;Pagar Ahora&lt;/button&gt;
+
+&lt;div id=&quot;payNowDescription&quot;&gt;Haciendo clic en el bot&oacute;n te enviaremos al formulario de Stripe&lt;/div&gt;</code></pre></div>
+                </div>
+
+                <h3>Usa aria-hidden para ocultar contenido</h3>
+                <p>Me gusta un diseño minimalista en mis sitios. Mi blog, por ejemplo, es principalmente contenido, con algunos enlaces en la barra lateral. Pero algunas cosas en la barra lateral son solo elementos visuales que no se suman a la experiencia de una persona que no puede ver la página. Como la imagen de mi logotipo o el selector de tema oscuro / brillante.</p>
+
+                <p>Agregar el atributo aria-hidden="true" les dirá a los lectores de pantalla que ignoren ese elemento.</p>
             </section>
 
           
