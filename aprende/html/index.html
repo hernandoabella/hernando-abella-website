@@ -1860,7 +1860,154 @@ código JS
 
             <section id="item11">
                 <h1>Audio y Video</h1>
+
+                <h3>La etiqueta audio</h3>
+                <p>Esta etiqueta le permite incrustar contenido de audio en sus páginas HTML.</p>
                 
+                <p>Este elemento puede transmitir audio, tal vez usando un micrófono a través de getUserMedia(), o puede reproducir una fuente de audio a la que hace referencia usando el atributo src:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;audio src=&quot;file.mp3&quot;&gt;
+</code></pre></div>
+                </div>
+
+                <p>De forma predeterminada, el navegador no muestra ningún control para este elemento. Lo que significa que el audio se reproducirá solo si está configurado en reproducción automática (más sobre esto más adelante) y el usuario no puede ver cómo detenerlo o controlar el volumen o moverse por la pista.</p>
+                <p>Para mostrar los controles integrados, puede agregar el atributo controls:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;audio src=&quot;file.mp3&quot; controls&gt;
+</code></pre></div>
+                </div>
+
+                <p>Los controles pueden tener una máscara personalizada.</p>
+                <p>Puede especificar el tipo MIME del archivo de audio mediante el atributo type. Si no se configura, el navegador intentará determinarlo automáticamente:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;audio src=&quot;file.mp3&quot; controls type=&quot;audio/mpeg&quot;&gt;
+</code></pre></div>
+                </div>
+
+                <p>Un archivo de audio por defecto no se reproduce automáticamente. Agregue el atributo autoplay para reproducir el audio automáticamente:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;audio src=&quot;file.mp3&quot; controls autoplay&gt;
+</code></pre></div>
+                </div>
+
+                <p>Nota: los navegadores móviles no permiten la reproducción automática</p>
+                <p>El atributo loop reinicia la reproducción de audio a las 0:00 si está configurado; de lo contrario, si no está presente, el audio se detiene al final del archivo:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;audio src=&quot;file.mp3&quot; controls autoplay loop&gt;
+</code></pre></div>
+                </div>
+
+                <p>También puede reproducir un archivo de audio silenciado usando el atributo muted (no estoy realmente seguro de cuál es la utilidad de esto):</p>
+                
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;audio src=&quot;file.mp3&quot; controls autoplay loop muted&gt;
+</code></pre></div>
+                </div>
+
+                <p>Usando JavaScript, puede escuchar varios eventos que suceden en un elemento audio, los más básicos de los cuales son:</p>
+                <ul>
+                    <li>play cuando el archivo comienza a reproducirse</li>
+                    <li>pause cuando se pausó la reproducción de audio</li>
+                    <li>playing cuando el audio se reanuda desde una pausa</li>
+                    <li>ended cuando se alcanzó el final del archivo de audio</li>
+                </ul>
+
+                <h3>La etiqueta video</h3>
+                <p>Esta etiqueta le permite incrustar contenido de video en sus páginas HTML.</p>
+                <p>Este elemento puede transmitir video, usando una cámara web a través de getUserMedia()o WebRTC , o puede reproducir una fuente de video a la que hace referencia usando el atributo src:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;video src=&quot;file.mp4&quot;&gt;
+</code></pre></div>
+                </div>
+
+                <p>De forma predeterminada, el navegador no muestra ningún control para este elemento, solo el video.</p>
+                <p>Lo que significa que el video se reproducirá solo si está configurado en reproducción automática (más sobre esto más adelante) y el usuario no puede ver cómo detenerlo, pausarlo, controlar el volumen o saltar a una posición específica en el video.</p>
+                <p>Para mostrar los controles integrados, puede agregar el atributo controls:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;video src=&quot;file.mp4&quot; controls&gt;
+</code></pre></div>
+                </div>
+
+                <p>Los controles pueden tener una máscara personalizada.</p>
+
+                <p>Puede especificar el tipo MIME del archivo de video usando el atributo type. Si no se configura, el navegador intentará determinarlo automáticamente:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;video src=&quot;file.mp4&quot; controls type=&quot;video/mp4&quot;&gt;
+</code></pre></div>
+                </div>
+    
+                <p>Un archivo de video por defecto no se reproduce automáticamente. Agregue el atributo autoplay para reproducir el video automáticamente:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;video src=&quot;file.mp4&quot; controls autoplay&gt;</code></pre></div>
+                </div>
+
+                <p>Algunos navegadores también requieren que el atributo muted se reproduzca automáticamente. El video se reproduce automáticamente solo si está silenciado:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;audio src=&quot;file.mp3&quot; controls autoplay muted&gt;
+</code></pre></div>
+                </div>
+
+                <p>El atributo loop reinicia la reproducción de video a las 0:00 si está configurado; de lo contrario, si no está presente, el video se detiene al final del archivo:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;video src=&quot;file.mp4&quot; controls autoplay loop&gt;
+</code></pre></div>
+                </div>
+
+                <p>Puede configurar una imagen para que sea la imagen del póster:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;video src=&quot;file.mp4&quot; poster=&quot;picture.png&quot;&gt;
+</code></pre></div>
+                </div>
+
+                <p>Si no está presente, el navegador mostrará el primer fotograma del video tan pronto como esté disponible.</p>
+                <p>Puede configurar los atributos widthy heightpara establecer el espacio que ocupará el elemento para que el navegador pueda dar cuenta de él y no cambie el diseño cuando finalmente se cargue. Toma un valor numérico, expresado en píxeles</p>
+
+                <p>Usando JavaScript, puede escuchar varios eventos que suceden en un videoelemento, los más básicos de los cuales son:</p>
+                <ul>
+                    <li>play cuando el archivo comienza a reproducirse</li>
+                    <li>pause cuando el video estaba en pausa</li>
+                    <li>playing cuando el video se reanuda desde una pausa</li>
+                    <li>ended cuando se alcanzó el final del archivo de video</li>
+                </ul>
+
             </section>
 
             <section id="item12">
