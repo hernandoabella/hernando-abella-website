@@ -1704,52 +1704,178 @@ código JS
 &lt;/table&gt;</code></pre></div>
             </div>
 
-            
+            <div class="image__article">
+                <img src="/images/Screen-Shot-8.png" alt="code-image">
+            </div>
+    
+            <p>O puede abarcar más de 2 o más filas, utilizando el atributo rowspan:</p>
 
+            <div class="panel">
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Columna 1&lt;/th&gt;
+    &lt;th&gt;Columna 2&lt;/th&gt;
+    &lt;th&gt;Columna 3&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot; rowspan=&quot;2&quot;&gt;Fila 1-2 Columnas 1-2&lt;/td&gt;
+    &lt;td&gt;Fila 1 Columna 3&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Fila 2 Columna 3&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre></div>
+            </div>
 
+            <div class="image__article">
+                <img src="/images/Screen-Shot-9.png" alt="code-image">
+            </div>
 
+            <h3>Encabezados de fila</h3>
+            <p>Antes le expliqué cómo puede tener encabezados de columna, usando la etiqueta th dentro de la primera etiqueta tr de la tabla.</p>
+            <p>Puedes agregar una etiqueta th como el primer elemento dentro de un tr que no sea el primer tr de la tabla, para tener encabezados de fila:</p>
 
+            <div class="panel">
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;&lt;/th&gt;
+    &lt;th&gt;Columna 2&lt;/th&gt;
+    &lt;th&gt;Columna 3&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Fila 1&lt;/th&gt;
+    &lt;td&gt;Col 2&lt;/td&gt;
+    &lt;td&gt;Col 3&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Fila 2&lt;/th&gt;
+    &lt;td&gt;Col 2&lt;/td&gt;
+    &lt;td&gt;Col 3&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre></div>
+            </div>
 
+            <div class="image__article">
+                <img src="/images/Screen-Shot-10.png" alt="code-image">
+            </div>
 
+            <h3>Más etiquetas para organizar la table</h3>
 
+            <p>Puedes agregar 3 etiquetas más en una tabla para tenerla más organizada.</p>
 
+            <p>Esto es mejor cuando se utilizan tablas grandes. Y también para definir correctamente un encabezado y un pie de página.</p>
 
+            <p>Esas etiquetas son</p>
 
+            <ul>
+                <li>thead</li>
+                <li>tbody</li>
+                <li>tfoot</li>
+            </ul>
 
+            <p>Envuelven las etiquetas tr para definir claramente las diferentes secciones de la tabla. He aquí un ejemplo:</p>
+
+            <div class="panel">
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Columna 2&lt;/th&gt;
+      &lt;th&gt;Columna 3&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Fila 1&lt;/th&gt;
+      &lt;td&gt;Col 2&lt;/td&gt;
+      &lt;td&gt;Col 3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Fila 2&lt;/th&gt;
+      &lt;td&gt;Col 2&lt;/td&gt;
+      &lt;td&gt;Col 3&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;Pie de p&aacute;gina Col 1&lt;/td&gt;
+      &lt;td&gt;Pie de p&aacute;gina 2&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre></div>
+            </div>
+
+            <div class="image__article">
+                <img src="/images/Screen-Shot-11.png" alt="code-image">
+            </div>
+
+            <h3>Título de la tabla</h3>
+
+            <p>Una tabla debe tener una etiqueta caption que describa su contenido. Esa etiqueta debe colocarse inmediatamente después de la etiqueta table de apertura:</p>
+
+            <h4>Ejemplo:</h4>
+
+            <div class="panel">
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Columna 2&lt;/th&gt;
+      &lt;th&gt;Columna 3&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Fila 1&lt;/th&gt;
+      &lt;td&gt;Col 2&lt;/td&gt;
+      &lt;td&gt;Col 3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Fila 2&lt;/th&gt;
+      &lt;td&gt;Col 2&lt;/td&gt;
+      &lt;td&gt;Col 3&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;Pie de p&aacute;gina Col 1&lt;/td&gt;
+      &lt;td&gt;Pie de p&aacute;gina 2&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre></div>
+            </div>
 
 
             </section>
 
             <section id="item11">
                 <h1>Audio y Video</h1>
-                <p>HTML es la base de la maravilla llamada Web.</p>
-                <p>Hay un poder increíble detrás de este conjunto de reglas bastante simple y limitado, que nos permite a nosotros, desarrolladores, creadores, diseñadores, escritores y manipuladores, crear documentos, aplicaciones y experiencias para personas de todo el mundo.</p>
-                <p>El éxito de HTML se basa en una cosa: la <b>simplicidad</b>.</p>
-                <p>Las excepcionales herramientas de desarrollo integradas en cualquier navegador nos permiten inspeccionar e inspirarnos en HTML escrito por cualquier persona en el mundo.</p>
+                
             </section>
 
             <section id="item12">
                 <h1>Iframes</h1>
-                <p>HTML es la base de la maravilla llamada Web.</p>
-                <p>Hay un poder increíble detrás de este conjunto de reglas bastante simple y limitado, que nos permite a nosotros, desarrolladores, creadores, diseñadores, escritores y manipuladores, crear documentos, aplicaciones y experiencias para personas de todo el mundo.</p>
-                <p>El éxito de HTML se basa en una cosa: la <b>simplicidad</b>.</p>
-                <p>Las excepcionales herramientas de desarrollo integradas en cualquier navegador nos permiten inspeccionar e inspirarnos en HTML escrito por cualquier persona en el mundo.</p>
+                
             </section>
 
             <section id="item13">
                 <h1>Imágenes</h1>
-                <p>HTML es la base de la maravilla llamada Web.</p>
-                <p>Hay un poder increíble detrás de este conjunto de reglas bastante simple y limitado, que nos permite a nosotros, desarrolladores, creadores, diseñadores, escritores y manipuladores, crear documentos, aplicaciones y experiencias para personas de todo el mundo.</p>
-                <p>El éxito de HTML se basa en una cosa: la <b>simplicidad</b>.</p>
-                <p>Las excepcionales herramientas de desarrollo integradas en cualquier navegador nos permiten inspeccionar e inspirarnos en HTML escrito por cualquier persona en el mundo.</p>
+                
             </section>
 
             <section id="item14">
                 <h1>Accesibilidad</h1>
-                <p>HTML es la base de la maravilla llamada Web.</p>
-                <p>Hay un poder increíble detrás de este conjunto de reglas bastante simple y limitado, que nos permite a nosotros, desarrolladores, creadores, diseñadores, escritores y manipuladores, crear documentos, aplicaciones y experiencias para personas de todo el mundo.</p>
-                <p>El éxito de HTML se basa en una cosa: la <b>simplicidad</b>.</p>
-                <p>Las excepcionales herramientas de desarrollo integradas en cualquier navegador nos permiten inspeccionar e inspirarnos en HTML escrito por cualquier persona en el mundo.</p>
+                
             </section>
 
           
