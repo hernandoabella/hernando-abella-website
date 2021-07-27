@@ -904,7 +904,6 @@ table {
     width: 100px;
     margin: auto;
     border: 5px dashed #465362;
-    
 }
 
 #contacto p{
@@ -912,13 +911,21 @@ table {
     text-align: center;
 }
 
-
 form input{
     padding: 10px;
+    transition: .3s;
 }
 
-form input[type=button]{
-    width: 100px;
+form input:focus{
+    background: #F9DC5C;
+}
+
+textarea:focus{
+    background: #F9DC5C;
+}
+
+button{
+    width: 150px;
     margin: auto;
     transition: .3s;
     cursor: pointer;
@@ -928,9 +935,10 @@ form input[type=button]{
     font-weight: bold;
     border-radius: 100px;
     display: block;
+    padding: 10px;
 }
 
-form input[type=button]:hover{
+button:hover{
     background: #F4FFFD;
     color: #000;
 }
@@ -946,8 +954,8 @@ form textarea{
     margin-bottom: 10px;
     resize: none;
     padding: 10px;
+    transition: .3s;
 }
-
 
 textarea, input{
     outline: none;
