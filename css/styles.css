@@ -197,19 +197,22 @@ a{
 .backbar{
     padding: 10px;
     background: #fff;
+    border-bottom: 1px solid rgba(100, 100, 111, 0.2);
     color: #000;
 }
 
 .fa-arrow-left{
-    color: #F0FFF1;
+    color: #000;
     transition: .3s;
     padding: 10px;
+    border-radius: 100%;
+    border: 1px solid #fff;
 }
 
 .fa-arrow-left:hover{
-    background: #F0FFF1;
-    color: #1d3557;
-    
+    border: 1px solid #06BCC1;
+    color: #000;
+    transform: rotate(360deg);
 }
 
 
