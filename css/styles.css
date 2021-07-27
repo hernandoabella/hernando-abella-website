@@ -206,12 +206,12 @@ a{
     transition: .3s;
     padding: 10px;
     border-radius: 100%;
-    border: 1px solid #fff;
+    border: 5px solid #fff;
 }
 
 .fa-arrow-left:hover{
-    border: 1px solid #06BCC1;
-    color: #000;
+    border: 5px solid #8075FF;
+    color: #8075FF;
     transform: rotate(360deg);
 }
 

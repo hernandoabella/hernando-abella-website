@@ -296,11 +296,12 @@
           <label for="nombre">Nombre Completo</label>
           <input type="text" placeholder="Hernando Abella"><br><br>
           <input type="hidden" name="_subject" value="¡Nuevo mensaje!">
+          <input type="hidden" name="_cc" value="another@email.com">
           <label for="email">Correo Electrónico</label>
-          <input type="email" placeholder="hernandoabella@gmail.com" required><br><br>
+          <input type="email" name="email" placeholder="hernandoabella@gmail.com" required><br><br>
           <input type="hidden" name="_next" value="https://www.hernandoabella.com/thanks.html">
           <label for="number">Teléfono</label>
-          <input type="tel" placeholder="+573043932597"><br><br>
+          <input type="tel" name="tel" placeholder="+573043932597"><br><br>
           <label for="mensaje">Mensaje</label>
           <textarea name="" id="" cols="30" rows="10" placeholder="Mensaje"></textarea><br>
           <button type="submit">Enviar</button>
