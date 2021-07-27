@@ -1,5 +1,3 @@
-
-
 .header {
     position: fixed;
     top: 0;
@@ -145,27 +143,4 @@ section ul li{
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #CAD5CA; 
-  }
-
-
-  /* go to top btn */
-
-  #miBtn {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 99;
-    font-size: 18px;
-    color: #000;
-    cursor: pointer;
-    padding: 20px;
-    border-radius: 100%;
-    background: transparent;
-    border: 1px solid #fff;
-  }
-  
-  #miBtn:hover {
-    color: #8075FF;
-    border: 1px solid #8075FF;
   }
