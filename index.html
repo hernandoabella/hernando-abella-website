@@ -19,8 +19,8 @@
         <a href="proyectos/"><i class="far fa-browser"></i> Practica</a>
         <a href="snippets/"><i class="fas fa-brackets-curly"></i> Snippets</a>
         <a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a>
-        <a href="./portafolio/">Portafolio</a>
-        <a href="#servicios">Servicios</a>
+        <!-- <a href="./portafolio/">Portafolio</a> -->
+        <!-- <a href="#servicios">Servicios</a> -->
         <!-- <a href="consejos/"><i class="fas fa-lightbulb"></i> Consejos</a> -->
         <!-- <a href="algoritmos">Algoritmos</a> -->
         <!-- <a href="eq">Preguntas entrevista</a> -->
@@ -253,32 +253,58 @@
         <a href="./snippets/" class="ver__mas">Ver códigos</a>
     </section>
 
+
     <!-- <section id="servicios">
+        
         <h2>Servicios Disponibles</h2>
-        <hr>
+        <p>Ofresco servicios privados</p>
+        
+        <div class="crowCentral">
+            <div class="row">
+                <div class="column">
+                    <div class="tarjeta__servicios">
+                        <img src="/images/coding.png" alt="coding" width="100px" height="100px">
+                        <h3>Lanzar un valor como un arreglo</h3>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="tarjeta__servicios">
+                        <img src="/images/coding.png" alt="coding" width="100px" height="100px">
+                        <h3>Comprueba si un arreglo esta vacío</h3>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="tarjeta__servicios">
+                        <img src="/images/coding.png" alt="coding" width="100px" height="100px">
+                        <h3>Clona un arreglo</h3>
+                    </div>
+                </div>
+                
+            </div>
+                
+            </div>
+        </div>
+
     </section> -->
-
-   
-
-    
 
     <section id="contacto">
 
       <h2>Contacto</h2>
 
       <p>Para cualquier consulta puedes contactarme al correo electrónico: <b class="correo">hernandoabella@gmail.com</b></p>  
-      <form action="mailto:hernandoabella@gmail.com">
+      <form action="https://formsubmit.co/hernandoabella@gmail.com" method="POST">
           <label for="nombre">Nombre Completo</label>
           <input type="text" placeholder="Hernando Abella"><br><br>
+          <input type="hidden" name="_subject" value="¡Nuevo mensaje!">
           <label for="email">Correo Electrónico</label>
-          <input type="email" placeholder="hernandoabella@gmail.com"><br><br>
-          <label for="email">Correo Electrónico</label>
-          <input type="email" placeholder="+573043932597"><br><br>
+          <input type="email" placeholder="hernandoabella@gmail.com" required><br><br>
+          <input type="hidden" name="_next" value="https://www.hernandoabella.com/thanks.html">
+          <label for="number">Teléfono</label>
+          <input type="tel" placeholder="+573043932597"><br><br>
           <label for="mensaje">Mensaje</label>
           <textarea name="" id="" cols="30" rows="10" placeholder="Mensaje"></textarea><br>
-          <input type="button" value="Enviar"> 
+          <button type="submit">Enviar</button>
       </form>
-
      
     </section>
 

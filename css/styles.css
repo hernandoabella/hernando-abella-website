@@ -196,7 +196,8 @@ a{
 
 .backbar{
     padding: 10px;
-    background: #264653;
+    background: #fff;
+    color: #000;
 }
 
 .fa-arrow-left{
@@ -344,9 +345,21 @@ a{
     flex-direction: row-reverse;
 }
 
+#servicios h2{
+    text-align: center;
+    margin: 50px;
+    color: #465362;
+    font-size: 2em;
+}
+
+#servicios p{
+    margin: 50px;
+    text-align: center;
+    color: #000;
+}
+
 .proyectos{
     background: #fff;  /* fallback for old browsers */
-    
     padding-bottom: 50px;
 }
 
