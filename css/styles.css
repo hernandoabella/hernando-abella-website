@@ -6,6 +6,7 @@
     scroll-behavior: smooth;
 }
 
+
 .image__article{
     width: 350px;
     margin: 30px auto;
@@ -951,7 +952,7 @@ form label{
     margin-bottom: 5px;
     display: block;
     font-size: .8em;
-    color: #bbbbbb;
+    color: #ffffff;
 }
 
 form textarea{

@@ -291,91 +291,41 @@
 
       <h2>Contacto</h2>
 
-      <?php
+      <div class="fcf-body">
 
-$errors = [];
-$errorMessage = '';
+    <div id="fcf-form">
+    <form id="fcf-form-id" class="fcf-form-class" method="post" action="./contact-form-process.php">
+        
+        <div class="fcf-form-group">
+            <label for="Name" class="fcf-label">Your name</label>
+            <div class="fcf-input-group">
+                <input type="text" id="Name" name="Name" class="fcf-form-control" required>
+            </div>
+        </div>
 
-if (!empty($_POST)) {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $message = $_POST['message'];
+        <div class="fcf-form-group">
+            <label for="Email" class="fcf-label">Your email address</label>
+            <div class="fcf-input-group">
+                <input type="email" id="Email" name="Email" class="fcf-form-control" required>
+            </div>
+        </div>
 
-    if (empty($name)) {
-        $errors[] = 'Name is empty';
-    }
+        <div class="fcf-form-group">
+            <label for="Message" class="fcf-label">Your message</label>
+            <div class="fcf-input-group">
+                <textarea id="Message" name="Message" class="fcf-form-control" rows="6" maxlength="3000" required></textarea>
+            </div>
+        </div>
 
-    if (empty($email)) {
-        $errors[] = 'Email is empty';
-    } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors[] = 'Email is invalid';
-    }
+        <div class="fcf-form-group">
+            <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Send Message</button>
+        </div>
 
-    if (empty($message)) {
-        $errors[] = 'Message is empty';
-    }
+    </form>
+    </div>
 
+</div>
 
-    if (empty($errors)) {
-        $toEmail = 'hernandoabella@gmail.com';
-        $emailSubject = 'New email from your contant form';
-        $headers = ['From' => $email, 'Reply-To' => $email, 'Content-type' => 'text/html; charset=iso-8859-1'];
-
-        $bodyParagraphs = ["Name: {$name}", "Email: {$email}", "Message:", $message];
-        $body = join(PHP_EOL, $bodyParagraphs);
-
-        if (mail($toEmail, $emailSubject, $body, $headers)) {
-            header('Location: thank-you.html');
-        } else {
-            $errorMessage = 'Oops, something went wrong. Please try again later';
-        }
-    } else {
-        $allErrors = join('<br/>', $errors);
-        $errorMessage = "<p style='color: red;'>{$allErrors}</p>";
-    }
-}
-
-?>
-
-  <form action="/mail_form.php" method="post" id="contact-form">
-    <h2>Contact us</h2>
-
-    <?php echo((!empty($errorMessage)) ? $errorMessage : '') ?>
-    <p>
-      <label>First Name:</label>
-      <input name="name" type="text" value="dima"/>
-    </p>
-    <p>
-      <label>Email Address:</label>
-      <input style="cursor: pointer;" name="email" value="dima@dima.com" type="text"/>
-    </p>
-    <p>
-      <label>Message:</label>
-      <textarea name="message">dima</textarea>
-    </p>
-
-    <p>
-      <input type="submit" value="Send"/>
-    </p>
-  </form>
-  
-
-      <!-- <p>Para cualquier consulta puedes contactarme al correo electrónico: <b class="correo">hernandoabella@gmail.com</b></p>  
-      <form action="https://formsubmit.co/hernandoabella@gmail.com" method="POST">
-          <label for="nombre">Nombre Completo</label>
-          <input type="text" name="name" placeholder="Hernando Abella"><br><br>
-          <input type="hidden" name="_subject" value="¡Nuevo mensaje!">
-          <input type="hidden" name="_cc" value="another@email.com">
-          <label for="email">Correo Electrónico</label>
-          <input type="email" name="email" placeholder="hernandoabella@gmail.com" required><br><br>
-          <input type="hidden" name="_next" value="https://www.hernandoabella.com/thanks.html">
-          <label for="number">Teléfono</label>
-          <input type="tel" name="tel" placeholder="+573043932597"><br><br>
-          <label for="mensaje">Mensaje</label>
-          <textarea name="comment" id="" cols="30" rows="10" placeholder="Mensaje"></textarea><br>
-          <button type="submit">Enviar</button>
-      </form> -->
-     
     </section>
 
     <footer>
@@ -414,46 +364,6 @@ if (!empty($_POST)) {
 
     </footer>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
-    <script>
-        const constraints = {
-            name: {
-                presence: { allowEmpty: false }
-            },
-            email: {
-                presence: { allowEmpty: false },
-                email: true
-            },
-            message: {
-                presence: { allowEmpty: false }
-            }
-        };
-
-        const form = document.getElementById('contact-form');
-
-        form.addEventListener('submit', function (event) {
-            const formValues = {
-                name: form.elements.name.value,
-                email: form.elements.email.value,
-                message: form.elements.message.value
-            };
-
-            const errors = validate(formValues, constraints);
-
-            if (errors) {
-                event.preventDefault();
-                const errorMessage = Object
-                    .values(errors)
-                    .map(function (fieldValues) {
-                        return fieldValues.join(', ')
-                    })
-                    .join("\n");
-
-                alert(errorMessage);
-            }
-        }, false);
-    </script>
-    
     <script src="./js/script.js"></script>
     
 </body>
