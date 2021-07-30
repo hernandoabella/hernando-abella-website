@@ -180,81 +180,2165 @@
             <section id="item2">
                 <h1>Instalación</h1>
                 
+                <p>Todas las descargas de MySQL se encuentran en <a href="https://www.mysql.com/downloads/">https://www.mysql.com/downloads/</a>. Elija el número de versión de MySQL Community Server que se requiere junto con la plataforma en la que lo ejecutará.</p>
+
+                <h3>Instalación de MySQL en Linux / UNIX</h3>
+
+                <p>La forma recomendada de instalar MySQL en un sistema Linux es mediante RPM. MySQL AB ofrece los siguientes RPM para descargar en su sitio web:</p>
+
+                <ul>
+                    <li>MySQL: el servidor de base de datos MySQL administra las bases de datos y las tablas, controla el acceso de los usuarios y procesa las consultas SQL.</li>
+                    <li>Cliente MySQL: programas cliente MySQL que permiten conectarse e interactuar con el servidor.</li>
+                    <li>MySQL-devel: bibliotecas y archivos de encabezado que son útiles al compilar otros programas que usan MySQL.</li>
+                    <li>MySQL-shared: bibliotecas compartidas para el cliente MySQL.</li>
+                    <li>MySQL-bench: herramientas de prueba de rendimiento y de referencia para el servidor de base de datos MySQL.</li>
+                </ul>
+
+                <p>Los RPM de MySQL enumerados aquí están todos construidos en un sistema SuSE Linux, pero generalmente funcionarán en otras variantes de Linux sin dificultad.</p>
+                <p>Ahora, deberá seguir los pasos que se indican a continuación para continuar con la instalación:</p>
+
+                <ul>
+                    <li>Inicie sesión en el sistema utilizando el usuario root.</li>
+                    <li>Cambie al directorio que contiene los RPM.</li>
+                    <li>Instale el servidor de base de datos MySQL ejecutando el siguiente comando. Recuerde reemplazar el nombre del archivo en cursiva con el nombre del archivo de su RPM.</li>
+                </ul>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">[root@host]# rpm -i MySQL-5.0.9-0.i386.rpm
+</code></pre></div>
+                </div>
+
+                <p>El comando anterior se encarga de instalar el servidor MySQL, crear un usuario de MySQL, crear la configuración necesaria e iniciar el servidor MySQL automáticamente.</p>
+                <p>Puede encontrar todos los binarios relacionados con MySQL en / usr / bin y / usr / sbin. Todas las tablas y bases de datos se crearán en el directorio / var / lib / mysql.</p>
+                <p>El siguiente cuadro de código tiene un paso opcional pero recomendado para instalar los RPM restantes de la misma manera:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">[root@host]# rpm -i MySQL-client-5.0.9-0.i386.rpm
+[root@host]# rpm -i MySQL-devel-5.0.9-0.i386.rpm
+[root@host]# rpm -i MySQL-shared-5.0.9-0.i386.rpm
+[root@host]# rpm -i MySQL-bench-5.0.9-0.i386.rpm</code></pre></div>
+                </div>
+
+                <h3>Instalación de MySQL en Windows</h3>
+
+                <p>La instalación predeterminada en cualquier versión de Windows ahora es mucho más fácil de lo que solía ser, ya que MySQL ahora viene cuidadosamente empaquetado con un instalador. Simplemente descargue el paquete de instalación, descomprímalo en cualquier lugar y ejecute el archivo <b>setup.exe</b>.</p>
+                <p>El instalador setup.exe predeterminado lo guiará a través del proceso trivial y, de manera predeterminada, instalará todo en <b>C:\mysql</b>.</p>
+                <p>Pruebe el servidor encendiéndolo desde el símbolo del sistema la primera vez. Vaya a la ubicación del servidor mysqld que probablemente sea <b>C:\mysql\bin</b>, y escribe -</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysqld.exe --console
+</code></pre></div>
+                </div>
+
+                <p><b>NOTA:</b> si está en NT, tendrá que usar <b>mysqld-nt.exe</b> en lugar de mysqld.exe</p>
+
+                <p>Si todo salió bien, verá algunos mensajes sobre el inicio y InnoDB . De lo contrario, es posible que tenga un problema de permisos. Asegúrese de que el directorio que contiene sus datos sea accesible para cualquier usuario (probablemente MySQL) bajo el que se ejecutan los procesos de la base de datos.</p>
+                <p>MySQL no se agregará al menú de inicio, y tampoco existe una forma de GUI particularmente agradable para detener el servidor. Por lo tanto, si tiende a iniciar el servidor haciendo doble clic en el ejecutable mysqld, debe recordar detener el proceso manualmente usando mysqladmin, Lista de tareas, Administrador de tareas u otros medios específicos de Windows.</p>
+
+                <h3>Verificación de la instalación de MySQL</h3>
+                <p>Después de que MySQL se haya instalado con éxito, las tablas base se han inicializado y el servidor se ha iniciado: puede verificar que todo está funcionando como debería a través de algunas pruebas simples.                </p>
+                <p>Utilice la utilidad mysqladmin para obtener el estado del servidor</p>
+                <p>Utilice el binario mysqladmin para comprobar la versión del servidor. Este binario estaría disponible en / usr / bin en Linux y en C: \ mysql \ bin en Windows.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">[root@host]# mysqladmin --version
+</code></pre></div>
+                </div>
+
+                <p>Producirá el siguiente resultado en Linux. Puede variar según su instalación:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysqladmin  Ver 8.23 Distrib 5.0.9-0, for redhat-linux-gnu on i386
+</code></pre></div>
+                </div>
+
+                <p>Si no recibe dicho mensaje, es posible que haya algún problema en su instalación y necesitará ayuda para solucionarlo.</p>
+
+                <h4>Ejecute comandos SQL simples usando el cliente MySQL</h4>
+                <p>Puede conectarse a su servidor MySQL a través del cliente MySQL y utilizando el comando mysql . En este momento, no es necesario que proporcione ninguna contraseña, ya que de forma predeterminada estará en blanco.</p>
+                <p>Puedes usar el siguiente comando:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">[root@host]# mysql
+</code></pre></div>
+                </div>
+
+                <p>Debería ser recompensado con un mensaje mysql>. Ahora, está conectado al servidor MySQL y puede ejecutar todos los comandos SQL en el indicador mysql> de la siguiente manera:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> SHOW DATABASES;
++----------+
+| Database |
++----------+
+|   mysql  | 
+|   test   |  
++----------+
+2 rows in set (0.13 sec)</code></pre></div>
+                </div>
+
+                <h3>Pasos posteriores a la instalación</h3>
+                <p>MySQL se envía con una contraseña en blanco para el usuario raíz de MySQL. Tan pronto como haya instalado correctamente la base de datos y el cliente, debe establecer una contraseña de root como se indica en el siguiente bloque de código:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">[root@host]# mysqladmin -u root password "new_password";
+</code></pre></div>
+                </div>
+
+                <p>Ahora, para hacer una conexión a su servidor MySQL, tendría que usar el siguiente comando:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">[root@host]# mysql -u root -p
+Enter password:*******</code></pre></div>
+                </div>
+
+                <p>Los usuarios de UNIX también querrán poner su directorio MySQL en su PATH, por lo que no tendrá que seguir escribiendo la ruta completa cada vez que quiera usar el cliente de línea de comandos.</p>    
+
+                <p>Para bash, sería algo como:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">export PATH = $PATH:/usr/bin:/usr/sbin
+</code></pre></div>
+                </div>
+
+                <h3>Ejecutar MySQL en el momento del arranque</h3>
+                <p>Si desea ejecutar el servidor MySQL en el momento del arranque, asegúrese de tener la siguiente entrada en el archivo /etc/rc.local.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">/etc/init.d/mysqld start
+</code></pre></div>
+                </div>
+
+                <p>Además, debe tener el binario mysqld en el directorio /etc/init.d/.</p>
+
+                
             </section>
 
             <section id="item3">
                 <h1>Administración</h1>
+                <p>Primero verifique si su servidor MySQL se está ejecutando o no. Puede usar el siguiente comando para verificarlo:</p>
                 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">ps -ef | grep mysqld</code></pre></div>
+                </div>
+
+                <p>Si su MySql se está ejecutando, verá el proceso mysqld enumerado en su resultado. Si el servidor no se está ejecutando, puede iniciarlo con el siguiente comando:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">root@host# cd /usr/bin
+./safe_mysqld &</code></pre></div>
+                </div>
+
+                <p>Ahora, si desea apagar un servidor MySQL que ya se está ejecutando, puede hacerlo usando el siguiente comando:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">root@host# cd /usr/bin
+./mysqladmin -u root -p shutdown
+Enter password: ******</code></pre></div>
+                </div>
+                
+                <h3>Configurar una cuenta de usuario de MySQL</h3>
+                <p>Para agregar un nuevo usuario a MySQL, solo necesita agregar una nueva entrada a la tabla de usuarios en la base de datos mysql.</p>
+                <p>El siguiente programa es un ejemplo de cómo agregar un nuevo usuario invitado con privilegios SELECT, INSERT y UPDATE con la contraseña guest123; la consulta SQL es -</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">root@host# mysql -u root -p
+Enter password:*******
+mysql> use mysql;
+Database changed
+
+mysql> INSERT INTO user 
+   (host, user, password, 
+   select_priv, insert_priv, update_priv) 
+   VALUES ('localhost', 'guest', 
+   PASSWORD('guest123'), 'Y', 'Y', 'Y');
+Query OK, 1 row affected (0.20 sec)
+
+mysql> FLUSH PRIVILEGES;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELECT host, user, password FROM user WHERE user = 'guest';
++-----------+---------+------------------+
+|    host   |   user  |     password     |    
++-----------+---------+------------------+
+| localhost |  guest  | 6f8c114b58f2ce9e |
++-----------+---------+------------------+
+1 row in set (0.00 sec)</code></pre></div>
+                </div>
+
+                <p>Cuando agregue un nuevo usuario, recuerde encriptar la nueva contraseña usando la función PASSWORD () proporcionada por MySQL. Como puede ver en el ejemplo anterior, la contraseña mypass está cifrada en 6f8c114b58f2ce9e.</p>
+                <p>Observe la declaración FLUSH PRIVILEGES. Esto le dice al servidor que vuelva a cargar las tablas de concesión. Si no lo usa, no podrá conectarse a MySQL con la nueva cuenta de usuario al menos hasta que se reinicie el servidor.</p>
+                <p>También puede especificar otros privilegios para un nuevo usuario estableciendo los valores de las siguientes columnas en la tabla de usuarios en 'Y' al ejecutar la consulta INSERT o puede actualizarlos más tarde usando la consulta UPDATE.</p>
+
+                <ul>
+                    <li>Select_priv</li>
+                    <li>Insert_priv</li>
+                    <li>Update_priv</li>
+                    <li>Delete_priv</li>
+                    <li>Create_priv</li>
+                    <li>Drop_priv</li>
+                    <li>Reload_priv</li>
+                    <li>Shutdown_priv</li>
+                    <li>Process_priv</li>
+                    <li>File_priv</li>
+                    <li>Grant_priv</li>
+                    <li>References_priv</li>
+                    <li>Index_priv</li>
+                    <li>Alter_priv</li>
+                </ul>
+
+                <p>Otra forma de agregar una cuenta de usuario es mediante el comando GRANT SQL. El siguiente ejemplo agregará el usuario zara con la contraseña zara123 para una base de datos en particular, que se denomina TUTORIALES.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">root@host# mysql -u root -p password;
+Enter password:*******
+mysql> use mysql;
+Database changed
+
+mysql> GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP
+   -> ON TUTORIALS.*
+   -> TO 'zara'@'localhost'
+   -> IDENTIFIED BY 'zara123';</code></pre></div>
+                </div>   
+
+                <p>Esto también creará una entrada en la tabla de la base de datos MySQL llamada como usuario.</p>
+                <p><b>NOTA:</b> MySQL no finaliza un comando hasta que le da un punto y coma (;) al final del comando SQL.</p>
+
+                <p>La configuración del archivo /etc/my.cnf</p>
+
+                <p>En la mayoría de los casos, no debe tocar este archivo. Por defecto, tendrá las siguientes entradas:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">[mysqld]
+datadir = /var/lib/mysql
+socket = /var/lib/mysql/mysql.sock
+
+[mysql.server]
+user = mysql
+basedir = /var/lib
+
+[safe_mysqld]
+err-log = /var/log/mysqld.log
+pid-file = /var/run/mysqld/mysqld.pid</code></pre></div>
+                </div> 
+
+                <p>Aquí, puede especificar un directorio diferente para el registro de errores; de lo contrario, no debe cambiar ninguna entrada en esta tabla.</p>
+                
+                <h3>Comando administrativo MySQL</h3>
+                <p>Aquí está la lista de los comandos importantes de MySQL, que usará de vez en cuando para trabajar con la base de datos MySQL:</p>
+                
+                <ul>
+                    <li>USE Databasename : se utilizará para seleccionar una base de datos en el área de trabajo de MySQL.</li>
+                    <li>MOSTRAR BASES DE DATOS : enumera las bases de datos a las que puede acceder MySQL DBMS.</li>
+                    <li>MOSTRAR TABLAS : muestra las tablas en la base de datos una vez que se ha seleccionado una base de datos con el comando use.</li>
+                    <li>MOSTRAR COLUMNAS DESDE el nombre de la tabla: muestra los atributos, tipos de atributos, información clave, si se permite NULL, valores predeterminados y otra información para una tabla.</li>
+                    <li>SHOW INDEX FROM tablename : presenta los detalles de todos los índices de la tabla, incluida la CLAVE PRINCIPAL.</li>
+                    <li>MOSTRAR ESTADO DE LA TABLA LIKE tablename \ G - Informa los detalles del rendimiento y las estadísticas de MySQL DBMS.</li>
+                    <li></li>
+                </ul>
+
             </section>
 
             <section id="item4">
                 <h1>Sintaxis de php</h1>
+                <p>MySQL funciona muy bien en combinación con varios lenguajes de programación como PERL, C, C ++, JAVA y PHP. De estos lenguajes, PHP es el más popular debido a sus capacidades de desarrollo de aplicaciones web.</p>
+                <p>Este tutorial se centra principalmente en el uso de MySQL en un entorno PHP. Si está interesado en MySQL con PERL, puede considerar leer el Tutorial de PERL.</p>
+                <p>PHP proporciona varias funciones para acceder a la base de datos MySQL y manipular los registros de datos dentro de la base de datos MySQL. Necesitaría llamar a las funciones PHP de la misma manera que llama a cualquier otra función PHP.</p>
+                <p>Las funciones de PHP para usar con MySQL tienen el siguiente formato general:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysqli function(value,value,...);
+</code></pre></div>
+                </div> 
+
+                <p>La segunda parte del nombre de la función es específica de la función, generalmente una palabra que describe lo que hace la función. Las siguientes son dos de las funciones, que usaremos en nuestro tutorial:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">$mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+mysqli->query(,"SQL statement");</code></pre></div>
+                </div> 
+
+                <p>El siguiente ejemplo muestra una sintaxis genérica de PHP para llamar a cualquier función de MySQL.</p>
                 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;head&gt;
+      &lt;title&gt;PHP with MySQL&lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;?php
+         $retval = mysqli - &gt; function(value, [value,...]);
+         if( !$retval ) {
+            die ( &quot;Error: a related error message&quot; );
+         }
+         // Otherwise MySQL  or PHP Statements
+      ?&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div> 
+
+                <p>A partir del siguiente capítulo, veremos todas las funciones importantes de MySQL junto con PHP.</p>
+
             </section>
 
             <section id="item5">
                 <h1>Conexión</h1>
+
+                <h3>Conexión MySQL usando MySQL Binary</h3>
+
+                <p>Puede establecer la base de datos MySQL utilizando el binario mysql en el símbolo del sistema.</p>
+                <h4>Ejemplo:</h4>
+                <p>Aquí hay un ejemplo simple para conectarse al servidor MySQL desde el símbolo del sistema:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">[root@host]# mysql -u root -p
+Enter password:******</code></pre></div>
+                </div> 
+
+                <p>Esto le dará el símbolo del sistema mysql> donde podrá ejecutar cualquier comando SQL. A continuación se muestra el resultado del comando anterior:</p>
+                <p>El siguiente bloque de código muestra el resultado del código anterior:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 2854760 to server version: 5.0.9
+
+Type 'help;' or '\h' for help. Type '\c' to clear the buffer.</code></pre></div>
+                </div> 
+
+                <p>En el ejemplo anterior, hemos utilizado root como usuario, pero también puede utilizar cualquier otro usuario. Cualquier usuario podrá realizar todas las operaciones SQL, que le están permitidas.</p>
+                <p>Puede desconectarse de la base de datos MySQL en cualquier momento usando el comando exit en el indicador mysql>.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> exit
+Bye</code></pre></div>
+                </div> 
+
+                <h3>Conexión MySQL usando PHP Script</h3>
+
+                <p>PHP proporciona la función mysqli contruct o mysqli_connect () para abrir una conexión a la base de datos. Esta función toma seis parámetros y devuelve un identificador de enlace MySQL en caso de éxito o FALSO en caso de error.</p>
                 
+                <h4>Sintaxis:</h4>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">$mysqli = new mysqli($host, $username, $passwd, $dbName, $port, $socket);
+</code></pre></div>
+                </div> 
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Parámetro </th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>$host</td>
+                        <td>Opcional: el nombre de host que ejecuta el servidor de la base de datos. Si no se especifica, el valor predeterminado será localhost: 3306.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>$username</td>
+                        <td>Opcional: el nombre de usuario que accede a la base de datos. Si no se especifica, el valor predeterminado será el nombre del usuario propietario del proceso del servidor.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>$passwd</td>
+                        <td>Opcional: la contraseña del usuario que accede a la base de datos. Si no se especifica, el valor predeterminado será una contraseña vacía.</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>$dbName</td>
+                        <td>Opcional: nombre de la base de datos en la que se realizará la consulta.</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>$port</td>
+                        <td>Opcional: el número de puerto para intentar conectarse al servidor MySQL.</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>$socket</td>
+                        <td>Opcional: conector o tubería con nombre que se debe utilizar.</td>
+                    </tr>
+                </table>
+
+                <p>Puede desconectarse de la base de datos MySQL en cualquier momento usando otra función PHP close ().</p>
+
+                <h4>Sintaxis</h4>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">$mysqli->close();</code></pre></div>
+                </div> 
+
+                <h4>Ejemplo:</h4>
+                <p>Pruebe el siguiente ejemplo para conectarse a un servidor MySQL:</p>
+                <p>Copie y pegue el siguiente ejemplo como mysql_example.php -</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">&lt;html&gt;
+   &lt;head&gt;
+      &lt;title&gt;Connecting MySQL Server&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;?php
+         $dbhost = &apos;localhost&apos;;
+         $dbuser = &apos;root&apos;;
+         $dbpass = &apos;root@123&apos;;
+         $mysqli = new mysqli($dbhost, $dbuser, $dbpass);
+         
+         if($mysqli-&gt;connect_errno ) {
+            printf(&quot;Connect failed: %s&lt;br /&gt;&quot;, $mysqli-&gt;connect_error);
+            exit();
+         }
+         printf(&apos;Connected successfully.&lt;br /&gt;&apos;);
+         $mysqli-&gt;close();
+      ?&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>    
+
+            <h4>Producción</h4>    
+
+            <p>Acceda al mysql_example.php implementado en el servidor web apache y verifique el resultado.</p>
+
+            <div class="panel">
+                <div class="codigo__html">
+                    <div class="decor__bar mysql"></div>
+                    <pre class="line-numbers"><code class="language-markup">Connected successfully.
+</code></pre></div>
+            </div>         
+
+            <h3>Crear base de datos usando mysqladmin</h3>
+
+            <p>Necesitaría privilegios especiales para crear o eliminar una base de datos MySQL. Entonces, asumiendo que tiene acceso al usuario root, puede crear cualquier base de datos usando el binario mysql mysqladmin.</p>
+
+            <h4>Ejemplo:</h4>
+
+            <p>Aquí hay un ejemplo simple para crear una base de datos llamada TUTORIALES:</p>
+
+            <div class="panel">
+                <div class="codigo__html">
+                    <div class="decor__bar mysql"></div>
+                    <pre class="line-numbers"><code class="language-sql">[root@host]# mysqladmin -u root -p create TUTORIALS
+Enter password:******</code></pre></div>
+            </div> 
+
+            <p>Esto creará una base de datos MySQL llamada TUTORIALES.</p>
+
+            <h3>Crear una base de datos usando PHP Script</h3>
+
+            <p>PHP usa la función <b>mysqli query()</b> o <b>mysql_query()</b> para crear o eliminar una base de datos MySQL. Esta función toma dos parámetros y devuelve VERDADERO en caso de éxito o FALSO en caso de error.</p>
+
+            <h4>Sintaxis</h4>
+
+            <div class="panel">
+                <div class="codigo__html">
+                    <div class="decor__bar mysql"></div>
+                    <pre class="line-numbers"><code class="language-sql">$mysqli->query($sql,$resultmode)</code></pre></div>
+            </div> 
+
+            <table>
+                <tr>
+                    <th>#</th>
+                    <th>Descripción</th>
+                    <th>Parámetro</th>
+                </tr>
+
+                <tr>
+                    <td>1</td>
+                    <td>$sql</td>
+                    <td>Requerido: consulta SQL para crear una base de datos MySQL.</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>$resultmode</td>
+                    <td>Opcional: la constante MYSQLI_USE_RESULT o MYSQLI_STORE_RESULT según el comportamiento deseado. De forma predeterminada, se utiliza MYSQLI_STORE_RESULT.</td>
+                </tr>
+            </table>
+
+            <h4>Ejemplo:</h4>
+            <p>Pruebe el siguiente ejemplo para crear una base de datos:</p>
+            <p>Copie y pegue el siguiente ejemplo como mysql_example.php -</p>
+
+            <div class="panel">
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;head&gt;&lt;title&gt;Creating MySQL Database&lt;/title&gt;&lt;/head&gt;
+   &lt;body&gt;
+      &lt;?php
+         $dbhost = &apos;localhost&apos;;
+         $dbuser = &apos;root&apos;;
+         $dbpass = &apos;root@123&apos;;
+         $mysqli = new mysqli($dbhost, $dbuser, $dbpass);
+         
+         if($mysqli-&gt;connect_errno ) {
+            printf(&quot;Connect failed: %s&lt;br /&gt;&quot;, $mysqli-&gt;connect_error);
+            exit();
+         }
+         printf(&apos;Connected successfully.&lt;br /&gt;&apos;);
+
+         if ($mysqli-&gt;query(&quot;CREATE DATABASE TUTORIALS&quot;)) {
+            printf(&quot;Database TUTORIALS created successfully.&lt;br /&gt;&quot;);
+         }
+         if ($mysqli-&gt;errno) {
+            printf(&quot;Could not create database: %s&lt;br /&gt;&quot;, $mysqli-&gt;error);
+         }
+         $mysqli-&gt;close();
+      ?&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+            </div> 
+
+            <h4>Producción:</h4>
+
+            <p>Acceda al mysql_example.php implementado en el servidor web apache y verifique el resultado.</p>
+
+            <div class="panel">
+                <div class="codigo__html">
+                    <div class="decor__bar mysql"></div>
+                    <pre class="line-numbers"><code class="language-sql">Connected successfully.</code></pre></div>
+            </div> 
+
             </section>
 
             <section id="item6">
                 <h1>Crear una base de datos</h1>
+
+                <h3>Crea una base de datos usando mysqladmin</h3>
+
+                <p>Necesitaría privilegios especiales para crear o eliminar una base de datos MySQL. Entonces, asumiendo que tiene acceso al usuario root, puede crear cualquier base de datos usando el binario mysql mysqladmin .</p>
+
+                <h4>Ejemplo:</h4>
+
+                <p>Aquí hay un ejemplo simple para crear una base de datos llamada TUTORIALES:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">[root@host]# mysqladmin -u root -p create TUTORIALS
+Enter password:******</code></pre></div>
+                </div> 
+
+                <p>Esto creará una base de datos MySQL llamada TUTORIALES.</p>
+
+                <h3>Crear una base de datos usando PHP Script</h3>
+    
+                <p>PHP usa la función mysqli query () o mysql_query () para crear o eliminar una base de datos MySQL. Esta función toma dos parámetros y devuelve VERDADERO en caso de éxito o FALSO en caso de error.</p>
+
+                <h4>Sintaxis:</h4>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">$mysqli->query($sql,$resultmode)
+</code></pre></div>
+                </div>
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Parámetro</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>$sql</td>
+                        <td>Requerido: consulta SQL para crear una base de datos MySQL.<td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>$resultmode</td>
+                        <td>Opcional: la constante MYSQLI_USE_RESULT o MYSQLI_STORE_RESULT según el comportamiento deseado. De forma predeterminada, se utiliza MYSQLI_STORE_RESULT.</td>
+                    </tr>
+                </table>
+
+                <h4>Ejemplo:</h4>
+                <p>Pruebe el siguiente ejemplo para crear una base de datos:</p>
+                <p>Copie y pegue el siguiente ejemplo como mysql_example.php -</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;head&gt;&lt;title&gt;Creating MySQL Database&lt;/title&gt;&lt;/head&gt;
+   &lt;body&gt;
+      &lt;?php
+         $dbhost = &apos;localhost&apos;;
+         $dbuser = &apos;root&apos;;
+         $dbpass = &apos;root@123&apos;;
+         $mysqli = new mysqli($dbhost, $dbuser, $dbpass);
+         
+         if($mysqli-&gt;connect_errno ) {
+            printf(&quot;Connect failed: %s&lt;br /&gt;&quot;, $mysqli-&gt;connect_error);
+            exit();
+         }
+         printf(&apos;Connected successfully.&lt;br /&gt;&apos;);
+
+         if ($mysqli-&gt;query(&quot;CREATE DATABASE TUTORIALS&quot;)) {
+            printf(&quot;Database TUTORIALS created successfully.&lt;br /&gt;&quot;);
+         }
+         if ($mysqli-&gt;errno) {
+            printf(&quot;Could not create database: %s&lt;br /&gt;&quot;, $mysqli-&gt;error);
+         }
+         $mysqli-&gt;close();
+      ?&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+                <h4>Producción</h4>
+
+                <p>Acceda al mysql_example.php implementado en el servidor web apache y verifique el resultado.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">Connected successfully.
+Database TUTORIALS created successfully.</code></pre></div>
+                </div>
                 
             </section>
 
             <section id="item7">
                 <h1>Eliminar una base de datos</h1>
+
+                <h3>Elimina una base de datos usando mysqladmin</h3>
+                <p>Necesitaría privilegios especiales para crear o eliminar una base de datos MySQL. Entonces, asumiendo que tiene acceso al usuario root, puede crear cualquier base de datos usando el binario mysql mysqladmin.</p>
                 
+                <p>Tenga cuidado al eliminar cualquier base de datos porque perderá todos los datos disponibles en su base de datos.</p>
+                <p>Aquí hay un ejemplo para eliminar una base de datos (TUTORIALES) creada en el capítulo anterior:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">[root@host]# mysqladmin -u root -p drop TUTORIALS
+Enter password:******</code></pre></div>
+                </div>
+
+                <p>Esto le dará una advertencia y confirmará si realmente desea eliminar esta base de datos o no.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">Dropping the database is potentially a very bad thing to do.
+Any data stored in the database will be destroyed.
+
+Do you really want to drop the 'TUTORIALS' database [y/N] y
+Database "TUTORIALS" dropped</code></pre></div>
+                </div>   
+
+                <h3>Elimina la base de datos usando PHP Script</h3>
+
+                <p>PHP usa la función mysqli query () o mysql_query () para eliminar una base de datos MySQL. Esta función toma dos parámetros y devuelve VERDADERO en caso de éxito o FALSO en caso de error.</p>
+
+                <h4>Sintaxis:</h4>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">$mysqli->query($sql,$resultmode)
+</code></pre></div>
+                </div>
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Parámetros</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>$sql</td>
+                        <td>Obligatorio: consulta SQL para eliminar una base de datos MySQL.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>$resultmode</td>
+                        <td>Opcional: la constante MYSQLI_USE_RESULT o MYSQLI_STORE_RESULT según el comportamiento deseado. De forma predeterminada, se utiliza MYSQLI_STORE_RESULT.</td>
+                    </tr>
+                </table>
+
+                <h4>Ejemplo:</h4>
+
+                <p>Pruebe el siguiente ejemplo para eliminar una base de datos:                </p>
+                <p>Copie y pegue el siguiente ejemplo como mysql_example.php -</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;head&gt;&lt;title&gt;Dropping MySQL Database&lt;/title&gt;&lt;/head&gt;
+   &lt;body&gt;
+      &lt;?php
+         $dbhost = &apos;localhost&apos;;
+         $dbuser = &apos;root&apos;;
+         $dbpass = &apos;root@123&apos;;
+         $mysqli = new mysqli($dbhost, $dbuser, $dbpass);
+         
+         if($mysqli-&gt;connect_errno ) {
+            printf(&quot;Connect failed: %s&lt;br /&gt;&quot;, $mysqli-&gt;connect_error);
+            exit();
+         }
+         printf(&apos;Connected successfully.&lt;br /&gt;&apos;);
+
+         if ($mysqli-&gt;query(&quot;Drop DATABASE TUTORIALS&quot;)) {
+            printf(&quot;Database TUTORIALS dropped successfully.&lt;br /&gt;&quot;);
+         }
+         if ($mysqli-&gt;errno) {
+            printf(&quot;Could not drop database: %s&lt;br /&gt;&quot;, $mysqli-&gt;error);
+         }
+         $mysqli-&gt;close();
+      ?&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+            <h3>Producción:</h3>   
+            <p>Acceda al mysql_example.php implementado en el servidor web apache y verifique el resultado.</p>
+            
+            <div class="panel">
+                <div class="codigo__html">
+                    <div class="decor__bar mysql"></div>
+                    <pre class="line-numbers"><code class="language-sql">Connected successfully.
+Database TUTORIALS dropped successfully.</code></pre></div>
+            </div>
+
+
             </section>
 
             <section id="item8">
                 <h1>Seleccionar una base de datos</h1>
+                <p>Una vez que se conecte con el servidor MySQL, es necesario seleccionar una base de datos para trabajar. Esto se debe a que puede haber más de una base de datos disponible con MySQL Server.</p>
                 
+                <h3>Seleccionar la base de datos MySQL desde el símbolo del sistema</h3>
+                <p>Es muy sencillo seleccionar una base de datos desde el indicador mysql>. Puede utilizar el comando SQL uso para seleccionar una base de datos.</p>
+
+                <h4>Ejemplo:</h4>
+
+                <p>Aquí hay un ejemplo para seleccionar una base de datos llamada TUTORIALES -</p>
+
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">[root@host]# mysql -u root -p
+Enter password:******
+mysql> use TUTORIALS;
+Database changed
+mysql> </code></pre></div>
+                </div>
+
+                <p>Ahora, ha seleccionado la base de datos TUTORIALS y todas las operaciones posteriores se realizarán en la base de datos TUTORIALS.</p>
+                <p>NOTA - Todos los nombres de la base de datos, los nombres de las tablas, los nombres de los campos de la tabla son sensibles a mayúsculas y minúsculas. Por lo tanto, tendría que usar los nombres correctos al dar cualquier comando SQL.</p>
+                
+                <h3>Seleccionar una base de datos MySQL usando un script PHP</h3>
+                <p>PHP usa la función mysqli_select_db para seleccionar la base de datos en la que se realizarán las consultas. Esta función toma dos parámetros y devuelve VERDADERO en caso de éxito o FALSO en caso de error.</p>
+
+                <h4>Sintaxis:</h4>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysqli_select_db ( mysqli $link , string $dbname ) : bool</code></pre></div>
+                </div>    
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Parámetros</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>$link</td>
+                        <td>Obligatorio: un identificador de enlace devuelto por mysqli_connect () o mysqli_init ().</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>$dbname</td>
+                        <td>Obligatorio: nombre de la base de datos que se va a conectar.</td>
+                    </tr>
+                </table>
+
+                <h4>Ejemplo:</h4>
+                <p>Pruebe el siguiente ejemplo para seleccionar una base de datos:</p>
+                <p>Copie y pegue el siguiente ejemplo como mysql_example.php -</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;head&gt;
+      &lt;title&gt;Selecting MySQL Database&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+   &lt;?php
+      $dbhost = &apos;localhost&apos;;
+      $dbuser = &apos;root&apos;;
+      $dbpass = &apos;root@123&apos;;
+      $conn = mysqli_connect($dbhost, $dbuser, $dbpass);
+
+      if(! $conn ) {
+         die(&apos;Could not connect: &apos; . mysqli_error($conn));
+      }
+      echo &apos;Connected successfully&lt;br /&gt;&apos;;
+      $retval = mysqli_select_db( $conn, &apos;TUTORIALS&apos; );
+      if(! $retval ) {
+         die(&apos;Could not select database: &apos; . mysqli_error($conn));
+      }
+      echo &quot;Database TUTORIALS selected successfully\n&quot;;
+      mysqli_close($conn);
+   ?&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>    
+
+                <h4>Producción:</h4>
+                <p>Acceda al mysql_example.php implementado en el servidor web apache y verifique el resultado.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">Database TUTORIALS selected successfully
+</code></pre></div>
+                </div> 
+
             </section>
 
             <section id="item9">
                 <h1>Tipos de datos</h1>
-                
+
+                <p>Definir correctamente los campos en una tabla es importante para la optimización general de su base de datos. Debe usar solo el tipo y tamaño de campo que realmente necesita usar. Por ejemplo, no defina un campo de 10 caracteres de ancho, si sabe que solo va a utilizar 2 caracteres. Este tipo de campos (o columnas) también se denominan tipos de datos, después del tipo de datos que almacenará en esos campos.</p>
+                <p>MySQL usa muchos tipos de datos diferentes divididos en tres categorías:</p>
+                <ul>
+                    <li>Numérico</li>
+                    <li>Fecha y hora</li>
+                    <li>Tipos de cadenas.</li>
+                </ul>
+                <p>Vamos a discutirlos ahora en detalle.</p>
+
+                <h3>Tipos de datos numéricos</h3>
+
+                <p>MySQL utiliza todos los tipos de datos numéricos ANSI SQL estándar, por lo que si llega a MySQL desde un sistema de base de datos diferente, estas definiciones le resultarán familiares.</p>
+                <p>La siguiente lista muestra los tipos de datos numéricos comunes y sus descripciones:</p>
+
+                <ul>
+                    <li>INT : un número entero de tamaño normal que puede tener o no firmar. Si está firmado, el rango permitido es de -2147483648 a 2147483647. Si no está firmado, el rango permitido es de 0 a 4294967295. Puede especificar un ancho de hasta 11 dígitos.</li>
+                    <li>TINYINT : un número entero muy pequeño que puede estar con o sin signo. Si está firmado, el rango permitido es de -128 a 127. Si no está firmado, el rango permitido es de 0 a 255. Puede especificar un ancho de hasta 4 dígitos.</li>
+                    <li>SMALLINT : un pequeño entero que puede estar firmado o sin firmar. Si está firmado, el rango permitido es de -32768 a 32767. Si no está firmado, el rango permitido es de 0 a 65535. Puede especificar un ancho de hasta 5 dígitos.</li>
+                    <li>MEDIUMINT : un número entero de tamaño mediano que puede estar firmado o sin firmar. Si está firmado, el rango permitido es de -8388608 a 8388607. Si no está firmado, el rango permitido es de 0 a 16777215. Puede especificar un ancho de hasta 9 dígitos.</li>
+                    <li>BIGINT : un entero grande que puede estar firmado o sin firmar. Si está firmado, el rango permitido es de -9223372036854775808 a 9223372036854775807. Si no está firmado, el rango permitido es de 0 a 18446744073709551615. Puede especificar un ancho de hasta 20 dígitos.</li>
+                    <li>FLOAT (M, D) : un número de punto flotante que no se puede anular. Puede definir la longitud de visualización (M) y el número de decimales (D). Esto no es obligatorio y estará predeterminado en 10,2, donde 2 es el número de decimales y 10 es el número total de dígitos (incluidos los decimales). La precisión decimal puede llegar a 24 lugares para un FLOAT.</li>
+                    <li>DOUBLE (M, D) : un número de punto flotante de doble precisión que no puede estar sin signo. Puede definir la longitud de visualización (M) y el número de decimales (D). Esto no es obligatorio y el valor predeterminado será 16,4, donde 4 es el número de decimales. La precisión decimal puede llegar a 53 lugares para un DOBLE. REAL es sinónimo de DOBLE.</li>
+                    <li>DECIMAL (M, D) : un número de punto flotante descomprimido que no se puede anular. En los decimales desempaquetados, cada decimal corresponde a un byte. Es necesario definir la longitud de visualización (M) y el número de decimales (D). NUMERIC es sinónimo de DECIMAL.</li>
+                </ul>
+
+                <h3>Tipos de fecha y hora</h3>
+
+                <p></p>
+
+                <ul>
+                    <li>FECHA : una fecha en formato AAAA-MM-DD, entre 1000-01-01 y 9999-12-31. Por ejemplo 30 de diciembre º , 1973 se almacena como 30/12/1973.</li>
+                    <li>DATETIME : una combinación de fecha y hora en formato AAAA-MM-DD HH: MM: SS, entre 1000-01-01 00:00:00 y 9999-12-31 23:59:59. Por ejemplo, las 3:30 de la tarde de diciembre 30 de XX de 1973 se almacenaría como 12/30/1973 15:30:00.</li>
+                    <li>TIMESTAMP - Una marca de tiempo entre la medianoche 1 DE ENERO st , 1970 y en algún momento de 2037. Esto parece el formato DATETIME anterior, sólo que sin los guiones entre los números; 3:30 de la tarde de diciembre 30 de XX de 1973 se almacenaría como 19731230153000 (AAAAMMDDHHMMSS).</li>
+                    <li>TIME − Almacena la hora en formato HH: MM: SS.</li>
+                    <li>YEAR(M) − almacena un año en un formato de 2 o 4 dígitos. Si la longitud se especifica como 2 (por ejemplo, AÑO (2)), AÑO puede estar entre 1970 y 2069 (70 a 69). Si la longitud se especifica como 4, entonces YEAR puede ser de 1901 a 2155. La longitud predeterminada es 4.</li>
+                </ul>
+
+                <h3>Tipos de cadenas</h3>
+                <p>Aunque los tipos numéricos y de fecha son divertidos, la mayoría de los datos que almacenará estarán en formato de cadena. Esta lista describe los tipos de datos de cadenas comunes en MySQL.</p>
+
+                <ul>
+                    <li>CHAR (M) : una cadena de longitud fija entre 1 y 255 caracteres de longitud (por ejemplo, CHAR (5)), rellenada a la derecha con espacios hasta la longitud especificada cuando se almacena. No es necesario definir una longitud, pero el valor predeterminado es 1.</li>
+                    <li>VARCHAR (M) : una cadena de longitud variable entre 1 y 255 caracteres de longitud. Por ejemplo, VARCHAR (25). Debe definir una longitud al crear un campo VARCHAR.</li>
+                    <li>BLOB o TEXTO : un campo con una longitud máxima de 65535 caracteres. Los BLOB son "objetos grandes binarios" y se utilizan para almacenar grandes cantidades de datos binarios, como imágenes u otros tipos de archivos. Los campos definidos como TEXTO también contienen grandes cantidades de datos. La diferencia entre los dos es que los ordenamientos y comparaciones de los datos almacenados distinguen entre mayúsculas y minúsculas en los BLOB y no distinguen entre mayúsculas y minúsculas en los campos de TEXTO. No especifica una longitud con BLOB o TEXT.</li>
+                    <li>TINYBLOB o TINYTEXT : una columna BLOB o TEXT con una longitud máxima de 255 caracteres. No especifica una longitud con TINYBLOB o TINYTEXT.</li>
+                    <li>MEDIUMBLOB o MEDIUMTEXT : una columna BLOB o TEXT con una longitud máxima de 16777215 caracteres. No especifica una longitud con MEDIUMBLOB o MEDIUMTEXT.</li>
+                    <li>LONGBLOB o LONGTEXT : una columna BLOB o TEXT con una longitud máxima de 4294967295 caracteres. No especifica una longitud con LONGBLOB o LONGTEXT.</li>
+                    <li>ENUM : una enumeración, que es un término elegante para la lista. Al definir un ENUM, está creando una lista de elementos de los que se debe seleccionar el valor (o puede ser NULL). Por ejemplo, si desea que su campo contenga "A" o "B" o "C", debe definir su ENUM como ENUM ('A', 'B', 'C') y solo esos valores (o NULL) podría poblar ese campo.</li>
+                </ul>
+
             </section>
 
             <section id="item10">
                 <h1>Crear tablas</h1>
+                <p>Para empezar, el comando de creación de tablas requiere los siguientes detalles:</p>
+
+                <ul>
+                    <li>Nombre de la tabla</li>
+                    <li>Nombre de los campos</li>
+                    <li>Definiciones para cada campo</li>
+                </ul>
+
+                <h4>Sintaxis:</h4>
+
+                <p>Aquí hay una sintaxis SQL genérica para crear una tabla MySQL:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">CREATE TABLE table_name (column_name column_type);
+</code></pre></div>
+                </div> 
+
+                <p>Ahora, crearemos la siguiente tabla en la base de datos de TUTORIALES.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">create table tutorials_tbl(
+   tutorial_id INT NOT NULL AUTO_INCREMENT,
+   tutorial_title VARCHAR(100) NOT NULL,
+   tutorial_author VARCHAR(40) NOT NULL,
+   submission_date DATE,
+   PRIMARY KEY ( tutorial_id )
+);</code></pre></div>
+                </div> 
+
+                <p>Aquí, algunos elementos necesitan explicación:</p>
+                <ul>
+                    <li>Se está utilizando el atributo de campo NOT NULL porque no queremos que este campo sea NULL. Entonces, si un usuario intenta crear un registro con un valor NULL, entonces MySQL generará un error.</li>
+                    <li>El atributo de campo AUTO_INCREMENT le dice a MySQL que siga adelante y agregue el siguiente número disponible al campo de identificación.                    </li>
+                    <li>La palabra clave PRIMARY KEY se utiliza para definir una columna como clave principal. Puede utilizar varias columnas separadas por una coma para definir una clave principal.</li>
+                </ul>
+
+                <h3>Crear tablas desde el símbolo del sistema</h3>
+                <p>Es fácil crear una tabla MySQL desde el indicador mysql>. Utilizará el comando SQL CREATE TABLE para crear una tabla.</p>
+
+                <h4>Ejemplo:</h4>
+                <p>Aquí hay un ejemplo, que creará tutorials_tbl -</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">root@host# mysql -u root -p
+Enter password:*******
+mysql> use TUTORIALS;
+Database changed
+mysql> CREATE TABLE tutorials_tbl(
+   -> tutorial_id INT NOT NULL AUTO_INCREMENT,
+   -> tutorial_title VARCHAR(100) NOT NULL,
+   -> tutorial_author VARCHAR(40) NOT NULL,
+   -> submission_date DATE,
+   -> PRIMARY KEY ( tutorial_id )
+   -> );
+Query OK, 0 rows affected (0.16 sec)
+mysql></code></pre></div>
+                </div>
+
+                <p><b>NOTA:</b> MySQL no finaliza un comando hasta que le da un punto y coma (;) al final del comando SQL.</p>
+
+                <h3>Creando tablas usando PHP Script</h3>
+                <p>PHP usa la función mysqli query () o mysql_query () para crear una tabla MySQL. Esta función toma dos parámetros y devuelve VERDADERO en caso de éxito o FALSO en caso de error.</p>
+                <h4>Sintaxis:</h4>
                 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">$mysqli->query($sql,$resultmode)
+</code></pre></div>
+                </div>
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>$sql</td>
+                        <td>Requerido: consulta SQL para crear una tabla MySQL.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>$resultmode</td>
+                        <td>Opcional: la constante MYSQLI_USE_RESULT o MYSQLI_STORE_RESULT según el comportamiento deseado. De forma predeterminada, se utiliza MYSQLI_STORE_RESULT.</td>
+                    </tr>
+                    
+                </table>
+
+                <h4>Ejemplo:</h4>
+                <p>Pruebe el siguiente ejemplo para crear una tabla:</p>
+                <p>Copie y pegue el siguiente ejemplo como mysql_example.php -</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;head&gt;
+      &lt;title&gt;Creating MySQL Table&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;?php
+         $dbhost = &apos;localhost&apos;;
+         $dbuser = &apos;root&apos;;
+         $dbpass = &apos;root@123&apos;;
+         $dbname = &apos;TUTORIALS&apos;;
+         $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+         
+         if($mysqli-&gt;connect_errno ) {
+            printf(&quot;Connect failed: %s&lt;br /&gt;&quot;, $mysqli-&gt;connect_error);
+            exit();
+         }
+         printf(&apos;Connected successfully.&lt;br /&gt;&apos;);
+   
+         $sql = &quot;CREATE TABLE tutorials_tbl( &quot;.
+            &quot;tutorial_id INT NOT NULL AUTO_INCREMENT, &quot;.
+            &quot;tutorial_title VARCHAR(100) NOT NULL, &quot;.
+            &quot;tutorial_author VARCHAR(40) NOT NULL, &quot;.
+            &quot;submission_date DATE, &quot;.
+            &quot;PRIMARY KEY ( tutorial_id )); &quot;;
+         if ($mysqli-&gt;query($sql)) {
+            printf(&quot;Table tutorials_tbl created successfully.&lt;br /&gt;&quot;);
+         }
+         if ($mysqli-&gt;errno) {
+            printf(&quot;Could not create table: %s&lt;br /&gt;&quot;, $mysqli-&gt;error);
+         }
+
+         $mysqli-&gt;close();
+      ?&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+                <h4>Producción:</h4>
+                
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-markup">Connected successfully.
+Table tutorials_tbl created successfully.</code></pre></div>
+                </div>
+
+
             </section>
 
             <section id="item11">
                 <h1>Eliminar tablas</h1>
+
+                <p>Es muy fácil eliminar una tabla MySQL existente, pero debe tener mucho cuidado al eliminar cualquier tabla existente porque los datos perdidos no se recuperarán después de eliminar una tabla.</p>
+                <h4>Sintaxis:</h4>
+                <p>Aquí hay una sintaxis SQL genérica para eliminar una tabla MySQL:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">DROP TABLE table_name ;
+</code></pre></div>
+                </div>
+
+                <h3>Eliminar las tablas desde el símbolo del sistema</h3>
+
+                <p>Para eliminar tablas desde el símbolo del sistema, debemos ejecutar el comando DROP TABLE SQL en el símbolo del sistema mysql>.</p>
+
+                <h4>Ejemplo:</h4>
+                <p>El siguiente programa es un ejemplo que elimina tutorials_tbl -</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">root@host# mysql -u root -p
+Enter password:*******
+mysql> use TUTORIALS;
+Database changed
+mysql> DROP TABLE tutorials_tbl
+Query OK, 0 rows affected (0.8 sec)
+mysql></code></pre></div>
+                </div>
+
+                <h3>Eliminación de tablas usando PHP Script</h3>
+                <p>PHP usa la función mysqli query () o mysql_query () para eliminar una tabla MySQL. Esta función toma dos parámetros y devuelve VERDADERO en caso de éxito o FALSO en caso de error.</p>
+
+                <h4>Sintaxis:</h4>
+                    
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">$mysqli->query($sql,$resultmode)
+</code></pre></div>
+                </div>
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Parámetros</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>$sql</td>
+                        <td>Obligatorio: consulta SQL para eliminar una tabla.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>$resultmode</td>
+                        <td>Opcional: la constante MYSQLI_USE_RESULT o MYSQLI_STORE_RESULT según el comportamiento deseado. De forma predeterminada, se utiliza MYSQLI_STORE_RESULT.</td>
+                    </tr>
+                </table>
+
+                <h4>Ejemplo:</h4>
+                <p>Pruebe el siguiente ejemplo para eliminar una tabla:</p>
+
+                <p>Copie y pegue el siguiente ejemplo como mysql_example.php -</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;head&gt;&lt;title&gt;Dropping MySQL Table&lt;/title&gt;&lt;/head&gt;
+   &lt;body&gt;
+      &lt;?php
+         $dbhost = &apos;localhost&apos;;
+         $dbuser = &apos;root&apos;;
+         $dbpass = &apos;root@123&apos;;
+         $dbname = &apos;TUTORIALS&apos;;
+         $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+         
+         if($mysqli-&gt;connect_errno ) {
+            printf(&quot;Connect failed: %s&lt;br /&gt;&quot;, $mysqli-&gt;connect_error);
+            exit();
+         }
+         printf(&apos;Connected successfully.&lt;br /&gt;&apos;);
+&#x9;&#x9; 
+         if ($mysqli-&gt;query(&quot;Drop Table tutorials_tbl&quot;)) {
+            printf(&quot;Table tutorials_tbl dropped successfully.&lt;br /&gt;&quot;);
+         }
+         if ($mysqli-&gt;errno) {
+            printf(&quot;Could not drop table: %s&lt;br /&gt;&quot;, $mysqli-&gt;error);
+         }
+
+         $mysqli-&gt;close();
+      ?&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+                <h4>Producción</h4>
+                <p>Acceda al mysql_example.php implementado en el servidor web apache y verifique el resultado.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-markup">$mysqli->query($sql,$resultmode)
+</code></pre></div>
+                </div>
+
+
                 
             </section>
 
             <section id="item12">
                 <h1>Insertar consulta</h1>
+                <p>Para insertar datos en una tabla MySQL, necesitaría usar el comando SQL INSERT INTO . Puede insertar datos en la tabla MySQL usando el indicador mysql> o usando cualquier script como PHP.</p>
+
+                <h4>Sintaxis:</h4>
+
+                <p>Aquí hay una sintaxis SQL genérica del comando INSERT INTO para insertar datos en la tabla MySQL:</p>
+
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">INSERT INTO table_name ( field1, field2,...fieldN )
+   VALUES
+   ( value1, value2,...valueN );</code></pre></div>
+                </div>
+
+
+                <p>Para insertar tipos de datos de cadena, es necesario mantener todos los valores entre comillas simples o dobles. Por ejemplo, "valor" .</p>
+
+                <h3>Insertar datos desde el símbolo del sistema</h3>
+                <p>Para insertar datos desde el símbolo del sistema, usaremos el comando SQL INSERT INTO para insertar datos en la tabla MySQL tutorials_tbl.</p>
+                <h4>Ejemplo:</h4>
+                <p>El siguiente ejemplo creará 3 registros en la tabla tutorials_tbl:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">root@host# mysql -u root -p password;
+Enter password:*******
+mysql> use TUTORIALS;
+Database changed
+
+mysql> INSERT INTO tutorials_tbl 
+   ->(tutorial_title, tutorial_author, submission_date)
+   ->VALUES
+   ->("Learn PHP", "John Poul", NOW());
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO tutorials_tbl
+   ->(tutorial_title, tutorial_author, submission_date)
+   ->VALUES
+   ->("Learn MySQL", "Abdul S", NOW());
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO tutorials_tbl
+   ->(tutorial_title, tutorial_author, submission_date)
+   ->VALUES
+   ->("JAVA Tutorial", "Sanjay", '2007-05-06');
+Query OK, 1 row affected (0.01 sec)
+mysql></code></pre></div>
+                </div>
+
+                <p>NOTA : tenga en cuenta que todos los signos de flecha (->) no forman parte del comando SQL. Están indicando una nueva línea y se crean automáticamente mediante el indicador de MySQL mientras se presiona la tecla Intro sin poner un punto y coma al final de cada línea del comando.</p>
+                <p>En el ejemplo anterior, no proporcionamos un tutorial_id porque en el momento de la creación de la tabla, habíamos dado la opción AUTO_INCREMENT para este campo. Entonces MySQL se encarga de insertar estos ID automáticamente. Aquí, NOW () es una función de MySQL, que devuelve la fecha y hora actuales.</p>
+
+                <h3>Insertar datos usando un script PHP</h3>
+                <p>PHP usa la función mysqli query () o mysql_query () para insertar un registro en una tabla MySQL. Esta función toma dos parámetros y devuelve VERDADERO en caso de éxito o FALSO en caso de error.</p>
+
+                <h4>Sintaxis:</h4>
                 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">$mysqli->query($sql,$resultmode)
+</code></pre></div>
+                </div>
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Parámetros</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>$sql</td>
+                        <td>Requerido: consulta SQL para insertar un registro en una tabla.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>$resultmode</td>
+                        <td>Opcional: la constante MYSQLI_USE_RESULT o MYSQLI_STORE_RESULT según el comportamiento deseado. De forma predeterminada, se utiliza MYSQLI_STORE_RESULT.</td>
+                    </tr>
+                </table>
+
+                <h4>Ejemplo:</h4>
+                
+                <p>Este ejemplo tomará tres parámetros del usuario y los insertará en la tabla MySQL - -</p>
+                <p>Copie y pegue el siguiente ejemplo como mysql_example.php -</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;head&gt;&lt;title&gt;Add New Record in MySQL Database&lt;/title&gt;&lt;/head&gt;
+   &lt;body&gt;
+      &lt;?php
+         if(isset($_POST[&apos;add&apos;])) {
+            $dbhost = &apos;localhost&apos;;
+            $dbuser = &apos;root&apos;;
+            $dbpass = &apos;root@123&apos;;
+            $dbname = &apos;TUTORIALS&apos;;
+            $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+         
+            if($mysqli-&gt;connect_errno ) {
+               printf(&quot;Connect failed: %s&lt;br /&gt;&quot;, $mysqli-&gt;connect_error);
+               exit();
+            }
+            printf(&apos;Connected successfully.&lt;br /&gt;&apos;);
+
+            if(! get_magic_quotes_gpc() ) {
+               $tutorial_title = addslashes ($_POST[&apos;tutorial_title&apos;]);
+               $tutorial_author = addslashes ($_POST[&apos;tutorial_author&apos;]);
+            } else {
+               $tutorial_title = $_POST[&apos;tutorial_title&apos;];
+               $tutorial_author = $_POST[&apos;tutorial_author&apos;];
+            }
+
+            $submission_date = $_POST[&apos;submission_date&apos;];
+            $sql = &quot;INSERT INTO tutorials_tbl &quot;.
+               &quot;(tutorial_title,tutorial_author, submission_date) &quot;.&quot;VALUES &quot;.
+               &quot;(&apos;$tutorial_title&apos;,&apos;$tutorial_author&apos;,&apos;$submission_date&apos;)&quot;;
+           
+            if ($mysqli-&gt;query($sql)) {
+               printf(&quot;Record inserted successfully.&lt;br /&gt;&quot;);
+            }
+            if ($mysqli-&gt;errno) {
+               printf(&quot;Could not insert record into table: %s&lt;br /&gt;&quot;, $mysqli-&gt;error);
+            }
+            $mysqli-&gt;close();
+         } else {
+      ?&gt;  
+      &lt;form method = &quot;post&quot; action = &quot;&lt;?php $_PHP_SELF ?&gt;&quot;&gt;
+         &lt;table width = &quot;600&quot; border = &quot;0&quot; cellspacing = &quot;1&quot; cellpadding = &quot;2&quot;&gt;
+            &lt;tr&gt;
+               &lt;td width = &quot;250&quot;&gt;Tutorial Title&lt;/td&gt;
+               &lt;td&gt;&lt;input name = &quot;tutorial_title&quot; type = &quot;text&quot; id = &quot;tutorial_title&quot;&gt;&lt;/td&gt;
+            &lt;/tr&gt;         
+            &lt;tr&gt;
+               &lt;td width = &quot;250&quot;&gt;Tutorial Author&lt;/td&gt;
+               &lt;td&gt;&lt;input name = &quot;tutorial_author&quot; type = &quot;text&quot; id = &quot;tutorial_author&quot;&gt;&lt;/td&gt;
+            &lt;/tr&gt;         
+            &lt;tr&gt;
+               &lt;td width = &quot;250&quot;&gt;Submission Date [   yyyy-mm-dd ]&lt;/td&gt;
+               &lt;td&gt;&lt;input name = &quot;submission_date&quot; type = &quot;text&quot; id = &quot;submission_date&quot;&gt;&lt;/td&gt;
+            &lt;/tr&gt;      
+            &lt;tr&gt;
+               &lt;td width = &quot;250&quot;&gt; &lt;/td&gt;
+               &lt;td&gt;&lt;/td&gt;
+            &lt;/tr&gt;         
+            &lt;tr&gt;
+               &lt;td width = &quot;250&quot;&gt; &lt;/td&gt;
+               &lt;td&gt;&lt;input name = &quot;add&quot; type = &quot;submit&quot; id = &quot;add&quot;  value = &quot;Add Tutorial&quot;&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+         &lt;/table&gt;
+      &lt;/form&gt;
+   &lt;?php
+      }
+   ?&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+                <h4>Producción:</h4>
+                <p>Acceda al mysql_example.php implementado en el servidor web apache, ingrese los detalles y verifique el resultado al enviar el formulario.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-markup">Record inserted successfully.
+</code></pre></div>
+                </div>
+
+                <p>Al hacer una inserción de datos, es mejor usar la función get_magic_quotes_gpc () para verificar si la configuración actual de la cita mágica está establecida o no. Si esta función devuelve falso, utilice la función agrega barras () para agregar barras antes de las comillas.</p>
+                <p>Puede poner muchas validaciones para verificar si los datos ingresados ​​son correctos o no y puede tomar la acción apropiada.</p>
+
             </section>
 
             <section id="item13">
-                <h1>Eliminar consulta</h1>
-                
+                <h1>Seleccionar consulta</h1>
+                <p>El comando SQL SELECT se utiliza para obtener datos de la base de datos MySQL. Puede usar este comando en el indicador mysql> así como en cualquier script como PHP.</p>
+
+                <h4>Sintaxis:</h4>
+                <p>Aquí está la sintaxis SQL genérica del comando SELECT para obtener datos de la tabla MySQL:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">SELECT field1, field2,...fieldN 
+FROM table_name1, table_name2...
+[WHERE Clause]
+[OFFSET M ][LIMIT N]</code></pre></div>
+                </div>
+
+                <ul>
+                    <li>Puede usar una o más tablas separadas por comas para incluir varias condiciones usando una cláusula WHERE, pero la cláusula WHERE es una parte opcional del comando SELECT.</li>
+                    <li>Puede buscar uno o más campos en un solo comando SELECT.</li>
+                    <li>Puede especificar asterisco (*) en lugar de campos. En este caso, SELECT devolverá todos los campos.</li>
+                    <li>Puede especificar cualquier condición utilizando la cláusula WHERE.</li>
+                    <li>Puede especificar un desplazamiento usando OFFSET desde donde SELECT comenzará a devolver registros. De forma predeterminada, la compensación comienza en cero.</li>
+                    <li>Puede limitar el número de devoluciones utilizando el atributo LIMIT.</li>
+                </ul>
+
+                <h3>Obtener datos del símbolo del sistema</h3>
+                <p>Esto usará el comando SQL SELECT para obtener datos de la tabla MySQL tutorials_tbl.</p>
+                <h4>Ejemplo:</h4>
+                <p>El siguiente ejemplo devolverá todos los registros de la tabla tutorials_tbl:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">root@host# mysql -u root -p password;
+Enter password:*******
+mysql> use TUTORIALS;
+Database changed
+mysql> SELECT * from tutorials_tbl 
++-------------+----------------+-----------------+-----------------+
+| tutorial_id | tutorial_title | tutorial_author | submission_date |
++-------------+----------------+-----------------+-----------------+
+|           1 | Learn PHP      | John Poul       | 2007-05-21      |
+|           2 | Learn MySQL    | Abdul S         | 2007-05-21      |
+|           3 | JAVA Tutorial  | Sanjay          | 2007-05-21      |
++-------------+----------------+-----------------+-----------------+
+3 rows in set (0.01 sec)
+
+mysql></code></pre></div>
+                </div>     
+
+                <h3>Obtención de datos mediante un script PHP</h3>
+
+                <p>PHP usa la función mysqli query () o mysql_query () para seleccionar registros de una tabla MySQL. Esta función toma dos parámetros y devuelve VERDADERO en caso de éxito o FALSO en caso de error.</p>
+
+                <h4>Sintaxis</h4>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">$mysqli->query($sql,$resultmode)
+</code></pre></div>
+                </div>
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Parámetros</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>$sql</td>
+                        <td>Obligatorio: consulta SQL para seleccionar registros de una tabla MySQL.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>$resultmode</td>
+                        <td>Opcional: la constante MYSQLI_USE_RESULT o MYSQLI_STORE_RESULT según el comportamiento deseado. De forma predeterminada, se utiliza MYSQLI_STORE_RESULT.</td>
+                    </tr>
+                </table>
+
+                <h4>Ejemplo:</h4>
+                <p>Pruebe el siguiente ejemplo para seleccionar un registro de una tabla:</p>
+                <p>Copie y pegue el siguiente ejemplo como mysql_example.php -</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;head&gt;
+      &lt;title&gt;Creating MySQL Table&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;?php
+         $dbhost = &apos;localhost&apos;;
+         $dbuser = &apos;root&apos;;
+         $dbpass = &apos;root@123&apos;;
+         $dbname = &apos;TUTORIALS&apos;;
+         $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+         
+         if($mysqli-&gt;connect_errno ) {
+            printf(&quot;Connect failed: %s&lt;br /&gt;&quot;, $mysqli-&gt;connect_error);
+            exit();
+         }
+         printf(&apos;Connected successfully.&lt;br /&gt;&apos;);
+         $sql = &quot;SELECT tutorial_id, tutorial_title, tutorial_author, submission_date FROM tutorials_tbl&quot;;
+&#x9;&#x9; 
+         $result = $mysqli-&gt;query($sql);
+           
+         if ($result-&gt;num_rows &gt; 0) {
+            while($row = $result-&gt;fetch_assoc()) {
+               printf(&quot;Id: %s, Title: %s, Author: %s, Date: %d &lt;br /&gt;&quot;, 
+                  $row[&quot;tutorial_id&quot;], 
+                  $row[&quot;tutorial_title&quot;], 
+                  $row[&quot;tutorial_author&quot;],
+                  $row[&quot;submission_date&quot;]);               
+            }
+         } else {
+            printf(&apos;No record found.&lt;br /&gt;&apos;);
+         }
+         mysqli_free_result($result);
+         $mysqli-&gt;close();
+      ?&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+            <h4>Producción:</h4>    
+            <p>Acceda al mysql_example.php implementado en el servidor web apache y verifique el resultado. Aquí hemos ingresado varios registros en la tabla antes de ejecutar el script de selección.</p>
+
+            <div class="panel">
+                <div class="codigo__html">
+                    <div class="decor__bar mysql"></div>
+                    <pre class="line-numbers"><code class="language-markup">Connected successfully.
+Id: 1, Title: MySQL Tutorial, Author: Mahesh, Date: 2021
+Id: 2, Title: HTML Tutorial, Author: Mahesh, Date: 2021
+Id: 3, Title: PHP Tutorial, Author: Mahesh, Date: 2021
+Id: 4, Title: Java Tutorial, Author: Mahesh, Date: 2021
+Id: 5, Title: Apache Tutorial, Author: Suresh, Date: 2021</code></pre></div>
+            </div>
+
             </section>
 
             <section id="item14">
                 <h1>Cláusula where</h1>
-                
+
+                <p>Hemos visto el comando SQL SELECT para obtener datos de una tabla MySQL. Podemos usar una cláusula condicional llamada cláusula WHERE para filtrar los resultados. Usando esta cláusula WHERE, podemos especificar un criterio de selección para seleccionar los registros requeridos de una tabla.</p>
+
+                <h4>Sintaxis:</h4>
+                <p>El siguiente bloque de código tiene una sintaxis SQL genérica del comando SELECT con la cláusula WHERE para obtener datos de la tabla MySQL:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">SELECT field1, field2,...fieldN table_name1, table_name2...
+[WHERE condition1 [AND [OR]] condition2.....</code></pre></div>
+                </div>
+
+                <ul>
+                    <li>Puede usar una o más tablas separadas por una coma para incluir varias condiciones usando una cláusula WHERE, pero la cláusula WHERE es una parte opcional del comando SELECT.</li>
+                    <li>Puede especificar cualquier condición utilizando la cláusula WHERE.</li>
+                    <li>Puede especificar más de una condición mediante los operadores AND u OR.</li>
+                    <li>Se puede usar una cláusula WHERE junto con el comando DELETE o UPDATE SQL también para especificar una condición.</li>
+                </ul>
+
+                <p>La cláusula WHERE funciona como una condición if en cualquier lenguaje de programación. Esta cláusula se utiliza para comparar el valor dado con el valor del campo disponible en una tabla MySQL. Si el valor dado desde fuera es igual al valor del campo disponible en la tabla MySQL, entonces devuelve esa fila.</p>
+                <p>Aquí está la lista de operadores, que se puede usar con la cláusula WHERE.</p>
+                <p>Suponga que el campo A tiene 10 y el campo B tiene 20, entonces -</p>
+
+
+                <table>
+                    <tr>
+                        <th>Operador</th>
+                        <th>Descripción</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                    <tr>
+                        <td>=</td>
+                        <td>Comprueba si los valores de los dos operandos son iguales o no, en caso afirmativo, la condición se cumple.</td>
+                        <td>(A = B) no es cierto.</td>
+                    </tr>
+                    <tr>
+                        <td>!=</td>
+                        <td>Comprueba si los valores de los dos operandos son iguales o no, si los valores no son iguales, la condición se convierte en verdadera.</td>
+                        <td>(A! = B) es cierto.</td>
+                    </tr>
+                    <tr>
+                        <td>></td>
+                        <td>Comprueba si el valor del operando izquierdo es mayor que el valor del operando derecho; en caso afirmativo, la condición se cumple.</td>
+                        <td>(A> B) no es cierto.</td>
+                    </tr>
+                    <tr>
+                        <td><</td>
+                        <td>Comprueba si el valor del operando izquierdo es menor que el valor del operando derecho; si es así, la condición se convierte en verdadera.	</td>
+                        <td>(A <B) es cierto.</td>
+                    </tr>
+                    <tr>
+                        <td>>=</td>
+                        <td>Comprueba si el valor del operando izquierdo es mayor o igual que el valor del operando derecho; si es así, la condición se convierte en verdadera.	</td>
+                        <td>(A> = B) no es cierto.</td>
+                    </tr>
+                    <tr>
+                        <td><=</td>
+                        <td>Comprueba si el valor del operando izquierdo es menor o igual que el valor del operando derecho; si es así, la condición se cumple.	</td>
+                        <td>(A <= B) es cierto.</td>
+                    </tr>
+
+                </table>
+
+                <p>La cláusula WHERE es muy útil cuando desea obtener las filas seleccionadas de una tabla, especialmente cuando usa MySQL Join . Las uniones se tratan en otro capítulo.</p>
+                <p>Es una práctica común buscar registros utilizando la clave principal para agilizar la búsqueda.</p>
+                <p>Si la condición dada no coincide con ningún registro de la tabla, la consulta no devolverá ninguna fila.</p>
+
+                <h3>Obtención de datos desde el símbolo del sistema</h3>
+                <p>Esto usará el comando SQL SELECT con la cláusula WHERE para recuperar los datos seleccionados de la tabla MySQL - tutorials_tbl.</p>
+
+                <h4>Ejemplo:</h4>
+                <p>El siguiente ejemplo devolverá todos los registros de la tabla tutorials_tbl cuyo nombre de autor es Sanjay.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">root@host# mysql -u root -p password;
+Enter password:*******
+mysql> use TUTORIALS;
+Database changed
+mysql> SELECT * from tutorials_tbl WHERE tutorial_author = 'Sanjay';
++-------------+----------------+-----------------+-----------------+
+| tutorial_id | tutorial_title | tutorial_author | submission_date |
++-------------+----------------+-----------------+-----------------+
+|      3      | JAVA Tutorial  |      Sanjay     |    2007-05-21   |      
++-------------+----------------+-----------------+-----------------+
+1 rows in set (0.01 sec)
+
+mysql></code></pre></div>
+                </div>
+
+                <p>A menos que realice una comparación LIKE en una cadena, la comparación no distingue entre mayúsculas y minúsculas. Puede hacer que su búsqueda distinga entre mayúsculas y minúsculas utilizando la palabra clave BINARY de la siguiente manera:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">root@host# mysql -u root -p password;
+Enter password:*******
+mysql> use TUTORIALS;
+Database changed
+mysql> SELECT * from tutorials_tbl \
+   WHERE BINARY tutorial_author = 'sanjay';
+Empty set (0.02 sec)
+
+mysql></code></pre></div>
+                </div>
+
+                <h3>Obtención de datos mediante un script PHP</h3>
+                <p>PHP usa la función mysqli query () o mysql_query () para seleccionar registros en una tabla MySQL usando la cláusula where. Esta función toma dos parámetros y devuelve VERDADERO en caso de éxito o FALSO en caso de error.</p>
+
+                <h4>Sintaxis:</h4>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">$mysqli->query($sql,$resultmode)
+</code></pre></div>
+                </div>
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Parámetros</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>$sql</td>
+                        <td>Obligatorio: consulta SQL para seleccionar registros en una tabla MySQL mediante la cláusula Where.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>$resultmode</td>
+                        <td>Opcional: la constante MYSQLI_USE_RESULT o MYSQLI_STORE_RESULT según el comportamiento deseado. De forma predeterminada, se utiliza MYSQLI_STORE_RESULT.</td>
+                    </tr>
+                </table>
+
+                <h4>Ejemplo:</h4>
+                <p>Pruebe el siguiente ejemplo para seleccionar un registro usando la cláusula where en una tabla:</p>
+                <p>Copie y pegue el siguiente ejemplo como mysql_example.php -</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;head&gt;
+      &lt;title&gt;Using Where Clause&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;?php
+         $dbhost = &apos;localhost&apos;;
+         $dbuser = &apos;root&apos;;
+         $dbpass = &apos;root@123&apos;;
+         $dbname = &apos;TUTORIALS&apos;;
+         $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+         
+         if($mysqli-&gt;connect_errno ) {
+            printf(&quot;Connect failed: %s&lt;br /&gt;&quot;, $mysqli-&gt;connect_error);
+            exit();
+         }
+         printf(&apos;Connected successfully.&lt;br /&gt;&apos;);
+   
+         $sql = &apos;SELECT tutorial_id, tutorial_title, tutorial_author, submission_date 
+            FROM tutorials_tbl where tutorial_author = &quot;Mahesh&quot;&apos;;
+&#x9;&#x9; 
+         $result = $mysqli-&gt;query($sql);
+           
+         if ($result-&gt;num_rows &gt; 0) {
+            while($row = $result-&gt;fetch_assoc()) {
+               printf(&quot;Id: %s, Title: %s, Author: %s, Date: %d &lt;br /&gt;&quot;, 
+                  $row[&quot;tutorial_id&quot;], 
+                  $row[&quot;tutorial_title&quot;], 
+                  $row[&quot;tutorial_author&quot;],
+                  $row[&quot;submission_date&quot;]);               
+            }
+         } else {
+            printf(&apos;No record found.&lt;br /&gt;&apos;);
+         }
+         mysqli_free_result($result);
+         $mysqli-&gt;close();
+      ?&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+            <h4>Producción:</h4>   
+            <p>Acceda al mysql_example.php implementado en el servidor web apache y verifique el resultado. Aquí hemos ingresado varios registros en la tabla antes de ejecutar el script de selección.</p>
+
+            <div class="panel">
+                <div class="codigo__html">
+                    <div class="decor__bar mysql"></div>
+                    <pre class="line-numbers"><code class="language-markup">Connected successfully.
+Id: 1, Title: MySQL Tutorial, Author: Mahesh, Date: 2021
+Id: 2, Title: HTML Tutorial, Author: Mahesh, Date: 2021
+Id: 3, Title: PHP Tutorial, Author: Mahesh, Date: 2021</code></pre></div>
+            </div>
+
             </section>
 
             <section id="item15">
                 <h1>Consulta update</h1>
+                <p>Puede haber un requisito en el que los datos existentes en una tabla MySQL deban modificarse. Puede hacerlo mediante el comando SQL UPDATE . Esto modificará cualquier valor de campo de cualquier tabla MySQL.</p>
+
+                <h4>Sintaxis:</h4>
+                <p>El siguiente bloque de código tiene una sintaxis SQL genérica del comando UPDATE para modificar los datos en la tabla MySQL:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">UPDATE table_name SET field1 = new-value1, field2 = new-value2
+[WHERE Clause]</code></pre></div>
+                </div>
+
+                <ul>
+                    <li>Puedes actualizar uno o más campos por completo.</li>
+                    <li>Puedes especificar cualquier condición utilizando la cláusula WHERE.</li>
+                    <li>Puede actualizar los valores en una sola tabla a la vez.</li>
+                </ul>
+
+                <p>La cláusula WHERE es muy útil cuando desea actualizar las filas seleccionadas en una tabla.</p>
+
+                <h3>Actualización de datos desde el símbolo del sistema</h3>
+                <p>Esto usará el comando SQL UPDATE con la cláusula WHERE para actualizar los datos seleccionados en la tabla MySQL tutorials_tbl.</p>
+
+                <h4>Ejemplo:</h4>
+                <p>El siguiente ejemplo actualizará el campo tutorial_title para un registro que tenga tutorial_id como 3.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">root@host# mysql -u root -p password;
+Enter password:*******
+
+mysql> use TUTORIALS;
+Database changed
+
+mysql> UPDATE tutorials_tbl 
+   -> SET tutorial_title = 'Learning JAVA' 
+   -> WHERE tutorial_id = 3;
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql></code></pre></div>
+                </div>
+
+                <h3>Actualización de datos mediante un script PHP</h3>
+                <p>PHP usa la función mysqli query () o mysql_query () para actualizar registros en una tabla MySQL. Esta función toma dos parámetros y devuelve VERDADERO en caso de éxito o FALSO en caso de error.</p>
+                <h4>Sintaxis:</h4>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">$mysqli->query($sql,$resultmode)</code></pre></div>
+                </div>
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Parámetros</th>
+                        <th>Descripción</th>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>$sql</td>
+                        <td>Obligatorio: consulta SQL para actualizar registros en una tabla MySQL.</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>$resultmode</td>
+                        <td>Opcional: la constante MYSQLI_USE_RESULT o MYSQLI_STORE_RESULT según el comportamiento deseado. De forma predeterminada, se utiliza MYSQLI_STORE_RESULT.</td>
+                    </tr>
+                </table>
+
+                <h4>Ejemplo:</h4>
+
+                <p>Pruebe el siguiente ejemplo para actualizar un registro en una tabla:</p>
+                <p>Copie y pegue el siguiente ejemplo como mysql_example.php -</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;head&gt;
+      &lt;title&gt;Updating MySQL Table&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;?php
+         $dbhost = &apos;localhost&apos;;
+         $dbuser = &apos;root&apos;;
+         $dbpass = &apos;root@123&apos;;
+         $dbname = &apos;TUTORIALS&apos;;
+         $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+         
+         if($mysqli-&gt;connect_errno ) {
+            printf(&quot;Connect failed: %s&lt;br /&gt;&quot;, $mysqli-&gt;connect_error);
+            exit();
+         }
+         printf(&apos;Connected successfully.&lt;br /&gt;&apos;);
+&#x9;&#x9; 
+         if ($mysqli-&gt;query(&apos;UPDATE tutorials_tbl set tutorial_title = &quot;Learning Java&quot; where tutorial_id = 4&apos;)) {
+            printf(&quot;Table tutorials_tbl updated successfully.&lt;br /&gt;&quot;);
+         }
+         if ($mysqli-&gt;errno) {
+            printf(&quot;Could not update table: %s&lt;br /&gt;&quot;, $mysqli-&gt;error);
+         }
+   
+         $sql = &quot;SELECT tutorial_id, tutorial_title, tutorial_author, submission_date FROM tutorials_tbl&quot;;
+&#x9;&#x9; 
+         $result = $mysqli-&gt;query($sql);
+           
+         if ($result-&gt;num_rows &gt; 0) {
+            while($row = $result-&gt;fetch_assoc()) {
+               printf(&quot;Id: %s, Title: %s, Author: %s, Date: %d &lt;br /&gt;&quot;, 
+                  $row[&quot;tutorial_id&quot;], 
+                  $row[&quot;tutorial_title&quot;], 
+                  $row[&quot;tutorial_author&quot;],
+                  $row[&quot;submission_date&quot;]);               
+            }
+         } else {
+            printf(&apos;No record found.&lt;br /&gt;&apos;);
+         }
+         mysqli_free_result($result);
+         $mysqli-&gt;close();
+      ?&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+            <h4>Producción</h4>   
+            <p>Acceda al mysql_example.php implementado en el servidor web apache y verifique el resultado. Aquí hemos ingresado varios registros en la tabla antes de ejecutar el script de selección.</p>
+            
+            <div class="panel">
+                <div class="codigo__html">
+                    <div class="decor__bar mysql"></div>
+                    <pre class="line-numbers"><code class="language-markup">Connected successfully.
+Table tutorials_tbl updated successfully.
+Id: 1, Title: MySQL Tutorial, Author: Mahesh, Date: 2021
+Id: 2, Title: HTML Tutorial, Author: Mahesh, Date: 2021
+Id: 3, Title: PHP Tutorial, Author: Mahesh, Date: 2021
+Id: 4, Title: Learning Java, Author: Mahesh, Date: 2021
+Id: 5, Title: Apache Tutorial, Author: Suresh, Date: 2021</code></pre></div>
+            </div>
+
                 
             </section>
 
             <section id="item16">
                 <h1>Consulta delete</h1>
+                <p>Si desea eliminar un registro de cualquier tabla MySQL, puede usar el comando SQL DELETE FROM . Puede usar este comando en el indicador mysql> así como en cualquier script como PHP.</p>                
+                <h4>Sintaxis:</h4>
+                <p>El siguiente bloque de código tiene una sintaxis SQL genérica del comando DELETE para eliminar datos de una tabla MySQL.</p>
+            
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">DELETE FROM table_name [WHERE Clause]
+</code></pre></div>
+                </div>
+            
+                <ul>
+                    <li>Si no se especifica la cláusula WHERE, todos los registros se eliminarán de la tabla MySQL dada.</li>
+                    <li>Puede especificar cualquier condición utilizando la cláusula WHERE.</li>
+                    <li>Puede eliminar registros en una sola tabla a la vez.</li>
+                </ul>
+            
+                <p>La cláusula WHERE es muy útil cuando desea eliminar filas seleccionadas en una tabla.</p>
                 
+                <h3>Eliminar datos con el símbolo del sistema</h3>
+                <p>Esto usará el comando SQL DELETE con la cláusula WHERE para eliminar los datos seleccionados en la tabla MySQL - tutorials_tbl.</p>
+            
+                <h4>Ejemplo:</h4>
+                <p>El siguiente ejemplo eliminará un registro de tutorial_tbl cuyo tutorial_id es 3.</p>
+            
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">root@host# mysql -u root -p password;
+Enter password:*******
+
+mysql> use TUTORIALS;
+Database changed
+
+mysql> DELETE FROM tutorials_tbl WHERE tutorial_id=3;
+Query OK, 1 row affected (0.23 sec)
+
+mysql></code></pre></div>
+                </div>
+            
+            
+                <h3>Eliminar datos mediante un script PHP</h3>
+                <p>PHP usa la función mysqli query () o mysql_query () para eliminar registros en una tabla MySQL. Esta función toma dos parámetros y devuelve VERDADERO en caso de éxito o FALSO en caso de error.</p>
+            
+                <h4>Sintaxis:</h4>
+            
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">$mysqli->query($sql,$resultmode)</code></pre></div>
+                </div>
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Parámetros</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>$sql</td>
+                        <td>Obligatorio: consulta SQL para eliminar registros en una tabla MySQL.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>$resultmode</td>
+                        <td>Opcional: la constante MYSQLI_USE_RESULT o MYSQLI_STORE_RESULT según el comportamiento deseado. De forma predeterminada, se utiliza MYSQLI_STORE_RESULT.</td>
+                    </tr>
+                </table>
+
+                <h4>Ejemplo:</h4>
+                <p>Pruebe el siguiente ejemplo para eliminar un registro en una tabla:</p>
+                <p>Copie y pegue el siguiente ejemplo como mysql_example.php -</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;head&gt;
+      &lt;title&gt;Deleting MySQL Table record&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;?php
+         $dbhost = &apos;localhost&apos;;
+         $dbuser = &apos;root&apos;;
+         $dbpass = &apos;root@123&apos;;
+         $dbname = &apos;TUTORIALS&apos;;
+         $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+         
+         if($mysqli-&gt;connect_errno ) {
+            printf(&quot;Connect failed: %s&lt;br /&gt;&quot;, $mysqli-&gt;connect_error);
+            exit();
+         }
+         printf(&apos;Connected successfully.&lt;br /&gt;&apos;);
+&#x9;&#x9; 
+         if ($mysqli-&gt;query(&apos;DELETE FROM tutorials_tbl where tutorial_id = 4&apos;)) {
+            printf(&quot;Table tutorials_tbl record deleted successfully.&lt;br /&gt;&quot;);
+         }
+         if ($mysqli-&gt;errno) {
+            printf(&quot;Could not delete record from table: %s&lt;br /&gt;&quot;, $mysqli-&gt;error);
+         }
+         $sql = &quot;SELECT tutorial_id, tutorial_title, tutorial_author, submission_date 
+            FROM tutorials_tbl&quot;;
+&#x9;&#x9; 
+         $result = $mysqli-&gt;query($sql);
+           
+         if ($result-&gt;num_rows &gt; 0) {
+            while($row = $result-&gt;fetch_assoc()) {
+               printf(&quot;Id: %s, Title: %s, Author: %s, Date: %d &lt;br /&gt;&quot;, 
+                  $row[&quot;tutorial_id&quot;], 
+                  $row[&quot;tutorial_title&quot;], 
+                  $row[&quot;tutorial_author&quot;],
+                  $row[&quot;submission_date&quot;]);               
+            }
+         } else {
+            printf(&apos;No record found.&lt;br /&gt;&apos;);
+         }
+         mysqli_free_result($result);
+         $mysqli-&gt;close();
+      ?&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+            <h4>Producción</h4>    
+            <p>Acceda al mysql_example.php implementado en el servidor web apache y verifique el resultado. Aquí hemos ingresado varios registros en la tabla antes de ejecutar el script de selección.</p>
+            
+            <div class="panel">
+                <div class="codigo__html">
+                    <div class="decor__bar mysql"></div>
+                    <pre class="line-numbers"><code class="language-markup">Connected successfully.
+Table tutorials_tbl record deleted successfully.
+Id: 1, Title: MySQL Tutorial, Author: Mahesh, Date: 2021
+Id: 2, Title: HTML Tutorial, Author: Mahesh, Date: 2021
+Id: 3, Title: PHP Tutorial, Author: Mahesh, Date: 2021
+Id: 5, Title: Apache Tutorial, Author: Suresh, Date: 2021</code></pre></div>
+            </div>
+
             </section>
 
             <section id="item17">
                 <h1>Cláusula like</h1>
+
+                <p>Hemos visto el comando SQL SELECT para obtener datos de la tabla MySQL. También podemos usar una cláusula condicional llamada cláusula WHERE para seleccionar los registros requeridos.</p>
+                <p>Una cláusula WHERE con el signo 'igual a' (=) funciona bien cuando queremos hacer una coincidencia exacta. Como si "tutorial_author = 'Sanjay'". Pero puede haber un requisito en el que queramos filtrar todos los resultados donde el nombre tutorial_author debe contener "jay". Esto se puede manejar usando la cláusula SQL LIKE junto con la cláusula WHERE.</p>
+                <p>Si se usa la cláusula SQL LIKE junto con el carácter%, entonces funcionará como un metacarácter (*) como en UNIX, mientras enumera todos los archivos o directorios en el símbolo del sistema. Sin un carácter%, la cláusula LIKE es muy similar al signo igual que la cláusula WHERE.</p>
+
+                <h4>Sintaxis:</h4>
+                <p>El siguiente bloque de código tiene una sintaxis SQL genérica del comando SELECT junto con la cláusula LIKE para obtener datos de una tabla MySQL.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">SELECT field1, field2,...fieldN table_name1, table_name2...
+WHERE field1 LIKE condition1 [AND [OR]] filed2 = 'somevalue'</code></pre></div>
+                </div>
+
+                <ul>
+                    <li>Puedes especificar cualquier condición utilizando la cláusula WHERE.</li>
+                    <li>Puedes utilizar la cláusula LIKE junto con la cláusula WHERE.</li>
+                    <li>Puede utilizar la cláusula LIKE en lugar de los iguales para firmar.</li>
+                    <li>Cuando se usa LIKE junto con el signo%, funcionará como una búsqueda de metacaracteres.</li>
+                    <li>Puede especificar más de una condición mediante los operadores AND u OR.</li>
+                    <li>Una cláusula WHERE ... LIKE se puede utilizar junto con el comando DELETE o UPDATE SQL también para especificar una condición.</li>
+                </ul>
+
+                <h3>Usando la cláusula LIKE en el símbolo del sistema</h3>
+                <p>Esto usará el comando SQL SELECT con la cláusula WHERE ... LIKE para recuperar los datos seleccionados de la tabla MySQL - tutorials_tbl.</p>
+
+                <h4>Ejemplo:</h4>
+                <p>El siguiente ejemplo devolverá todos los registros de la tabla tutorials_tbl para los que el nombre del autor termina con jay -</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">root@host# mysql -u root -p password;
+Enter password:*******
+mysql> use TUTORIALS;
+Database changed
+mysql> SELECT * from tutorials_tbl 
+   -> WHERE tutorial_author LIKE '%jay';
++-------------+----------------+-----------------+-----------------+
+| tutorial_id | tutorial_title | tutorial_author | submission_date |
++-------------+----------------+-----------------+-----------------+
+|      3      |  JAVA Tutorial |     Sanjay      |    2007-05-21   |   
++-------------+----------------+-----------------+-----------------+
+1 rows in set (0.01 sec)
+
+mysql></code></pre></div>
+                </div>
+
+                <h3>Usando la cláusula LIKE dentro de PHP Script</h3>
+                <p>PHP usa la función mysqli query () o mysql_query () para seleccionar registros en una tabla MySQL usando la cláusula Like. Esta función toma dos parámetros y devuelve VERDADERO en caso de éxito o FALSO en caso de error.</p>
+
+                <h4>Sintaxis:</h4>
                 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">$mysqli->query($sql,$resultmode)
+</code></pre></div>
+                </div>
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Parámetros</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>$sql</td>
+                        <td>Obligatorio: consulta SQL para seleccionar registros en una tabla MySQL mediante la cláusula Like.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>$resultmode</td>
+                        <td>Opcional: la constante MYSQLI_USE_RESULT o MYSQLI_STORE_RESULT según el comportamiento deseado. De forma predeterminada, se utiliza MYSQLI_STORE_RESULT.</td>
+                    </tr>
+                </table>
+
+                <h4>Ejemplo:</h4>
+                <p>Pruebe el siguiente ejemplo para seleccionar un registro usando una cláusula similar en una tabla:</p>
+                <p>Copie y pegue el siguiente ejemplo como mysql_example.php -</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;head&gt;
+      &lt;title&gt;Using Like Clause&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;?php
+         $dbhost = &apos;localhost&apos;;
+         $dbuser = &apos;root&apos;;
+         $dbpass = &apos;root@123&apos;;
+         $dbname = &apos;TUTORIALS&apos;;
+         $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+         
+         if($mysqli-&gt;connect_errno ) {
+            printf(&quot;Connect failed: %s&lt;br /&gt;&quot;, $mysqli-&gt;connect_error);
+            exit();
+         }
+         printf(&apos;Connected successfully.&lt;br /&gt;&apos;);
+   
+         $sql = &apos;SELECT tutorial_id, tutorial_title, tutorial_author, submission_date 
+            FROM tutorials_tbl where tutorial_author like &quot;Mah%&quot;&apos;;
+&#x9;&#x9; 
+         $result = $mysqli-&gt;query($sql);
+           
+         if ($result-&gt;num_rows &gt; 0) {
+            while($row = $result-&gt;fetch_assoc()) {
+               printf(&quot;Id: %s, Title: %s, Author: %s, Date: %d &lt;br /&gt;&quot;, 
+                  $row[&quot;tutorial_id&quot;], 
+                  $row[&quot;tutorial_title&quot;], 
+                  $row[&quot;tutorial_author&quot;],
+                  $row[&quot;submission_date&quot;]);               
+            }
+         } else {
+            printf(&apos;No record found.&lt;br /&gt;&apos;);
+         }
+         mysqli_free_result($result);
+         $mysqli-&gt;close();
+      ?&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+            <h4>Producción:</h4>
+            <p>Acceda al mysql_example.php implementado en el servidor web apache y verifique el resultado. Aquí hemos ingresado varios registros en la tabla antes de ejecutar el script de selección.</p>
+                
+            <div class="panel">
+                <div class="codigo__html">
+                    <div class="decor__bar mysql"></div>
+                    <pre class="line-numbers"><code class="language-markup">Connected successfully.
+Id: 1, Title: MySQL Tutorial, Author: Mahesh, Date: 2021
+Id: 2, Title: HTML Tutorial, Author: Mahesh, Date: 2021
+Id: 3, Title: PHP Tutorial, Author: Mahesh, Date: 2021</code></pre></div>
+            </div>
+
+
             </section>
 
             <section id="item18">
