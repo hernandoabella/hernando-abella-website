@@ -2682,23 +2682,442 @@ mysql> SELECT a.tutorial_id, a.tutorial_author, b.tutorial_count
             </section>
             
             <section id="item20">
-                <h1>Valores NULL</h1>
-                
+                <h1>Manejo de valores NULL</h1>
+                <p>Hemos visto el comando SQL SELECT junto con la cláusula WHERE para obtener datos de una tabla MySQL, pero cuando intentamos dar una condición, que compara el campo o el valor de la columna con NULL , no funciona correctamente.</p>
+                <p>Para manejar tal situación, MySQL proporciona tres operadores:</p>
+                <ul>
+                    <li>IS NULL : este operador devuelve verdadero si el valor de la columna es NULL.</li>
+                    <li>NO ES NULO : este operador devuelve verdadero si el valor de la columna no es NULO.</li>
+                    <li><=> : este operador compara valores, que (a diferencia del operador =) es verdadero incluso para dos valores NULL.</li>
+                </ul>
+
+                <p>Las condiciones que involucran NULL son especiales. No puede usar = NULL o! = NULL para buscar valores NULL en columnas. Estas comparaciones siempre fallan porque es imposible saber si son ciertas o no. A veces, incluso NULL = NULL falla.</p>
+                <p>Para buscar columnas que sean o no NULL, use IS NULL o IS NOT NULL.</p>
+
+                <h3>Usando valores NULL en el símbolo del sistema</h3>
+                <p>Suponga que hay una tabla llamada tcount_tbl en la base de datos de TUTORIALS y contiene dos columnas, a saber, tutorial_author y tutorial_count , donde un tutorial_count NULL indica que el valor es desconocido.</p>
+
+                <h4>Ejemplo:</h4>
+                <p>Pruebe los siguientes ejemplos:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">root@host# mysql -u root -p password;
+Enter password:*******
+
+mysql> use TUTORIALS;
+Database changed
+
+mysql> create table tcount_tbl
+   -> (
+   -> tutorial_author varchar(40) NOT NULL,
+   -> tutorial_count  INT
+   -> );
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> INSERT INTO tcount_tbl
+   -> (tutorial_author, tutorial_count) values ('mahran', 20);
+
+mysql> INSERT INTO tcount_tbl
+   -> (tutorial_author, tutorial_count) values ('mahnaz', NULL);
+
+mysql> INSERT INTO tcount_tbl
+   -> (tutorial_author, tutorial_count) values ('Jen', NULL);
+
+mysql> INSERT INTO tcount_tbl
+   -> (tutorial_author, tutorial_count) values ('Gill', 20);
+
+mysql> SELECT * from tcount_tbl;
++-----------------+----------------+
+| tutorial_author | tutorial_count |
++-----------------+----------------+
+|     mahran      |       20       |
+|     mahnaz      |      NULL      |
+|      Jen        |      NULL      |
+|     Gill        |       20       |
++-----------------+----------------+
+4 rows in set (0.00 sec)
+
+mysql></code></pre></div>
+                </div>
+
+                <p>Puede ver que = y ! = No funcionan con valores NULL de la siguiente manera:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> SELECT * FROM tcount_tbl WHERE tutorial_count = NULL;
+Empty set (0.00 sec)
+
+mysql> SELECT * FROM tcount_tbl WHERE tutorial_count != NULL;
+Empty set (0.01 sec)</code></pre></div>
+                </div>
+
+                <p>Para encontrar los registros donde la columna tutorial_count es o no NULL, las consultas deben escribirse como se muestra en el siguiente programa.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> SELECT * FROM tcount_tbl 
+   -> WHERE tutorial_count IS NULL;
++-----------------+----------------+
+| tutorial_author | tutorial_count |
++-----------------+----------------+
+|     mahnaz      |      NULL      |
+|      Jen        |      NULL      |
++-----------------+----------------+
+2 rows in set (0.00 sec)
+mysql> SELECT * from tcount_tbl 
+   -> WHERE tutorial_count IS NOT NULL;
++-----------------+----------------+
+| tutorial_author | tutorial_count |
++-----------------+----------------+
+|     mahran      |       20       |
+|     Gill        |       20       |
++-----------------+----------------+
+2 rows in set (0.00 sec)</code></pre></div>
+                </div>
+
+                <h3>Manejo de valores NULL en un script PHP</h3> 
+                <p>Puede utilizar la condición if ... else para preparar una consulta basada en el valor NULL.</p>
+                <p>El siguiente ejemplo toma tutorial_count del exterior y luego lo compara con el valor disponible en la tabla.</p>
+
+                <h4>Ejemplo:</h4>
+                <p>Copie y pegue el siguiente ejemplo como mysql_example.php -</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;head&gt;
+      &lt;title&gt;Handling NULL&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;?php
+         $dbhost = &apos;localhost&apos;;
+         $dbuser = &apos;root&apos;;
+         $dbpass = &apos;root@123&apos;;
+         $dbname = &apos;TUTORIALS&apos;;
+         $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+         $tutorial_count = null;
+         if($mysqli-&gt;connect_errno ) {
+            printf(&quot;Connect failed: %s&lt;br /&gt;&quot;, $mysqli-&gt;connect_error);
+            exit();
+         }
+         printf(&apos;Connected successfully.&lt;br /&gt;&apos;);
+   
+         if( isset($tutorial_count )) {
+            $sql = &apos;SELECT tutorial_author, tutorial_count
+               FROM  tcount_tbl
+               WHERE tutorial_count = &apos; + $tutorial_count;
+         } else {
+            $sql = &apos;SELECT tutorial_author, tutorial_count
+               FROM  tcount_tbl
+               WHERE tutorial_count IS NULL&apos;;
+         }
+         $result = $mysqli-&gt;query($sql);
+         if ($result-&gt;num_rows &gt; 0) {
+            while($row = $result-&gt;fetch_assoc()) {
+               printf(&quot;Author: %s, Count: %d &lt;br /&gt;&quot;,
+                  $row[&quot;tutorial_author&quot;], 
+                  $row[&quot;tutorial_count&quot;]);               
+            }
+         } else {
+            printf(&apos;No record found.&lt;br /&gt;&apos;);
+         }
+         $mysqli-&gt;close();
+      ?&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+            <h4>Producción</h4>   
+            <p>Acceda al mysql_example.php implementado en el servidor web apache y verifique el resultado.</p>
+
+            <div class="panel">
+                <div class="codigo__html">
+                    <div class="decor__bar mysql"></div>
+                    <pre class="line-numbers"><code class="language-markup">Connected successfully.
+No record found.</code></pre></div>
+            </div>
+
             </section>
 
             <section id="item21">
                 <h1>Expresión regular</h1>
-                
+                <p>Has visto el patrón de MySQL que coincide con LIKE ...% . MySQL admite otro tipo de operación de coincidencia de patrones basada en las expresiones regulares y el operador REGEXP . Si conoce PHP o PERL, entonces es muy sencillo de entender porque esta coincidencia es la misma que la de las expresiones regulares.</p>
+                <p>A continuación se muestra la tabla de patrones, que se puede utilizar junto con el operador REGEXP.</p>
+                <table>
+                    <tr>
+                        <th>Patrón</th>
+                        <th>Lo que coincide con el patrón</th>
+                    </tr>
+                    <tr>
+                        <td>^</td>
+                        <td>Principio de cadena</td>
+                    </tr>
+                    <tr>
+                        <td>PS</td>
+                        <td>Fin de cadena</td>
+                    </tr>
+                    <tr>
+                        <td>.</td>
+                        <td>Cualquier personaje</td>
+                    </tr>
+                    <tr>
+                        <td>[...]</td>
+                        <td>Cualquier carácter que aparezca entre corchetes.</td>
+                    </tr>
+                    <tr>
+                        <td>[^ ...]</td>
+                        <td>Cualquier carácter que no figure entre corchetes.</td>
+                    </tr>
+                    <tr>
+                        <td>p1 | p2 | p3</td>
+                        <td>Alternancia; coincide con cualquiera de los patrones p1, p2 o p3</td>
+                    </tr>
+                    <tr>
+                        <td>*</td>
+                        <td>Cero o más instancias del elemento anterior</td>
+                    </tr>
+                    <tr>
+                        <td>+</td>
+                        <td>Una o más instancias del elemento precedente</td>
+                    </tr>
+                    <tr>
+                        <td>{norte}</td>
+                        <td>n instancias del elemento anterior</td>
+                    </tr>
+                    <tr>
+                        <td>{Minnesota}</td>
+                        <td>m hasta n instancias del elemento precedente</td>
+                    </tr>
+                </table>
+
+                <h4>Ejemplos de:</h4>
+                <p>Ahora, según la tabla anterior, puede configurar varios tipos de consultas SQL para satisfacer sus necesidades. Aquí, enumero algunos para su comprensión.</p>
+                <p>Considere que tenemos una tabla llamada person_tbl y tiene un campo llamado nombre -</p>
+                <p>Consulta para encontrar todos los nombres que comienzan con 'st' -</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> SELECT name FROM person_tbl WHERE name REGEXP '^st';
+</code></pre></div>
+                </div>
+
+                <p>Consulta para encontrar todos los nombres que terminan con 'ok' -</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> SELECT name FROM person_tbl WHERE name REGEXP 'ok$';</code></pre></div>
+                </div>
+
+                <p>Consulta para encontrar todos los nombres, que contienen 'mar' -</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> SELECT name FROM person_tbl WHERE name REGEXP 'mar';
+</code></pre></div>
+                </div>
+
+                <p>Consulta para encontrar todos los nombres que comienzan con una vocal y terminan con 'ok' -</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> SELECT FirstName FROM intque.person_tbl WHERE FirstName REGEXP '^[aeiou].*ok$';
+</code></pre></div>
+                </div>
+
             </section>
 
             <section id="item22">
                 <h1>Transacciones</h1>
-                
+
+                <p>Una transacción es un grupo secuencial de operaciones de manipulación de la base de datos, que se realiza como si fuera una sola unidad de trabajo. En otras palabras, una transacción nunca estará completa a menos que cada operación individual dentro del grupo sea exitosa. Si alguna operación dentro de la transacción falla, toda la transacción fallará.</p>
+                <p>Prácticamente, agrupará muchas consultas SQL en un grupo y las ejecutará todas juntas como parte de una transacción.</p>
+                <h3>Propiedades de las transacciones</h3>
+
+                <p>Las transacciones tienen las siguientes cuatro propiedades estándar, generalmente denominadas por el acrónimo ACID:</p>
+                <ul>
+                    <li>Atomicidad: esto asegura que todas las operaciones dentro de la unidad de trabajo se completen con éxito; de lo contrario, la transacción se aborta en el punto de falla y las operaciones anteriores se revierten a su estado anterior.</li>
+                    <li>Coherencia: esto garantiza que la base de datos cambie de estado correctamente tras una transacción confirmada con éxito.</li>
+                    <li>Aislamiento: esto permite que las transacciones operen de forma independiente y transparente entre sí.</li>
+                    <li>Durabilidad: esto asegura que el resultado o efecto de una transacción comprometida persista en caso de falla del sistema.</li>
+                </ul>
+
+                <p>En MySQL, las transacciones comienzan con la instrucción BEGIN WORK y terminan con una instrucción COMMIT o ROLLBACK . Los comandos SQL entre las declaraciones inicial y final forman la mayor parte de la transacción.</p>
+
+                <h3>COMMIT y ROLLBACK</h3>
+                <p>Estas dos palabras clave Commit y Rollback se utilizan principalmente para transacciones MySQL.</p>
+
+                <ul>
+                    <li>Cuando se completa una transacción exitosa, se debe emitir el comando COMMIT para que los cambios en todas las tablas involucradas surtan efecto.</li>
+                    <li>Si ocurre una falla, se debe emitir un comando ROLLBACK para devolver cada tabla a la que se hace referencia en la transacción a su estado anterior.</li>
+                </ul>
+
+                <p>Puede controlar el comportamiento de una transacción estableciendo una variable de sesión llamada AUTOCOMMIT . Si AUTOCOMMIT se establece en 1 (el valor predeterminado), entonces cada instrucción SQL (dentro de una transacción o no) se considera una transacción completa y se confirma de manera predeterminada cuando finaliza.</p>
+                <p>Cuando AUTOCOMMIT se establece en 0, al emitir el comando SET AUTOCOMMIT = 0 , la serie subsiguiente de sentencias actúa como una transacción y no se compromete ninguna actividad hasta que se emita una sentencia COMMIT explícita.</p>
+                <p>Puede ejecutar estos comandos SQL en PHP utilizando la función mysql_query().</p>
+
+                <p>Un ejemplo genérico de transacción</p>
+                <p>Esta secuencia de eventos es independiente del lenguaje de programación utilizado. La ruta lógica se puede crear en cualquier idioma que use para crear su aplicación.</p>
+                <p>Puede ejecutar estos comandos SQL en PHP utilizando la función mysql_query().</p>
+
+                <ul>
+                    <li>Comience la transacción emitiendo el comando SQL BEGIN WORK .</li>
+                    <li>Emita uno o más comandos SQL como SELECT, INSERT, UPDATE o DELETE.</li>
+                    <li>Compruebe que no haya ningún error y que todo esté de acuerdo con su requerimiento.</li>
+                    <li>Si hay algún error, emita un comando ROLLBACK; de lo contrario, emita un comando COMMIT.</li>
+                </ul>
+
+                <h3>Tipos de tablas seguras para transacciones en MySQL</h3>
+                <p>No puede utilizar transacciones directamente, pero puede hacerlo en determinadas excepciones. Sin embargo, no son seguros ni están garantizados. Si planea usar transacciones en su programación MySQL, entonces necesita crear sus tablas de una manera especial. Hay muchos tipos de tablas que admiten transacciones, pero la más popular es InnoDB .</p>
+                <p>El soporte para tablas InnoDB requiere un parámetro de compilación específico al compilar MySQL desde la fuente. Si su versión de MySQL no es compatible con InnoDB, solicite a su proveedor de servicios de Internet que cree una versión de MySQL compatible con los tipos de tablas InnoDB o descargue e instale MySQL-Max Binary Distribution para Windows o Linux / UNIX y trabaje con el tipo de tabla en un entorno de desarrollo.</p>
+                <p>Si su instalación de MySQL admite tablas InnoDB, simplemente agregue una definición TYPE = InnoDB a la declaración de creación de la tabla.</p>
+                <p>Por ejemplo, el siguiente código crea una tabla InnoDB llamada tcount_tbl -</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">root@host# mysql -u root -p password;
+Enter password:*******
+
+mysql> use TUTORIALS;
+Database changed
+
+mysql> create table tcount_tbl
+   -> (
+   -> tutorial_author varchar(40) NOT NULL,
+   -> tutorial_count  INT
+   -> ) TYPE = InnoDB;
+Query OK, 0 rows affected (0.05 sec)</code></pre></div>
+                </div>
+
+                <p>Para obtener más detalles sobre InnoDB, puede hacer clic en el siguiente enlace: InnoDB</p>
+                <p>Puede usar otros tipos de tablas como GEMINI o BDB , pero depende de su instalación, ya sea que admita estos dos tipos de tablas o no.</p>
             </section>
 
             <section id="item23">
                 <h1>Comando alter</h1>
+                <p>El comando MySQL ALTER es muy útil cuando desea cambiar el nombre de su tabla, cualquier campo de la tabla o si desea agregar o eliminar una columna existente en una tabla.</p>
+                <p>Comencemos con la creación de una tabla llamada testalter_tbl.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">root@host# mysql -u root -p password;
+Enter password:*******
+
+mysql> use TUTORIALS;
+Database changed
+
+mysql> create table testalter_tbl
+   -> (
+   -> i INT,
+   -> c CHAR(1)
+   -> );
+Query OK, 0 rows affected (0.05 sec)
+mysql> SHOW COLUMNS FROM testalter_tbl;
++-------+---------+------+-----+---------+-------+
+| Field |  Type   | Null | Key | Default | Extra |
++-------+---------+------+-----+---------+-------+
+|   i   | int(11) | YES  |     |   NULL  |       |
+|   c   | char(1) | YES  |     |   NULL  |       |
++-------+---------+------+-----+---------+-------+
+2 rows in set (0.00 sec)</code></pre></div>
+                </div>
+
+                <h3>Eliminando, agregando y reposicionando una columna</h3>
+                <p>Si desea eliminar una columna i existente de la tabla MySQL anterior, utilizará la cláusula DROP junto con el comando ALTER como se muestra a continuación:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> ALTER TABLE testalter_tbl  DROP i;
+</code></pre></div>
+                </div>
+
+                <p>Una cláusula DROP no funcionará si la columna es la única que queda en la tabla.</p>
+                <p>Para agregar una columna, use ADD y especifique la definición de la columna. La siguiente declaración restaura la columna i al testalter_tbl</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> ALTER TABLE testalter_tbl ADD i INT;
+</code></pre></div>
+                </div>
+
+                <p>Después de emitir esta declaración, testalter contendrá las mismas dos columnas que tenía cuando creó la tabla por primera vez, pero no tendrá la misma estructura. Esto se debe a que hay nuevas columnas que se agregan al final de la tabla de forma predeterminada. Así que, aunque i originalmente era la primera columna de MyTbl, ahora es el último.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> SHOW COLUMNS FROM testalter_tbl;
++-------+---------+------+-----+---------+-------+
+| Field |  Type   | Null | Key | Default | Extra |
++-------+---------+------+-----+---------+-------+
+|   c   | char(1) | YES  |     |   NULL  |       |
+|   i   | int(11) | YES  |     |   NULL  |       |
++-------+---------+------+-----+---------+-------+
+2 rows in set (0.00 sec)</code></pre></div>
+                </div>
+
+                <p>Para indicar que desea una columna en una posición específica dentro de la tabla, use FIRST para convertirla en la primera columna o DESPUÉS de col_name para indicar que la nueva columna debe colocarse después de col_name.</p>
+
+                <p>Pruebe las siguientes declaraciones ALTER TABLE , usando MOSTRAR COLUMNAS después de cada una para ver qué efecto tiene cada una:</p>
                 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">ALTER TABLE testalter_tbl DROP i;
+ALTER TABLE testalter_tbl ADD i INT FIRST;
+ALTER TABLE testalter_tbl DROP i;
+ALTER TABLE testalter_tbl ADD i INT AFTER c;</code></pre></div>
+                </div>
+
+                <p>Los especificadores FIRST y AFTER solo funcionan con la cláusula ADD. Esto significa que si desea reposicionar una columna existente dentro de una tabla, primero debe DEJARLA y luego AGREGARla en la nueva posición.</p>
+
+                <h3>Modificar (cambiar) una definición de columna o un nombre</h3>
+
+                <p>Para cambiar la definición de una columna, use la cláusula MODIFY o CHANGE junto con el comando ALTER.</p>
+                <p>Por ejemplo, para cambiar la columna c de CHAR (1) a CHAR (10), puede usar el siguiente comando:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> ALTER TABLE testalter_tbl MODIFY c CHAR(10);
+</code></pre></div>
+                </div>
+
+                <p>Con CHANGE , la sintaxis es un poco diferente. Después de la palabra clave CHANGE, asigne un nombre a la columna que desea cambiar y luego especifique la nueva definición, que incluye el nuevo nombre.</p>
+                <p>Pruebe el siguiente ejemplo:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> ALTER TABLE testalter_tbl CHANGE i j BIGINT;
+</code></pre></div>
+                </div>
+
+                <p>Si ahora usa CHANGE para convertir j de BIGINT de nuevo a INT sin cambiar el nombre de la columna, la declaración será como se muestra a continuación:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> ALTER TABLE testalter_tbl CHANGE j j INT;
+</code></pre></div>
+                </div>
+
+                
+
+
+
+
             </section>
 
             <section id="item24">
