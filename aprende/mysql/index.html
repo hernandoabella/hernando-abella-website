@@ -3113,55 +3113,855 @@ ALTER TABLE testalter_tbl ADD i INT AFTER c;</code></pre></div>
 </code></pre></div>
                 </div>
 
+                <p>El efecto de ALTER TABLE en los atributos de valor predeterminado y nulo : cuando MODIFICA o CAMBIA una columna, también puede especificar si la columna puede contener valores NULL y cuál es su valor predeterminado. De hecho, si no hace esto, MySQL asigna automáticamente valores para estos atributos.</p>
+
+                <p>El siguiente bloque de código es un ejemplo, donde la columna NOT NULL tendrá el valor 100 por defecto.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> ALTER TABLE testalter_tbl 
+   -> MODIFY j BIGINT NOT NULL DEFAULT 100;</code></pre></div>
+                </div>
+
+                <p>Si no usa el comando anterior, MySQL completará los valores NULL en todas las columnas.</p>
                 
+                <h3>Alterar (cambiar) el valor predeterminado de una columna</h3>
+                <p>Puede cambiar un valor predeterminado para cualquier columna utilizando el comando ALTER.</p>
+                <p>Pruebe el siguiente ejemplo.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> ALTER TABLE testalter_tbl ALTER i SET DEFAULT 1000;
+mysql> SHOW COLUMNS FROM testalter_tbl;
++-------+---------+------+-----+---------+-------+
+| Field |  Type   | Null | Key | Default | Extra |
++-------+---------+------+-----+---------+-------+
+|   c   | char(1) | YES  |     |   NULL  |       |
+|   i   | int(11) | YES  |     |   1000  |       |
++-------+---------+------+-----+---------+-------+
+2 rows in set (0.00 sec)</code></pre></div>
+                </div>
+
+                <p>Puede eliminar la restricción predeterminada de cualquier columna utilizando la cláusula DROP junto con el comando ALTER.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> ALTER TABLE testalter_tbl ALTER i DROP DEFAULT;
+mysql> SHOW COLUMNS FROM testalter_tbl;
++-------+---------+------+-----+---------+-------+
+| Field |  Type   | Null | Key | Default | Extra |
++-------+---------+------+-----+---------+-------+
+|   c   | char(1) | YES  |     |   NULL  |       |
+|   i   | int(11) | YES  |     |   NULL  |       |
++-------+---------+------+-----+---------+-------+
+2 rows in set (0.00 sec)</code></pre></div>
+                </div>
+
+                <h3>Modificar (cambiar) un tipo de tabla</h3>
+                <p>Puede usar un tipo de tabla usando la cláusula TYPE junto con el comando ALTER. Pruebe el siguiente ejemplo para cambiar el tipo de tabla testalter_tbl a MYISAM.</p>
+                <p>Para averiguar el tipo actual de una tabla, use la instrucción SHOW TABLE STATUS.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> ALTER TABLE testalter_tbl TYPE = MYISAM;
+mysql>  SHOW TABLE STATUS LIKE 'testalter_tbl'\G
+*************************** 1. row ****************
+           Name: testalter_tbl
+           Type: MyISAM
+     Row_format: Fixed
+           Rows: 0
+ Avg_row_length: 0
+    Data_length: 0
+Max_data_length: 25769803775
+   Index_length: 1024
+      Data_free: 0
+ Auto_increment: NULL
+    Create_time: 2007-06-03 08:04:36
+    Update_time: 2007-06-03 08:04:36
+     Check_time: NULL
+ Create_options:
+        Comment:
+1 row in set (0.00 sec)</code></pre></div>
+                </div>
 
 
-
-
+                <h3>Cambiar el nombre (alterar) de una tabla</h3>
+                <p>Para cambiar el nombre de una tabla, use la opción RENAME de la instrucción ALTER TABLE.</p>
+                <p>Pruebe el siguiente ejemplo para cambiar el nombre de testalter_tbl a alter_tbl.</p>
+            
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> ALTER TABLE testalter_tbl RENAME TO alter_tbl;
+</code></pre></div>
+                </div>
+            
+                <p>Puede usar el comando ALTER para crear y soltar el comando INDEX en un archivo MySQL. Discutiremos en detalle sobre este comando en el próximo capítulo.</p>
+            
             </section>
 
             <section id="item24">
                 <h1>Índices</h1>
+
+                <p>Un índice de base de datos es una estructura de datos que mejora la velocidad de las operaciones en una tabla. Los índices se pueden crear utilizando una o más columnas, lo que proporciona la base tanto para búsquedas aleatorias rápidas como para ordenar eficazmente el acceso a los registros.</p>
+                <p>Al crear el índice, debe tenerse en cuenta qué columnas se utilizarán para realizar consultas SQL y crear uno o más índices en esas columnas.</p>
+                <p>En la práctica, los índices también son un tipo de tablas, que mantienen la clave principal o el campo de índice y un puntero a cada registro en la tabla real.</p>
+                <p>Los usuarios no pueden ver los índices, solo se utilizan para acelerar las consultas y serán utilizados por el motor de búsqueda de la base de datos para localizar registros muy rápido.</p>
+                <p>Las instrucciones INSERT y UPDATE toman más tiempo en tablas que tienen índices, mientras que las instrucciones SELECT se vuelven rápidas en esas tablas. La razón es que mientras se inserta o actualiza, una base de datos también necesita insertar o actualizar los valores del índice.</p>
+
+                <h3>Índice simple y único</h3>
+                <p>Puede crear un índice único en una tabla. Un índice único significa que dos filas no pueden tener el mismo valor de índice. Aquí está la sintaxis para crear un índice en una tabla.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">CREATE UNIQUE INDEX index_name ON table_name ( column1, column2,...);
+</code></pre></div>
+                </div>
+
+                <p>Puede utilizar una o más columnas para crear un índice.</p>
+
+                <p>Por ejemplo, podemos crear un índice en tutorials_tbl usando tutorial_author.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">CREATE UNIQUE INDEX AUTHOR_INDEX ON tutorials_tbl (tutorial_author)
+</code></pre></div>
+                </div>
+
+                <p>Puede crear un índice simple en una tabla. Simplemente omita la palabra clave UNIQUE de la consulta para crear un índice simple. Un índice simple permite valores duplicados en una tabla.</p>
+                <p>Si desea indexar los valores en una columna en orden descendente, puede agregar la palabra reservada DESC después del nombre de la columna.</p>
                 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> CREATE UNIQUE INDEX AUTHOR_INDEX ON tutorials_tbl (tutorial_author DESC)
+</code></pre></div>
+                </div>
+
+                <h3>ALTER comando para agregar y soltar ÍNDICE</h3>
+                <p>Hay cuatro tipos de declaraciones para agregar índices a una tabla:</p>
+
+                <ul>
+                    <li>ALTER TABLE tbl_name ADD PRIMARY KEY (column_list) : esta declaración agrega una PRIMARY KEY , lo que significa que los valores indexados deben ser únicos y no pueden ser NULL.</li>
+                    <li>ALTER TABLE tbl_name ADD UNIQUE index_name (column_list) : esta declaración crea un índice para el cual los valores deben ser únicos (excepto los valores NULL, que pueden aparecer varias veces).</li>
+                    <li>ALTER TABLE tbl_name ADD INDEX index_name (column_list) - Esto agrega un índice ordinario en el que cualquier valor puede aparecer más de una vez.</li>
+                    <li>ALTER TABLE tbl_name ADD FULLTEXT index_name (column_list) - Esto crea un índice FULLTEXT especial que se utiliza para fines de búsqueda de texto.</li>
+                </ul>
+
+                <p>El siguiente bloque de código es un ejemplo para agregar índice en una tabla existente.</p>
+                
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> ALTER TABLE testalter_tbl ADD INDEX (c);
+</code></pre></div>
+                </div>
+
+                <p>Puede eliminar cualquier ÍNDICE utilizando la cláusula DROP junto con el comando ALTER.
+
+Pruebe el siguiente ejemplo para eliminar el índice creado anteriormente</p>
+
+                     <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> ALTER TABLE testalter_tbl DROP INDEX (c);
+</code></pre></div>
+                </div>  
+
+                <p>Puede eliminar cualquier ÍNDICE utilizando la cláusula DROP junto con el comando ALTER.</p>
+                
+                <h3>ALTER Comando para agregar y soltar la LLAVE PRIMARIA</h3>
+                <p>También puede agregar una clave principal de la misma manera. Pero asegúrese de que la clave principal funcione en columnas, que NO sean NULL.</p>
+                <p>El siguiente bloque de código es un ejemplo para agregar la clave principal en una tabla existente. Esto hará que una columna NO sea NULA primero y luego la agregará como clave principal.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> ALTER TABLE testalter_tbl MODIFY i INT NOT NULL;
+mysql> ALTER TABLE testalter_tbl ADD PRIMARY KEY (i);</code></pre></div>
+                </div>  
+
+                <p>Puede usar el comando ALTER para eliminar una clave principal de la siguiente manera:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> ALTER TABLE testalter_tbl DROP PRIMARY KEY;
+</code></pre></div>
+                </div>  
+
+                <p>Para eliminar un índice que no es una CLAVE PRINCIPAL, debe especificar el nombre del índice.</p>
+
+                <h3>Visualización de información de ÍNDICE</h3>
+
+                <p>Puede utilizar el comando SHOW INDEX para enumerar todos los índices asociados con una tabla. La salida de formato vertical (especificada por \ G) a menudo es útil con esta declaración, para evitar una larga línea envolvente:</p>
+                <p>Pruebe el siguiente ejemplo:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> SHOW INDEX FROM table_name\G
+........</code></pre></div>
+                </div> 
+
             </section>
 
             <section id="item25">
                 <h1>Tablas temporales</h1>
+                <p>Las tablas temporales pueden resultar muy útiles en algunos casos para mantener datos temporales. Lo más importante que se debe saber sobre las tablas temporales es que se eliminarán cuando finalice la sesión actual del cliente.</p>
                 
+                <h3>¿Qué son las tablas temporales?</h3>
+                <p>Se agregaron tablas temporales en MySQL Versión 3.23. Si usa una versión anterior de MySQL a la 3.23, no puede usar las tablas temporales, pero puede usar Heap Tables .</p>
+                <p>Como se indicó anteriormente, las tablas temporales solo durarán mientras la sesión esté activa. Si ejecuta el código en un script PHP, la tabla temporal se destruirá automáticamente cuando el script termine de ejecutarse. Si está conectado al servidor de base de datos MySQL a través del programa cliente MySQL, la tabla temporal existirá hasta que cierre el cliente o destruya manualmente la tabla.</p>
+
+                <h4>Ejemplo:</h4>
+                <p>El siguiente programa es un ejemplo que muestra el uso de la tabla temporal. El mismo código se puede usar en scripts PHP usando la función mysql_query().</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> CREATE TEMPORARY TABLE SalesSummary (
+   -> product_name VARCHAR(50) NOT NULL
+   -> , total_sales DECIMAL(12,2) NOT NULL DEFAULT 0.00
+   -> , avg_unit_price DECIMAL(7,2) NOT NULL DEFAULT 0.00
+   -> , total_units_sold INT UNSIGNED NOT NULL DEFAULT 0
+);
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> INSERT INTO SalesSummary
+   -> (product_name, total_sales, avg_unit_price, total_units_sold)
+   -> VALUES
+   -> ('cucumber', 100.25, 90, 2);
+
+mysql> SELECT * FROM SalesSummary;
++--------------+-------------+----------------+------------------+
+| product_name | total_sales | avg_unit_price | total_units_sold |
++--------------+-------------+----------------+------------------+
+|   cucumber   |   100.25    |     90.00      |         2        |
++--------------+-------------+----------------+------------------+
+1 row in set (0.00 sec)</code></pre></div>
+                </div> 
+
+                <p>Cuando emite un comando SHOW TABLES , su tabla temporal no aparecerá en la lista. Ahora, si cierra la sesión de MySQL y luego emite un comando SELECT , entonces no encontrará datos disponibles en la base de datos. Incluso su mesa temporal no existirá.</p>
+
+                <h3>Eliminar tablas temporales</h3>
+
+                <p>De forma predeterminada, MySQL elimina todas las tablas temporales cuando se termina la conexión a la base de datos. Aún así, si desea eliminarlos en el medio, hágalo emitiendo el comando DROP TABLE.</p>
+                <p>El siguiente programa es un ejemplo de cómo eliminar una tabla temporal:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> CREATE TEMPORARY TABLE SalesSummary (
+   -> product_name VARCHAR(50) NOT NULL
+   -> , total_sales DECIMAL(12,2) NOT NULL DEFAULT 0.00
+   -> , avg_unit_price DECIMAL(7,2) NOT NULL DEFAULT 0.00
+   -> , total_units_sold INT UNSIGNED NOT NULL DEFAULT 0
+);
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> INSERT INTO SalesSummary
+   -> (product_name, total_sales, avg_unit_price, total_units_sold)
+   -> VALUES
+   -> ('cucumber', 100.25, 90, 2);
+
+mysql> SELECT * FROM SalesSummary;
++--------------+-------------+----------------+------------------+
+| product_name | total_sales | avg_unit_price | total_units_sold |
++--------------+-------------+----------------+------------------+
+|   cucumber   |   100.25    |     90.00      |         2        |
++--------------+-------------+----------------+------------------+
+1 row in set (0.00 sec)
+mysql> DROP TABLE SalesSummary;
+mysql>  SELECT * FROM SalesSummary;
+ERROR 1146: Table 'TUTORIALS.SalesSummary' doesn't exist</code></pre></div>
+                </div> 
+
             </section>
 
             <section id="item26">
                 <h1>Clonar tablas</h1>
+                <p>Puede haber una situación en la que necesite una copia exacta de una tabla y CREAR TABLA ... SELECCIONAR no se adapte a sus propósitos porque la copia debe incluir los mismos índices, valores predeterminados, etc.</p>
+                <p>Puede manejar esta situación siguiendo los pasos que se indican a continuación:</p>
+
+                <ul>
+                    <li>Utilice SHOW CREATE TABLE para obtener una declaración CREATE TABLE que especifique la estructura de la tabla fuente, los índices y todo.</li>
+                    <li>Modifique la declaración para cambiar el nombre de la tabla por el de la tabla de clonación y ejecute la declaración. De esta manera, tendrá la tabla de clonación exacta.</li>
+                    <li>Opcionalmente, si también necesita copiar el contenido de la tabla, emita también una instrucción INSERT INTO ... SELECT.</li>
+                </ul>
+
+                <h4>Ejemplo:</h4>
+
+                <p>Pruebe el siguiente ejemplo para crear una tabla de clonación para tutorials_tbl.</p>
+                <p>Paso 1 : obtenga la estructura completa de la tabla.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> SHOW CREATE TABLE tutorials_tbl \G;
+*************************** 1. row ***************************
+      Table: tutorials_tbl
+Create Table: CREATE TABLE `tutorials_tbl` (
+   `tutorial_id` int(11) NOT NULL auto_increment,
+   `tutorial_title` varchar(100) NOT NULL default '',
+   `tutorial_author` varchar(40) NOT NULL default '',
+   `submission_date` date default NULL,
+   PRIMARY KEY  (`tutorial_id`),
+   UNIQUE KEY `AUTHOR_INDEX` (`tutorial_author`)
+) TYPE = MyISAM
+1 row in set (0.00 sec)
+
+ERROR:
+No query specified</code></pre></div>
+                </div> 
+
+                <p>Paso 2 : cambie el nombre de esta tabla y cree otra tabla.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> CREATE TABLE clone_tbl (
+   -> tutorial_id int(11) NOT NULL auto_increment,
+   -> tutorial_title varchar(100) NOT NULL default '',
+   -> tutorial_author varchar(40) NOT NULL default '',
+   -> submission_date date default NULL,
+   -> PRIMARY KEY  (tutorial_id),
+   -> UNIQUE KEY AUTHOR_INDEX (tutorial_author)
+-> ) TYPE = MyISAM;
+Query OK, 0 rows affected (1.80 sec)</code></pre></div>
+                </div> 
+
+                <p>Paso 3 : después de ejecutar el paso 2, creará una tabla de clonación en su base de datos. Si desea copiar datos de la tabla anterior, puede hacerlo mediante la instrucción INSERT INTO ... SELECT.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> INSERT INTO clone_tbl (tutorial_id,
+   -> tutorial_title,
+   -> tutorial_author,
+   -> submission_date)
+   
+   -> SELECT tutorial_id,tutorial_title,
+   -> tutorial_author,submission_date
+   -> FROM tutorials_tbl;
+Query OK, 3 rows affected (0.07 sec)
+Records: 3  Duplicates: 0  Warnings: 0</code></pre></div>
+                </div> 
+
+                <p>Finalmente, tendrá una tabla de clonación exacta como deseaba tener.</p>
                 
             </section>
 
             <section id="item27">
                 <h1>Información de bases de datos</h1>
+                <h3>Obtención y uso de metadatos de MySQL</h3>
+                <p>Hay tres tipos de información que le gustaría obtener de MySQL.</p>
                 
+                <ul>
+                    <li>Información sobre el resultado de las consultas : esto incluye el número de registros afectados por cualquier instrucción SELECT, UPDATE o DELETE.</li>
+                    <li>Información sobre las tablas y las bases de datos : incluye información relacionada con la estructura de las tablas y las bases de datos.</li>
+                    <li>Información sobre el servidor MySQL : esto incluye el estado del servidor de la base de datos, el número de versión, etc.</li>
+                </ul>
+
+                <p>Es muy fácil obtener toda esta información en el indicador de MySQL, pero al usar las API de PERL o PHP, necesitamos llamar a varias API de forma explícita para obtener toda esta información.</p>
+
+                <h3>Obtener el número de filas afectadas por una consulta</h3>
+                <p>Veamos ahora cómo obtener esta información.</p>
+
+                <h4>Ejemplo PERL</h4>
+
+                <p>En los scripts DBI, el recuento de filas afectadas es devuelto por el comando do () o el comando execute () , dependiendo de cómo ejecute la consulta.</p>
+                
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-perl"># Method 1
+# execute $query using do( )
+my $count = $dbh->do ($query);
+# report 0 rows if an error occurred
+printf "%d rows were affected\n", (defined ($count) ? $count : 0);
+
+# Method 2
+# execute query using prepare( ) plus execute( )
+my $sth = $dbh->prepare ($query);
+my $count = $sth->execute ( );
+printf "%d rows were affected\n", (defined ($count) ? $count : 0);</code></pre></div>
+                </div> 
+
+                <h3>Ejemplo de PHP</h3>
+                <p>En PHP, invoque la función mysql_affected_rows () para averiguar cuántas filas cambió una consulta.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-php">$result_id = mysql_query ($query, $conn_id);
+# report 0 rows if the query failed
+$count = ($result_id ? mysql_affected_rows ($conn_id) : 0);
+print ("$count rows were affected\n");</code></pre></div>
+                </div> 
+
+                <h3>Listado de tablas y bases de datos</h3>
+                <p>Es muy fácil enumerar todas las bases de datos y las tablas disponibles con un servidor de base de datos. Su resultado puede ser nulo si no tiene los privilegios suficientes.</p>
+                <p>Aparte del método que se muestra en el siguiente bloque de código, puede usar las consultas SHOW TABLES o SHOW DATABASES para obtener la lista de tablas o bases de datos en PHP o en PERL.</p>
+
+                <h3>Ejemplo PERL</h3>
+                
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-perl"># Get all the tables available in current database.
+my @tables = $dbh->tables ( );
+
+foreach $table (@tables ){
+   print "Table Name $table\n";
+}</code></pre></div>
+                </div> 
+
+                <h3>Ejemplo de PHP</h3>
+                <p>Pruebe el siguiente ejemplo para obtener información de la base de datos:</p>
+                <p>Copie y pegue el siguiente ejemplo como mysql_example.php -</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;head&gt;
+      &lt;title&gt;Getting MySQL Database Info&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;?php
+         $dbhost = &apos;localhost&apos;;
+         $dbuser = &apos;root&apos;;
+         $dbpass = &apos;root@123&apos;;
+         $dbname = &apos;TUTORIALS&apos;;
+         $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+         $tutorial_count = null;
+&#x9;&#x9; 
+         if($mysqli-&gt;connect_errno ) {
+            printf(&quot;Connect failed: %s&lt;br /&gt;&quot;, $mysqli-&gt;connect_error);
+            exit();
+         }
+         printf(&apos;Connected successfully.&lt;br /&gt;&apos;);
+&#x9;&#x9; 
+         if ($result = mysqli_query($mysqli, &quot;SELECT DATABASE()&quot;)) {
+            $row = mysqli_fetch_row($result);
+            printf(&quot;Default database is %s&lt;br /&gt;&quot;, $row[0]);
+            mysqli_free_result($result);
+         }
+         $mysqli-&gt;close();
+      ?&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div> 
+
+            <h3>Producción:</h3>   
+            <p>Acceda al mysql_example.php implementado en el servidor web apache y verifique el resultado.</p>
+
+            <div class="panel">
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-markup">Connected successfully.
+Default database is tutorials</code></pre></div>
+            </div> 
+
+            <h3>Obtener metadatos del servidor</h3>
+            <p>Hay algunos comandos importantes en MySQL que se pueden ejecutar en el indicador de MySQL o usando cualquier script como PHP para obtener información importante sobre el servidor de la base de datos.</p>
+
+            <table>
+                <tr>
+                    <th>#</th>
+                    <th>Comando</th>
+                    <th>Descripción</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>SELECT VERSION()</td>
+                    <td>Cadena de versión del servidor</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>SELECT DATABASE()</td>
+                    <td>Nombre de la base de datos actual (vacío si no hay ninguno)</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>SELECT USER()</td>
+                    <td>Nombre de usuario actual</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>SHOW STATUS</td>
+                    <td>Indicadores de estado del servidor</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>MOSTRAR VARIABLES</td>
+                    <td>Variables de configuración del servidor</td>
+                </tr>
+            </table>
+
+
             </section>
 
             <section id="item28">
                 <h1>Usando secuencias</h1>
+                <p>Una secuencia es un conjunto de números enteros 1, 2, 3, ... que se generan en orden según una demanda específica. Las secuencias se utilizan con frecuencia en las bases de datos porque muchas aplicaciones requieren que cada fila de una tabla contenga un valor único y las secuencias proporcionan una manera fácil de generarlas.</p>
+                <p>Este capítulo describe cómo usar secuencias en MySQL.</p>
+
+                <h3>Usando la columna AUTO_INCREMENT</h3>
+                <p>La forma más sencilla en MySQL de usar Secuencias es definir una columna como AUTO_INCREMENT y dejar las cosas restantes a MySQL para que se encargue.</p>
+                <h4>Ejemplo:</h4>
+                <p>Pruebe el siguiente ejemplo. Esto creará una tabla y luego insertará algunas filas en esta tabla donde no es necesario dar un ID de registro porque MySQL lo incrementa automáticamente.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> CREATE TABLE insect
+   -> (
+   -> id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+   -> PRIMARY KEY (id),
+   -> name VARCHAR(30) NOT NULL, # type of insect
+   -> date DATE NOT NULL, # date collected
+   -> origin VARCHAR(30) NOT NULL # where collected
+);
+Query OK, 0 rows affected (0.02 sec)
+mysql> INSERT INTO insect (id,name,date,origin) VALUES
+   -> (NULL,'housefly','2001-09-10','kitchen'),
+   -> (NULL,'millipede','2001-09-10','driveway'),
+   -> (NULL,'grasshopper','2001-09-10','front yard');
+Query OK, 3 rows affected (0.02 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+mysql> SELECT * FROM insect ORDER BY id;
++----+-------------+------------+------------+
+| id |    name     |    date    |   origin   |
++----+-------------+------------+------------+
+|  1 |  housefly   | 2001-09-10 |   kitchen  |
+|  2 |  millipede  | 2001-09-10 |  driveway  |
+|  3 | grasshopper | 2001-09-10 | front yard |
++----+-------------+------------+------------+
+3 rows in set (0.00 sec)</code></pre></div>
+                </div> 
+
+                <h3>Obtener valores AUTO_INCREMENT</h3>
+
+                <p>El LAST_INSERT_ID () es una función de SQL, para que pueda utilizarlo desde cualquier cliente que entiende cómo emitir sentencias SQL. De lo contrario, los scripts de PERL y PHP proporcionan funciones exclusivas para recuperar el valor incrementado automáticamente del último registro.</p>
+
+                <h4>Ejemplo PERL</h4>
+                <p>Utilice el atributo mysql_insertid para obtener el valor AUTO_INCREMENT generado por una consulta. Se accede a este atributo a través de un identificador de base de datos o un identificador de declaración, dependiendo de cómo emita la consulta.</p>
+                <p>El siguiente ejemplo lo hace referencia a través del identificador de la base de datos.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-perl">$dbh->do ("INSERT INTO insect (name,date,origin)
+VALUES('moth','2001-09-14','windowsill')");
+my $seq = $dbh->{mysql_insertid};</code></pre></div>
+                </div> 
+
+                <h4>Ejemplo de PHP</h4>
+
+                <p>Después de emitir una consulta que genera un valor AUTO_INCREMENT, recupere el valor llamando al comando mysql_insert_id ().</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-php">mysql_query ("INSERT INTO insect (name,date,origin)
+VALUES('moth','2001-09-14','windowsill')", $conn_id);
+$seq = mysql_insert_id ($conn_id);</code></pre></div>
+                </div> 
+
+                <h3>Renumerar una secuencia existente</h3>
+                <p>Puede haber un caso en el que haya eliminado muchos registros de una tabla y desee volver a secuenciar todos los registros. Esto se puede hacer usando un truco simple, pero debe tener mucho cuidado al hacerlo si su tabla se une con la otra tabla.</p>
+                <p>Si determina que la resecuenciación de una columna AUTO_INCREMENT es inevitable, la forma de hacerlo es eliminar la columna de la tabla y luego agregarla nuevamente.</p>
+                <p>El siguiente ejemplo muestra cómo volver a numerar los valores de id en la tabla usando esta técnica.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> ALTER TABLE insect DROP id;
+mysql> ALTER TABLE insect
+   -> ADD id INT UNSIGNED NOT NULL AUTO_INCREMENT FIRST,
+   -> ADD PRIMARY KEY (id);</code></pre></div>
+                </div> 
+                <p>Iniciar una secuencia con un valor particular</p>
+                <p>De forma predeterminada, MySQL iniciará la secuencia desde 1, pero también puede especificar cualquier otro número en el momento de la creación de la tabla.</p>
+                <p>El siguiente programa es un ejemplo que muestra cómo MySQL iniciará la secuencia desde 100.</p>
                 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> CREATE TABLE insect
+   -> (
+   -> id INT UNSIGNED NOT NULL AUTO_INCREMENT = 100,
+   -> PRIMARY KEY (id),
+   -> name VARCHAR(30) NOT NULL, # type of insect
+   -> date DATE NOT NULL, # date collected
+   -> origin VARCHAR(30) NOT NULL # where collected
+);</code></pre></div>
+                </div> 
+
+                <p>Alternativamente, puede crear la tabla y luego establecer el valor de secuencia inicial con el comando ALTER TABLE.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> ALTER TABLE t AUTO_INCREMENT = 100;</code></pre></div>
+                </div> 
+
             </section>
 
             <section id="item29">
                 <h1>Manejando duplicados</h1>
-                
+                <p>Generalmente, las tablas o los conjuntos de resultados a veces contienen registros duplicados. La mayoría de las veces está permitido, pero a veces es necesario detener los registros duplicados. Es necesario identificar registros duplicados y eliminarlos de la tabla. Este capítulo describirá cómo evitar la aparición de registros duplicados en una tabla y cómo eliminar los registros duplicados ya existentes.</p>
+
+                <h3>Evitar que se produzcan duplicados en una tabla</h3>
+                <p>Puede usar una CLAVE PRIMARIA o un Índice ÚNICO en una tabla con los campos apropiados para detener registros duplicados.</p>
+                <p>Tomemos un ejemplo - La siguiente tabla contiene tal índice o una clave primaria, por lo que permitiría a los registros duplicados para el first_name y last_name.</p>
+
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">CREATE TABLE person_tbl (
+   first_name CHAR(20),
+   last_name CHAR(20),
+   sex CHAR(10)
+);</code></pre></div>
+                </div> 
+
+                <p>Para evitar que se creen varios registros con los mismos valores de nombre y apellido en esta tabla, agregue una CLAVE PRIMARIA a su definición. Cuando hace esto, también es necesario declarar que las columnas indexadas NO NULL , porque una PRIMARY KEY no permite valores NULL -</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">CREATE TABLE person_tbl (
+   first_name CHAR(20) NOT NULL,
+   last_name CHAR(20) NOT NULL,
+   sex CHAR(10),
+   PRIMARY KEY (last_name, first_name)
+);</code></pre></div>
+                </div> 
+
+                <p>La presencia de un índice único en una tabla normalmente causa un error si inserta un registro en la tabla que duplica un registro existente en la columna o columnas que definen el índice.</p>
+                <p>Utilice el comando INSERT IGNORE en lugar del comando INSERT . Si un registro no duplica un registro existente, entonces MySQL lo inserta como de costumbre. Si el registro es un duplicado, la palabra clave IGNORE le dice a MySQL que lo descarte silenciosamente sin generar un error.</p>
+                <p>El siguiente ejemplo no genera errores y, al mismo tiempo, tampoco inserta registros duplicados.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> INSERT IGNORE INTO person_tbl (last_name, first_name)
+   -> VALUES( 'Jay', 'Thomas');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT IGNORE INTO person_tbl (last_name, first_name)
+   -> VALUES( 'Jay', 'Thomas');
+Query OK, 0 rows affected (0.00 sec)</code></pre></div>
+                </div> 
+
+                <p>Utilice el comando REPLACE en lugar del comando INSERT. Si el registro es nuevo, se inserta igual que con INSERT. Si es un duplicado, el nuevo registro reemplaza al anterior.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> REPLACE INTO person_tbl (last_name, first_name)
+   -> VALUES( 'Ajay', 'Kumar');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> REPLACE INTO person_tbl (last_name, first_name)
+   -> VALUES( 'Ajay', 'Kumar');
+Query OK, 2 rows affected (0.00 sec)</code></pre></div>
+                </div> 
+
+                <p>Los comandos INSERT IGNORE y REPLACE deben elegirse según el comportamiento de manejo de duplicados que desee realizar. El comando INSERT IGNORE conserva el primer conjunto de registros duplicados y descarta el resto. El comando REPLACE conserva el último conjunto de duplicados y borra los anteriores.</p>
+                <p>Otra forma de imponer la unicidad es agregar un índice ÚNICO en lugar de una CLAVE PRIMARIA a una tabla.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">CREATE TABLE person_tbl (
+   first_name CHAR(20) NOT NULL,
+   last_name CHAR(20) NOT NULL,
+   sex CHAR(10)
+   UNIQUE (last_name, first_name)
+);</code></pre></div>
+                </div> 
+
+                <h3>Contar e identificar duplicados</h3>
+                <p>A continuación se muestra la consulta para contar registros duplicados con first_name y last_name en una tabla.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> SELECT COUNT(*) as repetitions, last_name, first_name
+   -> FROM person_tbl
+   -> GROUP BY last_name, first_name
+   -> HAVING repetitions > 1;</code></pre></div>
+                </div> 
+
+                <p>Esta consulta devolverá una lista de todos los registros duplicados en la tabla person_tbl. En general, para identificar conjuntos de valores duplicados, siga los pasos que se indican a continuación.</p>
+
+                <ul>
+                    <li>Determine qué columnas contienen los valores que se pueden duplicar.</li>
+                    <li>Enumere esas columnas en la lista de selección de columnas, junto con COUNT (*).</li>
+                    <li>Enumere también las columnas de la cláusula GROUP BY.</li>
+                    <li>Agregue una cláusula HAVING que elimine los valores únicos al requerir que los recuentos de grupos sean mayores que uno.</li>
+                </ul>
+
+                <h3>Eliminar duplicados de un resultado de consulta</h3>
+                <p>Puede usar el comando DISTINCT junto con la instrucción SELECT para encontrar registros únicos disponibles en una tabla.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> SELECT DISTINCT last_name, first_name
+   -> FROM person_tbl
+   -> ORDER BY last_name;</code></pre></div>
+                </div>
+
+                <p>Una alternativa al comando DISTINCT es agregar una cláusula GROUP BY que nombre las columnas que está seleccionando. Esto tiene el efecto de eliminar duplicados y seleccionar solo las combinaciones únicas de valores en las columnas especificadas.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> SELECT last_name, first_name
+   -> FROM person_tbl
+   -> GROUP BY (last_name, first_name);</code></pre></div>
+                </div>
+
+                <h3>Eliminación de duplicados mediante reemplazo de tabla</h3>
+
+                <p>Si tiene registros duplicados en una tabla y desea eliminar todos los registros duplicados de esa tabla, siga el procedimiento que se indica a continuación.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> CREATE TABLE tmp SELECT last_name, first_name, sex
+   -> FROM person_tbl;
+   -> GROUP BY (last_name, first_name);
+
+mysql> DROP TABLE person_tbl;
+mysql> ALTER TABLE tmp RENAME TO person_tbl;</code></pre></div>
+                </div>
+
+                <p>Una forma fácil de eliminar registros duplicados de una tabla es agregar un ÍNDICE o una CLAVE PRIMARIA a esa tabla. Incluso si esta tabla ya está disponible, puede utilizar esta técnica para eliminar los registros duplicados y también estará seguro en el futuro.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> ALTER IGNORE TABLE person_tbl
+   -> ADD PRIMARY KEY (last_name, first_name);</code></pre></div>
+                </div>
+
             </section>
 
             <section id="item30">
                 <h1>Inyección SQL</h1>
+
+                <p>Si toma la entrada del usuario a través de una página web y la inserta en una base de datos MySQL, existe la posibilidad de que se haya quedado abierto a un problema de seguridad conocido como inyección SQL . Este capítulo le enseñará cómo ayudar a evitar que esto suceda y le ayudará a proteger sus scripts y declaraciones MySQL.</p>
+                <p>La inyección de SQL generalmente ocurre cuando le pides a un usuario una entrada, como su nombre y en lugar de un nombre, te dan una declaración de MySQL que, sin saberlo, ejecutarás en tu base de datos.</p>
+                <p>Nunca confíe en los datos proporcionados por un usuario, procese estos datos solo después de la validación; como regla, esto se hace mediante la coincidencia de patrones. En el siguiente ejemplo, el nombre de usuario está restringido a caracteres alfanuméricos más guión bajo y a una longitud de entre 8 y 20 caracteres; modifique estas reglas según sea necesario.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-php">if (preg_match("/^\w{8,20}$/", $_GET['username'], $matches)) {
+   $result = mysql_query("SELECT * FROM users WHERE username = $matches[0]");
+} else  {
+   echo "username not accepted";
+}</code></pre></div>
+                </div>
+
+                <p>Para demostrar este problema, considere el siguiente extracto.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-php">// supposed input
+$name = "Qadir'; DELETE FROM users;";
+mysql_query("SELECT * FROM users WHERE name = '{$name}'");</code></pre></div>
+                </div>
+
+                <p>Se supone que la llamada a la función recupera un registro de la tabla de usuarios, donde la columna de nombre coincide con el nombre especificado por el usuario. En circunstancias normales, $ name solo contendría caracteres alfanuméricos y quizás espacios. Pero aquí, al agregar una consulta completamente nueva a $ name , la llamada a la base de datos se convierte en un desastre. La consulta DELETE inyectada elimina todos los registros de los usuarios.</p>
+                <p>Afortunadamente, si usa MySQL, la función mysql_query () no permite apilar consultas o ejecutar múltiples consultas en una sola llamada de función. Si intenta apilar consultas, la llamada falla.</p>
+                <p>Sin embargo, otras extensiones de base de datos PHP, como SQLite y PostgreSQL , realizan consultas apiladas felizmente, ejecutando todas las consultas proporcionadas en una cadena y creando un problema de seguridad serio.</p>
+
+                <h3>Prevención de la inyección de SQL</h3>
+                <p>Puede manejar todos los caracteres de escape de forma inteligente en lenguajes de secuencias de comandos como PERL y PHP. La extensión MySQL para PHP proporciona la función mysql_real_escape_string () para escapar de los caracteres de entrada que son especiales para MySQL.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-php">if (get_magic_quotes_gpc()) {
+   $name = stripslashes($name);
+}
+
+$name = mysql_real_escape_string($name);
+mysql_query("SELECT * FROM users WHERE name = '{$name}'");</code></pre></div>
+                </div>
+
+                <h3>El dilema LIKE</h3>
+
+                <p>Para abordar el dilema de LIKE, un mecanismo de escape personalizado debe convertir los caracteres% y _ proporcionados por el usuario en literales. Use addcslashes () , una función que le permite especificar un rango de caracteres para escapar.</p>
                 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-php">$sub = addcslashes(mysql_real_escape_string("%something_"), "%_");
+// $sub == \%something\_
+mysql_query("SELECT * FROM messages WHERE subject LIKE '{$sub}%'");</code></pre></div>
+                </div>
+
+
             </section>
 
             <section id="item31">
                 <h1>Exportar base de datos</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 
             </section>
 
             <section id="item32">
                 <h1>Importar base de datos</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 
             </section>
         </div>
