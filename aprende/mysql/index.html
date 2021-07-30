@@ -2343,14 +2343,344 @@ Id: 3, Title: PHP Tutorial, Author: Mahesh, Date: 2021</code></pre></div>
 
             <section id="item18">
                 <h1>Obteniendo resultados</h1>
+                <p>Hemos visto el comando SQL SELECT para obtener datos de una tabla MySQL. Cuando selecciona filas, el servidor MySQL es libre de devolverlas en cualquier orden, a menos que le indique lo contrario diciendo cómo ordenar el resultado. Pero, ordena un conjunto de resultados agregando una cláusula ORDER BY que nombra la columna o columnas que desea ordenar.</p>
                 
+                <h4>Sintaxis:</h4>
+
+                <p>El siguiente bloque de código es una sintaxis SQL genérica del comando SELECT junto con la cláusula ORDER BY para ordenar los datos de una tabla MySQL.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">SELECT field1, field2,...fieldN table_name1, table_name2...
+ORDER BY field1, [field2...] [ASC [DESC]]</code></pre></div>
+                </div>
+
+                <ul>
+                    <li>Puede ordenar el resultado devuelto en cualquier campo, si ese campo está en la lista.</li>
+                    <li>Puede ordenar el resultado en más de un campo.</li>
+                    <li>Puede utilizar la palabra clave ASC o DESC para obtener un resultado en orden ascendente o descendente. De forma predeterminada, es el orden ascendente.</li>
+                    <li>Puede utilizar la cláusula WHERE ... LIKE de la forma habitual para poner una condición.</li>
+                </ul>
+
+                <h3>Usando la cláusula ORDER BY en el símbolo del sistema</h3>
+
+                <p>Esto usará el comando SQL SELECT con la cláusula ORDER BY para obtener datos de la tabla MySQL - tutorials_tbl.</p>
+
+                <h4>Ejemplo:</h4>
+                <p>Pruebe el siguiente ejemplo, que devuelve el resultado en orden ascendente.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">root@host# mysql -u root -p password;
+Enter password:*******
+mysql> use TUTORIALS;
+Database changed
+mysql> SELECT * from tutorials_tbl ORDER BY tutorial_author ASC
++-------------+----------------+-----------------+-----------------+
+| tutorial_id | tutorial_title | tutorial_author | submission_date |
++-------------+----------------+-----------------+-----------------+
+|      2      |  Learn MySQL   |     Abdul S     |    2007-05-24   |   
+|      1      |   Learn PHP    |    John Poul    |    2007-05-24   |   
+|      3      | JAVA Tutorial  |     Sanjay      |    2007-05-06   |   
++-------------+----------------+-----------------+-----------------+
+3 rows in set (0.42 sec)
+
+mysql></code></pre></div>
+                </div>
+
+                <p>Verifique todos los nombres de los autores que se enumeran en orden ascendente.</p>
+
+                <h3>Usando la cláusula ORDER BY dentro de un script PHP</h3>
+                <p>PHP usa la función mysqli query () o mysql_query () para obtener registros ordenados de una tabla MySQL. Esta función toma dos parámetros y devuelve VERDADERO en caso de éxito o FALSO en caso de error.</p>
+                <h4>Sintaxis:</h4>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">$mysqli->query($sql,$resultmode)
+</code></pre></div>
+                </div>
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Parámetros</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>$sql</td>
+                        <td>Obligatorio: consulta SQL para obtener registros ordenados de una tabla.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>$resultmode</td>
+                        <td>Opcional: la constante MYSQLI_USE_RESULT o MYSQLI_STORE_RESULT según el comportamiento deseado. De forma predeterminada, se utiliza MYSQLI_STORE_RESULT.</td>
+                    </tr>
+                </table>
+
+                <h4>Ejemplo:</h4>
+                <p>Pruebe el siguiente ejemplo para obtener registros ordenados de una tabla:</p>
+                <p>Copie y pegue el siguiente ejemplo como mysql_example.php -</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;head&gt;
+      &lt;title&gt;Sorting MySQL Table records&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;?php
+         $dbhost = &apos;localhost&apos;;
+         $dbuser = &apos;root&apos;;
+         $dbpass = &apos;root@123&apos;;
+         $dbname = &apos;TUTORIALS&apos;;
+         $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+         
+         if($mysqli-&gt;connect_errno ) {
+            printf(&quot;Connect failed: %s&lt;br /&gt;&quot;, $mysqli-&gt;connect_error);
+            exit();
+         }
+         printf(&apos;Connected successfully.&lt;br /&gt;&apos;);
+   
+         $sql = &quot;SELECT tutorial_id, tutorial_title, tutorial_author, submission_date FROM tutorials_tbl order by tutorial_title asc&quot;;
+&#x9;&#x9; 
+         $result = $mysqli-&gt;query($sql);
+           
+         if ($result-&gt;num_rows &gt; 0) {
+            while($row = $result-&gt;fetch_assoc()) {
+               printf(
+                  &quot;Id: %s, Title: %s, Author: %s, Date: %d &lt;br /&gt;&quot;, 
+                  $row[&quot;tutorial_id&quot;], 
+                  $row[&quot;tutorial_title&quot;], 
+                  $row[&quot;tutorial_author&quot;],
+                  $row[&quot;submission_date&quot;]
+               );               
+            }
+         } else {
+            printf(&apos;No record found.&lt;br /&gt;&apos;);
+         }
+         mysqli_free_result($result);
+         $mysqli-&gt;close();
+      ?&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+            <h4>Producción:</h4>    
+            <p>Acceda al mysql_example.php implementado en el servidor web apache y verifique el resultado.            </p>
+
+            <div class="panel">
+                <div class="codigo__html">
+                    <div class="decor__bar mysql"></div>
+                    <pre class="line-numbers"><code class="language-markup">Connected successfully.
+Id: 5, Title: Apache Tutorial, Author: Suresh, Date: 2021
+Id: 2, Title: HTML Tutorial, Author: Mahesh, Date: 2021
+Id: 1, Title: MySQL Tutorial, Author: Mahesh, Date: 2021
+Id: 3, Title: PHP Tutorial, Author: Mahesh, Date: 2021</code></pre></div>
+            </div>
+
             </section>
 
             <section id="item19">
                 <h1>Usando join</h1>
+                <p>En los capítulos anteriores, obtuvimos datos de una tabla a la vez. Esto es lo suficientemente bueno para tomas simples, pero en la mayoría de los usos de MySQL del mundo real, a menudo necesitará obtener datos de varias tablas en una sola consulta.</p>
+                <p>Puede utilizar varias tablas en su única consulta SQL. El acto de unirse en MySQL se refiere a romper dos o más tablas en una sola tabla.</p>
+                <p>Puede usar JOINS en las declaraciones SELECT, UPDATE y DELETE para unirse a las tablas MySQL. También veremos un ejemplo de LEFT JOIN que es diferente del simple MySQL JOIN.</p>
                 
-            </section>
+                <h3>Uso de combinaciones en el símbolo del sistema</h3>
+                <p>Supongamos que tenemos dos tablas tcount_tbl y tutorials_tbl , en TUTORIALES. Ahora eche un vistazo a los ejemplos que se dan a continuación:</p>
 
+                <h4>Ejemplo:</h4>
+                <p>Los siguientes ejemplos:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">root@host# mysql -u root -p password;
+Enter password:*******
+mysql> use TUTORIALS;
+Database changed
+mysql> SELECT * FROM tcount_tbl;
++-----------------+----------------+
+| tutorial_author | tutorial_count |
++-----------------+----------------+
+|      mahran     |       20       |     
+|      mahnaz     |      NULL      |        
+|       Jen       |      NULL      |          
+|      Gill       |       20       |          
+|    John Poul    |        1       |      
+|     Sanjay      |        1       |        
++-----------------+----------------+
+6 rows in set (0.01 sec)
+mysql> SELECT * from tutorials_tbl;
++-------------+----------------+-----------------+-----------------+
+| tutorial_id | tutorial_title | tutorial_author | submission_date |
++-------------+----------------+-----------------+-----------------+
+|      1      |  Learn PHP     |     John Poul   |    2007-05-24   |   
+|      2      |  Learn MySQL   |      Abdul S    |    2007-05-24   |   
+|      3      | JAVA Tutorial  |      Sanjay     |    2007-05-06   |   
++-------------+----------------+-----------------+-----------------+
+3 rows in set (0.00 sec)
+mysql></code></pre></div>
+                </div>
+
+                <p>Ahora podemos escribir una consulta SQL para unir estas dos tablas. Esta consulta seleccionará todos los autores de la tabla tutorials_tbl y recogerá el número correspondiente de tutoriales de tcount_tbl.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> SELECT a.tutorial_id, a.tutorial_author, b.tutorial_count
+   -> FROM tutorials_tbl a, tcount_tbl b
+   -> WHERE a.tutorial_author = b.tutorial_author;
++-------------+-----------------+----------------+
+| tutorial_id | tutorial_author | tutorial_count |
++-------------+-----------------+----------------+
+|      1      |    John Poul    |        1       |
+|      3      |     Sanjay      |        1       |
++-------------+-----------------+----------------+
+2 rows in set (0.01 sec)
+mysql></code></pre></div>
+                </div>
+
+                <h4>Usar combinaciones en un script PHP</h4>
+                <p>PHP usa la función mysqli query () o mysql_query () para obtener registros de tablas MySQL usando Joins. Esta función toma dos parámetros y devuelve VERDADERO en caso de éxito o FALSO en caso de error.</p>
+                <h4>Sintaxis</h4>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">$mysqli->query($sql,$resultmode)
+</code></pre></div>
+                </div>
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Parámetros</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>$sql</td>
+                        <td>Requerido: consulta SQL para obtener registros de varias tablas usando Join.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>$resultmode</td>
+                        <td>Opcional: la constante MYSQLI_USE_RESULT o MYSQLI_STORE_RESULT según el comportamiento deseado. De forma predeterminada, se utiliza MYSQLI_STORE_RESULT.</td>
+                    </tr>
+                </table>
+
+                <p>Primero cree una tabla en MySQL usando el siguiente script e inserte dos registros.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">create table tcount_tbl(
+   tutorial_author VARCHAR(40) NOT NULL,
+   tutorial_count int
+);
+
+insert into tcount_tbl values('Mahesh', 3);
+insert into tcount_tbl values('Suresh', 1);</code></pre></div>
+                </div>
+
+                <h4>Ejemplo:</h4>
+                <p>Pruebe el siguiente ejemplo para obtener registros de dos tablas usando Join. -</p>
+                <p>Copie y pegue el siguiente ejemplo como mysql_example.php -</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;head&gt;
+      &lt;title&gt;Using joins on MySQL Tables&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;?php
+         $dbhost = &apos;localhost&apos;;
+         $dbuser = &apos;root&apos;;
+         $dbpass = &apos;root@123&apos;;
+         $dbname = &apos;TUTORIALS&apos;;
+         $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+         
+         if($mysqli-&gt;connect_errno ) {
+            printf(&quot;Connect failed: %s&lt;br /&gt;&quot;, $mysqli-&gt;connect_error);
+            exit();
+         }
+         printf(&apos;Connected successfully.&lt;br /&gt;&apos;);
+   
+         $sql = &apos;SELECT a.tutorial_id, a.tutorial_author, b.tutorial_count
+            FROM tutorials_tbl a, tcount_tbl b WHERE a.tutorial_author = b.tutorial_author&apos;;
+&#x9;&#x9; 
+         $result = $mysqli-&gt;query($sql);
+           
+         if ($result-&gt;num_rows &gt; 0) {
+            while($row = $result-&gt;fetch_assoc()) {
+               printf(&quot;Id: %s, Author: %s, Count: %d &lt;br /&gt;&quot;, 
+                  $row[&quot;tutorial_id&quot;], 
+                  $row[&quot;tutorial_author&quot;], 
+                  $row[&quot;tutorial_count&quot;]);               
+            }
+         } else {
+            printf(&apos;No record found.&lt;br /&gt;&apos;);
+         }
+         mysqli_free_result($result);
+         $mysqli-&gt;close();
+      ?&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+                <h4>Producción:</h4>
+                <p>Acceda al mysql_example.php implementado en el servidor web apache y verifique el resultado.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-markup">Connected successfully.
+Id: 1, Author: Mahesh, Count: 3
+Id: 2, Author: Mahesh, Count: 3
+Id: 3, Author: Mahesh, Count: 3
+Id: 5, Author: Suresh, Count: 1</code></pre></div>
+                </div>
+
+                <h3>MySQL LEFT JOIN</h3>
+                <p>Una combinación izquierda de MySQL es diferente de una combinación simple. Un LEFT JOIN de MySQL le da una consideración adicional a la tabla que está a la izquierda.</p>
+                <p>Si hago un LEFT JOIN , obtengo todos los registros que coinciden de la misma manera y, ADEMÁS, obtengo un registro adicional para cada registro no coincidente en la tabla izquierda de la combinación: asegurando así (en mi ejemplo) que cada AUTOR obtenga un mencionar.</p>
+            
+                <h4>Ejemplo:</h4>
+
+            <p>Pruebe el siguiente ejemplo para comprender el LEFT JOIN.</p>
+
+            <div class="panel">
+                <div class="codigo__html">
+                    <div class="decor__bar mysql"></div>
+                    <pre class="line-numbers"><code class="language-sql">root@host# mysql -u root -p password;
+Enter password:*******
+mysql> use TUTORIALS;
+Database changed
+mysql> SELECT a.tutorial_id, a.tutorial_author, b.tutorial_count
+   -> FROM tutorials_tbl a LEFT JOIN tcount_tbl b
+   -> ON a.tutorial_author = b.tutorial_author;
++-------------+-----------------+----------------+
+| tutorial_id | tutorial_author | tutorial_count |
++-------------+-----------------+----------------+
+|      1      |    John Poul    |       1        |
+|      2      |     Abdul S     |      NULL      |
+|      3      |     Sanjay      |       1        |
++-------------+-----------------+----------------+
+3 rows in set (0.02 sec)</code></pre></div>
+            </div>
+
+            <p>Debería practicar más para familiarizarse con JOIN. Este es un concepto un poco complejo en MySQL / SQL y se volverá más claro al hacer ejemplos reales.</p>
+            
+            </section>
+            
             <section id="item20">
                 <h1>Valores NULL</h1>
                 
