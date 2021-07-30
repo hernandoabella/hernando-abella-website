@@ -95,7 +95,7 @@ section h2{
 
 section h3{
     margin: 20px 0px;
-    color: #6320EE;
+    color: #000000;
     text-align: center;
 }
 
@@ -144,4 +144,9 @@ section ul li{
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #CAD5CA; 
+  }
+
+  .img__center{
+      margin: 50px auto;
+      width: 300px;
   }
