@@ -3923,46 +3923,235 @@ mysql_query("SELECT * FROM messages WHERE subject LIKE '{$sub}%'");</code></pre>
             <section id="item31">
                 <h1>Exportar base de datos</h1>
 
+                <p>La forma más sencilla de exportar los datos de una tabla a un archivo de texto es mediante la instrucción SELECT ... INTO OUTFILE que exporta el resultado de una consulta directamente a un archivo en el servidor.</p>
 
+                <h3>Exportación de datos con la instrucción SELECT ... INTO OUTFILE</h3>
 
+                <p>La sintaxis de esta declaración combina un comando SELECT normal con el nombre de archivo INTO OUTFILE al final. El formato de salida predeterminado es el mismo que para el comando LOAD DATA. Por lo tanto, la siguiente declaración exporta la tabla tutorials_tbl a /tmp/tutorials.txt como un archivo delimitado por tabulaciones y terminado en salto de línea.</p>
 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> SELECT * FROM tutorials_tbl 
+   -> INTO OUTFILE '/tmp/tutorials.txt';</code></pre></div>
+                </div>
 
+                <p>Puede cambiar el formato de salida utilizando varias opciones para indicar cómo citar y delimitar columnas y registros. Para exportar la tabla tutorial_tbl en formato CSV con líneas terminadas en CRLF, use el siguiente código.</p>
 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> SELECT * FROM passwd INTO OUTFILE '/tmp/tutorials.txt'
+   -> FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+   -> LINES TERMINATED BY '\r\n';</code></pre></div>
+                </div>
 
+                <p>El SELECT ... INTO OUTFILE tiene las siguientes propiedades -</p>
+                <ul>
+                    <li>El archivo de salida lo crea directamente el servidor MySQL, por lo que el nombre del archivo debe indicar dónde desea que se escriba el archivo en el servidor. No existe una versión LOCAL de la declaración análoga a la versión LOCAL de LOAD DATA.</li>
+                    <li>Debe tener el privilegio MySQL FILE para ejecutar la instrucción SELECT ... INTO.</li>
+                    <li>El archivo de salida no debe existir todavía. Esto evita que MySQL golpee archivos que pueden ser importantes.</li>
+                    <li>Debe tener una cuenta de inicio de sesión en el host del servidor o alguna forma de recuperar el archivo de ese host. De lo contrario, el comando SELECT ... INTO OUTFILE probablemente no tendrá ningún valor para usted.</li>
+                    <li>En UNIX, el archivo se crea de forma legible en todo el mundo y es propiedad del servidor MySQL. Esto significa que, aunque podrá leer el archivo, es posible que no pueda eliminarlo.</li>
+                </ul>
 
-
-
-
-
-
-
-
-
-
+                <h3>Exportación de tablas como datos sin procesar</h3>
+                <p>El programa mysqldump se utiliza para copiar o realizar copias de seguridad de tablas y bases de datos. Puede escribir la salida de la tabla como un archivo de datos sin procesar o como un conjunto de instrucciones INSERT que recrean los registros en la tabla.</p>
+                <p>Para volcar una tabla como un archivo de datos, debe especificar una opción --tab que indica el directorio donde desea que el servidor MySQL escriba el archivo.</p>
+                <p>Por ejemplo, para volcar la tabla tutorials_tbl de la base de datos TUTORIALS a un archivo en el directorio / tmp , use un comando como se muestra a continuación.</p>
+            
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">$ mysqldump -u root -p --no-create-info \
+   --tab=/tmp tutorials tutorials_tbl
+password ******</code></pre></div>
+                </div>
+            
+                <h3>Exportación de definiciones o contenidos de tablas en formato SQL</h3>
+                <p>Para exportar una tabla en formato SQL a un archivo, use el comando que se muestra a continuación.</p>
                 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">$ mysqldump -u root -p TUTORIALS tutorials_tbl > dump.txt
+password ******</code></pre></div>
+                </div>
+
+                <p>Esto creará un archivo con el contenido que se muestra a continuación.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">-- MySQL dump 8.23
+--
+-- Host: localhost    Database: TUTORIALS
+---------------------------------------------------------
+-- Server version       3.23.58
+
+--
+-- Table structure for table `tutorials_tbl`
+--
+
+CREATE TABLE tutorials_tbl (
+   tutorial_id int(11) NOT NULL auto_increment,
+   tutorial_title varchar(100) NOT NULL default '',
+   tutorial_author varchar(40) NOT NULL default '',
+   submission_date date default NULL,
+   PRIMARY KEY  (tutorial_id),
+   UNIQUE KEY AUTHOR_INDEX (tutorial_author)
+) TYPE = MyISAM;
+
+--
+-- Dumping data for table `tutorials_tbl`
+--
+
+INSERT INTO tutorials_tbl 
+   VALUES (1,'Learn PHP','John Poul','2007-05-24');
+INSERT INTO tutorials_tbl 
+   VALUES (2,'Learn MySQL','Abdul S','2007-05-24');
+INSERT INTO tutorials_tbl 
+   VALUES (3,'JAVA Tutorial','Sanjay','2007-05-06');</code></pre></div>
+                </div>
+
+                <p>Para volcar varias tablas, nómbrelas todas seguidas del argumento del nombre de la base de datos. Para volcar una base de datos completa, no nombre ninguna tabla después de la base de datos como se muestra en el siguiente bloque de código.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">$ mysqldump -u root -p TUTORIALS > database_dump.txt
+password ******</code></pre></div>
+                </div>
+
+                <p>Para realizar una copia de seguridad de todas las bases de datos disponibles en su host, utilice el siguiente código.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">$ mysqldump -u root -p --all-databases > database_dump.txt
+password ******</code></pre></div>
+                </div>
+
+                <p>La opción --all-database está disponible en la versión MySQL 3.23.12. Este método se puede utilizar para implementar una estrategia de copia de seguridad de la base de datos.</p>
+
+                <h3>Copiar tablas o bases de datos a otro host</h3>
+
+                <p>Si desea copiar tablas o bases de datos de un servidor MySQL a otro, utilice mysqldump con el nombre de la base de datos y el nombre de la tabla.</p>
+                <p>Ejecute el siguiente comando en el host de origen. Esto volcará la base de datos completa en el archivo dump.txt.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">$ mysqldump -u root -p database_name table_name > dump.txt
+password *****</code></pre></div>
+                </div>
+
+                <p>Puede copiar la base de datos completa sin utilizar un nombre de tabla en particular, como se explicó anteriormente.</p>
+
+                <p>Ahora, archivo ftp dump.txt en otro host y use el siguiente comando. Antes de ejecutar este comando, asegúrese de haber creado database_name en el servidor de destino.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">$ mysql -u root -p database_name < dump.txt
+password *****</code></pre></div>
+                </div>
+
+                <p>Otra forma de lograr esto sin usar un archivo intermediario es enviar la salida de mysqldump directamente a través de la red al servidor MySQL remoto. Si puede conectarse a ambos servidores desde el host donde reside la base de datos de origen, use el siguiente comando (asegúrese de tener acceso en ambos servidores).</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">$ mysqldump -u root -p database_name \
+   | mysql -h other-host.com database_name</code></pre></div>
+                </div>
+
+                <p>En mysqldump, la mitad del comando se conecta al servidor local y escribe la salida del volcado en la tubería. La mitad restante del comando se conecta al servidor MySQL remoto en other-host.com. Lee la tubería para la entrada y envía cada declaración al servidor other-host.com.</p>
+
+
             </section>
 
             <section id="item32">
                 <h1>Importar base de datos</h1>
 
+                <p>Hay dos formas sencillas en MySQL de cargar datos en la base de datos MySQL desde un archivo previamente respaldado.</p>
+
+                <h3>Importación de datos con LOAD DATA</h3>
+
+                <p>MySQL proporciona una instrucción LOAD DATA que actúa como un cargador de datos masivo. Aquí hay una declaración de ejemplo que lee un archivo dump.txt de su directorio actual y lo carga en la tabla mytbl en la base de datos actual.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> LOAD DATA LOCAL INFILE 'dump.txt' INTO TABLE mytbl;
+</code></pre></div>
+                </div>
+
+                <ul>
+                    <li>Si la palabra clave LOCAL no está presente, MySQL busca el archivo de datos en el servidor utilizando el nombre de ruta absoluto , que especifica completamente la ubicación del archivo, comenzando desde la raíz del sistema de archivos. MySQL lee el archivo desde la ubicación dada.</li>
+                    <li>De forma predeterminada, LOAD DATA asume que los archivos de datos contienen líneas que terminan con avances de línea (nuevas líneas) y que los valores de datos dentro de una línea están separados por tabulaciones.</li>
+                    <li>Para especificar un formato de archivo explícitamente, use una cláusula FIELDS para describir las características de los campos dentro de una línea y una cláusula LINES para especificar la secuencia final de línea. La siguiente instrucción LOAD DATA especifica que el archivo de datos contiene valores separados por dos puntos y líneas terminadas por retornos de carro y carácter de nueva línea.
+                    
+                        <div class="panel">
+                            <div class="codigo__html">
+                                <div class="decor__bar mysql"></div>
+                                <pre class="line-numbers"><code class="language-sql">mysql> LOAD DATA LOCAL INFILE 'dump.txt' INTO TABLE mytbl
+   -> FIELDS TERMINATED BY ':'
+   -> LINES TERMINATED BY '\r\n';</code></pre></div>
+                        </div>
+                    </li>
+                    <li>El comando LOAD DATA asume que las columnas del archivo de datos tienen el mismo orden que las columnas de la tabla. Si eso no es cierto, puede especificar una lista para indicar en qué columnas de la tabla se deben cargar las columnas del archivo de datos. Suponga que su tabla tiene columnas a, byc, pero las columnas sucesivas en el archivo de datos corresponden a las columnas b, cy a.</li>
+                </ul>
 
 
+                <p>Puede cargar el archivo como se muestra en el siguiente bloque de código.</p>
 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">mysql> LOAD DATA LOCAL INFILE 'dump.txt' 
+   -> INTO TABLE mytbl (b, c, a);</code></pre></div>
+                </div>
 
+                <h3>Importando datos con mysqlimport</h3>
+                <p>MySQL también incluye un programa de utilidad llamado mysqlimport que actúa como un contenedor de LOAD DATA, para que pueda cargar los archivos de entrada directamente desde la línea de comandos.</p>
+                <p>Para cargar datos de dump.txt en mytbl , use el siguiente comando en el indicador de UNIX.</p>
 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">$ mysqlimport -u root -p --local database_name dump.txt
+password *****</code></pre></div>
+                </div>
 
-
-
-
-
-
-
-
-
-
-
-
+                <p>Si usa mysqlimport , las opciones de la línea de comandos proporcionan los especificadores de formato. Los comandos mysqlimport que corresponden a las dos sentencias LOAD DATA anteriores se ven como se muestra en el siguiente bloque de código.</p>
                 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">$ mysqlimport -u root -p --local --fields-terminated-by = ":" \
+   --lines-terminated-by = "\r\n"  database_name dump.txt
+password *****</code></pre></div>
+                </div>
+
+                <p>El orden en el que especifique las opciones no importa para mysqlimport, excepto que todas deben preceder al nombre de la base de datos.</p>
+
+                <p>La declaración mysqlimport usa la opción --columns para especificar el orden de las columnas -</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar mysql"></div>
+                        <pre class="line-numbers"><code class="language-sql">$ mysqlimport -u root -p --local --columns=b,c,a \
+   database_name dump.txt
+password *****</code></pre></div>
+                </div>
+
+                <h3>Manejo de citas y caracteres especiales</h3>
+
+                <p>La cláusula FIELDS puede especificar otras opciones de formato además de TERMINATED BY . Por defecto, LOAD DATA asume que los valores no están entre comillas e interpreta la barra invertida (\) como un carácter de escape para los caracteres especiales. Para indicar el carácter de cotización de valor explícitamente, utilice el comando ENCLOSED BY . MySQL quitará ese carácter de los extremos de los valores de datos durante el procesamiento de entrada. Para cambiar el carácter de escape predeterminado, use ESCAPED BY .</p>
+                <p>Cuando especifica ENCLOSED BY para indicar que los caracteres de comillas deben eliminarse de los valores de datos, es posible incluir el carácter de comillas literalmente dentro de los valores de datos duplicándolo o precediéndolo con el carácter de escape.</p>
+                <p>Por ejemplo, si las comillas y los caracteres de escape son "y \, el valor de entrada " a "" b \ "c" se interpretará como una "b" c .</p>
+                <p>Para mysqlimport , las opciones de línea de comando correspondientes para especificar valores de comillas y de escape son --fields-enclosed-by y --fields-escaped-by.</p>
             </section>
         </div>
     </div>
