@@ -364,61 +364,574 @@ let a = 2</code></pre></div>
             <section id="item7">
                 <h1>Tipos</h1>
                 <p>Las variables en JavaScript no tienen ningún tipo adjunto.</p>
-                
+                <p>No están tipificados.</p>
+                <p>Una vez que asigna un valor con algún tipo a una variable, luego puede reasignar la variable para alojar un valor de cualquier otro tipo sin ningún problema.</p>
+                <p>En JavaScript tenemos 2 tipos principales de tipos: tipos primitivos y tipos de objetos.</p>
 
+                <h3>Tipos primitivos</h3>
+                <p>Los tipos primitivos son</p>
+                <ul>
+                    <li>Números</li>
+                    <li>Strings</li>
+                    <li>Booleanos</li>
+                    <li>Símbolos</li>
+                </ul>
 
+                <p>Y dos tipos especiales: null y undefined.</p>
 
+                <h3>Tipos de objetos</h3>
 
+                <p>Cualquier valor que no sea de un tipo primitivo (una cadena, un número, un booleano, nulo o indefinido) es un objeto.</p>
+                <p>Los tipos de objetos tienen propiedades y también métodos que pueden actuar sobre esas propiedades.</p>
+                <p>Hablaremos más sobre los objetos más adelante.</p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-                
             </section>
 
             <section id="item8">
                 <h1>Expresiones</h1>
-                
+
+                <p>Una expresión es una unidad única de código JavaScript que el motor JavaScript puede evaluar y devolver un valor.</p>
+
+                <p>Las expresiones pueden variar en complejidad.</p>
+
+                <p>Partimos de las muy simples, llamadas expresiones primarias:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">2
+0.02
+'algo'
+true
+false
+this //El alcance actual
+undefined
+i //donde i es una variable o una constante</code></pre></div>
+                </div>
+
+                <p>Las expresiones aritméticas son expresiones que toman una variable y un operador (más sobre operadores pronto), y dan como resultado un número:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">1 / 2
+i++
+i -= 2
+i * 2</code></pre></div>
+
+                <p>Las expresiones de cadena son expresiones que dan como resultado una cadena de texto:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">'Una ' + 'cadena de texto'
+</code></pre></div>
+
+                <p>Las expresiones lógicas hacen uso de operadores lógicos y se resuelven en un valor booleano:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">a && b
+a || b
+!a</code></pre></div>
+
+
+                <p>Las expresiones más avanzadas involucran objetos, funciones y matrices, y las presentaré más adelante.</p>
+
+                        
             </section>
 
             <section id="item9">
                 <h1>Operadores</h1>
+                <p>Los operadores le permiten obtener dos expresiones simples y combinarlas para formar una expresión más compleja.</p>
+                <p>Podemos clasificar operadores en función de los operandos con los que trabajan. Algunos operadores trabajan con 1 operando. La mayoría trabaja con 2 operandos. Un solo operador trabaja con 3 operandos.</p>
+                <p>En esta primera introducción a los operadores, presentaremos los operadores con los que probablemente esté familiarizado: operadores con 2 operandos.</p>
+                <p>Ya introduje uno al hablar de variables: el operador de asignación =. Usas =para asignar un valor a una variable:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">let b = 2
+</code></pre></div>
+
+                <p>Vamos a presentar ahora otro conjunto de operadores binarios con los que ya está familiarizado en matemáticas básicas.</p>
+
+                <h3>El operador de suma (+)</h3>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const three = 1 + 2
+const four = three + 1</code></pre></div>
+
+                <p>El operador + también realiza una concatenación de cadenas si usa cadenas, así que preste atención:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const tres = 1 + 2
+tres + 1 // 4
+'tres' + 1 // tres1</code></pre></div>
+
+                <h3>El operador de resta (-)</h3>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const dos = 4 - 2
+</code></pre></div>
+
+                <h3>El operador de división (/)</h3>
+                <p>Devuelve el cociente del primer operador y el segundo:</p>
                 
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const resultado = 20 / 5 //resultado === 4
+const resultado = 20 / 7 //resultado === 2.857142857142857</code></pre></div>
+
+                <p>Si divide por cero, JavaScript no genera ningún error pero devuelve el valor Infinity (o si el valor -Infinity es negativo).</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">1 / 0 //Infinity
+-1 / 0 //-Infinity</code></pre></div> 
+
+                <h3>El operador restante (%)</h3>
+                <p>El resto es un cálculo muy útil en muchos casos de uso:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const resultado = 20 % 5 //resultado === 0
+const resultado = 20 % 7 //resultado === 6</code></pre></div> 
+
+                <p>Un resto por cero es siempre NaN, un valor especial que significa "No es un número":</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">1 % 0 //NaN
+-1 % 0 //NaN</code></pre></div>            
+
+                <h3>El operador de multiplicación (*)</h3>
+                <p>Multiplica dos números</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">1 * 2 //2
+-1 * 2 //-2</code></pre></div>          
+
+                <h3>El operador de exponenciación (**)</h3>
+                <p>Eleva el primer operando a la potencia del segundo operando</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">1 ** 2 //1
+2 ** 1 //2
+2 ** 2 //4
+2 ** 8 //256
+8 ** 2 //64</code></pre></div>  
+
+
             </section>
 
             <section id="item10">
                 <h1>Reglas de precedencia</h1>
+
+                <p>Cada declaración compleja con múltiples operadores en la misma línea presentará problemas de precedencia.</p>
+                <p>Toma este ejemplo:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">let a = 1 * 2 + 5 / 2 % 2
+</code></pre></div> 
+
+                <p>El resultado es 2,5, pero ¿por qué?</p>
+                <p>¿Qué operaciones se ejecutan primero y cuáles deben esperar?</p>
+
+                <p>Algunas operaciones tienen más precedencia que otras. Las reglas de precedencia se enumeran en esta tabla:</p>
+
+                <table>
+                    <tr>
+                        <th>Operador</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>* / %</td>
+                        <td>multiplicación / división</td>
+                    </tr>
+                    <tr>
+                        <td>+ -</td>
+                        <td>suma resta</td>
+                    </tr>
+                    <tr>
+                        <td>=</td>
+                        <td>asignación</td>
+                    </tr>
+                </table>
+                
+                <p>Las operaciones en el mismo nivel (como +y -) se ejecutan en el orden en que se encuentran, de izquierda a derecha.</p>
+
+                <p>Siguiendo estas reglas, la operación anterior se puede resolver de esta manera:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">let a = 1 * 2 + 5 / 2 % 2
+let a = 2 + 5 / 2 % 2
+let a = 2 + 2.5 % 2
+let a = 2 + 0.5
+let a = 2.5</code></pre></div>
                 
             </section>
 
             <section id="item11">
                 <h1>Operadores de comparación</h1>
+                <p>Después de los operadores matemáticos y de asignación, el tercer conjunto de operadores que quiero presentar son los operadores condicionales.</p>
+                <p>Puede utilizar los siguientes operadores para comparar dos números o dos cadenas.</p>
+                <p>Los operadores de comparación siempre devuelven un booleano, un valor que es trueo false).</p>
+                <p>Estos son operadores de comparación de desigualdad:</p>
+
+                <ul>
+                    <li>< significa "menor que"</li>
+                    <li><= significa "menor o igual que"</li>
+                    <li>> significa "mayor que"</li>
+                    <li>>= significa "mayor o igual que"</li>
+                </ul>
+
+                <h4>Ejemplo:</h4>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">let a = 2
+a >= 1 //true</code></pre></div>       
+
+                <p>Además de esos, tenemos 4 operadores de igualdad . Aceptan dos valores y devuelven un booleano:</p>
+
+                <ul>
+                    <li>=== controles de igualdad</li>
+                    <li>!== verifica la desigualdad</li>
+                </ul>
+
+                <p>Tenga en cuenta que también tenemos ==y !=en JavaScript, pero recomiendo encarecidamente usar ===y !==porque pueden evitar algunos problemas sutiles.</p>
                 
             </section>
 
             <section id="item12">
                 <h1>Condicionales</h1>
-                
+                <p>Con los operadores de comparación en su lugar, podemos hablar de condicionales.</p>
+                <p>Una declaración if se usa para hacer que el programa tome una ruta u otra, dependiendo del resultado de la evaluación de una expresión.</p>
+                <p>Este es el ejemplo más simple, que siempre se ejecuta:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">if (true) {
+  //hacer algo
+}</code></pre></div>       
+
+            <p>por el contrario, esto nunca se ejecuta:</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">if (false) {
+  //hacer algo (? nunca ?)
+}</code></pre></div>  
+
+            <p>El condicional verifica la expresión que le pasa en busca de un valor verdadero o falso. Si pasa un número, siempre se evalúa como verdadero a menos que sea 0. Si pasa una cadena, siempre se evalúa como verdadero a menos que sea una cadena vacía. Esas son reglas generales de conversión de tipos a un booleano.</p>
+            <p>¿Notaste los tirantes rizados? Eso se llama bloque y se usa para agrupar una lista de diferentes declaraciones.</p>
+            <p>Se puede colocar un bloque donde pueda tener una sola declaración. Y si tiene una sola declaración para ejecutar después de los condicionales, puede omitir el bloque y simplemente escribir la declaración:</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">if (true) hacerAlgo()
+</code></pre></div>  
+
+            <p>Pero siempre me gusta usar llaves para ser más claro.</p>
+            
+            <p>Puede proporcionar una segunda parte a la declaración if: else.</p>
+
+            <p>Adjunta una declaración que se ejecutará si la condición if es falsa:</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">if (true) {
+  //hacer algo
+} else {
+  //hacer algo más
+}</code></pre></div>  
+
+            <p>Dado que elseacepta una declaración, puede anidar otra declaración if / else dentro de ella:</p>
+
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">if (a === true) {
+  //hacer algo
+} else if (b === true) {
+  //hacer algo más
+} else {
+  //fallback
+}</code></pre></div> 
+
             </section>
 
             <section id="item13">
                 <h1>Arreglos</h1>
+
+                <p>Un arreglo es una colección de elementos.</p>
+
+                <p>Los arreglos en JavaScript no son un tipo en sí mismas.</p>
+
+                <p>Los arreglos son objetos.</p>
+
+                <p>Podemos inicializar un arreglo vacío de estas 2 formas diferentes:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const a = []
+const a = Array()</code></pre></div>
+
+                <p>El primero es usar la sintaxis literal de arreglo . El segundo usa la función incorporada Array.</p>            
+                <p>Puede rellenar previamente la matriz con esta sintaxis:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const a = [1, 2, 3]
+const a = Array.of(1, 2, 3)</code></pre></div>             
+
+                <p>Una matriz puede contener cualquier valor, incluso valores de diferentes tipos:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const a = [1, 'Hernando', ['a', 'b']]</code></pre></div>             
+
+                <p>Dado que podemos agregar una matriz a una matriz, podemos crear matrices multidimensionales, que tienen aplicaciones muy útiles (por ejemplo, una matriz):</p>       
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const arreglo = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+]
+
+arreglo[0][0] //1
+arreglo[2][0] //7</code></pre></div>        
+
+            <p>Puede acceder a cualquier elemento del arreglo haciendo referencia a su índice, que comienza desde cero:</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">a[0] //1
+a[1] //2
+a[2] //3</code></pre></div>                 
+
+             <p>Puede inicializar una nueva matriz con un conjunto de valores utilizando esta sintaxis, que primero inicializa una matriz de 12 elementos y llena cada elemento con el número 0:</p>           
+
+             <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">Array(12).fill(0)</code></pre></div>  
+
+            <p>Puede obtener la cantidad de elementos en la matriz verificando su propiedad length:</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">const a = [1, 2, 3]
+a.length //3</code></pre></div>          
+
+            <p>Tenga en cuenta que puede establecer la longitud de la matriz. Si asigna un número mayor que la capacidad actual de las matrices, no sucede nada. Si asigna un número menor, la matriz se corta en esa posición:</p>             
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">const a = [1, 2, 3]
+a //[ 1, 2, 3 ]
+a.length = 2
+a //[ 1, 2 ]</code></pre></div>            
+
+            <h3>Cómo agregar un elemento a un arreglo</h3>
+
+            <p>Podemos agregar un elemento al final de un arreglo usando el método push():</p>
                 
-            </section>
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">a.push(4)</code></pre></div>             
+
+            
+                    
+            <p>Podemos agregar un elemento al comienzo de un arreglo usando el método unshift():</p>        
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">a.unshift(0)
+a.unshift(-2, -1)</code></pre></div>             
+
+            <h3>Como eliminar un elemento de un arreglo</h3>
+            <p>Podemos eliminar un elemento del final de un arreglo usando el método pop():</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">a.pop()</code></pre></div>  
+
+            <p>Podemos eliminar un elemento del principio de una matriz usando el método shift():</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">a.shift()</code></pre></div>          
+
+            <h3>Cómo unir dos o más arreglos</h3>        
+            <p>Puede unir varios arreglos mediante concat():</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">const a = [1, 2]
+const b = [3, 4]
+const c = a.concat(b) //[1,2,3,4]
+a //[1,2]
+b //[3,4]</code></pre></div>                  
+
+            <p>También puede usar el operador de propagación ( ...) de esta manera:</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">const a = [1, 2]
+const b = [3, 4]
+const c = [...a, ...b]
+c //[1,2,3,4]</code></pre></div> 
+
+            <h3>Cómo encontrar un elemento específico en el arreglo</h3>            
+            <p>Puede utilizar el método find() de un arreglo:</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">a.find((elemento, indice, arreglo) => {
+  //regresa true o false
+})</code></pre></div> 
+
+            <p>Devuelve el primer elemento que devuelve verdadero y lo devuelve undefinedsi no se encuentra el elemento.</p>
+            <p>Una sintaxis de uso común es:</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">a.find(x => x.id === my_id)</code></pre></div> 
+            
+            <p>La línea anterior devolverá el primer elemento de la matriz que tiene id === my_id.</p>
+            
+            <p>findIndex()funciona de manera similar find(), pero devuelve el índice del primer elemento que devuelve verdadero, y si no se encuentra, devuelve undefined:</p>
+            
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">a.findIndex((elemento, indice, arreglo) => {
+  //Regresa true o false
+})</code></pre></div> 
+            
+            <p>Otro método es includes():</p>
+            
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">a.includes(value)
+</code></pre></div> 
+            
+            <p>Devuelve verdadero si a contiene valor.</p>
+            
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">a.includes(value, i)
+</code></pre></div> 
+
+            <p>Devuelve verdadero si acontiene value después de la posición i.</p>
+            
+                </section>
 
             <section id="item14">
                 <h1>Cadena de texto</h1>
-                
+                <p>Una cadena de texto es una secuencia de caracteres.</p>
+                <p>También se puede definir como un literal de cadena, que se encierra entre comillas o comillas dobles:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">'Una cadena de texto'
+"Otra cadena de texto"</code></pre></div>     
+
+                <p>Personalmente, prefiero las comillas simples todo el tiempo y uso comillas dobles solo en HTML para definir atributos.</p>
+                <p>Asignas un valor de cadena a una variable como esta:</p>
+                        
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const nombre = 'Hernando'
+</code></pre></div>  
+
+                <p>Puede determinar la longitud de una cadena usando la lengthpropiedad de la misma:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">'Hernando'.length //8
+const nombre = 'Hernando'
+nombre.length //8</code></pre></div> 
+
+                <p>Esta es una cadena vacía: ''. Su propiedad de longitud es 0:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">''.length //0
+</code></pre></div>             
+
+                <p>Se pueden unir dos cadenas mediante el operador +:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">"Una " + "cadena de texto"
+</code></pre></div>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </section>
 
             <section id="item15">
