@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hernando Abella | Home</title>
     <link rel="stylesheet" href="./css/styles.css">
-    <link rel="shortcut icon" href="./images/favicon-32x32.png">
+    <link rel="shortcut icon" href="./images/favicon.ico">
     <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://use.fontawesome.com/releases/v5.1.0/css/all.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
     <body>
 
