@@ -918,75 +918,1287 @@ nombre.length //8</code></pre></div>
                         <pre class="line-numbers"><code class="language-javascript">"Una " + "cadena de texto"
 </code></pre></div>  
 
+                <p>Puede utilizar el operador + para interpolar variables:</p>
 
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const nombre = 'Hernando'
+"Mi nombre es " + nombre //Mi nombre es Hernando</code></pre></div>  
 
+                <p>Otra forma de definir cadenas es usar literales de plantilla, definidos dentro de comillas invertidas. Son especialmente útiles para simplificar mucho las cadenas de varias líneas. Con comillas simples o dobles, no puede definir una cadena de varias líneas fácilmente; necesitaría usar caracteres de escape.</p>
 
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const cadenaDeTexto = `¡Hey,
+esta
 
+cadena de texto
+es asombrosa!`</code></pre></div>            
 
+            <p>Los literales de plantilla también son excelentes porque proporcionan una manera fácil de interpolar variables y expresiones en cadenas.</p>
+            
+            <p>Lo hace utilizando la sintaxis ${...} :</p>
 
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">const var = 'prueba'
+const cadenaDeTexto = `algo ${var}` 
+//Alguna prueba</code></pre></div>   
 
+            <p>dentro de ${} puedes agregar cualquier cosa, incluso expresiones:</p>
 
-
-
-
-
-
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">const cadenaDeTexto = `algo ${1 + 2 + 3}`
+const cadenaDeTexto2 = `algo 
+  ${foo() ? 'x' : 'y'}`</code></pre></div> 
 
             </section>
 
             <section id="item15">
                 <h1>Bucles</h1>
+
+                <p>Los bucles son una de las principales estructuras de control de JavaScript.</p>
+                <p>Con un bucle podemos automatizar y repetir un bloque de código cuantas veces queramos que se ejecute, incluso de forma indefinida.</p>
+                <p>JavaScript proporciona muchas formas de iterar a través de bucles.</p>
+                <p>Quiero enfocarme en 3 formas:</p>
+
+                <ul>
+                    <li>Bucle while</li>
+                    <li>Bucle for</li>
+                    <li>Bucle for...of</li>
+                </ul>
+
+                <h3>while</h3>
+                <p>El bucle while es la estructura de bucle más simple que nos proporciona JavaScript.</p>
+                <p>Agregamos una condición después de la whilepalabra clave y proporcionamos un bloque que se ejecuta hasta que la condición se evalúa como true.</p>
+
+                <h4>Ejemplo:</h4>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const lista = ['a', 'b', 'c']
+let i = 0
+while (i < lista.length) {
+  console.log(list[i]) //valor
+  console.log(i) //indice
+  i = i + 1
+}</code></pre></div> 
+
+                <p>Puede interrumpir un whilebucle usando la breakpalabra clave, así:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">while(true) {
+  if (algoEsVerdadero) break
+}</code></pre></div> 
+
+                <p>y si decide que en medio de un ciclo desea omitir la iteración actual, puede saltar a la siguiente iteración usando continue:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">while (true) {
+  if (algoEsVerdadero) continue
+
+  //hacer algo más...
+}</code></pre></div> 
+
+            <p>Muy similar a while, tenemos do..whilebucles. Es básicamente lo mismo que while, excepto que la condición se evalúa después de que se ejecuta el bloque de código.</p>
+
+            <h4>Ejemplo:</h4>
+
+            <p>Esto significa que el bloque siempre se ejecuta al menos una vez.</p>
+
+            <h4>Ejemplo:</h4>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">const lista = ['a', 'b', 'c']
+let i = 0
+do {
+  console.log(lista[i]) //valor
+  console.log(i) //indice
+  i = i + 1
+} while (i < lista.length)</code></pre></div> 
+
+            <h3>for</h3>
+
+            <p>La segunda estructura de bucle muy importante en JavaScript es el bucle for.</p>
+
+            <p>Usamos la palabra clave for y pasamos un conjunto de 3 instrucciones: la inicialización, la condición y la parte de incremento.</p>
+
+
+            <h4>Ejemplo:</h4>
                 
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">const lista = ['a', 'b', 'c']
+
+for (let i = 0; i < lista.length; i++) {
+  console.log(lista[i]) //valor
+  console.log(i) //indice
+}</code></pre></div> 
+
+            <p>Al igual que con los bucles while, puede interrumpir un bucle for usando breaky puede avanzar rápidamente a la siguiente iteración de un bucle for usando continue.</p>        
+
+
+            <h3>for...of</h3>
+
+            <p>Este ciclo es relativamente reciente (introducido en 2015) y es una versión simplificada del ciclo for:</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">const lista = ['a', 'b', 'c']
+
+for (const valor of lista) {
+  console.log(valor) //valor
+}}</code></pre></div> 
+
             </section>
 
             <section id="item16">
                 <h1>Funciones</h1>
-                
+                <p>En cualquier programa JavaScript moderadamente complejo, todo sucede dentro de las funciones.</p>
+                <p>Las funciones son una parte esencial de JavaScript.</p>
+                <p>¿Qué es una función?</p>
+                <p>Una función es un bloque de código autónomo.</p>
+                <p>Aquí hay una declaración de función:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">function getData() {
+  // dHacer algo
+}</code></pre></div>     
+
+            <p>Una función se puede ejecutar en cualquier momento que desee invocándola, así:</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">obtenerDatos()
+</code></pre></div> 
+
+            <p>Una función puede tener uno o más argumentos:</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">function obtenerDatos() {
+  //Hacer algo
+}
+
+function obtenerDatos(color) {
+  //Hacer algo
+}
+
+function obtenerDatos(color, edad) {
+  //Hacer algo
+}
+</code></pre></div> 
+
+            <p>Cuando podemos pasar un argumento, invocamos la función pasando parámetros:</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">function obtenerDatos(color, edad) {
+  //Hacer algo
+}
+
+obtenerDatos('verde', 24)
+obtenerDatos('black')</code></pre></div> 
+
+            <p>Podemos verificar si un valor no está indefinido usando este condicional:</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">function obtenerDatos(color, edad) {
+  //Hacer algo
+  if (typeof edad !== 'undefined') {
+    //...
+  }
+}</code></pre></div> 
+
+            <p>typeof es un operador unario que nos permite comprobar el tipo de variable.</p>
+            <p>También puede verificar de esta manera:</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">function obtenerDatos(color, edad) {
+  //Hacer algo
+  if (edad) {
+    //...
+  }
+}</code></pre></div> 
+
+            <p>Aunque el condicional también será verdadero si edad es null, o 0 una cadena vacía.</p>
+
+            <p>Puede tener valores predeterminados para los parámetros, en caso de que no se pasen:</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">function obtenerDatos(color = 'negro', edad = 25) {
+  //Hacer algo
+}</code></pre></div>
+
+            <p>Puede pasar cualquier valor como parámetro: números, cadenas, valores booleanos, matrices, objetos y también funciones.</p>
+
+            <p>Una función tiene un valor de retorno. De forma predeterminada, una función regresa undefined, a menos que agregue una returnpalabra clave con un valor:</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">function obtenerDatos() {
+  // Hacer algo
+  return '¡Hola!'
+}</code></pre></div>
+
+            <p>Podemos asignar este valor de retorno a una variable cuando invocamos la función:</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">function obtenerDatos() {
+  // Hacer algo
+  return '¡Hola!'
+}
+
+let resultado = obtenerDatos()</code></pre></div>    
+
+            <p>resultado ahora contiene una cadena de texto con el valor ¡Hola!.</p>
+
+            <p>Solo puede devolver un valor.</p>
+
+            <p>Para devolver varios valores, puedes devolver un objeto o un arreglo, como este:</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">function obtenerDatos() {
+  return ['Hernando', 25]
+}
+
+let [nombre, edad] = getData()</code></pre></div> 
+
+            <p>Las funciones se pueden definir dentro de otras funciones:</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">const obtenerDatos = () => {
+  const hacerAlgo = () => {}
+  hacerAlgo()
+  return 'Prueba'
+}</code></pre></div> 
+
+            <p>La función anidada no se puede llamar desde el exterior de la función adjunta.</p>
+            <p>También puede devolver una función desde una función.</p>
+
             </section>
 
             <section id="item17">
                 <h1>Funciones de flecha</h1>
+
+                <p>Las funciones de flecha son una introducción reciente a JavaScript.</p>
+
+                <p>Se utilizan con mucha frecuencia en lugar de funciones "regulares", las que describí en el capítulo anterior. Encontrará ambas formas utilizadas en todas partes.</p>
+
+                <p>Visualmente, te permiten escribir funciones con una sintaxis más corta, desde:</p>
+
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">function obtenerDatos() {
+  //...
+}</code></pre></div> 
+
+                <p>Para</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">() => {
+  //...
+}</code></pre></div> 
+
+                <p>Pero ... observe que no tenemos un nombre aquí.</p>
+                <p>Las funciones de flecha son anónimas. Debemos asignarlos a una variable.</p>
+                <p>Podemos asignar una función regular a una variable, así:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">let obtenerDatos = function obtenerDatos() {
+  //...
+}</code></pre></div> 
+
+                <p>Cuando lo hacemos, podemos eliminar el nombre de la función:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">let obtenerDatos = function() {
+  //...
+}</code></pre></div> 
+
+
+                <p>e invocar la función usando el nombre de la variable:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">let obtenerDatos = function() {
+  //...
+}
+obtenerDatos()</code></pre></div> 
+
+                <p>Eso es lo mismo que hacemos con las funciones de flecha:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">let obtenerDatos = function() {
+  //...
+}
+obtenerDatos()</code></pre></div>
+
+                <p>Si el cuerpo de la función contiene solo una declaración, puede omitir los paréntesis y escribir todo en una sola línea:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const obtenerDatos = () => console.log('¡Hello!')
+</code></pre></div>
+
+                <p>Los parámetros se pasan entre paréntesis:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const obtenerDatos = (parametro1, parametro2) => 
+  console.log(parametro1, parametro2)</code></pre></div>
+
+                <p>Si tiene un parámetro (y solo uno), puede omitir los paréntesis por completo:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const obtenerDatos = parametro => console.log(parametro)
+</code></pre></div>             
+
+                <p>Las funciones de flecha le permiten tener un retorno implícito: los valores se devuelven sin tener que usar la palabra clave return.</p>
+
+                <p>Funciona cuando hay una declaración de una línea en el cuerpo de la función:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const obtenerDatos = () => 'prueba'
+
+obtenerDatos() //'prueba'</code></pre></div>
                 
+                <p>Al igual que con las funciones regulares, podemos tener valores predeterminados para los parámetros en caso de que no se pasen:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const obtenerDatos (color = 'negro', 
+                 edad = 2) => {
+  //Hacer algo
+}</code></pre></div>
+
+                <p>Y al igual que las funciones regulares, solo podemos devolver un valor.</p>
+
+                <p>Las funciones de flecha también pueden contener otras funciones de flecha, o incluso funciones regulares.</p>
+
+                <p>Los dos tipos de funciones son muy similares, por lo que podría preguntarse por qué se introdujeron las funciones de flecha. La gran diferencia con las funciones regulares es cuando se utilizan como métodos de objeto. Esto es algo que veremos pronto.</p>
+
+
             </section>
 
             <section id="item18">
                 <h1>Objetos</h1>
+                <p>Cualquier valor que no sea de un tipo primitivo (una cadena de texto, un número, un booleano, un símbolo, nulo o indefinido) es un objeto.</p>
+                <p>Así es como definimos un objeto:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const carro = {
+
+}</code></pre></div>
+
+                <p>Esta es la sintaxis literal del objeto, que es una de las cosas más bonitas de JavaScript.</p>
+                <p>También puede utilizar la sintaxis new Object:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const carro = new Object()
+</code></pre></div>
+
+                <p>Otra sintaxis es usar Object.create():</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const carro = Object.create()
+</code></pre></div>
+
+                <p>También puede inicializar un objeto usando la newpalabra clave antes de una función con una letra mayúscula. Esta función sirve como constructor para ese objeto. Allí, podemos inicializar los argumentos que recibimos como parámetros, para configurar el estado inicial del objeto:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">function Carro(marca, modelo) {
+  this.marca = marca
+  this.modelo = modelo
+}</code></pre></div>
+
+                <p>Inicializamos un nuevo objeto usando:</p>
                 
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const miCarro = new Carro('Ford', 'Fiesta')
+miCarro.marca //'Ford'
+miCarro.modelo //'Fiesta'</code></pre></div>
+
+
+                <p>Los objetos siempre se pasan por referencia.</p>
+
+                <p>Si asigna a una variable el mismo valor que otra, si es un tipo primitivo como un número o una cadena, se pasan por valor:</p>
+
+                <p>Toma este ejemplo:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">let edad = 36
+let miEdad = edad
+miEdad = 37
+edad //36</code></pre></div>     
+
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const carro = {
+  color: 'azul'
+}
+const otroCarro = carro
+otroCarro.color = 'Amarillo'
+carro.color //'Amarillo'</code></pre></div> 
+
+            <p>Incluso los arreglos o funciones son, bajo el capó, objetos, por lo que es muy importante comprender cómo funcionan.</p>
+
+
+
             </section>
 
             <section id="item19">
-                <h1>Métodos de objeto</h1>
+                <h1>Propiedades del objeto</h1>
                 
+                <p>Los objetos tienen propiedades , que están compuestas por una etiqueta asociada con un valor.</p>
+                <p>El valor de una propiedad puede ser de cualquier tipo, lo que significa que puede ser una matriz, una función e incluso un objeto, ya que los objetos pueden anidar otros objetos.</p>
+                <p>Esta es la sintaxis literal de objeto que vimos en el capítulo anterior:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const carro = {
+
+}</code></pre></div>
+
+                <p>Podemos definir una propiedad color de esta manera:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const carro = {
+  color: 'azul'
+}</code></pre></div>
+
+            <p>Aquí tenemos un objeto carro con una propiedad nombrada color, con valor azul.</p>
+
+            <p>Las etiquetas pueden ser cualquier cadena, pero tenga cuidado con los caracteres especiales: si quisiera incluir un carácter no válido como nombre de variable en el nombre de la propiedad, habría tenido que usar comillas a su alrededor:</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">const carro = {
+  color: 'azul',
+  'El color': 'azul'
+}</code></pre></div>    
+
+            <p>Los caracteres de nombre de variable no válidos incluyen espacios, guiones y otros caracteres especiales.</p>
+            <p>Como puede ver, cuando tenemos varias propiedades, separamos cada propiedad con una coma.</p>
+            <p>Podemos recuperar el valor de una propiedad usando 2 sintaxis diferentes.</p>
+            <p>La primera es la notación de puntos:</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">carro.color //'blue'
+</code></pre></div> 
+
+            <p>El segundo (que es el único que podemos usar para propiedades con nombres inválidos), es usar corchetes:</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">carro['El color'] //'azul'
+</code></pre></div> 
+
+            <p>Si accede a una propiedad inexistente, obtendrá el valor undefined:</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">carro.marca //undefined
+</code></pre></div> 
+
+            <p>Como se mencionó anteriormente, los objetos pueden tener objetos anidados como propiedades:</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">const carro = {
+  marca: {
+    nombre: 'Ford'
+  },
+  color: 'azul'
+}</code></pre></div> 
+
+            <p>En este ejemplo, puede acceder al nombre de la marca utilizando</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">carro.marca.nombre
+</code></pre></div>
+
+            <p>o</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">carro['marca']['nombre']
+</code></pre></div>
+
+            <p>Puede establecer el valor de una propiedad cuando define el objeto.</p>
+
+            <p>Pero siempre puedes actualizarlo más adelante:</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">const carro = {
+  color: 'azul'
+}
+
+carro.color = 'Amarillo'
+carro['color'] = 'Rojo'</code></pre></div>
+
+            <p>Y también puede agregar nuevas propiedades a un objeto:</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">carro.modelo = 'Fiesta'
+
+carro.modelo //'Fiesta'</code></pre></div>
+
+            <p>Dado el objeto</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">const carro = {
+  color: 'azul',
+  brand: 'Ford'
+}</code></pre></div>            
+
+            <p>puede eliminar una propiedad de este objeto usando</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">delete carro.marca
+</code></pre></div>  
+
             </section>
 
             <section id="item20">
-                <h1>Clases</h1>
-                
+                <h1>Métodos de objeto</h1>
+                <p>Hablé de funciones en un capítulo anterior.</p>
+                <p>Las funciones se pueden asignar a una propiedad de función y, en este caso, se denominan métodos.</p>    
+                <p>En este ejemplo, la propiedad start tiene una función asignada y podemos invocarla usando la sintaxis de puntos que usamos para las propiedades, con el paréntesis al final:</p>
+
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const carro = {
+  marca: 'Ford',
+  modelo: 'Fiesta',
+  encender: function() {
+    console.log('¡Encendido!')
+  }
+}
+
+carro.encender()</code></pre></div>    
+
+              <p>Dentro de un método definido usando una sintaxis function(){} tenemos acceso a la instancia del objeto haciendo referencia this.</p>  
+
+              <p>En el siguiente ejemplo, tenemos acceso a el valor marca utilizando las propiedades this.brand y this.model:</p>
+
+              <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">const carro = {
+  marca: 'Ford',
+  modelo: 'Fiesta',
+  encender: function() {
+    console.log(`Started 
+      ${this.marca} ${this.modelo}`)
+  }
+}
+
+carro.encender()</code></pre></div> 
+
+            <p>Es importante tener en cuenta esta distinción entre funciones regulares y funciones de flecha; no tenemos acceso thissi usamos una función de flecha:</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">const carro = {
+  marca: 'Ford',
+  modelo: 'Fiesta',
+  encender: () => {
+    console.log(`Encendido 
+      ${this.marca} ${this.modelo}`) //No va a funcionar
+  }
+}
+
+carro.encender()</code></pre></div> 
+
+            <p>Esto se debe a que las funciones de flecha no están vinculadas al objeto.</p>
+
+            <p>Esta es la razón por la que las funciones regulares se utilizan a menudo como métodos de objeto.</p>
+
+            <p>Los métodos pueden aceptar parámetros, como funciones regulares:</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">const carro = {
+  marca: 'Ford',
+  modelo: 'Fiesta',
+  irA: function(destino) {
+    console.log(`Yendo a ${destino}`)
+  }
+}
+
+carro.irA('Roma')</code></pre></div> 
+
             </section>
 
             <section id="item21">
-                <h1>Herencia</h1>
+                <h1>Clases</h1>
+
+                <p>Hablamos de objetos, que son una de las partes más interesantes de JavaScript.</p>
+
+                <p>En este capítulo subiremos un nivel introduciendo clases.</p>
+    
+                <p>¿Qué son las clases? Son una forma de definir un patrón común para varios objetos.</p>
                 
+                <p>Tomemos un objeto persona:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const persona = {
+  nombre: 'Hernando'
+}</code></pre></div> 
+
+                <p>Podemos crear una clase llamada Persona(tenga en cuenta la capital P, una convención cuando se usan clases), que tiene una propiedad nombre:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">class Persona {
+  nombre
+}
+</code></pre></div> 
+
+                <p>Ahora desde esta clase, inicializamos un objeto Hernando como este:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const hernando = new Person()
+</code></pre></div> 
+
+                <p>Hernando llama una instancia de la clase Persona.</p>
+
+                <p>Podemos establecer el valor de la propiedad nombre:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">hernando.nombre = 'Hernando'
+</code></pre></div> 
+
+                <p>Y podemos acceder a él usando</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">hernando.nombre</code></pre></div>
+
+                <p>Como hacemos con las propiedades de los objetos.</p>
+
+                <p>Las clases pueden contener propiedades, me gusta namey métodos.</p>
+
+                <p>Los métodos se definen de esta manera:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">class Persona {
+  hola() {
+    return 'Hola, yo soy Hernando'
+  }
+}</code></pre></div>
+
+                <p>Y podemos invocar métodos en una instancia de la clase:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">class Persona {
+  hola() {
+    return 'Hola, yo soy Hernando'
+  }
+}
+const flavio = new Person()
+flavio.hello()</code></pre></div>    
+
+                <p>Hay un método especial llamado constructor() que podemos usar para inicializar las propiedades de la clase cuando creamos una nueva instancia de objeto.</p>
+
+                <p>Funciona así:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">class Persona {
+  constructor(nombre) {
+    this.nombre = nombre
+  }
+
+  hello() {
+    return 'Hola, soy ' + this.nombre + '.'
+  }
+}</code></pre></div> 
+
+                <p>Tenga en cuenta cómo usamos this para acceder a la instancia del objeto.</p>
+
+                <p>Ahora podemos crear una instancia de un nuevo objeto de la clase, pasar una cadena y, cuando llamemos hola, obtendremos un mensaje personalizado</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const hernando = new Persona('Hernando')
+hernando.hola() //'Hola, soy Hernando.'</code></pre></div>     
+
+                <p>Cuando se inicializa el objeto, constructorse llama al método con los parámetros pasados.</p>
+                <p>Normalmente, los métodos se definen en la instancia del objeto, no en la clase.</p>           
+                <p>Puede definir un método staticpara permitir que se ejecute en la clase en su lugar:</p>
+                    
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">class Persona {
+  static saludoGenerico() {
+    return 'Hola'
+  }
+}
+
+Persona.saludoGenerico() //Hola</code></pre></div>             
+
+            <p>Esto es muy útil, a veces.</p>
+
             </section>
 
             <section id="item22">
-                <h1>Programación asíncrona</h1>
-                
+                <h1>Herencia</h1>
+
+                <p>Una clase puede extender otra clase y los objetos inicializados usando esa clase heredan todos los métodos de ambas clases.</p>
+                <p>Supongamos que tenemos una clase Persona:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">class Persona {
+  hola() {
+    return 'Hola, soy una persona'
+  }
+}</code></pre></div> 
+
+                <p>Podemos definir una nueva clase Programador, que se extiende Persona:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">class Programador extends Persona {
+
+}</code></pre></div> 
+
+            <p>Ahora, si instanciamos un nuevo objeto con la clase Programador, tiene acceso al método hello():</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">const hernando = new Programador()
+hernando.hello() //'Hola, soy una persona'</code></pre></div>
+
+            <p>Dentro de una clase secundaria, puede hacer referencia a la clase principal llamando a super():</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">class Programador extends Persona {
+  hola() {
+    return super.hola() + 
+      '. Yo también soy un programador.'
+  }
+}
+
+const hernando = new Programador()
+hernando.hola()</code></pre></div>        
+
+            <p>El programa anterior imprime Hola, soy una persona. También soy programador.</p>
             </section>
 
             <section id="item23">
-                <h1>Promesas</h1>
+                <h1>Programación asíncrona</h1>
+                <p>La mayoría de las veces, el código JavaScript se ejecuta de forma sincrónica.</p>
+                <p>Esto significa que se ejecuta una línea de código, luego se ejecuta la siguiente, y así sucesivamente.</p>
+                <p>Todo es como esperas y como funciona en la mayoría de los lenguajes de programación.</p>
+                <p>Sin embargo, hay ocasiones en las que no puede simplemente esperar a que se ejecute una línea de código.</p>
+                <p>No puede esperar 2 segundos a que se cargue un archivo grande y detener el programa por completo.</p>
+                <p>No puede simplemente esperar a que se descargue un recurso de red antes de hacer otra cosa.</p>
+                <p>JavaScript resuelve este problema utilizando devoluciones de llamada.</p>
+                <p>Uno de los ejemplos más simples de cómo usar devoluciones de llamada es con temporizadores. Los temporizadores no forman parte de JavaScript, pero los proporciona el navegador y Node.js. Permítanme hablar de uno de los temporizadores que tenemos: setTimeout().</p>
+                <p>La setTimeout()función acepta 2 argumentos: una función y un número. El número son los milisegundos que deben pasar antes de que se ejecute la función.</p>
+
+                <h4>Ejemplo:</h4>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">setTimeout(() => {
+  // Arranca después de 2 segundos
+  console.log('Dentro de la función')
+}, 2000)</code></pre></div>
+
+                <p>La función que contiene la console.log('Dentro de la función')línea se ejecutará después de 2 segundos.</p>
+
+                <p>Si agrega un console.log('before') antes de la función y console.log('Después') después de ella:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">console.log('Antes')
+setTimeout(() => {
+  // Arranca después de 2 segundos
+  console.log('Dentro de la función')
+}, 2000)
+console.log('Después')</code></pre></div>
+
+                <p>Verá que esto sucede en su consola:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">Antes
+Después
+Dentro de la función</code></pre></div>
+                
+                <p>La función de devolución de llamada se ejecuta de forma asincrónica.</p>
+                <p>Este es un patrón muy común cuando se trabaja con el sistema de archivos, la red, los eventos o el DOM en el navegador.</p>
+                <p>Todas las cosas que mencioné no son JavaScript "centrales", por lo que no se explican en este manual, pero encontrará muchos ejemplos en mis otros manuales disponibles en https://hernandoabella.com .</p>
+                <p>Así es como podemos implementar devoluciones de llamada en nuestro código.</p>
+                <p>Definimos una función que acepta un parámetro callback, que es una función.</p>
+                <p>Cuando el código está listo para invocar la devolución de llamada, lo invocamos pasando el resultado:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const hacerAlgo = callback => {
+  //hacer cosas
+  //hacer cosas
+  const resultado = /* .. */
+  callback(resultado)
+}</code></pre></div>            
+
+                <p>El código que usa esta función lo usaría así:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">hacerAlgo(resultado => {
+  console.log(resultado)
+})</code></pre></div>  
                 
             </section>
 
             <section id="item24">
-                <h1>Async y await</h1>
+                <h1>Promesas</h1>
+                <p>Las promesas son una forma alternativa de lidiar con el código asincrónico.</p>
+                <p>Como vimos en el capítulo anterior, con las devoluciones de llamada estaríamos pasando una función a otra llamada de función que se llamaría cuando la función haya terminado de procesarse.</p>
+                <p>Me gusta esto:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">hacerAlgo(resultado => {
+  console.log(resultado)
+})</code></pre></div>
+
+                <p>Cuando el código hacerAlgo() termina, llama a la función recibida como parámetro:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const hacerAlgo = callback => {
+  //hacer cosas
+  //hacer cosas
+  const resultado = /* .. */
+  callback(resultado)
+}</code></pre></div>
+
+                <p>El principal problema con este enfoque es que si necesitamos usar el resultado de esta función en el resto de nuestro código, todo nuestro código debe estar anidado dentro de la devolución de llamada, y si tenemos que hacer 2-3 devoluciones de llamada ingresamos en lo que es normalmente se define como "infierno de devolución de llamada" con muchos niveles de funciones con sangría en otras funciones:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">hacerAlgo(resultado => {
+  doSomethingElse(otroResultado => {
+    doSomethingElseAgain(aunOtroResultado => {
+      console.log(resultado)
+    })
+  }) 
+})</code></pre></div>
+
+                <p>Las promesas son una forma de lidiar con esto.</p>
+
+                <p>En lugar de hacer:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">hacerAlgo(resultado => {
+  console.log(resultado)
+})</code></pre></div>
+
+                <p>Llamamos a una función basada en promesas de esta manera:</p>
                 
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">hacerAlgo()
+  .then(resultado => {
+    console.log(resultado)
+  })</code></pre></div>
+
+                <p>Primero llamamos a la función, luego tenemos un método then() que se llama cuando finaliza la función.</p>
+
+                <p>La sangría no importa, pero a menudo utilizará este estilo para mayor claridad.</p>
+
+                <p>Es común detectar errores usando un método catch():</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">hacerAlgo()
+  .then(resultado => {
+    console.log(resultado)
+  })
+  .catch(error => {
+    console.log(error)
+  })</code></pre></div>
+
+
+                <p>Ahora, para poder usar esta sintaxis, la implementación doSomething() de la función debe ser un poco especial. Debe utilizar la API de Promises.</p>
+                <p>En lugar de declararlo como una función normal:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const hacerAlgo = () => {
+  
+}</code></pre></div>
+
+                <p>Lo declaramos como objeto de promesa:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const hacerAlgo = new Promise()
+</code></pre></div>
+
+                <p>Y pasamos una función en el constructor Promise:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const hacerAlgo = new Promise(() => {
+
+})</code></pre></div>
+
+                <p>Esta función recibe 2 parámetros. La primera es una función que llamamos para resolver la promesa, la segunda es una función que llamamos para rechazar la promesa.</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const hacerAlgo = new Promise(
+  (resolver, rechazar) => {
+    
+})</code></pre></div>
+
+                <p>Resolver una promesa significa completarla con éxito (lo que da como resultado que se llame al método then() en lo que sea que lo use).</p>
+
+                <p>Rechazar una promesa significa terminarla con un error (lo que resulta en llamar al catch()método en lo que sea que lo use).</p>
+
+                <p>Así es cómo:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const hacerAlgo = new Promise(
+  (resolver, rechazar) => {
+    //Algo de código
+    const exito = /* ... */
+    if (exito) {
+      resolver('ok')
+    } else {
+      rechazar('Este error ha ocurrido')
+    }
+  }
+)</code></pre></div>
+
+
+                <p>Podemos pasar un parámetro a las funciones de resolver y rechazar, del tipo que queramos.</p>
+
             </section>
 
             <section id="item25">
+                <h1>Async y await</h1>
+
+                <p>Las funciones asíncronas son una abstracción de promesas de nivel superior.</p>
+                <p>Una función asincrónica devuelve una promesa, como en este ejemplo:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const obtenerDatos = () => {
+  return new Promise((resolver, rechazar) => {
+    setTimeout(() => 
+      resolver('Algunos datos'), 2000)
+  })
+}</code></pre></div>
+
+
+            <p>Cualquier código que quiera usar esta función usará la awaitpalabra clave justo antes de la función:</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">const dato = await obtenerDatos()
+</code></pre></div>
+
+            <p>Y al hacerlo, todos los datos devueltos por la promesa se asignarán a la datavariable.</p>
+
+            <p>En nuestro caso, los datos son la cadena de texto "algunos datos".</p>
+
+            <p>Con una advertencia en particular: siempre que usemos la awaitpalabra clave, debemos hacerlo dentro de una función definida como async.</p>
+
+            <p>Me gusta esto:</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">const hacerAlgo = async () => {
+  const dato = await obtenerDatos()
+  console.log(dato)
+}</code></pre></div>
+
+            <p>El dúo async / await nos permite tener un código más limpio y un modelo mental simple para trabajar con código asincrónico.</p>
+
+            <p>Como puede ver en el ejemplo anterior, nuestro código parece muy simple. Compárelo con el código mediante promesas o funciones de devolución de llamada.</p>
+
+            <p>Y este es un ejemplo muy simple, los mayores beneficios surgirán cuando el código sea mucho más complejo.</p>
+
+            <p>Como ejemplo, así es como obtendría un recurso JSON usando la API Fetch y lo analizaría usando promesas:</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">const obtenerPrimerDatoUsuario = () => {
+  // Obtener lista de usuarios
+  return fetch('/usuarios.json') 
+    // parse JSON
+    .then(response => response.json()) 
+    // Elegir el primer usuario
+    .then(usuarios => usuarios[0]) 
+    // Obtener los datos del usuario
+    .then(usuario => 
+      fetch(`/users/${usuario.name}`)) 
+    // parse JSON
+    .then(respuestaUsuario => response.json()) 
+}
+
+obtenerPrimerDatoUsuario()</code></pre></div>
+
+            <p>Y aquí está la misma funcionalidad proporcionada usando await / async:</p>
+
+            <div class="panel">
+                <div class="codigo__javascript">
+                    <div class="decor__bar javascript"></div>
+                    <pre class="line-numbers"><code class="language-javascript">const getFirstUserData = async () => {
+  // get users list
+  const response = await fetch('/users.json') 
+  // parse JSON
+  const users = await response.json() 
+  // pick first user
+  const user = users[0] 
+  // get user data
+  const userResponse = 
+    await fetch(`/users/${user.name}`)
+  // parse JSON
+  const userData = await user.json() 
+  return userData
+}
+
+getFirstUserData()</code></pre></div>
+
+            
+            </section>
+
+            <section id="item26">
                 <h1>Alcance de variable</h1>
-                
+
+                <p>Cuando presenté las variables, hablé sobre el uso const, let y var.</p>
+                <p>El alcance es el conjunto de variables visibles para una parte del programa.</p>
+                <p>En JavaScript tenemos un alcance global, alcance de bloque y alcance de función.</p>
+                <p>Si una variable se define fuera de una función o bloque, se adjunta al objeto global y tiene un alcance global, lo que significa que está disponible en todas las partes de un programa.</p>
+                <p>Hay una diferencia muy importante entre var, let y const declaraciones.</p>
+                <p>Una variable definida como vardentro de una función solo es visible dentro de esa función, similar a los argumentos de una función.</p>
+                <p>Una variable definida como consto let por otro lado solo es visible dentro del bloque donde está definida.</p>
+                <p>Un bloque es un conjunto de instrucciones agrupadas en un par de llaves, como las que podemos encontrar dentro de una ifdeclaración, un forbucle o una función.</p>
+                <p>Es importante comprender que un bloque no define un nuevo alcance para var, pero lo hace para let y const.</p>
+                <p>Esto tiene implicaciones muy prácticas.</p>
+                <p>Suponga que define una varvariable dentro de un if condicional en una función</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">function obtenerDatos() {
+  if (true) {
+    var dato = 'algun dato'
+    console.log(dato) 
+  }
+}</code></pre></div>
+
+                <p>Si llama a esta función, se imprimirá algun dato en la consola.</p>
+                <p>Si intenta mover console.log (datos) después de if, todavía funciona:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">function obtenerDatos() {
+  if (true) {
+    var dato = 'algun dato'
+  }
+  console.log(dato) 
+}</code></pre></div>
+
+                <p>Pero si cambia var dato a let data:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">function obtenerDatos() {
+  if (true) {
+    let dato = 'algun dato'
+  }
+  console.log(dato) 
+}</code></pre></div>
+
+                <p>Usted obtendrá un error: ReferenceError: data is not defined.</p>
+
+                <p>Esto se debe a varque la función está dentro del alcance, y aquí está sucediendo algo especial llamado izado. En resumen, varJavaScript mueve la declaración a la parte superior de la función más cercana antes de ejecutar el código. Así es como se ve la función para JS internamente, más o menos:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">function obtenerDatos() {
+  var dato
+  if (true) {
+    dato = 'algun dato'
+  }
+  console.log(dato) 
+}</code></pre></div>
+
+                <p>Es por eso que también puede console.log(dato) en la parte superior de una función, incluso antes de que se declare, y obtendrá como valor undefined para esa variable:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">function obtenerDatos() {
+  console.log(dato) 
+  if (true) {
+    var dato = 'algun dato'
+  }
+}</code></pre></div>
+
+                <p>Pero si cambia a let, obtendrá un error ReferenceError: data is not defined, porque la elevación no ocurre con las declaraciones let.</p>
+                <p>const sigue las mismas reglas que let: tiene ámbito de bloque.</p>
+                <p>Puede ser complicado al principio, pero una vez que te des cuenta de esta diferencia, verás por qué varse considera una mala práctica hoy en día en comparación con let: tienen menos partes móviles y su alcance se limita al bloque, lo que también los hace muy buenos. como variables de ciclo porque dejan de existir después de que un ciclo ha terminado:</p>
+
+                <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">function hacerIteracion() {
+  for (var i = 0; i < 10; i++) {
+    console.log(i)
+  }
+  console.log(i)
+}
+
+hacerIteracion()</code></pre></div>
+
+                <p>Cuando salga del bucle, i será una variable válida con valor 10.</p>
+
+                <p>Si cambia a let, cuando lo intente, console.log(i) se producirá un error ReferenceError: i is not defined.</p>
+
             </section>
 
         </div>
