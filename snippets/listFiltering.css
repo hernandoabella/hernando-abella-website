@@ -7,19 +7,23 @@
   font-weight: bold;
   letter-spacing: 5px;
   text-decoration: underline;
-  color: #e9c46a;
+  color: #6320ee;
+}
+
+.snippets__description{
+  margin-top: 20px;
+  color: #000;
 }
 
 h2{
   margin: 30px;
-  text-shadow: 5px 5px 10px rgba(0, 0, 0, .4);
-  color: #fff !important;
+  color: #8075ff !important;
 }
 
 h3{
   text-align: right;
   padding: 10px;
-  color: #e9c46a;
+  color: #6320ee;
 }
 
 footer{
@@ -28,5 +32,5 @@ footer{
 
 .snippets{
   padding: 20px;
-  background: #231d2e;
+  background: #ffffff;
 }
