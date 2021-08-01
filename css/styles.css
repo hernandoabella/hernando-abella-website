@@ -6,6 +6,16 @@
     scroll-behavior: smooth;
 }
 
+.img__center{
+    margin: 50px auto;
+    width: 120px;
+}
+
+.img__center img{
+    width: 140px;
+}
+
+
 #fcf-form {
     display:block;
 }
