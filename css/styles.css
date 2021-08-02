@@ -154,7 +154,7 @@ textarea.fcf-form-control {
   .topnav a {
     float: left;
     display: block;
-    color: #000;
+    color: #6320ee;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -163,13 +163,13 @@ textarea.fcf-form-control {
   }
   
   .topnav a:hover {
-    background-color: #003049;
+    background-color: #8075ff;
     color: #fff;
   }
   
   .topnav a.active {
     background: #fff;
-    color: #465362;
+    color: #8075ff;
     font-weight: bold;
   }
   
@@ -224,7 +224,7 @@ a{
 }
 
 .sidetwo h1{
-    color: #465362;
+    color: #8075ff;
     margin-bottom: 20px;
     font-size: 3em;
 }
@@ -238,7 +238,7 @@ a{
     margin: auto;
     width: 280px;
     height: 280px;
-    background: #011936;
+    background: #6320ee;
     border-radius: 100%;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
@@ -253,7 +253,7 @@ a{
 
 .go__to__learn{
     margin: 20px 0px;
-    background: #011936;
+    background: #6320ee;
     color: #fff;
     display: block;
     padding: 10px;
@@ -261,11 +261,14 @@ a{
     text-align: center;
     transition: .3s;
     border-radius: 25px;
+    border: 1px solid #6320ee;
 }
 
 
 .go__to__learn:hover{
-    transform: translate(0px, -2px);
+    background: #fff;
+    color: #6320ee;
+    border: 1px solid #6320ee;
 }
 
 .backbar{
@@ -319,7 +322,7 @@ a{
 
 .aprende__conmigo h2{
     text-align: center;
-    color: #465362;
+    color: #8075ff;
     font-size: 2em;
     padding-top: 50px;
 }
@@ -331,7 +334,7 @@ a{
 }
 
 .aprende__conmigo .ver__mas{
-    background: #011936;
+    background: #6320ee;
     color: #fff;
     transition: .3s;
     padding: 10px;
@@ -443,7 +446,7 @@ a{
     padding: 10px;
     opacity: 0.9;
     transition: .3s;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .tarjeta__servicios img{
@@ -480,6 +483,7 @@ a{
     display: block;
     padding: 10px;
     color: #fff;
+    list-style: none;
 }
 
 .total__price{
@@ -499,6 +503,7 @@ a{
 .proyectos{
     background: #fff;  /* fallback for old browsers */
     padding-bottom: 50px;
+    border-top: 1px solid rgb(211, 211, 211);
 }
 
 .proyectos hr{
@@ -787,22 +792,22 @@ footer{
 
 footer h4{
     font-size: 1.3em;
-    color: #ED254E;
+    color: #8075ff;
 }
 
 footer hr{
     width: 80px;
     margin: 20px auto;
-    border: 3px solid #ED254E;
+    border: 3px solid #6320ee;
 }
 
 footer a{
-    color: #000;
+    color: #8075ff;
     transition: .3s;
 }
 
 footer a:hover{
-    color: #ED254E;
+    color: #8075ff;
 }
 
 .footerFlex div div{
@@ -810,24 +815,23 @@ footer a:hover{
 }
 
 footer div.footerLine1 i{
-    color: #ED254E;
+    color: #6320ee;
 
 }
 
 footer div.redes__sociales a{
-    color: #000;
+    color: #6320ee;
 }
 
 footer div.redes__sociales a:hover{
-    color: #ED254E;
+    color: #6320ee;
 }
 
 
 
 .tarjeta__aprende{
     width: 300px;
-    background: #011936;
-    color: #1d3557;
+    background: #6320ee;
     padding: 10px;
     text-align: center;
     transition: .3s;
