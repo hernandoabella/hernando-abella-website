@@ -176,6 +176,8 @@ textarea.fcf-form-control {
   .topnav .icon {
     display: none;
   }
+
+  
   
   @media screen and (max-width: 768px) {
     .topnav a:not(:first-child) {display: none;}
@@ -253,8 +255,7 @@ a{
 
 .go__to__learn{
     margin: 20px 0px;
-    background: #6320ee;
-    color: #fff;
+    color: #6320ee;
     display: block;
     padding: 10px;
     width: 190px;
@@ -266,9 +267,8 @@ a{
 
 
 .go__to__learn:hover{
-    background: #fff;
-    color: #6320ee;
-    border: 1px solid #6320ee;
+    background: #6320ee;
+    color: #fff;
 }
 
 .backbar{
@@ -310,7 +310,7 @@ a{
 
 .aprende__conmigo{
     color: #1d3557;
-    border-top: 1px solid rgb(211, 211, 211);
+    border-top: 1px solid rgb(243, 243, 243);
 }
 
 .aprende__conmigo hr{
@@ -339,7 +339,7 @@ a{
     transition: .3s;
     padding: 10px;
     display: block;
-    width: 100px;
+    width: 150px;
     text-align: center;
     margin: 50px auto;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -429,7 +429,7 @@ a{
 #servicios h2{
     text-align: center;
     margin: 50px;
-    color: #465362;
+    color: #8075ff;
     font-size: 2em;
 }
 
@@ -476,7 +476,7 @@ a{
 
 .tarjeta__servicios a:hover{
     color: #000;
-    background: #fff;
+    background: #f8f0fb;
 }
 
 .tarjeta__servicios ul li{
@@ -489,7 +489,7 @@ a{
 .total__price{
     font-size: 2em;
     border: 50px;
-    background: #fff;
+    background: #f8f0fb;
     color: #6320ee;
     text-align: center;
     margin: 20px auto;
@@ -498,12 +498,10 @@ a{
     border-radius: 100%;
 }
 
-
-
 .proyectos{
     background: #fff;  /* fallback for old browsers */
     padding-bottom: 50px;
-    border-top: 1px solid rgb(211, 211, 211);
+    border-top: 1px solid rgb(243, 243, 243);
 }
 
 .proyectos hr{
@@ -516,7 +514,7 @@ a{
 .proyectos h2{
     text-align: center;
     margin: 50px;
-    color: #465362;
+    color: #8075ff;
     font-size: 2em;
 }
 
@@ -531,35 +529,36 @@ a{
 }
 
 .proyectos .ver__mas{
-    background: #011936;
-    color: #fff;
+    border: 1px solid #6320ee;
+    color: #6320ee;
     padding: 10px;
     display: block;
     text-align: center;
     margin: 60px auto;
     transition: .3s;
     width: 160px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .proyectos .ver__mas:hover{
-    background: #f4a261;
-    transform: translate(0px, -2px);
+    background: #6320ee;
+    color: #fff;
 }
 
 .tarjeta__proyectos{
-    background: #011936;
-    color: #fff;
+    border: 2px solid #6320ee;
+    color: #000;
     border-radius: 25px;
+    
 }
 
 .tarjeta__proyectos i{
-    color: #e9c46a;
+    color: #8075ff;
 }
 
 .tarjeta__proyectos h3{
     text-align: center;
     padding: 20px;
+    color: #6320ee;
     
 }
 
@@ -569,19 +568,21 @@ a{
 }
 
 .tarjeta__proyectos a{
-    color:#000;
-    background: #F9DC5C;
+    color:#fff;
+    background: #6320ee;
     padding: 10px;
     transition: .3s;
     display: block;
     width: 150px;
     margin: 20px auto;
     border-radius: 100px;
+    border: 1px solid #6320ee;
 }
 
 .tarjeta__proyectos a:hover{
-    transform: translate(2px, -2px);
-    background: #F4FFFD;
+    background: #f8f0fb;
+    color: #6320ee;
+    border: 1px solid #6320ee;
 }
 
 .redes__sociales{
@@ -635,12 +636,12 @@ a{
 .snippets{
     color: #000;
     padding-bottom: 50px;
-    border-top: 1px solid rgb(211, 211, 211);
+    border-top: 1px solid rgb(243, 243, 243);
 }
 
 .snippets h2{
     text-align: center;
-    color: #465362;
+    color: #8075ff;
     font-size: 2em;
     padding-top: 50px;
 }
@@ -651,22 +652,20 @@ a{
 }
 
 .snippets .ver__mas{
-    background: #011936;
-    color: #fff;
-    border: none;
+    border: 1px solid #6320ee;
+    color: #6320ee;
     transition: .3s;
     padding: 10px;
     display: block;
     width: 170px;
     text-align: center;
     margin: 50px auto;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    
 }
 
 .snippets .ver__mas:hover{
-    background: #F9DC5C;
-    color: #000;
-    transform: translate(0px, -2px);
+    background: #6320ee;
+    color: #fff;
 }
 
 .snippets hr{
@@ -787,7 +786,7 @@ footer{
     color: #000;
     padding: 50px;
     text-align: center;
-    border-top: 1px solid rgb(211, 211, 211);
+    border-top: 1px solid rgb(243, 243, 243);
 }
 
 footer h4{
@@ -798,12 +797,16 @@ footer h4{
 footer hr{
     width: 80px;
     margin: 20px auto;
-    border: 3px solid #6320ee;
+    border: 3px solid #8075ff;
 }
 
 footer a{
-    color: #8075ff;
+    color: #000;
     transition: .3s;
+}
+
+footer a:hover{
+    color: #6320ee;
 }
 
 footer a:hover{
@@ -827,8 +830,6 @@ footer div.redes__sociales a:hover{
     color: #6320ee;
 }
 
-
-
 .tarjeta__aprende{
     width: 300px;
     background: #6320ee;
@@ -850,7 +851,7 @@ footer div.redes__sociales a:hover{
 
 .tarjeta__aprende a{
     color: #000;
-    background: #F4FFFD;
+    background: #f8f0fb;
     padding: 10px;
     transition: .3s;
     width: 100px;
@@ -862,7 +863,7 @@ footer div.redes__sociales a:hover{
 
 .tarjeta__aprende a:hover{
     color: #000;
-    background: #F9DC5C;
+    background: #f8f0fb;
     transform: scale(1.3);
 }
 
@@ -892,9 +893,10 @@ footer div.redes__sociales a:hover{
 
 .tarjeta__snippets{
     width: 300px;
-    color: #465362;
+    color: #fff;
     padding: 20px;
-    background: #011936;
+    background: #6320ee;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .tarjeta__snippets h3{
@@ -1037,14 +1039,14 @@ tr:nth-child(even) {
 }
 
 #contacto{
-    border-top: 1px solid rgb(211, 211, 211);
+    border-top: 1px solid rgb(243, 243, 243);
     padding-bottom: 50px;
 }
 
 #contacto h2{
     padding-top: 50px;
     text-align: center;
-    color: #465362;
+    color: #8075ff;
     font-size: 2em;
 }
 
@@ -1052,7 +1054,7 @@ tr:nth-child(even) {
     margin: auto;
     width: 500px;
     padding: 20px;
-    background: #011936;
+    background: #6320ee;
     color: rgb(68, 63, 63);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 5px;
@@ -1075,11 +1077,11 @@ form input{
 }
 
 form input:focus{
-    background: #F9DC5C;
+    background: #f8f0fb;
 }
 
 textarea:focus{
-    background: #F9DC5C;
+    background: #f8f0fb;
 }
 
 button{
@@ -1087,7 +1089,7 @@ button{
     margin: auto;
     transition: .3s;
     cursor: pointer;
-    background: #F9DC5C;
+    background: #f8f0fb;
     color: #000;
     border: none;
     font-weight: bold;
@@ -1097,15 +1099,15 @@ button{
 }
 
 button:hover{
-    background: #F4FFFD;
-    color: #000;
+    background: #211a1d;
+    color: #fff;
 }
 
 form label{
     margin-bottom: 5px;
     display: block;
     font-size: .8em;
-    color: #bbbbbb;
+    color: #cad5ca;
 }
 
 form textarea{
