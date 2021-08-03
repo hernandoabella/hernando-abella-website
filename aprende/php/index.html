@@ -1300,33 +1300,530 @@ else
                 <h3>La declaración de bucle for</h3>
                 <p>La instrucción for se usa cuando sabe cuántas veces desea ejecutar una instrucción o un bloque de instrucciones.</p>
 
+                <h4>Sintaxis:</h4>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">for (initialization; condition; increment){
+   code to be executed;
+}</code></pre></div>
+                </div>
+
+                <p>El inicializador se utiliza para establecer el valor inicial del contador del número de iteraciones del ciclo. Aquí se puede declarar una variable para este propósito y es tradicional nombrarla $i.</p>
+
+                <h4>Ejemplo:</h4>
+                <p>El siguiente ejemplo hace cinco iteraciones y cambia el valor asignado de dos variables en cada paso del ciclo:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;body&gt;
+      
+      &lt;?php
+         $a = 0;
+         $b = 0;
+         
+         for( $i = 0; $i&lt;5; $i++ ) {
+            $a += 10;
+            $b += 5;
+         }
+         
+         echo (&quot;At the end of the loop a = $a and b = $b&quot; );
+      ?&gt;
+   
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+                <p>Esto producirá el siguiente resultado:</p>
+
+                <p>At the end of the loop a = 50 and b = 25</p>
+
+                <h3>La declaración de bucle while</h3>
+
+                <p>La instrucción while ejecutará un bloque de código siempre y cuando una expresión de prueba sea verdadera.</p>
+                <p>Si la expresión de prueba es verdadera, se ejecutará el bloque de código. Después de que el código se haya ejecutado, la expresión de prueba se evaluará nuevamente y el ciclo continuará hasta que se determine que la expresión de prueba es falsa.</p>
+
+                <h4>Sintaxis:</h4>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">while (condition) {
+   code to be executed;
+}</code></pre></div>
+                </div>
+
+                <h4>Ejemplo:</h4>
+
+                <p>Este ejemplo disminuye un valor de variable en cada iteración del ciclo y el contador aumenta hasta llegar a 10 cuando la evaluación es falsa y el ciclo finaliza.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;body&gt;
+   
+      &lt;?php
+         $i = 0;
+         $num = 50;
+         
+         while( $i &lt; 10) {
+            $num--;
+            $i++;
+         }
+         
+         echo (&quot;Loop stopped at i = $i and num = $num&quot; );
+      ?&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+                <p>Esto producirá el siguiente resultado:</p>
+
+                <p>Loop stopped at i = 10 and num = 40 </p>
+
+                <h3>La declaración de bucle do ... while</h3>
+
+                <p>La instrucción do ... while ejecutará un bloque de código al menos una vez; luego, repetirá el ciclo siempre que una condición sea verdadera.</p>
+
+                <h4>Sintaxis:</h4>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">do {
+   code to be executed;
+}
+while (condition);</code></pre></div>
+                </div>
+
+                <h4>Ejemplo:</h4>
+                <p>El siguiente ejemplo incrementará el valor de i al menos una vez, y seguirá incrementando la variable i siempre que tenga un valor menor que 10 -</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;body&gt;
+   
+      &lt;?php
+         $i = 0;
+         $num = 0;
+         
+         do {
+            $i++;
+         }
+         
+         while( $i &lt; 10 );
+         echo (&quot;Loop stopped at i = $i&quot; );
+      ?&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+                <p>Esto producirá el siguiente resultado:</p>
+
+                <p>Loop stopped at i = 10</p>
+
+                <h3>La declaración de bucle foreach</h3>
+
+                <p>La instrucción foreach se usa para recorrer matrices. Para cada pasada, el valor del elemento de la matriz actual se asigna a $ value y el puntero de la matriz se mueve en uno y en la siguiente pasada se procesará el siguiente elemento.</p>
+
+                <h4>Sintaxis:</h4>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">foreach (array as value) {
+   code to be executed;
+}</code></pre></div>
+                </div>
+
+                <h4>Ejemplo:</h4>
+
+                <p>Pruebe el siguiente ejemplo para enumerar los valores de una matriz.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;body&gt;
+   
+      &lt;?php
+         $array = array( 1, 2, 3, 4, 5);
+         
+         foreach( $array as $value ) {
+            echo &quot;Value is $value &lt;br /&gt;&quot;;
+         }
+      ?&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+                <p>Esto producirá el siguiente resultado:</p>
+
+                <p>Value is 1</p>
+                <p>Value is 2</p>
+                <p>Value is 3</p>
+                <p>Value is 4</p>
+                <p>Value is 5</p>
+
+                <h3>La declaración break</h3>
+
+                <p>La palabra clave PHP break se usa para terminar la ejecución de un bucle prematuramente.</p>
+                <p>La declaración de ruptura se encuentra dentro del bloque de instrucciones. Te da un control total y siempre que quieras salir del bucle puedes salir. Después de salir de un bucle, se ejecutará la instrucción inmediata al bucle.</p>
+
+                <h4>Ejemplo:</h4>
+
+                <p>En el siguiente ejemplo, la prueba de condición se vuelve verdadera cuando el valor del contador llega a 3 y el bucle termina.p>
                 
+                    <div class="panel">
+                        <div class="codigo__html">
+                            <div class="decor__bar html"></div>
+                            <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;body&gt;
+   
+      &lt;?php
+         $i = 0;
+         
+         while( $i &lt; 10) {
+            $i++;
+            if( $i == 3 )break;
+         }
+         echo (&quot;Loop stopped at i = $i&quot; );
+      ?&gt;
+   
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                <p>Esto producirá el siguiente resultado:</p>
                 
+                <p>Loop stopped at i = 3</p>
+
+
+                <h3>La declaración continue</h3>
+                <p>La palabra clave continue de PHP se usa para detener la iteración actual de un bucle pero no termina el bucle.</p>
+                <p>Al igual que la sentencia break , la sentencia continue se sitúa dentro del bloque de sentencias que contiene el código que ejecuta el bucle, precedido por una prueba condicional. Para el pase que encuentra la instrucción continue , se omite el resto del código de bucle y comienza el siguiente pase.</p>
+                
+                <h4>Ejemplo:</h4>
+                <p>En el siguiente ejemplo, el bucle imprime el valor de la matriz, pero para cuya condición se cumple, simplemente omite el código y se imprime el siguiente valor.</p>
+                
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;body&gt;
+   
+      &lt;?php
+         $array = array( 1, 2, 3, 4, 5);
+         
+         foreach( $array as $value ) {
+            if( $value == 3 )continue;
+            echo &quot;Value is $value &lt;br /&gt;&quot;;
+         }
+      ?&gt;
+   
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+                <p>Esto producirá el siguiente resultado:</p>
+
+                <p>Value is 1</p>
+                <p>Value is 2</p>
+                <p>Value is 3</p>
+                <p>Value is 4</p>
+
             </section>
 
             <section id="item9">
                 <h1>Arreglos</h1>
+
+                <p>Una matriz es una estructura de datos que almacena uno o más tipos de valores similares en un solo valor. Por ejemplo, si desea almacenar 100 números, en lugar de definir 100 variables, es fácil definir una matriz de 100 de longitud.</p>
+                <p>Hay tres tipos diferentes de matrices y se accede a cada valor de matriz utilizando un ID c que se llama índice de matriz.</p>
+
+                <ul>
+                    <li>Matriz numérica : una matriz con un índice numérico. Los valores se almacenan y se accede a ellos de forma lineal.</li>
+                    <li>Matriz asociativa : una matriz con cadenas como índice. Esto almacena los valores de los elementos en asociación con los valores clave en lugar de en un orden de índice lineal estricto.</li>
+                    <li>Matriz multidimensional : se accede a una matriz que contiene una o más matrices y valores mediante varios índices</li>
+                </ul>
+
+                <p><b>NOTA:</b> las funciones de matriz incorporadas se proporcionan en la referencia de función Funciones de matriz de PHP</p>
+
+                <h3>Matriz numérica</h3>
+                <p>Estas matrices pueden almacenar números, cadenas y cualquier objeto, pero su índice estará representado por números. Por defecto, el índice de la matriz comienza desde cero.</p>
+                <h4>Ejemplo:</h4>
+                <p>A continuación se muestra el ejemplo que muestra cómo crear y acceder a matrices numéricas.</p>
+                <p>Aquí hemos usado la función array() para crear una matriz. Esta función se explica en la referencia de funciones.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;body&gt;
+   
+      &lt;?php
+         /* First method to create array. */
+         $numbers = array( 1, 2, 3, 4, 5);
+         
+         foreach( $numbers as $value ) {
+            echo &quot;Value is $value &lt;br /&gt;&quot;;
+         }
+         
+         /* Second method to create array. */
+         $numbers[0] = &quot;one&quot;;
+         $numbers[1] = &quot;two&quot;;
+         $numbers[2] = &quot;three&quot;;
+         $numbers[3] = &quot;four&quot;;
+         $numbers[4] = &quot;five&quot;;
+         
+         foreach( $numbers as $value ) {
+            echo &quot;Value is $value &lt;br /&gt;&quot;;
+         }
+      ?&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+                <p>Esto producirá el siguiente resultado:</p>
+
+                <p>Value is 1 </p>
+                <p>Value is 2</p>
+                <p>Value is 3 </p>
+                <p>Value is 4</p>
+                <p>Value is 5</p>
+                <p>Value is one</p>
+                <p>Value is two </p>
+                <p>Value is three </p>
+                <p>Value is four </p>
+                <p>Value is five </p>
+
+                <h3>Matrices asociativas</h3>
+                <p>Las matrices asociativas son muy similares a las matrices numéricas en términos de funcionalidad, pero son diferentes en términos de su índice. La matriz asociativa tendrá su índice como una cadena para que pueda establecer una asociación fuerte entre la clave y los valores.</p>
+                <p>Para almacenar los salarios de los empleados en una matriz, una matriz indexada numéricamente no sería la mejor opción. En su lugar, podríamos usar los nombres de los empleados como claves en nuestra matriz asociativa, y el valor sería su salario respectivo.</p>
+                <p>NOTA : no mantenga la matriz asociativa entre comillas dobles mientras imprime, de lo contrario, no devolvería ningún valor.</p>
+
+                <h4>Ejemplo:</h4>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;body&gt;
+      
+      &lt;?php
+         /* First method to associate create array. */
+         $salaries = array(&quot;mohammad&quot; =&gt; 2000, &quot;qadir&quot; =&gt; 1000, &quot;zara&quot; =&gt; 500);
+         
+         echo &quot;Salary of mohammad is &quot;. $salaries[&apos;mohammad&apos;] . &quot;&lt;br /&gt;&quot;;
+         echo &quot;Salary of qadir is &quot;.  $salaries[&apos;qadir&apos;]. &quot;&lt;br /&gt;&quot;;
+         echo &quot;Salary of zara is &quot;.  $salaries[&apos;zara&apos;]. &quot;&lt;br /&gt;&quot;;
+         
+         /* Second method to create array. */
+         $salaries[&apos;mohammad&apos;] = &quot;high&quot;;
+         $salaries[&apos;qadir&apos;] = &quot;medium&quot;;
+         $salaries[&apos;zara&apos;] = &quot;low&quot;;
+         
+         echo &quot;Salary of mohammad is &quot;. $salaries[&apos;mohammad&apos;] . &quot;&lt;br /&gt;&quot;;
+         echo &quot;Salary of qadir is &quot;.  $salaries[&apos;qadir&apos;]. &quot;&lt;br /&gt;&quot;;
+         echo &quot;Salary of zara is &quot;.  $salaries[&apos;zara&apos;]. &quot;&lt;br /&gt;&quot;;
+      ?&gt;
+   
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+                <p>Esto producirá el siguiente resultado:</p>
+                <p>Salary of mohammad is 2000</p>
+                <p>Salary of qadir is 1000</p>
+                <p>Salary of zara is 500</p>
+                <p>Salary of mohammad is high</p>
+                <p>Salary of qadir is medium</p>
+                <p>Salary of zara is low</p>
                 
+                <h3>Matrices multidimensionales</h3>
+                <p>Una matriz multidimensional, cada elemento de la matriz principal también puede ser una matriz. Y cada elemento de la submatriz puede ser una matriz, etc. Se accede a los valores de la matriz multidimensional mediante índices múltiples.</p>
+
+                <h4>Ejemplo:</h4>
+
+                <p>En este ejemplo, creamos una matriz bidimensional para almacenar las calificaciones de tres estudiantes en tres materias:</p>
+                <p>Este ejemplo es una matriz asociativa, puede crear una matriz numérica de la misma manera.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;body&gt;
+      
+      &lt;?php
+         $marks = array( 
+            &quot;mohammad&quot; =&gt; array (
+               &quot;physics&quot; =&gt; 35,
+               &quot;maths&quot; =&gt; 30,&#x9;
+               &quot;chemistry&quot; =&gt; 39
+            ),
+            
+            &quot;qadir&quot; =&gt; array (
+               &quot;physics&quot; =&gt; 30,
+               &quot;maths&quot; =&gt; 32,
+               &quot;chemistry&quot; =&gt; 29
+            ),
+            
+            &quot;zara&quot; =&gt; array (
+               &quot;physics&quot; =&gt; 31,
+               &quot;maths&quot; =&gt; 22,
+               &quot;chemistry&quot; =&gt; 39
+            )
+         );
+         
+         /* Accessing multi-dimensional array values */
+         echo &quot;Marks for mohammad in physics : &quot; ;
+         echo $marks[&apos;mohammad&apos;][&apos;physics&apos;] . &quot;&lt;br /&gt;&quot;; 
+         
+         echo &quot;Marks for qadir in maths : &quot;;
+         echo $marks[&apos;qadir&apos;][&apos;maths&apos;] . &quot;&lt;br /&gt;&quot;; 
+         
+         echo &quot;Marks for zara in chemistry : &quot; ;
+         echo $marks[&apos;zara&apos;][&apos;chemistry&apos;] . &quot;&lt;br /&gt;&quot;; 
+      ?&gt;
+   
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+                <p>Esto producirá el siguiente resultado:</p>
+
+                <p>Marks for mohammad in physics : 35</p>
+                <p>Marks for qadir in maths : 32</p>
+                <p>Marks for zara in chemistry : 39</p>
+
             </section>
 
             <section id="item10">
                 <h1>Cadenas de texto</h1>
+
+                <p>Son secuencias de caracteres, como "PHP admite operaciones de cadena".</p>
+                <p>NOTA : las funciones de cadena incorporadas se proporcionan en la referencia de función Funciones de cadena PHP</p>
+                <p>Los siguientes son ejemplos válidos de cadena</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">$string_1 = "This is a string in double quotes";
+$string_2 = "This is a somewhat longer, singly quoted string";
+$string_39 = "This string has thirty-nine characters";
+$string_0 = ""; // a string with zero characters</code></pre></div>
+                </div>
+
+                <p>Las cadenas entre comillas simples se tratan casi literalmente, mientras que las cadenas entre comillas reemplazan las variables con sus valores e interpretan especialmente ciertas secuencias de caracteres.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;?php
+   $variable = &quot;name&quot;;
+   $literally = &apos;My $variable will not print!\\n&apos;;
+   
+   print($literally);
+   print &quot;&lt;br /&gt;&quot;;
+   
+   $literally = &quot;My $variable will print!\\n&quot;;
+   
+   print($literally);
+?&gt;</code></pre></div>
+                </div>
+
+                <p>Esto producirá el siguiente resultado:</p>
+
+                <p>My $variable will not print!\n</p>
+                <p>My name will print!\n</p>
+
+                <p>No hay límites artificiales en la longitud de las cadenas; dentro de los límites de la memoria disponible, debería poder hacer cadenas arbitrariamente largas.</p>
+
+                <p>Las cadenas que están delimitadas por comillas dobles (como en "esto") son preprocesadas de las dos formas siguientes por PHP:</p>
+
+                <ul>
+                    <li>Ciertas secuencias de caracteres que comienzan con barra invertida (\) se reemplazan con caracteres especiales</li>
+                    <li>Los nombres de las variables (que comienzan con $) se reemplazan con representaciones de cadena de sus valores.</li>
+                </ul>
+
+                <p>Los reemplazos de la secuencia de escape son:</p>
                 
+                <p>\n se reemplaza por el carácter de nueva línea</p>
+                <p>\r se reemplaza por el carácter de retorno de carro</p>
+                <p>\t se reemplaza por el carácter de tabulación</p>
+                <p>\$ se reemplaza por el signo de dólar en sí ($)</p>
+                <p>\"se reemplaza por una comilla doble simple (")</p>
+                <p>\\ se reemplaza por una sola barra invertida (\)</p>
+                
+                <h3>Operador de concatenación de cadenas</h3>
+                <p>Para concatenar dos variables de cadena juntas, use el operador de punto (.) -</p>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">&lt;?php
+   $string1=&quot;Hello World&quot;;
+   $string2=&quot;1234&quot;;
+   
+   echo $string1 . &quot; &quot; . $string2;
+?&gt;</code></pre></div>
+                </div>
+
+                <p>Esto producirá el siguiente resultado:</p>
+
+                <p>Hello World 1234</p>
+
+                <p>Si miramos el código de arriba, verá que usamos el operador de concatenación dos veces. Esto se debe a que tuvimos que insertar una tercera cadena.</p>
+
+                <p>Entre las dos variables de cadena agregamos una cadena con un solo carácter, un espacio vacío, para separar las dos variables.</p>
+
+                <h3>Usando la función strlen()</h3>
+
+                <p>La función strlen () se usa para encontrar la longitud de una cadena.</p>
+                <p>Encontremos la longitud de nuestra cadena "¡Hola mundo!" -</p>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">&lt;?php
+   echo strlen(&quot;Hello world!&quot;);
+?&gt;</code></pre></div>
+                </div>
+
+                <p>Esto producirá el siguiente resultado:</p>
+
+                <p>12</p>
+
+                <p>La longitud de una cadena se usa a menudo en bucles u otras funciones, cuando es importante saber cuándo termina la cadena. (es decir, en un bucle, querríamos detener el bucle después del último carácter de la cadena)</p>
+
+                <h3>Usando la función strpos()</h3>
+                <p>La función strpos() se usa para buscar una cadena o carácter dentro de una cadena.</p>
+                <p>Si se encuentra una coincidencia en la cadena, esta función devolverá la posición de la primera coincidencia. Si no se encuentra ninguna coincidencia, devolverá FALSE.</p>
+                <p>Veamos si podemos encontrar la cadena "mundo" en nuestra cadena -</p>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">&lt;?php
+   echo strpos(&quot;Hello world!&quot;,&quot;world&quot;);
+?&gt;</code></pre></div>
+                </div>
+
+                <p>Esto producirá el siguiente resultado:</p>
+
+                <p>6</p>
+
+                <p>Como puede ver, la posición de la cadena "mundo" en nuestra cadena es la posición 6. La razón por la que es 6, y no 7, es que la primera posición en la cadena es 0 y no 1.</p>
+
             </section>
 
             <section id="item11">
