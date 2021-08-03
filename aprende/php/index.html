@@ -1105,34 +1105,217 @@ define("2TWO",    "second thing");</code></pre></div>
                 <h1>Toma de desiciones</h1>
                 <p>Las sentencias if, elseif ... else y switch se utilizan para tomar decisiones basadas en la condición diferente.</p>
                 
-                <p></p>
+                <p>Puede utilizar declaraciones condicionales en su código para tomar sus decisiones. PHP admite las siguientes tres declaraciones de toma de decisiones:</p>
 
+                <ul>
+                    <li>declaración if ... else : use esta declaración si desea ejecutar un conjunto de código cuando una condición es verdadera y otro si la condición no es verdadera</li>
+                    <li>instrucción elseif - se usa con la instrucción if ... else para ejecutar un conjunto de código si una de las varias condiciones es verdadera</li>
+                    <li>instrucción switch : se usa si desea seleccionar uno de los muchos bloques de código que se ejecutarán, use la instrucción Switch. La instrucción switch se utiliza para evitar bloques largos de código if..elseif..else.</li>
+                </ul>
 
+                <h3>La declaración If ... Else</h3>
 
+                <p>Si desea ejecutar algún código si una condición es verdadera y otro código si una condición es falsa, use la instrucción if .... else.</p>
 
+                <h4>Sintaxis</h4>
 
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">if (condition)
+   code to be executed if condition is true;
+else
+   code to be executed if condition is false;</code></pre></div>
+                </div>
 
+                <h4>Ejemplo:</h4>
 
+                <p>El siguiente ejemplo dará como resultado "¡Que tengas un buen fin de semana!" si el día actual es viernes, de lo contrario, se mostrará "¡Que tengas un buen día!":</p>
 
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">&lt;html&gt;
+   &lt;body&gt;
+   
+      &lt;?php
+         $d = date(&quot;D&quot;);
+         
+         if ($d == &quot;Fri&quot;)
+            echo &quot;Have a nice weekend!&quot;; 
+         
+         else
+            echo &quot;Have a nice day!&quot;; 
+      ?&gt;
+   
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
 
+                <p>Producirá el siguiente resultado:</p>
+                <p>Have a nice weekend!</p>
 
+                <h3>La declaración de ElseIf</h3>
+                <p>Si desea ejecutar algún código si una de las varias condiciones es verdadera, use la instrucción elseif</p>
 
+                <h4>Sintaxis</h4>
 
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">if (condition)
+   code to be executed if condition is true;
+elseif (condition)
+   code to be executed if condition is true;
+else
+   code to be executed if condition is false;</code></pre></div>
+                </div>
 
+                <h4>Ejemplo:</h4>
+                <p>El siguiente ejemplo dará como resultado "¡Que tengas un buen fin de semana!" si el día actual es viernes y "¡Que tengas un buen domingo!" si el día actual es domingo. De lo contrario, aparecerá "¡Que tengas un buen día!" -</p>
 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;body&gt;
+   
+      &lt;?php
+         $d = date(&quot;D&quot;);
+         
+         if ($d == &quot;Fri&quot;)
+            echo &quot;Have a nice weekend!&quot;;
+         
+         elseif ($d == &quot;Sun&quot;)
+            echo &quot;Have a nice Sunday!&quot;; 
+         
+         else
+            echo &quot;Have a nice day!&quot;; 
+      ?&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
 
+                <p>Producirá el siguiente resultado:</p>
 
+                <p>Have a nice Weekend!</p>
 
+                <h3>La declaración de cambio</h3>
 
+                <p>Si desea seleccionar uno de los muchos bloques de código que se ejecutarán, use la instrucción Switch.</p>
 
+                <p>La instrucción switch se utiliza para evitar bloques largos de código if..elseif..else.</p>
 
+                <h4>Sintaxis:</h4>
 
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">switch (expression){
+   case label1:
+      code to be executed if expression = label1;
+      break;  
+   
+   case label2:
+      code to be executed if expression = label2;
+      break;
+      default:
+   
+   code to be executed
+   if expression is different 
+   from both label1 and label2;
+}</code></pre></div>
+                </div>
 
-                
+                <h4>Ejemplo:</h4>
+                <p>La declaración de cambio funciona de una manera inusual. Primero evalúa la expresión dada y luego busca una etiqueta que coincida con el valor resultante. Si se encuentra un valor coincidente, se ejecutará el código asociado con la etiqueta coincidente o si ninguna de las etiquetas coincide, la instrucción ejecutará cualquier código predeterminado especificado.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;body&gt;
+      
+      &lt;?php
+         $d = date(&quot;D&quot;);
+         
+         switch ($d){
+            case &quot;Mon&quot;:
+               echo &quot;Today is Monday&quot;;
+               break;
+            
+            case &quot;Tue&quot;:
+               echo &quot;Today is Tuesday&quot;;
+               break;
+            
+            case &quot;Wed&quot;:
+               echo &quot;Today is Wednesday&quot;;
+               break;
+            
+            case &quot;Thu&quot;:
+               echo &quot;Today is Thursday&quot;;
+               break;
+            
+            case &quot;Fri&quot;:
+               echo &quot;Today is Friday&quot;;
+               break;
+            
+            case &quot;Sat&quot;:
+               echo &quot;Today is Saturday&quot;;
+               break;
+            
+            case &quot;Sun&quot;:
+               echo &quot;Today is Sunday&quot;;
+               break;
+            
+            default:
+               echo &quot;Wonder which day is this ?&quot;;
+         }
+      ?&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+                <p>Producirá el siguiente resultado:</p>
+
+                <p>Today is Monday</p>
+
             </section>
 
             <section id="item8">
                 <h1>Tipos de bucle</h1>
+                <p>Los bucles en PHP se utilizan para ejecutar el mismo bloque de código un número específico de veces. PHP admite los siguientes cuatro tipos de bucle.</p>
+
+                <ul>
+                    <li>for : recorre un bloque de código un número específico de veces.</li>
+                    <li>while : recorre un bloque de código siempre y cuando una condición especificada sea verdadera.</li>
+                    <li>do ... while : recorre un bloque de código una vez y luego repite el bucle siempre que se cumpla una condición especial.</li>
+                    <li>foreach : recorre un bloque de código para cada elemento de una matriz.</li>
+                </ul>
+
+                <p>Discutiremos sobre las palabras clave de continuar y romper que se utilizan para controlar la ejecución de los bucles.</p>
+
+                <h3>La declaración de bucle for</h3>
+                <p>La instrucción for se usa cuando sabe cuántas veces desea ejecutar una instrucción o un bloque de instrucciones.</p>
+
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 
             </section>
 
