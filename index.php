@@ -23,7 +23,7 @@
     </script>
     <body>
 
-    <!-- Temporal Responsive navigation -->
+    <!--  Responsive navigation -->
 
     <div class="topnav" id="myTopnav">
         <a href="index.html" class="active">Hernando Abella</a>
@@ -51,7 +51,7 @@
     </div>
 
     
-      <!-- Temporal Responsive navigation -->
+      <!-- Responsive navigation -->
 
     <section class="sobre__mi" id="sobre__mi">
 
@@ -361,13 +361,13 @@
             <div class="footerLine2">
                 <h4>Navegación</h4>
                 <hr>
-                <div><a href="#">Aprende</a></div>
-                <div><a href="#">Practica</a></div>
-                <div><a href="#">Snippets</a></div>
+                <div><a href="./aprende/">Aprende</a></div>
+                <div><a href="./proyectos/">Practica</a></div>
+                <div><a href="./snippets/">Snippets</a></div>
                 <div><a href="https://www.paypal.com/donate?hosted_button_id=LWK6VN665RSEL">Donación</a></div>
             </div>
             <div class="footerLine3">
-                <h4>Sígueme en:</h4>
+                <h4>Sígueme</h4>
                 <hr>
                 <div class="redes__sociales">
                     <a href="https://www.facebook.com/hernandoabellaoficial" target="_blank"><i class="fab fa-facebook"></i></a>

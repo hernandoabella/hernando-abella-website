@@ -1,3 +1,5 @@
+// Cuando haces scroll hacia abajo el menú queda fijo para tenerlo disponible
+
 window.onscroll = function() {myFunction2()};
 
 var navbar = document.getElementById("myTopnav");
@@ -11,6 +13,7 @@ function myFunction2() {
   }
 }
 
+// Toggle de Menú Hamburguesa
 
 function myFunction() {
     var x = document.getElementById("myTopnav");
@@ -20,3 +23,5 @@ function myFunction() {
       x.className = "topnav";
     }
   }
+  
+  
