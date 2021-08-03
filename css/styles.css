@@ -6,6 +6,17 @@
     scroll-behavior: smooth;
 }
 
+.more__about__me{
+    background: #cad5ca;
+    margin: 0px 30px;
+    padding: 10px;
+}
+
+
+.more__about__me img{
+    display: block;
+}
+
 .img__center{
     margin: 50px auto;
     width: 120px;
@@ -18,21 +29,6 @@
 
 #fcf-form {
     display:block;
-}
-
-.fcf-body {
-    margin: 0;
-    font-family: -apple-system, Arial, sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    text-align: left;
-    background-color: #fff;
-    padding: 30px;
-    padding-bottom: 10px;
-    border-radius: 0.25rem;
-    max-width: 100%;
 }
 
 .fcf-form-group {
@@ -1050,6 +1046,7 @@ tr:nth-child(even) {
 #contacto{
     border-top: 1px solid rgb(243, 243, 243);
     padding-bottom: 50px;
+    background: #cad5ca;
 }
 
 #contacto h2{

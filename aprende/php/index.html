@@ -182,121 +182,186 @@
         <div class="articles">
             <section id="item1">
                 <h1>Introducción a PHP</h1>
-                <p></p>
+                
+                <p>PHP comenzó como un pequeño proyecto de código abierto que evolucionó a medida que más y más personas descubrieron lo útil que era. Rasmus Lerdorf lanzó la primera versión de PHP en 1994.</p>
+                
+                <ul>
+                    <li>PHP es un acrónimo recursivo de "PHP: Preprocesador de hipertexto".</li>
+                    <li>PHP es un lenguaje de programación del lado del servidor que está incrustado en HTML. Se utiliza para administrar contenido dinámico, bases de datos, seguimiento de sesiones e incluso crear sitios completos de comercio electrónico.</li>
+                    <li>Está integrado con varias bases de datos populares, incluidas MySQL, PostgreSQL, Oracle, Sybase, Informix y Microsoft SQL Server.</li>
+                    <li>PHP es agradablemente ágil en su ejecución, especialmente cuando se compila como un módulo de Apache en el lado de Unix. El servidor MySQL, una vez iniciado, ejecuta incluso consultas muy complejas con grandes conjuntos de resultados en un tiempo récord.</li>
+                    <li>PHP admite una gran cantidad de protocolos importantes como POP3, IMAP y LDAP. PHP4 agregó soporte para Java y arquitecturas de objetos distribuidos (COM y CORBA), lo que hace que el desarrollo de n niveles sea una posibilidad por primera vez.</li>
+                    <li>PHP es indulgente: el lenguaje PHP intenta ser lo más indulgente posible.</li>
+                    <li>La sintaxis de PHP es similar a la de C.</li>
+                </ul>
+
+
+                <h3>Usos comunes de PHP</h3>
+
+                <ul>
+                    <li>PHP realiza funciones del sistema, es decir, a partir de archivos en un sistema que puede crear, abrir, leer, escribir y cerrar.</li>
+                    <li>PHP puede manejar formularios, es decir, recopilar datos de archivos, guardar datos en un archivo, a través del correo electrónico puede enviar datos, devolver datos al usuario.</li>
+                    <li>Agrega, elimina, modifica elementos dentro de su base de datos a través de PHP.</li>
+                    <li>Acceda a las variables de cookies y configure cookies.</li>
+                    <li>Con PHP, puede restringir el acceso de los usuarios a algunas páginas de su sitio web.                    </li>
+                    <li>Puede cifrar datos.</li>
+                </ul>
+
+                <h3>Características de PHP</h3>
+
+                <p>Cinco características importantes hacen posible la naturaleza práctica de PHP:</p>
+
+                <ul>
+                    <li>Sencillez</li>
+                    <li>Eficiencia</li>
+                    <li>Seguridad</li>
+                    <li>Flexibilidad</li>
+                    <li>Familiaridad</li>
+                </ul>
+
+                <p>Para familiarizarse con PHP, primero comience con scripts PHP simples. Desde "¡Hola, mundo!" es un ejemplo esencial, primero crearemos un pequeño y amistoso "¡Hola, mundo!" texto.</p>
+
+                <p>Como se mencionó anteriormente, PHP está incrustado en HTML. Eso significa que entre su HTML normal (o XHTML si es de vanguardia) tendrá declaraciones PHP como esta:</p>
 
                 <div class="panel">
                     <div class="codigo__html">
                         <div class="decor__bar html"></div>
-                        <pre class="line-numbers"><code class="language-html">&lt;ul&gt;
-  &lt;li&gt;Primer elemento&lt;/li&gt;
-  &lt;li&gt;Segundo elemento&lt;/li&gt;
-  &lt;li&gt;Tercer elemento&lt;/li&gt;
-&lt;/ul&gt;</code></pre></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   
+   &lt;head&gt;
+      &lt;title&gt;Hola Mundo&lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;?php echo &quot;&iexcl;Hola Mundo!&quot;;?&gt;
+   &lt;/body&gt;
+
+&lt;/html&gt;</code></pre></div>
                 </div>
 
+                <p>Producirá el siguiente resultado:</p>
+
+                <p>¡Hola Mundo!</p>
+            
+                <p>Si examina la salida HTML del ejemplo anterior, notará que el código PHP no está presente en el archivo enviado desde el servidor a su navegador web. Todo el PHP presente en la página web se procesa y elimina de la página; lo único que se devuelve al cliente desde el servidor web es pura salida HTML.</p>
+
+                <p>Todo el código PHP debe estar incluido dentro de una de las tres etiquetas especiales de marcado ATE son reconocidas por el analizador PHP.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;?php El c&oacute;digo de PHP va aqu&iacute; ?&gt;
+
+&lt;? PHP va aqu&iacute; ?&gt;
+
+&lt;script language=&quot;php&quot;&gt; El c&oacute;digo de PHP va aqu&iacute; &lt;/script&gt;</code></pre></div>
+                </div>
+
+                <p>La etiqueta más común es &lt;? PHP ...?&gt; Y también usaremos la misma etiqueta en nuestro tutorial.</p>
+
+                <p>En el próximo capítulo, comenzaremos con la configuración del entorno PHP en su máquina y luego profundizaremos en casi todos los conceptos relacionados con PHP para que se sienta cómodo con el lenguaje PHP.</p>
 
 
 
-                
             </section>
 
             <section id="item2">
-                <h1>Historia</h1>
+                <h1>Configuración del entorno</h1>
                 
             </section>
 
             <section id="item3">
-                <h1>Agregar CSS</h1>
+                <h1>Descripción general</h1>
                 
             </section>
 
             <section id="item4">
-                <h1>Selectores</h1>
+                <h1>Tipos de variables</h1>
                 
             </section>
 
             <section id="item5">
-                <h1>Cascada</h1>
+                <h1>Constantes</h1>
                 
             </section>
 
             <section id="item6">
-                <h1>Especifidad</h1>
+                <h1>Tipos de operador</h1>
                 
             </section>
 
             <section id="item7">
-                <h1>Herencia</h1>
+                <h1>Toma de desiciones</h1>
                 
             </section>
 
             <section id="item8">
-                <h1>Importar</h1>
+                <h1>Tipos de bucle</h1>
                 
             </section>
 
             <section id="item9">
-                <h1>Selectores de atributos</h1>
+                <h1>Arreglos</h1>
                 
             </section>
 
             <section id="item10">
-                <h1>Pseudo-clases</h1>
+                <h1>Cadenas de texto</h1>
                 
             </section>
 
             <section id="item11">
-                <h1>Pseudoelementos</h1>
+                <h1>Conceptos web</h1>
                 
             </section>
 
             <section id="item12">
-                <h1>Colores</h1>
+                <h1>GET y POST</h1>
                 
             </section>
 
             <section id="item13">
-                <h1>Unidades</h1>
+                <h1>Inclusión de archivos</h1>
                 
             </section>
 
             <section id="item14">
-                <h1>Url</h1>
+                <h1>Archivos I/O</h1>
                 
             </section>
 
             <section id="item15">
-                <h1>Calc</h1>
+                <h1>Funciones</h1>
                 
             </section>
 
             <section id="item16">
-                <h1>Fondos</h1>
+                <h1>Cookies</h1>
                 
             </section>
 
             <section id="item17">
-                <h1>Comentarios</h1>
+                <h1>Sesiones</h1>
                 
             </section>
 
             <section id="item18">
-                <h1>Propiedades personalizadas</h1>
+                <h1>Enviando Emails</h1>
                 
             </section>
 
             <section id="item19">
-                <h1>Fuentes</h1>
+                <h1>Carga de archivos</h1>
                 
             </section>
 
             <section id="item20">
-                <h1>Tipografía</h1>
+                <h1>Estándar de codificación</h1>
                 
             </section>
 
             <section id="item21">
-                <h1>Modelo de caja</h1>
+                <h1>Variables predefinidas</h1>
                 
             </section>
 
