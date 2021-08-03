@@ -267,27 +267,838 @@
 
             <section id="item2">
                 <h1>Configuración del entorno</h1>
+                <p>Para desarrollar y ejecutar páginas web PHP, es necesario instalar tres componentes vitales en su sistema informático.</p>
                 
+                <ul>
+                    <li><b>Servidor web:</b> PHP funcionará con prácticamente todo el software de servidor web, incluido el Servidor de información de Internet (IIS) de Microsoft, pero el que se utiliza con mayor frecuencia es el servidor Apache, disponible gratuitamente. Descargue Apache gratis aquí: https://httpd.apache.org/download.cgi</li>
+                    <li><b>Base de datos:</b> PHP funcionará con prácticamente todo el software de base de datos, incluidos Oracle y Sybase, pero el más utilizado es la base de datos MySQL disponible gratuitamente. Descargue MySQL gratis aquí: https://www.mysql.com/downloads/</li>
+                    <li><b>Analizador PHP:</b> para procesar las instrucciones de la secuencia de comandos PHP, se debe instalar un analizador para generar una salida HTML que se pueda enviar al navegador web. Este tutorial le guiará sobre cómo instalar el analizador PHP en su computadora.</li>
+                </ul>
+
+                <h3>Instalación del analizador PHP</h3>
+
+                <p>Antes de continuar, es importante asegurarse de tener la configuración adecuada del entorno en su máquina para desarrollar sus programas web usando PHP.</p>
+                <p>Escriba la siguiente dirección en el cuadro de dirección de su navegador.</p>
+
+                <p>http://127.0.0.1/info.php</p>
+                <p>Si muestra una página que muestra la información relacionada con la instalación de PHP, significa que tiene PHP y el servidor web instalados correctamente. De lo contrario, debe seguir el procedimiento dado para instalar PHP en su computadora.</p>
+                
+                <h3>Configuración de Apache</h3>
+                <p>Si está utilizando Apache como servidor web, esta sección lo guiará para editar los archivos de configuración de Apache.</p>
+                <p>Solo compruébalo aquí - Configuración PHP en Apache Server</p>
+
+                <h3>Configuración del archivo PHP.INI</h3>
+                <p>El archivo de configuración de PHP, php.ini, es la forma final y más inmediata de afectar la funcionalidad de PHP.</p>
+                <p>Solo compruébalo aquí - Configuración del archivo PHP.INI</p>
+
+                <h3>Configuración de Windows IIS</h3>
+                <p>Para configurar IIS en su máquina con Windows, puede consultar el Manual de referencia de IIS que se envía junto con IIS.</p>
+
             </section>
 
             <section id="item3">
                 <h1>Descripción general</h1>
+                <p>Este capítulo le dará una idea de la sintaxis muy básica de PHP y muy importante para fortalecer su base de PHP.</p>
+
+                <h3>Escapar a PHP</h3>
+
+                <p>El motor de análisis de PHP necesita una forma de diferenciar el código PHP de otros elementos de la página. El mecanismo para hacerlo se conoce como "escapar a PHP". Hay cuatro formas de hacer esto:</p>
+
+                <h4>Etiquetas PHP canónicas</h4>
+
+                <p>El estilo de etiqueta PHP más universalmente efectivo es:</p>
+
+                <p>&lt;?php...?&gt;</p>
+
+                <p>Si utiliza este estilo, puede estar seguro de que sus etiquetas siempre se interpretarán correctamente.</p>
+
+                <h4>Etiquetas de apertura corta (estilo SGML)</h4>
+
+                <p>Las etiquetas cortas o abiertas cortas se ven así:</p>
+
+                <p>&lt;?...?&gt;</p>
+
+                <p>Las etiquetas cortas son, como cabría esperar, la opción más corta.Debe hacer una de dos cosas para permitir que PHP reconozca las etiquetas:</p>
+
+                <ul>
+                    <li>Elija la opción de configuración --enable-short-tags cuando esté compilando PHP.</li>
+                    <li>Establezca la configuración short_open_tag en su archivo php.ini en on. Esta opción debe estar deshabilitada para analizar XML con PHP porque se usa la misma sintaxis para las etiquetas XML.</li>
+                </ul>
+
+                <h4>Etiquetas de estilo ASP</h4>
+                <p>Las etiquetas de estilo ASP imitan las etiquetas utilizadas por Active Server Pages para delinear bloques de código. Las etiquetas de estilo ASP tienen este aspecto:</p>
+                <p>&lt;%...%&gt;</p>
+
+                <p>Para usar etiquetas de estilo ASP, deberá establecer la opción de configuración en su archivo php.ini.</p>
+
+                <h4>Etiquetas de secuencia de comandos HTML</h4>
+                <p>Las etiquetas de secuencia de comandos HTML tienen este aspecto:</p>
+
+                <p>&lt;script language = &quot;PHP&quot;&gt;...&lt;/script&gt;</p>
+
+                <h3>Comentar el código PHP</h3>
+
+                <p>Un comentario es la parte de un programa que existe solo para el lector humano y que se elimina antes de mostrar el resultado del programa. Hay dos formatos de comentarios en PHP:</p>
+
+                <p>Comentarios de una sola línea : generalmente se utilizan para explicaciones breves o notas relevantes para el código local. Estos son los ejemplos de comentarios de una sola línea.</p>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">&lt;?
+   # Este es un comentario, y
+   # Esta es la segunda l&iacute;nea del comentario
+   
+   // Este es un comentario tambi&eacute;n. Each style comments only
+   print &quot;Un ejemplo de comentarios con una sola línea.&quot;;
+?&gt;</code></pre></div>
+                </div>
+
+                <p><b>Impresión de varias líneas:</b> estos son los ejemplos para imprimir varias líneas en una sola declaración de impresión:</p>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">&lt;?
+   # First Example
+   print &lt;&lt;&lt;END
+   This uses the &quot;here document&quot; syntax to output
+   multiple lines with $variable interpolation. Note
+   that the here document terminator must appear on a
+   line with just a semicolon no extra whitespace!
+   END;
+   
+   # Second Example
+   print &quot;This spans
+   multiple lines. The newlines will be
+   output as well&quot;;
+?&gt;</code></pre></div>
+                </div>
+
+                <p>Comentarios de varias líneas : generalmente se utilizan para proporcionar algoritmos de pseudocódigo y explicaciones más detalladas cuando es necesario. El estilo de comentarios de varias líneas es el mismo que en C. Aquí está el ejemplo de comentarios de varias líneas.</p>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">&lt;?
+   /* This is a comment with multiline
+      Author : Mohammad Mohtashim
+      Purpose: Multiline Comments Demo
+      Subject: PHP
+   */
+   
+   print &quot;An example with multi line comments&quot;;
+?&gt;</code></pre></div>
+                </div>
+
+                <h3>PHP es insensible a los espacios en blanco</h3>
+                <p>Los espacios en blanco son las cosas que escribe que normalmente son invisibles en la pantalla, incluidos los espacios, las tabulaciones y los retornos de carro (caracteres de final de línea).</p>
+                <p>PHP insensible al espacio en blanco significa que casi nunca importa cuántos caracteres de espacio en blanco tiene en una fila. Un carácter de espacio en blanco es lo mismo que muchos de esos caracteres.</p>
+                <p>Por ejemplo, cada una de las siguientes declaraciones de PHP que asigna la suma de 2 + 2 a la variable $ cuatro es equivalente:</p>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">$four = 2 + 2; // single spaces
+$four <tab>=<tab2<tab>+<tab>2 ; // spaces and tabs
+$four =
+2+
+2; // multiple lines</code></pre></div>
+                </div>
+
+                <h3>PHP distingue entre mayúsculas y minúsculas</h3>
+                <p>Sí, es cierto que PHP es un lenguaje sensible a mayúsculas y minúsculas. Pruebe el siguiente ejemplo:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;body&gt;
+      
+      &lt;?php
+         $capital = 67;
+         print(&quot;Variable capital is $capital&lt;br&gt;&quot;);
+         print(&quot;Variable CaPiTaL is $CaPiTaL&lt;br&gt;&quot;);
+      ?&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+                <p>Esto producirá el siguiente resultado:</p>
+
+                <p>Variable capital is 67 <br>
+Variable CaPiTaL is</p>
+
+                <h3>Las declaraciones son expresiones terminadas con punto y coma</h3>
+
+                <p>Una declaración en PHP es cualquier expresión seguida de un punto y coma (;). Cualquier secuencia de declaraciones válidas de PHP encerrada por las etiquetas PHP es un programa PHP válido. Aquí hay una declaración típica en PHP, que en este caso asigna una cadena de caracteres a una variable llamada $saludo.</p>
+                
+                <p>$greeting = "Welcome to PHP!";</p>
+
+                <h3>Las expresiones son combinaciones de tokens.</h3>
+                <p>Los bloques de construcción más pequeños de PHP son los tokens indivisibles, como números (3.14159), cadenas (.two.), Variables ($ dos), constantes (TRUE) y las palabras especiales que componen la sintaxis de PHP como si , más, mientras, para y así sucesivamente</p>
+                
+                <h3>Las llaves hacen los bloques de código</h3>
+                <p>Aunque las declaraciones no se pueden combinar como expresiones, siempre puede colocar una secuencia de declaraciones en cualquier lugar donde pueda ir una declaración encerrándolas entre llaves.</p>
+                <p>Aquí ambas declaraciones son equivalentes:</p>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">if (3 == 2 + 1)
+   print("Good - I haven't totally lost my mind.<br>");
+   
+if (3 == 2 + 1) {
+   print("Good - I haven't totally");
+   print("lost my mind.<br>");
+}</code></pre></div>
+                </div>
+
+                <h3>Ejecución de un script PHP desde el símbolo del sistema</h3>
+
+                <p>Sí, puede ejecutar su script PHP en su símbolo del sistema. Suponiendo que tiene el siguiente contenido en el archivo test.php</p>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">&lt;?php
+   echo &quot;Hola PHP!!!!!&quot;;
+?&gt;</code></pre></div>
+                </div>
+
+                <p>Ahora ejecute este script como símbolo del sistema de la siguiente manera:</p>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">$php test.php
+</code></pre></div>
+                </div>
+
+                <p>Producirá el siguiente resultado:</p>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">Hola PHP!!!!!
+</code></pre></div>
+                </div>
+
+                <p>Espero que ahora tengas conocimientos básicos de sintaxis PHP.</p>
                 
             </section>
 
             <section id="item4">
                 <h1>Tipos de variables</h1>
+
+                <p>La forma principal de almacenar información en medio de un programa PHP es mediante el uso de una variable.</p>
+                <p>Aquí están las cosas más importantes que debe saber sobre las variables en PHP.</p>
+
+                <ul>
+                    <li>Todas las variables en PHP se indican con un signo de dólar inicial ($).</li>
+                    <li>El valor de una variable es el valor de su asignación más reciente.</li>
+                    <li>Las variables se asignan con el operador =, con la variable a la izquierda y la expresión a evaluar a la derecha.</li>
+                    <li>Las variables pueden, pero no es necesario, declararse antes de la asignación.</li>
+                    <li>Las variables en PHP no tienen tipos intrínsecos: una variable no sabe de antemano si se utilizará para almacenar un número o una cadena de caracteres.</li>
+                    <li>Las variables utilizadas antes de su asignación tienen valores predeterminados.</li>
+                    <li>PHP hace un buen trabajo al convertir automáticamente tipos de uno a otro cuando es necesario.</li>
+                    <li>Las variables de PHP son similares a las de Perl.</li>
+                </ul>
+
+                <p>PHP tiene un total de ocho tipos de datos que usamos para construir nuestras variables:</p>
+
+                <ul>
+                    <li>Enteros : son números enteros, sin punto decimal, como 4195.</li>
+                    <li>Dobles : son números de punto flotante, como 3.14159 o 49.1.</li>
+                    <li>Booleanos : tienen solo dos valores posibles, verdadero o falso.</li>
+                    <li>NULL : es un tipo especial que solo tiene un valor: NULL.</li>
+                    <li>Cadenas de texto : son secuencias de caracteres, como "PHP admite operaciones con cadenas".</li>
+                    <li>Matrices : son colecciones nombradas e indexadas de otros valores.</li>
+                    <li>Objetos : son instancias de clases definidas por el programador, que pueden empaquetar otros tipos de valores y funciones que son específicos de la clase.</li>
+                    <li>Recursos : son variables especiales que contienen referencias a recursos externos a PHP (como conexiones de bases de datos).</li>
+                </ul>
+
+                <p>Los primeros cinco son tipos simples y los dos siguientes (matrices y objetos) son compuestos: los tipos compuestos pueden empaquetar otros valores arbitrarios de tipo arbitrario, mientras que los tipos simples no.</p>
+
+                <p>Explicaremos solo tipos de datos simples en estos capítulos. Array y Objects se explicarán por separado.</p>
+
+                <h3>Enteros</h3>
+                <p>Son números enteros, sin punto decimal, como 4195. Son el tipo más simple. Corresponden a números enteros simples, tanto positivos como negativos. Los enteros se pueden asignar a variables, o se pueden usar en expresiones, así:</p>
+
+                <p>$int_var = 12345; <br>
+$another_int = -12345 + 12345;</p>
+
+                <p>El número entero puede estar en formato decimal (base 10), octal (base 8) y hexadecimal (base 16). El formato decimal es el predeterminado, los enteros octales se especifican con un 0 inicial y los hexadecimales con un 0x inicial.</p>
+                
+                <p>Para las plataformas más comunes, el número entero más grande es (2 ** 31. 1) (o 2,147,483,647), y el número entero más pequeño (más negativo) es. (2 ** 31. 1) (o .2,147,483,647).</p>
+
+                <h3>Dobles</h3>
+                <p>Les gusta 3.14159 o 49.1. De forma predeterminada, la impresión se duplica con el número mínimo de decimales necesarios. Por ejemplo, el código -</p>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">&lt;?php
+   $many = 2.2888800;
+   $many_2 = 2.2111200;
+   $few = $many + $many_2;
+   
+   print(&quot;$many + $many_2 = $few &lt;br&gt;&quot;);
+?&gt;</code></pre></div>
+                </div>
+
+                <p>Produce la siguiente salida del navegador:</p>
+
+                <p>2.28888 + 2.21112 = 4.5</p>
+    
+                <h3>Booleano</h3>
+
+                <p>Solo tienen dos valores posibles, verdadero o falso. PHP proporciona un par de constantes especialmente para usar como booleanos: VERDADERO y FALSO, que se pueden usar así:</p>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">if (TRUE)
+   print("This will always print<br>");
+
+else
+   print("This will never print<br>");</code></pre></div>
+                </div>
+
+                <h4>Interpretación de otros tipos como booleanos</h4>
+
+                <p>Estas son las reglas para determinar la "verdad" de cualquier valor que aún no sea del tipo booleano:</p>
+
+                <ul>
+                    <li>Si el valor es un número, es falso si es exactamente igual a cero y verdadero en caso contrario.</li>
+                    <li>Si el valor es una cadena, es falso si la cadena está vacía (tiene cero caracteres) o es la cadena "0", y es verdadero en caso contrario.</li>
+                    <li>Los valores de tipo NULL siempre son falsos.</li>
+                    <li>Si el valor es una matriz, es falso si no contiene otros valores y es verdadero en caso contrario. Para un objeto, contener un valor significa tener una variable miembro a la que se le ha asignado un valor.</li>
+                    <li>Los recursos válidos son verdaderos (aunque algunas funciones que devuelven recursos cuando tienen éxito, devolverán FALSE cuando no lo sean).</li>
+                    <li>No use el doble como booleanos.</li>
+                </ul>
+
+                <p>Cada una de las siguientes variables tiene el valor de verdad incrustado en su nombre cuando se usa en un contexto booleano.</p>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">$true_num = 3 + 0.14159;
+$true_str = "Tried and true"
+$true_array[49] = "An array element";
+$false_array = array();
+$false_null = NULL;
+$false_num = 999 - 999;
+$false_str = "";</code></pre></div>
+                </div>
+
+                <h3>NULO</h3>
+                <p>NULL es un tipo especial que solo tiene un valor: NULL. Para darle a una variable el valor NULL, simplemente asígnelo así:</p>
+                
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">$my_var = NULL;
+</code></pre></div>
+                </div>
+
+                <p>La constante especial NULL se escribe con mayúscula por convención, pero en realidad no distingue entre mayúsculas y minúsculas; también podrías haber escrito.</p>
+                
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">$my_var = null;
+</code></pre></div>
+                </div>
+
+                <p>Una variable a la que se le ha asignado NULL tiene las siguientes propiedades:</p>
+
+                <ul>
+                    <li>Se evalúa como FALSO en un contexto booleano.</li>
+                    <li>Devuelve FALSE cuando se prueba con la función IsSet().</li>
+                </ul>
+
+                <h3>Strings</h3>
+
+                <p>Son secuencias de caracteres, como "PHP admite operaciones de cadena". Los siguientes son ejemplos válidos de cadena</p>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">$string_1 = "This is a string in double quotes";
+$string_2 = 'This is a somewhat longer, singly quoted string';
+$string_39 = "This string has thirty-nine characters";
+$string_0 = ""; // a string with zero characters</code></pre></div>
+                </div>
+
+                <p>Las cadenas entre comillas simples se tratan casi literalmente, mientras que las cadenas entre comillas reemplazan las variables con sus valores e interpretan especialmente ciertas secuencias de caracteres.</p>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">&lt;?php
+   $variable = &quot;name&quot;;
+   $literally = &apos;My $variable will not print!&apos;;
+   
+   print($literally);
+   print &quot;&lt;br&gt;&quot;;
+   
+   $literally = &quot;My $variable will print!&quot;;
+   print($literally);
+?&gt;</code></pre></div>
+                </div>
+
+                <p>Esto producirá el siguiente resultado:</p>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">My $variable will not print! <br>
+My name will print</code></pre></div>
+                </div>
+
+                <p>No hay límites artificiales en la longitud de las cadenas; dentro de los límites de la memoria disponible, debería poder hacer cadenas arbitrariamente largas.</p>
+                <p>Las cadenas que están delimitadas por comillas dobles (como en "esto") son preprocesadas de las dos formas siguientes por PHP:</p>
+
+                <ul>
+                    <li>Ciertas secuencias de caracteres que comienzan con barra invertida (\) se reemplazan con caracteres especiales</li>
+                    <li>Los nombres de las variables (que comienzan con $) se reemplazan con representaciones de cadena de sus valores.</li>
+                </ul>
+
+                <p>Los reemplazos de la secuencia de escape son:</p>
+
+                <ul>
+                    <li>\ n se reemplaza por el carácter de nueva línea</li>
+                    <li>\ r se reemplaza por el carácter de retorno de carro</li>
+                    <li>\ t se reemplaza por el carácter de tabulación</li>
+                    <li>\ $ se reemplaza por el signo de dólar en sí ($)</li>
+                    <li>\ "se reemplaza por una comilla doble simple (")</li>
+                    <li>\\ se reemplaza por una sola barra invertida (\)</li>
+                </ul>
+
+                <h4>Aquí Documento</h4>
+                <p>Puede asignar varias líneas a una sola variable de cadena usando aquí el documento -</p>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">&lt;?php
+   $channel =&lt;&lt;&lt;_XML_
+   
+   &lt;channel&gt;
+      &lt;title&gt;What&apos;s For Dinner&lt;/title&gt;
+      &lt;link&gt;http://menu.example.com/ &lt;/link&gt;
+      &lt;description&gt;Choose what to eat tonight.&lt;/description&gt;
+   &lt;/channel&gt;
+   _XML_;
+   
+   echo &lt;&lt;&lt;END
+   This uses the &quot;here document&quot; syntax to output multiple lines with variable 
+   interpolation. Note that the here document terminator must appear on a line with 
+   just a semicolon. no extra whitespace!
+   
+
+   END;
+   
+   print $channel;
+?&gt;</code></pre></div>
+                </div>
+
+                <p>Esto producirá el siguiente resultado:</p>
+
+                <p>This uses the &quot;here document&quot; syntax to output <br>
+multiple lines with variable interpolation. Note <br>
+that the here document terminator must appear on a <br>
+line with just a semicolon. no extra whitespace! <br><br>
+
+&lt;channel&gt; <br>
+&lt;title&gt;What&apos;s For Dinner&lt;title&gt; <br>
+&lt;link&gt;http://menu.example.com/&lt;link&gt; <br>
+&lt;description&gt;Choose what to eat tonight.&lt;/description&gt;</p>
+
+                <h3>Alcance variable</h3>
+                <p>El alcance se puede definir como el rango de disponibilidad que tiene una variable para el programa en el que se declara. Las variables de PHP pueden ser uno de los cuatro tipos de alcance:</p>
+
+                <ul>
+                    <li>Variables locales</li>
+                    <li>Parámetros de función</li>
+                    <li>Variables globales</li>
+                    <li>Variables estáticas</li>
+                </ul>
+
+                <h3>Nombrando una varible</h3>
+                <p>Las reglas para nombrar una variable son:</p>
+
+                <ul>
+                    <li>Los nombres de las variables deben comenzar con una letra o un carácter de subrayado.</li>
+                    <li>El nombre de una variable puede constar de números, letras, guiones bajos, pero no puede usar caracteres como +, -,%, (,). &, etc</li>
+                </ul>
+
+                <p>No hay límite de tamaño para las variables.</p>
                 
             </section>
 
             <section id="item5">
                 <h1>Constantes</h1>
+                <p>Una constante es un nombre o un identificador de un valor simple. Un valor constante no puede cambiar durante la ejecución del script. De forma predeterminada, una constante distingue entre mayúsculas y minúsculas. Por convención, los identificadores de constantes siempre están en mayúsculas. Un nombre constante comienza con una letra o un guión bajo, seguido de cualquier número de letras, números o guiones bajos. Si ha definido una constante, nunca se puede cambiar o dejar de definir.</p>
+                <p>Para definir una constante, debe usar la función define () y para recuperar el valor de una constante, simplemente debe especificar su nombre. A diferencia de las variables, no es necesario tener una constante con $. También puede utilizar la función constante () para leer el valor de una constante si desea obtener el nombre de la constante de forma dinámica.</p>
+            
+                <h3>función constante ()</h3>
+                <p>Como lo indica el nombre, esta función devolverá el valor de la constante.</p>
+                <p>Esto es útil cuando desea recuperar el valor de una constante, pero no conoce su nombre, es decir, está almacenado en una variable o devuelto por una función.</p>
+            
+                <h3>ejemplo de constante ()</h3>
                 
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">&lt;?php
+   define(&quot;MINSIZE&quot;, 50);
+   
+   echo MINSIZE;
+   echo constant(&quot;MINSIZE&quot;); // same thing as the previous line
+?&gt;</code></pre></div>
+                </div>
+                
+                <p>Solo los datos escalares (booleanos, enteros, flotantes y de cadena) pueden estar contenidos en constantes.</p>
+                
+                <h3>Las diferencias entre constantes y variables son</h3>
+                
+                <ul>
+                    <li>No es necesario escribir un signo de dólar ($) antes de una constante, mientras que en Variable uno tiene que escribir un signo de dólar.</li>
+                    <li>Las constantes no se pueden definir mediante una asignación simple, solo se pueden definir utilizando la función define ().</li>
+                    <li>Las constantes se pueden definir y acceder a ellas en cualquier lugar sin tener en cuenta las reglas de alcance de las variables.</li>
+                    <li>Una vez que se han establecido las constantes, no se pueden redefinir ni dejar de definir.</li>
+                </ul>
+            
+                <h3>Nombres de constantes válidos y no válidos</h3>
+            
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">// Valid constant names
+define("ONE",     "first thing");
+define("TWO2",    "second thing");
+define("THREE_3", "third thing");
+define("__THREE__", "third value");
+
+// Invalid constant names
+define("2TWO",    "second thing");</code></pre></div>
+                </div>
+            
+                <h3>Constantes de PHP Magic</h3>
+                <p>PHP proporciona una gran cantidad de constantes predefinidas a cualquier script que ejecute.</p>
+                
+                <p>Hay cinco constantes mágicas que cambian dependiendo de dónde se utilicen. Por ejemplo, el valor de __LINE__ depende de la línea en la que se usa en su secuencia de comandos. Estas constantes especiales no distinguen entre mayúsculas y minúsculas y son las siguientes:</p>
+                <p>Algunas constantes de PHP "mágicas" se dan a continuación:</p>
+            
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>__LÍNEA__</td>
+                        <td>El número de línea actual del archivo.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>__EXPEDIENTE__</td>
+                        <td>La ruta completa y el nombre de archivo del archivo. Si se usa dentro de una inclusión, se devuelve el nombre del archivo incluido. Desde PHP 4.0.2 , __FILE__ siempre contiene una ruta absoluta, mientras que en versiones anteriores contenía una ruta relativa en algunas circunstancias.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>__FUNCIÓN__</td>
+                        <td>El nombre de la función. (Agregado en PHP 4.3.0) A partir de PHP 5, esta constante devuelve el nombre de la función tal como se declaró (distingue entre mayúsculas y minúsculas). En PHP 4, su valor siempre está en minúsculas.</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>__CLASE__</td>
+                        <td>El nombre de la clase. (Agregado en PHP 4.3.0) A partir de PHP 5, esta constante devuelve el nombre de la clase tal como se declaró (distingue entre mayúsculas y minúsculas). En PHP 4, su valor siempre está en minúsculas.</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>__MÉTODO__</td>
+                        <td>El nombre del método de la clase. (Agregado en PHP 5.0.0) El nombre del método se devuelve como se declaró (distingue entre mayúsculas y minúsculas).</td>
+                    </tr>
+                    
+                </table>
+
+
             </section>
 
             <section id="item6">
                 <h1>Tipos de operador</h1>
+                <p>¿Qué es el operador? Se puede dar una respuesta simple usando la expresión 4 + 5 es igual a 9 . Aquí 4 y 5 se llaman operandos y + se llama operador. El lenguaje PHP admite el siguiente tipo de operadores.</p>
+                <ul>
+                    <li>Operadores aritméticos</li>
+                    <li>Operadores de comparación</li>
+                    <li>Operadores lógicos (o relacionales)</li>
+                    <li>Operadores de Asignación</li>
+                    <li>Operadores condicionales (o ternarios)</li>
+                </ul>
+
+                <p>Echemos un vistazo a todos los operadores uno por uno.</p>
+
+                <h3>Operadores aritméticos</h3>
+
+                <p>Existen los siguientes operadores aritméticos compatibles con el lenguaje PHP:</p>
+                <p>Suponga que la variable A tiene 10 y la variable B tiene 20, entonces -</p>
                 
+                <table>
+                    <tr>
+                        <th>Operador</th>
+                        <th>Descripción</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                    <tr>
+                        <td>+</td>
+                        <td>Agrega dos operandos</td>
+                        <td>A + B dará 30</td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>Resta el segundo operando del primero</td>
+                        <td>A - B dará -10</td>
+                    </tr>
+                    <tr>
+                        <td>=</td>
+                        <td>Multiplica ambos operandos</td>
+                        <td>A * B dará 200</td>
+                    </tr>
+                    <tr>
+                        <td>/</td>
+                        <td>Dividir numerador por numerador</td>
+                        <td>B / A dará 2</td>
+                    </tr>
+                    <tr>
+                        <td>%</td>
+                        <td>Operador de módulo y resto de después de una división entera</td>
+                        <td>B% A dará 0</td>
+                    </tr>
+                    <tr>
+                        <td>++</td>
+                        <td>Operador de incremento, aumenta el valor entero en uno</td>
+                        <td>A ++ dará 11</td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>Operador de disminución, disminuye el valor entero en uno</td>
+                        <td>A-- dará 9</td>
+                    </tr>
+                </table>
+
+                <h3>Operadores de comparación</h3>
+                <p>Existen los siguientes operadores de comparación compatibles con el lenguaje PHP</p>
+                <p>Suponga que la variable A tiene 10 y la variable B tiene 20, entonces -</p>
+
+                <table>
+                    <tr>
+                        <th>Operador</th>
+                        <th>Descripción</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                    <tr>
+                        <td>==</td>
+                        <td>Comprueba si el valor de dos operandos es igual o no, si es así, la condición se convierte en verdadera.</td>
+                        <td>(A == B) no es verdadero.</td>
+                    </tr>
+                    <tr>
+                        <td>!=</td>
+                        <td>Comprueba si el valor de dos operandos es igual o no, si los valores no son iguales, la condición se convierte en verdadera.	</td>
+                        <td>(A != B) es verdadero.</td>
+                    </tr>
+                    <tr>
+                        <td>></td>
+                        <td>Comprueba si el valor del operando izquierdo es mayor que el valor del operando derecho, si es así, la condición se convierte en verdadera.	</td>
+                        <td>(A > B) no es verdadero.</td>
+                    </tr>
+                    <tr>
+                        <td><</td>
+                        <td>Comprueba si el valor del operando izquierdo es menor que el valor del operando derecho, si es así, la condición se convierte en verdadera.	</td>
+                        <td>(A &lt; B) es verdadero.</td>
+                    </tr>
+                    <tr>
+                        <td>>=</td>
+                        <td>Comprueba si el valor del operando izquierdo es mayor o igual que el valor del operando derecho, si es así, la condición se convierte en verdadera.	</td>
+                        <td>(A >= B) no es verdadero</td>
+                    </tr>
+                    <tr>
+                        <td><=</td>
+                        <td>Comprueba si el valor del operando izquierdo es menor o igual que el valor del operando derecho, si es así, la condición se convierte en verdadera.	</td>
+                        <td>(A <= B) es verdadero.</td>
+                    </tr>
+                </table>
+
+                <h3>Operadores logicos</h3>
+
+                <p>Existen los siguientes operadores lógicos compatibles con el lenguaje PHP</p>
+                <p>Suponga que la variable A tiene 10 y la variable B tiene 20, entonces -</p>
+            
+                <table>
+                    <tr>
+                        <th>Operador</th>
+                        <th>Descripción</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                    <tr>
+                        <td>and<td>
+                        <td>Operador llamado lógico AND. Si ambos operandos son verdaderos, la condición se convierte en verdadera.	</td>
+                        <td>(A y B) es verdadero.</td>
+                    </tr>
+                    <tr>
+                        <td>or</td>
+                        <td>Operador OR lógico llamado. Si alguno de los dos operandos es distinto de cero, la condición se cumple.	</td>
+                        <td>(A o B) es verdadero.</td>
+                    </tr>
+                    <tr>
+                        <td>&&</td>
+                        <td>Operador llamado lógico AND. Si ambos operandos son distintos de cero, la condición se convierte en verdadera.	</td>
+                        <td>(A && B) es verdadero.</td>
+                    </tr>
+                    <tr>
+                        <td>||</td>
+                        <td>Operador OR lógico llamado. Si alguno de los dos operandos es distinto de cero, la condición se cumple.	</td>
+                        <td>(A || B) es verdadero.</td>
+                    </tr>
+                    <tr>
+                        <td>!</td>
+                        <td>Operador lógico llamado NOT. Úselo para revertir el estado lógico de su operando. Si una condición es verdadera, el operador lógico NOT hará que sea falsa.	</td>
+                        <td>! (A && B) es falso.</td>
+                    </tr>
+                </table>
+
+                <h3>Operadores de Asignación</h3>
+                <p>Existen los siguientes operadores de asignación compatibles con el lenguaje PHP:</p>
+
+                <table>
+                    <tr>
+                        <th>Operador</th>
+                        <th>Descripción</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                    <tr>
+                        <td>=</td>
+                        <td>Operador de asignación simple, asigna valores de los operandos del lado derecho al operando del lado izquierdo	</td>
+                        <td>C = A + B asignará el valor de A + B en C</td>
+                    </tr>
+                    <tr>
+                        <td>+=</td>
+                        <td>Agregar operador de asignación Y, agrega el operando derecho al operando izquierdo y asigna el resultado al operando izquierdo	</td>
+                        <td>C += A es equivalente a C = C + A</td>
+                    </tr>
+                    <tr>
+                        <td>-=</td>
+                        <td>Restar operador de asignación Y, resta el operando derecho del operando izquierdo y asigna el resultado al operando izquierdo</td>
+                        <td>C -= A es equivalente a C = C - A</td>
+                    </tr>
+                    <tr>
+                        <td>*=</td>
+                        <td>Operador de asignación de multiplicar Y, multiplica el operando derecho con el operando izquierdo y asigna el resultado al operando izquierdo</td>
+                        <td>C *= A es equivalente a C = C * A</td>
+                    </tr>
+                    <tr>
+                        <td>/=</td>
+                        <td>Operador de división Y asignación, divide el operando izquierdo con el operando derecho y asigna el resultado al operando izquierdo</td>
+                        <td>C /= A es equivalente a C = C / A</td>
+                    </tr>
+                    <tr>
+                        <td>%=</td>
+                        <td>Operador de asignación de módulo Y, toma el módulo usando dos operandos y asigna el resultado al operando izquierdo</td>
+                        <td>C %= A es equivalente a C = C % A</td>
+                    </tr>
+                </table>
+
+                <h3>Operador condicional</h3>
+                <p>Hay un operador más llamado operador condicional. Esto primero evalúa una expresión para un valor verdadero o falso y luego ejecuta una de las dos declaraciones dadas dependiendo del resultado de la evaluación. El operador condicional tiene esta sintaxis:</p>
+
+                <table>
+                    <tr>
+                        <th>Operador</th>
+                        <th>Descripción</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                    <tr>
+                        <td>? :</td>
+                        <td>Expresión condicional</td>
+                        <td>¿Si la condición es verdadera? Entonces valor X: De lo contrario valor Y</td>
+                    </tr>
+                </table>
+
+                <h3>Categorías de operadores</h3>
+                <p>Todos los operadores que hemos discutido anteriormente se pueden clasificar en las siguientes categorías:</p>
+
+                <ul>
+                    <li>Operadores de prefijo unario, que preceden a un solo operando.</li>
+                    <li>Operadores binarios, que toman dos operandos y realizan una variedad de operaciones aritméticas y lógicas.</li>
+                    <li>El operador condicional (un operador ternario), que toma tres operandos y evalúa la segunda o la tercera expresión, según la evaluación de la primera expresión.</li>
+                    <li>Operadores de asignación, que asignan un valor a una variable.</li>
+                </ul>
+
+                <h3>Prioridad de los operadores PHP</h3>
+
+                <p>La precedencia del operador determina la agrupación de términos en una expresión. Esto afecta la forma en que se evalúa una expresión. Ciertos operadores tienen mayor precedencia que otros; por ejemplo, el operador de multiplicación tiene mayor precedencia que el operador de suma -</p>
+                <p>Por ejemplo x = 7 + 3 * 2; Aquí x se asigna 13, no 20 porque el operador * tiene mayor precedencia que +, por lo que primero se multiplica por 3 * 2 y luego se suma a 7.</p>
+                <p>Aquí los operadores con mayor precedencia aparecen en la parte superior de la tabla, los que tienen la menor precedencia aparecen en la parte inferior. Dentro de una expresión, los operadores de mayor precedencia se evaluarán primero.</p>
+
+                <table>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Operador</th>
+                        <th>Asociatividad</th>
+                    </tr>
+                    <tr>
+                        <td>Unario</td>
+                        <td>! ++ --</td>
+                        <td>De derecha a izquierda</td>
+                    </tr>
+                    <tr>
+                        <td>Multiplicativo</td>
+                        <td>* / %</td>
+                        <td>De izquierda a derecha</td>
+                    </tr>
+                    <tr>
+                        <td>Aditivo</td>
+                        <td>+ -</td>
+                        <td>De izquierda a derecha</td>
+                    </tr>
+                    <tr>
+                        <td>Relacional</td>
+                        <td>&lt; &lt;= &gt; &gt;=</td>
+                        <td>De izquierda a derecha</td>
+                    </tr>
+                    <tr>
+                        <td>Igualdad</td>
+                        <td>== !=	</td>
+                        <td>De izquierda a derecha</td>
+                    </tr>
+                    <tr>
+                        <td>Y lógico</td>
+                        <td>&&</td>
+                        <td>De izquierda a derecha</td>
+                    </tr>
+                    <tr>
+                        <td>OR lógico</td>
+                        <td>||</td>
+                        <td>De izquierda a derecha</td>
+                    </tr>
+                    <tr>
+                        <td>Condicional</td>
+                        <td>?:</td>
+                        <td>De derecha a izquierda</td>
+                    </tr>
+                    <tr>
+                        <td>Asignación</td>
+                        <td>= += -= *= /= %=</td>
+                        <td>De derecha a izquierda</td>
+                    </tr>
+
+                </table>
+
+
             </section>
 
             <section id="item7">
@@ -366,101 +1177,125 @@
             </section>
 
             <section id="item22">
-                <h1>Borde</h1>
+                <h1>Expresión regular</h1>
                 
             </section>
 
             <section id="item23">
-                <h1>Relleno</h1>
+                <h1>Manejo de errores</h1>
                 
             </section>
 
             <section id="item24">
-                <h1>Margen</h1>
+                <h1>Depuración de errores</h1>
                 
             </section>
 
             <section id="item25">
-                <h1>Tamaño de la caja</h1>
+                <h1>Fecha y hora</h1>
                 
             </section>
 
             <section id="item26">
-                <h1>Display</h1>
+                <h1>PHP y MYSQL</h1>
                 
             </section>
 
             <section id="item27">
-                <h1>Posicionamiento</h1>
+                <h1>PHP y AJAX</h1>
                 
             </section>
 
             <section id="item28">
-                <h1>Float y clear</h1>
+                <h1>PHP y XML</h1>
                 
             </section>
 
             <section id="item29">
-                <h1>z-index</h1>
+                <h1>PHP orientado a objetos</h1>
                 
             </section>
 
             <section id="item30">
-                <h1>Grid</h1>
+                <h1>Formularios</h1>
                 
             </section>
 
             <section id="item31">
-                <h1>Flexbox</h1>
+                <h1>Validación</h1>
                 
             </section>
 
             <section id="item32">
-                <h1>Tablas</h1>
+                <h1>Formulario completo</h1>
                 
             </section>
 
             <section id="item33">
-                <h1>Centrado</h1>
+                <h1>Inicio de sesión</h1>
                 
             </section>
             <section id="item34">
-                <h1>Listas</h1>
+                <h1>Inicio de sesión de Facebook</h1>
                 
             </section>
 
             <section id="item35">
-                <h1>Media queries y diseño responsivo</h1>
+                <h1>Integración con Paypal</h1>
                 
             </section>
 
             <section id="item36">
-                <h1>Características de queries</h1>
+                <h1>Inicio de sesión con Mysql</h1>
                 
             </section>
             
             <section id="item37">
-                <h1>Filtros</h1>
+                <h1>Búsqueda con AJAX</h1>
             </section>
 
             <section id="item38">
-                <h1>Transform</h1>
+                <h1>Analizador XML con AJAX</h1>
             </section>
 
             <section id="item39">
-                <h1>Transition</h1>
+                <h1>Búsqueda automática con AJAX</h1>
             </section>
 
             <section id="item40">
-                <h1>Animaciones</h1>
+                <h1>Fuente RSS con AJAX</h1>
             </section>
 
             <section id="item41">
-                <h1>Normalizing css</h1>
+                <h1>Introducción a XML</h1>
             </section>
 
             <section id="item42">
-                <h1>Manejo de errores</h1>
+                <h1>GET de XML simple</h1>
+            </section>
+
+            <section id="item42">
+                <h1>Analizador SAX</h1>
+            </section>
+            
+            <section id="item42">
+                <h1>Analizador DOM</h1>
+            </section>
+
+            <section id="item42">
+                <h1>Frameworks</h1>
+            </section>
+
+            <section id="item42">
+                <h1>Núcleo PHP vs Frameworks</h1>
+            </section>
+
+            <section id="item42">
+                <h1>Patrones de diseño</h1>
+            </section>
+
+            <section id="item42">
+                <h1>Funciones integradas</h1>
             </section>
 
         </div>
