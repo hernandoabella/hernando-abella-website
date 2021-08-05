@@ -541,7 +541,7 @@ a{
     text-align: center;
     margin: 60px auto;
     transition: .3s;
-    width: 160px;
+    width: 180px;
 }
 
 .proyectos .ver__mas:hover{
@@ -662,10 +662,9 @@ a{
     transition: .3s;
     padding: 10px;
     display: block;
-    width: 170px;
+    width: 130px;
     text-align: center;
     margin: 50px auto;
-    
 }
 
 .snippets .ver__mas:hover{
@@ -1046,7 +1045,6 @@ tr:nth-child(even) {
 #contacto{
     border-top: 1px solid rgb(243, 243, 243);
     padding-bottom: 50px;
-    background: #cad5ca;
 }
 
 #contacto h2{
