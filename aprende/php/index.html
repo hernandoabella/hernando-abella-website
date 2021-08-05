@@ -2679,25 +2679,7 @@ If files does not exist then it attempts to create a file.</td>
                 <div class="panel">
                     <div class="codigo__html">
                         <div class="decor__bar html"></div>
-                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
-   
-   &lt;head&gt;
-      &lt;title&gt;Dynamic Function Calls&lt;/title&gt;
-   &lt;/head&gt;
-   
-   &lt;body&gt;
-      
-      &lt;?php
-         function sayHello() {
-            echo &quot;Hello&lt;br /&gt;&quot;;
-         }
-         
-         $function_holder = &quot;sayHello&quot;;
-         $function_holder();
-      ?&gt;
-      
-   &lt;/body&gt;
-&lt;/html&gt;</code></pre></div>
+                        <pre class="line-numbers"><code class="language-html"></code></pre></div>
                 </div> 
 
                 <p>Esto mostrará el siguiente resultado:</p>
@@ -2708,162 +2690,1430 @@ If files does not exist then it attempts to create a file.</td>
 
             <section id="item16">
                 <h1>Cookies</h1>
+                <p>Las cookies son archivos de texto almacenados en la computadora del cliente y se mantienen con el propósito de rastrear el uso. PHP admite de forma transparente las cookies HTTP.</p>
+                <p>Hay tres pasos involucrados en la identificación de usuarios recurrentes:</p>
 
+                <ul>
+                    <li>La secuencia de comandos del servidor envía un conjunto de cookies al navegador. Por ejemplo, nombre, edad o número de identificación, etc.</li>
+                    <li>El navegador almacena esta información en la máquina local para uso futuro.</li>
+                    <li>La próxima vez que el navegador envíe una solicitud al servidor web, enviará la información de las cookies al servidor y el servidor utilizará esa información para identificar al usuario.</li>
+                </ul>
 
+                <p>Este capítulo le enseñará cómo configurar cookies, cómo acceder a ellas y cómo eliminarlas.</p>
 
+                <h3>La anatomía de una cookie</h3>
 
+                <p>Las cookies generalmente se establecen en un encabezado HTTP (aunque JavaScript también puede configurar una cookie directamente en un navegador). Un script PHP que establece una cookie puede enviar encabezados que se parecen a esto:</p>
 
+                <p>HTTP/1.1 200 OK
+                    Date: Fri, 04 Feb 2000 21:03:38 GMT <br>
+                    Server: Apache/1.3.9 (UNIX) PHP/4.0b3  <br>
+                    Set-Cookie: name=xyz; expires=Friday, 04-Feb-07 22:03:38 GMT;  <br>
+                                     path=/; domain=tutorialspoint.com <br>
+                    Connection: close  <br>
+                    Content-Type: text/html</p>  <br>
 
+                <p>Como puede ver, el encabezado Set-Cookie contiene un par de nombre-valor, una fecha GMT, una ruta y un dominio. El nombre y el valor estarán codificados en URL. El campo expira es una instrucción para el navegador para "olvidar" la cookie después de la fecha y hora indicadas.</p>    
 
+                <p>Si el navegador está configurado para almacenar cookies, conservará esta información hasta la fecha de caducidad. Si el usuario apunta con el navegador a cualquier página que coincida con la ruta y el dominio de la cookie, reenviará la cookie al servidor. Los encabezados del navegador pueden verse así:</p>
+
+                <p>GET / HTTP/1.0 <br>
+                    Connection: Keep-Alive  <br>
+                    User-Agent: Mozilla/4.6 (X11; I; Linux 2.2.6-15apmac ppc)  <br>
+                    Host: zink.demon.co.uk:1126  <br>
+                    Accept: image/gif, */*  <br>
+                    Accept-Encoding: gzip  <br>
+                    Accept-Language: en  <br>
+                    Accept-Charset: iso-8859-1,*,utf-8  <br>
+                    Cookie: name=xyz</p>    
+
+                <p>Un script PHP tendrá acceso a la cookie en las variables ambientales $ _COOKIE o $ HTTP_COOKIE_VARS [] que contiene todos los nombres y valores de las cookies. Se puede acceder a la cookie anterior usando $ HTTP_COOKIE_VARS ["nombre"].</p>    
+
+            
+                <h3>Configuración de cookies con PHP</h3>
+                <p>PHP proporcion&oacute; la funci&oacute;n setcookie () para configurar una cookie. Esta funci&oacute;n requiere hasta seis argumentos y debe invocarse antes de la etiqueta &lt;html&gt;. Para cada cookie, esta funci&oacute;n debe llamarse por separado.</p>
+
+                <p>setcookie(name, value, expire, path, domain, security);</p>
                 
-                
+                <p>Aquí está el detalle de todos los argumentos:</p>
+
+                <ul>
+                    <li>Nombre : establece el nombre de la cookie y se almacena en una variable de entorno llamada HTTP_COOKIE_VARS. Esta variable se utiliza al acceder a las cookies.</li>
+                    <li>Valor : establece el valor de la variable nombrada y es el contenido que realmente desea almacenar.</li>
+                    <li>Caducidad : especifica un tiempo futuro en segundos desde las 00:00:00 GMT del 1 de enero de 1970. Después de este tiempo, la cookie se volverá inaccesible. Si este parámetro no está configurado, la cookie caducará automáticamente cuando se cierre el navegador web.</li>
+                    <li>Ruta : especifica los directorios para los que es válida la cookie. Un solo carácter de barra inclinada permite que la cookie sea válida para todos los directorios.</li>
+                    <li>Dominio : se puede utilizar para especificar el nombre de dominio en dominios muy grandes y debe contener al menos dos puntos para ser válido. Todas las cookies solo son válidas para el host y el dominio que las creó.</li>
+                    <li>Seguridad : se puede establecer en 1 para especificar que la cookie solo debe enviarse mediante transmisión segura mediante HTTPS; de lo contrario, se establece en 0, lo que significa que la cookie puede enviarse mediante HTTP normal.</li>
+                </ul>
+
+                <p>El siguiente ejemplo creará dos cookies de nombre y antigüedad, estas cookies caducarán después de una hora.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;?php
+   setcookie(&quot;name&quot;, &quot;John Watkin&quot;, time()+3600, &quot;/&quot;,&quot;&quot;, 0);
+   setcookie(&quot;age&quot;, &quot;36&quot;, time()+3600, &quot;/&quot;, &quot;&quot;,  0);
+?&gt;
+&lt;html&gt;
+   
+   &lt;head&gt;
+      &lt;title&gt;Setting Cookies with PHP&lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;?php echo &quot;Set Cookies&quot;?&gt;
+   &lt;/body&gt;
+   
+&lt;/html&gt;</code></pre></div>
+                </div> 
+
+                <h3>Acceder a las cookies con PHP</h3>
+                <p>PHP proporciona muchas formas de acceder a las cookies. La forma más sencilla es utilizar las variables $ _COOKIE o $ HTTP_COOKIE_VARS. El siguiente ejemplo accederá a todas las cookies configuradas en el ejemplo anterior.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   
+   &lt;head&gt;
+      &lt;title&gt;Accessing Cookies with PHP&lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      
+      &lt;?php
+         echo $_COOKIE[&quot;name&quot;]. &quot;&lt;br /&gt;&quot;;
+         
+         /* is equivalent to */
+         echo $HTTP_COOKIE_VARS[&quot;name&quot;]. &quot;&lt;br /&gt;&quot;;
+         
+         echo $_COOKIE[&quot;age&quot;] . &quot;&lt;br /&gt;&quot;;
+         
+         /* is equivalent to */
+         echo $HTTP_COOKIE_VARS[&quot;age&quot;] . &quot;&lt;br /&gt;&quot;;
+      ?&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div> 
+            <p>Puede usar la función isset () para verificar si una cookie está configurada o no.</p>
+
+            <div class="panel">
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   
+   &lt;head&gt;
+      &lt;title&gt;Accessing Cookies with PHP&lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      
+      &lt;?php
+         if( isset($_COOKIE[&quot;name&quot;]))
+            echo &quot;Welcome &quot; . $_COOKIE[&quot;name&quot;] . &quot;&lt;br /&gt;&quot;;
+         
+         else
+            echo &quot;Sorry... Not recognized&quot; . &quot;&lt;br /&gt;&quot;;
+      ?&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+            </div> 
+
+            <h3>Eliminación de cookies con PHP</h3>
+
+            <p>Oficialmente, para eliminar una cookie, debe llamar a setcookie () solo con el argumento de nombre, pero esto no siempre funciona bien, sin embargo, y no se debe confiar en él.</p>
+            <p>Es más seguro configurar la cookie con una fecha que ya haya vencido:</p>
+
+            <div class="panel">
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;?php
+   setcookie( &quot;name&quot;, &quot;&quot;, time()- 60, &quot;/&quot;,&quot;&quot;, 0);
+   setcookie( &quot;age&quot;, &quot;&quot;, time()- 60, &quot;/&quot;,&quot;&quot;, 0);
+?&gt;
+&lt;html&gt;
+   
+   &lt;head&gt;
+      &lt;title&gt;Deleting Cookies with PHP&lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;?php echo &quot;Deleted Cookies&quot; ?&gt;
+   &lt;/body&gt;
+   
+&lt;/html&gt;</code></pre></div>
+            </div> 
+
             </section>
 
             <section id="item17">
                 <h1>Sesiones</h1>
+
+                <p>Una forma alternativa de hacer que los datos sean accesibles en las distintas páginas de un sitio web completo es utilizar una sesión PHP.</p>
+                <p>Una sesión crea un archivo en un directorio temporal en el servidor donde se almacenan las variables de sesión registradas y sus valores. Estos datos estarán disponibles para todas las páginas del sitio durante esa visita.</p>
+                <p>La ubicación del archivo temporal está determinada por una configuración en el archivo php.ini llamado session.save_path . Antes de usar cualquier variable de sesión, asegúrese de haber configurado esta ruta.</p>
+
+                <p>Cuando se inicia una sesión, suceden las siguientes cosas:</p>
+
+                <ul>
+                    <li>PHP primero crea un identificador único para esa sesión en particular que es una cadena aleatoria de 32 números hexadecimales como 3c7foj34c3jj973hjkop2fc937e3443.li>
+                    <li>Una cookie llamada PHPSESSID se envía automáticamente a la computadora del usuario para almacenar una cadena de identificación de sesión única.li>
+                    <li>Se crea automáticamente un archivo en el servidor en el directorio temporal designado y lleva el nombre del identificador único prefijado por sess_ ie sess_3c7foj34c3jj973hjkop2fc937e3443.</li>
+                    
+                </ul>
+
+                <p>Cuando un script PHP quiere recuperar el valor de una variable de sesión, PHP automáticamente obtiene la cadena de identificación de sesión única de la cookie PHPSESSID y luego busca en su directorio temporal el archivo que lleva ese nombre y se puede realizar una validación comparando ambos valores.</p>
+                <p>Una sesión termina cuando el usuario pierde el navegador o después de abandonar el sitio, el servidor terminará la sesión después de un período de tiempo predeterminado, comúnmente de 30 minutos de duración.</p>
+
+                <h3>Iniciar una sesión PHP</h3>
+                <p>Una sesión PHP se inicia fácilmente haciendo una llamada a la función session_start (). Esta función primero verifica si una sesión ya se inició y si no se inició ninguna, entonces inicia una. Se recomienda poner la llamada a session_start () al principio de la página.</p>
+
+                <p>Las variables de sesión se almacenan en una matriz asociativa llamada $ _SESSION [] . Se puede acceder a estas variables durante la vida útil de una sesión.</p>
+                <p>El siguiente ejemplo inicia una sesión y luego registra una variable llamada contador que se incrementa cada vez que se visita la página durante la sesión.</p>
+
+                <p>Utilice la función isset () para comprobar si la variable de sesión ya está configurada o no.</p>
                 
+                <p>Coloque este código en un archivo test.php y cargue este archivo muchas veces para ver el resultado:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;?php
+   session_start();
+   
+   if( isset( $_SESSION[&apos;counter&apos;] ) ) {
+      $_SESSION[&apos;counter&apos;] += 1;
+   }else {
+      $_SESSION[&apos;counter&apos;] = 1;
+   }
+&#x9;
+   $msg = &quot;You have visited this page &quot;.  $_SESSION[&apos;counter&apos;];
+   $msg .= &quot;in this session.&quot;;
+?&gt;
+
+&lt;html&gt;
+   
+   &lt;head&gt;
+      &lt;title&gt;Setting up a PHP session&lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;?php  echo ( $msg ); ?&gt;
+   &lt;/body&gt;
+   
+&lt;/html&gt;</code></pre></div>
+                </div> 
+
+                <p>Producirá el siguiente resultado:</p>
+
+                <p>You have visited this page 1in this session.</p>
+
+                <h3>Destruir una sesión PHP</h3>
+                <p>Una sesión de PHP puede ser destruida por la función session_destroy () . Esta función no necesita ningún argumento y una sola llamada puede destruir todas las variables de sesión. Si desea destruir una sola variable de sesión, puede usar la función unset () para desarmar una variable de sesión.</p>
+                <p>Aquí está el ejemplo para desarmar una sola variable:</p>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">&lt;?php
+   unset($_SESSION[&apos;counter&apos;]);
+?&gt;</code></pre></div>
+                </div> 
+
+                <p>Aquí está la llamada que destruirá todas las variables de sesión:</p>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">&lt;?php
+   session_destroy();
+?&gt;
+</code></pre></div>
+                </div> 
+
+                <h3>Activación de la sesión automática</h3>
+                <p>No necesita llamar a la función start_session () para iniciar una sesión cuando un usuario visita su sitio si puede establecer la variable session.auto_start en 1 en el archivo php.ini.</p>
+
+                <h3>Sesiones sin cookies</h3>
+                <p>Puede haber un caso en el que un usuario no permita almacenar cookies en su máquina. Entonces, hay otro método para enviar la identificación de la sesión al navegador.</p>
+                <p>Alternativamente, puede utilizar el SID constante que se define si se inició la sesión. Si el cliente no envió una cookie de sesión adecuada, tiene el formato session_name = session_id. De lo contrario, se expande a una cadena vacía. Por lo tanto, puede incrustarlo incondicionalmente en las URL.</p>
+                <p>El siguiente ejemplo demuestra cómo registrar una variable y cómo enlazar correctamente a otra página usando SID.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;?php
+   session_start();
+   
+   if (isset($_SESSION[&apos;counter&apos;])) {
+      $_SESSION[&apos;counter&apos;] = 1;
+   }else {
+      $_SESSION[&apos;counter&apos;]++;
+   }
+   
+   $msg = &quot;You have visited this page &quot;.  $_SESSION[&apos;counter&apos;];
+   $msg .= &quot;in this session.&quot;;
+   
+   echo ( $msg );
+?&gt;
+
+&lt;p&gt;
+   To continue  click following link &lt;br /&gt;
+   
+   &lt;a  href = &quot;nextpage.php?&lt;?php echo htmlspecialchars(SID); ?&gt;&quot;&gt;
+&lt;/p&gt;</code></pre></div>
+                </div>
+
+                <p>Producirá el siguiente resultado:</p>
+
+                <p>You have visited this page 1in this session. <br>
+                    To continue click following link </p>
+
+                <p>Se puede usar htmlspecialchars() al imprimir el SID para prevenir ataques relacionados con XSS.</p>    
+
             </section>
 
             <section id="item18">
-                <h1>Enviando Emails</h1>
+                <h1>Envío de correos electrónicos usando PHP</h1>
+
+                <p>PHP debe estar configurado correctamente en el archivo php.ini con los detalles de cómo su sistema envía el correo electrónico. Abra el archivo php.ini disponible en el directorio / etc / y busque la sección titulada [función de correo] .</p>
+
+                <p>Los usuarios de Windows deben asegurarse de que se proporcionen dos directivas. El primero se llama SMTP y define la dirección de su servidor de correo electrónico. El segundo se llama sendmail_from, que define su propia dirección de correo electrónico.</p>
+
+                <p>La configuración para Windows debería verse así:</p>
                 
+                <p>[mail function] <br>
+                    ; For Win32 only. <br>
+                    SMTP = smtp.secureserver.net <br>
+                    <br>
+                    ; For win32 only <br>
+                    sendmail_from = webmaster@tutorialspoint.com</p>
+
+                <p>Los usuarios de Linux simplemente necesitan informar a PHP sobre la ubicación de su aplicación sendmail . La ruta y los conmutadores deseados deben especificarse en la directiva sendmail_path.</p>
+
+                <p>La configuración para Linux debería verse así:</p>
+
+                <p>[mail function] <br>
+                    ; For Win32 only. <br>
+                    SMTP =  <br>
+                    <br>
+                    ; For win32 only <br>
+                    sendmail_from =  <br>
+                    <br>
+                    ; For Unix only<br>
+                    sendmail_path = /usr/sbin/sendmail -t -i</p>
+
+                <p>Ahora estás listo para empezar.</p>    
+                
+                <h3>Envío de correo electrónico de texto sin formato</h3>
+
+                <p>PHP utiliza la función mail () para enviar un correo electrónico. Esta función requiere tres argumentos obligatorios que especifican la dirección de correo electrónico del destinatario, el asunto del mensaje y el mensaje real, además, hay otros dos parámetros opcionales.</p>
+                <p>mail( to, subject, message, headers, parameters );
+                    </p>
+                
+                <p>Aquí está la descripción de cada parámetro.</p>
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Parámetro</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>para</td>
+                        <td>Requerido. Especifica el destinatario / destinatarios del correo electrónico
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>asunto</td>
+                        <td>Requerido. Especifica el asunto del correo electrónico. Este parámetro no puede contener caracteres de nueva línea
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>mensaje</td>
+                        <td>Requerido. Define el mensaje a enviar. Cada línea debe estar separada con un LF (\ n). Las líneas no deben exceder los 70 caracteres
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>encabezados</td>
+                        <td>Opcional. Especifica encabezados adicionales, como De, CC y CCO. Los encabezados adicionales deben separarse con un CRLF (\ r \ n)
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>parámetros</td>
+                        <td>Opcional. Especifica un parámetro adicional para el programa de envío de correo.
+
+                        </td>
+                    </tr>
+                </table>
+
+                <p>Tan pronto como se llame a la función de correo, PHP intentará enviar el correo electrónico y devolverá verdadero si tiene éxito o falso si falla.</p>
+                <p>Se pueden especificar varios destinatarios como primer argumento de la función mail () en una lista separada por comas.</p>
+
+                <h3>Envío de correo electrónico HTML</h3>
+                <p>Cuando envía un mensaje de texto usando PHP, todo el contenido se tratará como texto simple. Incluso si incluye etiquetas HTML en un mensaje de texto, se mostrará como texto simple y las etiquetas HTML no se formatearán de acuerdo con la sintaxis HTML. Pero PHP ofrece la opción de enviar un mensaje HTML como un mensaje HTML real.</p>
+                <p>Al enviar un mensaje de correo electrónico, puede especificar una versión de Mime, el tipo de contenido y el juego de caracteres para enviar un correo electrónico HTML</p> 
+
+                <h4>Ejemplo:</h4>
+                <p>El siguiente ejemplo enviará un mensaje de correo electrónico HTML a xyz@somedomain.com copiándolo a afgh@somedomain.com. Puede codificar este programa de tal manera que reciba todo el contenido del usuario y luego envíe un correo electrónico.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   
+   &lt;head&gt;
+      &lt;title&gt;Sending HTML email using PHP&lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      
+      &lt;?php
+         $to = &quot;xyz@somedomain.com&quot;;
+         $subject = &quot;This is subject&quot;;
+         
+         $message = &quot;&lt;b&gt;This is HTML message.&lt;/b&gt;&quot;;
+         $message .= &quot;&lt;h1&gt;This is headline.&lt;/h1&gt;&quot;;
+         
+         $header = &quot;From:abc@somedomain.com \r\n&quot;;
+         $header .= &quot;Cc:afgh@somedomain.com \r\n&quot;;
+         $header .= &quot;MIME-Version: 1.0\r\n&quot;;
+         $header .= &quot;Content-type: text/html\r\n&quot;;
+         
+         $retval = mail ($to,$subject,$message,$header);
+         
+         if( $retval == true ) {
+            echo &quot;Message sent successfully...&quot;;
+         }else {
+            echo &quot;Message could not be sent...&quot;;
+         }
+      ?&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+                <h3>Envío de archivos adjuntos con correo electrónico</h3>
+                <p>Para enviar un correo electrónico con contenido mixto, es necesario configurar el encabezado de tipo de contenido en multiparte / mixto . Luego, las secciones de texto y adjuntos se pueden especificar dentro de los límites.</p>
+                <p>Un límite se inicia con dos guiones seguidos de un número único que no puede aparecer en la parte del mensaje del correo electrónico. Se utiliza una función PHP md5 () para crear un número hexadecimal de 32 dígitos para crear un número único. Un límite final que indique la sección final del correo electrónico también debe terminar con dos guiones.</p>
+                
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;?php
+   // request variables // important
+   $from = $_REQUEST[&quot;from&quot;];
+   $emaila = $_REQUEST[&quot;emaila&quot;];
+   $filea = $_REQUEST[&quot;filea&quot;];
+   
+   if ($filea) {
+      function mail_attachment ($from , $to, $subject, $message, $attachment){
+         $fileatt = $attachment; // Path to the file
+         $fileatt_type = &quot;application/octet-stream&quot;; // File Type 
+         
+         $start = strrpos($attachment, &apos;/&apos;) == -1 ? 
+            strrpos($attachment, &apos;//&apos;) : strrpos($attachment, &apos;/&apos;)+1;
+&#x9;&#x9;&#x9;&#x9;
+         $fileatt_name = substr($attachment, $start, 
+            strlen($attachment)); // Filename that will be used for the 
+            file as the attachment 
+         
+         $email_from = $from; // Who the email is from
+         $subject = &quot;New Attachment Message&quot;;
+         
+         $email_subject =  $subject; // The Subject of the email 
+         $email_txt = $message; // Message that the email has in it 
+         $email_to = $to; // Who the email is to
+         
+         $headers = &quot;From: &quot;.$email_from;
+         $file = fopen($fileatt,&apos;rb&apos;); 
+         $data = fread($file,filesize($fileatt)); 
+         fclose($file); 
+         
+         $msg_txt=&quot;\n\n You have recieved a new attachment message from $from&quot;;
+         $semi_rand = md5(time()); 
+         $mime_boundary = &quot;==Multipart_Boundary_x{$semi_rand}x&quot;; 
+         $headers .= &quot;\nMIME-Version: 1.0\n&quot; . &quot;Content-Type: multipart/mixed;\n&quot; . &quot;
+            boundary=\&quot;{$mime_boundary}\&quot;&quot;;
+         
+         $email_txt .= $msg_txt;
+&#x9;&#x9;&#x9;
+         $email_message .= &quot;This is a multi-part message in MIME format.\n\n&quot; . 
+            &quot;--{$mime_boundary}\n&quot; . &quot;Content-Type:text/html; 
+            charset = \&quot;iso-8859-1\&quot;\n&quot; . &quot;Content-Transfer-Encoding: 7bit\n\n&quot; . 
+            $email_txt . &quot;\n\n&quot;;
+&#x9;&#x9;&#x9;&#x9;
+         $data = chunk_split(base64_encode($data));
+         
+         $email_message .= &quot;--{$mime_boundary}\n&quot; . &quot;Content-Type: {$fileatt_type};\n&quot; .
+            &quot; name = \&quot;{$fileatt_name}\&quot;\n&quot; . //&quot;Content-Disposition: attachment;\n&quot; . 
+            //&quot; filename = \&quot;{$fileatt_name}\&quot;\n&quot; . &quot;Content-Transfer-Encoding: 
+            base64\n\n&quot; . $data . &quot;\n\n&quot; . &quot;--{$mime_boundary}--\n&quot;;
+&#x9;&#x9;&#x9;&#x9;
+         $ok = mail($email_to, $email_subject, $email_message, $headers);
+         
+         if($ok) {
+            echo &quot;File Sent Successfully.&quot;;
+            unlink($attachment); // delete a file after attachment sent.
+         }else {
+            die(&quot;Sorry but the email could not be sent. Please go back and try again!&quot;);
+         }
+      }
+      move_uploaded_file($_FILES[&quot;filea&quot;][&quot;tmp_name&quot;],
+         &apos;temp/&apos;.basename($_FILES[&apos;filea&apos;][&apos;name&apos;]));
+&#x9;&#x9;&#x9;
+      mail_attachment(&quot;$from&quot;, &quot;youremailaddress@gmail.com&quot;, 
+         &quot;subject&quot;, &quot;message&quot;, (&quot;temp/&quot;.$_FILES[&quot;filea&quot;][&quot;name&quot;]));
+   }
+?&gt;
+
+&lt;html&gt;
+   &lt;head&gt;
+      
+      &lt;script language = &quot;javascript&quot; type = &quot;text/javascript&quot;&gt;
+         function CheckData45() {
+            with(document.filepost) {
+               if(filea.value ! = &quot;&quot;) {
+                  document.getElementById(&apos;one&apos;).innerText = 
+                     &quot;Attaching File ... Please Wait&quot;;
+               }
+            }
+         }
+      &lt;/script&gt;
+      
+   &lt;/head&gt;
+   &lt;body&gt;
+      
+      &lt;table width = &quot;100%&quot; height = &quot;100%&quot; border = &quot;0&quot; 
+         cellpadding = &quot;0&quot; cellspacing = &quot;0&quot;&gt;
+         &lt;tr&gt;
+            &lt;td align = &quot;center&quot;&gt;
+               &lt;form name = &quot;filepost&quot; method = &quot;post&quot; 
+                  action = &quot;file.php&quot; enctype = &quot;multipart/form-data&quot; id = &quot;file&quot;&gt;
+                  
+                  &lt;table width = &quot;300&quot; border = &quot;0&quot; cellspacing = &quot;0&quot; 
+                     cellpadding = &quot;0&quot;&gt;
+&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                     &lt;tr valign = &quot;bottom&quot;&gt;
+                        &lt;td height = &quot;20&quot;&gt;Your Name:&lt;/td&gt;
+                     &lt;/tr&gt;
+                     
+                     &lt;tr&gt;
+                        &lt;td&gt;&lt;input name = &quot;from&quot; type = &quot;text&quot; 
+                           id = &quot;from&quot; size = &quot;30&quot;&gt;&lt;/td&gt;
+                     &lt;/tr&gt;
+                     
+                     &lt;tr valign = &quot;bottom&quot;&gt;
+                        &lt;td height = &quot;20&quot;&gt;Your Email Address:&lt;/td&gt;
+                     &lt;/tr&gt;
+                     
+                     &lt;tr&gt;
+                        &lt;td class = &quot;frmtxt2&quot;&gt;&lt;input name = &quot;emaila&quot;
+                           type = &quot;text&quot; id = &quot;emaila&quot; size = &quot;30&quot;&gt;&lt;/td&gt;
+                     &lt;/tr&gt;
+                     
+                     &lt;tr&gt;
+                        &lt;td height = &quot;20&quot; valign = &quot;bottom&quot;&gt;Attach File:&lt;/td&gt;
+                     &lt;/tr&gt;
+                     
+                     &lt;tr valign = &quot;bottom&quot;&gt;
+                        &lt;td valign = &quot;bottom&quot;&gt;&lt;input name = &quot;filea&quot; 
+                           type = &quot;file&quot; id = &quot;filea&quot; size = &quot;16&quot;&gt;&lt;/td&gt;
+                     &lt;/tr&gt;
+                     
+                     &lt;tr&gt;
+                        &lt;td height = &quot;40&quot; valign = &quot;middle&quot;&gt;&lt;input 
+                           name = &quot;Reset2&quot; type = &quot;reset&quot; id = &quot;Reset2&quot; value = &quot;Reset&quot;&gt;
+                        &lt;input name = &quot;Submit2&quot; type = &quot;submit&quot; 
+                           value = &quot;Submit&quot; onClick = &quot;return CheckData45()&quot;&gt;&lt;/td&gt;
+                     &lt;/tr&gt;
+                  &lt;/table&gt;
+                  
+               &lt;/form&gt;
+               
+               &lt;center&gt;
+                  &lt;table width = &quot;400&quot;&gt;
+                     
+                     &lt;tr&gt;
+                        &lt;td id = &quot;one&quot;&gt;
+                        &lt;/td&gt;
+                     &lt;/tr&gt;
+                     
+                  &lt;/table&gt;
+               &lt;/center&gt;
+               
+            &lt;/td&gt;
+         &lt;/tr&gt;
+      &lt;/table&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
             </section>
 
             <section id="item19">
                 <h1>Carga de archivos</h1>
+                <p>Se puede usar un script PHP con un formulario HTML para permitir a los usuarios cargar archivos al servidor. Inicialmente, los archivos se cargan en un directorio temporal y luego se reubican en un destino de destino mediante un script PHP.</p>
                 
+                <p>La información en la página phpinfo.php describe el directorio temporal que se usa para cargar archivos como upload_tmp_dir y el tamaño máximo permitido de los archivos que se pueden cargar se indica como upload_max_filesize . Estos parámetros se establecen en el archivo de configuración PHP php.ini</p>
+            
+                <p>El proceso de carga de un archivo sigue estos pasos:</p>
+            
+                <ul>
+                    <li>El usuario abre la página que contiene un formulario HTML con archivos de texto, un botón para examinar y un botón para enviar.</li>
+                    <li>El usuario hace clic en el botón de exploración y selecciona un archivo para cargar desde la PC local.</li>
+                    <li>La ruta completa al archivo seleccionado aparece en el texto archivado y luego el usuario hace clic en el botón enviar.</li>
+                    <li>El archivo seleccionado se envía al directorio temporal del servidor.</li>
+                    <li>El script PHP que se especificó como controlador de formulario en el atributo de acción del formulario verifica que el archivo haya llegado y luego lo copia en el directorio deseado.</li>
+                    <li>El script PHP confirma el éxito al usuario.</li>
+                </ul>
+            
+                <p>Como es habitual al escribir archivos, es necesario que tanto las ubicaciones temporales como las finales tengan permisos establecidos que permitan la escritura de archivos. Si cualquiera de ellos está configurado para ser de solo lectura, el proceso fallará.</p>
+            
+                <p>Un archivo cargado puede ser un archivo de texto o un archivo de imagen o cualquier documento.</p>
+                
+                <h3>Creando un formulario de carga</h3>
+                <p>El siguiente código HTM a continuación crea un formulario de carga. Este formulario tiene el atributo de método establecido en post y el atributo enctype está establecido en multipart / form-data</p>
+                
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;?php
+   if(isset($_FILES[&apos;image&apos;])){
+      $errors= array();
+      $file_name = $_FILES[&apos;image&apos;][&apos;name&apos;];
+      $file_size =$_FILES[&apos;image&apos;][&apos;size&apos;];
+      $file_tmp =$_FILES[&apos;image&apos;][&apos;tmp_name&apos;];
+      $file_type=$_FILES[&apos;image&apos;][&apos;type&apos;];
+      $file_ext=strtolower(end(explode(&apos;.&apos;,$_FILES[&apos;image&apos;][&apos;name&apos;])));
+      
+      $extensions= array(&quot;jpeg&quot;,&quot;jpg&quot;,&quot;png&quot;);
+      
+      if(in_array($file_ext,$extensions)=== false){
+         $errors[]=&quot;extension not allowed, please choose a JPEG or PNG file.&quot;;
+      }
+      
+      if($file_size &gt; 2097152){
+         $errors[]=&apos;File size must be excately 2 MB&apos;;
+      }
+      
+      if(empty($errors)==true){
+         move_uploaded_file($file_tmp,&quot;images/&quot;.$file_name);
+         echo &quot;Success&quot;;
+      }else{
+         print_r($errors);
+      }
+   }
+?&gt;
+&lt;html&gt;
+   &lt;body&gt;
+      
+      &lt;form action=&quot;&quot; method=&quot;POST&quot; enctype=&quot;multipart/form-data&quot;&gt;
+         &lt;input type=&quot;file&quot; name=&quot;image&quot; /&gt;
+         &lt;input type=&quot;submit&quot;/&gt;
+      &lt;/form&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+                <p>Producirá el siguiente resultado:</p>
+
+                <p>resultado...</p>
+
+                <h3>Crear un script de carga</h3>
+                <p>Hay una variable PHP global llamada $ _FILES . Esta variable es una matriz asociada de doble dimensión y mantiene toda la información relacionada con el archivo cargado. Entonces, si el valor asignado al atributo de nombre de la entrada en el formulario de carga era un archivo , PHP crearía las siguientes cinco variables:</p>
+
+                <ul>
+                    <li>$_FILES ['file'] ['tmp_name'] - el archivo cargado en el directorio temporal del servidor web.</li>
+                    <li>$_FILES ['archivo'] ['nombre'] - el nombre real del archivo cargado.</li>
+                    <li>$_FILES ['archivo'] ['tamaño'] - el tamaño en bytes del archivo cargado.</li>
+                    <li>$_FILES ['archivo'] ['tipo'] - el tipo MIME del archivo cargado.</li>
+                    <li>$_FILES ['archivo'] ['error'] : el código de error asociado con la carga de este archivo.</li>
+                    
+                </ul>
+
+                <h4>Ejemplo:</h4>
+                <p>El siguiente ejemplo debería permitir la carga de imágenes y devolver el resultado como información del archivo cargado.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;?php
+   if(isset($_FILES[&apos;image&apos;])){
+      $errors= array();
+      $file_name = $_FILES[&apos;image&apos;][&apos;name&apos;];
+      $file_size = $_FILES[&apos;image&apos;][&apos;size&apos;];
+      $file_tmp = $_FILES[&apos;image&apos;][&apos;tmp_name&apos;];
+      $file_type = $_FILES[&apos;image&apos;][&apos;type&apos;];
+      $file_ext=strtolower(end(explode(&apos;.&apos;,$_FILES[&apos;image&apos;][&apos;name&apos;])));
+      
+      $extensions= array(&quot;jpeg&quot;,&quot;jpg&quot;,&quot;png&quot;);
+      
+      if(in_array($file_ext,$extensions)=== false){
+         $errors[]=&quot;extension not allowed, please choose a JPEG or PNG file.&quot;;
+      }
+      
+      if($file_size &gt; 2097152) {
+         $errors[]=&apos;File size must be excately 2 MB&apos;;
+      }
+      
+      if(empty($errors)==true) {
+         move_uploaded_file($file_tmp,&quot;images/&quot;.$file_name);
+         echo &quot;Success&quot;;
+      }else{
+         print_r($errors);
+      }
+   }
+?&gt;
+&lt;html&gt;
+   &lt;body&gt;
+      
+      &lt;form action = &quot;&quot; method = &quot;POST&quot; enctype = &quot;multipart/form-data&quot;&gt;
+         &lt;input type = &quot;file&quot; name = &quot;image&quot; /&gt;
+         &lt;input type = &quot;submit&quot;/&gt;
+&#x9;&#x9;&#x9;
+         &lt;ul&gt;
+            &lt;li&gt;Sent file: &lt;?php echo $_FILES[&apos;image&apos;][&apos;name&apos;];  ?&gt;
+            &lt;li&gt;File size: &lt;?php echo $_FILES[&apos;image&apos;][&apos;size&apos;];  ?&gt;
+            &lt;li&gt;File type: &lt;?php echo $_FILES[&apos;image&apos;][&apos;type&apos;] ?&gt;
+         &lt;/ul&gt;
+&#x9;&#x9;&#x9;
+      &lt;/form&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+                <p>Producirá el siguiente resultado:</p>
+
+                <p>resultado...</p>
+
             </section>
 
             <section id="item20">
                 <h1>Estándar de codificación</h1>
+                <p>Cada empresa sigue un estándar de codificación diferente según sus mejores prácticas. Se requiere un estándar de codificación porque puede haber muchos desarrolladores trabajando en diferentes módulos, por lo que si comienzan a inventar sus propios estándares, la fuente se volverá muy inmanejable y será difícil mantener ese código fuente en el futuro.</p>
+                <p>Aquí hay varias razones por las que utilizar especificaciones de codificación:</p>
+                <ul>
+                    <li>Sus programadores pares deben comprender el código que produce. Un estándar de codificación actúa como modelo para que todo el equipo descifre el código.</li>
+                    <li>La simplicidad y la claridad logradas mediante una codificación constante le ahorran errores comunes.</li>
+                    <li>Si revisa su código después de un tiempo, será fácil de entender ese código.</li>
+                    <li>Su estándar de la industria es seguir un estándar particular para tener más calidad en el software.</li>
+                </ul>
+ 
+                <p>Hay algunas pautas que se pueden seguir mientras se codifica en PHP.</p>
+                <ul>
+                    <li>Sangría y longitud de línea : use una sangría de 4 espacios y no use ninguna pestaña porque diferentes computadoras usan una configuración diferente para la pestaña. Se recomienda mantener las líneas de aproximadamente 75-85 caracteres para una mejor legibilidad del código.</li>
+                    <li>Estructuras de control : incluyen if, for, while, switch, etc. Las declaraciones de control deben tener un espacio entre la palabra clave de control y el paréntesis de apertura, para distinguirlas de las llamadas a funciones. Se le recomienda encarecidamente que utilice siempre llaves incluso en situaciones en las que sean técnicamente opcionales.</li>
+                </ul>
+ 
+                <h4>Ejemplo:</h4>
                 
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">if ((condition1) || (condition2)) {
+   action1;
+}elseif ((condition3) && (condition4)) {
+   action2;
+}else {
+   default action;
+}</code></pre></div>
+                </div>
+ 
+                <p>Puede escribir declaraciones de cambio de la siguiente manera:</p>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">switch (condition) {
+   case 1:
+      action1;
+      break;
+   
+   case 2:
+      action2;
+      break;
+         
+   default:
+      defaultaction;
+      break;
+}</code></pre></div>
+                </div>    
+
+                <ul>
+                    <li>Llamadas a funciones : las funciones deben llamarse sin espacios entre el nombre de la función, el paréntesis de apertura y el primer parámetro; espacios entre comas y cada parámetro, y ningún espacio entre el último parámetro, el paréntesis de cierre y el punto y coma. He aquí un ejemplo:</li>
+                </ul>
+
+                <p>$var = foo($bar, $baz, $quux);</p>
+
+                <ul>
+                    <li>Definiciones de funciones - Las declaraciones de funciones siguen el "estilo BSD / Allman" -</li>
+                </ul>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">function fooFunction($arg1, $arg2 = '') {
+   if (condition) {
+      statement;
+   }
+   return $val;
+}</code></pre></div>
+                </div>    
+
+                <ul>
+                    <li>Comentarios : los comentarios de estilo C (/ * * /) y los comentarios estándar de C ++ (//) están bien. Se desaconseja el uso de comentarios de estilo Perl / shell (#).</li>
+                    <li>Etiquetas de código PHP : utilice siempre <? Php?> Para delimitar el código PHP, no el <? ?> taquigrafía. Esto es necesario para el cumplimiento de PHP y también es la forma más portátil de incluir código PHP en diferentes sistemas operativos y configuraciones.</li>
+                    <li>
+                        <b>Nombres de variables -</b>
+                        <ul>
+                            <li>Utilice todas las letras minúsculas</li>
+                            <li>Utilice '_' como separador de palabras</li>
+                            <li>Las variables globales deben ir precedidas de una 'g'.</li>
+                            <li>Las constantes globales deben estar en mayúsculas con separadores '_'.</li>
+                            <li>Las variables estáticas pueden ir precedidas de 's'.</li>
+                        </ul>
+                    </li>
+                    <li>Hacer que las funciones sean reentrantes : las funciones no deben mantener variables estáticas que impidan que una función sea reentrante.</li>
+                    <li>Alineación de bloques de declaración: el bloque de declaraciones debe estar alineado.</li>
+                    <li>Una declaración por línea : debe haber solo una declaración por línea, a menos que las declaraciones estén muy relacionadas.</li>
+                    <li>Métodos o funciones breves : los métodos deben limitarse a una sola página de código.</li>
+                </ul>
+
+                <p>Podría haber muchos más puntos que deberían tenerse en cuenta al escribir su programa PHP. En general, la intención debe ser ser coherente en toda la programación del código y solo será posible cuando siga algún estándar de codificación. Puede diseñar su propio estándar si le gusta algo diferente.</p>
+ 
+ 
             </section>
 
             <section id="item21">
                 <h1>Variables predefinidas</h1>
+
+
+
+
+
+
+
+
+
+
+
                 
             </section>
 
             <section id="item22">
                 <h1>Expresión regular</h1>
+
+
+
+
+
+
+
+
+
+
+
+
                 
             </section>
 
             <section id="item23">
                 <h1>Manejo de errores</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 
             </section>
 
             <section id="item24">
                 <h1>Depuración de errores</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 
             </section>
 
             <section id="item25">
                 <h1>Fecha y hora</h1>
                 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </section>
 
             <section id="item26">
                 <h1>PHP y MYSQL</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 
             </section>
 
             <section id="item27">
                 <h1>PHP y AJAX</h1>
                 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </section>
 
             <section id="item28">
                 <h1>PHP y XML</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 
             </section>
 
             <section id="item29">
                 <h1>PHP orientado a objetos</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 
             </section>
 
             <section id="item30">
                 <h1>Formularios</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 
             </section>
 
             <section id="item31">
                 <h1>Validación</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 
             </section>
 
             <section id="item32">
                 <h1>Formulario completo</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 
             </section>
 
             <section id="item33">
                 <h1>Inicio de sesión</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 
             </section>
             <section id="item34">
                 <h1>Inicio de sesión de Facebook</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 
             </section>
 
             <section id="item35">
                 <h1>Integración con Paypal</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 
             </section>
 
             <section id="item36">
                 <h1>Inicio de sesión con Mysql</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 
             </section>
             
             <section id="item37">
                 <h1>Búsqueda con AJAX</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </section>
 
             <section id="item38">
                 <h1>Analizador XML con AJAX</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </section>
 
             <section id="item39">
                 <h1>Búsqueda automática con AJAX</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </section>
 
             <section id="item40">
                 <h1>Fuente RSS con AJAX</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </section>
 
             <section id="item41">
                 <h1>Introducción a XML</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </section>
 
             <section id="item42">
                 <h1>GET de XML simple</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </section>
 
             <section id="item42">
                 <h1>Analizador SAX</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </section>
             
             <section id="item42">
                 <h1>Analizador DOM</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </section>
 
             <section id="item42">
                 <h1>Frameworks</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </section>
 
             <section id="item42">
                 <h1>Núcleo PHP vs Frameworks</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </section>
 
             <section id="item42">
                 <h1>Patrones de diseño</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </section>
 
             <section id="item42">
                 <h1>Funciones integradas</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
             </section>
 
         </div>
