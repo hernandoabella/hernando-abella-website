@@ -713,7 +713,7 @@ h5.javascript__tag{
 .decor__bar.html{
     background: #e34c26;
     width: 100%;
-    height: 15px;
+    height: 5px;
     position: relative;
     top: 15px;
 }
@@ -721,7 +721,7 @@ h5.javascript__tag{
 .decor__bar.css{
     background: #264de4;
     width: 100%;
-    height: 15px;
+    height: 5px;
     position: relative;
     top: 15px;
 }
@@ -729,7 +729,7 @@ h5.javascript__tag{
 .decor__bar.javascript{
     background: #f0db4f;
     width: 100%;
-    height: 15px;
+    height: 5px;
     position: relative;
     top: 15px;
 }
@@ -737,7 +737,7 @@ h5.javascript__tag{
 .decor__bar.php{
     background: #B0B3D6;
     width: 100%;
-    height: 15px;
+    height: 5px;
     position: relative;
     top: 15px;
 }
@@ -745,7 +745,7 @@ h5.javascript__tag{
 .decor__bar.mysql{
     background: #00758F;
     width: 100%;
-    height: 15px;
+    height: 5px;
     position: relative;
     top: 15px;
 }

@@ -1828,31 +1828,894 @@ $string_0 = ""; // a string with zero characters</code></pre></div>
 
             <section id="item11">
                 <h1>Conceptos web</h1>
+                <p>Esta sesión demuestra cómo PHP puede proporcionar contenido dinámico según el tipo de navegador, los números generados aleatoriamente o la entrada del usuario. También demostró cómo se puede redirigir el navegador del cliente.</p>
                 
+                <h3>Identificación del navegador y la plataforma</h3>
+
+                <p>PHP crea algunas variables de entorno útiles que se pueden ver en la página phpinfo.php que se utilizó para configurar el entorno PHP.</p>
+                <p>Una de las variables de entorno establecidas por PHP es HTTP_USER_AGENT, que identifica el navegador y el sistema operativo del usuario.</p>
+                <p>PHP proporciona una función getenv () para acceder al valor de todas las variables de entorno. La información contenida en la variable de entorno HTTP_USER_AGENT se puede utilizar para crear contenido dinámico apropiado para el navegador.</p>
+                <p>El siguiente ejemplo demuestra cómo puede identificar el navegador y el sistema operativo de un cliente.</p>
+                <p><b>NOTA:</b> La función preg_match () se analiza en la sesión de expresiones regulares de PHP.</p>
+    
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;body&gt;
+   
+      &lt;?php
+         function getBrowser() { 
+            $u_agent = $_SERVER[&apos;HTTP_USER_AGENT&apos;]; 
+            $bname = &apos;Unknown&apos;;
+            $platform = &apos;Unknown&apos;;
+            $version = &quot;&quot;;
+            
+            //First get the platform?
+            if (preg_match(&apos;/linux/i&apos;, $u_agent)) {
+               $platform = &apos;linux&apos;;
+            }elseif (preg_match(&apos;/macintosh|mac os x/i&apos;, $u_agent)) {
+               $platform = &apos;mac&apos;;
+            }elseif (preg_match(&apos;/windows|win32/i&apos;, $u_agent)) {
+               $platform = &apos;windows&apos;;
+            }
+            
+            // Next get the name of the useragent yes seperately and for good reason
+            if(preg_match(&apos;/MSIE/i&apos;,$u_agent) &amp;&amp; !preg_match(&apos;/Opera/i&apos;,$u_agent)) {
+               $bname = &apos;Internet Explorer&apos;;
+               $ub = &quot;MSIE&quot;;
+            } elseif(preg_match(&apos;/Firefox/i&apos;,$u_agent)) {
+               $bname = &apos;Mozilla Firefox&apos;;
+               $ub = &quot;Firefox&quot;;
+            } elseif(preg_match(&apos;/Chrome/i&apos;,$u_agent)) {
+               $bname = &apos;Google Chrome&apos;;
+               $ub = &quot;Chrome&quot;;
+            }elseif(preg_match(&apos;/Safari/i&apos;,$u_agent)) {
+               $bname = &apos;Apple Safari&apos;;
+               $ub = &quot;Safari&quot;;
+            }elseif(preg_match(&apos;/Opera/i&apos;,$u_agent)) {
+               $bname = &apos;Opera&apos;;
+               $ub = &quot;Opera&quot;;
+            }elseif(preg_match(&apos;/Netscape/i&apos;,$u_agent)) {
+               $bname = &apos;Netscape&apos;;
+               $ub = &quot;Netscape&quot;;
+            }
+            
+            // finally get the correct version number
+            $known = array(&apos;Version&apos;, $ub, &apos;other&apos;);
+            $pattern = &apos;#(?&lt;browser&gt;&apos; . join(&apos;|&apos;, $known) . &apos;)[/ ]+(?&lt;version&gt;[0-9.|a-zA-Z.]*)#&apos;;
+            
+            if (!preg_match_all($pattern, $u_agent, $matches)) {
+               // we have no matching number just continue
+            }
+            
+            // see how many we have
+            $i = count($matches[&apos;browser&apos;]);
+            
+            if ($i != 1) {
+               //we will have two since we are not using &apos;other&apos; argument yet
+               
+               //see if version is before or after the name
+               if (strripos($u_agent,&quot;Version&quot;) &lt; strripos($u_agent,$ub)){
+                  $version= $matches[&apos;version&apos;][0];
+               }else {
+                  $version= $matches[&apos;version&apos;][1];
+               }
+            }else {
+               $version= $matches[&apos;version&apos;][0];
+            }
+            
+            // check if we have a number
+            if ($version == null || $version == &quot;&quot;) {$version = &quot;?&quot;;}
+            return array(
+               &apos;userAgent&apos; =&gt; $u_agent,
+               &apos;name&apos;      =&gt; $bname,
+               &apos;version&apos;   =&gt; $version,
+               &apos;platform&apos;  =&gt; $platform,
+               &apos;pattern&apos;   =&gt; $pattern
+            );
+         }
+         
+         // now try it
+         $ua = getBrowser();
+         $yourbrowser = &quot;Your browser: &quot; . $ua[&apos;name&apos;] . &quot; &quot; . $ua[&apos;version&apos;] .
+            &quot; on &quot; .$ua[&apos;platform&apos;] . &quot; reports: &lt;br &gt;&quot; . $ua[&apos;userAgent&apos;];
+         
+         print_r($yourbrowser);
+      ?&gt;
+   
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+            <p>Esto está produciendo el siguiente resultado en mi máquina. Este resultado puede ser diferente para su computadora dependiendo de lo que esté usando.</p>    
+            <p>Producirá el siguiente resultado:</p>
+
+            <p>Your browser: Google Chrome 54.0.2840.99 on windows reports: <br>
+                Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) 
+                   Chrome/54.0.2840.99 Safari/537.36</p>
+            
+            <h3>Mostrar imágenes al azar</h3>
+            
+            <p>La función PHP rand() se usa para generar un número aleatorio.i Esta función puede generar números dentro de un rango dado. El generador de números aleatorios debe sembrarse para evitar que se genere un patrón regular de números. Esto se logra usando la función srand () que especifica el número de semilla como argumento.</p>
+            <p>El siguiente ejemplo demuestra cómo puede mostrar una imagen diferente cada vez de cuatro imágenes:</p>
+
+            <div class="panel">
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;body&gt;
+   
+      &lt;?php
+         srand( microtime() * 1000000 );
+         $num = rand( 1, 4 );
+         
+         switch( $num ) {
+            case 1: $image_file = &quot;/php/images/logo.png&quot;;
+               break;
+            
+            case 2: $image_file = &quot;/php/images/php.jpg&quot;;
+               break;
+            
+            case 3: $image_file = &quot;/php/images/logo.png&quot;;
+               break;
+            
+            case 4: $image_file = &quot;/php/images/php.jpg&quot;;
+               break;
+         }
+         echo &quot;Random Image : &lt;img src=$image_file /&gt;&quot;;
+      ?&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+            </div>
+
+            <p>Producirá el siguiente resultado:</p>
+
+            <p>resultado....</p>
+
+            <h3>Usar formularios HTML</h3>
+
+            <p>Lo más importante a tener en cuenta cuando se trata de formularios HTML y PHP es que cualquier elemento de formulario en una página HTML estará disponible automáticamente para sus scripts PHP.</p>
+
+            <p>Pruebe el siguiente ejemplo poniendo el código fuente en el script test.php.</p>
+
+            <div class="panel">
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;?php
+   if( $_POST[&quot;name&quot;] || $_POST[&quot;age&quot;] ) {
+      if (preg_match(&quot;/[^A-Za-z&apos;-]/&quot;,$_POST[&apos;name&apos;] )) {
+         die (&quot;invalid name and name should be alpha&quot;);
+      }
+      
+      echo &quot;Welcome &quot;. $_POST[&apos;name&apos;]. &quot;&lt;br /&gt;&quot;;
+      echo &quot;You are &quot;. $_POST[&apos;age&apos;]. &quot; years old.&quot;;
+      
+      exit();
+   }
+?&gt;
+&lt;html&gt;
+   &lt;body&gt;
+   
+      &lt;form action = &quot;&lt;?php $_PHP_SELF ?&gt;&quot; method = &quot;POST&quot;&gt;
+         Name: &lt;input type = &quot;text&quot; name = &quot;name&quot; /&gt;
+         Age: &lt;input type = &quot;text&quot; name = &quot;age&quot; /&gt;
+         &lt;input type = &quot;submit&quot; /&gt;
+      &lt;/form&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+            </div>
+
+            <p>Producirá el siguiente resultado:</p>
+
+            <p>resultado...</p>
+
+            <ul>
+                <li>La variable predeterminada de PHP $ _PHP_SELF se usa para el nombre del script PHP y cuando hace clic en el botón "enviar", se llamará al mismo script PHP y producirá el siguiente resultado:</li>
+                <li>El método = "POST" se utiliza para publicar datos de usuario en el script del servidor. Hay dos métodos para publicar datos en el script del servidor que se describen en el capítulo PHP GET & POST .</li>
+            </ul>
+
+            <h3>Redirección del navegador</h3>
+            <p>La función PHP header() proporciona encabezados HTTP sin procesar al navegador y se puede usar para redirigirlo a otra ubicación. La secuencia de comandos de redirección debe estar en la parte superior de la página para evitar que se cargue cualquier otra parte de la página.</p>
+            <p>El destino lo especifica el encabezado Location: como argumento de la función header () . Después de llamar a esta función, la función exit() se puede usar para detener el análisis del resto del código.</p>
+            <p>El siguiente ejemplo demuestra cómo puede redirigir una solicitud del navegador a otra página web. Pruebe este ejemplo poniendo el código fuente en el script test.php.</p>
+
+            <div class="panel">
+                <div class="codigo__html">
+                    <div class="decor__bar html"></div>
+                    <pre class="line-numbers"><code class="language-html">&lt;?php
+   if( $_POST[&quot;location&quot;] ) {
+      $location = $_POST[&quot;location&quot;];
+      header( &quot;Location:$location&quot; );
+      
+      exit();
+   }
+?&gt;
+&lt;html&gt;
+   &lt;body&gt;
+   
+      &lt;p&gt;Choose a site to visit :&lt;/p&gt;
+      
+      &lt;form action = &quot;&lt;?php $_SERVER[&apos;PHP_SELF&apos;] ?&gt;&quot; method =&quot;POST&quot;&gt;
+         &lt;select name = &quot;location&quot;&gt;.
+         
+            &lt;option value = &quot;http://www.tutorialspoint.com&quot;&gt;
+               Tutorialspoint.com
+            &lt;/option&gt;
+         
+            &lt;option value = &quot;http://www.google.com&quot;&gt;
+               Google Search Page
+            &lt;/option&gt;
+         
+         &lt;/select&gt;
+         &lt;input type = &quot;submit&quot; /&gt;
+      &lt;/form&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+            </div>
+
+            <p>Producirá el siguiente resultado:</p>
+
+            <p>resultado...</p>
+
             </section>
 
             <section id="item12">
                 <h1>GET y POST</h1>
-                
+
+                <p>Hay dos formas en que el cliente del navegador puede enviar información al servidor web.</p>
+                <ul>
+                    <li>El método GET</li>
+                    <li>El método POST</li>
+                </ul>
+
+                <p>Antes de que el navegador envíe la información, la codifica utilizando un esquema llamado codificación URL. En este esquema, los pares de nombre / valor se unen con signos iguales y los diferentes pares están separados por el signo comercial.</p>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">name1=value1&name2=value2&name3=value3
+</code></pre></div>
+                </div>
+    
+                <h3>El método GET</h3>
+                <p>El método GET envía la información de usuario codificada adjunta a la solicitud de página. La página y la información codificada están separadas por ? personaje.</p>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">http://www.test.com/index.htm?name1=value1&name2=value2
+</code></pre></div>
+                </div>
+
+                <ul>
+                    <li>El método GET produce una cadena larga que aparece en los registros de su servidor, en el cuadro Ubicación: del navegador.</li>
+                    <li>El método GET está restringido para enviar hasta 1024 caracteres únicamente.</li>
+                    <li>Nunca use el método GET si tiene una contraseña u otra información confidencial para enviar al servidor.</li>
+                    <li>GET no se puede utilizar para enviar datos binarios, como imágenes o documentos de Word, al servidor.</li>
+                    <li>Se puede acceder a los datos enviados por el método GET mediante la variable de entorno QUERY_STRING.</li>
+                    <li>PHP proporciona una matriz asociativa $ _GET para acceder a toda la información enviada utilizando el método GET.</li>
+                </ul>
+
+                <p>Pruebe el siguiente ejemplo poniendo el código fuente en el script test.php.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;?php
+   if( $_GET[&quot;name&quot;] || $_GET[&quot;age&quot;] ) {
+      echo &quot;Welcome &quot;. $_GET[&apos;name&apos;]. &quot;&lt;br /&gt;&quot;;
+      echo &quot;You are &quot;. $_GET[&apos;age&apos;]. &quot; years old.&quot;;
+      
+      exit();
+   }
+?&gt;
+&lt;html&gt;
+   &lt;body&gt;
+   
+      &lt;form action = &quot;&lt;?php $_PHP_SELF ?&gt;&quot; method = &quot;GET&quot;&gt;
+         Name: &lt;input type = &quot;text&quot; name = &quot;name&quot; /&gt;
+         Age: &lt;input type = &quot;text&quot; name = &quot;age&quot; /&gt;
+         &lt;input type = &quot;submit&quot; /&gt;
+      &lt;/form&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+                <p>resultado...</p>
+
+                <h3>El método POST</h3>
+
+                <p>El método POST transfiere información a través de encabezados HTTP. La información se codifica como se describe en el caso del método GET y se coloca en un encabezado llamado QUERY_STRING.</p>
+
+                <ul>
+                    <li>El método POST no tiene ninguna restricción sobre el tamaño de los datos que se enviarán.</li>
+                    <li>El método POST se puede utilizar para enviar datos ASCII y binarios.</li>
+                    <li>Los datos enviados por el método POST pasan por el encabezado HTTP, por lo que la seguridad depende del protocolo HTTP. Al utilizar HTTP seguro, puede asegurarse de que su información esté segura.</li>
+                    <li>PHP proporciona una matriz asociativa $ _POST para acceder a toda la información enviada utilizando el método POST.</li>
+                </ul>
+
+                <p>Pruebe el siguiente ejemplo poniendo el código fuente en el script test.php.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;?php
+   if( $_POST[&quot;name&quot;] || $_POST[&quot;age&quot;] ) {
+      if (preg_match(&quot;/[^A-Za-z&apos;-]/&quot;,$_POST[&apos;name&apos;] )) {
+         die (&quot;invalid name and name should be alpha&quot;);
+      }
+      echo &quot;Welcome &quot;. $_POST[&apos;name&apos;]. &quot;&lt;br /&gt;&quot;;
+      echo &quot;You are &quot;. $_POST[&apos;age&apos;]. &quot; years old.&quot;;
+      
+      exit();
+   }
+?&gt;
+&lt;html&gt;
+   &lt;body&gt;
+   
+      &lt;form action = &quot;&lt;?php $_PHP_SELF ?&gt;&quot; method = &quot;POST&quot;&gt;
+         Name: &lt;input type = &quot;text&quot; name = &quot;name&quot; /&gt;
+         Age: &lt;input type = &quot;text&quot; name = &quot;age&quot; /&gt;
+         &lt;input type = &quot;submit&quot; /&gt;
+      &lt;/form&gt;
+   
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+                <p>Producirá el siguiente resultado:</p>
+
+                <h3>La variable $ _REQUEST</h3>
+                <p>La variable PHP $ _REQUEST contiene el contenido de $ _GET, $ _POST y $ _COOKIE. Discutiremos la variable $ _COOKIE cuando expliquemos sobre las cookies.</p>
+                <p>La variable PHP $ _REQUEST se puede utilizar para obtener el resultado de los datos del formulario enviados con los métodos GET y POST.</p>
+                <p>Pruebe el siguiente ejemplo poniendo el código fuente en el script test.php.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;?php
+   if( $_REQUEST[&quot;name&quot;] || $_REQUEST[&quot;age&quot;] ) {
+      echo &quot;Welcome &quot;. $_REQUEST[&apos;name&apos;]. &quot;&lt;br /&gt;&quot;;
+      echo &quot;You are &quot;. $_REQUEST[&apos;age&apos;]. &quot; years old.&quot;;
+      exit();
+   }
+?&gt;
+&lt;html&gt;
+   &lt;body&gt;
+      
+      &lt;form action = &quot;&lt;?php $_PHP_SELF ?&gt;&quot; method = &quot;POST&quot;&gt;
+         Name: &lt;input type = &quot;text&quot; name = &quot;name&quot; /&gt;
+         Age: &lt;input type = &quot;text&quot; name = &quot;age&quot; /&gt;
+         &lt;input type = &quot;submit&quot; /&gt;
+      &lt;/form&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+                <p>Aquí la variable $ _PHP_SELF contiene el nombre del auto script en el que se está llamando.</p>
+                <p>Producirá el siguiente resultado:</p>
+
+                <p>.....</p>
+
             </section>
 
             <section id="item13">
                 <h1>Inclusión de archivos</h1>
+                <p>Puede incluir el contenido de un archivo PHP en otro archivo PHP antes de que el servidor lo ejecute. Hay dos funciones PHP que se pueden utilizar para incluir un archivo PHP en otro archivo PHP.</p>
                 
+                <ul>
+                    <li>La función include()</li>
+                    <li>La función require()</li>
+                </ul>
+
+                <p>Este es un punto fuerte de PHP que ayuda a crear funciones, encabezados, pies de página o elementos que se pueden reutilizar en varias páginas. Esto ayudará a los desarrolladores a facilitar el cambio del diseño de un sitio web completo con un esfuerzo mínimo. Si se requiere algún cambio, en lugar de cambiar miles de archivos, simplemente cambie el archivo incluido.</p>
+
+                <h3>La función include()</h3>
+
+                <p>La función include () toma todo el texto de un archivo específico y lo copia en el archivo que usa la función de inclusión. Si hay algún problema al cargar un archivo, la función include () genera una advertencia, pero el script continuará la ejecución.</p>
+
+                <p>Suponga que desea crear un menú común para su sitio web. Luego crea un archivo menu.php con el siguiente contenido.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;a href=&quot;http://www.tutorialspoint.com/index.htm&quot;&gt;Home&lt;/a&gt; - 
+&lt;a href=&quot;http://www.tutorialspoint.com/ebxml&quot;&gt;ebXML&lt;/a&gt; - 
+&lt;a href=&quot;http://www.tutorialspoint.com/ajax&quot;&gt;AJAX&lt;/a&gt; - 
+&lt;a href=&quot;http://www.tutorialspoint.com/perl&quot;&gt;PERL&lt;/a&gt; &lt;br /&gt;</code></pre></div>
+                </div>
+
+                <p>Ahora cree tantas páginas como desee e incluya este archivo para crear un encabezado. Por ejemplo, ahora su archivo test.php puede tener el siguiente contenido.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;body&gt;
+   
+      &lt;?php include(&quot;menu.php&quot;); ?&gt;
+      &lt;p&gt;This is an example to show how to include PHP file!&lt;/p&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+                <p>Producirá el siguiente resultado:</p>
+
+                <p>imagen...resukltado</p>
+
+                <h3>La función require()</h3>
+                <p>La función require () toma todo el texto de un archivo específico y lo copia en el archivo que usa la función de inclusión. Si hay algún problema al cargar un archivo, la función require () genera un error fatal y detiene la ejecución del script.</p>
+                <p>Por lo tanto, no hay diferencia entre require () e include () excepto que manejan condiciones de error. Se recomienda utilizar la función require () en lugar de include (), porque los scripts no deberían continuar ejecutándose si faltan archivos o si tienen nombres incorrectos.</p>
+                <p>Puede intentar usar el ejemplo anterior con la función require () y generará el mismo resultado. Pero si intenta seguir dos ejemplos donde el archivo no existe, obtendrá resultados diferentes.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;body&gt;
+   
+      &lt;?php include(&quot;xxmenu.php&quot;); ?&gt;
+      &lt;p&gt;This is an example to show how to include wrong PHP file!&lt;/p&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+                <p>Esto producirá el siguiente resultado:</p>
+
+                <p>This is an example to show how to include wrong PHP file!</p>
+
+                <p>Ahora intentemos el mismo ejemplo con la función require().</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;body&gt;
+       
+       &lt;?php require(&quot;xxmenu.php&quot;); ?&gt;
+       &lt;p&gt;This is an example to show how to include wrong PHP file!&lt;/p&gt;
+   
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+                <p>Esta vez la ejecución del archivo se detiene y no se muestra nada.</p>
+                <p><b>NOTA:</b> es posible que reciba mensajes de advertencia sencillos, mensajes de error fatales o nada en absoluto. Esto depende de la configuración de su servidor PHP.</p>
+
+
+
             </section>
 
             <section id="item14">
                 <h1>Archivos I/O</h1>
+
+                <p>Este capítulo explicará las siguientes funciones relacionadas con los archivos:</p>
+
+                <ul>
+                    <li>Abrir un archivo</li>
+                    <li>Leer un archivo</li>
+                    <li>Escribir un archivo</li>
+                    <li>Cerrar un archivo</li>
+                </ul>
+
+                <h3>Abrir y cerrar archivos</h3>
+
+                <p>La función PHP fopen () se usa para abrir un archivo. Requiere dos argumentos que indiquen primero el nombre del archivo y luego el modo en el que operar.</p>
+
+                <p>Los modos de archivos se pueden especificar como una de las seis opciones de esta tabla.</p>
+
+                <table>
+                    <tr>
+                        <th>Modo</th>
+                        <th>Propósito</th>
+                    </tr>
+                    <tr>
+                        <td>r</td>
+                        <td>Opens the file for reading only.
+
+Places the file pointer at the beginning of the file.</td>
+                    </tr>
+                    <tr>
+                        <td>r+</td>
+                        <td>Opens the file for reading and writing.
+
+Places the file pointer at the beginning of the file.</td>
+                    </tr>
+                    <tr>
+                        <td>w</td>
+                        <td>Opens the file for writing only.
+
+Places the file pointer at the beginning of the file.
+
+and truncates the file to zero length. If files does not
+
+exist then it attempts to create a file.</td>
+                    </tr>
+                    <tr>
+                        <td>w+</td>
+                        <td>Opens the file for reading and writing only.
+
+Places the file pointer at the beginning of the file.
+
+and truncates the file to zero length. If files does not
+
+exist then it attempts to create a file.</td>
+                    </tr>
+                    <tr>
+                        <td>a</td>
+                        <td>Opens the file for writing only.
+
+Places the file pointer at the end of the file.
+
+If files does not exist then it attempts to create a file.</td>
+                    </tr>
+                    <tr>
+                        <td>a+</td>
+                        <td>Opens the file for reading and writing only.
+
+Places the file pointer at the end of the file.
+
+If files does not exist then it attempts to create a file.</td>
+                    </tr>
+                </table>
+
+                <p>If an attempt to open a file fails then fopen returns a value of false otherwise it returns a file pointer which is used for further reading or writing to that file.</p>
+                <p>After making a changes to the opened file it is important to close it with the fclose() function. The fclose() function requires a file pointer as its argument and then returns true when the closure succeeds or false if it fails.</p>
+
+                <h3>Reading a file</h3>
+                <p>Once a file is opened using fopen() function it can be read with a function called fread(). This function requires two arguments. These must be the file pointer and the length of the file expressed in bytes.</p>
+                <p>The files length can be found using the filesize() function which takes the file name as its argument and returns the size of the file expressed in bytes.</p>
+                <p>So here are the steps required to read a file with PHP</p>
                 
+                <ul>
+                    <li>Open a file using fopen() function.</li>
+                    <li>Get the file's length using filesize() function.</li>
+                    <li>Read the file's content using fread() function.</li>
+                    <li>Close the file with fclose() function.</li>
+                </ul>
+
+                <p>The following example assigns the content of a text file to a variable then displays those contents on the web page.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+
+   &lt;head&gt;
+      &lt;title&gt;Reading a file using PHP&lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      
+      &lt;?php
+         $filename = &quot;tmp.txt&quot;;
+         $file = fopen( $filename, &quot;r&quot; );
+         
+         if( $file == false ) {
+            echo ( &quot;Error in opening file&quot; );
+            exit();
+         }
+         
+         $filesize = filesize( $filename );
+         $filetext = fread( $file, $filesize );
+         fclose( $file );
+         
+         echo ( &quot;File size : $filesize bytes&quot; );
+         echo ( &quot;&lt;pre&gt;$filetext&lt;/pre&gt;&quot; );
+      ?&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+                <p>It will produce the following result −</p>
+
+                <p>img resultado</p>
+
+                <h3>Escribir un archivo</h3>
+
+                <p>Se puede escribir un nuevo archivo o se puede agregar texto a un archivo existente usando la función PHP fwrite () . Esta función requiere dos argumentos que especifiquen un puntero de archivo y la cadena de datos que se escribirán. Opcionalmente, se puede incluir un tercer argumento entero para especificar la longitud de los datos a escribir. Si se incluye el tercer argumento, la escritura se detendrá una vez que se haya alcanzado la longitud especificada.</p>
+
+                <p>El siguiente ejemplo crea un nuevo archivo de texto y luego escribe un encabezado de texto corto dentro de él. Después de cerrar este archivo, su existencia se confirma usando la función file_exist () que toma el nombre del archivo como argumento</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;?php
+   $filename = &quot;/home/user/guest/newfile.txt&quot;;
+   $file = fopen( $filename, &quot;w&quot; );
+   
+   if( $file == false ) {
+      echo ( &quot;Error in opening new file&quot; );
+      exit();
+   }
+   fwrite( $file, &quot;This is  a simple test\n&quot; );
+   fclose( $file );
+?&gt;
+&lt;html&gt;
+   
+   &lt;head&gt;
+      &lt;title&gt;Writing a file using PHP&lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      
+      &lt;?php
+         $filename = &quot;newfile.txt&quot;;
+         $file = fopen( $filename, &quot;r&quot; );
+         
+         if( $file == false ) {
+            echo ( &quot;Error in opening file&quot; );
+            exit();
+         }
+         
+         $filesize = filesize( $filename );
+         $filetext = fread( $file, $filesize );
+         
+         fclose( $file );
+         
+         echo ( &quot;File size : $filesize bytes&quot; );
+         echo ( &quot;$filetext&quot; );
+         echo(&quot;file name: $filename&quot;);
+      ?&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+                <p>Producirá el siguiente resultado:</p>
+
+                <p>resultado...</p>
+
+                <p>Hemos cubierto todas las funciones relacionadas con la entrada y salida de archivos en el capítulo Función del sistema de archivos PHP</p>
+
             </section>
 
             <section id="item15">
                 <h1>Funciones</h1>
                 
+                <p>Las funciones de PHP son similares a otros lenguajes de programación. Una función es un fragmento de código que toma una entrada más en forma de parámetro, realiza algún procesamiento y devuelve un valor.</p>
+                <p>Hay dos partes que deberían quedar claras para usted:</p>
+
+                <ul>
+                    <li>Crear una función PHP</li>
+                    <li>Llamar a una función PHP</li>
+                </ul>
+
+                <p>De hecho, apenas necesita crear su propia función PHP porque ya hay más de 1000 funciones de biblioteca integradas creadas para diferentes áreas y solo necesita llamarlas de acuerdo con sus requisitos.</p>
+                <p>Consulte la Referencia de funciones de PHP para obtener un conjunto completo de funciones útiles.</p>
+
+                <h3>Crear función PHP</h3>
+
+                <p>Es muy fácil crear su propia función PHP. Suponga que desea crear una función PHP que simplemente escribirá un mensaje simple en su navegador cuando la llame. El siguiente ejemplo crea una función llamada writeMessage () y luego la llama justo después de crearla.</p>
+                <p>Tenga en cuenta que al crear una función, su nombre debe comenzar con la función de palabra clave y todo el código PHP debe colocarse entre llaves {y} como se muestra en el siguiente ejemplo:</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   
+   &lt;head&gt;
+      &lt;title&gt;Writing PHP Function&lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      
+      &lt;?php
+         /* Defining a PHP Function */
+         function writeMessage() {
+            echo &quot;You are really a nice person, Have a nice time!&quot;;
+         }
+         
+         /* Calling a PHP Function */
+         writeMessage();
+      ?&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+                <p>Esto mostrará el siguiente resultado:</p>
+
+                <p>You are really a nice person, Have a nice time!</p>
+
+                <h3>Funciones PHP con parámetros</h3>
+                
+                <p>PHP le da la opción de pasar sus parámetros dentro de una función. Puede pasar tantos parámetros como desee. Estos parámetros funcionan como variables dentro de su función. El siguiente ejemplo toma dos parámetros enteros y los suma y luego los imprime.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   
+   &lt;head&gt;
+      &lt;title&gt;Writing PHP Function with Parameters&lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+   
+      &lt;?php
+         function addFunction($num1, $num2) {
+            $sum = $num1 + $num2;
+            echo &quot;Sum of the two numbers is : $sum&quot;;
+         }
+         
+         addFunction(10, 20);
+      ?&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+                <p>Esto mostrará el siguiente resultado:</p>
+
+                <p>Sum of the two numbers is : 30</p>
+
+                <h3>Pasar argumentos por referencia</h3>
+
+                <p>Es posible pasar argumentos a funciones por referencia. Esto significa que la función manipula una referencia a la variable en lugar de una copia del valor de la variable.</p>
+
+                <p>Cualquier cambio realizado en un argumento en estos casos cambiará el valor de la variable original. Puede pasar un argumento por referencia agregando un ampersand al nombre de la variable en la llamada a la función o en la definición de la función.</p>
+
+                <p>El siguiente ejemplo muestra ambos casos.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   
+   &lt;head&gt;
+      &lt;title&gt;Passing Argument by Reference&lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      
+      &lt;?php
+         function addFive($num) {
+            $num += 5;
+         }
+         
+         function addSix(&amp;$num) {
+            $num += 6;
+         }
+         
+         $orignum = 10;
+         addFive( $orignum );
+         
+         echo &quot;Original Value is $orignum&lt;br /&gt;&quot;;
+         
+         addSix( $orignum );
+         echo &quot;Original Value is $orignum&lt;br /&gt;&quot;;
+      ?&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+
+                <p>Esto mostrará el siguiente resultado:</p>    
+
+                <p>Original Value is 10 <br>
+                    Original Value is 16 </p>
+
+                <h3>Funciones PHP que devuelven valor</h3>
+                
+                <p>Una función puede devolver un valor utilizando la declaración de retorno junto con un valor u objeto. return detiene la ejecución de la función y envía el valor al código de llamada.</p>
+                <p>Puede devolver más de un valor de una función usando la matriz de retorno (1,2,3,4) .</p>
+                <p>El siguiente ejemplo toma dos parámetros enteros y los suma y luego devuelve su suma al programa de llamada. Tenga en cuenta que la palabra clave return se usa para devolver un valor de una función.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   
+   &lt;head&gt;
+      &lt;title&gt;Writing PHP Function which returns value&lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+   
+      &lt;?php
+         function addFunction($num1, $num2) {
+            $sum = $num1 + $num2;
+            return $sum;
+         }
+         $return_value = addFunction(10, 20);
+         
+         echo &quot;Returned value from the function : $return_value&quot;;
+      ?&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div> 
+
+                <p>Esto mostrará el siguiente resultado:</p>
+
+                <p>Returned value from the function : 30</p>
+
+                <h3>Configuración de valores predeterminados para parámetros de función</h3>
+
+                <p>Puede configurar un parámetro para que tenga un valor predeterminado si la persona que llama a la función no lo pasa.</p>
+                <p>La siguiente función imprime NULL en caso de que el uso no pase ningún valor a esta función.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   
+   &lt;head&gt;
+      &lt;title&gt;Writing PHP Function which returns value&lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      
+      &lt;?php
+         function printMe($param = NULL) {
+            print $param;
+         }
+         
+         printMe(&quot;This is test&quot;);
+         printMe();
+      ?&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div> 
+
+                <p>Esto producirá el siguiente resultado:</p>
+
+                <p>This is test</p>
+
+                <h3>Llamadas a funciones dinámicas</h3>
+                <p>Es posible asignar nombres de funciones como cadenas a variables y luego tratar estas variables exactamente como lo haría con el nombre de la función en sí. El siguiente ejemplo muestra este comportamiento.</p>
+
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   
+   &lt;head&gt;
+      &lt;title&gt;Dynamic Function Calls&lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      
+      &lt;?php
+         function sayHello() {
+            echo &quot;Hello&lt;br /&gt;&quot;;
+         }
+         
+         $function_holder = &quot;sayHello&quot;;
+         $function_holder();
+      ?&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div> 
+
+                <p>Esto mostrará el siguiente resultado:</p>
+
+                <p>Hello</p>
+
             </section>
 
             <section id="item16">
                 <h1>Cookies</h1>
+
+
+
+
+
+
+
+                
                 
             </section>
 
