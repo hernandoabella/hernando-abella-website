@@ -3759,101 +3759,1007 @@ If files does not exist then it attempts to create a file.</td>
             <section id="item22">
                 <h1>Expresión regular</h1>
 
+                <p>Las expresiones regulares no son más que una secuencia o patrón de caracteres en sí. Proporcionan la base para la funcionalidad de coincidencia de patrones.</p>
+                <p>Con la expresión regular, puede buscar una cadena en particular dentro de otra cadena, puede reemplazar una cadena por otra cadena y puede dividir una cadena en muchos fragmentos.</p>
+                <p>PHP ofrece funciones específicas para dos conjuntos de funciones de expresión regular, cada una de las cuales corresponde a un cierto tipo de expresión regular. Puede utilizar cualquiera de ellos según su comodidad.</p>
+                <ul>
+                    <li>Expresiones regulares POSIX</li>
+                    <li>Expresiones regulares de estilo PERL</li>
+                </ul>
 
+                <h3>Expresiones regulares POSIX</h3>
 
+                <p>La estructura de una expresión regular POSIX no es diferente a la de una expresión aritmética típica: varios elementos (operadores) se combinan para formar expresiones más complejas.</p>
+                <p>La expresión regular más simple es aquella que coincide con un solo carácter, como g, dentro de cadenas como g, regatear o bolsa.</p>
+                <p>Démosle una explicación de algunos conceptos que se utilizan en la expresión regular POSIX. Después de eso, le presentaremos funciones relacionadas con expresiones regulares.</p>
 
+                <h4>Soportes</h4>
 
-
-
-
-
-
-
-
+                <p>Los corchetes ([]) tienen un significado especial cuando se usan en el contexto de expresiones regulares. Se utilizan para encontrar una variedad de personajes.</p>
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Expresión</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>[0-9]</td>
+                        <td>Coincide con cualquier dígito decimal del 0 al 9.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>[Arizona]</td>
+                        <td>Coincide con cualquier carácter desde la a minúscula hasta la z minúscula</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>[ARIZONA]</td>
+                        <td>Coincide con cualquier carácter de la A mayúscula a la Z mayúscula.</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>[Arizona]</td>
+                        <td>Coincide con cualquier carácter desde la a minúscula hasta la Z mayúscula</td>
+                    </tr>
+                </table>
+            
                 
+                <p>Los rangos que se muestran arriba son generales; también puede usar el rango [0-3] para hacer coincidir cualquier dígito decimal entre 0 y 3, o el rango [bv] para hacer coincidir cualquier carácter en minúscula entre b y v.</p>
+
+                <h4>Cuantificadores</h4>
+
+                <p>La frecuencia o posición de las secuencias de caracteres entre corchetes y los caracteres individuales se pueden indicar mediante un carácter especial. Cada carácter especial tiene una connotación específica. El +, *,?, {Int. range} y las banderas $ siguen una secuencia de caracteres.</p>
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Expresión</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>p+</td>
+                        <td>It matches any string containing at least one p.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>p*</td>
+                        <td>It matches any string containing zero or more p's.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>p?</td>
+                        <td>It matches any string containing zero or one p's.</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>p{N}</td>
+                        <td>It matches any string containing a sequence of N p's</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>p{2,3}</td>
+                        <td>It matches any string containing a sequence of two or three p's.</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>p{2, }</td>
+                        <td>It matches any string containing a sequence of at least two p's</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>p$</td>
+                        <td>It matches any string with p at the end of it.</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>^p</td>
+                        <td>It matches any string with p at the beginning of it.</td>
+                    </tr>
+                </table>
+
+                <h4>Ejemplos</h4>
+
+                <p>Los siguientes ejemplos aclararán sus conceptos sobre la coincidencia de caracteres.</p>
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Expresión</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>[^ a-zA-Z]</td>
+                        <td>Coincide con cualquier cadena que no contenga ninguno de los caracteres que van de la A a la Z y de la A a la Z.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>p.p</td>
+                        <td>Coincide con cualquier cadena que contenga p, seguida de cualquier carácter, seguido a su vez por otra p.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>^.{2}$</td>
+                        <td>Coincide con cualquier cadena que contenga exactamente dos caracteres.</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>&lt;b&gt;(.*)&lt;/b&gt;</td>
+                        <td>Coincide con cualquier cadena incluida entre &lt;b&gt; y &lt;/b&gt;.</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>p(hp)*</td>
+                        <td>Coincide con cualquier cadena que contenga ap seguida de cero o más instancias de la secuencia php.</td>
+                    </tr>
+                </table>
+
+                <h4>Rangos de caracteres predefinidos</h4>
+
+                <p>Para su conveniencia de programación, se encuentran disponibles varios rangos de caracteres predefinidos, también conocidos como clases de caracteres. Las clases de caracteres especifican un rango completo de caracteres, por ejemplo, el alfabeto o un conjunto de números enteros:</p>
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Expresión</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>[[:alpha:]]</td>
+                        <td>Coincide con cualquier cadena que contenga caracteres alfabéticos de la aA a la zZ.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>[[:digit:]]</td>
+                        <td>Coincide con cualquier cadena que contenga dígitos numéricos del 0 al 9</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>[[:alnum:]]</td>
+                        <td>Coincide con cualquier cadena que contenga caracteres alfanuméricos de la aA a la zZ y del 0 al 9.</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>[[:space:]]</td>
+                        <td>Coincide con cualquier cadena que contenga un espacio.</td>
+                    </tr>
+                </table>
+
+                <h4>Funciones de PHP Regexp POSIX</h4>
+                <p>PHP actualmente ofrece siete funciones para buscar cadenas usando expresiones regulares de estilo POSIX:</p>
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Función</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>ereg()</td>
+                        <td>La función ereg() busca una cadena especificada por cadena para una cadena especificada por patrón, devolviendo verdadero si se encuentra el patrón y falso en caso contrario.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>ereg_replace()</td>
+                        <td>La función ereg_replace() busca la cadena especificada por patrón y reemplaza patrón con reemplazo si se encuentra.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>eregi()</td>
+                        <td>La función eregi () busca en una cadena especificada por patrón una cadena especificada por cadena. La búsqueda no distingue entre mayúsculas y minúsculas.</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>eregi_replace()</td>
+                        <td>La función eregi_replace () opera exactamente como ereg_replace (), excepto que la búsqueda de patrón en la cadena no distingue entre mayúsculas y minúsculas</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>split()</td>
+                        <td>La función split () dividirá una cadena en varios elementos, los límites de cada elemento se basan en la aparición del patrón en la cadena</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>spliti()</td>
+                        <td>La función spliti () opera exactamente de la misma manera que su hermano split (), excepto que no distingue entre mayúsculas y minúsculas.</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>sql_regcase()</td>
+                        <td>La función sql_regcase () se puede considerar como una función de utilidad, que convierte cada carácter de la cadena del parámetro de entrada en una expresión entre corchetes que contiene dos caracteres.</td>
+                    </tr>
+                </table>
+
+                <h3>Expresiones regulares de estilo PERL</h3>
+
+                <p>Las expresiones regulares de estilo Perl son similares a sus contrapartes POSIX. La sintaxis POSIX se puede utilizar casi indistintamente con las funciones de expresión regular de estilo Perl. De hecho, puede utilizar cualquiera de los cuantificadores presentados en la sección POSIX anterior.</p>
+                <p>Vamos a dar una explicación de algunos conceptos que se utilizan en expresiones regulares PERL. Después de eso, le presentaremos las funciones relacionadas con las expresiones regulares.</p>
+
+                <h4>Meta personajes</h4>
+
+                <p>Un metacarácter es simplemente un carácter alfabético precedido por una barra invertida que actúa para dar a la combinación un significado especial.</p>
+                <p>Por ejemplo, puede buscar grandes sumas de dinero utilizando el metacarácter '\ d': / ([\ d] +) 000 / , aquí \ d buscará cualquier cadena de caracteres numéricos</p>
+                <p>A continuación se muestra la lista de metacaracteres que se pueden usar en expresiones regulares de estilo PERL.</p>
+
+                <table>
+                    <tr>
+                        <th>Carácter</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>.</td>
+                        <td>a single character</td>
+                    </tr>
+                    <tr>
+                        <td>\s</td>
+                        <td>a whitespace character (space, tab, newline)</td>
+                    </tr>
+                    <tr>
+                        <td>\S</td>
+                        <td>non-whitespace character</td>
+                    </tr>
+                    <tr>
+                        <td>\d</td>
+                        <td>a digit (0-9)</td>
+                    </tr>
+                    <tr>
+                        <td>\D</td>
+                        <td>a non-digit</td>
+                    </tr>
+                    <tr>
+                        <td>\w</td>
+                        <td>a word character (a-z, A-Z, 0-9, _)</td>
+                    </tr>
+                    <tr>
+                        <td>\W</td>
+                        <td>a non-word character</td>
+                    </tr>
+                    <tr>
+                        <td>[aeiou]</td>
+                        <td>matches a single character in the given set</td>
+                    </tr>
+                    <tr>
+                        <td>[^aeiou]</td>
+                        <td>matches a single character outside the given set</td>
+                    </tr>
+                    <tr>
+                        <td>(foo|bar|baz)</td>
+                        <td>matches any of the alternatives specified</td>
+                    </tr>
+                </table>
+
+                <h4>Modificadores</h4>
+                <p>Hay varios modificadores disponibles que pueden hacer que su trabajo con expresiones regulares sea mucho más fácil, como la distinción entre mayúsculas y minúsculas, la búsqueda en varias líneas, etc.</p>
+
+                <table>
+                    <tr>
+                        <th>Modificador</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>i</td>
+                        <td>Makes the match case insensitive</td>
+                    </tr>
+                    <tr>
+                        <td>m</td>
+                        <td>Specifies that if the string has newline or carriage
+                            return characters, the ^ and $ operators will now
+                            match against a newline boundary, instead of a
+                            string boundary</td>
+                    </tr>
+                    <tr>
+                        <td>o</td>
+                        <td>Evaluates the expression only once</td>
+                    </tr>
+                    <tr>
+                        <td>s</td>
+                        <td>Allows use of . to match a newline character</td>
+                    </tr>
+                    <tr>
+                        <td>x</td>
+                        <td>Allows you to use white space in the expression for clarity</td>
+                    </tr>
+                    <tr>
+                        <td>g</td>
+                        <td>Globally finds all matches</td>
+                    </tr>
+                    <tr>
+                        <td>cg</td>
+                        <td>Allows a search to continue even after a global match fails</td>
+                    </tr>
+                </table>
+
+                <h3>Funciones compatibles con PHP Regexp PERL</h3>
+                <p>PHP ofrece las siguientes funciones para buscar cadenas utilizando expresiones regulares compatibles con Perl:</p>
+
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Función</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>preg_match()</td>
+                        <td>La función preg_match () busca un patrón en la cadena, devolviendo verdadero si el patrón existe y falso en caso contrario</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>preg_match_all()</td>
+                        <td>La función preg_match_all () coincide con todas las apariciones de patrón en cadena.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>preg_replace()</td>
+                        <td>La función preg_replace () funciona igual que ereg_replace (), excepto que se pueden usar expresiones regulares en el patrón y en los parámetros de entrada de reemplazo.</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>preg_split()</td>
+                        <td>La función preg_split () opera exactamente como split (), excepto que las expresiones regulares se aceptan como parámetros de entrada para el patrón.</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>preg_grep()</td>
+                        <td>La función preg_grep () busca todos los elementos de input_array, devolviendo todos los elementos que coinciden con el patrón de expresión regular.</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>preg_quote()</td>
+                        <td>Cita caracteres de expresión regular</td>
+                    </tr>
+                </table>
+
             </section>
 
             <section id="item23">
                 <h1>Manejo de errores</h1>
 
+                <p>El manejo de errores es el proceso de detectar errores generados por su programa y luego tomar las medidas adecuadas. Si maneja los errores correctamente, puede tener muchas consecuencias imprevistas.</p>
+                <p>Es muy simple en PHP manejar errores</p>
 
+                <h3>Usando la función die()</h3>
+                <p>Mientras escribe su programa PHP, debe verificar todas las posibles condiciones de error antes de continuar y tomar las medidas adecuadas cuando sea necesario.</p>
+                <p>Intente seguir el ejemplo sin tener el archivo /tmp/test.xt y con este archivo.</p>
 
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">&lt;?php
+   if(!file_exists(&quot;/tmp/test.txt&quot;)) {
+      die(&quot;File not found&quot;);
+   }else {
+      $file = fopen(&quot;/tmp/test.txt&quot;,&quot;r&quot;);
+      print &quot;Opend file sucessfully&quot;;
+   }
+   // Test of the code here.
+?&gt;</code></pre></div>
+                </div>
 
+                <p>De esta manera puede escribir un código eficiente. Usando la técnica anterior, puede detener su programa siempre que se produzca un error y mostrar un mensaje más significativo y fácil de usar.</p>
 
+                <h3>Definición de la función de gestión de errores personalizada</h3>
 
+                <p>Puede escribir su propia función para manejar cualquier error. PHP le proporciona un marco para definir la función de manejo de errores.</p>
+                <p>Esta función debe poder manejar un mínimo de dos parámetros (nivel de error y mensaje de error) pero puede aceptar hasta cinco parámetros (opcionalmente: archivo, número de línea y el contexto de error) -</p>
 
+                <h4>Sintaxis:</h4>
 
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">error_function(error_level,error_message, error_file,error_line,error_context);
+</code></pre></div>
+                </div>
 
+                <table>
+                    <tr>
+                        <th>Parámetros</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>error_level</td>
+                        <td>Requerido: especifica el nivel de informe de error para el error definido por el usuario. Debe ser un número de valor.</td>
+                    </tr>
+                    <tr>
+                        <td>error_message</td>
+                        <td>Obligatorio: especifica el mensaje de error del error definido por el usuario.</td>
+                    </tr>
+                    <tr>
+                        <td>error_file</td>
+                        <td>Opcional: especifica el nombre del archivo en el que se produjo el error.</td>
+                    </tr>
+                    <tr>
+                        <td>error_line</td>
+                        <td>Opcional: especifica el número de línea en el que se produjo el error.</td>
+                    </tr>
+                    <tr>
+                        <td>error_context</td>
+                        <td>Opcional: especifica una matriz que contiene todas las variables y sus valores en uso cuando ocurrió el error</td>
+                    </tr>
+                </table>
 
+                <h4>Posibles niveles de error</h4>
 
+                <p>Estos niveles de informe de errores son los diferentes tipos de errores para los que se puede utilizar el controlador de errores definido por el usuario. Estos valores cab se utilizan en combinación con | operador</p>
 
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Constante</th>
+                        <th>Descripción</th>
+                        <th>Valor</th>
+                    </tr>
+                    <th>
+                        <td>1</td>
+                        <td>.E_ERROR</td>
+                        <td>Errores fatales en tiempo de ejecución. Se detiene la ejecución del guión</td>
+                        <td>1</td>
+                    </th>
+                    <th>
+                        <td>2</td>
+                        <td>E_WARNING</td>
+                        <td>Errores de tiempo de ejecución no fatales. La ejecución del script no se detiene</td>
+                        <td>2</td>
+                    </th>
+                    <th>
+                        <td>3</td>
+                        <td>E_PARSE</td>
+                        <td>Errores de análisis en tiempo de compilación. Los errores de análisis solo deben ser generados por el analizador</td>
+                        <td>4</td>
+                    </th>
+                    <th>
+                        <td>4</td>
+                        <td>E_NOTICE</td>
+                        <td>Avisos en tiempo de ejecución. El script encontró algo que podría ser un error, pero también podría suceder cuando se ejecuta un script normalmente</td>
+                        <td>8</td>
+                    </th>
+                    <th>
+                        <td>5</td>
+                        <td>E_CORE_ERROR</td>
+                        <td>Errores fatales que ocurren durante la puesta en marcha inicial de PHP</td>
+                        <td>16</td>
+                    </th>
+                    <th>
+                        <td>6</td>
+                        <td>E_CORE_WARNING</td>
+                        <td>Errores de tiempo de ejecución no fatales. Esto ocurre durante la puesta en marcha inicial de PHP.</td>
+                        <td>32</td>
+                    </th>
+                    <th>
+                        <td>7</td>
+                        <td>E_USER_ERROR</td>
+                        <td>Error fatal generado por el usuario. Esto es como un E_ERROR establecido por el programador usando la función de PHP trigger_error ()</td>
+                        <td>256</td>
+                    </th>
+                    <th>
+                        <td>8</td>
+                        <td>E_USER_WARNING</td>
+                        <td>Advertencia no fatal generada por el usuario. Esto es como un E_WARNING establecido por el programador usando la función de PHP trigger_error ()</td>
+                        <td>512</td>
+                    </th>
+                    <th>
+                        <td>9</td>
+                        <td>E_USER_NOTICE</td>
+                        <td>Aviso generado por el usuario. Esto es como un E_NOTICE establecido por el programador usando la función de PHP trigger_error ()</td>
+                        <td>1024</td>
+                    </th>
+                    <th>
+                        <td>10</td>
+                        <td>E_STRICT</td>
+                        <td>Avisos en tiempo de ejecución. Habilite para que PHP sugiera cambios en su código que garantizarán la mejor interoperabilidad y compatibilidad con versiones posteriores de su código.</td>
+                        <td>2048</td>
+                    </th>
+                    <th>
+                        <td>11</td>
+                        <td>E_RECOVERABLE_ERROR</td>
+                        <td>Error fatal detectable. Esto es como un E_ERROR pero puede ser detectado por un identificador definido por el usuario (ver también set_error_handler ())</td>
+                        <td>4096</td>
+                    </th>
+                    <th>
+                        <td>12</td>
+                        <td>E_ALL</td>
+                        <td></td>
+                        <td>8191</td>
+                    </th>
+                </table>
 
+                <p>Todo el nivel de error anterior se puede configurar utilizando la siguiente función de biblioteca incorporada de PHP, donde el nivel cab es cualquiera de los valores definidos en la tabla anterior.</p>
 
+                <p>int error_reporting ( [int $level] )</p>
 
+                <p>A continuación se muestra la forma en que puede crear una función de manejo de errores:</p>
 
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">&lt;?php
+   function handleError($errno, $errstr,$error_file,$error_line) {
+      echo &quot;&lt;b&gt;Error:&lt;/b&gt; [$errno] $errstr - $error_file:$error_line&quot;;
+      echo &quot;&lt;br /&gt;&quot;;
+      echo &quot;Terminating PHP Script&quot;;
+      
+      die();
+   }
+?&gt;</code></pre></div>
+                </div>
 
-                
+                <p>Una vez que defina su controlador de errores personalizado, debe configurarlo utilizando la función set_error_handler de la biblioteca incorporada de PHP . Ahora examinemos nuestro ejemplo llamando a una función que no existe.</p>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">&lt;?php
+   error_reporting( E_ERROR );
+   
+   function handleError($errno, $errstr,$error_file,$error_line) {
+      echo &quot;&lt;b&gt;Error:&lt;/b&gt; [$errno] $errstr - $error_file:$error_line&quot;;
+      echo &quot;&lt;br /&gt;&quot;;
+      echo &quot;Terminating PHP Script&quot;;
+      
+      die();
+   }
+   
+   //set error handler
+   set_error_handler(&quot;handleError&quot;);
+   
+   //trigger error
+   myFunction();
+?&gt;</code></pre></div>
+                </div>
+
+                <h3>Manejo de excepciones</h3> 
+
+                <p>PHP 5 tiene un modelo de excepción similar al de otros lenguajes de programación. Las excepciones son importantes y proporcionan un mejor control sobre el manejo de errores.</p>
+                <p>Expliquemos la nueva palabra clave relacionada con las excepciones.</p>
+
+                <ul>
+                    <li>Try : una función que utilice una excepción debe estar en un bloque "try". Si la excepción no se activa, el código continuará con normalidad. Sin embargo, si se activa la excepción, se "lanza" una excepción.</li>
+                    <li>Lanzar : así es como se activa una excepción. Cada "lanzamiento" debe tener al menos una "captura".</li>
+                    <li>Catch : un bloque "catch" recupera una excepción y crea un objeto que contiene la información de la excepción.</li>
+                </ul>
+
+                <p>Cuando se lanza una excepción, el código que sigue a la declaración no se ejecutará y PHP intentará encontrar el primer bloque de captura coincidente. Si no se detecta una excepción, se emitirá un error fatal de PHP con una "Excepción no detectada ...</p>
+
+                <ul>
+                    <li>Una excepción puede ser lanzada y capturada ("capturada") dentro de PHP. El código puede estar rodeado en un bloque de prueba</li>
+                    <li>Cada intento debe tener al menos un bloque de captura correspondiente. Se pueden usar varios bloques de captura para detectar diferentes clases de excepciones.</li>
+                    <li>Las excepciones se pueden lanzar (o volver a lanzar) dentro de un bloque de captura.</li>
+                </ul>
+
+                <h4>Ejemplo:</h4>
+
+                <p>A continuación se muestra el fragmento de código, copie y pegue este código en un archivo y verifique el resultado.</p>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">&lt;?php
+   try {
+      $error = &apos;Always throw this error&apos;;
+      throw new Exception($error);
+      
+      // Code following an exception is not executed.
+      echo &apos;Never executed&apos;;
+   }catch (Exception $e) {
+      echo &apos;Caught exception: &apos;,  $e-&gt;getMessage(), &quot;\n&quot;;
+   }
+   
+   // Continue execution
+   echo &apos;Hello World&apos;;
+?&gt;</code></pre></div>
+                </div>
+
+                <p>En el ejemplo anterior, la función $ e-> getMessage se usa para obtener un mensaje de error. Hay las siguientes funciones que se pueden utilizar desde la clase Exception .</p>
+
+                <ul>
+                    <li>getMessage() - mensaje de excepción</li>
+                    <li>getCode() - código de excepción</li>
+                    <li>getFile() - nombre del archivo de origen</li>
+                    <li>getLine() - línea fuente</li>
+                    <li>getTrace() - matriz n del backtrace()</li>
+                    <li>getTraceAsString() - cadena de seguimiento formateada</li>
+                </ul>
+
+                <h3>Creación de un controlador de excepciones personalizado</h3>
+
+                <p>Puede definir su propio controlador de excepciones personalizado. Utilice la siguiente función para establecer una función de controlador de excepciones definida por el usuario.</p>
+
+                <p>string set_exception_handler ( callback $exception_handler )</p>
+
+                <p>En este caso, exception_handler es el nombre de la función que se llamará cuando se produzca una excepción no detectada. Esta función debe definirse antes de llamar a set_exception_handler ().</p>
+
+                <h4>Ejemplo:</h4>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">&lt;?php
+   function exception_handler($exception) {
+      echo &quot;Uncaught exception: &quot; , $exception-&gt;getMessage(), &quot;\n&quot;;
+   }
+&#x9;
+   set_exception_handler(&apos;exception_handler&apos;);
+   throw new Exception(&apos;Uncaught Exception&apos;);
+   
+   echo &quot;Not Executed\n&quot;;
+?&gt;</code></pre></div>
+                </div>
+
+                <p>Verifique el conjunto completo de funciones de manejo de errores en Funciones de manejo de errores de PHP.</p>
+
             </section>
 
             <section id="item24">
                 <h1>Depuración de errores</h1>
+                <p>Los programas rara vez funcionan correctamente la primera vez. Muchas cosas pueden salir mal en su programa y hacer que el intérprete de PHP genere un mensaje de error. Tiene la opción de elegir dónde irán esos mensajes de error. Los mensajes se pueden enviar junto con la salida de otro programa al navegador web. También se pueden incluir en el registro de errores del servidor web.</p>
+                <p>Para que se muestren mensajes de error en el navegador, establezca la directiva de configuración display_errors en On . Para enviar errores al registro de errores del servidor web, establezca log_errors en On. Puede configurar ambos en Activado si desea mensajes de error en ambos lugares</p>
+                <p>PHP define algunas constantes que puede usar para establecer el valor de error_reporting de modo que solo se informen errores de ciertos tipos: E_ALL (para todos los errores excepto avisos estrictos), E_PARSE (errores de análisis), E_ERROR (errores fatales), E_WARNING (advertencias), E_NOTICE (avisos) y E_STRICT (avisos estrictos).</p>
+                <p>Mientras escribe su programa PHP, es una buena idea utilizar editores compatibles con PHP como BBEdit o Emacs . Una de las características especiales de estos editores es el resaltado de sintaxis. Cambia el color de diferentes partes de su programa en función de cuáles son esas partes. Por ejemplo, las cadenas son rosadas, las palabras clave como si y while son azules, los comentarios son grises y las variables son negras.</p>
+                <p>Otra característica es la coincidencia de cotizaciones y corchetes, lo que ayuda a garantizar que las cotizaciones y los corchetes estén equilibrados. Cuando escribe un delimitador de cierre como}, el editor resalta la apertura {que coincide.</p>
+                <p>Hay los siguientes puntos que deben verificarse durante la depuración de su programa</p>
+                <ul>
+                    <li>Falta de punto y coma : cada instrucción de PHP termina con un punto y coma (;). PHP no deja de leer una declaración hasta que llega al punto y coma. Si omite el punto y coma al final de una línea, PHP continúa leyendo la declaración en la siguiente línea</li>
+                    <li>No hay suficientes signos iguales : cuando pregunta si dos valores son iguales en una declaración de comparación, necesita dos signos iguales (==). Usar un signo igual es un error común.</li>
+                    <li>Nombres de variables mal escritos: si escribió mal una variable, PHP la entiende como una nueva variable. Recuerde: Para PHP, $ test no es la misma variable que $ Test.</li>
+                    <li>Signos de dólar faltantes: un signo de dólar faltante en el nombre de una variable es realmente difícil de ver, pero al menos generalmente genera un mensaje de error para que sepa dónde buscar el problema.</li>
+                    <li>Citas preocupantes : puede tener demasiadas, muy pocas o el tipo incorrecto de citas. Por lo tanto, verifique que haya un número equilibrado de citas.</li>
+                    <li>Faltan paréntesis y llaves : siempre deben estar en pares.</li>
+                    <li>Índice de matriz : todas las matrices deben comenzar desde cero en lugar de 1.</li>
+                </ul>    
+                <p>Además, maneje todos los errores correctamente y dirija todos los mensajes de seguimiento al archivo de registro del sistema para que, si ocurre algún problema, se registre en el archivo de registro del sistema y pueda depurar ese problema.</p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                
             </section>
 
             <section id="item25">
                 <h1>Fecha y hora</h1>
                 
+                <p>Las fechas son una parte tan importante de la vida cotidiana que resulta fácil trabajar con ellas sin pensar. PHP también proporciona herramientas poderosas para la aritmética de fechas que facilitan la manipulación de fechas.</p>
+
+                <h3>Obtener la marca de tiempo con la función time()</h3>
+
+                <p>La función time () de PHP le brinda toda la información que necesita sobre la fecha y hora actuales. No requiere argumentos pero devuelve un número entero.</p>
+                <p>El entero devuelto por time () representa el número de segundos transcurridos desde la medianoche GMT del 1 de enero de 1970. Este momento se conoce como época de UNIX y el número de segundos que han transcurrido desde entonces se denomina marca de tiempo.</p>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php"><?php
+   print time();
+?></code></pre></div>
+                </div>
 
 
+                <p>Esto producirá el siguiente resultado:</p>
 
+                <p>1480930103</p>
 
+                <p>Esto es algo difícil de entender. Pero PHP ofrece excelentes herramientas para convertir una marca de tiempo en una forma con la que los humanos se sientan cómodos</p>
 
+                <h3>Conversión de una marca de tiempo con getdate()</h3>
+                <p>La función getdate() acepta opcionalmente una marca de tiempo y devuelve una matriz asociativa que contiene información sobre la fecha. Si omite la marca de tiempo, funciona con la marca de tiempo actual devuelta por time ().</p>
+                <p>La siguiente tabla enumera los elementos contenidos en la matriz devuelta por getdate().</p>
 
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Clave</th>
+                        <th>Descripción</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><b>seconds</b></td>
+                        <td>Segundos pasados ​​los minutos (0-59)</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>minutes</td>
+                        <td>Minutos después de la hora (0 - 59)</td>
+                        <td>29</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>hours</td>
+                        <td>Horas del día (0-23)</td>
+                        <td>22</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>mday</td>
+                        <td>Día del mes (1 - 31)</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>wday</td>
+                        <td>Día de la semana (0 - 6)</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>mon</td>
+                        <td>Mes del año (1-12)</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>year</td>
+                        <td>Año (4 dígitos)</td>
+                        <td>1997</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>yday</td>
+                        <td>Día del año (0 - 365)</td>
+                        <td>19</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>weekday</td>
+                        <td>Día de la semana</td>
+                        <td>jueves</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>month</td>
+                        <td>Mes del año</td>
+                        <td>enero</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>0</td>
+                        <td>Marca de tiempo</td>
+                        <td>948370048</td>
+                    </tr>
+                    
+                </table>
 
+                <p>Ahora tienes un control total sobre la fecha y la hora. Puede formatear esta fecha y hora en el formato que desee.</p>
 
+                <h4>Ejemplo:</h4>
+                <p>Prueba el siguiente ejemplo</p>
 
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">&lt;?php
+   $date_array = getdate();
+   
+   foreach ( $date_array as $key =&gt; $val ){
+      print &quot;$key = $val&lt;br /&gt;&quot;;
+   }
+&#x9;
+   $formated_date  = &quot;Today&apos;s date: &quot;;
+   $formated_date .= $date_array[&apos;mday&apos;] . &quot;/&quot;;
+   $formated_date .= $date_array[&apos;mon&apos;] . &quot;/&quot;;
+   $formated_date .= $date_array[&apos;year&apos;];
+   
+   print $formated_date;
+?&gt;</code></pre></div>
+                </div>
 
+                <p>Esto producirá el siguiente resultado:</p>
 
+                <p>seconds = 10 <br>
+                    minutes = 29 <br>
+                    hours = 9 <br>
+                    mday = 5 <br>
+                    wday = 1 <br>
+                    mon = 12 <br>
+                    year = 2016 <br>
+                    yday = 339 <br>
+                    weekday = Monday <br>
+                    month = December <br>
+                    0 = 1480930150 <br>
+                    Today's date: 5/12/2016</p>
 
+                <h3>Conversión de una marca de tiempo con date()</h3>
+                <p>La función date() devuelve una cadena formateada que representa una fecha. Puede ejercer una enorme cantidad de control sobre el formato que devuelve date() con un argumento de cadena que debe pasarle.</p>
+                <p>date(format,timestamp)</p>
+                <p>La date() acepta opcionalmente una marca de tiempo si se omite, entonces se usarán la fecha y hora actuales. Cualquier otro dato que incluya en la cadena de formato pasada a la date() se incluirá en el valor de retorno.</p>
+                <p>La siguiente tabla enumera los códigos que puede contener una cadena de formato:</p>
 
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Formato</th>
+                        <th>Descripción</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>a</td>
+                        <td>'am' o 'pm' en minúsculas</td>
+                        <td>pm</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>A</td>
+                        <td>'AM' o 'PM' en mayúsculas</td>
+                        <td>PM</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>d</td>
+                        <td>Día del mes, un número con ceros a la izquierda</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>D</td>
+                        <td>Día de la semana (tres letras)</td>
+                        <td>Jue</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>F</td>
+                        <td>Nombre del mes</td>
+                        <td>enero</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>h</td>
+                        <td>Hora (formato de 12 horas - ceros a la izquierda)</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>H</td>
+                        <td>Hora (formato de 24 horas - ceros a la izquierda)</td>
+                        <td>22</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>g</td>
+                        <td>Hora (formato de 12 horas, sin ceros a la izquierda)</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>G</td>
+                        <td>Hora (formato de 24 horas, sin ceros a la izquierda)</td>
+                        <td>22</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>i</td>
+                        <td>Minutos (0 - 59)</td>
+                        <td>23</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>j</td>
+                        <td>Día del mes (sin ceros a la izquierda</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>l (Lower 'L')</td>
+                        <td>Día de la semana</td>
+                        <td>jueves</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>L</td>
+                        <td>Año bisiesto ('1' para sí, '0' para no)</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>m</td>
+                        <td>Mes del año (número - ceros a la izquierda)</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>M</td>
+                        <td>Mes del año (tres letras)</td>
+                        <td>ene</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>r</td>
+                        <td>La fecha con formato RFC 2822</td>
+                        <td>Jueves, 21 de diciembre de 2000 16:01:07 +0200</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>n</td>
+                        <td>Mes del año (número, sin ceros a la izquierda)</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>s</td>
+                        <td>Segundos de hora</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>U</td>
+                        <td>Sello de tiempo</td>
+                        <td>948372444</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>y</td>
+                        <td>Año (dos dígitos)</td>
+                        <td>06</td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>Y</td>
+                        <td>Año (cuatro dígitos)</td>
+                        <td>2006</td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td>z</td>
+                        <td>Día del año (0 - 365)</td>
+                        <td>206</td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>Z</td>
+                        <td>Desplazamiento en segundos de GMT</td>
+                        <td>+5</td>
+                    </tr>
+                </table>
 
+                <h4>Ejemplo:</h4>
+                <p>Prueba el siguiente ejemplo:</p>
 
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">&lt;?php
+   print date(&quot;m/d/y G.i:s&lt;br&gt;&quot;, time());
+   echo &quot;&lt;br&gt;&quot;;
+   print &quot;Today is &quot;;
+   print date(&quot;j of F Y, \a\\t g.i a&quot;, time());
+?&gt;</code></pre></div>
+                </div>
 
+                <p>Esto producirá el siguiente resultado:</p>
+
+                <p>12/05/16 9:29:47 <br>
+                    Today is 5 2016f December 2016 at 9:29 am</p>
+
+                <p>Espero que comprenda bien cómo formatear la fecha y la hora de acuerdo con sus requisitos. Para su referencia, se proporciona una lista completa de todas las funciones de fecha y hora en Funciones de fecha y hora de PHP.</p>    
 
             </section>
 
             <section id="item26">
                 <h1>PHP y MYSQL</h1>
+    
+                <p>PHP funcionará con prácticamente todo el software de base de datos, incluidos Oracle y Sybase, pero el más utilizado es la base de datos MySQL disponible gratuitamente.</p>
+                <h3>¿Qué deberías tener ya?</h3>
+                <ul>
+                    <li>Ha seguido el tutorial de MySQL para comprender los conceptos básicos de MySQL</li>
+                    <li>Descargado e instalado una última versión de MySQL.</li>
+                    <li>Se creó el invitado del usuario de la base de datos con la contraseña guest123 </li>
+                    <li>Si no ha creado una base de datos, necesitará un usuario root y su contraseña para crear una base de datos.</li>
+                </ul>
+            
+                <p>Hemos dividido este capítulo en las siguientes secciones:</p>
 
-
-
-
-
-
-
-
-
-
-
-
-
+                <ul>
+                    <li>Conexión a la base de datos MySQL : aprenda a usar PHP para abrir y cerrar una conexión de base de datos MySQL.</li>
+                    <li>Crear base de datos MySQL usando PHP : esta parte explica cómo crear bases de datos y tablas MySQL usando PHP.</li>
+                    <li>Eliminar base de datos MySQL usando PHP : esta parte explica cómo eliminar bases de datos y tablas MySQL usando PHP.</li>
+                    <li>Insertar datos en la base de datos MySQL : una vez que haya creado su base de datos y tablas, le gustaría insertar sus datos en las tablas creadas. Esta sesión lo llevará a través de un ejemplo real sobre la inserción de datos</li>
+                    <li>Recuperar datos de la base de datos MySQL : aprenda a recuperar registros de la base de datos MySQL utilizando PHP.</li>
+                    <li>Uso de la paginación a través de PHP : este explica cómo mostrar el resultado de su consulta en varias páginas y cómo crear el enlace de navegación.</li>
+                    <li>Actualización de datos en la base de datos MySQL : esta parte explica cómo actualizar los registros existentes en la base de datos MySQL usando PHP.</li>
+                    <li>Eliminación de datos de la base de datos MySQL : esta parte explica cómo eliminar o purgar registros existentes de la base de datos MySQL usando PHP</li>
+                    <li>Uso de PHP para realizar copias de seguridad de la base de datos MySQL : aprenda diferentes formas de realizar copias de seguridad de su base de datos MySQL por motivos de seguridad.</li>
+                </ul>
 
                 
             </section>
@@ -3862,19 +4768,213 @@ If files does not exist then it attempts to create a file.</td>
                 <h1>PHP y AJAX</h1>
                 
 
+                <h3>¿Qué es AJAX?</h3>
 
+                <ul>
+                    <li>AJAX son las siglas de A synchronous Ja vaScript y X ML. AJAX es una nueva técnica para crear aplicaciones web mejores, más rápidas y más interactivas con la ayuda de XML, HTML, CSS y Java Script.</li>
+                    <li>La aplicación web convencional transmite información hacia y desde el servidor mediante solicitudes sincrónicas. Esto significa que debe completar un formulario, presionar enviar y ser dirigido a una nueva página con nueva información del servidor.</li>
+                    <li>Con AJAX, cuando se presiona enviar, JavaScript hará una solicitud al servidor, interpretará los resultados y actualizará la pantalla actual. En el sentido más puro, el usuario nunca sabría que se ha transmitido algo al servidor.</li>
+                </ul>
 
+                <p>Para obtener un aprendizaje completo sobre AJAX, consulte el Tutorial de AJAX.</p>
 
+                <h3>Ejemplo de PHP y AJAX</h3>
 
+                <p>Para ilustrar claramente lo fácil que es acceder a la información de una base de datos usando Ajax y PHP, vamos a construir consultas MySQL sobre la marcha y mostrar los resultados en "ajax.html". Pero antes de continuar, hagamos el trabajo preliminar. Cree una tabla usando el siguiente comando.</p>
 
+                <p><b>NOTA:</b> asumimos que tiene suficientes privilegios para realizar las siguientes operaciones de MySQL.</p>
 
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">CREATE TABLE `ajax_example` (
+   `name` varchar(50) NOT NULL,
+   `age` int(11) NOT NULL,
+   `sex` varchar(1) NOT NULL,
+   `wpm` int(11) NOT NULL,
+   PRIMARY KEY  (`name`)
+) </code></pre></div>
+                </div>
 
+                <p>Ahora, descargue los siguientes datos en esta tabla utilizando las siguientes instrucciones SQL</p>
 
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">INSERT INTO `ajax_example` VALUES ('Jerry', 120, 'm', 20);
+INSERT INTO `ajax_example` VALUES ('Regis', 75, 'm', 44);
+INSERT INTO `ajax_example` VALUES ('Frank', 45, 'm', 87);
+INSERT INTO `ajax_example` VALUES ('Jill', 22, 'f', 72);
+INSERT INTO `ajax_example` VALUES ('Tracy', 27, 'f', 0);
+INSERT INTO `ajax_example` VALUES ('Julie', 35, 'f', 90);</code></pre></div>
+                </div>
 
+                <h3>Archivo HTML del lado del cliente</h3>
 
+                <p>Ahora tengamos nuestro archivo HTML del lado del cliente que es ajax.html y tendrá el siguiente código</p>
 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;body&gt;
+      
+      &lt;script language = &quot;javascript&quot; type = &quot;text/javascript&quot;&gt;
+         &lt;!--
+            //Browser Support Code
+            function ajaxFunction(){
+               var ajaxRequest;  // The variable that makes Ajax possible!
+               
+               try {
+                  // Opera 8.0+, Firefox, Safari
+                  ajaxRequest = new XMLHttpRequest();
+               }catch (e) {
+                  // Internet Explorer Browsers
+                  try {
+                     ajaxRequest = new ActiveXObject(&quot;Msxml2.XMLHTTP&quot;);
+                  }catch (e) {
+                     try{
+                        ajaxRequest = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
+                     }catch (e){
+                        // Something went wrong
+                        alert(&quot;Your browser broke!&quot;);
+                        return false;
+                     }
+                  }
+               }
+               
+               // Create a function that will receive data 
+               // sent from the server and will update
+               // div section in the same page.
+&#x9;&#x9;&#x9;&#x9;&#x9;
+               ajaxRequest.onreadystatechange = function(){
+                  if(ajaxRequest.readyState == 4){
+                     var ajaxDisplay = document.getElementById(&apos;ajaxDiv&apos;);
+                     ajaxDisplay.innerHTML = ajaxRequest.responseText;
+                  }
+               }
+               
+               // Now get the value from user and pass it to
+               // server script.
+&#x9;&#x9;&#x9;&#x9;&#x9;
+               var age = document.getElementById(&apos;age&apos;).value;
+               var wpm = document.getElementById(&apos;wpm&apos;).value;
+               var sex = document.getElementById(&apos;sex&apos;).value;
+               var queryString = &quot;?age=&quot; + age ;
+            
+               queryString +=  &quot;&amp;wpm=&quot; + wpm + &quot;&amp;sex=&quot; + sex;
+               ajaxRequest.open(&quot;GET&quot;, &quot;ajax-example.php&quot; + queryString, true);
+               ajaxRequest.send(null); 
+            }
+         //--&gt;
+      &lt;/script&gt;
+&#x9;&#x9;
+      &lt;form name = &apos;myForm&apos;&gt;
+         Max Age: &lt;input type = &apos;text&apos; id = &apos;age&apos; /&gt; &lt;br /&gt;
+         Max WPM: &lt;input type = &apos;text&apos; id = &apos;wpm&apos; /&gt;
+         &lt;br /&gt;
+         
+         Sex: &lt;select id = &apos;sex&apos;&gt;
+            &lt;option value = &quot;m&quot;&gt;m&lt;/option&gt;
+            &lt;option value = &quot;f&quot;&gt;f&lt;/option&gt;
+         &lt;/select&gt;
+&#x9;&#x9;&#x9;
+         &lt;input type = &apos;button&apos; onclick = &apos;ajaxFunction()&apos; value = &apos;Query MySQL&apos;/&gt;
+&#x9;&#x9;&#x9;
+      &lt;/form&gt;
+      
+      &lt;div id = &apos;ajaxDiv&apos;&gt;Your result will display here&lt;/div&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
 
+                <p><b>NOTA:</b> La forma de pasar variables en la consulta es de acuerdo con el estándar HTTP y tienen forma.</p>
 
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">URL?variable1=value1;&variable2=value2;</code></pre></div>
+                </div>
+
+                <p>Ahora el código anterior le dará una pantalla como se muestra a continuación</p>
+                <p><b>NOTA:</b> esta es una pantalla ficticia y no funcionaría.</p>
+                <p>Ahora el código anterior le dará una pantalla como se muestra a continuación</p>
+
+                <p><b>NOTA:</b> esta es una pantalla ficticia y no funcionaría.</p>
+
+                <p>resultado...</p>
+
+                <h3>Archivo PHP del lado del servidor</h3>
+                <p>Así que ahora su script del lado del cliente está listo. Ahora tenemos que escribir nuestro script del lado del servidor que obtendrá la edad, las palabras por minuto y el sexo de la base de datos y lo enviará de vuelta al cliente. Ponga el siguiente código en el archivo "ajax-example.php".</p>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">&lt;?php
+   
+   $dbhost = &quot;localhost&quot;;
+   $dbuser = &quot;dbusername&quot;;
+   $dbpass = &quot;dbpassword&quot;;
+   $dbname = &quot;dbname&quot;;
+   
+   //Connect to MySQL Server
+   mysql_connect($dbhost, $dbuser, $dbpass);
+   
+   //Select Database
+   mysql_select_db($dbname) or die(mysql_error());
+   
+   // Retrieve data from Query String
+   $age = $_GET[&apos;age&apos;];
+   $sex = $_GET[&apos;sex&apos;];
+   $wpm = $_GET[&apos;wpm&apos;];
+   
+   // Escape User Input to help prevent SQL Injection
+   $age = mysql_real_escape_string($age);
+   $sex = mysql_real_escape_string($sex);
+   $wpm = mysql_real_escape_string($wpm);
+   
+   //build query
+   $query = &quot;SELECT * FROM ajax_example WHERE sex = &apos;$sex&apos;&quot;;
+   
+   if(is_numeric($age))
+   $query .= &quot; AND age &lt;= $age&quot;;
+   
+   if(is_numeric($wpm))
+   $query .= &quot; AND wpm &lt;= $wpm&quot;;
+   
+   //Execute query
+   $qry_result = mysql_query($query) or die(mysql_error());
+   
+   //Build Result String
+   $display_string = &quot;&lt;table&gt;&quot;;
+   $display_string .= &quot;&lt;tr&gt;&quot;;
+   $display_string .= &quot;&lt;th&gt;Name&lt;/th&gt;&quot;;
+   $display_string .= &quot;&lt;th&gt;Age&lt;/th&gt;&quot;;
+   $display_string .= &quot;&lt;th&gt;Sex&lt;/th&gt;&quot;;
+   $display_string .= &quot;&lt;th&gt;WPM&lt;/th&gt;&quot;;
+   $display_string .= &quot;&lt;/tr&gt;&quot;;
+   
+   // Insert a new row in the table for each person returned
+   while($row = mysql_fetch_array($qry_result)) {
+      $display_string .= &quot;&lt;tr&gt;&quot;;
+      $display_string .= &quot;&lt;td&gt;$row[name]&lt;/td&gt;&quot;;
+      $display_string .= &quot;&lt;td&gt;$row[age]&lt;/td&gt;&quot;;
+      $display_string .= &quot;&lt;td&gt;$row[sex]&lt;/td&gt;&quot;;
+      $display_string .= &quot;&lt;td&gt;$row[wpm]&lt;/td&gt;&quot;;
+      $display_string .= &quot;&lt;/tr&gt;&quot;;
+   }
+   echo &quot;Query: &quot; . $query . &quot;&lt;br /&gt;&quot;;
+   
+   $display_string .= &quot;&lt;/table&gt;&quot;;
+   echo $display_string;
+?&gt;</code></pre></div>
+                </div>
+
+                <p>Ahora intente ingresando un valor válido en "Edad máxima" o en cualquier otro cuadro y luego haga clic en el botón Consultar MySQL.</p>
+
+                <p>Tu resultado se mostrará aquí</p>
+
+                <p>Si ha completado con éxito esta lección, entonces sabrá cómo usar MySQL, PHP, HTML y Javascript en conjunto para escribir aplicaciones Ajax.</p>
 
 
             </section>
@@ -3882,45 +4982,258 @@ If files does not exist then it attempts to create a file.</td>
             <section id="item28">
                 <h1>PHP y XML</h1>
 
+                <p>XML es un lenguaje de marcado que se parece mucho a HTML. Un documento XML es texto sin formato y contiene etiquetas delimitadas por <y>. Hay dos grandes diferencias entre XML y HTML:</p>
 
+                <ul>
+                    <li>XML no define un conjunto específico de etiquetas que debe utilizar.</li>
+                    <li>XML es extremadamente exigente con la estructura del documento.</li>
+                </ul>
 
+                <p>XML te da mucha m&aacute;s libertad que HTML. HTML tiene un determinado conjunto de etiquetas: las etiquetas &lt;a&gt; &lt;/a&gt; rodean un enlace, el p&aacute;rrafo &lt;p&gt; comienza, etc. Sin embargo, un documento XML puede utilizar las etiquetas que desee. Coloque etiquetas &lt;rating&gt; &lt;/rating&gt; alrededor de la clasificaci&oacute;n de una pel&iacute;cula, etiquetas &lt;height&gt; &lt;/height&gt; alrededor de la altura de alguien. Por lo tanto, XML le da la opci&oacute;n de configurar sus propias etiquetas.</p>
 
+                <p>XML es muy estricto en lo que respecta a la estructura del documento. HTML te permite jugar rápido y suelto con algunas etiquetas de apertura y cierre. Pero este no es el caso de XML.</p>
 
+                <h3>Lista HTML que no es XML válido</h3>
 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;ul&gt;
+   &lt;li&gt;Braised Sea Cucumber
+   &lt;li&gt;Baked Giblets with Salt
+   &lt;li&gt;Abalone with Marrow and Duck Feet
+&lt;/ul&gt;</code></pre></div>
+                </div>
 
+                <p>Este no es un documento XML v&aacute;lido porque no hay etiquetas &lt;/li&gt; de cierre que coincidan con las tres etiquetas &lt;li&gt; de apertura. Todas las etiquetas abiertas en un documento XML deben cerrarse.</p>
 
+                <h3>Lista HTML que es XML válido</h3>
 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;ul&gt;
+   &lt;li&gt;Braised Sea Cucumber&lt;/li&gt;
+   &lt;li&gt;Baked Giblets with Salt&lt;/li&gt;
+   &lt;li&gt;Abalone with Marrow and Duck Feet&lt;/li&gt;
+&lt;/ul&gt;</code></pre></div>
+                </div>
 
+                <h3>Analizar un documento XML</h3>
 
+                <p>El nuevo módulo SimpleXML de PHP 5 hace que analizar un documento XML sea simple. Convierte un documento XML en un objeto que proporciona acceso estructurado al XML.</p>
+                <p>Para crear un objeto SimpleXML a partir de un documento XML almacenado en una cadena, pase la cadena a simplexml_load_string () . Devuelve un objeto SimpleXML.</p>
 
+                <h4>Ejemplo:</h4>
+                <p>Pruebe el siguiente ejemplo:</p>
 
+                <div class="panel">
+                    <div class="codigo__html">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;html&gt;
+   &lt;body&gt;
+      
+      &lt;?php
+         $note=&lt;&lt;&lt;XML
+         
+         &lt;note&gt;
+            &lt;to&gt;Gopal K Verma&lt;/to&gt;
+            &lt;from&gt;Sairamkrishna&lt;/from&gt;
+            &lt;heading&gt;Project submission&lt;/heading&gt;
+            &lt;body&gt;Please see clearly &lt;/body&gt;
+         &lt;/note&gt;
+         
+         XML;
+         $xml=simplexml_load_string($note);
+         print_r($xml);
+      ?&gt;
+&#x9;&#x9;
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
 
+                <p>Producirá el siguiente resultado:</p>
 
+                <p>resultado....</p>
 
+                <p>NOTA : puede utilizar la función simplexml_load_file (nombre de archivo) si tiene contenido XML en un archivo.                </p>
 
+                <p>Para obtener un detalle completo de la función de análisis de XML, consulte la Referencia de funciones de PHP .</p>
+
+                <h3>Generando un documento XML</h3>
+                <p>SimpleXML es bueno para analizar documentos XML existentes, pero no puede usarlo para crear uno nuevo desde cero.</p>
+                <p>La forma más fácil de generar un documento XML es construir una matriz PHP cuya estructura refleje la del documento XML y luego iterar a través de la matriz, imprimiendo cada elemento con el formato apropiado.</p>
+
+                <h4>Ejemplo:</h4>
+                <p>Pruebe el siguiente ejemplo:</p>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">&lt;?php
+   $channel = array(&apos;title&apos; =&gt; &quot;What&apos;s For Dinner&quot;,
+      &apos;link&apos; =&gt; &apos;http://menu.example.com/&apos;,
+      &apos;description&apos; =&gt; &apos;Choose what to eat tonight.&apos;);
+   
+   print &quot;&lt;channel&gt;\n&quot;;
+   
+   foreach ($channel as $element =&gt; $content) {
+      print &quot; &lt;$element&gt;&quot;;
+      print htmlentities($content);
+      print &quot;&lt;/$element&gt;\n&quot;;
+   }
+   
+   print &quot;&lt;/channel&gt;&quot;;
+?&gt;</code></pre></div>
+                </div>
+
+                <p>Producirá el siguiente resultado:</p>
+
+                <p>http://menu.example.com/ Choose what to eat tonight.</p>
                 
             </section>
 
             <section id="item29">
                 <h1>PHP orientado a objetos</h1>
 
+                <p>Podemos imaginar nuestro universo hecho de diferentes objetos como el sol, la tierra, la luna, etc. De manera similar, podemos imaginar nuestro automóvil hecho de diferentes objetos como la rueda, la dirección, el engranaje, etc. De la misma manera, existen conceptos de programación orientada a objetos que asumen todo como un objeto y implementar un software utilizando diferentes objetos.</p>
 
+                <h3>Conceptos orientados a objetos</h3>
+                <p>Antes de entrar en detalle, definamos términos importantes relacionados con la programación orientada a objetos.</p>
+                <ul>
+                    <li>Clase: este es un tipo de datos definido por el programador, que incluye funciones locales y datos locales. Puede pensar en una clase como una plantilla para crear muchas instancias del mismo tipo (o clase) de objeto.</li>
+                    <li>Objeto: una instancia individual de la estructura de datos definida por una clase. Usted define una clase una vez y luego crea muchos objetos que le pertenecen. Los objetos también se conocen como instancia.</li>
+                    <li>Variable miembro: estas son las variables definidas dentro de una clase. Estos datos serán invisibles para el exterior de la clase y se puede acceder a ellos a través de funciones miembro. Estas variables se denominan atributo del objeto una vez que se crea un objeto.</li>
+                    <li>Función miembro: son las funciones definidas dentro de una clase y se utilizan para acceder a los datos del objeto.</li>
+                    <li>Herencia : cuando una clase se define heredando la función existente de una clase principal, se denomina herencia. Aquí la clase hija heredará todas o algunas funciones miembro y variables de una clase padre.</li>
+                    <li>Clase principal : una clase heredada por otra clase. Esto también se denomina clase base o superclase.</li>
+                    <li>Clase secundaria : una clase que hereda de otra clase. Esto también se denomina subclase o clase derivada.</li>
+                    <li>Polimorfismo : este es un concepto orientado a objetos donde la misma función se puede usar para diferentes propósitos. Por ejemplo, el nombre de la función seguirá siendo el mismo, pero tomará un número diferente de argumentos y puede realizar una tarea diferente.</li>
+                    <li>Sobrecarga : un tipo de polimorfismo en el que algunos o todos los operadores tienen diferentes implementaciones según los tipos de sus argumentos. De manera similar, las funciones también pueden sobrecargarse con diferentes implementaciones.</li>
+                    <li>Abstracción de datos : cualquier representación de datos en la que los detalles de implementación están ocultos (abstraídos).</li>
+                    <li>Encapsulación : se refiere a un concepto en el que encapsulamos todos los datos y las funciones de los miembros para formar un objeto.</li>
+                    <li>Constructor : se refiere a un tipo especial de función que se llamará automáticamente siempre que haya una formación de objeto de una clase.</li>
+                    <li>Destructor : se refiere a un tipo especial de función que se llamará automáticamente cada vez que un objeto se elimine o salga de su alcance.</li>
+                </ul>
 
+                <h3>Definición de clases PHP</h3>
+                <p>La forma general para definir una nueva clase en PHP es la siguiente:</p>
 
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">&lt;?php
+   class phpClass {
+      var $var1;
+      var $var2 = &quot;constant string&quot;;
+      
+      function myfunc ($arg1, $arg2) {
+         [..]
+      }
+      [..]
+   }
+?&gt;</code></pre></div>
+                </div>
 
+                <p>Aquí está la descripción de cada línea:</p>
 
+                <ul>
+                    <li>La clase de formulario especial , seguida del nombre de la clase que desea definir.</li>
+                    <li>Un conjunto de llaves que encierran cualquier número de declaraciones de variables y definiciones de funciones.</li>
+                    <li>Las declaraciones de variables comienzan con la forma especial var , seguida de un nombre de variable $ convencional; también pueden tener una asignación inicial a un valor constante.</li>
+                    <li>Las definiciones de funciones se parecen mucho a las funciones PHP independientes, pero son locales de la clase y se utilizarán para configurar y acceder a datos de objetos.</li>
+                </ul>
 
+                <h4>Ejemplo:</h4>
+                <p>Aquí hay un ejemplo que define una clase de tipo Libros:</p>
 
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">&lt;?php
+   class Books {
+      /* Member variables */
+      var $price;
+      var $title;
+      
+      /* Member functions */
+      function setPrice($par){
+         $this-&gt;price = $par;
+      }
+      
+      function getPrice(){
+         echo $this-&gt;price .&quot;&lt;br/&gt;&quot;;
+      }
+      
+      function setTitle($par){
+         $this-&gt;title = $par;
+      }
+      
+      function getTitle(){
+         echo $this-&gt;title .&quot; &lt;br/&gt;&quot;;
+      }
+   }
+?&gt;</code></pre></div>
+                </div>
 
-
-
-
-
-
-
-
-
+                <p>La variable $ this es una variable especial y se refiere al mismo objeto, es decir. sí mismo</p>
                 
+                <h3>Creando objetos en PHP</h3>
+                <p>Una vez que haya definido su clase, podrá crear tantos objetos como desee de ese tipo de clase. A continuación se muestra un ejemplo de cómo crear un objeto utilizando un operador nuevo .</p>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">$physics = new Books;
+$maths = new Books;
+$chemistry = new Books;</code></pre></div>
+                </div>
+
+                <p>Aquí hemos creado tres objetos y estos objetos son independientes entre sí y tendrán su existencia por separado. A continuación, veremos cómo acceder a la función miembro y procesar las variables miembro.</p>
+
+                <h3>Funciones de miembros de llamada</h3>
+
+                <p>Después de crear sus objetos, podrá llamar a funciones miembro relacionadas con ese objeto. Una función miembro solo podrá procesar la variable miembro del objeto relacionado</p>
+
+                <p>El siguiente ejemplo muestra cómo establecer el título y los precios de los tres libros llamando a funciones miembro</p>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">$physics->setTitle( "Physics for High School" );
+$chemistry->setTitle( "Advanced Chemistry" );
+$maths->setTitle( "Algebra" );
+
+$physics->setPrice( 10 );
+$chemistry->setPrice( 15 );
+$maths->setPrice( 7 );</code></pre></div>
+                </div>
+
+                <p>Ahora llama a otras funciones miembro para obtener los valores establecidos en el ejemplo anterior:</p>
+
+                <div class="panel">
+                    <div class="codigo__php">
+                        <div class="decor__bar php"></div>
+                        <pre class="line-numbers"><code class="language-php">$physics->getTitle();
+$chemistry->getTitle();
+$maths->getTitle();
+$physics->getPrice();
+$chemistry->getPrice();
+$maths->getPrice();</code></pre></div>
+                </div>
+
+                <p>Esto producirá el siguiente resultado:</p>
+
+                <p>Physics for High School <br>
+                    Advanced Chemistry <br>
+                    Algebra <br>
+                    10 <br>
+                    15 <br>
+                    7</p>
+
+                    
+
+
             </section>
 
             <section id="item30">
