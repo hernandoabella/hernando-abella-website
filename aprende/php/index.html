@@ -3504,16 +3504,255 @@ If files does not exist then it attempts to create a file.</td>
             <section id="item21">
                 <h1>Variables predefinidas</h1>
 
+                <p>PHP proporciona una gran cantidad de variables predefinidas a cualquier script que ejecute. PHP proporciona un conjunto adicional de matrices predefinidas que contienen variables del servidor web, el entorno y la entrada del usuario. Estas nuevas matrices se denominan superglobales:</p>
+                <p>Todas las siguientes variables están disponibles automáticamente en todos los ámbitos.</p>
 
+                <h3>Superglobales</h3>
 
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Variable</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>$GLOBALS</td>
+                        <td>Contains a reference to every variable which is currently available within the global scope of the script. The keys of this array are the names of the global variables.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>$_SERVER</td>
+                        <td>This is an array containing information such as headers, paths, and script locations. The entries in this array are created by the web server. There is no guarantee that every web server will provide any of these. See next section for a complete list of all the SERVER variables.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>$_GET</td>
+                        <td>Una matriz asociativa de variables pasadas al script actual a través del método HTTP GET</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>$_POST</td>
+                        <td>Una matriz asociativa de variables pasadas al script actual a través del método HTTP POST.</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>$_FILES</td>
+                        <td>Una matriz asociativa de elementos cargados en el script actual a través del método HTTP POST.</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>$_REQUEST</td>
+                        <td>Una matriz asociativa que consta de los contenidos de $ _GET, $ _POST y $ _COOKIE.</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>$_COOKIE</td>
+                        <td>Una matriz asociativa de variables pasadas al script actual a través de cookies HTTP.</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>$_SESSION</td>
+                        <td>Una matriz asociativa que contiene variables de sesión disponibles para el script actual.</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>$_PHP_SELF</td>
+                        <td>Una cadena que contiene el nombre del archivo de script PHP en el que se llama.</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>$php_errormsg</td>
+                        <td>$php_errormsg es una variable que contiene el texto del último mensaje de error generado por PHP.</td>
+                    </tr>
+                </table>
 
+                <h3>Variables del servidor: $ _SERVER</h3>
 
+                <p>$_SERVER es una matriz que contiene información como encabezados, rutas y ubicaciones de scripts. Las entradas de esta matriz son creadas por el servidor web. No hay garantía de que todos los servidores web proporcionen alguno de estos.</p>
 
-
-
-
-
-
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Variable</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>24</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>25</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>26</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>28</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>29</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>30</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>31</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>32</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>33</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>34</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>35</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
                 
             </section>
 
@@ -4113,7 +4352,7 @@ If files does not exist then it attempts to create a file.</td>
 
 
 
-                
+
             </section>
 
         </div>
