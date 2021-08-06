@@ -3579,178 +3579,178 @@ If files does not exist then it attempts to create a file.</td>
                     </tr>
                     <tr>
                         <td>1</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['PHP_SELF']</td>
+                        <td>El nombre de archivo del script que se está ejecutando actualmente, en relación con la raíz del documento</td>
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['argv']</td>
+                        <td>Matriz de argumentos pasados ​​al script. Cuando el script se ejecuta en la línea de comando, esto le da acceso al estilo C a los parámetros de la línea de comando. Cuando se llama a través del método GET, este contendrá la cadena de consulta.</td>
                     </tr>
                     <tr>
                         <td>3</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['argc']</td>
+                        <td>Contiene el número de parámetros de la línea de comandos que se pasan al script si se ejecuta en la línea de comandos</td>
                     </tr>
                     <tr>
                         <td>4</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['GATEWAY_INTERFACE']</td>
+                        <td>Qué revisión de la especificación CGI está usando el servidor; es decir, 'CGI / 1.1'.</td>
                     </tr>
                     <tr>
                         <td>5</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['SERVER_ADDR']</td>
+                        <td>La dirección IP del servidor en el que se ejecuta el script actual.</td>
                     </tr>
                     <tr>
                         <td>6</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['SERVER_NAME']</td>
+                        <td>El nombre del host del servidor bajo el cual se está ejecutando el script actual. Si el script se ejecuta en un host virtual, este será el valor definido para ese host virtual.</td>
                     </tr>
                     <tr>
                         <td>7</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['SERVER_SOFTWARE']</td>
+                        <td>Cadena de identificación del servidor, proporcionada en los encabezados al responder a las solicitudes.</td>
                     </tr>
                     <tr>
                         <td>8</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['SERVER_PROTOCOL']</td>
+                        <td>Nombre y revisión del protocolo de información a través del cual se solicitó la página; es decir, 'HTTP / 1.0';</td>
                     </tr>
                     <tr>
                         <td>9</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['REQUEST_METHOD']</td>
+                        <td>Qué método de solicitud se utilizó para acceder a la página; es decir, 'OBTENER', 'HEAD', 'POST', 'PUT'</td>
                     </tr>
                     <tr>
                         <td>10</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['REQUEST_TIME']</td>
+                        <td>La marca de tiempo del inicio de la solicitud. Disponible desde PHP 5.1.0</td>
                     </tr>
                     <tr>
                         <td>11</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['QUERY_STRING']</td>
+                        <td>La cadena de consulta, si la hubiera, a través de la cual se accedió a la página.</td>
                     </tr>
                     <tr>
                         <td>12</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['DOCUMENT_ROOT']</td>
+                        <td>El directorio raíz del documento en el que se ejecuta la secuencia de comandos actual, según se define en el archivo de configuración del servidor.</td>
                     </tr>
                     <tr>
                         <td>13</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['HTTP_ACCEPT']</td>
+                        <td>Contenido del encabezado Aceptar: de la solicitud actual, si existe.</td>
                     </tr>
                     <tr>
                         <td>14</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['HTTP_ACCEPT_CHARSET']</td>
+                        <td>Contenido del Accept-Charset: encabezado de la solicitud actual, si existe. Ejemplo: 'iso-8859-1, *, utf-8'.</td>
                     </tr>
                     <tr>
                         <td>15</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['HTTP_ACCEPT_ENCODING']</td>
+                        <td>Contenido del encabezado Accept-Encoding: de la solicitud actual, si existe. Ejemplo: 'gzip'</td>
                     </tr>
                     <tr>
                         <td>16</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['HTTP_ACCEPT_LANGUAGE']</td>
+                        <td>Contenido del Accept-Language: encabezado de la solicitud actual, si existe. Ejemplo: 'en'.</td>
                     </tr>
                     <tr>
                         <td>17</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['HTTP_CONNECTION']</td>
+                        <td>Contenido de la conexión: encabezado de la solicitud actual, si existe. Ejemplo: 'Keep-Alive'</td>
                     </tr>
                     <tr>
                         <td>18</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['HTTP_HOST']</td>
+                        <td>Contenido del Host: encabezado de la solicitud actual, si existe.</td>
                     </tr>
                     <tr>
                         <td>19</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['HTTP_REFERER']</td>
+                        <td>La dirección de la página (si la hubiera) que remitió al agente de usuario a la página actual</td>
                     </tr>
                     <tr>
                         <td>20</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['HTTP_USER_AGENT']</td>
+                        <td>Esta es una cadena que indica el agente de usuario que está accediendo a la página. Un ejemplo típico es: Mozilla / 4.5 [en] (X11; U; Linux 2.2.9 i586).</td>
                     </tr>
                     <tr>
                         <td>21</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['HTTPS']</td>
+                        <td>Establezca un valor no vacío si la secuencia de comandos se consultó a través del protocolo HTTPS</td>
                     </tr>
                     <tr>
                         <td>22</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['REMOTE_ADDR']</td>
+                        <td>La dirección IP desde la que el usuario está viendo la página actual.</td>
                     </tr>
                     <tr>
                         <td>23</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['REMOTE_HOST']</td>
+                        <td>El nombre de host desde el que el usuario está viendo la página actual. La búsqueda inversa de dns se basa en REMOTE_ADDR del usuario.</td>
                     </tr>
                     <tr>
                         <td>24</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['REMOTE_PORT']</td>
+                        <td>El puerto que se utiliza en la máquina del usuario para comunicarse con el servidor web.</td>
                     </tr>
                     <tr>
                         <td>25</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['SCRIPT_FILENAME']</td>
+                        <td>El nombre de ruta absoluto del script que se está ejecutando actualmente</td>
                     </tr>
                     <tr>
                         <td>26</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['SERVER_ADMIN']</td>
+                        <td>El valor dado a la directiva SERVER_ADMIN (para Apache) en el archivo de configuración del servidor web.</td>
                     </tr>
                     <tr>
                         <td>27</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['SERVER_PORT']</td>
+                        <td>El puerto de la máquina servidor que utiliza el servidor web para la comunicación. Para las configuraciones predeterminadas, será '80'</td>
                     </tr>
                     <tr>
                         <td>28</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['SERVER_SIGNATURE']</td>
+                        <td>Cadena que contiene la versión del servidor y el nombre del host virtual que se agregan a las páginas generadas por el servidor, si están habilitadas.</td>
                     </tr>
                     <tr>
                         <td>29</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['PATH_TRANSLATED']</td>
+                        <td>Ruta basada en el sistema de archivos al script actual</td>
                     </tr>
                     <tr>
                         <td>30</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['SCRIPT_NAME']</td>
+                        <td>Contiene la ruta del script actual. Esto es útil para las páginas que necesitan apuntar a sí mismas.</td>
                     </tr>
                     <tr>
                         <td>31</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['REQUEST_URI']</td>
+                        <td>El URI que se proporcionó para acceder a esta página; por ejemplo, '/index.html'.</td>
                     </tr>
                     <tr>
                         <td>32</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['PHP_AUTH_DIGEST']</td>
+                        <td>Cuando se ejecuta en Apache como módulo que realiza la autenticación HTTP Digest, esta variable se establece en el encabezado 'Autorización' enviado por el cliente</td>
                     </tr>
                     <tr>
                         <td>33</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['PHP_AUTH_USER']</td>
+                        <td>Cuando se ejecuta en Apache o IIS (ISAPI en PHP 5) como módulo que realiza la autenticación HTTP, esta variable se establece en el nombre de usuario proporcionado por el usuario.</td>
                     </tr>
                     <tr>
                         <td>34</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['PHP_AUTH_PW']</td>
+                        <td>Cuando se ejecuta en Apache o IIS (ISAPI en PHP 5) como módulo que realiza la autenticación HTTP, esta variable se establece en la contraseña proporcionada por el usuario.</td>
                     </tr>
                     <tr>
                         <td>35</td>
-                        <td></td>
-                        <td></td>
+                        <td>$ _SERVER ['AUTH_TYPE']</td>
+                        <td>Cuando se ejecuta en Apache como módulo con autenticación HTTP, esta variable se establece en el tipo de autenticación.</td>
                     </tr>
                 </table>
                 
