@@ -446,7 +446,6 @@ a{
 
 .tarjeta__servicios{
     background: #6320ee;
-    border-radius: 50px;
     border: 5px solid #8075ff;
     padding: 10px;
     opacity: 0.9;
@@ -493,9 +492,9 @@ a{
 
 .total__price{
     font-size: 2em;
+    font-weight: bold;
     border: 50px;
-    background: #f8f0fb;
-    color: #6320ee;
+    color: #fff;
     text-align: center;
     margin: 20px auto;
     width: 100px;
@@ -836,7 +835,7 @@ footer div.redes__sociales a:hover{
 
 .tarjeta__aprende{
     width: 300px;
-    background: #6320ee;
+    border: 1px solid rgba(99, 32, 238, 0.5);
     padding: 10px;
     text-align: center;
     transition: .3s;
@@ -846,7 +845,7 @@ footer div.redes__sociales a:hover{
     text-align: center;
     letter-spacing: 5px;
     margin: 20px;
-    color: #fff;
+    color: #000;
 }
 
 .tarjeta__aprende p{
@@ -861,14 +860,13 @@ footer div.redes__sociales a:hover{
     width: 100px;
     display: block;
     margin-top: 30px;
-    border-radius: 20px;
     margin: 20px auto;
+    border: 1px solid rgba(99, 32, 238, 0.3);
 }
 
 .tarjeta__aprende a:hover{
     color: #000;
     background: #f8f0fb;
-    transform: scale(1.3);
 }
 
 .tarjeta__aprende img.html__image{
