@@ -6,6 +6,10 @@
     scroll-behavior: smooth;
 }
 
+.next-js{
+    width: 130px !important;
+}
+
 .more__about__me{
     background: #cad5ca;
     margin: 0px 30px;
