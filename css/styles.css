@@ -1139,6 +1139,7 @@ textarea, input{
 
 /* diseño responsive */
 
+
 @media only screen and ( max-width: 768px ){ 
 
 .circulo__contenedor {
