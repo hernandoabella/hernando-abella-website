@@ -25,9 +25,7 @@ Este proyecto fue creado con el fin de aprender y practicar desarrollo web ayuda
 
 ### Lista de aplicaciones
 
-|  Aplicación                |  Descripción                              | Descarga      |
-| -------------              |:-------------:                            | -----:        |
-| contador                   | 0                                         | Descargar     |
-| app del clima              | 0                                         | Descargar     |
-| sillas de cine             | 0                                         | Descargar     |
-| cambiar fondo              | 0                                         | Descargar     |
+|  #                |  Aplicación                |  Descripción                              | Descarga      |
+| -------------     | -------------              |:-------------:                            | -----:        |
+| 1                 | Contador                   | 0                                         | Descargar     |
+
