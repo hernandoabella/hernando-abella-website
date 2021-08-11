@@ -13,8 +13,8 @@ Este proyecto fue creado con el fin de aprender y practicar desarrollo web ayuda
 - Añadir animaciones ?
 
 ### Completado
-- Ajustar adaptación responsiva [completado]
-- Ajustar colores [completado]
+- Ajustar adaptación responsiva [completado] ✓
+- Ajustar colores [completado] ✓
 
 
 ### Aprende
