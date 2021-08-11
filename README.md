@@ -12,8 +12,22 @@ Este proyecto fue creado con el fin de aprender y practicar desarrollo web ayuda
 - Añadir interactividad con Javascript
 - Añadir animaciones ?
 
+### Aprende
+
 ### Proyectos
 
 ### Snippets
 
-- Agregando códigos
+1. 
+
+
+
+
+### Lista de aplicaciones
+
+|  Aplicación                |  Descripción                              | Descarga      |
+| -------------              |:-------------:                            | -----:        |
+| contador                   | 0                                         | Descargar     |
+| app del clima              | 0                                         | Descargar     |
+| sillas de cine             | 0                                         | Descargar     |
+| cambiar fondo              | 0                                         | Descargar     |
