@@ -1,0 +1,308 @@
+<!-- Made by Hernando Abella -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hernando Abella | Validador de Contraseñas</title>
+    <link rel="stylesheet" href="./component.css">
+    <link type="text/css" rel="stylesheet" href="http://ajblk.github.io/SyntaxHighlightGenerator-v3.0/styles/shCoreDefault.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/toolbar/prism-toolbar.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/line-numbers/prism-line-numbers.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script type="text/javascript" src="http://ajblk.github.io/SyntaxHighlightGenerator-v3.0/scripts/sh-v3.0-min.js"></script>
+</head>
+<body>
+    <div class="backbar">
+        <a href="/proyectos/"><i class="fas fa-arrow-left"></i></a>
+    </div>
+
+    <section class="codigo__del__proyecto">
+        <div class="app__background">
+            <div class="app__container">
+                
+                <!-- app code goes here -->
+
+                <div class="contenedor">
+                  <input type="password" id="password" placeholder="Contraseña"
+              onInput="validar()">
+             
+             <br>
+                
+               <div id="set" >
+                 
+              <div id="largo">Largo : 0</div>
+                  
+              <i id="ver" onclick="ver()" class="far fa-eye"></i>
+                   
+               </div>
+                
+             <div id="validar0">
+               <i class="far fa-check-circle"></i>  <span>Más de 5 carácteres</span>
+             </div>
+              <div id="validar1">
+               <i class="far fa-check-circle"></i>  <span>Menos de 10 carácteres</span>
+             </div>
+              <div id="validar2">
+               <i class="far fa-check-circle"></i>  <span>Contiene números</span>
+             </div>
+              <div id="validar3">
+               <i class="far fa-check-circle"></i>   <span>Contiene carácteres especiales</span>
+               </div>
+                <div id="validar4">
+               <i class="far fa-check-circle"></i>  <span>No debe tener espacios</span>
+             </div>
+              </div>
+                <!-- app code goes here -->
+
+            </div>
+        </div>
+        
+        <section class="contenido__proyecto">
+            <h1>Validador de Contraseñas</h1>
+        <br>
+        <p>Los validadores de contraseñas son responsables de determinar si una contraseña propuesta es aceptable para su uso y podrían incluir comprobaciones como asegurarse de que cumpla con los requisitos de longitud mínima, que tenga un rango apropiado de caracteres.</p>
+        <br>
+        <div class="flexNav">
+            <ul class="breadcrumb">
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/proyectos">Proyectos</a></li>
+                <li>Validador de Contraseñas</li>
+            </ul>
+            <div class="download">
+                <a href="./aplicacion-meteorologica.rar" download><i class="fas fa-download"></i></a>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="code__container">
+            <h5 class="html__tag">HTML</h5>
+            <div class="codigo__html">
+                <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Validador de Contraseña&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://use.fontawesome.com/releases/v5.3.1/css/all.css&quot; integrity=&quot;sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU&quot; crossorigin=&quot;anonymous&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+    &lt;div class=&quot;contenedor&quot;&gt;
+        &lt;input type=&quot;password&quot; id=&quot;password&quot; placeholder=&quot;Contraseña&quot;
+    onInput=&quot;validar()&quot;&gt;
+   
+   &lt;br&gt;
+      
+     &lt;div id=&quot;set&quot; &gt;
+       
+    &lt;div id=&quot;largo&quot;&gt;Largo : 0&lt;/div&gt;
+        
+    &lt;i id=&quot;ver&quot; onclick=&quot;ver()&quot; class=&quot;far fa-eye&quot;&gt;&lt;/i&gt;
+         
+     &lt;/div&gt;
+      
+   &lt;div id=&quot;validar0&quot;&gt;
+     &lt;i class=&quot;far fa-check-circle&quot;&gt;&lt;/i&gt;  &lt;span&gt;Más de 5 carácteres&lt;/span&gt;
+   &lt;/div&gt;
+    &lt;div id=&quot;validar1&quot;&gt;
+     &lt;i class=&quot;far fa-check-circle&quot;&gt;&lt;/i&gt;  &lt;span&gt;Menos de 10 carácteres&lt;/span&gt;
+   &lt;/div&gt;
+    &lt;div id=&quot;validar2&quot;&gt;
+     &lt;i class=&quot;far fa-check-circle&quot;&gt;&lt;/i&gt;  &lt;span&gt;Contiene números&lt;/span&gt;
+   &lt;/div&gt;
+    &lt;div id=&quot;validar3&quot;&gt;
+     &lt;i class=&quot;far fa-check-circle&quot;&gt;&lt;/i&gt;   &lt;span&gt;Contiene carácteres especiales&lt;/span&gt;
+     &lt;/div&gt;
+      &lt;div id=&quot;validar4&quot;&gt;
+     &lt;i class=&quot;far fa-check-circle&quot;&gt;&lt;/i&gt;  &lt;span&gt;No debe tener espacios&lt;/span&gt;
+   &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            
+            <hr>
+
+            <h5 class="css__tag">CSS</h5>
+            <div class="codigo__css">
+                <pre class="line-numbers"><code class="language-css">@import url('https://fonts.googleapis.com/css2?family=Aleo:wght@300&display=swap');
+
+body{
+    margin:0; 
+    padding:3px;
+    box-sizing: border-box;
+    user-select: none;
+    font-family: 'Aleo', serif;
+    background: #cc2b5e;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #753a88, #cc2b5e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #753a88, #cc2b5e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.contenedor{
+    background: #fff;
+    color: #000;
+    border-radius: 25px;
+    width: 400px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    padding: 10px;
+}
+
+#set{
+    display: block ;
+    position: relative;
+    margin: auto;
+}
+
+#largo{
+   display: inline-block;
+   position: relative ;
+   margin: 4%; 
+   margin-bottom: 2%;
+   color:#000; 
+   font-size: 18px;
+   text-indent: 40px;
+   font-weight: bolder;
+}
+
+#ver{
+    color: #753a88;
+    position: absolute;
+    font-size: 1.5em;
+    top: 14px;
+    left: 320px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+input[id='password']{
+    border: none; 
+    width:80%;
+    outline: none;
+    padding: 10px;
+    border-bottom: 5px solid #753a88;
+    display: block; 
+    position: relative;
+    font-size: 30px;
+    text-align: center;
+    top: 20px;
+    margin: 20px auto ;
+    user-select: auto;
+    font-family: 'Slabo 27px', serif;
+    transition-duration: 600ms;
+}
+
+#validar0, #validar1, #validar2, #validar3, #validar4{
+   display: block;
+   position: relative;
+   margin: 4%;
+   font-size: 18px;
+   width: 92%;
+   text-align: justify;
+   color: rgb(255, 255, 255);
+}
+
+span{
+    margin: 10px;
+}
+
+input:hover{
+    border-bottom: 5px solid #cc2b5e;
+}</code></pre>
+            </div>
+
+            <hr>
+
+            <h5 class="javascript__tag">JAVASCRIPT</h5>
+            
+            <div class="codigo__javascript">
+                <pre class="line-numbers"><code class="language-javascript">var visible = false ;
+
+function ver(){
+    var input = document.getElementById("password");
+    var ver = document.getElementById("ver");
+    
+    if(visible){
+        input.type = 'password';
+        visible = false; 
+        ver.style.color='#cc2b5e';
+    }else{
+        input.type = 'text';
+        visible = true; 
+        ver.style.color='#753a88';
+    }
+}
+
+function validar(){
+
+    var input = document.getElementById("password").value;
+    
+    input=input.trim();
+
+    document.getElementById("password").value=input;
+
+    document.getElementById("largo").innerText="Largo : " + input.length;
+    
+    if(input.length>=5){
+        document.getElementById("validar0").style.color="#cc2b5e";
+    }else{
+       document.getElementById("validar0").style.color="#753a88"; 
+    }
+    
+    if(input.length<=10){
+        document.getElementById("validar1").style.color="#cc2b5e";
+    }else{
+       document.getElementById("validar1").style.color="#753a88"; 
+    }
+    
+    if(input.match(/[0-9]/i)){
+       document.getElementById("validar2").style.color="#cc2b5e";
+    }else{
+       document.getElementById("validar2").style.color="#753a88"; 
+    }
+    
+    if(input.match(/[^A-Za-z0-9-' ']/i)){
+        document.getElementById("validar3").style.color="#cc2b5e";
+    }else{
+        document.getElementById("validar3").style.color="#753a88"; 
+    }
+    
+    if(input.match(' ')){
+        document.getElementById("validar4").style.color="#753a88";
+    }else{
+        document.getElementById("validar4").style.color="#cc2b5e"; 
+    }
+}
+</code></pre>
+            </div>
+        </div>
+        </section>
+        
+    </section>
+
+    <footer>
+        <p>&copy; 2021 Hernando Abella</p>
+    </footer>
+
+    <!--Scripts-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/toolbar/prism-toolbar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="./component.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
