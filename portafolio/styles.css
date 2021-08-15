@@ -31,18 +31,6 @@ p{
     width: 100%;
 }
 
-.tarjeta__portafolio a{
-    color: #fff;
-    border: 1px solid #fff;
-    background: transparent;
-    padding: 10px;
-    transition: .3s;
-    position: absolute;
-    left:150px;
-    z-index:1;
-    top:200px;
-}
-
 .tarjeta__portafolio a:hover{
     background: #000;
     color: #fff;

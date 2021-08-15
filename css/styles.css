@@ -111,37 +111,6 @@ textarea.fcf-form-control {
     width: 20px;
 }
 
-.e_e h1{
-    margin: 20px;
-    text-align: center;
-    color: #457b9d;
-    font-size: 2em;
-    letter-spacing: 2px;
-}
-
-.e_e h3{
-    text-align: center;
-    margin: 20px;
-    letter-spacing: 3px;
-    color: #457b9d;
-}
-
-.e_e p{
-    letter-spacing: 1px;
-    text-align: justify;
-    line-height: 30px;
-}
-
-
-.e_e ul li{
-    margin: 20px;
-    list-style: square;
-}
-
-.logo{
-    width: 50px;
-}
-
 /*header*/
 
   .topnav {
@@ -561,7 +530,7 @@ a{
 }
 
 .tarjeta__proyectos{
-    border: 2px solid #6320ee;
+    border: 2px solid #ede4ff;
     color: #000;
     border-radius: 25px;
     
