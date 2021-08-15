@@ -397,10 +397,11 @@ a{
 }
 
 .flex__sake{
-    padding: 10px;
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
+    padding: 20px;
+    font-size: .9em;
 }
 
 #servicios h2{
@@ -542,7 +543,6 @@ a{
 
 .tarjeta__proyectos h3{
     text-align: center;
-    padding: 20px;
     color: #6320ee;
     
 }
@@ -555,7 +555,6 @@ a{
 .tarjeta__proyectos a{
     color:#fff;
     background: #6320ee;
-    padding: 10px;
     transition: .3s;
     display: block;
     width: 150px;
