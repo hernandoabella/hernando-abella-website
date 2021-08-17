@@ -50,7 +50,7 @@
                 <li>Contador</li>
             </ul>
             <div class="download">
-                <a href="./aplicacion-meteorologica.rar" download><i class="fas fa-download"></i></a>
+                <a href="../contador.rar" download><i class="fas fa-download"></i></a>
             </div>
         </div>
 
@@ -61,12 +61,30 @@
             <div class="panel">
                     <div class="codigo__htmlt">
                         <div class="decor__bar html"></div>
-                        <pre class="line-numbers"><code class="language-javascript">5
-'Test'
-true
-['a', 'b']
-{color: 'red', shape: 'Rectangle'}
-</code></pre></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Contador&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt; 
+    &lt;link rel=&quot;icon&quot; type=&quot;image/x-icon&quot; href=&quot;../images/favicon.ico&quot; &gt;
+    &lt;link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;../images/favicon.ico&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://pro.fontawesome.com/releases/v5.10.0/css/all.css&quot; integrity=&quot;sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p&quot; crossorigin=&quot;anonymous&quot;/&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;container&quot;&gt;
+        &lt;div id=&quot;numero&quot; class=&quot;numero&quot;&gt;0&lt;/div&gt;
+        &lt;hr&gt;
+        &lt;div class=&quot;flexStyle&quot;&gt;
+        &lt;button id=&quot;btn2&quot; onclick=&quot;restar()&quot;&gt;&lt;i class=&quot;fas fa-minus&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+        &lt;button id=&quot;btn1&quot; onclick=&quot;sumar()&quot;&gt;&lt;i class=&quot;fas fa-plus&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script src=&quot;./script.js&quot;&gt;&lt;/script&gt; 
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
                 </div>
             
             <hr>
@@ -75,12 +93,122 @@ true
             <div class="panel">
                     <div class="codigo__css">
                         <div class="decor__bar css"></div>
-                        <pre class="line-numbers"><code class="language-javascript">5
-'Test'
-true
-['a', 'b']
-{color: 'red', shape: 'Rectangle'}
-</code></pre></div>
+                        <pre class="line-numbers"><code class="language-css">@import url(&#x27;https://fonts.googleapis.com/css2?family=Fraunces:wght@300&#x26;display=swap&#x27;);
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 1.3em;
+    font-family: &#x27;Fraunces&#x27;, serif;
+    background: #fcbf49;
+    overflow: hidden;
+}
+
+#container{
+    background: #fff;
+    color: #999;
+    width: 200px;
+    border-radius: 5px;
+    padding: 20px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.flexStyle{
+    display: flex;
+    justify-content: space-around;
+}
+
+hr{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 20px 10px;
+}
+
+#numero{
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 20px;
+    user-select: none;
+    font-weight: bold;
+}
+
+#btn1, #btn2{
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: .4s;
+    color: #999;
+    background: #fff;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 50%;
+}
+
+#btn1:hover, #btn2:hover{
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+#btn1:hover{
+    background: green;
+    color: #fff;
+}
+
+#btn2:hover{
+    background: red;
+    color: #fff;
+}
+
+.animation{
+    animation: animation .3s;
+}
+
+.animation2{
+    animation: animation2 .3s;
+}
+
+@keyframes animation{
+    0%{
+        transform: rotate(-180deg) scale(5.3) skew(30deg);
+        
+    }
+
+    80%{
+        opacity: 0.5;
+    }
+}
+
+@keyframes animation2{
+    0%{
+        transform: rotate(180deg) scale(5.3) skew(-30deg);
+    }
+
+    80%{
+        opacity: 0.5;
+    }
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}</code></pre></div>
                 </div>
 
             <hr>
@@ -90,11 +218,68 @@ true
             <div class="panel">
                     <div class="codigo__javascript">
                         <div class="decor__bar javascript"></div>
-                        <pre class="line-numbers"><code class="language-javascript">5
-'Test'
-true
-['a', 'b']
-{color: 'red', shape: 'Rectangle'}
+                        <pre class="line-numbers"><code class="language-javascript">//Variables
+
+const numero = document.getElementById(&#x27;numero&#x27;);
+const btn1 = document.getElementById(&#x27;btn1&#x27;);
+const btn2 = document.getElementById(&#x27;btn2&#x27;);
+
+const sumar = () =&#x3E; {
+
+   removeAnimationClass();
+
+   setTimeout(() =&#x3E;{
+      numero.classList.add(&#x27;animation&#x27;);
+   }, 10);
+
+   numero.innerText++;
+
+   testColor();
+
+   console.log(numero.innerHTML);
+   
+   return numero.innerText;
+
+}
+
+const restar = () =&#x3E; {
+
+   removeAnimationClass();
+
+   setTimeout(() =&#x3E;{
+      numero.classList.add(&#x27;animation2&#x27;);
+   }, 10);
+
+   numero.innerText--;
+
+   testColor();
+
+   console.log(numero.innerHTML);
+
+   return numero.innerText;
+}
+
+const removeAnimationClass = () =&#x3E; {
+   numero.classList.remove(&#x27;animation2&#x27;, &#x27;animation&#x27;);
+}
+
+const testColor = () =&#x3E;{
+   if(numero.innerText === &#x27;0&#x27;){
+      numero.style.color = &#x27;#999&#x27;;
+   }else if(numero.innerText &#x3C; &#x27;0&#x27;){
+      numero.style.color = &#x22;red&#x22;;
+   }else{
+      numero.style.color = &#x22;green&#x22;;
+   }
+}
+
+// Activar contador autom&#xE1;tico: 
+
+// Suma autom&#xE1;ticamente
+// setInterval(sumar, 1000);
+ 
+// Resta autom&#xE1;ticamente
+// setInterval(restar, 1000); 
 </code></pre></div>
                 </div>
         </div>
