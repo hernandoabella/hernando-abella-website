@@ -1,57 +1,62 @@
-var visible = false ;
+//Variables
 
-function ver(){
-    var input = document.getElementById("password");
-    var ver = document.getElementById("ver");
-    
-    if(visible){
-        input.type = 'password';
-        visible = false; 
-        ver.style.color='#cc2b5e';
-    }else{
-        input.type = 'text';
-        visible = true; 
-        ver.style.color='#753a88';
-    }
+const numero = document.getElementById('numero');
+const btn1 = document.getElementById('btn1');
+const btn2 = document.getElementById('btn2');
+
+const sumar = () => {
+
+   removeAnimationClass();
+
+   setTimeout(() =>{
+      numero.classList.add('animation');
+   }, 10);
+
+   numero.innerText++;
+
+   testColor();
+
+   console.log(numero.innerHTML);
+   
+   return numero.innerText;
+
 }
 
-function validar(){
+const restar = () => {
 
-    var input = document.getElementById("password").value;
-    
-    input=input.trim();
+   removeAnimationClass();
 
-    document.getElementById("password").value=input;
+   setTimeout(() =>{
+      numero.classList.add('animation2');
+   }, 10);
 
-    document.getElementById("largo").innerText="Largo : " + input.length;
-    
-    if(input.length>=5){
-        document.getElementById("validar0").style.color="#cc2b5e";
-    }else{
-       document.getElementById("validar0").style.color="#753a88"; 
-    }
-    
-    if(input.length<=10){
-        document.getElementById("validar1").style.color="#cc2b5e";
-    }else{
-       document.getElementById("validar1").style.color="#753a88"; 
-    }
-    
-    if(input.match(/[0-9]/i)){
-       document.getElementById("validar2").style.color="#cc2b5e";
-    }else{
-       document.getElementById("validar2").style.color="#753a88"; 
-    }
-    
-    if(input.match(/[^A-Za-z0-9-' ']/i)){
-        document.getElementById("validar3").style.color="#cc2b5e";
-    }else{
-        document.getElementById("validar3").style.color="#753a88"; 
-    }
-    
-    if(input.match(' ')){
-        document.getElementById("validar4").style.color="#753a88";
-    }else{
-        document.getElementById("validar4").style.color="#cc2b5e"; 
-    }
+   numero.innerText--;
+
+   testColor();
+
+   console.log(numero.innerHTML);
+
+   return numero.innerText;
 }
+
+const removeAnimationClass = () => {
+   numero.classList.remove('animation2', 'animation');
+}
+
+const testColor = () =>{
+   if(numero.innerText === '0'){
+      numero.style.color = '#999';
+   }else if(numero.innerText < '0'){
+      numero.style.color = "red";
+   }else{
+      numero.style.color = "green";
+   }
+}
+
+// Activar contador automático: 
+
+// Suma automáticamente
+// setInterval(sumar, 1000);
+ 
+// Resta automáticamente
+// setInterval(restar, 1000); 

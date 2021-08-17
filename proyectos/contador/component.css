@@ -1,79 +1,107 @@
-@import url('https://fonts.googleapis.com/css2?family=Aleo:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@300&display=swap');
 
 *{
-  font-family: 'Aleo', serif;
-}
-
-body{
     box-sizing: border-box;
-    user-select: none;
 }
 
-.contenedor{
+#container{
     background: #fff;
-    color: #000;
-    border-radius: 25px;
-    width: 400px;
-    padding: 10px;
-    margin: auto;
+    color: #999;
+    width: 200px;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-#set{
-    display: block ;
-    position: relative;
-    margin: auto;
+.flexStyle{
+    display: flex;
+    justify-content: space-around;
 }
 
-#largo{
-   display: inline-block;
-   position: relative ;
-   margin: 4%; 
-   margin-bottom: 2%;
-   color:#000; 
-   font-size: 18px;
-   text-indent: 40px;
-   font-weight: bolder;
+hr{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 20px 10px;
 }
 
-#ver{
-    color: #753a88;
-    position: absolute;
-    font-size: 1.5em;
-    top: 14px;
-    left: 320px;
-    cursor: pointer;
-    transition: .2s;
-}
-
-input[id='password']{
-    border: none; 
-    width:80%;
-    outline: none;
-    padding: 10px;
-    border-bottom: 5px solid #753a88;
-    display: block; 
-    position: relative;
-    font-size: 30px;
+#numero{
+    font-size: 3em;
     text-align: center;
-    top: 20px;
-    margin: 20px auto ;
-    user-select: auto;
-    font-family: 'Slabo 27px', serif;
-    transition-duration: 600ms;
+    margin-bottom: 20px;
+    user-select: none;
+    font-weight: bold;
 }
 
-#validar0, #validar1, #validar2, #validar3, #validar4{
-   display: block;
-   position: relative;
-   margin: 4%;
-   font-size: 18px;
-   width: 92%;
-   text-align: justify;
-   color: rgb(255, 255, 255);
+#btn1, #btn2{
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: .4s;
+    color: #999;
+    background: #fff;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 50%;
 }
 
-input:hover{
-    border-bottom: 5px solid #cc2b5e;
+#btn1:hover, #btn2:hover{
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+#btn1:hover{
+    background: green;
+    color: #fff;
+}
+
+#btn2:hover{
+    background: red;
+    color: #fff;
+}
+
+.animation{
+    animation: animation .3s;
+}
+
+.animation2{
+    animation: animation2 .3s;
+}
+
+@keyframes animation{
+    0%{
+        transform: rotate(-180deg) scale(5.3) skew(30deg);
+        
+    }
+
+    80%{
+        opacity: 0.5;
+    }
+}
+
+@keyframes animation2{
+    0%{
+        transform: rotate(180deg) scale(5.3) skew(-30deg);
+    }
+
+    80%{
+        opacity: 0.5;
+    }
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
   
 .s{
@@ -86,11 +114,8 @@ input:hover{
 }
 
 .app__background{
-  background: #cc2b5e;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #753a88, #cc2b5e);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #753a88, #cc2b5e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #cc2b5e;
   padding: 50px; 
-  
 }
 
 .app_container{
@@ -101,7 +126,7 @@ input:hover{
 }
 
 h1{
-    color: #2a9d8f;
+    color: #6320ee;
     font-size: 2em;
 }
 

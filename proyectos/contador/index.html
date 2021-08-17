@@ -5,15 +5,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hernando Abella | Validador de Contraseñas</title>
+    <title>Contador</title>
     <link rel="stylesheet" href="./component.css">
-    <link type="text/css" rel="stylesheet" href="http://ajblk.github.io/SyntaxHighlightGenerator-v3.0/styles/shCoreDefault.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/toolbar/prism-toolbar.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/line-numbers/prism-line-numbers.min.css">
+    <link rel="stylesheet" href="/temaPrism.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <script type="text/javascript" src="http://ajblk.github.io/SyntaxHighlightGenerator-v3.0/scripts/sh-v3.0-min.js"></script>
 </head>
 <body>
     <div class="backbar">
@@ -26,51 +22,32 @@
                 
                 <!-- app code goes here -->
 
-                <div class="contenedor">
-                  <input type="password" id="password" placeholder="Contraseña"
-              onInput="validar()">
-             
-             <br>
+                <div class="s">
+                    <div id="container">
+                        <div id="numero" class="numero">0</div>
+                        <hr>
+                        <div class="flexStyle">
+                        <button id="btn2" onclick="restar()"><i class="fas fa-minus"></i></button>
+                        <button id="btn1" onclick="sumar()"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
                 
-               <div id="set" >
-                 
-              <div id="largo">Largo : 0</div>
-                  
-              <i id="ver" onclick="ver()" class="far fa-eye"></i>
-                   
-               </div>
-                
-             <div id="validar0">
-               <i class="far fa-check-circle"></i>  <span>Más de 5 carácteres</span>
-             </div>
-              <div id="validar1">
-               <i class="far fa-check-circle"></i>  <span>Menos de 10 carácteres</span>
-             </div>
-              <div id="validar2">
-               <i class="far fa-check-circle"></i>  <span>Contiene números</span>
-             </div>
-              <div id="validar3">
-               <i class="far fa-check-circle"></i>   <span>Contiene carácteres especiales</span>
-               </div>
-                <div id="validar4">
-               <i class="far fa-check-circle"></i>  <span>No debe tener espacios</span>
-             </div>
-              </div>
                 <!-- app code goes here -->
 
             </div>
         </div>
         
         <section class="contenido__proyecto">
-            <h1>Validador de Contraseñas</h1>
+            <h1>Contador</h1>
         <br>
-        <p>Los validadores de contraseñas son responsables de determinar si una contraseña propuesta es aceptable para su uso y podrían incluir comprobaciones como asegurarse de que cumpla con los requisitos de longitud mínima, que tenga un rango apropiado de caracteres.</p>
+        <p>Esta aplicación te permite contar números.</p>
         <br>
         <div class="flexNav">
             <ul class="breadcrumb">
                 <li><a href="/index.html">Inicio</a></li>
                 <li><a href="/proyectos">Proyectos</a></li>
-                <li>Validador de Contraseñas</li>
+                <li>Contador</li>
             </ul>
             <div class="download">
                 <a href="./aplicacion-meteorologica.rar" download><i class="fas fa-download"></i></a>
@@ -298,10 +275,6 @@ function validar(){
     <!--Scripts-->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/toolbar/prism-toolbar.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
     <script src="./component.js"></script>
     <script src="./script.js"></script>
 </body>

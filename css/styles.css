@@ -419,7 +419,7 @@ a{
 
 .tarjeta__servicios{
     background: #6320ee;
-    border: 5px double #8075ff;
+    border-radius: 25px;
     padding: 10px;
     opacity: 0.9;
     transition: .3s;
@@ -427,7 +427,7 @@ a{
 }
 
 .tarjeta__servicios img{
-    margin: 10px;
+    margin: 10px;    
 }
 
 .tarjeta__servicios:hover{
@@ -441,10 +441,11 @@ a{
 
 .tarjeta__servicios a{
     border: 1px solid #8075ff;
+    border-radius: 25px;
     color: #fff;
     padding: 10px;
     display: block;
-    width: 300px;
+    width: 150px;
     text-align: center;
     margin: 30px auto;
     transition: .3s;
@@ -468,20 +469,6 @@ a{
     line-height: 25px;
     text-align: left !important;
     color: #fff !important;
-}
-
-.total__price{
-    font-size: 1.3em;
-    font-weight: bold;
-    border: 50px;
-    color: #6320ee;
-    text-align: center;
-    margin: 20px auto;
-    width: 120px;
-    line-height: 120px;
-    border-radius: 100%;
-    background: rgb(234, 234, 234);
-    box-shadow: 0px 5px 10px #6320ee;
 }
 
 .proyectos{
@@ -658,7 +645,7 @@ a{
 }
 
 .code__container hr{
-    border: 1px dashed #264653;
+    border: 1px dashed rgb(213, 213, 213);
     margin: 50px auto;
     width: 100%;
 }
@@ -750,14 +737,14 @@ ul.breadcrumb {
   
   /* Add a color to all links inside the list */
   ul.breadcrumb li a {
-    color: #2a9d8f;
+    color: #8075ff;
     text-decoration: none;
+    transition: .3s;
   }
   
   /* Add a color on mouse-over */
   ul.breadcrumb li a:hover {
-    color: #264653;
-    text-decoration: underline;
+    color: #6320ee;
   }
 
 .footerFlex{
@@ -912,8 +899,7 @@ footer div.redes__sociales a:hover{
 }
 
 .download a{
-    background: #2a9d8f;
-    border: 1px solid #264653;
+    background: #8075ff;
     color: #fff;
     padding: 10px;
     display: block;
@@ -923,10 +909,7 @@ footer div.redes__sociales a:hover{
 }
 
 .download a:hover{
-    background: #fff;
-    color: #2a9d8f;
-    border: 1px solid #2a9d8f;
-    transform: translate(0px, -2px);
+    background: #6320ee;
 }
 
 
