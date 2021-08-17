@@ -58,211 +58,45 @@
 
         <div class="code__container">
             <h5 class="html__tag">HTML</h5>
-            <div class="codigo__html">
-                <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Validador de Contraseña&lt;/title&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://use.fontawesome.com/releases/v5.3.1/css/all.css&quot; integrity=&quot;sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU&quot; crossorigin=&quot;anonymous&quot;&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    
-    &lt;div class=&quot;contenedor&quot;&gt;
-        &lt;input type=&quot;password&quot; id=&quot;password&quot; placeholder=&quot;Contraseña&quot;
-    onInput=&quot;validar()&quot;&gt;
-   
-   &lt;br&gt;
-      
-     &lt;div id=&quot;set&quot; &gt;
-       
-    &lt;div id=&quot;largo&quot;&gt;Largo : 0&lt;/div&gt;
-        
-    &lt;i id=&quot;ver&quot; onclick=&quot;ver()&quot; class=&quot;far fa-eye&quot;&gt;&lt;/i&gt;
-         
-     &lt;/div&gt;
-      
-   &lt;div id=&quot;validar0&quot;&gt;
-     &lt;i class=&quot;far fa-check-circle&quot;&gt;&lt;/i&gt;  &lt;span&gt;Más de 5 carácteres&lt;/span&gt;
-   &lt;/div&gt;
-    &lt;div id=&quot;validar1&quot;&gt;
-     &lt;i class=&quot;far fa-check-circle&quot;&gt;&lt;/i&gt;  &lt;span&gt;Menos de 10 carácteres&lt;/span&gt;
-   &lt;/div&gt;
-    &lt;div id=&quot;validar2&quot;&gt;
-     &lt;i class=&quot;far fa-check-circle&quot;&gt;&lt;/i&gt;  &lt;span&gt;Contiene números&lt;/span&gt;
-   &lt;/div&gt;
-    &lt;div id=&quot;validar3&quot;&gt;
-     &lt;i class=&quot;far fa-check-circle&quot;&gt;&lt;/i&gt;   &lt;span&gt;Contiene carácteres especiales&lt;/span&gt;
-     &lt;/div&gt;
-      &lt;div id=&quot;validar4&quot;&gt;
-     &lt;i class=&quot;far fa-check-circle&quot;&gt;&lt;/i&gt;  &lt;span&gt;No debe tener espacios&lt;/span&gt;
-   &lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-            </div>
+            <div class="panel">
+                    <div class="codigo__htmlt">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-javascript">5
+'Test'
+true
+['a', 'b']
+{color: 'red', shape: 'Rectangle'}
+</code></pre></div>
+                </div>
             
             <hr>
 
             <h5 class="css__tag">CSS</h5>
-            <div class="codigo__css">
-                <pre class="line-numbers"><code class="language-css">@import url('https://fonts.googleapis.com/css2?family=Aleo:wght@300&display=swap');
-
-body{
-    margin:0; 
-    padding:3px;
-    box-sizing: border-box;
-    user-select: none;
-    font-family: 'Aleo', serif;
-    background: #cc2b5e;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #753a88, #cc2b5e);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #753a88, #cc2b5e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-.contenedor{
-    background: #fff;
-    color: #000;
-    border-radius: 25px;
-    width: 400px;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    padding: 10px;
-}
-
-#set{
-    display: block ;
-    position: relative;
-    margin: auto;
-}
-
-#largo{
-   display: inline-block;
-   position: relative ;
-   margin: 4%; 
-   margin-bottom: 2%;
-   color:#000; 
-   font-size: 18px;
-   text-indent: 40px;
-   font-weight: bolder;
-}
-
-#ver{
-    color: #753a88;
-    position: absolute;
-    font-size: 1.5em;
-    top: 14px;
-    left: 320px;
-    cursor: pointer;
-    transition: .2s;
-}
-
-input[id='password']{
-    border: none; 
-    width:80%;
-    outline: none;
-    padding: 10px;
-    border-bottom: 5px solid #753a88;
-    display: block; 
-    position: relative;
-    font-size: 30px;
-    text-align: center;
-    top: 20px;
-    margin: 20px auto ;
-    user-select: auto;
-    font-family: 'Slabo 27px', serif;
-    transition-duration: 600ms;
-}
-
-#validar0, #validar1, #validar2, #validar3, #validar4{
-   display: block;
-   position: relative;
-   margin: 4%;
-   font-size: 18px;
-   width: 92%;
-   text-align: justify;
-   color: rgb(255, 255, 255);
-}
-
-span{
-    margin: 10px;
-}
-
-input:hover{
-    border-bottom: 5px solid #cc2b5e;
-}</code></pre>
-            </div>
+            <div class="panel">
+                    <div class="codigo__css">
+                        <div class="decor__bar css"></div>
+                        <pre class="line-numbers"><code class="language-javascript">5
+'Test'
+true
+['a', 'b']
+{color: 'red', shape: 'Rectangle'}
+</code></pre></div>
+                </div>
 
             <hr>
 
             <h5 class="javascript__tag">JAVASCRIPT</h5>
             
-            <div class="codigo__javascript">
-                <pre class="line-numbers"><code class="language-javascript">var visible = false ;
-
-function ver(){
-    var input = document.getElementById("password");
-    var ver = document.getElementById("ver");
-    
-    if(visible){
-        input.type = 'password';
-        visible = false; 
-        ver.style.color='#cc2b5e';
-    }else{
-        input.type = 'text';
-        visible = true; 
-        ver.style.color='#753a88';
-    }
-}
-
-function validar(){
-
-    var input = document.getElementById("password").value;
-    
-    input=input.trim();
-
-    document.getElementById("password").value=input;
-
-    document.getElementById("largo").innerText="Largo : " + input.length;
-    
-    if(input.length>=5){
-        document.getElementById("validar0").style.color="#cc2b5e";
-    }else{
-       document.getElementById("validar0").style.color="#753a88"; 
-    }
-    
-    if(input.length<=10){
-        document.getElementById("validar1").style.color="#cc2b5e";
-    }else{
-       document.getElementById("validar1").style.color="#753a88"; 
-    }
-    
-    if(input.match(/[0-9]/i)){
-       document.getElementById("validar2").style.color="#cc2b5e";
-    }else{
-       document.getElementById("validar2").style.color="#753a88"; 
-    }
-    
-    if(input.match(/[^A-Za-z0-9-' ']/i)){
-        document.getElementById("validar3").style.color="#cc2b5e";
-    }else{
-        document.getElementById("validar3").style.color="#753a88"; 
-    }
-    
-    if(input.match(' ')){
-        document.getElementById("validar4").style.color="#753a88";
-    }else{
-        document.getElementById("validar4").style.color="#cc2b5e"; 
-    }
-}
-</code></pre>
-            </div>
+            <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">5
+'Test'
+true
+['a', 'b']
+{color: 'red', shape: 'Rectangle'}
+</code></pre></div>
+                </div>
         </div>
         </section>
         

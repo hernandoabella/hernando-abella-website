@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@300&display=swap');
 
-*{
-    box-sizing: border-box;
-}
-
 #container{
     background: #fff;
     color: #999;
@@ -114,7 +110,9 @@ hr{
 }
 
 .app__background{
-  background: #cc2b5e;
+  font-size: 1.3em;
+  font-family: 'Fraunces', serif;
+  background: #fcbf49;
   padding: 50px; 
 }
 
