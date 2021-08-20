@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Klee+One&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Klee One', cursive;
     scroll-behavior: smooth;
 }
 
@@ -615,7 +617,7 @@ a{
 
 .snippets h2{
     text-align: center;
-    color: #8075ff;
+    color: rgb(50, 91, 255);
     font-size: 2em;
     padding-top: 50px;
 }
@@ -634,6 +636,7 @@ a{
     width: 130px;
     text-align: center;
     margin: 50px auto;
+    border-radius: 25px;
 }
 
 .snippets .ver__mas:hover{
@@ -996,7 +999,7 @@ tr:nth-child(even) {
 
 .tarjeta__video{
     padding: 10px;
-    background: #fff;
+    background: #f84943;
     border-radius: 25px;
 }
 
