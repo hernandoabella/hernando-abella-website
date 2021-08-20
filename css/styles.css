@@ -526,6 +526,7 @@ a{
 
 .tarjeta__proyectos i{
     color: #8075ff;
+    line-height: 5px;
 }
 
 .tarjeta__proyectos h3{
@@ -547,13 +548,15 @@ a{
     width: 150px;
     margin: 20px auto;
     border-radius: 100px;
-    border: 1px solid #6320ee;
+    padding: 10px;
+    font-size: 1.2em;
 }
 
+
+
 .tarjeta__proyectos a:hover{
-    background: #f8f0fb;
-    color: #6320ee;
-    border: 1px solid #6320ee;
+    background: #cd43ff;
+    color: #fff;
 }
 
 .redes__sociales{
@@ -807,17 +810,11 @@ footer div.redes__sociales a:hover{
 
 .tarjeta__aprende{
     width: 300px;
-    border: 1px solid rgba(99, 32, 238, 0.5);
+    border: 2px solid #ede4ff;
+    border-radius: 25px;
     padding: 10px;
     text-align: center;
     transition: .3s;
-}
-
-.tarjeta__aprende h3{
-    text-align: center;
-    letter-spacing: 5px;
-    margin: 20px;
-    color: #000;
 }
 
 .tarjeta__aprende p{
@@ -825,20 +822,24 @@ footer div.redes__sociales a:hover{
 }
 
 .tarjeta__aprende a{
-    color: #000;
-    background: #f8f0fb;
+    color: #8075ff;
     padding: 10px;
     transition: .3s;
-    width: 100px;
+    width: 130px;
     display: block;
     margin-top: 30px;
     margin: 20px auto;
-    border: 1px solid rgba(99, 32, 238, 0.3);
+    border: 2px solid #8075ff;
 }
 
 .tarjeta__aprende a:hover{
-    color: #000;
-    background: #f8f0fb;
+    color: #ede4ff;
+    background: #6320ee;
+    border: 2px solid #fff;
+}
+
+.tarjeta__aprende img{
+    margin-top: 20px;
 }
 
 .tarjeta__aprende img.html__image{
@@ -903,14 +904,20 @@ footer div.redes__sociales a:hover{
     color: #fff;
 }
 
+.download{
+    display: flex;
+    width: 135px;
+}
+
 .download a{
     background: #8075ff;
     color: #fff;
     padding: 10px;
     display: block;
     text-align: center;
-    width: 50px;
     transition: .3s;
+    margin-right: 10px;
+    border-radius: 5px;
 }
 
 .download a:hover{
