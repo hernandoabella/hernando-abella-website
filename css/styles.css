@@ -626,8 +626,8 @@ a{
 }
 
 .snippets .ver__mas{
-    border: 1px solid #6320ee;
-    color: #6320ee;
+    border: 1px solid rgb(50, 91, 255);
+    color: rgb(50, 91, 255);
     transition: .3s;
     padding: 10px;
     display: block;
@@ -637,8 +637,8 @@ a{
 }
 
 .snippets .ver__mas:hover{
-    background: #6320ee;
-    color: #fff;
+    background: rgb(50, 91, 255);
+    color: rgb(255, 255, 255);
 }
 
 .snippets hr{
@@ -868,9 +868,9 @@ footer div.redes__sociales a:hover{
 
 .tarjeta__snippets{
     width: 300px;
-    color: #000;
+    color: #325BFF;
     padding: 20px;
-    border: 2px solid #ede4ff;
+    border: 2px solid #D1E7FF;
     border-radius: 25px;
 }
 
