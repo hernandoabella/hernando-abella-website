@@ -1,0 +1,304 @@
+<!-- Made by Hernando Abella -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación meteorológica</title>
+    <link rel="stylesheet" href="./component.css">
+    <link rel="stylesheet" href="/temaPrism.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body>
+    <div class="backbar">
+        <a href="/proyectos/"><i class="fas fa-arrow-left"></i></a>
+    </div>
+
+    <section class="codigo__del__proyecto">
+        <div class="app__background">
+            <div class="app__container">
+                
+                <!-- app code goes here -->
+
+                <div class="s">
+                <div class="container">
+
+<form class="inputForm">
+    <input class="inputCity" type="text" placeholder="Busca una ciudad..."/>
+    <button class="formBtn"><i class="far fa-search"></i></button>
+</form>
+
+<div class="result">
+    <p>
+        <i class="fal fa-map-marker-alt"></i>
+        <span class="city"></span>
+        <span class="country"></span>
+    </p>
+
+    <p class="temprature"></p>
+    
+    <div class="flex">
+        <img src="" class="icono">
+        <p class="sky"></p>
+    </div>
+    
+    <p class="min-max"></p>
+</div>
+</div>
+                </div>
+                
+                <!-- app code goes here -->
+
+            </div>
+        </div>
+        
+        <section class="contenido__proyecto">
+            <h1>Aplicación meteorológica</h1>
+        <br>
+        <p>Esta aplicación te permite ver el estado del clima.</p>
+        <br>
+        <div class="flexNav">
+            <ul class="breadcrumb">
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/proyectos">Proyectos</a></li>
+                <li>Contador</li>
+            </ul>
+        
+            <div class="download">
+                <a href="../aplicacion-meteorologica.rar" download><i class="fas fa-download"></i></a>
+                <a href="#">YouTube</a>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="code__container">
+            <h5 class="html__tag">HTML</h5>
+            <div class="panel">
+                    <div class="codigo__htmlt">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot; /&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;
+        &lt;title&gt;Aplicaci&oacute;n del clima&lt;/title&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot; /&gt;
+        &lt;link href=&quot;https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class=&quot;container&quot;&gt;
+
+            &lt;form class=&quot;inputForm&quot;&gt;
+                &lt;input class=&quot;inputCity&quot; type=&quot;text&quot; placeholder=&quot;Busca una ciudad...&quot;/&gt;
+                &lt;button class=&quot;formBtn&quot;&gt;&lt;i class=&quot;far fa-search&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+            &lt;/form&gt;
+
+            &lt;div class=&quot;result&quot;&gt;
+                &lt;p&gt;
+                    &lt;i class=&quot;fal fa-map-marker-alt&quot;&gt;&lt;/i&gt;
+                    &lt;span class=&quot;city&quot;&gt;&lt;/span&gt;
+                    &lt;span class=&quot;country&quot;&gt;&lt;/span&gt;
+                &lt;/p&gt;
+
+                &lt;p class=&quot;temprature&quot;&gt;&lt;/p&gt;
+                
+                &lt;div class=&quot;flex&quot;&gt;
+                    &lt;img src=&quot;&quot; class=&quot;icono&quot;&gt;
+                    &lt;p class=&quot;sky&quot;&gt;&lt;/p&gt;
+                &lt;/div&gt;
+                
+                &lt;p class=&quot;min-max&quot;&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;script src=&quot;app.js&quot;&gt;&lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div>
+                </div>
+            
+            <hr>
+
+            <h5 class="css__tag">CSS</h5>
+            <div class="panel">
+                    <div class="codigo__css">
+                        <div class="decor__bar css"></div>
+                        <pre class="line-numbers"><code class="language-css">@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #AFBBF2;
+    color: #292E1E;
+    font-family: "Nanum Gothic", sans-serif;
+}
+
+.container{
+    background: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    animation: coolAnimation 1s;
+}
+
+.flex{
+    display: flex;
+    text-align: center;
+    width: 145px;
+    margin: auto;
+}
+
+.flex img{
+    margin-right: 10px;
+}
+
+.inputCity{
+    width: 219.5px;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    outline: none;
+    border-bottom: 1px solid rgb(239, 239, 239);
+    color: #7F0799;
+    animation: coolAnimation 1s;
+}
+
+.inputCity,
+.formBtn {
+    font-size: 1rem;
+    padding: 7px 14px;
+    border-radius: 5px;
+    outline: none;
+    font-family: "Nanum Gothic", sans-serif;
+    margin-bottom: 1rem;
+}
+
+.formBtn{
+    background: #9649CB;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s all ease;
+    animation: coolAnimation 1s;
+}
+
+.formBtn:hover {
+    background: #7F0799;
+    color: #fff;
+}
+
+.result p {
+    margin: 1rem 0;
+    text-align: center;
+    animation: coolAnimation 1s;
+}
+
+.result i{
+    font-size: 1.4rem;
+    color: #7F0799;
+}
+
+.city,
+.country {
+    font-size: 1.5rem;
+}
+
+.temprature {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #7F0799;
+}
+
+.sky {
+    font-size: 1.3rem;
+}
+
+.min-max {
+    font-size: 1.1rem;
+}
+
+
+
+@keyframes coolAnimation{
+
+    0%{
+        opacity: 0;
+    }
+
+}</code></pre></div>
+                </div>
+
+            <hr>
+
+            <h5 class="javascript__tag">JAVASCRIPT</h5>
+            
+            <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const apiKey = "16f00dd6edca31d9934c7fd9cdfba77c";
+const baseUrl = "https://api.openweathermap.org/data/2.5/weather?";
+const form = document.querySelector(".inputForm");
+const lang = "sp";
+
+form.addEventListener("submit", handleSubmit);
+
+function handleSubmit(e) {
+    e.preventDefault();
+    const city = document.querySelector(".inputCity").value;
+    fetchWeatherData(city);
+   
+}
+
+async function fetchWeatherData(city) {
+    
+    const apiResponse = 
+    await fetch(`${baseUrl}q=${city}&units=metric&lang=${lang}&APPID=${apiKey}`)
+    const weatherData = apiResponse.json();
+    weatherData.then(data => {
+        console.log(data)
+        document.querySelector(".city").textContent = data.name;
+        document.querySelector(".country").textContent = `, ${data.sys.country}`;
+        document.querySelector(".temprature").textContent = 
+        `${Math.round(data.main.temp)}°c`;
+        document.querySelector(".icono").src = 
+        `https://api.openweathermap.org/img/w/${data.weather[0].icon}.png`
+        document.querySelector(".sky").textContent = data.weather[0].main;
+        document.querySelector(".min-max").textContent = 
+        `${data.main.temp_min}°c / ${data.main.temp_max}°c`;
+    });
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    fetchWeatherData("Santa Marta");
+});
+</code></pre></div>
+                </div>
+        </div>
+        </section>
+        
+    </section>
+
+    <footer>
+        <p>&copy; 2021 Hernando Abella</p>
+    </footer>
+
+    <!--Scripts-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+    <script src="./component.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

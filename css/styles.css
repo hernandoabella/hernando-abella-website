@@ -1,11 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Klee+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap');
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Klee One', cursive;
+    font-family: 'Karla', sans-serif;
     scroll-behavior: smooth;
+}
+
+.flex{
+    display: flex;
+}
+
+.flex a{
+    margin-right: 20px;
 }
 
 .next-js{
