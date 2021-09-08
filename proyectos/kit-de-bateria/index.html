@@ -1,0 +1,566 @@
+<!-- Made by Hernando Abella -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kit de batería</title>
+    <link rel="stylesheet" href="./component.css">
+    <link rel="stylesheet" href="/temaPrism.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body>
+    <div class="backbar">
+        <a href="/proyectos/"><i class="fas fa-arrow-left"></i></a>
+    </div>
+
+    <section class="codigo__del__proyecto">
+        <div class="app__background">
+            <div class="app__container">
+                
+                <!-- app code goes here -->
+
+                <div class="se">
+                <div class="container">
+                    <button class="q drum"></button>
+                    <button class="w drum"></button>
+                    <button class="e drum"></button>
+                    <button class="r drum"></button>
+                    <button class="t drum"></button>
+                    <button class="y drum"></button>
+                    <button class="u drum"></button>
+                    <button class="i drum"></button>
+                    <button class="a drum"></button>
+                    <button class="s drum"></button>
+                    <button class="d drum"></button>
+                    <button class="f drum"></button>
+                    <button class="g drum"></button>
+                    <button class="h drum"></button>
+                    <button class="j drum"></button>
+                    <button class="k drum"></button>
+                </div>
+                </div>
+                
+                <!-- app code goes here -->
+
+            </div>
+        </div>
+        
+        <section class="contenido__proyecto">
+            <h1>Kit de batería</h1>
+        <br>
+        <p>Esta aplicación te permite tocar la batería con el teclado de tu computadora.</p>
+        <br>
+        <div class="flexNav">
+            <ul class="breadcrumb">
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/proyectos">Proyectos</a></li>
+                <li>Kit de batería</li>
+            </ul>
+        
+            <div class="download">
+                <a href="../kit-de-bateria.rar" download><i class="fas fa-download"></i></a>
+                <a href="#">YouTube</a>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="code__container">
+            <h5 class="html__tag">HTML</h5>
+            <div class="panel">
+                    <div class="codigo__htmlt">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;Kit de bater&iacute;a&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  
+  &lt;div class=&quot;container&quot;&gt;
+    &lt;button class=&quot;q drum&quot;&gt;&lt;/button&gt;
+    &lt;button class=&quot;w drum&quot;&gt;&lt;/button&gt;
+    &lt;button class=&quot;e drum&quot;&gt;&lt;/button&gt;
+    &lt;button class=&quot;r drum&quot;&gt;&lt;/button&gt;
+    &lt;button class=&quot;t drum&quot;&gt;&lt;/button&gt;
+    &lt;button class=&quot;y drum&quot;&gt;&lt;/button&gt;
+    &lt;button class=&quot;u drum&quot;&gt;&lt;/button&gt;
+    &lt;button class=&quot;i drum&quot;&gt;&lt;/button&gt;
+    &lt;button class=&quot;a drum&quot;&gt;&lt;/button&gt;
+    &lt;button class=&quot;s drum&quot;&gt;&lt;/button&gt;
+    &lt;button class=&quot;d drum&quot;&gt;&lt;/button&gt;
+    &lt;button class=&quot;f drum&quot;&gt;&lt;/button&gt;
+    &lt;button class=&quot;g drum&quot;&gt;&lt;/button&gt;
+    &lt;button class=&quot;h drum&quot;&gt;&lt;/button&gt;
+    &lt;button class=&quot;j drum&quot;&gt;&lt;/button&gt;
+    &lt;button class=&quot;k drum&quot;&gt;&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;script src=&quot;./script.js&quot;&gt;&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div>
+                </div>
+            
+            <hr>
+
+            <h5 class="css__tag">CSS</h5>
+            <div class="panel">
+                    <div class="codigo__css">
+                        <div class="decor__bar css"></div>
+                        <pre class="line-numbers"><code class="language-css">*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #5922c7;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 310px;
+  padding: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.q {
+  background: rgb(212, 0, 255);
+  animation: coolAnimation .5s;
+}
+
+.w {
+  background: rgb(212, 0, 255);
+  animation: coolAnimation .5s;
+  animation-delay: .2s;
+}
+
+.e {
+  background: rgb(212, 0, 255);
+  animation: coolAnimation .5s;
+  animation-delay: .3s;
+}
+
+.r {
+  background: rgb(212, 0, 255);
+  animation: coolAnimation .5s;
+  animation-delay: .4s;
+}
+
+.t {
+  background: rgb(0, 255, 72);
+  animation: coolAnimation2 .5s;
+  animation-delay: .5s;
+}
+
+.y {
+  background: rgb(0, 255, 72);
+  animation: coolAnimation2 .5s;
+  animation-delay: .6s;
+}
+
+.u {
+  background: rgb(0, 255, 72);
+  animation: coolAnimation2 .5s;
+  animation-delay: .7s;
+}
+
+.i{
+  background: rgb(0, 255, 72);
+  animation: coolAnimation2 .5s;
+  animation-delay: .8s;
+}
+
+.a{
+  background: rgb(33, 9, 250);
+  animation: coolAnimation3 .5s;
+  animation-delay: .9s;
+}
+
+.s{
+  background: rgb(33, 9, 250);
+  animation: coolAnimation3 .5s;
+  animation-delay: 1s;
+}
+
+.d{
+  background: rgb(33, 9, 250);
+  animation: coolAnimation3 .5s;
+  animation-delay: 1.1s;
+}
+
+.f{
+  background: rgb(33, 9, 250);
+  animation: coolAnimation3 .5s;
+  animation-delay: 1.2s;
+}
+
+.g{
+  background: rgb(199, 0, 53);
+  animation: coolAnimation4 .5s;
+  animation-delay: 1.3s;
+  
+}
+
+.h{
+  background: rgb(199, 0, 53);
+  animation: coolAnimation4 .5s;
+  animation-delay: 1.4s;
+}
+
+.j{
+  background: rgb(199, 0, 53);
+  animation: coolAnimation4 .5s;
+  animation-delay: 1.5s;
+}
+
+.k{
+  background: rgb(199, 0, 53);
+  animation: coolAnimation4 .5s;
+  animation-delay: 1.6s;
+}
+
+/* 🤗 esquinas */
+
+.drum:nth-child(1){
+  border-radius: 5px 0px 0px 0px;
+}
+
+.drum:nth-child(4){
+  border-radius: 0px 5px 0px 0px;
+}
+
+.drum:nth-child(13){
+  border-radius: 0px 0px 0px 5px;
+}
+
+.drum:nth-child(16){
+  border-radius: 0px 0px 5px 0px;
+}
+
+/* esquinas */
+
+
+.pressed {
+  opacity: 0.5;
+  transform: scale(1.1);
+  background: rgb(42, 237, 17) !important;
+}
+
+.pressed:nth-child(5){
+  background: rgb(251, 255, 0) !important;
+}
+
+.pressed:nth-child(6){
+  background: rgb(251, 255, 0) !important;
+}
+
+.pressed:nth-child(7){
+  background: rgb(251, 255, 0) !important;
+}
+
+.pressed:nth-child(8){
+  background: rgb(251, 255, 0) !important;
+}
+
+.pressed:nth-child(9){
+  background: rgb(14, 237, 233) !important;
+}
+
+.pressed:nth-child(10){
+  background: rgb(14, 237, 233) !important;
+}
+
+.pressed:nth-child(11){
+  background: rgb(14, 237, 233) !important;
+}
+
+.pressed:nth-child(12){
+  background: rgb(14, 237, 233) !important;
+}
+
+.pressed:nth-child(13){
+  background: rgb(199, 0, 176) !important;
+}
+
+.pressed:nth-child(14){
+  background: rgb(199, 0, 176) !important;
+}
+
+.pressed:nth-child(15){
+  background: rgb(199, 0, 176) !important;
+}
+
+.pressed:nth-child(16){
+  background: rgb(199, 0, 176) !important;
+}
+
+.drum {
+  outline: none;
+  color: #fff;
+  width: 25%;
+  height: 80px;
+  font-size: 2em;
+}
+
+.drum:nth-child(1){
+  background: radial-gradient(circle, rgb(35, 206, 12), rgb(42, 237, 17));
+}
+
+.drum:nth-child(2){
+  background: radial-gradient(circle, rgb(35, 206, 12), rgb(42, 237, 17));
+}
+
+.drum:nth-child(3){
+  background: radial-gradient(circle, rgb(35, 206, 12), rgb(42, 237, 17));
+}
+
+.drum:nth-child(4){
+  background: radial-gradient(circle, rgb(35, 206, 12), rgb(42, 237, 17));
+}
+
+.drum:nth-child(5){
+  background: radial-gradient(circle, rgb(208, 211, 13), rgb(251, 255, 0));
+}
+
+.drum:nth-child(6){
+  background: radial-gradient(circle, rgb(208, 211, 13), rgb(251, 255, 0));
+}
+
+.drum:nth-child(7){
+  background: radial-gradient(circle, rgb(208, 211, 13), rgb(251, 255, 0));
+}
+
+.drum:nth-child(8){
+  background: radial-gradient(circle, rgb(208, 211, 13), rgb(251, 255, 0));
+}
+
+.drum:nth-child(9){
+  background: radial-gradient(circle, rgb(26, 196, 193), rgb(14, 237, 233));
+}
+
+.drum:nth-child(10){
+  background: radial-gradient(circle, rgb(26, 196, 193), rgb(14, 237, 233));
+}
+
+.drum:nth-child(11){
+  background: radial-gradient(circle, rgb(26, 196, 193), rgb(14, 237, 233));
+}
+
+.drum:nth-child(12){
+  background: radial-gradient(circle, rgb(26, 196, 193), rgb(14, 237, 233));
+}
+
+.drum:nth-child(13){
+  background: radial-gradient(circle, rgb(157, 27, 141), rgb(199, 0, 176));
+}
+
+.drum:nth-child(14){
+  background: radial-gradient(circle, rgb(157, 27, 141), rgb(199, 0, 176));
+}
+
+.drum:nth-child(15){
+  background: radial-gradient(circle, rgb(157, 27, 141), rgb(199, 0, 176)); 
+}
+
+.drum:nth-child(16){
+  background: radial-gradient(circle, rgb(157, 27, 141), rgb(199, 0, 176));
+}
+
+
+@keyframes coolAnimation{
+  0%{
+    opacity: 0.5;
+    background: rgb(42, 237, 17);
+  }
+}
+
+@keyframes coolAnimation2{
+  0%{
+    opacity: 0.5;
+    background: rgb(251, 255, 0);
+  }
+}
+
+@keyframes coolAnimation3{
+  0%{
+    opacity: 0.5;
+    background: rgb(14, 237, 233);
+  }
+}
+
+@keyframes coolAnimation4{
+  0%{
+    opacity: 0.5;
+    background: rgb(199, 0, 176);
+  }
+}</code></pre></div>
+                </div>
+
+            <hr>
+
+            <h5 class="javascript__tag">JAVASCRIPT</h5>
+            
+            <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">var numberOfDrumButtons = document.querySelectorAll(".drum").length;
+
+for (var i = 0; i < numberOfDrumButtons; i++) {
+
+  document.querySelectorAll(".drum")[i].addEventListener("click", function() {
+
+    var buttonInnerHTML = this.innerHTML;
+
+    makeSound(buttonInnerHTML);
+
+    buttonAnimation(buttonInnerHTML);
+
+  });
+
+}
+
+document.addEventListener("keypress", function(event) {
+
+  makeSound(event.key);
+
+  buttonAnimation(event.key);
+
+});
+
+
+function makeSound(key) {
+
+  switch (key) {
+    case "q":
+      var tom1 = new Audio("sounds/sound1.mp3");
+      tom1.play();
+      break;
+
+    case "w":
+      var tom1 = new Audio("sounds/sound2.mp3");
+      
+      tom1.play();
+      break;
+
+    case "e":
+      var tom1 = new Audio("sounds/sound3.mp3");
+      tom1.play();
+      break;  
+
+    case "r":
+      var tom1 = new Audio("sounds/sound4.mp3");
+      tom1.play();
+      break;  
+
+    case "t":
+      var tom1 = new Audio("sounds/sound5.mp3");
+      tom1.play();
+      break;
+    
+    case "y":
+      var tom1 = new Audio("sounds/sound6.mp3");
+      tom1.play();
+      break;
+    
+    case "u":
+      var tom1 = new Audio("sounds/sound7.mp3");
+      tom1.play();
+      break;
+      
+    case "i":
+      var tom1 = new Audio("sounds/sound8.mp3");
+      tom1.play();
+      break;  
+
+    case "a":
+      var tom2 = new Audio("sounds/sound9.mp3");
+      tom2.play();
+      break;
+
+    case "s":
+      var tom3 = new Audio('sounds/sound10.mp3');
+      tom3.play();
+      break;
+
+    case "d":
+      var tom4 = new Audio('sounds/sound11.mp3');
+      tom4.play();
+      break;
+
+    case "f":
+      var tom1 = new Audio("sounds/sound12.mp3");
+      tom1.play();
+      break;  
+
+    case "g":
+      var snare = new Audio('sounds/sound13.mp3');
+      snare.play();
+      break;
+
+    case "h":
+      var crash = new Audio('sounds/sound14.mp3');
+      crash.play();
+      break;
+
+    case "j":
+      var kick = new Audio('sounds/sound15.mp3');
+      kick.play();
+      break;
+
+    case "k":
+      var kick = new Audio('sounds/sound16.mp3');
+      kick.play();
+      break      
+
+    default: console.log(key);
+
+  }
+}
+
+
+function buttonAnimation(currentKey) {
+
+  var activeButton = document.querySelector("." + currentKey);
+
+  activeButton.classList.add("pressed");
+
+  setTimeout(function() {
+    activeButton.classList.remove("pressed");
+  }, 100);
+
+}
+</code></pre></div>
+                </div>
+        </div>
+        </section>
+        
+    </section>
+
+    <footer>
+        <p>&copy; 2021 Hernando Abella</p>
+    </footer>
+
+    <!--Scripts-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+    <script src="./component.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
