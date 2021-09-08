@@ -51,6 +51,10 @@
     padding: 10px;
   }
 
+  section{
+    padding-bottom: 0px !important;
+  }
+
   section p{
     line-height: 25px;
   }
