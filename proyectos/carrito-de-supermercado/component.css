@@ -4,12 +4,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    user-select: none;
     font-family: 'Glory', sans-serif;
 }
 
 .container{
-    width: 320px;
+    width: 320px !important;
     background: #1B1B3A;
     padding: 10px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -81,6 +80,8 @@
     cursor: pointer;
     transition: .3s;
     border: none;
+    width: auto !important;
+    display: inline-block !important;
 }
 
 #contain input:hover{
@@ -94,8 +95,6 @@
     text-align: center;
     padding: 10px;
 }
-
-
   
 .se{
     color: #fff;
