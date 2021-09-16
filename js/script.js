@@ -12,6 +12,8 @@ var sticky = navbar.offsetTop;
 function myFunction2() {
   if (window.pageYOffset >= sticky) {
     navbar.classList.add("sticky")
+    navbar.style.boxShadow = 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px';
+    
   } else {
     navbar.classList.remove("sticky");
   }
@@ -35,12 +37,12 @@ function myFunction() {
   
 // ________________ MODO OSCURO ________________  
 
-const cambiarFondo = () => {
+const modoOscuro = () => {
   let elemento = document.body;
   elemento.classList.toggle('modo-oscuro');
 }
 
-toggleSwitch.addEventListener('click', cambiarFondo);
+toggleSwitch.addEventListener('click', modoOscuro);
 
 
 // ________________ MODO OSCURO ________________  
