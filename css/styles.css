@@ -1,4 +1,10 @@
+/* CSS by Hernando Abella */
+
 /* ---------------- variables ------------------- */
+
+:root{
+    --color-titulo: #333;
+}
 
 /* ---------------- variables ------------------- */
 
@@ -111,28 +117,19 @@ tr:nth-child(even) {
 /* ---------------- hero ------------------- */
 
 .sobre__mi{
-    background: #fff;
     padding-top: 60px;
 }
 
 .circulo__contenedor{
     margin: auto;
     padding: 60px 30px;
-    display: flex;
-}
-
-.sideone{
-    width: 50%;
-}
-
-.sidetwo{
-    width: 50%;
+    /* display: flex; */
 }
 
 .sidetwo h1{
-    color: #8075ff;
-    margin-bottom: 20px;
     font-size: 3em;
+    color: #8075ff;
+    padding: 20px 20px;;
 }
 
 .sidetwo p{
@@ -140,8 +137,11 @@ tr:nth-child(even) {
     line-height: 30px;
 }
 
+.sidetwo span{
+    color: #ff13d0;
+}
+
 .circulo__avatar{
-    margin: auto;
     width: 280px;
     height: 280px;
     background: #6320ee;
@@ -169,12 +169,10 @@ tr:nth-child(even) {
     border: 1px solid #6320ee;
 }
 
-
 .go__to__learn:hover{
     background: #6320ee;
     color: #fff;
 }
-
 
 .flex{
     display: flex;
@@ -184,7 +182,13 @@ tr:nth-child(even) {
     margin-right: 20px;
 }
 
+.modo-oscuro{
+    background-color: black;
+    color: white;
+}
+
 @media only screen and ( max-width: 768px ){
+
     .circulo__contenedor {
         flex-direction: column;
     }
@@ -201,6 +205,7 @@ tr:nth-child(even) {
     .circulo__avatar{
         margin-bottom: 20px;
     }
+
 }
 
 /* ---------------- hero ------------------- */

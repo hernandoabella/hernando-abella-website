@@ -1,4 +1,4 @@
-// Cuando haces scroll hacia abajo el menú queda fijo para tenerlo disponible
+// ________________ STICK NAV ONSCROLL ________________  
 
 window.onscroll = function() {myFunction2()};
 
@@ -13,7 +13,10 @@ function myFunction2() {
   }
 }
 
-// Toggle de Menú Hamburguesa
+// ________________ STICK NAV ONSCROLL ________________  
+
+
+// ________________ MENÚ HAMBURGUESA ________________  
 
 function myFunction() {
     var x = document.getElementById("myTopnav");
@@ -23,5 +26,14 @@ function myFunction() {
       x.className = "topnav";
     }
   }
+
+// ________________ MENÚ HAMBURGUESA ________________ 
   
-  
+// ________________ MODO OSCURO ________________  
+
+const cambiarFondo = () => {
+  let elemento = document.body;
+  elemento.classList.toggle('modo-oscuro');
+}
+
+// ________________ MODO OSCURO ________________  
