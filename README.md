@@ -1,6 +1,6 @@
 # Hernando Abella
 
-~ Sitio web oficial de Hernando Abella / Diseñador y desarrollador web.
+Sitio web oficial de Hernando Abella  Diseñador y desarrollador web.
 
 Este proyecto fue creado con el fin de aprender y practicar desarrollo web ayudando a los demás a crear sus propios proyectos desde 0 de la mano con un profesional del área.
 
@@ -12,25 +12,12 @@ Este proyecto fue creado con el fin de aprender y practicar desarrollo web ayuda
 - Añadir interactividad con Javascript
 - Añadir animaciones ?
 
-### Completado
-- Ajustar adaptación responsiva [completado] ✓
-- Ajustar colores [completado] ✓
-
-
-### Aprende
-
-### Proyectos
-
-### Snippets
-
-1. 
-
-
-
-
 ### Lista de aplicaciones
 
-|  #                |  Aplicación                |  Descripción                              | Descarga      |
-| -------------     | -------------              |:-------------:                            | -----:        |
-| 1                 | Contador                   | 0                                         | Descargar     |
-
+|  #                |  Aplicación                   | Descarga      |
+| -------------     | -------------                 | -----:        |
+| 1                 | CONTADOR                      | Descargar     |
+| 2                 | APLICACIÓN METEREOLÓGICA      | Descargar     |
+| 3                 | KIT DE BATERÍA                | Descargar     |
+| 4                 | APLICACIÓN DE RELAJACIÓN      | Descargar     |
+| 5                 | CARRITO DE SUPERMERCADO       | Descargar     |

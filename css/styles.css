@@ -19,6 +19,22 @@ a{
     text-decoration: none;
 }
 
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+  
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
 /* ---------------- estilos principales ------------------- */
 
 
@@ -166,6 +182,25 @@ a{
 
 .flex a{
     margin-right: 20px;
+}
+
+@media only screen and ( max-width: 768px ){
+    .circulo__contenedor {
+        flex-direction: column;
+    }
+    
+    .sideone{
+        width: 100%;
+    }
+    
+    .sidetwo{
+        width: 100%;
+        text-align: center;
+    }
+
+    .circulo__avatar{
+        margin-bottom: 20px;
+    }
 }
 
 /* ---------------- hero ------------------- */
@@ -537,33 +572,66 @@ h5.javascript__tag{
 ul.breadcrumb {
     list-style: none;
     margin-top: 10px;
-  }
+}
   
-  /* Display list items side by side */
-  ul.breadcrumb li {
+/* Display list items side by side */
+ul.breadcrumb li {
     display: inline;
     font-size: 18px;
-  }
+}
   
-  /* Add a slash symbol (/) before/behind each list item */
-  ul.breadcrumb li+li:before {
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
     padding: 8px;
     color: black;
     content: "/\00a0";
-  }
+}
   
-  /* Add a color to all links inside the list */
-  ul.breadcrumb li a {
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
     color: #8075ff;
     text-decoration: none;
     transition: .3s;
-  }
+}
   
-  /* Add a color on mouse-over */
+/* Add a color on mouse-over */
   ul.breadcrumb li a:hover {
     color: #6320ee;
-  }
+}
 
+@keyframes animacionAncho{
+    0%{
+        width: 0%;
+    }
+}  
+
+@media only screen and ( max-width: 768px ){
+    .codigo__html{
+        width: 100%;
+    }
+    
+    .codigo__css{
+        width: 100%;
+    }
+    
+    .codigo__javascript{
+        width: 100%;
+    }
+    
+    .demostracion{
+        width: auto;
+    }
+    
+    
+    .code__container{
+        width: 100%;
+    }
+
+    .download a{
+        margin-top: 20px;
+    }
+    
+}
 
 
 /* ---------------- proyectos ------------------- */
@@ -862,6 +930,12 @@ textarea, input{
     width: 100%;
 }
 
+@media only screen and ( max-width: 768px ){
+    #contacto form{
+        width: 80%;
+    }
+}
+
 /* ---------------- contacto ------------------- */
 
 
@@ -937,6 +1011,27 @@ footer div.redes__sociales a:hover{
 
 .redes__sociales a:hover{
     color: #1d3557;
+}
+
+@media only screen and ( max-width: 768px ){
+
+    
+    .footerFlex{
+        flex-direction: column;
+    }
+
+    footer{
+        padding: 20px;
+    }
+
+    footer div{
+        margin-bottom: 20px;
+    }
+
+    footer div.redes__sociales{
+        width: auto;
+    }
+
 }
 
 /* ---------------- footer ------------------- */
@@ -1036,8 +1131,6 @@ footer div.redes__sociales a:hover{
     margin: 20px;
 }
 
-
-
 .row {
     display: flex;
 }
@@ -1053,143 +1146,24 @@ footer div.redes__sociales a:hover{
     width: 100%;
 }
 
-/* ---------------- estilos generales ------------------- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .flexNav{
     display: flex;
     justify-content: space-between;
 }
 
 
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-
-/* diseño responsive */
-
-
-@media only screen and ( max-width: 768px ){ 
-
-.circulo__contenedor {
-    flex-direction: column;
-}
-
-.sideone{
-    width: 100%;
-}
-
-.sidetwo{
-    width: 100%;
-    text-align: center;
-}
-
-.row{
-    flex-direction: column;
-}
-
-.column{
-    width: 100%;
-}
-
-.codigo__html{
-    width: 100%;
-}
-
-.codigo__css{
-    width: 100%;
-}
-
-.codigo__javascript{
-    width: 100%;
-}
-
-.demostracion{
-    width: auto;
-}
-
-.footerFlex{
-    flex-direction: column;
-}
-
-footer{
-    padding: 20px;
-}
-
-footer div{
-    margin-bottom: 20px;
-}
-
-footer div.redes__sociales{
-    width: auto;
-}
-
-.code__container{
-    width: 100%;
-}
-
-.flexNav{
-    flex-direction: column;
-}  
-
-.download a{
-    margin-top: 20px;
-}
-
-.circulo__avatar{
-    margin-bottom: 20px;
-}
-
-
-
-
-#contacto form{
-    width: 80%;
-}
-
-}
-
-/* animaciones */
-
-@keyframes animacionAncho{
-    0%{
-        width: 0%;
+@media only screen and ( max-width: 768px ){
+    .row{
+        flex-direction: column;
     }
+    
+    .column{
+        width: 100%;
+    }
+
+    .flexNav{
+        flex-direction: column;
+    }  
 }
+
+/* ---------------- estilos generales ------------------- */
