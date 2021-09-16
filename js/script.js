@@ -1,3 +1,7 @@
+// ________________ VARIABLES ________________
+let toggleSwitch = document.querySelector('.slider');  
+// ________________ VARIABLES ________________  
+
 // ________________ STICK NAV ONSCROLL ________________  
 
 window.onscroll = function() {myFunction2()};
@@ -35,5 +39,8 @@ const cambiarFondo = () => {
   let elemento = document.body;
   elemento.classList.toggle('modo-oscuro');
 }
+
+toggleSwitch.addEventListener('click', cambiarFondo);
+
 
 // ________________ MODO OSCURO ________________  
