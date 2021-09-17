@@ -5,16 +5,15 @@
 :root{
     --color-fondo: #fff;
     --color-texto: rgb(0, 0, 0);
-    --color-titulo-1: #8075ff;
-    --color-titulo-2: 
-    --color-titulo-3  
-    
+    --color-titulo: #6320ee;
+    --resaltado: #f95738;
 }
 
 /* ---------------- variables ------------------- */
 
 
 /* ---------------- estilos principales ------------------- */
+
 *{
     margin: 0;
     padding: 0;
@@ -218,7 +217,7 @@ input:checked + .slider:before {
 
 .sidetwo h1{
     font-size: 3em;
-    color: var(--tituloPrincipal);
+    color: var(--color-titulo);
     padding: 20px 0px;;
 }
 
@@ -228,7 +227,7 @@ input:checked + .slider:before {
 }
 
 .sidetwo span{
-    color: #ffa113;
+    color: var(--resaltado);
 }
 
 .circulo__avatar{
@@ -283,13 +282,20 @@ input:checked + .slider:before {
         width: 100%;
     }
 
-    .sidetwo h1{
-        font-size: 2em;
-    }
+    
     
     .sidetwo{
         width: 100%;
         text-align: center;
+    }
+
+    .sidetwo h1{
+        font-size: 2em;
+    }
+
+    .sidetwo p{
+       
+        
     }
 
     .circulo__avatar{
@@ -323,7 +329,7 @@ input:checked + .slider:before {
 
 .aprende__conmigo h2{
     text-align: center;
-    color: #8075ff;
+    color: var(--color-titulo);
     font-size: 2em;
     padding-top: 50px;
 }
@@ -467,7 +473,7 @@ input:checked + .slider:before {
 .proyectos h2{
     text-align: center;
     margin: 50px;
-    color: #8075ff;
+    color: var(--color-titulo);
     font-size: 2em;
 }
 
@@ -510,7 +516,7 @@ input:checked + .slider:before {
 
 .tarjeta__proyectos h3{
     text-align: center;
-    color: #6320ee;
+    color: var(--color-titulo);
     padding: 0px 0px 25px 0px;
 }
 
@@ -740,7 +746,7 @@ ul.breadcrumb li a {
 
 .snippets h2{
     text-align: center;
-    color: rgb(50, 91, 255);
+    color: var(--color-titulo);
     font-size: 2em;
     padding-top: 50px;
 }
@@ -822,7 +828,7 @@ ul.breadcrumb li a {
 #servicios h2{
     text-align: center;
     margin: 50px;
-    color: #8075ff;
+    color: var(--color-titulo);
     font-size: 2em;
 }
 
@@ -951,7 +957,7 @@ textarea.fcf-form-control {
 #contacto h2{
     padding-top: 50px;
     text-align: center;
-    color: #8075ff;
+    color: var(--color-titulo);
     font-size: 2em;
 }
 
@@ -1052,7 +1058,7 @@ footer{
 
 footer h4{
     font-size: 1.3em;
-    color: #8075ff;
+    color: var(--color-titulo);
 }
 
 footer hr{
