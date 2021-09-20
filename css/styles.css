@@ -160,9 +160,6 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
-@media screen and (max-width: 768px) {
-    
-}
 
 @media screen and (max-width: 768px) {
 
@@ -291,11 +288,6 @@ input:checked + .slider:before {
 
     .sidetwo h1{
         font-size: 2em;
-    }
-
-    .sidetwo p{
-       
-        
     }
 
     .circulo__avatar{
@@ -731,6 +723,7 @@ ul.breadcrumb li a {
     .download a{
         margin-top: 20px;
     }
+
     
 }
 
@@ -1035,7 +1028,7 @@ textarea, input{
 
 @media only screen and ( max-width: 768px ){
     #contacto form{
-        width: 80%;
+        width: 90%;
     }
 }
 
@@ -1255,6 +1248,10 @@ footer div.redes__sociales a:hover{
     .flexNav{
         flex-direction: column;
     }  
+
+    .crowCentral{
+        padding: 20px 20px;
+    }
 }
 
 /* ---------------- estilos generales ------------------- */
