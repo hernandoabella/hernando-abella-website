@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contador</title>
+    <title>Rompe bloques</title>
     <link rel="stylesheet" href="./component.css">
     <link rel="stylesheet" href="/temaPrism.css">
     <link rel="stylesheet" href="/css/styles.css">
@@ -23,14 +23,19 @@
                 <!-- app code goes here -->
 
                 <div class="s">
-                    <div id="container">
-                        <div id="numero" class="numero">0</div>
-                        <hr>
-                        <div class="flexStyle">
-                        <button id="btn2" onclick="restar()"><i class="fas fa-minus"></i></button>
-                        <button id="btn1" onclick="sumar()"><i class="fas fa-plus"></i></button>
-                        </div>
-                    </div>
+                    <!-- <button id="rules-btn" class="btn rules-btn">Mostrar Reglas</button>
+                    <div id="rules" class="rules">
+                    <h2>Cómo jugar:</h2>
+
+                    <p>Usa las teclas derecha e izquierda para mover la paleta para hacer rebotar la pelota y romper los bloques.</p>
+
+                    <p>Si pierdes la pelota, tu puntuación y los bloques se reiniciarán.</p>
+
+                    <button id="close-btn" class="btn">Cerrar</button>
+                    
+                    </div> -->
+
+                    <canvas id="canvas" width="800" height="500"></canvas>
                 </div>
                 
                 <!-- app code goes here -->
@@ -39,19 +44,19 @@
         </div>
         
         <section class="contenido__proyecto">
-            <h1>Contador</h1>
+            <h1>Rompe bloques</h1>
         <br>
-        <p>Esta aplicación te permite contar números.</p>
+        <p>Usa las teclas derecha e izquierda para mover la paleta para hacer rebotar la pelota y romper los bloques.</p>
         <br>
         <div class="flexNav">
             <ul class="breadcrumb">
                 <li><a href="/index.html">Inicio</a></li>
                 <li><a href="/proyectos">Proyectos</a></li>
-                <li>Contador</li>
+                <li>Rompe bloques</li>
             </ul>
         
             <div class="download">
-                <a href="../contador.rar" download><i class="fas fa-download"></i></a>
+                <a href="../rompe-bloques.rar" download><i class="fas fa-download"></i></a>
                 <a href="https://www.youtube.com/watch?v=sgGEDuY5zOs&t">YouTube</a>
             </div>
         </div>
@@ -65,28 +70,32 @@
                         <div class="decor__bar html"></div>
                         <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Contador&lt;/title&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt; 
-    &lt;link rel=&quot;icon&quot; type=&quot;image/x-icon&quot; href=&quot;../images/favicon.ico&quot; &gt;
-    &lt;link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;../images/favicon.ico&quot;/&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://pro.fontawesome.com/releases/v5.10.0/css/all.css&quot; integrity=&quot;sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p&quot; crossorigin=&quot;anonymous&quot;/&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div id=&quot;container&quot;&gt;
-        &lt;div id=&quot;numero&quot; class=&quot;numero&quot;&gt;0&lt;/div&gt;
-        &lt;hr&gt;
-        &lt;div class=&quot;flexStyle&quot;&gt;
-        &lt;button id=&quot;btn2&quot; onclick=&quot;restar()&quot;&gt;&lt;i class=&quot;fas fa-minus&quot;&gt;&lt;/i&gt;&lt;/button&gt;
-        &lt;button id=&quot;btn1&quot; onclick=&quot;sumar()&quot;&gt;&lt;i class=&quot;fas fa-plus&quot;&gt;&lt;/i&gt;&lt;/button&gt;
-        &lt;/div&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot; /&gt;
+    &lt;title&gt;Rompe bloques&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;button id=&quot;rules-btn&quot; class=&quot;btn rules-btn&quot;&gt;Mostrar Reglas&lt;/button&gt;
+    &lt;div id=&quot;rules&quot; class=&quot;rules&quot;&gt;
+      &lt;h2&gt;C&oacute;mo jugar:&lt;/h2&gt;
+
+      &lt;p&gt;Usa las teclas derecha e izquierda para mover la paleta para hacer rebotar la pelota y romper los bloques.&lt;/p&gt;
+
+      &lt;p&gt;Si pierdes la pelota, tu puntuaci&oacute;n y los bloques se reiniciar&aacute;n.&lt;/p&gt;
+
+      &lt;button id=&quot;close-btn&quot; class=&quot;btn&quot;&gt;Cerrar&lt;/button&gt;
+    
     &lt;/div&gt;
 
-    &lt;script src=&quot;./script.js&quot;&gt;&lt;/script&gt; 
-&lt;/body&gt;
-&lt;/html&gt;</code></pre></div>
+    &lt;canvas id=&quot;canvas&quot; width=&quot;800&quot; height=&quot;500&quot;&gt;&lt;/canvas&gt;
+
+    &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div>
                 </div>
             
             <hr>
@@ -95,122 +104,77 @@
             <div class="panel">
                     <div class="codigo__css">
                         <div class="decor__bar css"></div>
-                        <pre class="line-numbers"><code class="language-css">@import url(&#x27;https://fonts.googleapis.com/css2?family=Fraunces:wght@300&#x26;display=swap&#x27;);
-
-*{
-    box-sizing: border-box;
+                        <pre class="line-numbers"><code class="language-css">* {
+  box-sizing: border-box;
 }
 
-body{
-    font-size: 1.3em;
-    font-family: &#x27;Fraunces&#x27;, serif;
-    background: #fcbf49;
-    overflow: hidden;
+body {
+  background-color: #0095dd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  margin: 0;
 }
 
-#container{
-    background: #fff;
-    color: #999;
-    width: 200px;
-    border-radius: 5px;
-    padding: 20px;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+h1 {
+  font-size: 45px;
+  color: #fff;
 }
 
-.flexStyle{
-    display: flex;
-    justify-content: space-around;
+canvas {
+  background: #f0f0f0;
+  display: block;
+  border-radius: 5px;
 }
 
-hr{
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    margin: 20px 10px;
+.btn {
+  cursor: pointer;
+  border: 0;
+  padding: 10px 20px;
+  background: #000;
+  color: #fff;
+  border-radius: 5px;
 }
 
-#numero{
-    font-size: 3em;
-    text-align: center;
-    margin-bottom: 20px;
-    user-select: none;
-    font-weight: bold;
+.btn:focus {
+  outline: 0;
 }
 
-#btn1, #btn2{
-    padding: 20px;
-    margin: 10px;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    transition: .4s;
-    color: #999;
-    background: #fff;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    width: 50%;
+.btn:hover {
+  background: #222;
 }
 
-#btn1:hover, #btn2:hover{
-  animation: shake 0.5s;
-  animation-iteration-count: infinite;
+.btn:active {
+  transform: scale(0.98);
 }
 
-#btn1:hover{
-    background: green;
-    color: #fff;
+.rules-btn {
+  position: absolute;
+  top: 30px;
+  left: 30px;
 }
 
-#btn2:hover{
-    background: red;
-    color: #fff;
+.rules {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #333;
+  color: #fff;
+  min-height: 100vh;
+  width: 400px;
+  padding: 20px;
+  line-height: 1.5;
+  transform: translateX(-400px);
+  transition: transform 1s ease-in-out;
 }
 
-.animation{
-    animation: animation .3s;
+.rules.show {
+  transform: translateX(0);
 }
-
-.animation2{
-    animation: animation2 .3s;
-}
-
-@keyframes animation{
-    0%{
-        transform: rotate(-180deg) scale(5.3) skew(30deg);
-        
-    }
-
-    80%{
-        opacity: 0.5;
-    }
-}
-
-@keyframes animation2{
-    0%{
-        transform: rotate(180deg) scale(5.3) skew(-30deg);
-    }
-
-    80%{
-        opacity: 0.5;
-    }
-}
-
-@keyframes shake {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    20% { transform: translate(-3px, 0px) rotate(1deg); }
-    30% { transform: translate(3px, 2px) rotate(0deg); }
-    40% { transform: translate(1px, -1px) rotate(1deg); }
-    50% { transform: translate(-1px, 2px) rotate(-1deg); }
-    60% { transform: translate(-3px, 1px) rotate(0deg); }
-    70% { transform: translate(3px, 1px) rotate(-1deg); }
-    80% { transform: translate(-1px, -1px) rotate(1deg); }
-    90% { transform: translate(1px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -2px) rotate(-1deg); }
-}</code></pre></div>
+</code></pre></div>
                 </div>
 
             <hr>
@@ -220,68 +184,246 @@ hr{
             <div class="panel">
                     <div class="codigo__javascript">
                         <div class="decor__bar javascript"></div>
-                        <pre class="line-numbers"><code class="language-javascript">//Variables
+                        <pre class="line-numbers"><code class="language-javascript">const rulesBtn = document.getElementById('rules-btn');
+const closeBtn = document.getElementById('close-btn');
+const rules = document.getElementById('rules');
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
 
-const numero = document.getElementById(&#x27;numero&#x27;);
-const btn1 = document.getElementById(&#x27;btn1&#x27;);
-const btn2 = document.getElementById(&#x27;btn2&#x27;);
+let score = 0;
 
-const sumar = () =&#x3E; {
+const brickRowCount = 9;
+const brickColumnCount = 5;
+const delay = 500; // demora para reiniciar el juego
 
-   removeAnimationClass();
+// Crea las propiedades de la pelota
+const ball = {
+  x: canvas.width / 2,
+  y: canvas.height / 2,
+  size: 10,
+  speed: 4,
+  dx: 4,
+  dy: -4,
+  visible: true
+};
 
-   setTimeout(() =&#x3E;{
-      numero.classList.add(&#x27;animation&#x27;);
-   }, 10);
+// Crea las propiedades de la paleta
+const paddle = {
+  x: canvas.width / 2 - 40,
+  y: canvas.height - 20,
+  w: 80,
+  h: 10,
+  speed: 8,
+  dx: 0,
+  visible: true
+};
 
-   numero.innerText++;
+// Crea las propiedades del ladrillo
+const brickInfo = {
+  w: 70,
+  h: 20,
+  padding: 10,
+  offsetX: 45,
+  offsetY: 60,
+  visible: true
+};
 
-   testColor();
-
-   console.log(numero.innerHTML);
-   
-   return numero.innerText;
-
+// Crea los ladrillos
+const bricks = [];
+for (let i = 0; i < brickRowCount; i++) {
+  bricks[i] = [];
+  for (let j = 0; j < brickColumnCount; j++) {
+    const x = i * (brickInfo.w + brickInfo.padding) + brickInfo.offsetX;
+    const y = j * (brickInfo.h + brickInfo.padding) + brickInfo.offsetY;
+    bricks[i][j] = { x, y, ...brickInfo };
+  }
 }
 
-const restar = () =&#x3E; {
-
-   removeAnimationClass();
-
-   setTimeout(() =&#x3E;{
-      numero.classList.add(&#x27;animation2&#x27;);
-   }, 10);
-
-   numero.innerText--;
-
-   testColor();
-
-   console.log(numero.innerHTML);
-
-   return numero.innerText;
+// Dibuja la bola en el canvas
+function drawBall() {
+  ctx.beginPath();
+  ctx.arc(ball.x, ball.y, ball.size, 0, Math.PI * 2);
+  ctx.fillStyle = ball.visible ? '#0095dd' : 'transparent';
+  ctx.fill();
+  ctx.closePath();
 }
 
-const removeAnimationClass = () =&#x3E; {
-   numero.classList.remove(&#x27;animation2&#x27;, &#x27;animation&#x27;);
+// Dibuja la paleta en el canvas
+function drawPaddle() {
+  ctx.beginPath();
+  ctx.rect(paddle.x, paddle.y, paddle.w, paddle.h);
+  ctx.fillStyle = paddle.visible ? '#0095dd' : 'transparent';
+  ctx.fill();
+  ctx.closePath();
 }
 
-const testColor = () =&#x3E;{
-   if(numero.innerText === &#x27;0&#x27;){
-      numero.style.color = &#x27;#999&#x27;;
-   }else if(numero.innerText &#x3C; &#x27;0&#x27;){
-      numero.style.color = &#x22;red&#x22;;
-   }else{
-      numero.style.color = &#x22;green&#x22;;
-   }
+// Dibuja la puntuación en el canvas
+function drawScore() {
+  ctx.font = '20px Arial';
+  ctx.fillText(`Puntos: ${score}`, canvas.width - 100, 30);
 }
 
-// Activar contador autom&#xE1;tico: 
+// Dibuja los ladrillos en el canvas
+function drawBricks() {
+  bricks.forEach(column => {
+    column.forEach(brick => {
+      ctx.beginPath();
+      ctx.rect(brick.x, brick.y, brick.w, brick.h);
+      ctx.fillStyle = brick.visible ? '#0095dd' : 'transparent';
+      ctx.fill();
+      ctx.closePath();
+    });
+  });
+}
 
-// Suma autom&#xE1;ticamente
-// setInterval(sumar, 1000);
- 
-// Resta autom&#xE1;ticamente
-// setInterval(restar, 1000); 
+// Mueve la paleta en el canvas
+function movePaddle() {
+  paddle.x += paddle.dx;
+
+  // Detección de muro
+  if (paddle.x + paddle.w > canvas.width) {
+    paddle.x = canvas.width - paddle.w;
+  }
+
+  if (paddle.x < 0) {
+    paddle.x = 0;
+    }
+}
+
+// Mueve la bola en el canvas
+function moveBall() {
+  ball.x += ball.dx;
+  ball.y += ball.dy;
+
+  // Colisión de pared (derecha/izquierda)
+  if (ball.x + ball.size > canvas.width || ball.x - ball.size < 0) {
+    ball.dx *= -1; // ball.dx = ball.dx * -1
+  }
+
+  // Colisión de pared (arriba/abajo)
+  if (ball.y + ball.size > canvas.height || ball.y - ball.size < 0) {
+    ball.dy *= -1;
+  }
+
+  // console.log(ball.x, ball.y);
+
+  // Colisión de paleta
+  if (
+    ball.x - ball.size > paddle.x &&
+    ball.x + ball.size < paddle.x + paddle.w &&
+    ball.y + ball.size > paddle.y
+  ) {
+    ball.dy = -ball.speed;
+  }
+
+  // Colisión de ladrillo
+  bricks.forEach(column => {
+    column.forEach(brick => {
+      if (brick.visible) {
+        if (
+          ball.x - ball.size > brick.x && // left brick side check
+          ball.x + ball.size < brick.x + brick.w && // right brick side check
+          ball.y + ball.size > brick.y && // top brick side check
+          ball.y - ball.size < brick.y + brick.h // bottom brick side check
+        ) {
+          ball.dy *= -1;
+          brick.visible = false;
+
+          increaseScore();
+        }
+      }
+    });
+  });
+
+  // Si Golpea la pared inferior pierdes
+  if (ball.y + ball.size > canvas.height) {
+    showAllBricks();
+    score = 0;
+  }
+}
+
+// Aumenta la puntuación
+function increaseScore() {
+  score++;
+
+  if (score % (brickRowCount * brickColumnCount) === 0) {
+
+      ball.visible = false;
+      paddle.visible = false;
+
+      // Después de 0,5 segundos, reinicia el juego.
+      setTimeout(function () {
+          showAllBricks();
+          score = 0;
+          paddle.x = canvas.width / 2 - 40;
+          paddle.y = canvas.height - 20;
+          ball.x = canvas.width / 2;
+          ball.y = canvas.height / 2;
+          ball.visible = true;
+          paddle.visible = true;
+      },delay)
+  }
+}
+
+// Haz que aparezcan todos los ladrillos
+function showAllBricks() {
+  bricks.forEach(column => {
+    column.forEach(brick => (brick.visible = true));
+  });
+}
+
+// Dibujar todo
+function draw() {
+  // Limpia el canvas
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  drawBall();
+  drawPaddle();
+  drawScore();
+  drawBricks();
+}
+
+// Actualiza el canvas: dibujo y animación
+function update() {
+  movePaddle();
+  moveBall();
+
+  // Dibuja todo
+  draw();
+
+  requestAnimationFrame(update);
+}
+
+update();
+
+// Evento keydown
+function keyDown(e) {
+  if (e.key === 'Right' || e.key === 'ArrowRight') {
+    paddle.dx = paddle.speed;
+  } else if (e.key === 'Left' || e.key === 'ArrowLeft') {
+    paddle.dx = -paddle.speed;
+  }
+}
+
+// Keyup event
+function keyUp(e) {
+  if (
+    e.key === 'Right' ||
+    e.key === 'ArrowRight' ||
+    e.key === 'Left' ||
+    e.key === 'ArrowLeft'
+  ) {
+    paddle.dx = 0;
+  }
+}
+
+// Keyboard event handlers
+document.addEventListener('keydown', keyDown);
+document.addEventListener('keyup', keyUp);
+
+// Rules and close event handlers
+rulesBtn.addEventListener('click', () => rules.classList.add('show'));
+closeBtn.addEventListener('click', () => rules.classList.remove('show'));
 </code></pre></div>
                 </div>
         </div>

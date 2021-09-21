@@ -52,7 +52,6 @@ aside ul li a{
     display: block;
     transition: .3s;
     text-decoration: none;
-    text-align: center;
     color: #323330;
     padding: 10px;
 }
