@@ -1,47 +1,39 @@
+@import url(https://fonts.googleapis.com/css?family=Fira+Mono);
 /*
+ * Hopscotch
+ * by Jan T. Sott
+ * https://github.com/idleberg/Hopscotch
+ *
+ * This work is licensed under the Creative Commons CC0 1.0 Universal License
+ */
 
-Name:       Base16 Atelier Sulphurpool Light
-Author:     Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/sulphurpool)
-
-Prism template by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/prism/)
-Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
-
-*/
 code[class*="language-"],
 pre[class*="language-"] {
-	font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
-	font-size: 14px;
+	font-family: "Fira Mono", Menlo, Monaco, "Lucida Console", "Courier New", Courier, monospace;
+	font-size: 16px;
 	line-height: 1.375;
 	direction: ltr;
 	text-align: left;
-	white-space: pre;
 	word-spacing: normal;
-	word-break: normal;
+
 	-moz-tab-size: 4;
 	-o-tab-size: 4;
 	tab-size: 4;
+
 	-webkit-hyphens: none;
 	-moz-hyphens: none;
 	-ms-hyphens: none;
 	hyphens: none;
-	background: #f5f7ff;
-	color: #5e6687;
+	white-space: pre;
+	white-space: pre-wrap;
+	word-break: break-all;
+	word-wrap: break-word;
+	background: #322931;
+	color: #b9b5b8;
 }
 
 pre > code[class*="language-"] {
 	font-size: 1em;
-}
-
-pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-	text-shadow: none;
-	background: #dfe2f1;
-}
-
-pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-code[class*="language-"]::selection, code[class*="language-"] ::selection {
-	text-shadow: none;
-	background: #dfe2f1;
 }
 
 /* Code blocks */
@@ -61,48 +53,49 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: #898ea4;
+	color: #797379;
 }
 
 .token.punctuation {
-	color: #5e6687;
+	color: #b9b5b8;
 }
 
-.token.namespace {
+.namespace {
 	opacity: .7;
 }
 
+.token.null,
 .token.operator,
 .token.boolean,
 .token.number {
-	color: #c76b29;
+	color: #fd8b19;
 }
 
 .token.property {
-	color: #c08b30;
+	color: #fdcc59;
 }
 
 .token.tag {
-	color: #3d8fd1;
+	color: #1290bf;
 }
 
 .token.string {
-	color: #22a2c9;
+	color: #149b93;
 }
 
 .token.selector {
-	color: #6679cc;
+	color: #c85e7c;
 }
 
 .token.attr-name {
-	color: #c76b29;
+	color: #fd8b19;
 }
 
 .token.entity,
 .token.url,
 .language-css .token.string,
 .style .token.string {
-	color: #22a2c9;
+	color: #149b93;
 }
 
 .token.attr-value,
@@ -110,40 +103,23 @@ pre[class*="language-"] {
 .token.control,
 .token.directive,
 .token.unit {
-	color: #ac9739;
+	color: #8fc13e;
 }
 
 .token.statement,
 .token.regex,
 .token.atrule {
-	color: #22a2c9;
+	color: #149b93;
 }
 
 .token.placeholder,
 .token.variable {
-	color: #3d8fd1;
-}
-
-.token.deleted {
-	text-decoration: line-through;
-}
-
-.token.inserted {
-	border-bottom: 1px dotted #202746;
-	text-decoration: none;
-}
-
-.token.italic {
-	font-style: italic;
-}
-
-.token.important,
-.token.bold {
-	font-weight: bold;
+	color: #1290bf;
 }
 
 .token.important {
-	color: #c94922;
+	color: #dd464c;
+	font-weight: bold;
 }
 
 .token.entity {
@@ -151,26 +127,6 @@ pre[class*="language-"] {
 }
 
 pre > code.highlight {
-	outline: 0.4em solid #c94922;
+	outline: .4em solid red;
 	outline-offset: .4em;
-}
-
-/* overrides color-values for the Line Numbers plugin
- * http://prismjs.com/plugins/line-numbers/
- */
-.line-numbers .line-numbers-rows {
-	border-right-color: #dfe2f1;
-}
-
-.line-numbers-rows > span:before {
-	color: #979db4;
-}
-
-/* overrides color-values for the Line Highlight plugin
- * http://prismjs.com/plugins/line-highlight/
- */
-.line-highlight {
-	background: rgba(107, 115, 148, 0.2);
-	background: -webkit-linear-gradient(left, rgba(107, 115, 148, 0.2) 70%, rgba(107, 115, 148, 0));
-	background: linear-gradient(to right, rgba(107, 115, 148, 0.2) 70%, rgba(107, 115, 148, 0));
 }
