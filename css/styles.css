@@ -7,6 +7,10 @@
     --color-texto: rgb(0, 0, 0);
     --color-titulo: #6320ee;
     --resaltado: #f95738;
+
+    --color-primario: red;
+    --color-secundario: blue;
+    --color-terciario: yellow;
 }
 
 /* ---------------- variables ------------------- */
@@ -55,6 +59,7 @@ tr:nth-child(even) {
 
 .topnav a.active{
     font-weight: bold;
+    color: var(--resaltado);
 }
 
 .topnav {
@@ -383,6 +388,12 @@ input:checked + .slider:before {
     padding: 10px;
     text-align: center;
     transition: .3s;
+    background: #ede4ff;
+}
+
+.tarjeta__aprende h4{
+    padding: 20px;
+    color: #8075ff;
 }
 
 .tarjeta__aprende p{
@@ -841,20 +852,15 @@ ul.breadcrumb li a {
 }
 
 .tarjeta__servicios a{
-    border: 1px solid #8075ff;
+    background: #f8f0fb;
     border-radius: 25px;
-    color: #fff;
+    color: #000;
     padding: 10px;
     display: block;
     width: 150px;
     text-align: center;
     margin: 30px auto;
     transition: .3s;
-}
-
-.tarjeta__servicios a:hover{
-    color: #000;
-    background: #f8f0fb;
 }
 
 .tarjeta__servicios ul li{
