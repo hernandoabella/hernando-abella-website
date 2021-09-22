@@ -379,8 +379,6 @@ input:checked + .slider:before {
 
 
 .tarjeta__aprende{
-    width: 300px;
-    border: 2px solid #ede4ff;
     border-radius: 25px;
     padding: 10px;
     text-align: center;
@@ -407,7 +405,6 @@ input:checked + .slider:before {
     background: #6320ee;
     border: 1px solid #fff;
 }
-
 
 .tarjeta__aprende img.html__image{
     width: 100px;
