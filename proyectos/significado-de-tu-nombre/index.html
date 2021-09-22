@@ -1,0 +1,359 @@
+<!-- Made by Hernando Abella -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Significado de tu nombre</title>
+    <link rel="stylesheet" href="./component.css">
+    <link rel="stylesheet" href="/temaPrism.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body>
+    <div class="backbar">
+        <a href="/proyectos/"><i class="fas fa-arrow-left"></i></a>
+    </div>
+
+    <section class="codigo__del__proyecto">
+        <div class="app__background">
+            <div class="app__container">
+                
+                <!-- app code goes here -->
+
+                <div class="s">
+                <h1 class="title">Encuentra el significado de tu <span class="name">nombre</span> 🤔</h1>
+
+                  <div class="contenedor">
+                    
+                    <div id="div1">
+                        <div class="cajaEntrada">
+                            <form id="form1">
+                              <input id="input1" type="text" placeholder="Ingresa tu primer nombre">
+                              <button type="submit" id="button1">Ver significado</button>
+                            </form>
+                        </div>
+                    </div>
+                      
+                  </div>
+
+                    <div id="div2">
+                      <div id="div22"></div>
+                    </div>
+                </div>
+                
+                <!-- app code goes here -->
+
+            </div>
+        </div>        
+        <section class="contenido__proyecto">
+            <h1 class="h1">Significado de tu nombre</h1>
+        <br>
+        <p>Encuentra el significado de tu nombre con esta aplicación.</p>
+        <br>
+        <div class="flexNav">
+            <ul class="breadcrumb">
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/proyectos">Proyectos</a></li>
+                <li>Significado de tu nombre</li>
+            </ul>
+        
+            <div class="download">
+                <a href="../significado-de-tu-nombre.rar" download><i class="fas fa-download"></i></a>
+                <a href="#">YouTube</a>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="code__container">
+            <h5 class="html__tag">HTML</h5>
+            <div class="panel">
+                    <div class="codigo__htmlt">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  
+  &lt;title&gt;Significado de tu nombre&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;./styles.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;body id=&quot;body1&quot;&gt;
+
+  &lt;h1&gt;Encuentra el significado de tu &lt;span class=&quot;name&quot;&gt;nombre&lt;/span&gt; &#x1F914;&lt;/h1&gt;
+
+  &lt;div class=&quot;contenedor&quot;&gt;
+    
+    &lt;div id=&quot;div1&quot;&gt;
+        &lt;div class=&quot;cajaEntrada&quot;&gt;
+            &lt;form id=&quot;form1&quot;&gt;
+              &lt;input id=&quot;input1&quot; type=&quot;text&quot; placeholder=&quot;Ingresa tu primer nombre&quot;&gt;
+              &lt;button type=&quot;submit&quot; id=&quot;button1&quot;&gt;Ver significado&lt;/button&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+      
+  &lt;/div&gt;
+
+    &lt;div id=&quot;div2&quot;&gt;
+      &lt;div id=&quot;div22&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+            
+            <hr>
+
+            <h5 class="css__tag">CSS</h5>
+            <div class="panel">
+                    <div class="codigo__css">
+                        <div class="decor__bar css"></div>
+                        <pre class="line-numbers"><code class="language-css">@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    color: #000;
+    background: #009FB7;
+    font-family: 'Quicksand', sans-serif;
+}
+
+h1{
+    text-align: center;
+    margin: 120px;
+    color: #F4F4F8;
+    font-size: 2.5em;
+}
+
+.contenedor{
+    background: #fff;
+    border-radius: 5px;
+    width: 300px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.name{
+    color: #FED766;
+}
+
+.name4{
+    font-size: 1.3em;
+    letter-spacing: 1px;
+}
+
+.name3 {
+    text-transform: uppercase;
+    font-size: 2em;
+    font-weight: bold;
+    color: #FE4A49;
+}
+
+#input1 {
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+    border-radius: 2px;
+    border: none;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #FE4A49;
+    border-radius: 5px;
+}
+ 
+#button1 {
+    background: #FE4A49;
+    color: #F4F4F8;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    outline: none;
+    border-radius: 5px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+#button1:hover{
+    background:#1A5E63;
+    color: #F4F4F8;
+}
+    
+#div1 {
+    padding: 20px;
+    font-weight: 500;
+}
+    
+#div2 {
+    display: none;
+    padding: 20px;
+    background: #F4F4F8;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}</code></pre></div>
+                </div>
+
+            <hr>
+
+            <h5 class="javascript__tag">JAVASCRIPT</h5>
+            
+            <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">let form = document.getElementById(&apos;form1&apos;);
+
+function submit(e){
+    
+    e.preventDefault();
+
+    let name1 = document.getElementById(&quot;input1&quot;).value;
+    let name2 = name1.toLowerCase();
+    let len_ = name1.length;
+    let name4 = &quot;&quot;;
+
+    if (len_ &lt; 2){
+        return false
+    }
+        
+    for (i = 0; i &lt; len_; i++){
+    name3 = name2.charAt(i);
+
+    switch(name3) {
+        case &quot;a&quot;:
+        name4 = &quot;Amable &#x1F60A;&quot;
+        break;
+        case &quot;b&quot;:
+        name4 = &quot;Bueno &#x1F44C;&quot;
+        break;
+        case &quot;c&quot;:
+        name4 = &quot;Comedido &#x1F917;&quot;
+        break;
+        case &quot;d&quot;:
+        name4 = &quot;Decente &#x1F60C;&quot;
+        break;
+        case &quot;e&quot;:
+        name4 = &quot;Elegante &#x1F935;&zwj;&quot;
+        break;
+        case &quot;f&quot;:
+        name4 = &quot;Fabuloso &#x1F929;&quot;
+        break;
+        case &quot;g&quot;:
+        name4 = &quot;Gigante &#x1F30D;&quot;
+        break;
+        case &quot;h&quot;:
+        name4 = &quot;H&aacute;bil &#x1F939;&quot;
+        break;
+        case &quot;i&quot;:
+        name4 = &quot;Imparable &#x1F3C3;&quot;
+        break;
+        case &quot;j&quot;:
+        name4 = &quot;Jefe &#x1F60E;&quot;
+        break;
+        case &quot;k&quot;:
+        name4 = &quot;Kin&eacute;tico &#x1F64B;&quot;
+        break;
+        case &quot;l&quot;:
+        name4 = &quot;Leopardo &#x1F406;&quot;
+        break;
+        case &quot;m&quot;:
+        name4 = &quot;Misionero &#x1F920;&quot;
+        break; 
+        case &quot;n&quot;: 
+        name4 = &quot;Nocturno &#x1F303;&quot; 
+        break; 
+        case &quot;o&quot;: 
+        name4 = &quot;Obrador &#x1F92D;&quot; 
+        break; 
+        case &quot;p&quot;: 
+        name4 = &quot;Paciente &#x1F554;&quot; 
+        break; 
+        case &quot;q&quot;: 
+        name4 = &quot;Quejoso &#x1F624;&quot; 
+        break; 
+        case &quot;r&quot;: 
+        name4 = &quot;Respetuoso &#x1F647;&quot; 
+        break; 
+        case &quot;s&quot;: 
+        name4 = &quot;Sinarca &#x1F468;&zwj;&#x2696;&#xFE0F;&quot; 
+        break; 
+        case &quot;t&quot;: 
+        name4 = &quot;Tigre &#x1F42F;&quot; 
+        break; 
+        case &quot;u&quot;: 
+        name4 = &quot;Unicornio &#x1F984;&quot; 
+        break; 
+        case &quot;v&quot;: 
+        name4 = &quot;Valioso &#x1F48E;&quot; 
+        break; 
+        case &quot;w&quot;: 
+        name4 = &quot;Web &#x1F310;&quot; 
+        break; 
+        case &quot;x&quot;: 
+        name4 = &quot;X-men &#x1F9B8;&quot; 
+        break; 
+        case &quot;y&quot;: 
+        name4 = &quot;Yacente &#x1F480;&quot; 
+        break; 
+        case &quot;z&quot;: 
+        name4 = &quot;Zafiro &#x1F537;&quot; 
+        break; 
+        default:
+        name3 = &quot;&quot;;
+        name1 = &quot;&quot;;
+        name4 = &quot;&quot;
+    }
+
+    document.getElementById(&quot;div22&quot;).innerHTML += 
+    &quot;&lt;div&gt;&lt;span class=&apos;name3&apos;&gt; &quot; + name3 + &quot; - &lt;/span&gt;&lt;span class=&apos;name4&apos;&gt;  &quot; + name4 + &quot;&lt;/span&gt;&lt;/div&gt;&quot;;
+
+    }
+
+    let letters = /^[A-Za-z]+$/;
+    
+    if(name1.match(letters)){
+        document.getElementById(&quot;div1&quot;).style.display = &quot;none&quot;;
+        document.getElementById(&quot;div2&quot;).style.display = &quot;block&quot;;
+        document.querySelector(&apos;h1&apos;).style.display = &quot;none&quot;;
+        
+    } else {
+        document.getElementById(&quot;div22&quot;).innerHTML = &quot;&quot;;
+        return false;
+    }
+}
+
+form.addEventListener(&apos;submit&apos;, submit);</code></pre></div>
+                </div>
+        </div>
+        </section>
+        
+    </section>
+
+    <footer>
+        <p>&copy; 2021 Hernando Abella</p>
+    </footer>
+
+    <!--Scripts-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+    <script src="./component.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
