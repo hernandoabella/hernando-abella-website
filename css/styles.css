@@ -745,7 +745,7 @@ ul.breadcrumb li a {
 }
 
 .activo{
-
+    background: blue;
 }
 
 /* Fading animation */
