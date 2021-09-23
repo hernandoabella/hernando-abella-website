@@ -5,7 +5,7 @@
 :root{
     --color-fondo: #fff;
     --color-texto: rgb(0, 0, 0);
-    --color-titulo: #6320ee;
+    --color-principal: #6320ee;
     --resaltado: #f95738;
 
     --color-primario: red;
@@ -199,7 +199,6 @@ input:checked + .slider:before {
 /* ---------------- navegacion ------------------- */
 
 
-
 /* ---------------- hero ------------------- */
 
 .sobre__mi{
@@ -220,7 +219,7 @@ input:checked + .slider:before {
 
 .sidetwo h1{
     font-size: 3em;
-    color: var(--color-titulo);
+    color: var(--color-principal);
     padding: 20px 0px;;
 }
 
@@ -254,7 +253,6 @@ input:checked + .slider:before {
     color: #6320ee;
     display: block;
     padding: 10px;
-    width: 190px;
     text-align: center;
     transition: .3s;
     border-radius: 25px;
@@ -277,6 +275,16 @@ input:checked + .slider:before {
 
 @media only screen and ( max-width: 768px ){
 
+    .circulo__avatar{
+        width: 200px;
+        height: 200px;
+    }
+
+    .circulo__avatar img{
+        width: 200px;
+        height: 200px;
+    }
+
     .circulo__contenedor {
         flex-direction: column;
     }
@@ -285,7 +293,9 @@ input:checked + .slider:before {
         width: 100%;
     }
 
-    
+    .flex{
+        justify-content: center;
+    }
     
     .sidetwo{
         width: 100%;
@@ -298,10 +308,6 @@ input:checked + .slider:before {
 
     .circulo__avatar{
         margin: 20px auto;
-    }
-
-    .flex{
-        justify-content: center;
     }
 
     .sobre__mi{
@@ -327,7 +333,7 @@ input:checked + .slider:before {
 
 .aprende__conmigo h2{
     text-align: center;
-    color: var(--color-titulo);
+    color: var(--color-principal);
     font-size: 2em;
     padding-top: 50px;
 }
@@ -474,7 +480,7 @@ input:checked + .slider:before {
 .proyectos h2{
     text-align: center;
     margin: 50px;
-    color: var(--color-titulo);
+    color: var(--color-principal);
     font-size: 2em;
 }
 
@@ -517,7 +523,7 @@ input:checked + .slider:before {
 
 .tarjeta__proyectos h3{
     text-align: center;
-    color: var(--color-titulo);
+    color: var(--color-principal);
     padding: 0px 0px 25px 0px;
 }
 
@@ -727,6 +733,42 @@ ul.breadcrumb li a {
     
 }
 
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background: var(--color-principal);;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.activo{
+
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 2.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+} 
+
 
 /* ---------------- proyectos ------------------- */
 
@@ -739,7 +781,7 @@ ul.breadcrumb li a {
 
 .snippets h2{
     text-align: center;
-    color: var(--color-titulo);
+    color: var(--color-principal);
     font-size: 2em;
     padding-top: 50px;
 }
@@ -821,7 +863,7 @@ ul.breadcrumb li a {
 #servicios h2{
     text-align: center;
     margin: 50px;
-    color: var(--color-titulo);
+    color: var(--color-principal);
     font-size: 2em;
 }
 
@@ -877,6 +919,12 @@ ul.breadcrumb li a {
     line-height: 25px;
     text-align: left !important;
     color: #fff !important;
+}
+
+@media only screen and ( max-width: 768px ){
+    .tarjeta__servicios ul li{
+        text-align: center;
+    }
 }
 
 /* ---------------- servicios ------------------- */
@@ -945,7 +993,7 @@ textarea.fcf-form-control {
 #contacto h2{
     padding-top: 50px;
     text-align: center;
-    color: var(--color-titulo);
+    color: var(--color-principal);
     font-size: 2em;
 }
 
@@ -1046,7 +1094,7 @@ footer{
 
 footer h4{
     font-size: 1.3em;
-    color: var(--color-titulo);
+    color: var(--color-principal);
 }
 
 footer hr{
