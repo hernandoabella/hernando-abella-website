@@ -60,6 +60,7 @@ tr:nth-child(even) {
 .topnav a.active{
     font-weight: bold;
     color: var(--resaltado);
+    height: 47px;
 }
 
 .topnav {
