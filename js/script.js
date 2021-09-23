@@ -1,5 +1,8 @@
 // ________________ VARIABLES ________________
+
 let toggleSwitch = document.querySelector('.slider');  
+
+
 // ________________ VARIABLES ________________  
 
 // ________________ STICK NAV ONSCROLL ________________  
