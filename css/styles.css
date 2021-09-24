@@ -1031,7 +1031,7 @@ textarea:focus{
     background: #f8f0fb;
 }
 
-button{
+form button{
     width: 150px;
     margin: auto;
     transition: .3s;
@@ -1045,7 +1045,7 @@ button{
     padding: 10px;
 }
 
-button:hover{
+form button:hover{
     background: #211a1d;
     color: #fff;
 }

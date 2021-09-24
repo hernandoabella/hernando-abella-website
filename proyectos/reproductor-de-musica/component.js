@@ -1,122 +1,178 @@
-let form = document.getElementById('form1');
+const musicContainer = document.getElementById('music-container');
+const playBtn = document.getElementById('play');
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+const audio = document.getElementById('audio');
+const progress = document.getElementById('progress');
+const progressContainer = document.getElementById('progress-container');
+const title = document.getElementById('title');
+const cover = document.getElementById('cover');
+const currTime = document.querySelector('#currTime');
+const durTime = document.querySelector('#durTime');
 
-function submit(e){
-    
-    e.preventDefault();
+// Arreglo de canciones
+const songs = ['hey', 'summer', 'ukulele'];
 
-    let name1 = document.getElementById("input1").value;
-    let name2 = name1.toLowerCase();
-    let len_ = name1.length;
-    let name4 = "";
+// Mantener rastro de la canción
+let songIndex = 2;
 
-    if (len_ < 2){
-        return false
-    }
-        
-    for (i = 0; i < len_; i++){
-    name3 = name2.charAt(i);
+// Inicialmente carga los detalles de la canción en el DOM
+loadSong(songs[songIndex]);
 
-    switch(name3) {
-        case "a":
-        name4 = "Amable 😊"
-        break;
-        case "b":
-        name4 = "Bueno 👌"
-        break;
-        case "c":
-        name4 = "Comedido 🤗"
-        break;
-        case "d":
-        name4 = "Decente 😌"
-        break;
-        case "e":
-        name4 = "Elegante 🤵‍"
-        break;
-        case "f":
-        name4 = "Fabuloso 🤩"
-        break;
-        case "g":
-        name4 = "Gigante 🌍"
-        break;
-        case "h":
-        name4 = "Hábil 🤹"
-        break;
-        case "i":
-        name4 = "Imparable 🏃"
-        break;
-        case "j":
-        name4 = "Jefe 😎"
-        break;
-        case "k":
-        name4 = "Kinético 🙋"
-        break;
-        case "l":
-        name4 = "Leopardo 🐆"
-        break;
-        case "m":
-        name4 = "Misionero 🤠"
-        break; 
-        case "n": 
-        name4 = "Nocturno 🌃" 
-        break; 
-        case "o": 
-        name4 = "Obrador 🤭" 
-        break; 
-        case "p": 
-        name4 = "Paciente 🕔" 
-        break; 
-        case "q": 
-        name4 = "Quejoso 😤" 
-        break; 
-        case "r": 
-        name4 = "Respetuoso 🙇" 
-        break; 
-        case "s": 
-        name4 = "Sinarca 👨‍⚖️" 
-        break; 
-        case "t": 
-        name4 = "Tigre 🐯" 
-        break; 
-        case "u": 
-        name4 = "Unicornio 🦄" 
-        break; 
-        case "v": 
-        name4 = "Valioso 💎" 
-        break; 
-        case "w": 
-        name4 = "Web 🌐" 
-        break; 
-        case "x": 
-        name4 = "X-men 🦸" 
-        break; 
-        case "y": 
-        name4 = "Yacente 💀" 
-        break; 
-        case "z": 
-        name4 = "Zafiro 🔷" 
-        break; 
-        default:
-        name3 = "";
-        name1 = "";
-        name4 = ""
-    }
-
-    document.getElementById("div22").innerHTML += 
-    "<div><span class='name3'> " + name3 + " - </span><span class='name4'>  " + name4 + "</span></div>";
-
-    }
-
-    let letters = /^[A-Za-z]+$/;
-    
-    if(name1.match(letters)){
-        document.getElementById("div1").style.display = "none";
-        document.getElementById("div2").style.display = "block";
-        document.querySelector('h1').style.display = "none";
-        
-    } else {
-        document.getElementById("div22").innerHTML = "";
-        return false;
-    }
+// Actualizar detalles de la canción
+function loadSong(song) {
+  title.innerText = song;
+  audio.src = `music/${song}.mp3`;
+  cover.src = `images/${song}.jpg`;
 }
 
-form.addEventListener('submit', submit);
+// Reproducir canción
+function playSong() {
+  musicContainer.classList.add('play');
+  playBtn.querySelector('i.fas').classList.remove('fa-play');
+  playBtn.querySelector('i.fas').classList.add('fa-pause');
+
+  audio.play();
+}
+
+// Pausar canción
+function pauseSong() {
+  musicContainer.classList.remove('play');
+  playBtn.querySelector('i.fas').classList.add('fa-play');
+  playBtn.querySelector('i.fas').classList.remove('fa-pause');
+
+  audio.pause();
+}
+
+// Canción anterior
+function prevSong() {
+  songIndex--;
+
+  if (songIndex < 0) {
+    songIndex = songs.length - 1;
+  }
+
+  loadSong(songs[songIndex]);
+
+  playSong();
+}
+
+// Siguiente canción
+function nextSong() {
+  songIndex++;
+
+  if (songIndex > songs.length - 1) {
+    songIndex = 0;
+  }
+
+  loadSong(songs[songIndex]);
+
+  playSong();
+}
+
+// Actualiza la barra de progreso
+function updateProgress(e) {
+  const { duration, currentTime } = e.srcElement;
+  const progressPercent = (currentTime / duration) * 100;
+  progress.style.width = `${progressPercent}%`;
+}
+
+// Ajusta la barra de progreso
+function setProgress(e) {
+  const width = this.clientWidth;
+  const clickX = e.offsetX;
+  const duration = audio.duration;
+
+  audio.currentTime = (clickX / width) * duration;
+}
+
+// Obtiene la duración y el tiempo actual del tiempo de la canción
+
+function DurTime (e) {
+	const {duration,currentTime} = e.srcElement;
+	let sec;
+	let sec_d;
+
+	// Define los minuto del tiempo actual
+	let min = (currentTime==null)? 0:
+	 Math.floor(currentTime/60);
+	 min = min <10 ? '0'+min:min;
+
+	// Define los segundos del tiempo actual
+	function get_sec (x) {
+		if(Math.floor(x) >= 60){
+			
+			for (let i = 1; i<=60; i++){
+				if(Math.floor(x)>=(60*i) && Math.floor(x)<(60*(i+1))) {
+					sec = Math.floor(x) - (60*i);
+					sec = sec <10 ? '0'+sec:sec;
+				}
+			}
+		}else{
+		 	sec = Math.floor(x);
+		 	sec = sec <10 ? '0'+sec:sec;
+		 }
+	} 
+
+	get_sec (currentTime,sec);
+
+	// Cambiar tiempo actual DOM
+	currTime.innerHTML = min +':'+ sec;
+
+	// Define la duración de los minutos
+	let min_d = (isNaN(duration) === true)? '0':
+		Math.floor(duration/60);
+	 min_d = min_d <10 ? '0'+min_d:min_d;
+
+
+	 function get_sec_d (x) {
+		if(Math.floor(x) >= 60){
+			
+			for (let i = 1; i<=60; i++){
+				if(Math.floor(x)>=(60*i) && Math.floor(x)<(60*(i+1))) {
+					sec_d = Math.floor(x) - (60*i);
+					sec_d = sec_d <10 ? '0'+sec_d:sec_d;
+				}
+			}
+		}else{
+		 	sec_d = (isNaN(duration) === true)? '0':
+		 	Math.floor(x);
+		 	sec_d = sec_d <10 ? '0'+sec_d:sec_d;
+		 }
+	} 
+
+	// Define la duración de los segundos
+	
+	get_sec_d (duration);
+
+	// Cambiar duración DOM
+	durTime.innerHTML = min_d +':'+ sec_d;
+		
+};
+
+// Event listeners
+playBtn.addEventListener('click', () => {
+  const isPlaying = musicContainer.classList.contains('play');
+
+  if (isPlaying) {
+    pauseSong();
+  } else {
+    playSong();
+  }
+});
+
+// Evento para cambiar la canción
+prevBtn.addEventListener('click', prevSong);
+nextBtn.addEventListener('click', nextSong);
+
+// Actualiza tiempo/canción
+audio.addEventListener('timeupdate', updateProgress);
+
+// Clic en la barra de progreso
+progressContainer.addEventListener('click', setProgress);
+
+// Fin de la canción
+audio.addEventListener('ended', nextSong);
+
+// Tiempo de la canción
+audio.addEventListener('timeupdate',DurTime);
