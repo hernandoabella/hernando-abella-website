@@ -1,6 +1,8 @@
 // ________________ VARIABLES ________________
 
-let toggleSwitch = document.querySelector('.slider');  
+let toggleSwitch = document.querySelector('.slider'); 
+let burger = document.querySelector('.menu__hamburguesa');
+let panel = document.querySelector('.topnav ul');
 
 
 // ________________ VARIABLES ________________  
@@ -27,15 +29,10 @@ function myFunction2() {
 
 // ________________ MENÚ HAMBURGUESA ________________
 
-function mostrarMenu(){
-  ul.classList.toggle("change");
-}
-
-function myFunction1(x){
-  x.classList.toggle("change");
-  let ul = document.querySelector('.topnav ul');
-  ul.addEventListener('click', mostrarMenu);
-}
+burger.addEventListener('click', () => {
+  burger.classList.toggle('change');
+  panel.classList.toggle('change');
+});
 
 // ________________ MENÚ HAMBURGUESA ________________ 
   
