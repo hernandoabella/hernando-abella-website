@@ -25,9 +25,16 @@ function myFunction2() {
 // ________________ STICK NAV ONSCROLL ________________  
 
 
-// ________________ MENÚ HAMBURGUESA ________________  
+// ________________ MENÚ HAMBURGUESA ________________
 
+function mostrarMenu(){
+  
+}
 
+function myFunction1(x){
+  x.classList.toggle("change");
+  x.addEventListener('click', mostrarMenu);
+}
 
 // ________________ MENÚ HAMBURGUESA ________________ 
   
