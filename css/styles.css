@@ -122,6 +122,10 @@ tr:nth-child(even) {
     transform: rotate(45deg) translate(-8px, -8px);
 }
 
+ul.ul.change{
+    transform: translateY(0px);
+}
+
 .sticky {
     position: fixed;
     top: 0;

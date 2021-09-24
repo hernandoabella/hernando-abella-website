@@ -2,7 +2,7 @@
 
 let toggleSwitch = document.querySelector('.slider'); 
 let burger = document.querySelector('.menu__hamburguesa');
-let panel = document.querySelector('.topnav ul');
+let panel = document.querySelector('.ul');
 
 
 // ________________ VARIABLES ________________  
