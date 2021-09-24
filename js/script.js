@@ -28,12 +28,13 @@ function myFunction2() {
 // ________________ MENÚ HAMBURGUESA ________________
 
 function mostrarMenu(){
-  
+  ul.classList.toggle("change");
 }
 
 function myFunction1(x){
   x.classList.toggle("change");
-  x.addEventListener('click', mostrarMenu);
+  let ul = document.querySelector('.topnav ul');
+  ul.addEventListener('click', mostrarMenu);
 }
 
 // ________________ MENÚ HAMBURGUESA ________________ 

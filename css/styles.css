@@ -111,7 +111,6 @@ tr:nth-child(even) {
 }
 
 .change .bar1{
-    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
     transform: rotate(-45deg) translate(-9px, 6px);
 }
 
@@ -120,33 +119,9 @@ tr:nth-child(even) {
 }
 
 .change .bar3{
-    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
 }
 
-@media screen and (max-width: 768px) {
-
-    .topnav ul{
-        background: #6320ee;
-        opacity: .8;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 59px;
-        left: 0;
-        height: 559px;
-    }
-
-    .topnav ul li a{
-        margin: 10px;
-        display: block;
-        color: #fff;
-    }
-
-    .menu__hamburguesa{
-        display: block;
-    }
-  
-}
 
 .sticky {
     position: fixed;
@@ -225,6 +200,30 @@ input:checked + .slider:before {
 }
 
 
+@media screen and (max-width: 768px) {
+
+    .topnav ul{
+        background: #6320ee;
+        opacity: .8;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 59px;
+        left: 0;
+        height: 559px;
+    }
+
+    .topnav ul li a{
+        margin: 10px;
+        display: block;
+        color: #fff;
+    }
+
+    .menu__hamburguesa{
+        display: block;
+    }
+  
+}
 
 
 /* ---------------- navegacion ------------------- */
