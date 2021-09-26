@@ -6,11 +6,8 @@
     --color-fondo: #fff;
     --color-texto: rgb(0, 0, 0);
     --color-principal: #6320ee;
-    --resaltado: #f95738;
-
-    --color-primario: red;
     --color-secundario: blue;
-    --color-terciario: yellow;
+    --resaltado: #f95738;
 }
 
 /* ---------------- variables ------------------- */
@@ -58,7 +55,7 @@ tr:nth-child(even) {
 /* ---------------- navegacion ------------------- */
 
 .logo{
-    color: #6320ee;
+    color: var(--resaltado);
 }
 
 .topnav {
@@ -124,6 +121,8 @@ tr:nth-child(even) {
 
 ul.ul.change{
     transform: translateY(0px);
+    opacity: 1;
+    
 }
 
 .sticky {
@@ -180,7 +179,7 @@ ul.ul.change{
 }
   
 input:checked + .slider {
-    background-color: #6320ee;
+    background-color: #06e488;
 }
   
 input:focus + .slider {
@@ -207,14 +206,15 @@ input:checked + .slider:before {
 
     .topnav ul{
         background: #6320ee;
-        opacity: .8;
+        opacity: 0;
         flex-direction: column;
         width: 100%;
         position: absolute;
         top: 59px;
         left: 0;
         height: 559px;
-        transform: translateY(-620px);
+        transform: translateY(-620px) rotate(145deg);
+        
     }
 
     .topnav ul li a{
@@ -427,7 +427,6 @@ input:checked + .slider:before {
     padding: 10px;
     text-align: center;
     transition: .3s;
-    background: #ede4ff;
 }
 
 .tarjeta__aprende h4{
@@ -824,8 +823,8 @@ ul.breadcrumb li a {
 }
 
 .snippets .ver__mas{
-    border: 1px solid rgb(50, 91, 255);
-    color: rgb(50, 91, 255);
+    border: 1px solid var(--color-principal);
+    color: var(--color-principal);
     transition: .3s;
     padding: 10px;
     display: block;
@@ -836,7 +835,7 @@ ul.breadcrumb li a {
 }
 
 .snippets .ver__mas:hover{
-    background: rgb(50, 91, 255);
+    background: var(--color-principal);
     color: rgb(255, 255, 255);
 }
 
@@ -848,9 +847,9 @@ ul.breadcrumb li a {
 
 .tarjeta__snippets{
     width: 300px;
-    color: #325BFF;
+    color: var(--color-principal);
     padding: 20px;
-    border: 2px solid #D1E7FF;
+    border: 2px solid var(--color-principal);
     border-radius: 25px;
 }
 
@@ -872,7 +871,7 @@ ul.breadcrumb li a {
 .tarjeta__snippets a{
     text-align: center;
     color: #fff;
-    background: #457b9d;
+    background: var(--color-principal);
     padding: 10px;
     transition: .3s;
     width: 100%;
@@ -992,8 +991,6 @@ ul.breadcrumb li a {
     font-weight: 400;
     line-height: 1.5;
     color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
     border: 1px solid #ced4da;
     outline: none;
     border-radius: 0.25rem;
@@ -1031,7 +1028,7 @@ textarea.fcf-form-control {
 
 #contacto form{
     margin: auto;
-    width: 500px;
+    width: 100%;
     padding: 20px;
     background: #6320ee;
     color: rgb(68, 63, 63);
@@ -1101,10 +1098,36 @@ textarea, input{
     width: 100%;
 }
 
+.contactFlex{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.contactFlex > div{
+    width: 40%;
+    
+}
+
+.contactFlex img{
+    width: 100%;
+    height: auto;
+}
+
+
 @media only screen and ( max-width: 768px ){
     #contacto form{
         width: 90%;
     }
+
+    .contactFlex{
+        flex-direction: column;
+    }
+
+    .contactFlex > div{
+        width: 100%;
+    }
+
+
 }
 
 /* ---------------- contacto ------------------- */
