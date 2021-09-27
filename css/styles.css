@@ -1104,8 +1104,8 @@ textarea, input{
 }
 
 .contactFlex > div{
-    width: 40%;
-    
+    width: 50%;
+    padding: 20px;
 }
 
 .contactFlex img{
