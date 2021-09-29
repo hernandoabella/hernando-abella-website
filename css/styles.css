@@ -448,18 +448,19 @@ input:checked + .slider:before {
 }
 
 .tarjeta__aprende a{
-    color: #8075ff;
+    color: #6320ee;
     padding: 10px;
     transition: .3s;
     width: 130px;
     display: block;
     margin-top: 30px;
     margin: 20px auto;
-    border: 2px solid #8075ff;
+    border-bottom: 2px solid #6320ee;
+    border-top: 2px solid #6320ee;
 }
 
 .tarjeta__aprende a:hover{
-    color: #ede4ff;
+    color: #fff;
     background: #6320ee;
 }
 
