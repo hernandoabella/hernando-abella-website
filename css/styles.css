@@ -55,7 +55,7 @@ tr:nth-child(even) {
 /* ---------------- navegacion ------------------- */
 
 .logo{
-    color: var(--resaltado);
+    line-height: 0;
 }
 
 .topnav {
@@ -63,7 +63,11 @@ tr:nth-child(even) {
     z-index: 1;
     padding: 10px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+}
+
+.topnav img{
+    width: 40px;
 }
   
 .topnav ul{
@@ -203,6 +207,10 @@ input:checked + .slider:before {
 
 
 @media screen and (max-width: 768px) {
+
+    .topnav{
+        justify-content: space-between;
+    }
 
     .topnav ul{
         background: #6320ee;
