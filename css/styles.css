@@ -384,19 +384,21 @@ input:checked + .slider:before {
 }
 
 .aprende__conmigo .ver__mas{
-    background: #6320ee;
+    background: var(--color-principal);
     color: #fff;
     transition: .3s;
     padding: 10px;
     display: block;
-    width: 150px;
+    width: 250px;
     text-align: center;
     margin: 50px auto;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-bottom: 1px solid var(--color-principal);
+    font-size: 1.3em;
 }
 
 .aprende__conmigo .ver__mas:hover{
-    color: #fff;
+    color: var(--color-principal);
+    background: transparent;
 }
 
 .html__logo{
@@ -435,7 +437,7 @@ input:checked + .slider:before {
     padding: 10px;
     text-align: center;
     transition: .3s;
-    border: 1px solid var(--color-principal);
+    border: 1px solid rgb(243, 243, 243);
 }
 
 .tarjeta__aprende h4{
@@ -455,8 +457,7 @@ input:checked + .slider:before {
     display: block;
     margin-top: 30px;
     margin: 20px auto;
-    border-bottom: 2px solid #6320ee;
-    border-top: 2px solid #6320ee;
+    border: 1px solid rgb(243, 243, 243);
 }
 
 .tarjeta__aprende a:hover{
@@ -858,7 +859,7 @@ ul.breadcrumb li a {
     width: 300px;
     color: var(--color-principal);
     padding: 20px;
-    border: 2px solid var(--color-principal);
+    border: 2px solid rgb(243, 243, 243);
     border-radius: 25px;
 }
 
