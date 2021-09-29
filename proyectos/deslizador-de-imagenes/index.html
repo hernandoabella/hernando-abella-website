@@ -1,0 +1,234 @@
+<!-- Made by Hernando Abella -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deslizador de imágenes</title>
+    <link rel="stylesheet" href="./component.css">
+    <link rel="stylesheet" href="/temaPrism.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body>
+    <div class="backbar">
+        <a href="/proyectos/"><i class="fas fa-arrow-left"></i></a>
+    </div>
+
+    <section class="codigo__del__proyecto">
+        <div class="app__background">
+            <div class="app__container">
+                
+                <!-- app code goes here -->
+
+                <div class="s">
+                <div class="contenedor">
+                  <div class="mySlides fade">
+                    <img src="assets/imagen1.jpg" style="width:100%">
+                  </div>
+                
+                  <div class="mySlides fade">
+                    <img src="assets/imagen2.jpg" style="width:100%">
+                  </div>
+                
+                  <div class="mySlides fade">
+                    <img src="assets/imagen3.jpg" style="width:100%">
+                  </div>
+              
+                  <a class="prev" onclick="siguienteSlide(-1)">&#10094;</a>
+                  <a class="next" onclick="siguienteSlide(1)">&#10095;</a>
+              </div>
+                </div>
+                
+                <!-- app code goes here -->
+
+            </div>
+        </div>        
+        <section class="contenido__proyecto">
+            <h1 class="h1">Deslizador de imágenes</h1>
+        <br>
+        <p>Este deslizador te permite insertar imágenes en forma de diapositiva.</p>
+        <br>
+        <div class="flexNav">
+            <ul class="breadcrumb">
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/proyectos">Proyectos</a></li>
+                <li>Deslizador de imágenes</li>
+            </ul>
+        
+            <div class="download">
+                <a href="../deslizador-de-imagenes.rar" download><i class="fas fa-download"></i></a>
+                <a href="#">YouTube</a>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="code__container">
+            <h5 class="html__tag">HTML</h5>
+            <div class="panel">
+                    <div class="codigo__htmlt">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Deslizador de Im&aacute;genes&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;contenedor&quot;&gt;
+        &lt;div class=&quot;mySlides fade&quot;&gt;
+          &lt;img src=&quot;assets/imagen1.jpg&quot; style=&quot;width:100%&quot;&gt;
+        &lt;/div&gt;
+      
+        &lt;div class=&quot;mySlides fade&quot;&gt;
+          &lt;img src=&quot;assets/imagen2.jpg&quot; style=&quot;width:100%&quot;&gt;
+        &lt;/div&gt;
+      
+        &lt;div class=&quot;mySlides fade&quot;&gt;
+          &lt;img src=&quot;assets/imagen3.jpg&quot; style=&quot;width:100%&quot;&gt;
+        &lt;/div&gt;
+    
+        &lt;a class=&quot;prev&quot; onclick=&quot;siguienteSlide(-1)&quot;&gt;&amp;#10094;&lt;/a&gt;
+        &lt;a class=&quot;next&quot; onclick=&quot;siguienteSlide(1)&quot;&gt;&amp;#10095;&lt;/a&gt;
+    &lt;/div&gt;
+    
+
+    &lt;script src=&quot;./script.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+            
+            <hr>
+
+            <h5 class="css__tag">CSS</h5>
+            <div class="panel">
+                    <div class="codigo__css">
+                        <div class="decor__bar css"></div>
+                        <pre class="line-numbers"><code class="language-css">* {
+  box-sizing: border-box;
+}
+
+body{
+  background: rgb(65, 87, 212);
+}
+
+.contenedor {
+  width: 500px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+img{
+  border-radius: 5px;
+  height: 300px;
+}
+
+.mySlides {
+  display: none;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 10px;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+</code></pre></div>
+                </div>
+
+            <hr>
+
+            <h5 class="javascript__tag">JAVASCRIPT</h5>
+            
+            <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">var indice = 1;
+mostrarSlides(indice);
+
+function siguienteSlide(n) {
+  mostrarSlides(indice += n);
+}
+
+function slideActual(n) {
+  mostrarSlides(indice = n);
+}
+
+function mostrarSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  if (n > slides.length) {indice = 1}
+  if (n < 1) {indice = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  
+  slides[indice-1].style.display = "block";
+  
+}
+
+</code></pre></div>
+                </div>
+        </div>
+        </section>
+        
+    </section>
+
+    <footer>
+        <p>&copy; 2021 Hernando Abella</p>
+    </footer>
+
+    <!--Scripts-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+    <script src="./component.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

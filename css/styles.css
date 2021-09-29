@@ -427,6 +427,7 @@ input:checked + .slider:before {
     padding: 10px;
     text-align: center;
     transition: .3s;
+    border: 1px solid var(--color-principal);
 }
 
 .tarjeta__aprende h4{
@@ -452,7 +453,6 @@ input:checked + .slider:before {
 .tarjeta__aprende a:hover{
     color: #ede4ff;
     background: #6320ee;
-    border: 1px solid #fff;
 }
 
 .tarjeta__aprende img.html__image{
