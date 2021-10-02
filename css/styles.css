@@ -1103,7 +1103,7 @@ form textarea{
     transition: .3s;
 }
 
-textarea, input{
+form textarea, input{
     outline: none;
     width: 100%;
 }

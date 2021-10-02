@@ -1,0 +1,973 @@
+<!-- Made by Hernando Abella -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema para ordenar pizzas</title>
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Mr+Dafoe|Nothing+You+Could+Do|Yellowtail|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="./component.css">
+    <link rel="stylesheet" href="/temaPrism.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body>
+    <div class="backbar">
+        <a href="/proyectos/"><i class="fas fa-arrow-left"></i></a>
+    </div>
+
+    <section class="codigo__del__proyecto">
+        <div class="app__background">
+            <div class="app__container">
+                
+                <!-- app code goes here -->
+
+                <div class="s">
+                <h1 id="mainh1">🪐 Planet Pizza</h1>
+
+<main>
+
+<div class="section-card visible first">
+
+    <header>
+        <h1>Escoge tu tamaño:</h1>
+    </header>
+    
+    <p>
+        Personal
+        <input type="radio" name="size" id="Personal size" data-price="6">                
+    </p>
+    
+    <p>
+        Mediana
+        <input type="radio" name="size" id="Medium size" data-price="10">
+    </p>
+    
+    
+    <p>
+        Large
+        <input type="radio" name="size" id="Large size" data-price="14">
+    </p>
+    
+    
+    <p>
+        Extra Large 
+        <input type="radio" name="size" id="Extra large" data-price="16">
+    </p>
+    
+    <div class="alignBtns">
+        <button class="back">Atrás</button>    
+        <button class="submit">Siguiente</button>
+    </div>
+        
+</div>
+    
+<div class="section-card">
+    <header>
+        <h1>¡Mucho gusto en conocerte!</h1>
+        <p>El primer artículo de carne es gratuito. Todos los artículos de carne adicionales cuestan $ 1 cada uno.</p>
+    </header>
+    
+    <p>
+        Pepperoni
+        <input type="checkbox" name="meat" id="Pepperoni">
+    </p>
+    
+    
+    <p>
+        Chorizo
+        <input type="checkbox" name="meat" id="Sausage">
+    </p>
+    
+    
+    <p>
+        Tocino canadiense
+        <input type="checkbox" name="meat" id="Canadian Bacon">                
+    </p>
+    
+    
+    <p>
+        Carne molida
+        <input type="checkbox" name="meat" id="Ground Beef">
+    </p>
+    
+    
+    <p>
+        Anchoas
+        <input type="checkbox" name="meat" id="Anchovy">                
+    </p>
+    
+    
+    <p>
+        Pollo
+        <input type="checkbox" name="meat" id="Chicken">
+    </p>
+
+    <div class="alignBtns">
+        <button class="back">Atrás</button>    
+        <button class="submit">Siguiente</button>
+    </div>
+</div>
+    
+ <div class="section-card">
+
+     <header>
+         <h1>Cantidad de<br>queso:</h1>
+     </header>
+     
+     <p>
+         Regular
+         <input type="radio" name="cheese" id="Regular cheese">
+     </p>
+     
+     <p>
+         Sin queso
+         <input type="radio" name="cheese" id="No cheese">
+     </p>
+     
+     <p>
+         Extra queso
+         <input type="radio" name="cheese" id="Extra Cheese" data-price="3">
+    </p>
+     
+    <div class="alignBtns">
+        <button class="back">Atrás</button>    
+        <button class="submit">Siguiente</button>
+    </div>
+</div>
+    
+<div class="section-card">
+    <header>
+        <h1>Todo el mundo muerde<br>el borde</h1>
+    </header>
+
+    <p>Borde simple<input type="radio" name="crust" id="Plain Crust"></p>
+    <p>Borde de mantequilla de ajo<input type="radio" name="crust" id="Garlic Butter Crust"></p>
+    <p>Borde relleno de queso<input data-price="3" type="radio" name="crust" id="Cheese Stuffed Crust" ></p>
+    <p>Borde picante<input type="radio" name="crust" id="Spicy Crust"></p>
+    <p>Borde especial de la casa<input type="radio" name="crust" id="House Special Crust"></p>
+    
+    <div class="alignBtns">
+        <button class="back">Atrás</button>    
+        <button class="submit">Siguiente</button>
+    </div>
+</div>
+
+<div class="section-card">
+
+    <header>
+        <h1>Nuestras pizzas tienen salsas</h1>
+    </header>
+
+    <p>Salsa marinera<input type="radio" name="sauce" id="Marinara sauce"></p>
+    <p>Salsa blanca<input type="radio" name="sauce" id="White sauce" ></p>
+    <p>Salsa BBQ<input type="radio" name="sauce" id="Barbeque sauce" ></p>
+    <p>Sin salsa<input type="radio" name="sauce" id="No Sauce"></p>
+    
+    <div class="alignBtns">
+        <button class="back">Atrás</button>    
+        <button class="submit">Siguiente</button>
+    </div>
+</div>
+
+<div class="section-card last">
+    <header>
+        <h1>Siempre come tus vegetales</h1>
+        <p>El primer tipo de verdura es gratuito. Todos los artículos vegetales adicionales cuestan $1 cada uno.</p>
+    </header>
+
+    <p>Tomates<input type="checkbox" name="veggies" id="Tomatoes"></p>
+    <p>Cebollas<input type="checkbox" name="veggies" id="Onions" ></p>
+    <p>Aceitunas<input type="checkbox" name="veggies" id="Olives" ></p>
+    <p>Pimientos verdes<input type="checkbox" name="veggies" id="Green Peppers"></p>
+    <p>Champiñones<input type="checkbox" name="veggies" id="Mushrooms"></p>
+    <p>Piña<input type="checkbox" name="veggies" id="Pineapple"></p>
+    <p>Espinacas <input type="checkbox" name="veggies" id="Spinach"></p>
+    <p>Jalapeño <input type="checkbox" name="veggies" id="Jalapeno"></p>
+    
+    <div class="alignBtns">
+        <button class="back">Atrás</button>    
+        <button class="submit">Siguiente</button>
+    </div>
+</div>
+
+<div id="tally">
+    <h1>Tu orden:</h1>
+</div>
+</main>
+                </div>
+                
+                <!-- app code goes here -->
+
+            </div>
+        </div>        
+        <section class="contenido__proyecto">
+            <h1 class="h1">Sistema para ordenar pizzas</h1>
+        <br>
+        <p>Este sistema te permite ordenar pizzas.</p>
+        <br>
+        <div class="flexNav">
+            <ul class="breadcrumb">
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/proyectos">Proyectos</a></li>
+                <li>Sistema para ordenar pizzas</li>
+            </ul>
+        
+            <div class="download">
+                <a href="../sistema-para-ordenar-pizzas.rar" download><i class="fas fa-download"></i></a>
+                <a href="#">YouTube</a>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="code__container">
+            <h5 class="html__tag">HTML</h5>
+            <div class="panel">
+                    <div class="codigo__htmlt">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;title&gt;Sistema para ordenar pizzas&lt;/title&gt;
+        &lt;link href=&quot;https://fonts.googleapis.com/css?family=Kaushan+Script|Mr+Dafoe|Nothing+You+Could+Do|Yellowtail|Roboto&quot; rel=&quot;stylesheet&quot;&gt;
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+
+        &lt;h1 id=&quot;mainh1&quot;&gt;&#x1FA90; Planet Pizza&lt;/h1&gt;
+
+        &lt;main&gt;
+        
+        &lt;div class=&quot;section-card visible first&quot;&gt;
+
+            &lt;header&gt;
+                &lt;h1&gt;Escoge tu tama&ntilde;o:&lt;/h1&gt;
+            &lt;/header&gt;
+            
+            &lt;p&gt;
+                Personal
+                &lt;input type=&quot;radio&quot; name=&quot;size&quot; id=&quot;Personal size&quot; data-price=&quot;6&quot;&gt;                
+            &lt;/p&gt;
+            
+            &lt;p&gt;
+                Mediana
+                &lt;input type=&quot;radio&quot; name=&quot;size&quot; id=&quot;Medium size&quot; data-price=&quot;10&quot;&gt;
+            &lt;/p&gt;
+            
+            
+            &lt;p&gt;
+                Large
+                &lt;input type=&quot;radio&quot; name=&quot;size&quot; id=&quot;Large size&quot; data-price=&quot;14&quot;&gt;
+            &lt;/p&gt;
+            
+            
+            &lt;p&gt;
+                Extra Large 
+                &lt;input type=&quot;radio&quot; name=&quot;size&quot; id=&quot;Extra large&quot; data-price=&quot;16&quot;&gt;
+            &lt;/p&gt;
+            
+            &lt;div class=&quot;alignBtns&quot;&gt;
+                &lt;button class=&quot;back&quot;&gt;Atr&aacute;s&lt;/button&gt;    
+                &lt;button class=&quot;submit&quot;&gt;Siguiente&lt;/button&gt;
+            &lt;/div&gt;
+                
+        &lt;/div&gt;
+            
+        &lt;div class=&quot;section-card&quot;&gt;
+            &lt;header&gt;
+                &lt;h1&gt;&iexcl;Mucho gusto en conocerte!&lt;/h1&gt;
+                &lt;p&gt;El primer art&iacute;culo de carne es gratuito. Todos los art&iacute;culos de carne adicionales cuestan $ 1 cada uno.&lt;/p&gt;
+            &lt;/header&gt;
+            
+            &lt;p&gt;
+                Pepperoni
+                &lt;input type=&quot;checkbox&quot; name=&quot;meat&quot; id=&quot;Pepperoni&quot;&gt;
+            &lt;/p&gt;
+            
+            
+            &lt;p&gt;
+                Chorizo
+                &lt;input type=&quot;checkbox&quot; name=&quot;meat&quot; id=&quot;Sausage&quot;&gt;
+            &lt;/p&gt;
+            
+            
+            &lt;p&gt;
+                Tocino canadiense
+                &lt;input type=&quot;checkbox&quot; name=&quot;meat&quot; id=&quot;Canadian Bacon&quot;&gt;                
+            &lt;/p&gt;
+            
+            
+            &lt;p&gt;
+                Carne molida
+                &lt;input type=&quot;checkbox&quot; name=&quot;meat&quot; id=&quot;Ground Beef&quot;&gt;
+            &lt;/p&gt;
+            
+            
+            &lt;p&gt;
+                Anchoas
+                &lt;input type=&quot;checkbox&quot; name=&quot;meat&quot; id=&quot;Anchovy&quot;&gt;                
+            &lt;/p&gt;
+            
+            
+            &lt;p&gt;
+                Pollo
+                &lt;input type=&quot;checkbox&quot; name=&quot;meat&quot; id=&quot;Chicken&quot;&gt;
+            &lt;/p&gt;
+
+            &lt;div class=&quot;alignBtns&quot;&gt;
+                &lt;button class=&quot;back&quot;&gt;Atr&aacute;s&lt;/button&gt;    
+                &lt;button class=&quot;submit&quot;&gt;Siguiente&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+            
+         &lt;div class=&quot;section-card&quot;&gt;
+
+             &lt;header&gt;
+                 &lt;h1&gt;Cantidad de&lt;br&gt;queso:&lt;/h1&gt;
+             &lt;/header&gt;
+             
+             &lt;p&gt;
+                 Regular
+                 &lt;input type=&quot;radio&quot; name=&quot;cheese&quot; id=&quot;Regular cheese&quot;&gt;
+             &lt;/p&gt;
+             
+             &lt;p&gt;
+                 Sin queso
+                 &lt;input type=&quot;radio&quot; name=&quot;cheese&quot; id=&quot;No cheese&quot;&gt;
+             &lt;/p&gt;
+             
+             &lt;p&gt;
+                 Extra queso
+                 &lt;input type=&quot;radio&quot; name=&quot;cheese&quot; id=&quot;Extra Cheese&quot; data-price=&quot;3&quot;&gt;
+            &lt;/p&gt;
+             
+            &lt;div class=&quot;alignBtns&quot;&gt;
+                &lt;button class=&quot;back&quot;&gt;Atr&aacute;s&lt;/button&gt;    
+                &lt;button class=&quot;submit&quot;&gt;Siguiente&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+            
+        &lt;div class=&quot;section-card&quot;&gt;
+            &lt;header&gt;
+                &lt;h1&gt;Todo el mundo muerde&lt;br&gt;el borde&lt;/h1&gt;
+            &lt;/header&gt;
+
+            &lt;p&gt;Borde simple&lt;input type=&quot;radio&quot; name=&quot;crust&quot; id=&quot;Plain Crust&quot;&gt;&lt;/p&gt;
+            &lt;p&gt;Borde de mantequilla de ajo&lt;input type=&quot;radio&quot; name=&quot;crust&quot; id=&quot;Garlic Butter Crust&quot;&gt;&lt;/p&gt;
+            &lt;p&gt;Borde relleno de queso&lt;input data-price=&quot;3&quot; type=&quot;radio&quot; name=&quot;crust&quot; id=&quot;Cheese Stuffed Crust&quot; &gt;&lt;/p&gt;
+            &lt;p&gt;Borde picante&lt;input type=&quot;radio&quot; name=&quot;crust&quot; id=&quot;Spicy Crust&quot;&gt;&lt;/p&gt;
+            &lt;p&gt;Borde especial de la casa&lt;input type=&quot;radio&quot; name=&quot;crust&quot; id=&quot;House Special Crust&quot;&gt;&lt;/p&gt;
+            
+            &lt;div class=&quot;alignBtns&quot;&gt;
+                &lt;button class=&quot;back&quot;&gt;Atr&aacute;s&lt;/button&gt;    
+                &lt;button class=&quot;submit&quot;&gt;Siguiente&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;section-card&quot;&gt;
+
+            &lt;header&gt;
+                &lt;h1&gt;Nuestras pizzas tienen salsas&lt;/h1&gt;
+            &lt;/header&gt;
+
+            &lt;p&gt;Salsa marinera&lt;input type=&quot;radio&quot; name=&quot;sauce&quot; id=&quot;Marinara sauce&quot;&gt;&lt;/p&gt;
+            &lt;p&gt;Salsa blanca&lt;input type=&quot;radio&quot; name=&quot;sauce&quot; id=&quot;White sauce&quot; &gt;&lt;/p&gt;
+            &lt;p&gt;Salsa BBQ&lt;input type=&quot;radio&quot; name=&quot;sauce&quot; id=&quot;Barbeque sauce&quot; &gt;&lt;/p&gt;
+            &lt;p&gt;Sin salsa&lt;input type=&quot;radio&quot; name=&quot;sauce&quot; id=&quot;No Sauce&quot;&gt;&lt;/p&gt;
+            
+            &lt;div class=&quot;alignBtns&quot;&gt;
+                &lt;button class=&quot;back&quot;&gt;Atr&aacute;s&lt;/button&gt;    
+                &lt;button class=&quot;submit&quot;&gt;Siguiente&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;section-card last&quot;&gt;
+            &lt;header&gt;
+                &lt;h1&gt;Siempre come tus vegetales&lt;/h1&gt;
+                &lt;p&gt;El primer tipo de verdura es gratuito. Todos los art&iacute;culos vegetales adicionales cuestan $1 cada uno.&lt;/p&gt;
+            &lt;/header&gt;
+
+            &lt;p&gt;Tomates&lt;input type=&quot;checkbox&quot; name=&quot;veggies&quot; id=&quot;Tomatoes&quot;&gt;&lt;/p&gt;
+            &lt;p&gt;Cebollas&lt;input type=&quot;checkbox&quot; name=&quot;veggies&quot; id=&quot;Onions&quot; &gt;&lt;/p&gt;
+            &lt;p&gt;Aceitunas&lt;input type=&quot;checkbox&quot; name=&quot;veggies&quot; id=&quot;Olives&quot; &gt;&lt;/p&gt;
+            &lt;p&gt;Pimientos verdes&lt;input type=&quot;checkbox&quot; name=&quot;veggies&quot; id=&quot;Green Peppers&quot;&gt;&lt;/p&gt;
+            &lt;p&gt;Champi&ntilde;ones&lt;input type=&quot;checkbox&quot; name=&quot;veggies&quot; id=&quot;Mushrooms&quot;&gt;&lt;/p&gt;
+            &lt;p&gt;Pi&ntilde;a&lt;input type=&quot;checkbox&quot; name=&quot;veggies&quot; id=&quot;Pineapple&quot;&gt;&lt;/p&gt;
+            &lt;p&gt;Espinacas &lt;input type=&quot;checkbox&quot; name=&quot;veggies&quot; id=&quot;Spinach&quot;&gt;&lt;/p&gt;
+            &lt;p&gt;Jalape&ntilde;o &lt;input type=&quot;checkbox&quot; name=&quot;veggies&quot; id=&quot;Jalapeno&quot;&gt;&lt;/p&gt;
+            
+            &lt;div class=&quot;alignBtns&quot;&gt;
+                &lt;button class=&quot;back&quot;&gt;Atr&aacute;s&lt;/button&gt;    
+                &lt;button class=&quot;submit&quot;&gt;Siguiente&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div id=&quot;tally&quot;&gt;
+            &lt;h1&gt;Tu orden:&lt;/h1&gt;
+        &lt;/div&gt;
+&lt;/main&gt;
+
+
+        &lt;script src=&quot;scripts.js&quot;&gt;&lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+            
+            <hr>
+
+            <h5 class="css__tag">CSS</h5>
+            <div class="panel">
+                    <div class="codigo__css">
+                        <div class="decor__bar css"></div>
+                        <pre class="line-numbers"><code class="language-css">body {
+    background-image: url(images/food-pizza-box-chalkboard.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif; 
+}
+
+#mainh1{
+    font-family: 'Nothing You Could Do', cursive;
+    color: white;
+    font-size: 3rem;
+    text-shadow: 1px 1px 2px #ffffff;
+    margin: 10px;
+}
+
+.section-card {
+    background-color: rgba(255,255,255,0.5);
+    position: absolute;
+    border-radius: 5px;
+    border: 5px solid rgba(232, 232, 232,0.5);
+    width: 15rem;
+    display: none;
+}
+
+.section-card button{
+    background: #000;
+    color: #fff;
+    border: 1px solid rgba(232, 232, 232,0.5);
+    cursor: pointer;
+}
+
+.section-card.visible{
+  background: rgba(255,255,255, 0.5);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  width: 350px;
+  display: block;
+}
+
+.section-card.visible h1{
+    text-align: center;
+    font-family: 'Nothing You Could Do', cursive;
+}
+
+input[type="checkbox"], input[type="radio"]{
+    display: inline-block;
+    position: absolute;
+    right: 1rem;
+}
+
+span {
+    display: inline-block;
+    position: absolute;
+    right: 4rem;
+}
+
+
+.section-card p {
+    margin: 1rem;
+}
+
+.alignBtns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.alignBtns button{
+    margin: 10px;
+    padding: 10px;
+}
+
+#tally {
+    background-color: rgba(255,255,255,0.7);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    width: 300px;
+}
+
+#tally h1 {
+    top: 2rem;
+    font-family: 'Nothing You Could Do', cursive;
+    text-align: center;
+}
+
+#tally p {
+    margin: .5rem;
+}
+
+#tally p span{
+    display: inline-block;
+    right: 1rem;
+    margin:0;
+    font-weight: bold;
+}
+
+#finaltally{
+    background-color: rgba(255,255,255,0.7);
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1.5rem;
+    border-radius: 5px;
+    border: 5px solid rgba(232, 232, 232,0.5);
+    width: 30rem;
+    font-size: 1rem;
+}
+
+#invisible {
+    background-color: rgba(255,255,255,0.7);
+    position: absolute;
+    top:8rem;
+    right: 30%;
+    left: 30%;
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 5px solid rgba(232, 232, 232,0.5);
+    width: 30rem;
+    font-size: 1rem;
+    display: none;
+}
+
+#yourOrder {
+    font-size: 2.5rem;
+    text-align: center;
+    border-bottom: 2px solid black;
+    padding-bottom: 1rem;
+}
+
+#finaltally p {
+    margin: 0.3rem;
+}
+
+.dollar {
+    display: inline-block;
+    right: 4rem;
+    margin:0;
+}
+
+#total {
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-top: 1px solid black;
+    line-height: 2.5;
+}
+
+#mainh2 {
+    font-family: 'Nothing You Could Do', cursive;
+    color: white;
+    text-align: center;
+    font-size: 4rem;
+    text-shadow: 1px 1px 5px #000000;
+    z-index: 500;
+    margin: 1rem;
+}</code></pre></div>
+                </div>
+
+            <hr>
+
+            <h5 class="javascript__tag">JAVASCRIPT</h5>
+            
+            <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">let btns = document.getElementsByClassName('submit');
+let backs = document.getElementsByClassName('back');
+let prices = document.getElementsByClassName('price');
+let tally = document.getElementById('tally');
+let paras = tally.getElementsByTagName('p');
+let tallyP = paras[paras.length - 1];
+let newPara = document.createElement('p');
+let node = document.createTextNode("");
+let newPara2 = newPara.appendChild(node);
+let sections = document.getElementsByClassName('section-card');
+let submit2 = document.getElementById("submit2");
+let ch = CInputs();
+
+function finalTally(){
+
+    function total(totalPrice){
+        let totalT = document.getElementById('total');
+        totalT.innerHTML = "Total a pagar: <span class='dollar'>$" +totalPrice+"<span>";
+    }
+    
+    let visible = document.getElementsByClassName('visible')[0];
+    let paraContent = [];
+    
+    visible.classList.remove('visible');
+    tally.setAttribute('id','finaltally');
+    tally.getElementsByTagName('h1')[0].setAttribute('id','yourOrder');
+    createPara('id','total');
+
+    for (let i=0; i < paras.length-1; i++){
+        paraContent.push(paras[i].textContent);
+    }
+    
+    let paraSplit = [];
+    
+    for (let s=0; s < paraContent.length; s++){
+        paraSplit[s] = paraContent[s].split(' $');
+    }
+    
+    let totalPrice = 0;
+
+    for (let p=0; p < paras.length-1; p++){
+        
+        paras[p].innerHTML = paraSplit[p][0]+" <span class='dollar'>$"+paraSplit[p][1]+"</span>";
+        
+        let prices = []; prices.push(paraSplit[p][1]);
+        
+        for (let c=0; c < prices.length; c++){
+            totalPrice = totalPrice + Number(prices[c]);
+        }
+    }
+
+    function chngO (){
+        document.getElementsByClassName('first')[0].classList.add('visible');
+        document.getElementById('finaltally').setAttribute('id','tally');
+        document.getElementById('tally').innerHTML ="<h1>Your order</h1>";
+        document.getElementById('mainh2').setAttribute('id','mainh1');
+    }
+
+    // Nueva función para nuevo botón
+
+    function chng1(){
+
+        let ft = document.getElementById('finaltally');
+        let tallyparas = ft.getElementsByTagName("p");
+
+        while (ft.firstChild) {
+            ft.removeChild(ft.firstChild);
+        }
+
+        let message = document.createElement("h1");
+        let messageText = document.createTextNode("Tu orden ha sido enviada.");
+        
+        message.setAttribute("id", "yourOrder2");
+        message.style.fontFamily = "sans-serif";
+        
+        let success = document.getElementById('yourOrder2');
+        
+        message.appendChild(messageText);
+        message.style.verticalAlign = "middle";
+        ft.appendChild(message);
+
+        let newOrderBtn = document.createElement("button");
+        
+        newOrderBtn.textContent = "Nueva Orden";
+        newOrderBtn.addEventListener("click", chngO);
+        newOrderBtn.style.cssFloat ="left";
+        ft.appendChild(newOrderBtn);
+    }
+
+   total(totalPrice);
+
+    document.getElementById('mainh1').setAttribute('id','mainh2');
+    
+    let lbtn = document.createElement('button');
+    
+    lbtn.textContent = 'Cambiar orden';
+    lbtn.style.fontSize = '1rem';
+    lbtn.style.textAlign = 'center';
+
+    let lastwindow = document.getElementById('finaltally');
+    
+    lastwindow.appendChild(lbtn);
+    lbtn.style.cssFloat = 'right';
+    lbtn.addEventListener('click', chngO);
+
+    // Nuevo botón agregado aquí para aceptar el pedido
+    
+    let rbtn = document.createElement('button');
+    
+    rbtn.textContent = 'Enviar orden';
+    rbtn.style.fontSize = '1rem';
+    rbtn.style.textAlign = 'center';
+    rbtn.style.cssFloat = 'left';
+    lastwindow.appendChild(rbtn);
+    rbtn.addEventListener('click', chng1);
+}
+
+
+
+function createPara(attrib, avalue) {
+    
+    let newPara = document.createElement('p');
+    let node = document.createTextNode("");
+    
+    newPara.setAttribute(attrib, avalue);
+    newPara.appendChild(node);
+    tally.appendChild(newPara);
+}
+
+
+function CInputs(){
+    
+    let ch = [];
+    let visible = document.getElementsByClassName("visible")[0];
+    let inputs = visible.getElementsByTagName('input');
+
+    for (let chkd=0; chkd < inputs.length; chkd++){
+        if (inputs[chkd].checked) {
+            ch.push(inputs[chkd]);
+        }
+    }
+
+    return ch;
+}
+
+function check(){
+
+    let ch = 0;
+    let visible = document.getElementsByClassName("visible")[0];
+    let inputs = visible.getElementsByTagName('input');
+
+    for (let chkd=0; chkd < inputs.length; chkd++){
+        if (inputs[chkd].checked) {
+            ch += 1;
+        }
+    }
+
+    return ch;
+}
+
+function nextS(){
+
+    for (let i = 0; i < sections.length - 1; i++){
+        
+        // Reemplace la propiedad de visualización con display: none y haga que aparezca la nueva sección.
+
+        if (sections[i].classList.contains('visible')){  
+            sections[i].classList.remove('visible');
+            sections[i+1].classList.add('visible');
+            break;
+        }
+             
+    }          
+}
+
+function next(){
+
+    let visible = document.getElementsByClassName("visible")[0];
+    let inputs = visible.getElementsByTagName('input');
+    let secParas = visible.getElementsByTagName('p');
+
+    if (visible.classList.contains('last') == false){
+
+    if (check() == 0){ 
+    
+        alert("¡Tienes que escoger almenos un artículo!");
+    
+    } else if (check() == 1) {
+
+        for (let c=0; c < inputs.length; c++) {
+            
+        if (inputs[c].checked && inputs[c].hasAttribute('data-price')) { 
+            let ingredients =+ secParas[c].innerText || secParas[c].textContent;
+                
+            // console.log(ingredientes);
+            let topay = inputs[c].getAttribute('data-price');
+
+            createPara('data-name', inputs[c].getAttribute('id'));
+
+            paras[paras.length - 1].innerHTML = ingredients+' <span>$'+topay+'</span>';
+        }
+            // De lo contrario, si está marcada, obtenga el texto y envíelo al recibo.
+            else if (inputs[c].checked && inputs[c].hasAttribute('data-price') === false){ 
+                inputs = visible.getElementsByTagName('input');
+                 ingredients =+ secParas[c].innerText || secParas[c].textContent;
+            // console.log(ingredients[0].className);
+              createPara('data-name',secParas[c].getElementsByTagName('input')[0].getAttribute('id'));
+                 paras[paras.length - 1].innerHTML = ingredients+' <span>$0</span>';
+             }
+        }
+
+        nextS();
+    
+    } else if  (check() > 1 ){
+
+        for (let j=0; j < CInputs().length; j++) {
+            
+        if (CInputs()[j] === CInputs()[0] && CInputs()[j].hasAttribute('data-price') === false) {
+
+           ingredients =+ CInputs()[0].parentElement.innerText || CInputs()[0].parentElement.textContent;
+              
+              //console.log(CInputs()[0].parentElement);
+              createPara('data-name',CInputs()[0].getAttribute('id'));
+
+                 paras[paras.length - 1].innerHTML = ingredients+' <span> $0</span>';
+        }else if (CInputs()[j] !== CInputs()[0] && CInputs()[j].hasAttribute('data-price') === false) {
+                
+                ingredients =+ CInputs()[j].parentElement.innerText || CInputs()[j].parentElement.textContent;
+        
+              //console.log(CInputs()[j].parentElement);
+              createPara('data-name',CInputs()[j].getAttribute('id'));
+                 
+                  paras[paras.length - 1].innerHTML = ingredients+' <span> $1</span>';
+                
+            }
+        }
+
+    nextS();
+    
+    }
+        
+    
+    }else {
+
+    if(check() == 0){ 
+
+        alert("¡Tienes que escoger almenos un artículo!");
+
+    }else if (check() == 1) {
+
+        for (let c=0; c < inputs.length; c++) {
+            
+        if (inputs[c].checked && inputs[c].hasAttribute('data-price')) { 
+            let ingredients =+ secParas[c].innerText || secParas[c].textContent;
+
+            // console.log(ingredientes);
+
+                let topay = inputs[c].getAttribute('data-price');
+              createPara('data-name', inputs[c].getAttribute('id'));
+                paras[paras.length - 1].innerHTML = ingredients+' <span>$'+topay+'</span>';
+            }
+
+            // de lo contrario, si está marcada, obtenga el texto y envíelo al recibo.
+
+            else if (inputs[c].checked && inputs[c].hasAttribute('data-price') === false){ 
+                inputs = visible.getElementsByTagName('input');
+                 ingredients =+ secParas[c].innerText || secParas[c].textContent;
+
+                //console.log(ingredients[0].className);
+
+              createPara('data-name',secParas[c].getElementsByTagName('input')[0].getAttribute('id'));
+                 paras[paras.length - 1].innerHTML = ingredients+' <span>$0</span>';
+            }
+        }
+
+    } else if  (check() > 1){
+        for (let j=0; j < CInputs().length; j++) {
+            
+        if (CInputs()[j] === CInputs()[0] && CInputs()[j].hasAttribute('data-price') === false) {
+           ingredients =+ CInputs()[0].parentElement.innerText || CInputs()[0].parentElement.textContent;
+
+              //console.log(CInputs()[0].parentElement);
+              createPara('data-name',CInputs()[0].getAttribute('id'));
+                 paras[paras.length - 1].innerHTML = ingredients+' <span>$0</span>';
+        }else if (CInputs()[j] !== CInputs()[0] && CInputs()[j].hasAttribute('data-price') === false) {
+              ingredients =+ CInputs()[j].parentElement.innerText || CInputs()[j].parentElement.textContent;
+            
+              //console.log(CInputs()[j].parentElement);
+              createPara('data-name',CInputs()[j].getAttribute('id'));
+                 paras[paras.length - 1].innerHTML = ingredients+' <span>$1</span>';
+                
+            }
+        }
+    }
+
+    finalTally();
+
+}
+}
+
+function back(){
+    
+    function DelFood() {
+            
+            let secCards = document.getElementsByClassName("section-card");
+            let visible = document.getElementsByClassName('visible')[0];
+            
+            function prevSection(){
+                for (let q=0; q < secCards.length; q++) {
+
+                    if (secCards[q] == visible && q > 0){
+                        
+                        return q - 1;
+
+                    } else if (secCards[q] == visible && q == 0){
+                        
+                        return q;
+                    
+                    }
+
+                }
+            }
+        
+            
+        let prevInputs = sections[prevSection()].getElementsByTagName('input');
+        
+        for(let v = 0; v < prevInputs.length; v++){
+            
+            for(let pv = 0; pv < paras.length; pv++){
+                
+                if(prevInputs[v].getAttribute('id') == paras[pv].getAttribute('data-name')){
+                    tally.removeChild(paras[pv]);
+                }
+            }
+        }   
+    }
+
+    DelFood();       
+    
+    for(let i = 0; i < sections.length; i++) {
+        
+      if(sections[i].classList.contains('visible') && sections[i].classList.contains('first') == false)  {  
+          
+      sections[i].classList.remove('visible');
+      sections[i-1].classList.add('visible');
+       
+      break;
+
+      }else {
+            document.getElementsByClassName('first')[0].getElementsByClassName('back')[0].disabled = true
+      }
+          
+    }
+}
+
+for(let i = 0; i < btns.length; i++){
+
+  btns[i].addEventListener('click', next);
+  backs[i].addEventListener('click', back);
+
+}</code></pre></div>
+                </div>
+        </div>
+        </section>
+        
+    </section>
+
+    <footer>
+        <p>&copy; 2021 Hernando Abella</p>
+    </footer>
+
+    <!--Scripts-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+    <script src="./component.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
