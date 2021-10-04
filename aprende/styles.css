@@ -1,3 +1,8 @@
+.tree-diagram{
+    margin: 20px auto;
+    width: 400px;
+}
+
 .tree-diagram ul {
     display: flex;
     position: relative;
@@ -70,7 +75,6 @@
 li.tree-diagram__root::before {
     border-right: none;
 }
-
 
 footer{
     padding: 20px !important;
