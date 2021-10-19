@@ -3,6 +3,12 @@
     width: 400px;
 }
 
+.tree-diagram img{
+    width: 80px;
+    height: 80px;
+}
+
+
 .tree-diagram ul {
     display: flex;
     position: relative;
