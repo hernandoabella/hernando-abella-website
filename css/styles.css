@@ -7,7 +7,7 @@
     --color-texto: rgb(0, 0, 0);
     --color-principal: #6320ee;
     --color-secundario: blue;
-    --resaltado: #f95738;
+    --resaltado: #f9386b;
 }
 
 /* ---------------- variables ------------------- */
@@ -49,13 +49,19 @@ tr:nth-child(even) {
     background-color: #dddddd;
 }
 
+hr{
+    width: 80%;
+    margin: auto;
+    border: 1px solid rgb(243, 243, 243);
+}
+
 /* ---------------- estilos principales ------------------- */
 
 
 /* ---------------- navegacion ------------------- */
 
 .logo{
-    line-height: 0;
+    color: var(--resaltado);
 }
 
 .topnav {
@@ -360,10 +366,6 @@ input:checked + .slider:before {
 
 /* ---------------- aprende ------------------- */
 
-.aprende__conmigo{
-    border-top: 1px solid rgb(243, 243, 243);
-}
-
 .aprende__conmigo hr{
     width: 100px;
     margin: auto;
@@ -508,7 +510,6 @@ input:checked + .slider:before {
 
 .proyectos{
     padding-bottom: 50px;
-    border-top: 1px solid rgb(243, 243, 243);
 }
 
 .proyectos hr{
@@ -817,7 +818,6 @@ ul.breadcrumb li a {
 
 .snippets{
     padding-bottom: 50px;
-    border-top: 1px solid rgb(243, 243, 243);
 }
 
 .snippets h2{
@@ -896,10 +896,6 @@ ul.breadcrumb li a {
 /* ---------------- snippets ------------------- */
 
 /* ---------------- servicios ------------------- */
-
-#servicios{
-    border-top: 1px solid rgb(243, 243, 243);
-}
 
 #servicios h2{
     text-align: center;
@@ -1025,7 +1021,6 @@ textarea.fcf-form-control {
 }
 
 #contacto{
-    border-top: 1px solid rgb(243, 243, 243);
     padding-bottom: 50px;
 }
 
@@ -1154,7 +1149,6 @@ form textarea, input{
 footer{
     padding: 50px;
     text-align: center;
-    border-top: 1px solid rgb(243, 243, 243);
 }
 
 footer h4{
