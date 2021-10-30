@@ -6,7 +6,7 @@
     --color-fondo: #fff;
     --color-texto: rgb(0, 0, 0);
     --color-principal: #6320ee;
-    --resaltado: #ff3737;
+    --resaltado: #ee2f5c;
 }
 
 /* ---------------- variables ------------------- */
@@ -87,7 +87,7 @@ hr{
 
 .topnav ul li a{
     transition: .3s;
-    color: #8075ff;
+    color: #6320ee;
     padding: 10px;
 }
 
@@ -263,7 +263,7 @@ input:checked + .slider:before {
 }
 
 .sidetwo h1{
-    font-size: 3em;
+    font-size: 2.5em;
     color: var(--color-principal);
     padding: 20px 0px;;
 }
@@ -438,12 +438,12 @@ input:checked + .slider:before {
     padding: 10px;
     text-align: center;
     transition: .3s;
-    border: 1px solid rgb(243, 243, 243);
+    border: 1px solid #ede4ff;
 }
 
 .tarjeta__aprende h4{
     padding: 20px;
-    color: #8075ff;
+    color: #6320ee;
 }
 
 .tarjeta__aprende p{
@@ -458,7 +458,7 @@ input:checked + .slider:before {
     display: block;
     margin-top: 30px;
     margin: 20px auto;
-    border: 1px solid rgb(243, 243, 243);
+    border: 1px solid #ede4ff;
 }
 
 .tarjeta__aprende a:hover{
@@ -657,8 +657,6 @@ h5.javascript__tag{
     top: 8px;
 }
 
-
-
 .decor__bar.javascript{
     background: #f0db4f;
     width: 100%;
@@ -792,12 +790,7 @@ ul.breadcrumb li a {
 /* Fading animation */
 .fade {
   animation-name: fade;
-  animation-duration: 2.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: 0} 
-  to {opacity: 1}
+  animation-duration: 3s;
 }
 
 @keyframes fade {
@@ -906,6 +899,22 @@ ul.breadcrumb li a {
 #clases__privadas p{
     margin: 50px;
     text-align: center;
+}
+
+#clases__privadas h4{
+    color: var(--resaltado);
+    text-align: center;
+}
+
+#clases__privadas ul{
+    margin: 20px;
+}
+
+
+#clases__privadas ul li{
+    text-align: center;
+    padding: 5px;
+    list-style-type: none;
 }
 
 .precio__clase{
