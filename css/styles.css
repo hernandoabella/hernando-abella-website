@@ -1010,7 +1010,6 @@ ul.breadcrumb li a {
     flex-wrap: wrap;
     -ms-flex-align: stretch;
     align-items: stretch;
-    width: 100%;
 }
 
 .fcf-form-control {
@@ -1058,7 +1057,7 @@ textarea.fcf-form-control {
 
 #contacto form{
     margin: auto;
-    width: 100%;
+    width: 500px;
     padding: 20px;
     background: #6320ee;
     color: rgb(68, 63, 63);
@@ -1133,10 +1132,7 @@ form textarea, input{
     justify-content: space-evenly;
 }
 
-.contactFlex > div{
-    width: 50%;
-    padding: 20px;
-}
+
 
 .contactFlex img{
     width: 100%;
