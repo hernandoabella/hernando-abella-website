@@ -11,7 +11,7 @@ let panel = document.querySelector('.ul');
 const typedTextSpan = document.querySelector('.typed-text');
 const cursorSpan = document.querySelector('.cursor');
 
-const textArray = ['Desarrollador Web', 'Músico', 'Youtuber'];
+const textArray = ['Hernando', 'Diseñador', 'Artista'];
 const typingDelay = 150;
 const erasingDelay = 90;
 const newTextDelay = 2000;

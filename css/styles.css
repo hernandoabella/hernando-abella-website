@@ -7,6 +7,9 @@
     --color-texto: rgb(0, 0, 0);
     --color-principal: #6320ee;
     --resaltado: #ee2f5c;
+    --cream: #EAECEF;
+    --black: #3E4147;
+    --orange: #CC4425;
 }
 
 /* ---------------- variables ------------------- */
@@ -52,6 +55,26 @@ hr{
     width: 70%;
     margin: auto;
     border: 1px solid rgb(243, 243, 243);
+}
+
+.typed-text {
+    color: var(--orange);
+}
+
+.cursor {
+    width: 3px;
+    background: #6320ee;
+    display: inline-block;
+    margin-left: 2px;
+    animation: blink 1s infinite;
+}
+.cursor.typing {
+    animation: none;
+}
+@keyframes blink {
+    0% { background: var(--color-principal); }
+    50% { background: var(--cream); }
+    100% { background: var(--color-principal); }
 }
 
 /* ---------------- estilos principales ------------------- */
