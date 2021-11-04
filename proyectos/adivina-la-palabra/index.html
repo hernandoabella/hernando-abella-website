@@ -1,0 +1,281 @@
+<!-- Made by Hernando Abella -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina la Palabra</title>
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Mr+Dafoe|Nothing+You+Could+Do|Yellowtail|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="./component.css">
+    <link rel="stylesheet" href="/temaPrism.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body>
+    <div class="backbar">
+        <a href="/proyectos/"><i class="fas fa-arrow-left"></i></a>
+    </div>
+
+    <section class="codigo__del__proyecto">
+        <div class="app__background">
+            <div class="app__container">
+                
+                <!-- app code goes here -->
+
+                <div class="s">
+                <div class="container">
+                  <h1 class="title">🔮 Adivina la Palabra</h1>
+                  <p><h3 id="welcome" class="blink">¡Presiona cualquier tecla para empezar!</h5></p>
+                  <br>
+                  <div class="wordStuff"><h4>Palabra: <span id="currentWord"></span></h5></div>
+                  <br>
+                  <div class="necesitoEspacio"><h4>Palabras Adivinadas: <span id="totalWins" class="varColor"></span></h6></div>
+                  <div class="necesitoEspacio"><h4>Intentos Restantes: <span id="remainingGuesses" class="varColor"></span></h6></div>
+                  <div class="necesitoEspacio"><h4>Letras Usadas: <span id="guessedLetters" class="varColor"></span></h6></div>
+              </div>
+
+                </div>
+                
+                <!-- app code goes here -->
+
+            </div>
+        </div>        
+        <section class="contenido__proyecto">
+            <h1 class="h1">🔮 Adivina la Palabra</h1>
+        <br>
+        <p>⚡ Adivine la palabra para ganar el juego.</p>
+        <br>
+        <p><b>Dificultad:</b> ★★★☆☆</p>
+        <br>
+        <div class="flexNav">
+            <ul class="breadcrumb">
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/proyectos">Proyectos</a></li>
+                <li>Adivina la Palabra</li>
+            </ul>
+        
+            <div class="download">
+                <a href="../sistema-para-ordenar-pizzas.rar" download><i class="fas fa-download"></i></a>
+                <a href="#">YouTube</a>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="code__container">
+            <h5 class="html__tag">HTML</h5>
+            <div class="panel">
+                    <div class="codigo__htmlt">
+                        <div class="decor__bar html"></div>
+                        <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;&#x1F383; Fiesta de Halloween&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;./styles.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;form class=&quot;form&quot;&gt;
+  
+  &lt;h1&gt;&#x1F383; Fiesta de Halloween&lt;/h1&gt;
+  
+  &lt;div class=&quot;signup__field&quot;&gt;
+    &lt;label for=&quot;halloween_name&quot; class=&quot;label&quot;&gt;&lt;b&gt;Nombre:&lt;/b&gt;&lt;/label&gt;
+    &lt;input type=&quot;text&quot; name=&quot;halloween_name&quot; id=&quot;halloween_name&quot; class=&quot;name_field&quot; maxlength=&quot;20&quot; placeholder=&quot;Por favor ingresa tu nombre.&quot; /&gt;
+  &lt;/div&gt;
+
+  &lt;fieldset&gt;
+
+    &lt;legend&gt;Detalles:&lt;/legend&gt;
+
+    &lt;div class=&quot;signup__field&quot;&gt;
+      &lt;label class=&quot;label&quot; for=&quot;costume_type&quot;&gt;&iquest;Qu&eacute; clase de disfr&aacute;z est&aacute;s usando?&lt;/label&gt;
+      &lt;div class=&quot;select-field&quot;&gt;
+        &lt;select name=&quot;costume_type&quot; id=&quot;costume_type&quot; class=&quot;select-field__menu&quot;&gt;
+          &lt;option&gt;Elige uno&lt;/option&gt;
+          &lt;option value=&quot;monster&quot;&gt;Monstruo&lt;/option&gt;
+          &lt;option value=&quot;spellcaster&quot;&gt;Hechicero&lt;/option&gt;
+          &lt;option value=&quot;vampire&quot;&gt;Vampiro&lt;/option&gt;
+          &lt;option value=&quot;ghost&quot;&gt;Fantasma&lt;/option&gt;
+          &lt;option value=&quot;zombie&quot;&gt;Zombie&lt;/option&gt;
+          &lt;option value=&quot;pop_culture&quot;&gt;Referencia de la cultura pop&lt;/option&gt;
+          &lt;option value=&quot;other&quot;&gt;Otro&lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;signup__field&quot;&gt;
+      &lt;div class=&quot;label&quot;&gt;&iquest;Prefieres dulces o trucos?&lt;/div&gt;
+      &lt;input type=&quot;radio&quot; value=&quot;tricks&quot; id=&quot;tricks&quot; name=&quot;prefers&quot; checked=&quot;checked&quot; /&gt;
+      &lt;label for=&quot;tricks&quot;&gt;Trucos&lt;/label&gt;
+      &lt;input type=&quot;radio&quot; value=&quot;treats&quot; id=&quot;treats&quot; name=&quot;prefers&quot; /&gt;
+      &lt;label for=&quot;treats&quot;&gt;Dulces&lt;/label&gt;
+      
+    &lt;/div&gt;
+  &lt;/fieldset&gt;
+
+  &lt;div class=&quot;signup__field&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;bringing_snacks&quot; name=&quot;bringing_snacks&quot; /&gt;
+    &lt;label for=&quot;bringing_snacks&quot;&gt;Me ofrezco de voluntario para traer un refrigerio.&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;signup__button&quot;&gt;
+    &lt;button class=&quot;button&quot; type=&quot;submit&quot;&gt;Enviar&lt;/button&gt;
+  &lt;/div&gt;
+
+&lt;/form&gt;
+
+&lt;div id=&quot;name-tag&quot;&gt;
+  &lt;h1&gt;Hola mi nombre es&lt;/h1&gt;
+  &lt;p id=&quot;namefield&quot;&gt;Hernando&lt;/p&gt;
+  &lt;p id=&quot;costume&quot;&gt;Se supone que soy un Vampire&lt;/p&gt;
+  &lt;p id=&quot;prefer&quot;&gt;Yo prefiero&lt;/p&gt;
+  &lt;p id=&quot;snack&quot;&gt;No hay bocadillos, as&iacute; que c&oacute;meme&lt;/p&gt;
+  &lt;p class=&quot;present&quot;&gt;&iexcl;Muestra esta tarjeta en la puerta!&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;script src=&quot;./script.js&quot;&gt;&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+            
+            <hr>
+
+            <h5 class="css__tag">CSS</h5>
+            <div class="panel">
+                    <div class="codigo__css">
+                        <div class="decor__bar css"></div>
+                        <pre class="line-numbers"><code class="language-css">body{
+    background: rgb(6, 6, 6);
+}
+
+h1{
+    font-family: 'Lakki Reddy', cursive;
+    text-shadow: 4px 4px 10px orange;
+    text-align: center;
+}
+
+form{
+    border-radius: 20px;
+    padding: 1.5rem;
+    border: 1px solid orange;
+    background: #fbf4e0;
+    box-shadow: 7px 14px 20px hsl(0 0% 0% / 20%);
+    width: 400px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.button {
+    width: 100%;
+    height: 4vh;
+    outline: none;
+    border: none;
+    color: white;
+    background: orangered;
+    font-family: inherit;
+    font-size: inherit;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+  
+#name-tag {
+    width: 340px;
+    border: 2px solid orange;
+    background: #fbf4e0;
+    box-shadow: 7px 14px 20px hsl(0 0% 0% / 20%);
+    display: none;
+    text-align: center;
+    float: right;
+}
+
+.signup__field{
+    padding: 10px;
+}
+
+.label{
+    padding-bottom: 5px;
+}
+
+input[type="text"]{
+    width: 306px;
+}
+
+#costume_type{
+    margin-top: 5px;
+}</code></pre></div>
+                </div>
+
+            <hr>
+
+            <h5 class="javascript__tag">JAVASCRIPT</h5>
+            
+            <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar javascript"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const form = document.querySelector("form");
+const namefield = document.getElementById("namefield");
+const prefer = document.getElementById("prefer");
+const costume = document.getElementById("costume");
+
+form.addEventListener("submit", (event) => {
+    
+  let name = document.getElementById("halloween_name").value;
+  
+  if (name.length > 0) {
+    namefield.innerHTML = name;
+  } else {
+    namefield.innerHTML = "No se quien soy.";
+  }
+
+  let select = document.getElementById("costume_type");
+  let text = select.options[select.selectedIndex].text;
+
+  if (text == "Elige uno" || text == "Otro") {
+    costume.innerHTML = "¡No sé quién se supone que debo ser!";
+  } else {
+    costume.innerHTML = `Se supone que soy un ${text}`;
+  }
+
+  if (document.getElementById("treats").checked) {
+    prefer.innerHTML = "¡Prefiero dulces!";
+  } else {
+    prefer.innerHTML = "¡Prefiero trucos!";
+  }
+
+  let snack = document.getElementById("snack");
+  snack.innerHTML = "¡No hay bocadillos, así que cómeme!";
+
+  if (document.getElementById("bringing_snacks").checked) {
+    snack.innerHTML = "¡Traigo bocadillos!";
+  }
+
+  document.getElementById("name-tag").style.display = "block";
+  form.reset();
+  event.preventDefault();
+  
+});
+</code></pre></div>
+                </div>
+        </div>
+        </section>
+        
+    </section>
+
+    <footer>
+        <p>&copy; 2021 Hernando Abella</p>
+    </footer>
+
+    <!--Scripts-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+    <script src="./component.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
