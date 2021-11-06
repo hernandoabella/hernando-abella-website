@@ -1,4 +1,4 @@
-/* CSS by Hernando Abella */
+/* CSS styles by Hernando Abella */
 
 /* ---------------- variables ------------------- */
 
@@ -68,9 +68,11 @@ hr{
     margin-left: 2px;
     animation: blink 1s infinite;
 }
+
 .cursor.typing {
     animation: none;
 }
+
 @keyframes blink {
     0% { background: var(--color-principal); }
     50% { background: var(--cream); }
@@ -395,6 +397,11 @@ input:checked + .slider:before {
     border: 5px dashed #465362;
 }
 
+.aprende__conmigo h1{
+    margin: 20px;
+    color: var(--color-principal);
+}
+
 .aprende__conmigo h2{
     text-align: center;
     color: var(--color-principal);
@@ -424,6 +431,7 @@ input:checked + .slider:before {
     color: var(--color-principal);
     background: transparent;
 }
+
 
 .html__logo{
     width: 100px;
@@ -924,7 +932,7 @@ ul.breadcrumb li a {
     text-align: center;
 }
 
-#clases__privadas h4{
+#clases__privadas h3{
     color: var(--resaltado);
     text-align: center;
 }
@@ -938,16 +946,17 @@ ul.breadcrumb li a {
     text-align: center;
     padding: 5px;
     list-style-type: none;
+    color: var(--color-principal);
 }
 
 .precio__clase{
     background: var(--color-principal);
     color: #fff;
-    margin: auto;
     width: 200px;
     padding: 10px;
     margin-bottom: 40px;
     text-align: center;
+    
 }
 
 /* ---------------- clases privadas ------------------- */

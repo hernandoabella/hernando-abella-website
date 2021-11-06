@@ -1,3 +1,5 @@
+// Scripts by Hernando Abella
+
 // ________________ VARIABLES ________________
 
 let toggleSwitch = document.querySelector('.slider'); 

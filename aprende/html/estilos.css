@@ -38,10 +38,8 @@ aside{
 }
 
 aside.sideBar{
-    width: 20%;
     height: 400px;
-    position: fixed;
-    top: 80px;
+    width: 600px;
 }
 
 aside ul li{
@@ -68,10 +66,6 @@ aside ul li a:hover{
 }
 
 .articles{
-    width: 80%;
-    position: absolute;
-    right: 0;
-    top: 55px;
     padding: 20px;
 }
 
