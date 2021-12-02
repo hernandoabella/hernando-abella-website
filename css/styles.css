@@ -44,6 +44,11 @@ h1, h2, h3{
 
 .redes__sociales a{
     margin-right: 10px;
+    transition: .3s;
+}
+
+.redes__sociales a:hover{
+    opacity: .5;
 }
 
 #front__page{
@@ -52,19 +57,34 @@ h1, h2, h3{
 
 .one{
     width: 50%;
-    padding: 100px;
-    margin: auto;
 }
 
 .one img{
-    width: 300px;
-    height: auto;
     border-radius: 100%;
-    margin: auto;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
 }
 
 .two{
-    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+.navegacion{
+    margin-top: 20px;
+}
+
+.navegacion a{
+    display: block;
+    margin-top: 10px;
+    transition: .3s;
+}
+
+.navegacion a:hover{
+    opacity: .5;
 }
 
 /* ---------------- estilos principales ------------------- */
