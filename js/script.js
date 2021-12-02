@@ -1,13 +1,3 @@
-// Scripts by Hernando Abella
-
-// ________________ VARIABLES ________________
-
-let toggleSwitch = document.querySelector('.slider'); 
-let burger = document.querySelector('.menu__hamburguesa');
-let panel = document.querySelector('.ul');
-
-// ________________ VARIABLES ________________  
-
 // ________________ EFECTO DE TIPADO ________________  
 
 const typedTextSpan = document.querySelector('.typed-text');
@@ -63,34 +53,3 @@ document.addEventListener('DOMContentLoaded', () =>{
 })
 
 // ________________ EFECTO DE TIPADO ________________  
-
-
-// ________________ STICK NAV ONSCROLL ________________  
-
-window.onscroll = function() {myFunction2()};
-
-var navbar = document.getElementById("myTopnav");
-var sticky = navbar.offsetTop;
-
-function myFunction2() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-    navbar.style.boxShadow = 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px';
-    
-  } else {
-    navbar.classList.remove("sticky");
-  }
-}
-
-// ________________ STICK NAV ONSCROLL ________________  
-
-
-// ________________ MENÚ HAMBURGUESA ________________
-
-burger.addEventListener('click', () => {
-  burger.classList.toggle('change');
-  panel.classList.toggle('change');
-});
-
-// ________________ MENÚ HAMBURGUESA ________________ 
-  
