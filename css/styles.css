@@ -1,9 +1,15 @@
 /* CSS styles by Hernando Abella */
 
+/* ---------------- Fuentes ------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* ---------------- Fuentes ------------------- */
+
 /* ---------------- variables ------------------- */
 
 :root{
-    --color-principal: #6320ee;
+    --color-principal: #400ca9;
 }
 
 /* ---------------- variables ------------------- */
@@ -18,535 +24,47 @@
 
 body{
     font-family: sans-serif;
+    font-size: 1.3em;
     background: var(--color-fondo);
     color: var(--color-texto);
 }
 
-/* ---------------- estilos principales ------------------- */
-
-/* ---------------- proyectos ------------------- */
-
-.card__icon img{
-    width: 100px;
-}
-
-.flex__sake{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row-reverse;
-    padding: 20px;
-    font-size: .9em;
-}
-
-.proyectos{
-    padding-bottom: 50px;
-}
-
-.proyectos hr{
-    width: 100px;
-    border-width: 2px;
-    border: 5px solid #465362;
-    margin: auto;
-}
-
-.proyectos h2{
-    text-align: center;
-    margin: 50px;
+a{
     color: var(--color-principal);
-    font-size: 2em;
 }
 
-.proyectos h3{
-    clear: both;
-}
-
-.proyectos > p{
-    margin: 50px;
-    text-align: center;
-}
-
-.proyectos .ver__mas{
-    border: 1px solid #ede4ff;
-    color: #6320ee;
-    padding: 10px;
-    display: block;
-    text-align: center;
-    margin: 60px auto;
-    transition: .3s;
-    width: 180px;
-}
-
-.proyectos .ver__mas:hover{
-    background: #6320ee;
-    color: #fff;
-}
-
-.tarjeta__proyectos{
-    border: 2px solid #ede4ff;
-    color: #000;
-    border-radius: 25px;
-    
-}
-
-.tarjeta__proyectos i{
-    color: #8075ff;
-    line-height: 5px;
-}
-
-.tarjeta__proyectos h3{
-    text-align: center;
+i{
     color: var(--color-principal);
-    padding: 0px 0px 25px 0px;
 }
 
-.tarjeta__proyectos p{
-    margin: 20px;
-    line-height: 30px;
+h1, h2, h3{
+    color: var(--color-principal);
+    font-family: 'Poppins', sans-serif;
 }
 
-.tarjeta__proyectos a{
-    color:#fff;
-    background: #6320ee;
-    transition: .3s;
-    display: block;
-    width: 150px;
-    margin: 20px auto;
-    border-radius: 100px;
-    padding: 10px;
-}
-
-.tarjeta__proyectos a:hover{
-    background: #cd43ff;
-    color: #fff;
-}
-
-.informacion__proyecto h4{
-    margin-top: 70px;
-}
-
-.informacion__proyecto p{
-    margin-top: 20px;
-}
-
-
-.informacion__proyecto a{
-    background: #222;
-    color: #fff;
-    padding: 10px;
-    display: block;
-    border-radius: 5px;
-    text-align: center;
-    margin: 60px auto;
-    transition: .3s;
-    width: 330px;
-}
-
-.informacion__proyecto a:hover{
-    background: #000;
-}
-
-.estrellas__de__dificultad > img{
-    width: 15px;
-    height: 15px;
-}
-
-h5.html__tag{
-    background: #e34c26;
-    color: #fff;
-    display: inline-block;
-    text-align: center;
-}  
-
-h5.css__tag{
-    background: #264de4;
-    color: #fff;
-    text-align: center;
-    display: inline-block;
-}
-
-h5.javascript__tag{
-    background: #f0db4f;
-    color: #323330;
-    text-align: center;
-    display: inline-block;
-}
-
-
-.decor__bar.html{
-    background: #e34c26;
-    width: 100%;
-    height: 5px;
-    position: relative;
-    top: 8px;
-}
-
-.decor__bar.css{
-    background: #264de4;
-    width: 100%;
-    height: 5px;
-    position: relative;
-    top: 8px;
-}
-
-.decor__bar.javascript{
-    background: #f0db4f;
-    width: 100%;
-    height: 5px;
-    position: relative;
-    top: 8px;
-}
-
-.decor__bar.php{
-    background: #B0B3D6;
-    width: 100%;
-    height: 5px;
-    position: relative;
-    top: 15px;
-}
-
-.decor__bar.mysql{
-    background: #00758F;
-    width: 100%;
-    height: 5px;
-    position: relative;
-    top: 15px;
-}
-
-.code__container hr{
-    border: 1px dashed rgb(213, 213, 213);
-    margin: 50px auto;
-    width: 100%;
-}
-
-.code__container h5{
-    padding: 5px;
-}
-
-.download{
-    display: flex;
-    width: 135px;
-}
-
-.download a{
-    background: #8075ff;
-    color: #fff;
-    padding: 10px;
-    display: block;
-    text-align: center;
-    transition: .3s;
+.redes__sociales a{
     margin-right: 10px;
-    border-radius: 5px;
 }
 
-.download a:hover{
-    background: #6320ee;
+#front__page{
+    display: flex;
 }
 
-
-/* Style the list */
-ul.breadcrumb {
-    list-style: none;
-    margin-top: 10px;
-}
-  
-/* Display list items side by side */
-ul.breadcrumb li {
-    display: inline;
-    font-size: 18px;
-}
-  
-/* Add a slash symbol (/) before/behind each list item */
-ul.breadcrumb li+li:before {
-    padding: 8px;
-    color: black;
-    content: "/\00a0";
-}
-  
-/* Add a color to all links inside the list */
-ul.breadcrumb li a {
-    color: #8075ff;
-    text-decoration: none;
-    transition: .3s;
-}
-  
-/* Add a color on mouse-over */
-  ul.breadcrumb li a:hover {
-    color: #6320ee;
-}
-
-@media only screen and ( max-width: 768px ){
-    .codigo__html{
-        width: 100%;
-    }
-    
-    .codigo__css{
-        width: 100%;
-    }
-    
-    .codigo__javascript{
-        width: 100%;
-    }
-    
-    .demostracion{
-        width: auto;
-    }
-    
-    
-    .code__container{
-        width: 100%;
-    }
-
-    .download a{
-        margin-top: 20px;
-    }
-
-    
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background: #9560ff;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.activo{
-    background: var(--color-principal);
-}
-
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 3s;
-}
-
-@keyframes fade {
-  from {opacity: 0} 
-  to {opacity: 1}
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .text {font-size: 11px}
-} 
-
-
-/* ---------------- proyectos ------------------- */
-
-/* ---------------- snippets ------------------- */
-
-.snippets{
-    padding-bottom: 50px;
-}
-
-.snippets h2{
-    text-align: center;
-    color: var(--color-principal);
-    font-size: 2em;
-    padding-top: 50px;
-}
-
-.snippets p{
-    text-align: center;
-    padding: 50px;
-}
-
-.snippets .ver__mas{
-    border: 1px solid var(--color-principal);
-    color: var(--color-principal);
-    transition: .3s;
-    padding: 10px;
-    display: block;
-    width: 130px;
-    text-align: center;
-    margin: 50px auto;
-    border-radius: 25px;
-}
-
-.snippets .ver__mas:hover{
-    background: var(--color-principal);
-    color: rgb(255, 255, 255);
-}
-
-.snippets hr{
-    width: 100px;
-    border: 5px dashed #465362;
+.one{
+    width: 50%;
+    padding: 100px;
     margin: auto;
 }
 
-.tarjeta__snippets{
+.one img{
     width: 300px;
-    color: var(--color-principal);
-    padding: 20px;
-    border: 2px solid rgb(243, 243, 243);
-    border-radius: 25px;
-}
-
-.tarjeta__snippets h3{
-    text-align: center;
-    font-size: 1.3em;
-}
-
-.tarjeta__snippets p{
-    padding: 0;
-    margin-bottom: 20px;
-}
-
-.tarjeta__snippets img{
-    width: 100px;
-    margin: 20px;
-}
-
-.tarjeta__snippets a{
-    text-align: center;
-    color: #fff;
-    background: var(--color-principal);
-    padding: 10px;
-    transition: .3s;
-    width: 100%;
-    display: block;
-}
-
-.tarjeta__snippets a:hover{
-    background: #457b9d;
-    color: #fff;
-}
-
-/* ---------------- snippets ------------------- */
-
-/* ---------------- estilos generales ------------------- */
-
-.next-js{
-    width: 130px !important;
-}
-
-.img__center{
-    margin: 50px auto;
-    width: 120px;
-}
-
-.img__center img{
-    width: 140px;
-}
-
-.image__article{
-    width: 350px;
-    margin: 30px auto;
-}
-
-.image__article img{
-    width: 100%;
-    
-}
-
-.crowCentral{
-    padding: 20px 100px;
-}
-
-.btnFlex{
-    display: flex;
-}
-
-.backbar{
-    padding: 10px;
-    background: #fff;
-    border-bottom: 1px solid rgb(243, 243, 243);
-    color: #000;
-}
-
-.fa-arrow-left{
-    color: #000;
-    transition: .3s;
-    padding: 10px;
+    height: auto;
     border-radius: 100%;
-    border: 5px solid #fff;
+    margin: auto;
 }
 
-.fa-arrow-left:hover{
-    border: 5px solid #8075FF;
-    color: #8075FF;
-    transform: rotate(360deg);
+.two{
+    margin: auto;
 }
 
-.introduccion__aprende{
-    margin: 50px;
-    text-align: center;
-}
-
-.introduccion__aprende h2{
-    margin: 20px;
-    font-size: 2em;
-}
-
-.panel__de__cursos{
-    margin: 40px;
-}
-
-.curso{
-    border: 3px solid #000;
-}
-
-.curso a{
-    background: #000;
-    color: #fff;
-    border-radius: 5px;
-    padding: 10px;
-    display: block;
-    margin: 40px auto;
-    width: 30%;
-    text-align: center;
-    transition: .3s;
-}
-
-.curso a:hover{
-    transform: scale(2);
-}
-
-.curso img{
-    margin: 20px;
-}
-
-.row {
-    display: flex;
-}
-  
-.column {
-    display: flex;
-    width: 33.33%;
-    padding: 10px;
-    text-align: center;
-}
-
-.column > div{
-    width: 100%;
-}
-
-.flexNav{
-    display: flex;
-    justify-content: space-between;
-}
-
-
-@media only screen and ( max-width: 768px ){
-    .row{
-        flex-direction: column;
-    }
-    
-    .column{
-        width: 100%;
-    }
-
-    .flexNav{
-        flex-direction: column;
-    }  
-
-    .crowCentral{
-        padding: 20px 20px;
-    }
-}
-
-/* ---------------- estilos generales ------------------- */
+/* ---------------- estilos principales ------------------- */
