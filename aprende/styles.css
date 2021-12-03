@@ -1,6 +1,6 @@
 .tree-diagram{
-    margin: 20px auto;
-    width: 400px;
+    margin: auto;
+    width: 270px;
 }
 
 .tree-diagram img{
@@ -12,7 +12,7 @@
 .tree-diagram ul {
     display: flex;
     position: relative;
-
+    
     /* Reset */
     list-style-type: none;
     margin: 0;
@@ -82,6 +82,3 @@ li.tree-diagram__root::before {
     border-right: none;
 }
 
-footer{
-    padding: 20px !important;
-}

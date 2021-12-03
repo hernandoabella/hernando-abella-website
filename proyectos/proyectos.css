@@ -1,70 +1,16 @@
-.searchBar {
-    border-radius: 5px;
-    margin: 20px auto;
-    padding: 10px;
+body{
+  background: #100526;
 }
-  
-  .searchBar > input {
-    padding: 10px;
-    border-radius: 5px;
-    width: 300px;
-    float: right;
-    margin-bottom: 20px;
-  }
 
-  .rowContainer{
-    clear: both;
-  }
-  
-  
-  .pagination {
-    margin: 50px auto;
-    width: 300px;
-    text-align: center;
-    padding: 10px;
-  }
-  
-  .pagination a {
-    padding: 10px;
-    transition: .3s;
-    text-decoration: none;
-  }
-  
-  .pagination a:hover {
-    background: #1d3557;
-    color: #fff;
-    border-radius: 5px;
-  }
-  
-  .pagActive {
-    background: #1d3557;
-    color: #fff;
-    border-radius: 5px;
-  }
-  
-  .row {
-    display: flex;
-  }
-  
-  .column {
-    width: 33.33%;
-    padding: 10px;
-  }
+header a{
+  color: #fff;
+}
 
-  section{
-    padding-bottom: 0px !important;
-  }
+footer{
+  color: #fff;
+  padding: 20px;
+}
 
-  section p{
-    line-height: 25px;
-  }
-
-  footer{
-    padding: 20px !important;
-  }
-
-  @media screen and (max-width: 500px) {
-    .column {
-      width: 100%;
-    }
-  }
+footer p{
+  text-align: center;
+}

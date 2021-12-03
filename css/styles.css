@@ -10,6 +10,7 @@
 
 :root{
     --color-principal: #400ca9;
+    --sombra-de-caja: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 /* ---------------- variables ------------------- */
@@ -31,6 +32,7 @@ body{
 
 a{
     color: var(--color-principal);
+    text-decoration: none;
 }
 
 i{
@@ -88,3 +90,92 @@ h1, h2, h3{
 }
 
 /* ---------------- estilos principales ------------------- */
+
+/* ---------------- nueva navegacion sencilla ------------------- */
+
+header{
+    padding: 20px;
+}
+
+header ul{
+    padding: 0;
+    margin: 0;
+}
+
+header ul li{
+    list-style-type: square;
+    display: inline-block;
+}
+
+header a{
+    transition: .3s;
+    margin-right: 10px;
+}
+
+header a:hover{
+    opacity: .3;
+}
+
+/* ---------------- nueva navegacion sencilla ------------------- */
+
+/* ---------------- Proyectos ------------------- */
+
+.fila{
+    display: flex;
+}
+
+.columna{
+    width: 33.33%;
+    padding: 20px;
+}
+
+.tarjeta__proyectos{
+    background: #35235b;
+    padding: 10px;
+    text-align: center;
+    box-shadow: var(--sombra-de-caja);
+    transition: .3s;
+}
+
+.tarjeta__proyectos:hover{
+    opacity: .5;
+}
+
+.tarjeta__proyectos img{
+    width: 100px;
+}
+
+.tarjeta__proyectos a{
+    display: block;
+    margin: 10px;
+    padding: 10px;
+    background: rgb(132, 20, 117);
+    color: #fff;
+    text-align: center;
+    transition: .3s;
+}
+
+.tarjeta__proyectos a:hover{
+    opacity: .5;
+}
+
+.tarjeta__proyectos h3{
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    color: #fff;
+}
+
+.top__header{
+    padding: 10px;
+}
+
+.estrellas{
+    padding: 20px;
+}
+
+.estrellas i{
+    color: #fff;
+}
+
+/* ---------------- Proyectos ------------------- */
