@@ -178,4 +178,53 @@ header a:hover{
     color: #fff;
 }
 
+.html__tag{
+    background-color: orange;
+    display: inline;
+    padding: 10px;
+}
+
+.css__tag{
+    background-color: rgb(13, 0, 255);
+    display: inline;
+    padding: 10px;
+
+}
+
+.javascript__tag{
+    background-color: rgb(223, 198, 5);
+    display: inline;
+    padding: 10px;
+}
+
+hr{
+    margin: 30px;
+    border: 5px dashed #322931;
+}
+
+.descarga{
+    background: var(--color-principal);
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.descarga:hover{
+    opacity: .5;
+}
+
+.youtube{
+    background: #c4302b;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.youtube:hover{
+    opacity: .5;
+}
+
+.youtube i{
+    color: #fff;
+}
+
 /* ---------------- Proyectos ------------------- */
