@@ -118,7 +118,7 @@ header a:hover{
 
 /* ---------------- nueva navegacion sencilla ------------------- */
 
-/* ---------------- Proyectos ------------------- */
+/* ---------------- Practica ------------------- */
 
 .fila{
     display: flex;
@@ -179,27 +179,30 @@ header a:hover{
 }
 
 .html__tag{
-    background-color: orange;
+    background-color: #E34C26;
+    color: #fff;
     display: inline;
     padding: 10px;
 }
 
 .css__tag{
-    background-color: rgb(13, 0, 255);
+    background-color: #264de4;
+    color: #fff;
     display: inline;
     padding: 10px;
 
 }
 
 .javascript__tag{
-    background-color: rgb(223, 198, 5);
+    background-color: #F0DB4F;
+    color: #323330;
     display: inline;
     padding: 10px;
 }
 
 hr{
-    margin: 30px;
-    border: 5px dashed #322931;
+    margin: 50px 0px;
+    border: 3px solid #322931;
 }
 
 .descarga{
@@ -207,6 +210,7 @@ hr{
     color: #fff;
     padding: 10px;
     border-radius: 50%;
+    transition: .3s;
 }
 
 .descarga:hover{
@@ -217,6 +221,7 @@ hr{
     background: #c4302b;
     padding: 10px;
     border-radius: 50%;
+    transition: .3s;
 }
 
 .youtube:hover{
@@ -227,4 +232,44 @@ hr{
     color: #fff;
 }
 
-/* ---------------- Proyectos ------------------- */
+/* ---------------- Practica ------------------- */
+
+/* ---------------- Aprende ------------------- */
+
+.html{
+    background: #E34C26;
+    color: #000;
+    padding: 10px;
+}
+
+.css{
+    background: #264de4;
+    color: #fff;
+    padding: 10px;
+}
+
+.javascript{
+    background: #F0DB4F;
+    color: #323330;
+    padding: 10px;
+}
+
+.react{
+    background: #61DBFB;
+    color: #000;
+    padding: 10px;
+}
+
+.angular{
+    background: #a6120d;
+    color: #fff;
+    padding: 10px;
+}
+
+.vue{
+    background: #41B883;
+    color: #000;
+    padding: 10px;
+}
+
+/* ---------------- Aprende ------------------- */

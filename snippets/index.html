@@ -30,7 +30,7 @@
     </header>
     <section class="snippets">
         <h1>Snippets</h1>
-        <p>Colección de fragmentos de códigos de JavaScript para todas tus necesidades de desarrollo.</p>
+        <p>Colección de fragmentos de códigos para todas tus necesidades de desarrollo.</p>
         <div class="panel__de__codigos">
             
                     <div class="ribbon__shet">
@@ -44,7 +44,7 @@
 
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const lanzarArreglo = valor => Array.isArray(valor) ? valor : [valor];
     
 // Ejemplos
@@ -55,7 +55,7 @@ lanzarArreglo([1, 2, 3]);       // [1, 2, 3]</code></pre></div>
                     <h3>Comprueba si un arreglo esta vacío</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// `arreglo` es un arreglo
 const estaVacio = arreglo => !Array.isArray(arreglo) || arreglo.length === 0;
     
@@ -67,7 +67,7 @@ estaVacio([1, 2, 3]);     // false</code></pre></div>
                     <h3>Clona un arreglo</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// `arreglo` es un arreglo
 const clonar = arreglo => arreglo.slice(0);
     
@@ -90,7 +90,7 @@ const clonar = arreglo => arreglo.concat([]);</code></pre></div>
                     <h3>Compara dos arreglo</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// `a` y `b` son arreglos
 const esIgual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
@@ -105,7 +105,7 @@ esIgual([1, 2, 3], [1, '2', 3]);    // false</code></pre></div>
                     <h3>Compara dos arreglos sin importar el orden</h3> 
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// `a` y `b` son arreglos
 const esIgual = (a, b) => JSON.stringify(a.sort()) === JSON.stringify(b.sort());
 
@@ -118,7 +118,7 @@ esIgual([1, 2, 3], [1, '2', 3]);    // false</code></pre></div>
                     <h3>Convierte un arreglo de objetos en un solo objeto</h3>  
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const aObjeto = (arreglo, clave) => arreglo.reduce((a, b) => ({ ...a, [b[clave]]: b }), {});
 
 // Ejemplos
@@ -142,7 +142,7 @@ aObjeto(
                     <h3>Convierte un arreglo de strings en números</h3> 
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const aNumeros = arreglo => arreglo.map(Number);
 
 // O
@@ -156,7 +156,7 @@ aNumeros(['2', '3', '4']);     // [2, 3, 4]</code></pre></div>
                     
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const countBy = (arr, prop) => arr.reduce((prev, curr) => (prev[curr[prop]] = ++prev[curr[prop]] || 1, prev), {});
 
 // Example
@@ -175,7 +175,7 @@ countBy([
                     
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
 
 // Or
@@ -190,7 +190,7 @@ countOccurrences(['a', 'b', 'a', 'c', 'a', 'b'], 'a');  // 3</code></pre></div>
                     
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const countOccurrences = arr => arr.reduce((prev, curr) => (prev[curr] = ++prev[curr] || 1, prev), {});
 
 // Examples
@@ -202,7 +202,7 @@ countOccurrences(['a', 'b', 'a', 'c', 'a', 'b']);   // { 'a': 3, 'b': 2, 'c': 1 
                     
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const accumulate = arr => arr.map((sum => value => sum += value)(0));
 
 // Or
@@ -223,7 +223,7 @@ accumulate([1, 2, 3, 4]);   // [1, 3, 6, 10]
                     
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const range = (min, max) => [...Array(max - min + 1).keys()].map(i => i + min);
 
 // Or
@@ -240,7 +240,7 @@ range(5, 10);   // [5, 6, 7, 8, 9, 10]</code></pre></div>
                     
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const cartesian = (...sets) => sets.reduce((acc, set) => acc.flatMap((x) => set.map((y) => [...x, y])), [[]]);
 
 // Example
@@ -259,7 +259,7 @@ cartesian([1, 2], [3, 4]);   // [ [1, 3], [1, 4], [2, 3], [2, 4] ]
                     <h3>Empty an array</h3> 
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const empty = arr => arr.length = 0;
 
 // Or
@@ -269,7 +269,7 @@ arr = [];</code></pre></div>
                     <h3 >Find the closest number from an array</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// Find the number from `arr` which is closest to `n`
 const closest = (arr, n) => arr.reduce((prev, curr) => Math.abs(curr - n) < Math.abs(prev - n) ? curr : prev);
 
@@ -284,7 +284,7 @@ closest([29, 87, 8, 78, 97, 20, 75, 33, 24, 17], 50);   // 33</code></pre></div>
                     <h3 >Find the index of the last matching item of an array</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const lastIndex = (arr, predicate) => arr.reduce((prev, curr, index) => predicate(curr) ? index : prev, -1);
 
 // Or
@@ -299,7 +299,7 @@ lastIndex([1, 3, 5, 7, 9, 8, 6, 4, 2], i => i > 6);         // 5</code></pre></d
                     <h3 >Find the index of the maximum item of an array</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const indexOfMax = arr => arr.reduce((prev, curr, i, a) => curr > a[prev] ? i : prev, 0);
 
 // Examples
@@ -310,7 +310,7 @@ indexOfMax([1, 3, 7, 7, 5]);        // 2</code></pre></div>
                     <h3 >Find the index of the minimum item of an array</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const indexOfMin = arr => arr.reduce((prev, curr, i, a) => curr < a[prev] ? i : prev, 0);
 
 // Examples
@@ -321,7 +321,7 @@ indexOfMin([6, 4, 2, 2, 10]);       // 2</code></pre></div>
                     <h3 >Find the length of the longest string in an array</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const findLongest = words => Math.max(...(words.map(el => el.length)));
 
 // Example
@@ -332,7 +332,7 @@ findLongest(['always','look','on','the','bright','side','of','life']);  // 6</co
                     <h3 >Find the maximum item of an array</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const max = arr => Math.max(...arr);</code></pre></div>
                     </div>
                
@@ -340,7 +340,7 @@ findLongest(['always','look','on','the','bright','side','of','life']);  // 6</co
                     <h3 >Find the maximum item of an array by given key</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const maxBy = (arr, key) => arr.reduce((a, b) => a[key] >= b[key] ? a : b, {});
 
 // Example
@@ -357,7 +357,7 @@ maxBy(people, 'age');   // { name: 'Foo', age: 42 }</code></pre></div>
                     <h3 >Find the minimum item of an array</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const min = arr => Math.min(...arr);</code></pre></div>
                     </div>
                
@@ -365,7 +365,7 @@ maxBy(people, 'age');   // { name: 'Foo', age: 42 }</code></pre></div>
                     <h3 >Find the minimum item of an array by given key</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const minBy = (arr, key) => arr.reduce((a, b) => a[key] < b[key] ? a : b, {});
 
 // Example
@@ -381,7 +381,7 @@ minBy(people, 'age');   // { name: 'Bar', age: 24 }</code></pre></div>
                     <h3 >Flatten an array</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const flat = arr => [].concat.apply([], arr.map(a => Array.isArray(a) ? flat(a) : a));
 // Or
 const flat = arr => arr.reduce((a, b) => Array.isArray(b) ? [...a, ...flat(b)] : [...a, b], []);
@@ -398,7 +398,7 @@ flat(['cat', ['lion', 'tiger']]);   // ['cat', 'lion', 'tiger']</code></pre></di
                     <h3 >Get all arrays of consecutive elements</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const getConsecutiveArrays = (arr, size) => size > arr.length ? [] : arr.slice(size - 1).map((_, i) => arr.slice(i, size + i));
 
 // Examples
@@ -411,7 +411,7 @@ getConsecutiveArrays([1, 2, 3, 4, 5], 6);   // []</code></pre></div>
                     <h3 >Get all n-th items of an array</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const getNthItems = (arr, nth) => arr.filter((_, i) => i % nth === nth - 1);
 
 // Examples
@@ -423,7 +423,7 @@ getNthItems([1, 2, 3, 4, 5, 6, 7, 8, 9], 3);    // [3, 6, 9]</code></pre></div>
                     <h3 >Get all subsets of an array</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const getSubsets = arr => arr.reduce((prev, curr) => prev.concat(prev.map(k => k.concat(curr))), [[]]);
 
 // Examples
@@ -435,7 +435,7 @@ getSubsets([1, 2, 3]);  // [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]
                     <h3 >Get indices of a value in an array</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const indices = (arr, value) => arr.reduce((acc, v, i) => (v === value ? [...acc, i] : acc), []);
 
 // Or
@@ -450,7 +450,7 @@ indices(['h', 'e', 'l', 'l', 'o'], 'w');    // []</code></pre></div>
                     <h3 >Get the average of an array</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const average = arr => arr.reduce((a, b) => a + b, 0) / arr.length;</code></pre></div>
                     </div>
                 
@@ -458,7 +458,7 @@ indices(['h', 'e', 'l', 'l', 'o'], 'w');    // []</code></pre></div>
                     <h3 >Get the intersection of arrays</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const getIntersection = (a, ...arr) => [...new Set(a)].filter(v => arr.every(b => b.includes(v)));
 
 // Examples
@@ -470,7 +470,7 @@ getIntersection([1, 2, 3], [2, 3, 4, 5], [1, 3, 5]);    // [3]</code></pre></div
                     <h3 >Get the rank of an array of numbers</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const ranking = (arr) => arr.map((x, y, z) => z.filter(w => w > x).length + 1);
 
 // Examples
@@ -483,7 +483,7 @@ ranking([80, 80, 80, 50]);      // [1, 1, 1, 4]</code></pre></div>
                     <h3 >Get the sum of an array of numbers</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const sum = arr => arr.reduce((a, b) => a + b, 0);</code></pre></div>
                     </div>
                
@@ -491,7 +491,7 @@ ranking([80, 80, 80, 50]);      // [1, 1, 1, 4]</code></pre></div>
                     <h3 >Get the unique values of an array</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const unique = arr => [...new Set(arr)];
 
 // Or
@@ -505,7 +505,7 @@ const unique = arr => arr.reduce((acc, el) => acc.includes(el) ? acc : [...acc, 
                     <h3 >Get union of arrays</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const union = (...arr) => [...new Set(arr.flat())];
 
 // Example
@@ -516,7 +516,7 @@ union([1, 2], [2, 3], [3]);     // [1, 2, 3]</code></pre></div>
                     <h3 >Group an array of objects by a key</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const groupBy = (arr, key) => arr.reduce((acc, item) => ((acc[item[key]] = [...(acc[item[key]] || []), item]), acc), {});
 
 // Example
@@ -549,7 +549,7 @@ groupBy([
                     <h3 >Merge two arrays</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// Merge but don't remove the duplications
 const merge = (a, b) => a.concat(b);
 // Or
@@ -565,7 +565,7 @@ const merge = [...new Set([...a, ...b])];</code></pre></div>
                     <h3 >Partition an array based on a condition</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const partition = (arr, criteria) => arr.reduce((acc, i) => (acc[criteria(i) ? 0 : 1].push(i), acc), [[], []]);
 
 // Example
@@ -587,7 +587,7 @@ removeDuplicate(['h', 'e', 'l', 'l', 'o', 'w', 'o', 'r', 'l', 'd']); //  ['h', '
                     <h3 >Remove falsy values from array</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const removeFalsy = arr => arr.filter(Boolean);
 
 // Example
@@ -599,7 +599,7 @@ removeFalsy([0, 'a string', '', NaN, true, 5, undefined, 'another string', false
                     </h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const shuffle = arr => arr.map(a => ({ sort: Math.random(), value: a })).sort((a, b) => a.sort - b.sort).map(a => a.value);
 
 // Or
@@ -613,7 +613,7 @@ shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);   // [9, 1, 10, 6, 8, 5, 2, 3, 7, 4]</
                     <h3 >Sort an array of items by given key</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const sortBy = (arr, k) => arr.concat().sort((a, b) => (a[k] > b[k]) ? 1 : ((a[k] < b[k]) ? -1 : 0));
 
 // Example
@@ -638,7 +638,7 @@ sortBy(people, 'age');
                     <h3 >Sort an array of numbers</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const sort = arr => arr.sort((a, b) => a - b);
 
 // Example
@@ -649,7 +649,7 @@ sort([1, 5, 2, 4, 3]);      // [1, 2, 3, 4, 5]</code></pre></div>
                     <h3 >Split an array into chunks</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const chunk = (arr, size) => arr.reduce((acc, e, i) => (i % size ? acc[acc.length - 1].push(e) : acc.push([e]), acc), []);
 
 // Examples
@@ -661,7 +661,7 @@ chunk([1, 2, 3, 4, 5, 6, 7, 8], 4);     // [[1, 2, 3, 4], [5, 6, 7, 8]]</code></
                     <h3 >Swap the rows and columns of a matrix</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const transpose = matrix => matrix[0].map((col, i) => matrix.map(row => row[i]));
 
 // Or
@@ -682,7 +682,7 @@ transpose([             // [
                     <h3 >Swap two array items</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// `i` must be less than `j`
 const swapItems = (a, i, j) => a[i] && a[j] && [...a.slice(0, i), a[j], ...a.slice(i + 1, j), a[i], ...a.slice(j + 1)] || a;
 
@@ -694,7 +694,7 @@ swapItems([1, 2, 3, 4, 5], 1, 4);   // [1, 5, 3, 4, 2] </code></pre></div>
                     <h3 >Unzip an array of arrays</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const unzip = arr => arr.reduce((acc, c) => (c.forEach((v, i) => acc[i].push(v)), acc), Array.from({ length: Math.max(...arr.map(a => a.length)) }, (_) => []));
 
 // Example
@@ -713,7 +713,7 @@ unzip([['a', 1], ['b', 2], ['c', 3], ['d', 4], ['e', 5]]);  // [['a', 'b', 'c', 
                     <h3 >Zip multiple arrays</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const zip = (...arr) => Array.from({ length: Math.max(...arr.map(a => a.length)) }, (_, i) => arr.map(a => a[i]));
 
 // Example
@@ -737,7 +737,7 @@ Does it look like a zipper?
                     <h3 >Check if an element is a descendant of another</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isDescendant = (child, parent) => parent.contains(child);</code></pre></div>
                     </div>
                
@@ -745,7 +745,7 @@ Does it look like a zipper?
                     <h3 >Check if an element is focused</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const hasFocus = ele => (ele === document.activeElement);</code></pre></div>
                     </div>
                
@@ -753,7 +753,7 @@ Does it look like a zipper?
                     <h3 >Check if the touch events are supported</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const touchSupported = () => ('ontouchstart' in window || window.DocumentTouch && document instanceof window.DocumentTouch);</code></pre></div>
                     </div>
                
@@ -761,14 +761,14 @@ Does it look like a zipper?
                     <h3 >Check if user scrolls to the bottom of the page</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isAtBottom = () => document.documentElement.clientHeight + window.scrollY >= document.documentElement.scrollHeight;</code></pre></div>
                     </div>
                
                     <h3 >Detect Internet Explorer browser</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isIE = !!document.documentMode;</code></pre></div>
                     </div>
                 
@@ -776,7 +776,7 @@ Does it look like a zipper?
                     </h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isMacBrowser = /Mac|iPod|iPhone|iPad/.test(navigator.platform);</code></pre></div>
                     </div>
                
@@ -784,7 +784,7 @@ Does it look like a zipper?
                     <h3 >Get all siblings of an element</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const siblings = ele => [].slice.call(ele.parentNode.children).filter((child) => (child !== ele));</code></pre></div>
                     </div>
               
@@ -792,7 +792,7 @@ Does it look like a zipper?
                     <h3 >Get the position of an element relative to the document</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const getPosition = ele => (r = ele.getBoundingClientRect(), { left: r.left + window.scrollX, top: r.top + window.scrollY });
 
 // Example
@@ -803,7 +803,7 @@ getPosition(document.body);     // { left: 0, top: 0 }</code></pre></div>
                     <h3 >Get the selected text</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const getSelectedText = () => window.getSelection().toString();</code></pre></div>
                     </div>
                
@@ -811,7 +811,7 @@ getPosition(document.body);     // { left: 0, top: 0 }</code></pre></div>
                     <h3 >Go back to the previous page</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">history.back();
 
 // Or
@@ -822,7 +822,7 @@ history.go(-1);</code></pre></div>
                     <h3 >Hide an element</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// Pick the method that is suitable for your use case
 const hide = ele => ele.style.display = 'none';
 
@@ -837,7 +837,7 @@ const hide = ele => ele.hidden = true;</code></pre></div>
                     <h3 >Insert an element after other one</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const insertAfter = (ele, anotherEle) => anotherEle.parentNode.insertBefore(ele, anotherEle.nextSibling);
 
 // Or
@@ -848,7 +848,7 @@ const insertAfter = (ele, anotherEle) => anotherEle.insertAdjacentElement('after
                     <h3 >Insert an element before other one</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const insertBefore = (ele, anotherEle) => anotherEle.parentNode.insertBefore(ele, anotherEle);
 
 // Or
@@ -858,7 +858,7 @@ const insertBefore = (ele, anotherEle) => anotherEle.insertAdjacentElement('befo
                     <h3 >Insert given HTML after an element</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const insertHtmlAfter = (html, ele) => ele.insertAdjacentHTML('afterend', html);</code></pre></div>
                     </div>
                 
@@ -866,14 +866,14 @@ const insertBefore = (ele, anotherEle) => anotherEle.insertAdjacentElement('befo
                     <h3 >Insert given HTML before an element</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const insertHtmlBefore = (html, ele) => ele.insertAdjacentHTML('beforebegin', html);</code></pre></div>
                     </div>
                 
                     <h3 >Redirect to another page</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const goTo = url => location.href = url;</code></pre></div>
                     </div>
               
@@ -881,7 +881,7 @@ const insertBefore = (ele, anotherEle) => anotherEle.insertAdjacentElement('befo
                     <h3 >Reload the current page</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const reload = () => location.reload();
 
 // Or
@@ -892,28 +892,28 @@ const reload = () => (location.href = location.href);</code></pre></div>
                     <h3 >Replace an element</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const replace = (ele, newEle) => ele.parentNode.replaceChild(newEle, ele);</code></pre></div>
                     </div>
                
                     <h3 >Scroll to top of the page</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const goToTop = () => window.scrollTo(0, 0);</code></pre></div>
                     </div>
                
                     <h3 >Serialize form data</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const serialize = formEle => Array.from(new FormData(formEle)).reduce((p, [k, v]) => Object.assign({}, p, { [k]: p[k] ? (Array.isArray(p[k]) ? p[k] : [p[k]]).concat(v) : v}), {});</code></pre></div>
                     </div>
               
                     <h3 >Show an element</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const show = ele => ele.style.display = '';</code></pre></div>
                     </div>
                 
@@ -921,14 +921,14 @@ const reload = () => (location.href = location.href);</code></pre></div>
                     <h3 >Strip HTML from a given text</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const stripHtml = html => (new DOMParser().parseFromString(html, 'text/html')).body.textContent || '';</code></pre></div>
                     </div>
                 
                     <h3 >Toggle an element</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const toggle = ele => (ele.style.display = (ele.style.display === 'none') ? 'block' : 'none');
 
 // Or
@@ -944,7 +944,7 @@ const toggle = ele => ele.hidden = !ele.hidden;</code></pre></div>
                     <h3 >Add AM PM suffix to an hour</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// `h` is an hour number between 0 and 23
 const suffixAmPm = h => `${h % 12 === 0 ? 12 : h % 12}${h < 12 ? 'am' : 'pm'}`;
 
@@ -960,7 +960,7 @@ suffixAmPm(23);     // '11pm'</code></pre></div>
                     <h3 >Calculate the number of difference days between two dates</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const diffDays = (date, otherDate) => Math.ceil(Math.abs(date - otherDate) / (1000 * 60 * 60 * 24));
 
 // Example
@@ -971,7 +971,7 @@ diffDays(new Date('2014-12-19'), new Date('2020-01-01'));   // 1839</code></pre>
                     <h3 >Calculate the number of months between two dates</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const monthDiff = (startDate, endDate) => Math.max(0, (endDate.getFullYear() - startDate.getFullYear()) * 12 - startDate.getMonth() + endDate.getMonth());
 
 // Example
@@ -981,7 +981,7 @@ monthDiff(new Date('2020-01-01'), new Date('2021-01-01'));  // 12</code></pre></
                     <h3 >Compare two dates</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// `a` and `b` are `Date` instances
 const compare = (a, b) => a.getTime() > b.getTime();
 
@@ -993,7 +993,7 @@ compare(new Date('2020-03-30'), new Date('2020-01-01'));    // true</code></pre>
                     <h3 >Convert a date to YYYY-MM-DD format</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// `date` is a `Date` object
 const formatYmd = date => date.toISOString().slice(0, 10);
 
@@ -1005,7 +1005,7 @@ formatYmd(new Date());      // 2020-05-06</code></pre></div>
                     <h3 >Convert seconds to hh:mm:ss format</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// `s` is number of seconds
 const formatSeconds = s => new Date(s * 1000).toISOString().substr(11, 8);
 
@@ -1024,7 +1024,7 @@ formatSeconds(500);     // 00:08:20</code></pre></div>
                     <h3 >Extract year, month, day, hour, minute, second and millisecond from a date</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// `date` is a `Date` object
 const extract = date => date.toISOString().split(/[^0-9]/).slice(0, -1);
 
@@ -1035,7 +1035,7 @@ const extract = date => date.toISOString().split(/[^0-9]/).slice(0, -1);
                     <h3 >Format a date for the given locale</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// `date` is a `Date` object
 // `locale` is a locale (en-US, pt-BR, for example)
 const format = (date, locale) => new Intl.DateTimeFormat(locale).format(date);
@@ -1048,7 +1048,7 @@ format(new Date(), 'pt-BR');    // 06/05/2020</code></pre></div>
                     <h3 >Get the current quarter of a date</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const getQuarter = (d = new Date()) => Math.ceil((d.getMonth() + 1) / 3);</code></pre></div>
                     </div>
                
@@ -1057,7 +1057,7 @@ format(new Date(), 'pt-BR');    // 06/05/2020</code></pre></div>
                     </h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const ts = () => Math.floor(new Date().getTime() / 1000);</code></pre></div>
                     </div>
                
@@ -1065,7 +1065,7 @@ format(new Date(), 'pt-BR');    // 06/05/2020</code></pre></div>
                     <h3 >Get the day of the year from a date</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// `date` is a Date object
 const dayOfYear = date => Math.floor((date - new Date(date.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
 
@@ -1077,7 +1077,7 @@ dayOfYear(new Date(2020, 04, 16));      // 137</code></pre></div>
                     <h3 >Get the first date in the month of a date</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const getFirstDate = (d = new Date()) => new Date(d.getFullYear(), d.getMonth(), 1);</code></pre></div>
                     </div>
                 
@@ -1085,7 +1085,7 @@ dayOfYear(new Date(2020, 04, 16));      // 137</code></pre></div>
                     <h3 >Get the last date in the month of a date</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const getLastDate = (d = new Date()) => new Date(d.getFullYear(), d.getMonth() + 1, 0);</code></pre></div>
                     </div>
                
@@ -1093,7 +1093,7 @@ dayOfYear(new Date(2020, 04, 16));      // 137</code></pre></div>
                     <h3 >Get the month name of a date</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// `date` is a Date object
 const getMonthName = date => ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',' November', 'December'][date.getMonth()];</code></pre></div>
                     </div>
@@ -1102,7 +1102,7 @@ const getMonthName = date => ['January', 'February', 'March', 'April', 'May', 'J
                     <h3 >Get the number of days in given month</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// `month` is zero-based index
 const daysInMonth = (month, year) => new Date(year, month, 0).getDate();</code></pre></div>
                     </div>
@@ -1111,7 +1111,7 @@ const daysInMonth = (month, year) => new Date(year, month, 0).getDate();</code><
                     <h3 >Get the timezone string</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const getTimezone = () => Intl.DateTimeFormat().resolvedOptions().timeZone;
 
 // Example
@@ -1122,7 +1122,7 @@ getTimezone();      // 'Asia/Saigon'</code></pre></div>
                     <h3 >Get the tomorrow date</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const tomorrow = (d => new Date(d.setDate(d.getDate() + 1)))(new Date);
 
 // Or
@@ -1133,7 +1133,7 @@ const tomorrow = new Date((new Date()).valueOf() + 1000 * 60 * 60 * 24);</code><
                     <h3 >Get the total number of days in a year</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const numberOfDays = year => (((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0)) ? 366 : 365;
 
 // Or
@@ -1144,7 +1144,7 @@ const numberOfDays = year => new Date(year, 1, 29).getDate() === 29 ? 366 : 365;
                     <h3 >Get the weekday of a date</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// `date` is a Date object
 const getWeekday = date => ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][date.getDay()];</code></pre></div>
                     </div>
@@ -1154,7 +1154,7 @@ const getWeekday = date => ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursda
                     </h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const yesterday = (d => new Date(d.setDate(d.getDate() - 1)))(new Date);
 
 // Or
@@ -1165,7 +1165,7 @@ const yesterday = new Date((new Date()).valueOf() - 1000 * 60 * 60 * 24);</code>
                     <h3 >Initialize the current date but set time to midnight</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const midnightOfToday = () => new Date(new Date().setHours(0, 0, 0, 0));</code></pre></div>
                     </div>
                
@@ -1173,7 +1173,7 @@ const yesterday = new Date((new Date()).valueOf() - 1000 * 60 * 60 * 24);</code>
                     <h3 >Sort an array of dates</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// `arr` is an array of `Date` items
 const sortDescending = arr => arr.sort((a, b) => a.getTime() > b.getTime());
 const sortAscending = arr => arr.sort((a, b) => a.getTime() < b.getTime());</code></pre></div>
@@ -1189,7 +1189,7 @@ const sortAscending = arr => arr.sort((a, b) => a.getTime() < b.getTime());</cod
                     <h3 >Box handler</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const boxHandler = x => ({ next: f => boxHandler(f(x)), done: f => f(x) });
 
 // Example 1
@@ -1212,7 +1212,7 @@ getDiscountPrice('$6.00', '20%');    // 4.8</code></pre></div>
                     <h3 >Check if a value is a function</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isFunction = v => ['[object Function]', '[object GeneratorFunction]', '[object AsyncFunction]', '[object Promise]'].includes(Object.prototype.toString.call(v));
 
 // Examples
@@ -1226,7 +1226,7 @@ isFunction(async function() {});    // true</code></pre></div>
 </h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isGeneratorFunction = v => Object.prototype.toString.call(v) === '[object GeneratorFunction]';
 
 // Examples
@@ -1238,7 +1238,7 @@ isGeneratorFunction(function*() {});    // true</code></pre></div>
                     <h3 >Check if a value is an async function</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isAsyncFunction = v => Object.prototype.toString.call(v) === '[object AsyncFunction]';
 
 // Examples
@@ -1250,7 +1250,7 @@ isAsyncFunction(async function() {});   // true</code></pre></div>
                     <h3 >Compose functions</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// Compose functions from right to left
 const compose = (...fns) => x => fns.reduceRight((y, f) => f(y), x);
 
@@ -1269,7 +1269,7 @@ fn('Hello World') === 'dlrow olleH';</code></pre></div>
                     <h3 >Compose functions from left to right</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// Compose functions from left to right
 const pipe = (...fns) => x => fns.reduce((y, f) => f(y), x);
 
@@ -1288,7 +1288,7 @@ fn('Hello World') === 'dlrow olleH';</code></pre></div>
                     <h3 >Create a function that accepts a single argument</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const unary = fn => arg => fn(arg);
 
 // Example
@@ -1299,7 +1299,7 @@ fn('Hello World') === 'dlrow olleH';</code></pre></div>
                     <h3 >Create an empty function</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const noop = () => {};
 
 // Or
@@ -1311,7 +1311,7 @@ const noop = Function();
                     <h3 >Curry a function</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const curry = (fn, ...args) => fn.length <= args.length ? fn(...args) : curry.bind(null, fn, ...args);
 
 // Example
@@ -1328,7 +1328,7 @@ curry(sum, 1, 2, 3);    // 6</code></pre></div>
                     <h3 >Delay the evaluation of a function</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// returns a new version of `fn` that returns values as lazy evaluable
 const thunkfy = fn => (...args) => () => fn(...args);
 
@@ -1344,7 +1344,7 @@ const probablyFaster = manyThings.map(thunkfy(heavyComputation))
                     <h3 >Execute a function once</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const once = fn => ((ran = false) => () => ran ? fn : (ran = !ran, fn = fn()))();
 
 // Example
@@ -1359,7 +1359,7 @@ incOnce();      // n = 1</code></pre></div>
                     <h3 >Flip the arguments of a function</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// Reverse the order of arguments
 const flip = fn => (...args) => fn(...args.reverse());
 
@@ -1378,7 +1378,7 @@ const isChild = flip(isParent);</code></pre></div>
                     <h3 >Identity function</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const identity = x => x;</code></pre></div>
                     </div>
                 
@@ -1386,7 +1386,7 @@ const isChild = flip(isParent);</code></pre></div>
                     <h3 >Logical xor operator</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// returns `true` if one of the arguments is truthy and the other is falsy
 
 const xor = (a, b) => (a && !b) || (!a && b);
@@ -1408,7 +1408,7 @@ xor(false, true);       // true</code></pre></div>
                     <h3 >Memoize a function</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const memoize = fn => ((cache = {}) => arg => cache[arg] || (cache[arg] = fn(arg)))();
 
 // Example
@@ -1427,7 +1427,7 @@ fibo(6);    // 8</code></pre></div>
                     <h3 >Partially apply a function</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const partial = (fn, ...a) => (...b) => fn(...a, ...b);
 
 // Example
@@ -1439,7 +1439,7 @@ inc(9);     // 10</code></pre></div>
                     <h3>Uncurry a function</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// `fn` is a curried function
 // `n` is the depth of parameters
 const uncurry = (fn, n = 1) => (...args) => (acc => args => args.reduce((x, y) => x(y), acc))(fn)(args.slice(0, n));
@@ -1462,7 +1462,7 @@ uncurry(sum, 3)(1, 2, 3);       // 6</code></pre></div>
                     <h3 >Calculate the angle of a line defined by two points</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// In radians
 const radiansAngle = (p1, p2) => Math.atan2(p2.y - p1.y, p2.x - p1.x);
 
@@ -1474,7 +1474,7 @@ const degreesAngle = (p1, p2) => Math.atan2(p2.y - p1.y, p2.x - p1.x) * 180 / Ma
                     <h3 >Calculate the distance between two points</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const distance = (p1, p2) => Math.sqrt(Math.pow(p2.x - p1.x, 2) + Math.pow(p2.y - p1.y, 2));</code></pre></div>
                     </div>
                
@@ -1482,7 +1482,7 @@ const degreesAngle = (p1, p2) => Math.atan2(p2.y - p1.y, p2.x - p1.x) * 180 / Ma
                     <h3 >Calculate the linear interpolation between two numbers</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const lerp = (a, b, amount) => (1 - amount) * a + amount * b;</code></pre></div>
                     </div>
                
@@ -1490,7 +1490,7 @@ const degreesAngle = (p1, p2) => Math.atan2(p2.y - p1.y, p2.x - p1.x) * 180 / Ma
                     <h3 >Calculate the midpoint between two points</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const midpoint = (p1, p2) => [(p1.x + p2.x) / 2, (p1.y + p2.y) / 2];</code></pre></div>
                     </div>
                 
@@ -1498,7 +1498,7 @@ const degreesAngle = (p1, p2) => Math.atan2(p2.y - p1.y, p2.x - p1.x) * 180 / Ma
                     <h3 >Check if a point is inside a rectangle</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isInside = (point, rect) => point.x > rect.left && point.x < rect.right && point.y > rect.top && point.y < rect.bottom;</code></pre></div>
                     </div>
                 
@@ -1506,7 +1506,7 @@ const degreesAngle = (p1, p2) => Math.atan2(p2.y - p1.y, p2.x - p1.x) * 180 / Ma
                     <h3 >Check if a rectangle contains other one</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// Returns true if `a` contains `b`
 // (x1, y1) and (x2, y2) are top-left and bottom-right corners
 const contains = (a, b) => (a.x1 <= b.x1 && a.y1 <= b.y1 && a.x2 >= b.x2 && a.y2 >= b.y2);</code></pre></div>
@@ -1516,7 +1516,7 @@ const contains = (a, b) => (a.x1 <= b.x1 && a.y1 <= b.y1 && a.x2 >= b.x2 && a.y2
                     <h3 >Check if a rectangle overlaps other one</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// Returns true if `a` overlaps `b`
 // (x1, y1) and (x2, y2) are top-left and bottom-right corners
 const overlaps = (a, b) => (a.x1 < b.x2 && b.x1 < a.x2) || (a.y1 < b.y2 && b.y1 < a.y2);</code></pre></div>
@@ -1526,7 +1526,7 @@ const overlaps = (a, b) => (a.x1 < b.x2 && b.x1 < a.x2) || (a.y1 < b.y2 && b.y1 
                     <h3 >Convert degrees to radians</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const degsToRads = deg => deg * Math.PI / 180.0;</code></pre></div>
                     </div>
                
@@ -1534,7 +1534,7 @@ const overlaps = (a, b) => (a.x1 < b.x2 && b.x1 < a.x2) || (a.y1 < b.y2 && b.y1 
                     <h3 >Convert radians to degrees</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const radsToDegs = rad => rad * 180 / Math.PI;</code></pre></div>
                     </div>
                 
@@ -1542,7 +1542,7 @@ const overlaps = (a, b) => (a.x1 < b.x2 && b.x1 < a.x2) || (a.y1 < b.y2 && b.y1 
                     <h3 >Normalize the ratio of a number in a range</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const normalizeRatio = (value, min, max) => (value - min) / (max - min);</code></pre></div>
                     </div>
                 
@@ -1550,7 +1550,7 @@ const overlaps = (a, b) => (a.x1 < b.x2 && b.x1 < a.x2) || (a.y1 < b.y2 && b.y1 
                     <h3 >Round a number to the nearest multiple of a given value</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const roundNearest = (value, nearest) => Math.round(value / nearest) * nearest;
 
 // Examples
@@ -1569,7 +1569,7 @@ roundNearest(200, 40);      // 200</code></pre></div>
                     <h3 >Check if the code is running in NodeJS</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isNode = typeof process !== 'undefined' && process.versions != null && process.versions.node != null;</code></pre></div>
                     </div>
               
@@ -1577,7 +1577,7 @@ roundNearest(200, 40);      // 200</code></pre></div>
                     <h3 >Check if the code is running in the browser</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isBrowser = typeof window === 'object' && typeof document === 'object';</code></pre></div>
                     </div>
               
@@ -1585,7 +1585,7 @@ roundNearest(200, 40);      // 200</code></pre></div>
                     <h3 >Clear all cookies</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const clearCookies = document.cookie.split(';').forEach(c => document.cookie = c.replace(/^ +/, '').replace(/=.*/, `=;expires=${new Date().toUTCString()};path=/`));
 </code></pre></div>
                     </div>
@@ -1594,7 +1594,7 @@ roundNearest(200, 40);      // 200</code></pre></div>
                     <h3 >Convert 3 digits color to 6 digits color</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const toFullHexColor = color => `#${(color.startsWith('#') ? color.slice(1) : color).split('').map(c => `${c}${c}`).join('')}`;
 
 // Example
@@ -1607,7 +1607,7 @@ toFullHexColor('#abc');     // '#aabbcc'</code></pre></div>
                     <h3 >Convert Celsius to Fahrenheit</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const celsiusToFahrenheit = celsius => celsius * 9/5 + 32;
 
 // Examples
@@ -1620,7 +1620,7 @@ celsiusToFahrenheit(-20);   // -4</code></pre></div>
                     <h3 >Convert cookie to object</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const cookies = document.cookie.split(';').map(item => item.split('=')).reduce((acc, [k, v]) => (acc[k.trim().replace('"', '')] = v) && acc, {});
 </code></pre></div>
                     </div>
@@ -1629,7 +1629,7 @@ celsiusToFahrenheit(-20);   // -4</code></pre></div>
                     <h3 >Convert Fahrenheit to Celsius</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const fahrenheitToCelsius = fahrenheit => (fahrenheit - 32) * 5/9;
 
 // Examples
@@ -1641,7 +1641,7 @@ fahrenheitToCelsius(32);    // 0</code></pre></div>
                     <h3 >Convert hex to rgb</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const hexToRgb = hex => hex.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i, (_, r, g, b) => `#${r}${r}${g}${g}${b}${b}`).substring(1).match(/.{2}/g).map(x => parseInt(x, 16));
 
 // Examples
@@ -1653,7 +1653,7 @@ hexToRgb('#0ff');       // [0, 255, 255]</code></pre></div>
                     <h3 >Convert rgb color to hex</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const rgbToHex = (red, green, blue) => `#${((1 << 24) + (red << 16) + (green << 8) + blue).toString(16).slice(1)}`;
 
 // Or
@@ -1667,7 +1667,7 @@ rgbToHex(0, 255, 255);      // '#00ffff' </code></pre></div>
                     <h3 >Convert URL parameters to object</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const getUrlParams = query => Array.from(new URLSearchParams(query)).reduce((p, [k, v]) => Object.assign({}, p, { [k]: p[k] ? (Array.isArray(p[k]) ? p[k] : [p[k]]).concat(v) : v}), {});
 
 // Examples
@@ -1683,7 +1683,7 @@ getUrlParams('foo=Foo&foo=Fuzz&bar=Bar');   // { foo: ["Foo", "Fuzz"], bar: "Bar
                     <h3 >Decode a JWT token</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const decode = token => decodeURIComponent(atob(token.split('.')[1].replace('-', '+').replace('_', '/')).split('').map(c => `%${('00' + c.charCodeAt(0).toString(16)).slice(-2)}`).join(''));
 
 // Example
@@ -1700,7 +1700,7 @@ decode(`
                     <h3 >Detect dark mode</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 </code></pre></div>
                     </div>
@@ -1709,7 +1709,7 @@ decode(`
                     <h3 >Easing functions</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// Some easing functions
 // See https://gist.github.com/gre/1650294 and https://easings.net
 
@@ -1743,7 +1743,7 @@ const easeInOutElastic = t => (t -= .5) < 0 ? (.02 + .01 / t) * Math.sin(50 * t)
                     <h3 >Emulate a dice throw</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const throwdice = () => ~~(Math.random() * 6) + 1;
 
 // Examples
@@ -1755,7 +1755,7 @@ throwdice();    // 6 </code></pre></div>
                     <h3 >Encode a URL</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// `encodeURIComponent` doesn't encode -_.!~*'()
 const encode = url => encodeURIComponent(url).replace(/!/g, '%21').replace(/~/g, '%7E').replace(/\*/g, '%2A').replace(/'/g, '%27').replace(/\(/g, '%28').replace(/\)/g, '%29').replace(/%20/g, '+');</code></pre></div>
                     </div>
@@ -1763,7 +1763,7 @@ const encode = url => encodeURIComponent(url).replace(/!/g, '%21').replace(/~/g,
                     <h3 >Generate an unique and increment id</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const uid = (() => (id = 0, () => id++))();
 
 // Examples
@@ -1778,7 +1778,7 @@ uid();          // 3</code></pre></div>
                     <h3 >Get the first defined and non null argument</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const coalesce = (...args) => args.find(item => item !== undefined && item !== null);
 
 // Or
@@ -1792,7 +1792,7 @@ coalesce(undefined, null, 'helloworld', NaN);     // 'helloworld'</code></pre></
                     <h3 >Get the value of a cookie</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const cookie = name => `; ${document.cookie}`.split(`; ${name}=`).pop().split(';').shift();
 
 // Example
@@ -1802,7 +1802,7 @@ cookie('_ga');      // GA1.2.825309271.1581874719</code></pre></div>
                     <h3 >Get the value of a param from a URL</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const getParam = (url, param) => new URLSearchParams(new URL(url).search).get(param);
 
 // Example
@@ -1812,7 +1812,7 @@ getParam('http://domain.com?message=hello', 'message');     // 'hello'</code></p
                     <h3 >title</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const getTypeOf = obj => Object.prototype.toString.call(obj).match(/\[object (.*)\]/)[1];
 
 // Examples
@@ -1838,7 +1838,7 @@ getTypeOf(document);                // HTMLDocument</code></pre></div>
                     <h3 >Redirect the page to HTTPS if it is in HTTP</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const redirectHttps = () => (location.protocol === 'https:') ? {} : location.replace(`https://${location.href.split('//')[1]}`);
 
 // Or
@@ -1849,7 +1849,7 @@ const redirectHttps = () => (location.protocol === 'https:') ? {} : (location.pr
                     <h3 >Run Promises in sequence</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// `promises` is an array of `Promise`
 const run = promises => promises.reduce((p, c) => p.then(rp => c.then(rc => [...rp, rc])), Promise.resolve([]));
 
@@ -1863,7 +1863,7 @@ run(promises).then((results) => {
                     <h3 >Swap two variables</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">[a, b] = [b, a];
 
 // Or
@@ -1882,7 +1882,7 @@ a = b * (b = a, 1);</code></pre></div>
                     <h3 >Wait for an amount of time</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const wait = async (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));</code></pre></div>
                     </div>
                
@@ -1897,7 +1897,7 @@ a = b * (b = a, 1);</code></pre></div>
                     <h3 >Add an ordinal suffix to a number</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// `n` is a position number
 const addOrdinal = n => `${n}${['st', 'nd', 'rd'][((n + 90) % 100 - 10) % 10 - 1] || 'th'}`;
 
@@ -1924,7 +1924,7 @@ addOrdinal(13);     // '13th'</code></pre></div>
                     </h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const fibo = (n, memo = {}) => memo[n] || (n <= 2 ? 1 : (memo[n] = fibo(n - 1, memo) + fibo(n - 2, memo)));
 
 // Examples
@@ -1939,7 +1939,7 @@ fibo(6);    // 8</code></pre></div>
                     <h3 >Calculate the average of arguments</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const average = (...args) => args.reduce((a, b) => a + b) / args.length;
 
 // Example
@@ -1950,7 +1950,7 @@ average(1, 2, 3, 4);    // 2.5</code></pre></div>
                     <h3 >Calculate the division of arguments</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const division = (...args) => args.reduce((a, b) => a / b);
 
 // Example
@@ -1960,7 +1960,7 @@ division(1, 2, 3, 4);   // 0.04166666666666666</code></pre></div>
                     <h3 >Calculate the factorial of a number</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const factorial = n => n <= 1 ? 1 : n * factorial(n - 1);
 
 // Examples
@@ -1974,7 +1974,7 @@ factorial(6);   // 720</code></pre></div>
                     <h3 >Calculate the mod of collection index</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const mod = (a, b) => ((a % b) + b) % b;
 
 // Examples
@@ -1986,7 +1986,7 @@ mod(6, 5);      // 1</code></pre></div>
                     <h3 >Calculate the remainder of division of arguments</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const remainder = (...args) => args.reduce((a, b) => a % b);
 
 // Example
@@ -1996,7 +1996,7 @@ remainder(1, 2, 3, 4);      // 1</code></pre></div>
                     <h3 >Calculate the sum of arguments</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const sum = (...args) => args.reduce((a, b) => a + b);
 
 // Example
@@ -2007,7 +2007,7 @@ sum(1, 2, 3, 4);    // 10</code></pre></div>
                     <h3 >Clamp a number between two values</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const clamp = (val, min = 0, max = 1) => Math.max(min, Math.min(max, val));
 
 // Example
@@ -2018,7 +2018,7 @@ clamp(199, 10, 25);     // 25</code></pre></div>
                     <h3 >Compute the greatest common divisor between two numbers</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const gcd = (a, b) => b === 0 ? a : gcd(b, a % b);
 
 // Example
@@ -2029,7 +2029,7 @@ gcd(10, 15);    // 5</code></pre></div>
                     <h3 >Convert a number to equivalent characters</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const toChars = n => `${n >= 26 ? toChars(Math.floor(n / 26) - 1) : ''}${'ABCDEFGHIJKLMNOPQRSTUVWXYZ'[n % 26]}`;
 
 // Examples
@@ -2050,7 +2050,7 @@ toChars(703);   // AAB</code></pre></div>
                     <h3 >Convert a string to number</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const toNumber = str => +str;
 
 // Example
@@ -2061,7 +2061,7 @@ toNumber('42');     // 42</code></pre></div>
                     <h3 >Convert decimal to binary recursively</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const decToBi = num => num === 0 ? 0 : num % 2 + 10 * decToBi(~~(num / 2));
 
 
@@ -2073,7 +2073,7 @@ decToBi(10);      //1010</code></pre></div>
                     <h3 >Get the arrays of digits from a number</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const digitize = n => `${n}`.split('').map(v => parseInt(v, 10));
 
 // Or
@@ -2087,7 +2087,7 @@ digitize(123);    // [1, 2, 3]</code></pre></div>
                     <h3 >Multiply arguments</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const mul = (...args) => args.reduce((a, b) => a * b);
 
 // Example
@@ -2098,7 +2098,7 @@ mul(1, 2, 3, 4);    // 24</code></pre></div>
                     <h3 >Prefix an integer with zeros</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const prefixWithZeros = (number, length) => (number / Math.pow(10, length)).toFixed(length).substr(2);
 
 // Or
@@ -2115,7 +2115,7 @@ prefixWithZeros(42, 5);     // '00042'</code></pre></div>
                     <h3 >Round a number to a given number of digits</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const round = (n, decimals = 0) => Number(`${Math.round(`${n}e${decimals}`)}e-${decimals}`);
 
 // Examples
@@ -2127,7 +2127,7 @@ round(1.234567, 4);     // 1.2346</code></pre></div>
                     <h3 >Subtract arguments</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const subtract = (...args) => args.reduce((a, b) => a - b);
 
 // Example
@@ -2138,7 +2138,7 @@ subtract(1, 2, 3, 4);       // -8</code></pre></div>
                     <h3 >Truncate a number at decimal</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const truncate = n => ~~n;
 
 // Examples
@@ -2150,7 +2150,7 @@ truncate(-25.198726354);        // -25</code></pre></div>
                     <h3 >Truncate a number to a given number of decimal places without rounding</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const toFixed = (n, fixed) => `${n}`.match(new RegExp(`^-?\\d+(?:\.\\d{0,${fixed}})?`))[0];
 
 // Or
@@ -2173,7 +2173,7 @@ toFixed(25.198726354, 6);       // 25.198726</code></pre></div>
                     <h3 >Check if multiple objects are equal</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isEqual = (...objects) => objects.every(obj => JSON.stringify(obj) === JSON.stringify(objects[0]));
 
 // Examples
@@ -2185,7 +2185,7 @@ isEqual({ foo: 'bar' }, { bar: 'foo' });    // false</code></pre></div>
                     <h3 >Create an empty map that does not have properties</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// `map` doesn't have any properties
 const map = Object.create(null);
 
@@ -2197,7 +2197,7 @@ const map = Object.create(null);
                     <h3 >Create an object from the pairs of key and value</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const toObj = arr => Object.fromEntries(arr)
 
 // Or
@@ -2211,7 +2211,7 @@ toObj([['a', 1], ['b', 2], ['c', 3]]);      // { a: 1, b: 2, c: 3 }</code></pre>
                     <h3 >Extract values of a property from an array of objects</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const pluck = (objs, property) => objs.map(obj => obj[property]);
 
 // Example
@@ -2226,7 +2226,7 @@ pluck([
                     <h3 >Get the value at given path of an object</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const getValue = (path, obj) => path.split('.').reduce((acc, c) => acc && acc[c], obj);
 
 // Example
@@ -2237,7 +2237,7 @@ getValue('a.b', { a: { b: 'Hello World' } });   // 'Hello World';</code></pre></
                     <h3 >Immutably rename object keys</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const renameKeys = (keysMap, obj) => Object.keys(obj).reduce((acc, key) => ({ ...acc, ...{ [keysMap[key] || key]: obj[key] }}), {});
 
 // Examples
@@ -2250,7 +2250,7 @@ renameKeys(keysMap, obj);       // { d: 1, e: 2, f: 3 }</code></pre></div>
                     <h3 >Invert keys and values of an object</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const invert = obj => Object.keys(obj).reduce((res, k) => Object.assign(res, {[obj[k]]: k}), {});
 
 // Or
@@ -2263,7 +2263,7 @@ invert({ a: '1', b: '2', c: '3' });     // { 1: 'a', 2: 'b', 3: 'c' }</code></pr
                     <h3 >Omit a subset of properties from an object</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const omit = (obj, keys) => Object.keys(obj).filter(k => !keys.includes(k)).reduce((res, k) => Object.assign(res, {[k]: obj[k]}), {});
 
 // Example
@@ -2274,7 +2274,7 @@ omit({a: '1', b: '2', c: '3'}, ['a', 'b']);     // { c: '3' }</code></pre></div>
                     <h3 >Pick a subset of properties of an object</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const pick = (obj, keys) => Object.keys(obj).filter(k => keys.includes(k)).reduce((res, k) => Object.assign(res, {[k]: obj[k]}), {});
 
 // Example
@@ -2285,7 +2285,7 @@ pick({ a: '1', b: '2', c: '3' }, ['a', 'b']);   // { a: '1', b: '2' }</code></pr
                     <h3 >Remove all null and undefined properties from an object</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const removeNullUndefined = obj => Object.entries(obj).reduce((a, [k, v]) => (v == null ? a : (a[k] = v, a)), {});
 
 // Or
@@ -2306,7 +2306,7 @@ removeNullUndefined({
                     <h3 >Shallow copy an object</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const shallowCopy = obj => Object.assign({}, obj);
 
 // or
@@ -2317,7 +2317,7 @@ const shallowCopy = obj => {...obj};</code></pre></div>
                     <h3 >Sort an object by its properties</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const sort = obj => Object.keys(obj).sort().reduce((p, c) => (p[c] = obj[c], p), {});
 
 // Example
@@ -2348,7 +2348,7 @@ sort(colors);
                     <h3 >Generate a random boolean</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const randomBoolean = () => Math.random() >= 0.5;
 </code></pre></div>
                     </div>
@@ -2358,7 +2358,7 @@ sort(colors);
                     <h3 >Generate a random floating point number in given range</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const randomFloat = (min, max) => Math.random() * (max - min) + min;</code></pre></div>
                     </div>
              
@@ -2368,7 +2368,7 @@ sort(colors);
                     <h3 >Generate a random hex color</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const randomColor = () => `#${Math.random().toString(16).slice(2, 8).padEnd(6, '0')}`;
 
 // Or
@@ -2381,7 +2381,7 @@ const randomColor = () => `#${(~~(Math.random()*(1<<24))).toString(16)}`;</code>
                     <h3 >Generate a random integer in given range</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const randomInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;</code></pre></div>
                     </div>
              
@@ -2391,7 +2391,7 @@ const randomColor = () => `#${(~~(Math.random()*(1<<24))).toString(16)}`;</code>
                     <h3 >Generate a random IP address</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const randomIp = () => Array(4).fill(0).map((_, i) => Math.floor(Math.random() * 255) + (i === 0 ? 1 : 0)).join('.');
 
 // Example
@@ -2404,7 +2404,7 @@ randomIp();     // 175.89.174.131</code></pre></div>
                     <h3 >Generate a random sign</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const randomSign = () => Math.random() >= 0.5 ? 1 : -1;</code></pre></div>
                     </div>
                 
@@ -2413,7 +2413,7 @@ randomIp();     // 175.89.174.131</code></pre></div>
                     <h3 >Generate a random string from given characters</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const generateString = (length, chars) => Array(length).fill('').map((v) => chars[Math.floor(Math.random() * chars.length)]).join('');
 
 // Example
@@ -2426,7 +2426,7 @@ generateString(10, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWX
                     <h3 >Generate a random string using Node crypto module</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const randomStr = () => require('crypto').randomBytes(32).toString('hex');</code></pre></div>
                     </div>
               
@@ -2436,7 +2436,7 @@ generateString(10, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWX
                     <h3 >Generate a random string with given length</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const generateString = length => Array(length).fill('').map((v) => Math.random().toString(36).charAt(2)).join('');</code></pre></div>
                     </div>
                
@@ -2445,7 +2445,7 @@ generateString(10, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWX
                     <h3 >Generate a random UUID</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const uuid = (a) => a ? (a ^ Math.random() * 16 >> a / 4).toString(16) : ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, uuid);</code></pre></div>
                     </div>
              
@@ -2455,7 +2455,7 @@ generateString(10, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWX
                     <h3 >Generate an array of random integers in a given range</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const randomArrayInRange = (min, max, n) => Array.from({ length: n }, () => Math.floor(Math.random() * (max - min + 1)) + min);
 
 // Example
@@ -2468,7 +2468,7 @@ randomArrayInRange(1, 100, 10);     // [11, 82, 41, 35, 76, 83, 43, 15, 60, 54]<
                     <h3 >Get a random item and remove it from an array</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const randomItem = arr => arr.splice((Math.random() * arr.length) | 0, 1);
 
 // Example
@@ -2482,7 +2482,7 @@ randomItem(arr);    // 7
                     <h3 >Get a random item from an array</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const randomItem = arr => arr[(Math.random() * arr.length) | 0];</code></pre></div>
                     </div>
                 
@@ -2490,7 +2490,7 @@ randomItem(arr);    // 7
                     <h3 >Get random items of an array</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const randomItems = (arr, count) => arr.concat().reduce((p, _, __, arr) => (p[0] < count) ? [p[0] + 1, p[1].concat(arr.splice(Math.random() * arr.length | 0, 1))] : p, [0, []])[1];
 
 // Examples
@@ -2503,7 +2503,7 @@ randomItems(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'], 4);     // ['e',
                     <h3 >Pick a random property of an object</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const randomProp = obj => Object.keys(obj)[(Math.random() * Object.keys(obj).length) | 0];
 
 // Example
@@ -2559,7 +2559,7 @@ randomProp(colors);     // 'red'</code></pre></div>
                     <h3 >Pick random lines from a text document</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const randomLines = (str, count) => str.split(/\r?\n/).reduce((p, _, __, arr) => (p[0] < count) ? [p[0] + 1, p[1].concat(arr.splice(Math.random() * arr.length | 0, 1))] : p, [0, []])[1];
 
 // Example
@@ -2582,7 +2582,7 @@ five`, 2);
                     <h3 >Capitalize a string</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const capitalize = str => `${str.charAt(0).toUpperCase()}${str.slice(1)}`;
 
 // Or
@@ -2596,7 +2596,7 @@ capitalize('hello world');      // 'Hello world'</code></pre></div>
                     <h3 >Check if a path is relative</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isRelative = path => !/^([a-z]+:)?[\\/]/i.test(path);
 
 // Examples
@@ -2610,7 +2610,7 @@ isRelative('foo.md');               // true</code></pre></div>
                     <h3 >Check if a string consists of a repeated character sequence</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const consistsRepeatedSubstring = str => `${str}${str}`.indexOf(str, 1) !== str.length;
 
 // Example
@@ -2624,7 +2624,7 @@ consistsRepeatedSubstring('abc');           // false</code></pre></div>
                     <h3 >Check if a string is a palindrome</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isPalindrome = str => str === str.split('').reverse().join('');
 
 // Examples
@@ -2636,7 +2636,7 @@ isPalindrom('abcba');       // true</code></pre></div>
                     <h3 >Check if a URL is absolute</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isAbsoluteUrl = url => /^[a-z][a-z0-9+.-]*:/.test(url);
 
 // Example
@@ -2650,7 +2650,7 @@ isAbsoluteUrl('//1loc.dev');                // false</code></pre></div>
                     <h3 >Check if two strings are anagram</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const areAnagram = (str1, str2) => str1.toLowerCase().split('').sort().join('') === str2.toLowerCase().split('').sort().join('');
 
 // Examples
@@ -2663,7 +2663,7 @@ areAnagram('node', 'deno');             // true</code></pre></div>
                     <h3 >title</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
                     </div>
                
@@ -2671,7 +2671,7 @@ areAnagram('node', 'deno');             // true</code></pre></div>
                     <h3 >Convert a letter to associate emoji</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const letterToEmoji = c => String.fromCodePoint(c.toLowerCase().charCodeAt() + 127365);
 
 // Examples
@@ -2683,7 +2683,7 @@ letterToEmoji('b');     // 🇧</code></pre></div>
                     <h3 >Convert a string to camelCase</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const toCamelCase = str => str.trim().replace(/[-_\s]+(.)?/g, (_, c) => c ? c.toUpperCase() : '');
 
 // Examples
@@ -2697,7 +2697,7 @@ toCamelCase('hello_world');                 // helloWorld</code></pre></div>
                     <h3 >Convert a string to PascalCase</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const toPascalCase = str => (str.match(/[a-zA-Z0-9]+/g) || []).map(w => `${w.charAt(0).toUpperCase()}${w.slice(1)}`).join('');
 
 // Examples
@@ -2710,7 +2710,7 @@ toPascalCase('foo_bar-baz');    // FooBarBaz</code></pre></div>
                     <h3 >Convert a string to URL slug</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const slugify = string => string.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
 
 // Example
@@ -2721,7 +2721,7 @@ slugify('Chapter One: Once upon a time...');    // 'chapter-one-once-upon-a-time
                     <h3 >Convert a Windows file path to Unix path</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const toUnixPath = path => path.replace(/[\\/]+/g, '/').replace(/^([a-zA-Z]+:|\.\/)/, '');
 
 // Examples
@@ -2733,7 +2733,7 @@ toUnixPath('C:\\foo\\bar\\baz');    // /foo/bar/baz</code></pre></div>
                     <h3 >Convert camelCase to kebab-case and vice versa</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const kebabToCamel = str => str.replace(/-./g, m => m.toUpperCase()[1]);
 
 const camelToKebab = str => str.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
@@ -2747,7 +2747,7 @@ camelToKebab('backgroundColor');    // 'background-color'</code></pre></div>
                     <h3 >Convert snake_case to camelCase</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const snakeToCamel = str => str.toLowerCase().replace(/(_\w)/g, m => m.toUpperCase().substr(1));
 
 // Example
@@ -2758,7 +2758,7 @@ snakeToCamel('HELLO_world');    // 'helloWorld'</code></pre></div>
                     <h3 >Convert the name of an Excel column to number</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const getIndex = col => col.split('').reduce((prev, next) => prev * 26 + parseInt(next, 36) - 9, 0);
 
 // Examples
@@ -2780,7 +2780,7 @@ getIndex('AAB');    // 704</code></pre></div>
                     <h3 >Count the number of words in a string</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const countWords = str => str.trim().split(/\s+/).length;
 
 // Example
@@ -2793,7 +2793,7 @@ countWords('  Hello  World  ');   // 2</code></pre></div>
                     <h3 >Count the occurrences of a character in a string</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const countOccurrences = (str, char) => [...str].reduce((a, v) => (v === char ? a + 1 : a), 0);
 
 // Or
@@ -2813,7 +2813,7 @@ countOccurrences('a.b.c.d.e', '.');     // 4</code></pre></div>
                     <h3 >Decapitalize a string</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const decapitalize = str => `${str.charAt(0).toLowerCase()}${str.slice(1)}`;
 
 // Or
@@ -2827,7 +2827,7 @@ decapitalize('Hello world');    // 'hello world'</code></pre></div>
                     <h3 >Escape HTML special characters</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const escape = str => str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/'/g, '&#39;').replace(/"/g, '&quot;');
 
 // Or
@@ -2838,7 +2838,7 @@ const escape = str => str.replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;',
                     <h3 >Generate a hash of a string</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const hash = str => str.split('').reduce((prev, curr) => Math.imul(31, prev) + curr.charCodeAt(0) | 0, 0);
 
 // Or
@@ -2852,7 +2852,7 @@ hash('hello');      // 99162322</code></pre></div>
                     <h3 >Get the base URL without any parameters</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const baseUrl = url => url.indexOf('?') === -1 ? url : url.slice(0, url.indexOf('?'));
 
 // Or
@@ -2867,7 +2867,7 @@ baseUrl('https://domain.com/path/sub/path?foo=bar&hello=world');    // 'https://
                     <h3 >Get the file extension from a file name</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const ext = fileName => fileName.split('.').pop();</code></pre></div>
                     </div>
              
@@ -2875,7 +2875,7 @@ baseUrl('https://domain.com/path/sub/path?foo=bar&hello=world');    // 'https://
                     <h3 >Get the file name from a URL</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const fileName = url => url.substring(url.lastIndexOf('/') + 1);
 
 // Example
@@ -2886,7 +2886,7 @@ fileName('http://domain.com/path/to/document.pdf');     // 'document.pdf'</code>
                     <h3 >Get the length of a string in bytes</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const bytes = str => new Blob([str]).size;
 
 // Examples
@@ -2898,7 +2898,7 @@ bytes('🎉');                // 4</code></pre></div>
                     <h3 >Get the number of a character in a string</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const characterCount = (str, char) => str.split(char).length - 1;
 
 // Or
@@ -2913,7 +2913,7 @@ characterCount('star wars', 's');       // 2</code></pre></div>
                     <h3 >Make the first character of a string lowercase</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const lowercaseFirst = str => `${str.charAt(0).toLowerCase()}${str.slice(1)}`;
 
 // Example
@@ -2924,7 +2924,7 @@ lowercaseFirst('Hello World');      // 'hello World'</code></pre></div>
                     <h3 >Normalize file path slashes</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const normalizePath = path => path.replace(/[\\/]+/g, '/');
 
 // Example
@@ -2936,7 +2936,7 @@ normalizePath('.//foo//bar///////baz/');    // ./foo/bar/baz/</code></pre></div>
                     <h3 >Prepend a line number to each line of a text document</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const prependNumbers = str => str.split(/\r?\n/).map((line, i) => `${(i + 1).toString().padStart(2, ' ')} ${line}`).join('\n');
 
 // Example
@@ -2958,7 +2958,7 @@ four`);
                     <h3 >Remove duplicate lines of a text document</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const removeDuplicateLines = str => Array.from(new Set(str.split(/\r?\n/))).join('\n');
 
 // Example
@@ -2982,7 +2982,7 @@ four
                     <h3 >Remove empty lines of a text document</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const removeEmptyLines = str => str.split(/\r?\n/).filter(line => line.trim() !== '').join('\n');
 
 // Example
@@ -3006,7 +3006,7 @@ yellow
                     <h3 >Remove spaces from a string</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const removeSpaces = str => str.replace(/\s/g, '');
 
 // Example
@@ -3017,7 +3017,7 @@ removeSpaces('hel lo wor ld');      // 'helloworld'</code></pre></div>
                     <h3 >Repeat a string</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const repeat = (str, numberOfTimes) => str.repeat(numberOfTimes);
 
 // Or
@@ -3028,7 +3028,7 @@ const repeat = (str, numberOfTimes) => Array(numberOfTimes + 1).join(str);</code
                     <h3 >Replace all line breaks with br elements</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const nl2br = str => str.replace(new RegExp('\r?\n', 'g'), '<br>');
 
 // In React
@@ -3039,7 +3039,7 @@ str.split('\n').map((item, index) => <React.Fragment key={index}>{item}<br /></R
                     <h3 >Replace all tab characters with spaces</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const replace = (str, numSpaces = 4) => str.replaceAll('\t', ' '.repeat(numSpaces));</code></pre></div>
                     </div>
                
@@ -3047,7 +3047,7 @@ str.split('\n').map((item, index) => <React.Fragment key={index}>{item}<br /></R
                     <h3 >Replace multiple spaces with a single space</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// Replace spaces, tabs and new line characters
 const replaceSpaces = str => str.replace(/\s\s+/g, ' ');
 
@@ -3062,7 +3062,7 @@ replaceSpaces('this\n   is     \ta    \rmessage');  // 'this is a message'</code
                     <h3 >Replace the first given number of characters of a string with another character</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const mask = (str, num, mask) => `${str}`.slice(num).padStart(`${str}`.length, mask);
 
 // Example
@@ -3073,7 +3073,7 @@ mask(1234567890, 3, '*');       // ***4567890</code></pre></div>
                     <h3 >Reverse a string</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const reverse = str => str.split('').reverse().join('');
 
 // Or
@@ -3093,7 +3093,7 @@ reverse('hello world');     // 'dlrow olleh'</code></pre></div>
                     <h3 >Reverse the order of lines of a text</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const reverseLines = str => str.split(/\r?\n/).reverse().join('\n');
 
 // Example
@@ -3113,7 +3113,7 @@ one
                     <h3 >Ordena líneas de un documento de texto en orden alfabético</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const sortLines = str => str.split(/\r?\n/).sort().join('\n');
 
 // Reverse the order
@@ -3150,7 +3150,7 @@ Theodore Rogers
                     <h3 >Ordena los carácteres de una cadena en orden alfabético</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const sort = str => str.split('').sort((a, b) => a.localeCompare(b)).join('');
 
 // Example
@@ -3161,7 +3161,7 @@ sort('hello world');    // dehllloorw</code></pre></div>
                     <h3 >Quita los códigos ANSI de una cadena de texto</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const stripAnsiCodes = str => str.replace(/[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-ORZcf-nqry=><]/g, '');
 
 // Example
@@ -3173,7 +3173,7 @@ stripAnsiCodes('\u001B[0m\u001B[4m\u001B[42m\u001B[31mfoo\u001B[39m\u001B[49m\u0
                     <h3 >Cambia de mayúsculas a minúsculas los carácteres de una cadena</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const swapCase = str => str.split('').map(c => (c === c.toLowerCase() ? c.toUpperCase() : c.toLowerCase())).join('');
 
 // Example
@@ -3184,7 +3184,7 @@ swapCase('Hello World');      // 'hELLO wORLD'</code></pre></div>
                     <h3 >Recorta los slash de una cadena de texto de principio a fin</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const trimSlashes = str => str.replace(/^\/+|\/+$/g, '');
 
 // Or
@@ -3198,7 +3198,7 @@ trimSlashes('//hello/world///');    // hello/world</code></pre></div>
                     <h3 >Recorta algún carácter</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const trim = (str, char) => str.split(char).filter(Boolean).join();
 
 // Examples
@@ -3211,7 +3211,7 @@ trim('   hello world ', ' ');       // hello world</code></pre></div>
                     <h3 >Recorta la extensión del archivo desde un nombre de archivo</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const trimExt = fileName => fileName.indexOf('.') === -1 ? fileName : fileName.split('.').slice(0, -1).join('.');
 
 // Examples
@@ -3224,7 +3224,7 @@ trimExt('document.2020.pdf');   // document.2020</code></pre></div>
                     <h3 >Corta una cadena de texto en palabras completas</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const truncate = (str, max, suffix) => str.length < max ? str : `${str.substr(0, str.substr(0, max - suffix.length).lastIndexOf(' '))}${suffix}`;
 
 // Example
@@ -3235,7 +3235,7 @@ truncate('This is a long message', 20, '...');  // 'This is a long...'</code></p
                     <h3 >No escapar carácteres especiales de HTML</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const unescape = str => str.replace(/&amp;/g , '&').replace(/&lt;/g  , '<').replace(/&gt;/g  , '>').replace(/�*39;/g , "'").replace(/&quot;/g, '"');</code></pre></div>
                     </div>
              
@@ -3243,7 +3243,7 @@ truncate('This is a long message', 20, '...');  // 'This is a long...'</code></p
                     <h3 >Convierte en mayúsculas el primer carácter de una cadena de texto</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const uppercaseWords = str => str.split(' ').map(w => `${w.charAt(0).toUpperCase()}${w.slice(1)}`).join(' ');
 
 // Or
@@ -3263,7 +3263,7 @@ uppercaseWords('hello world');      // 'Hello World'</code></pre></div>
                     <h3 >Comprueba si una fecha es un día de la semana</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// `date` is a Date object
 const isWeekday = (date = new Date()) => date.getDay() % 6 !== 0;</code></pre></div>
                     </div>
@@ -3274,7 +3274,7 @@ const isWeekday = (date = new Date()) => date.getDay() % 6 !== 0;</code></pre></
                     <h3>Comprueba si una fecha es fin de semana</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// `date` is a Date object
 const isWeekend = (date = new Date()) => date.getDay() % 6 === 0;</code></pre></div>
                     </div>
@@ -3285,7 +3285,7 @@ const isWeekend = (date = new Date()) => date.getDay() % 6 === 0;</code></pre></
                     <h3>Comprueba si una fecha está entre dos fechas</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// `min`, `max` and `date` are `Date` instances
 const isBetween = (date, min, max) => (date.getTime() >= min.getTime() && date.getTime() <= max.getTime());</code></pre></div>
                     </div>
@@ -3296,7 +3296,7 @@ const isBetween = (date, min, max) => (date.getTime() >= min.getTime() && date.g
                     <h3>Comprueba si una fecha es hoy</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// `date` is a Date object
 const isToday = (date) => date.toISOString().slice(0, 10) === new Date().toISOString().slice(0, 10);</code></pre></div>
                     </div>
@@ -3307,7 +3307,7 @@ const isToday = (date) => date.toISOString().slice(0, 10) === new Date().toISOSt
                     <h3 >Comprueba si una fecha ocurre en el año actual</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// `date` is a Date object
 const isCurrentYear = (date) => date.getUTCFullYear() === new Date().getUTCFullYear();</code></pre></div>
                     </div>
@@ -3316,7 +3316,7 @@ const isCurrentYear = (date) => date.getUTCFullYear() === new Date().getUTCFullY
                     <h3>Comprueba si un arreglo plano contiene valores duplicados</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const hasDuplicateValues = arr => new Set(arr).size !== arr.length;
 
 // Examples
@@ -3330,7 +3330,7 @@ hasDuplicateValues(['w', 'o', 'r', 'd']);           // false</code></pre></div>
                     <h3 >Comprueba si un dado entero es un número primo</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isPrime = num => (num > 1) && Array(Math.floor(Math.sqrt(num)) - 1).fill(0).map((_, i) => i + 2).every(i => num % i !== 0);</code></pre></div>
                     </div>
               
@@ -3339,7 +3339,7 @@ hasDuplicateValues(['w', 'o', 'r', 'd']);           // false</code></pre></div>
                     <h3 >Comprueba si un número es potencia de 2</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isPowerOfTwo = number => (number & (number - 1)) === 0;
 
 // Examples
@@ -3353,7 +3353,7 @@ isPowerOfTwo(129);      // false</code></pre></div>
                     <h3 >Comprueba si un número es par</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isEven = number => number % 2 === 0;
 
 // Or
@@ -3376,7 +3376,7 @@ isEven(2);      // true</code></pre></div>
                     <h3 >Comprueba si un número está en un rango dado</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const inRange = (num, a, b, threshold = 0) => (Math.min(a, b) - threshold <= num && num <= Math.max(a, b) + threshold);
 
 // Example
@@ -3392,7 +3392,7 @@ inRange(-10, -5, -15);      // true</code></pre></div>
                     <h3 >Comprueba si un número es negativo</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isNegative = number => Math.sign(number) === -1;
 
 // Or
@@ -3409,7 +3409,7 @@ isNegative(8);      // false</code></pre></div>
                     <h3 >Comprueba si un número es impar</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isOdd = number => number % 2 !== 0;
 
 // Or
@@ -3429,7 +3429,7 @@ isOdd(2);   // false</code></pre></div>
                     <h3 >Comprueba si un número es positivo</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isPositive = number => Math.sign(number) === 1;
 
 // Examples
@@ -3443,7 +3443,7 @@ isPositive(-8);     // false</code></pre></div>
                     <h3 >Comprueba si una cadena de texto solo contiene carácteres en minúsculas</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const containsLowerCase = str => str !== str.toUpperCase();
 
 // Examples
@@ -3457,7 +3457,7 @@ containsLowerCase('HELLO WORLD');   // false</code></pre></div>
                     <h3 >Comprueba si una cadena de texto contiene solamente carácteres ASCII</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isAscii = str => /^[\x00-\x7F]+$/.test(str);</code></pre></div>
                     </div>
              
@@ -3467,7 +3467,7 @@ containsLowerCase('HELLO WORLD');   // false</code></pre></div>
                     <h3 >Comprueba si una cadena de texto contiene solo digitos</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isNumeric = str => !/[^0-9]/.test(str);
 
 // Examples
@@ -3487,7 +3487,7 @@ isNumeric('NaN');           // false</code></pre></div>
                     <h3 >Comprueba si una cadena de texto contiene solo letras</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isAlpha = str => /^[A-Z]+$/i.test(str);
 
 // Examples
@@ -3501,7 +3501,7 @@ isAlpha('0123456789');          // false</code></pre></div>
                     <h3 >Comprueba si una cadena de texto contiene solo letras y números </h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isAlphanumeric = str => /^[0-9A-Z]+$/i.test(str);
 
 // Examples
@@ -3516,7 +3516,7 @@ isAlphanumeric('hello 123');            // false</code></pre></div>
                     <h3 >Comprueba si una cadena de texto contiene carácteres en mayúsculas</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const containsUpperCase = str => str !== str.toLowerCase();
 
 // Examples
@@ -3528,7 +3528,7 @@ containsUpperCase('hello world');   // false</code></pre></div>
                     <h3 >Comprueba si una cadena de texto contiene espacios en blanco</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const containsWhitespace = str => str => /\s/.test(str);
 
 // Example
@@ -3539,7 +3539,7 @@ containsWhitespace('hello world');      // true</code></pre></div>
                     <h3 >Comprueba si una cadena de texto es de color hexadecimal</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isHexColor = color => /^#([0-9A-F]{3}|[0-9A-F]{4}|[0-9A-F]{6}|[0-9A-F]{8})$/i.test(color);
 
 // Examples
@@ -3553,7 +3553,7 @@ isHexColor('#GHIJKL');      // false</code></pre></div>
                     <h3 >Comprueba si una cadena de texto es un número hexadecimal</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isHexadecimal = str => /^[A-F0-9]+$/i.test(str);
 
 // Or
@@ -3569,7 +3569,7 @@ isHexadecimal('#123');      // false</code></pre></div>
                     <h3>Comprueba si una cadena de texto es un ObjectId de MongoDB</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isMongoId = str => str.length === 24 && /^[A-F0-9]+$/i.test(str);
 
 // Or
@@ -3580,7 +3580,7 @@ const isMongoId = str => str.length === 24 && str.split('').every(c => '01234567
                     <h3>Comprueba si una cadena de texto es un número octal</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isOctal = str => /^(0o)?[0-7]+$/i.test(str);</code></pre></div>
                     </div>
                 
@@ -3588,7 +3588,7 @@ const isMongoId = str => str.length === 24 && str.split('').every(c => '01234567
                     <h3>Comprueba si una cadena de texto está en minúsculas</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isLowerCase = str => str === str.toLowerCase();</code></pre></div>
                     </div>
                 
@@ -3596,7 +3596,7 @@ const isMongoId = str => str.length === 24 && str.split('').every(c => '01234567
                     <h3>Comprueba si una cadena de texto está en mayúsculas</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isUpperCase = str => str === str.toUpperCase();</code></pre></div>
                     </div>
                 
@@ -3604,7 +3604,7 @@ const isMongoId = str => str.length === 24 && str.split('').every(c => '01234567
                     <h3>Compruebe si un valor es un código de identificación comercial</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isBIC = value => /^[a-zA-Z]{6}[a-zA-Z0-9]{2}([a-zA-Z0-9]{3})?$/.test(value);</code></pre></div>
                     </div>
                 
@@ -3612,7 +3612,7 @@ const isMongoId = str => str.length === 24 && str.split('').every(c => '01234567
                     <h3>Comprueba si un valor es un número</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isNumber = value => !isNaN(parseFloat(value)) && isFinite(value);</code></pre></div>
                     </div>
                
@@ -3620,7 +3620,7 @@ const isMongoId = str => str.length === 24 && str.split('').every(c => '01234567
                     <h3>Comprueba si un valor es un objeto plano</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isPlainObject = v => (!!v && typeof v === 'object' && (v.__proto__ === null || v.__proto__ === Object.prototype));
 
 // Examples
@@ -3638,7 +3638,7 @@ isPlainObject({ a: '1', b: '2' });      // true</code></pre></div>
                     <h3 >Comprueba si un valor es una expresión regular</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isRegExp = value => Object.prototype.toString.call(value) === '[object RegExp]';</code></pre></div>
                     </div>
                 
@@ -3646,7 +3646,7 @@ isPlainObject({ a: '1', b: '2' });      // true</code></pre></div>
                     <h3>Comprueba si un valor es una candena de texto</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isString = value => Object.prototype.toString.call(value) === '[object String]';
 
 // Examples
@@ -3659,7 +3659,7 @@ isString(10);                           // false</code></pre></div>
                     <h3 >Comprueba si un valor es un objeto</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isObject = v => (v !== null && typeof v === 'object');
 
 // Examples
@@ -3674,7 +3674,7 @@ isObject([]);               // true </code></pre></div>
                     <h3 >Comprueba si un valor está codificado en base32</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isBase32 = value => value.length % 8 === 0 && /^[A-Z2-7]+=*$/.test(value);</code></pre></div>
                     </div>
                 
@@ -3682,7 +3682,7 @@ isObject([]);               // true </code></pre></div>
                     <h3 >Comprueba si un valor está codificado en base58</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// It doesn't accept the I, O, l characters 
 const isBase58 = value => /^[A-HJ-NP-Za-km-z1-9]*$/.test(value);</code></pre></div>
                     </div>
@@ -3691,7 +3691,7 @@ const isBase58 = value => /^[A-HJ-NP-Za-km-z1-9]*$/.test(value);</code></pre></d
                     <h3 >Comprueba si un valor está codificado en base64</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isBase64 = value => /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$/.test(value);</code></pre></div>
                     </div>
                 
@@ -3699,7 +3699,7 @@ const isBase58 = value => /^[A-HJ-NP-Za-km-z1-9]*$/.test(value);</code></pre></d
                     <h3 >Comprueba si un valor es nulo</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isNil = (value) => value == null;</code></pre></div>
                     </div>
                 
@@ -3707,7 +3707,7 @@ const isBase58 = value => /^[A-HJ-NP-Za-km-z1-9]*$/.test(value);</code></pre></d
                     <h3 >Comprueba si un año es bisiesto</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isLeapYear = year => (((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0));
 
 // Or
@@ -3719,7 +3719,7 @@ const isLeapYear = year => new Date(year, 1, 29).getDate() === 29;</code></pre><
                     <h3 >Comprueba si todos los elementos de un arreglo son iguales a un valor dado</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isEqual = (arr, value) => arr.every(item => item === value);
 
 // Or
@@ -3736,7 +3736,7 @@ isEqual(['bar', 'bar'], 'foo');     // false</code></pre></div>
                     <h3 >Comprueba si todos los elementos de un arreglo son iguales</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const areEqual = arr => arr.length > 0 && arr.every(item => item === arr[0]);
 
 // Or
@@ -3751,7 +3751,7 @@ areEqual(['hello', 'hello', 'hello']);  // true</code></pre></div>
                     <h3 >Comprueba si un arreglo contiene un valor que coincida con algunos criterios</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const contains = (arr, criteria) => arr.some(v => criteria(v));
 
 // Or
@@ -3770,7 +3770,7 @@ contains([10, 20, 30], v => v > 100 );              // false</code></pre></div>
                     <h3 >Comprueba si un arreglo no está vacio</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isNotEmpty = arr => Array.isArray(arr) && Object.keys(arr).length > 0;
 
 // Examples
@@ -3782,7 +3782,7 @@ isNotEmpty([1, 2, 3]);      // true</code></pre></div>
                     <h3 >Comprueba si un arreglo es un subconjunto de otro arreglo</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// Check if `b` is subset of `a`
 const isSubset = (a, b) => (new Set(b)).size === (new Set(b.concat(a))).size;
 
@@ -3799,7 +3799,7 @@ isSubset([6], [1, 2, 3, 4]);        // false</code></pre></div>
                     <h3>Comprueba si un objeto es una promesa</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isPromise = obj => !!obj && (typeof obj === 'object' || typeof obj === 'function') && typeof obj.then === 'function';</code></pre></div>
                     </div>
                 
@@ -3807,7 +3807,7 @@ isSubset([6], [1, 2, 3, 4]);        // false</code></pre></div>
                     <h3>Comprueba si un objeto es un arreglo</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isArray = obj => Array.isArray(obj);</code></pre></div>
                     </div>
                 
@@ -3815,7 +3815,7 @@ isSubset([6], [1, 2, 3, 4]);        // false</code></pre></div>
                     <h3>Comprueba si un objeto está vacío</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">const isEmpty = obj => Reflect.ownKeys(obj).length === 0 && obj.constructor === Object;
 
 // Or for enumerable property names only
@@ -3826,7 +3826,7 @@ const isEmpty = obj => JSON.stringify(obj) === '{}';</code></pre></div>
                     <h3>Validar una fecha gregoriana</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript"></div>
+                            
                             <pre class="line-numbers"><code class="language-javascript">// `m`: the month (zero-based index)
 // `d`: the day
 // `y`: the year

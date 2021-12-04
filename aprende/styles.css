@@ -20,7 +20,7 @@
 }
 
 .tree-diagram ul ul::before {
-    border-right: 1px solid rgba(0, 0, 0, 0.3);
+    border-right: 1px solid var(--color-principal);
     content: '';
 
     /* Position */
@@ -44,8 +44,8 @@
 }
 
 .tree-diagram li::before {
-    border-right: 1px solid rgba(0, 0, 0, 0.3);
-    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    border-right: 1px solid var(--color-principal);
+    border-top: 1px solid var(--color-principal);
     content: '';
 
     /* Position */
@@ -59,7 +59,7 @@
 }
 
 .tree-diagram li::after {
-    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    border-top: 1px solid var(--color-principal);
     content: '';
 
     /* Position */
@@ -80,5 +80,14 @@
 /* Add a root item if you want */
 li.tree-diagram__root::before {
     border-right: none;
+}
+
+body{
+    background: #100526;
+    color: #fff;
+}
+
+header a{
+    color: #fff;
 }
 
