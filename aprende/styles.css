@@ -81,13 +81,3 @@
 li.tree-diagram__root::before {
     border-right: none;
 }
-
-body{
-    background: #100526;
-    color: #fff;
-}
-
-header a{
-    color: #fff;
-}
-
