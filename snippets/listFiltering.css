@@ -1,8 +1,44 @@
-header{
-    background: #230959;
+body{
+    background: #100526;
 }
 
 header a{
     color: #fff;
 }
 
+h2{
+    color: #9d6cff;
+    padding: 20px;
+}
+
+.snippets__hero{
+    text-align: center;
+    color: #fff;
+}
+
+.snippets__hero h1{
+    color: #fff;
+}
+
+.snippet__hug{
+    background: #9d6cff;
+    padding: 20px;
+}
+
+.snippet__hug h3{
+    text-align: center;
+}
+
+hr{
+    border: 1px solid #9d6cff;
+}
+
+.panel{
+    background: #fff;
+}
+
+footer{
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
