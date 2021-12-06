@@ -236,40 +236,191 @@ hr{
 
 /* ---------------- Aprende ------------------- */
 
+.internet{
+    background: #0bb6ff;
+    color: #000;
+    padding: 10px;
+    font-family: 'Poppins';
+}
+
 .html{
     background: #E34C26;
     color: #000;
     padding: 10px;
+    font-family: 'Poppins';
+}
+
+.html i{
+    color: #fff;
 }
 
 .css{
     background: #264de4;
     color: #fff;
     padding: 10px;
+    font-family: 'Poppins';
+}
+
+.sass{
+    background: #cd6799 ;
+    color: #000;
+    padding: 10px;
+    font-family: 'Poppins';
+}
+
+.bootstrap{
+    background: #602C50;
+    color: #fff;
+    padding: 10px;
+    font-family: 'Poppins';
 }
 
 .javascript{
     background: #F0DB4F;
     color: #323330;
     padding: 10px;
+    font-family: 'Poppins';
+}
+
+.javascript i{
+    color: #323330;
+}
+
+.jquery{
+    background: #0868AC;
+    color: #fff;
+    padding: 10px;
+    font-family: 'Poppins';
 }
 
 .react{
     background: #61DBFB;
     color: #000;
     padding: 10px;
+    font-family: 'Poppins';
 }
 
 .angular{
     background: #a6120d;
     color: #fff;
     padding: 10px;
+    font-family: 'Poppins';
 }
 
 .vue{
     background: #41B883;
     color: #000;
     padding: 10px;
+    font-family: 'Poppins';
+}
+
+.php{
+    background: #B0B3D6;
+    color: #000;
+    padding: 10px;
+    font-family: 'Poppins';
+
+}
+
+.sql{
+    background: #165CAA;
+    color: #fff;
+    padding: 10px;
+    font-family: 'Poppins';
+
+}
+
+.nodejs{
+    background: #68A063;
+    color: #303030;
+    padding: 10px;
+    font-family: 'Poppins';
+}
+
+.express{
+    background: #303030;
+    color: #68A063;
+    padding: 10px;
+    font-family: 'Poppins';
+}
+
+.mongodb{
+    background: #4DB33D;
+    color: #C1BEBC;
+    padding: 10px;
+    font-family: 'Poppins';
+}
+
+.python{
+    background: #FFE873;
+    color: #000;
+    padding: 10px;
+    font-family: 'Poppins';
+
+}
+
+.numpy{
+    background: #4DABCF;
+    color: #000;
+    padding: 10px;
+    font-family: 'Poppins';
+
+}
+
+.r{
+
+    background: #165CAA;
+    color: #fff;
+    padding: 10px;
+    font-family: 'Poppins';
+}
+
+.java{
+    background: #f89820;
+    color: #000;
+    padding: 10px;
+    font-family: 'Poppins';
+}
+
+.java i{
+    color: #000;
+}
+
+.cpp{
+    background: #283593;
+    color: #fff;
+    padding: 10px;
+    font-family: 'Poppins';
+}
+
+.cpp i{
+    color: #fff;
 }
 
 /* ---------------- Aprende ------------------- */
+
+/* ---------------- Snippets ------------------- */
+
+.card{
+    border-radius: 25px;
+    padding: 50px;
+    box-shadow: var(--sombra-de-caja);
+}
+
+.html__card{
+    background: #E34C26;
+    color: #000;
+
+}
+
+.css__card{
+    background: #264de4;
+    color: #fff;
+}
+
+.js__card{
+    background: #F0DB4F;
+    color: #323330;
+}
+
+/* ---------------- Snippets ------------------- */

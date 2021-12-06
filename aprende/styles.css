@@ -1,83 +1,39 @@
-.tree-diagram{
-    margin: auto;
-    width: 270px;
+.aprende__hero{
+    padding: 20px;
+    text-align: center;
 }
 
-.tree-diagram img{
-    width: 80px;
-    height: 80px;
-}
-
-
-.tree-diagram ul {
-    display: flex;
-    position: relative;
+ul{
+    margin: 10px;
     
-    /* Reset */
+}
+
+ul li{
     list-style-type: none;
-    margin: 0;
-    padding: 1rem 0.5rem 0rem 0.5rem;
+    display: inline-block;
 }
 
-.tree-diagram ul ul::before {
-    border-right: 1px solid var(--color-principal);
-    content: '';
-
-    /* Position */
-    position: absolute;
-    top: 0;
-    right: 50%;
-
-    /* Size */
-    height: 1rem;
-    width: 50%;
+ul li a{
+    display: block;
+    transition: .3s;
+    margin: 10px;
 }
 
-.tree-diagram li {
-    padding: 1rem 0.5rem 0rem 0.5rem;
-    position: relative;
+ul li a:hover{
+    opacity: .5;
+}
 
-    /* Center the content */
-    align-items: center;
+ul li a i{
+    font-size: 3em;
+}
+
+.steps{
     display: flex;
-    flex-direction: column;
+    background: var(--color-principal);
+    padding: 20px;
 }
 
-.tree-diagram li::before {
-    border-right: 1px solid var(--color-principal);
-    border-top: 1px solid var(--color-principal);
-    content: '';
-
-    /* Position */
-    position: absolute;
-    top: 0;
-    right: 50%;
-
-    /* Size */
-    height: 1rem;
-    width: 50%;
-}
-
-.tree-diagram li::after {
-    border-top: 1px solid var(--color-principal);
-    content: '';
-
-    /* Position */
-    position: absolute;
-    top: 0;
-    right: 0;
-
-    /* Size */
-    width: 50%;
-}
-
-.tree-diagram li:first-child::before,
-.tree-diagram li:last-child::after {
-    /* Remove the top of border from the first and last items */
-    border-top: none;
-}
-
-/* Add a root item if you want */
-li.tree-diagram__root::before {
-    border-right: none;
+.steps ul{
+    background: #23104b;
+    padding: 0px;
 }
