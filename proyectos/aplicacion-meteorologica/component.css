@@ -131,7 +131,7 @@ button{
 }
 
 h1{
-    color: #6320ee;
+    color: var(--);
     font-size: 2em;
 }
 

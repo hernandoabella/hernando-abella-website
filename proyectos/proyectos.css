@@ -1,5 +1,5 @@
 body{
-  background: #100526;
+  background: var(--color-principal);
 }
 
 header a{

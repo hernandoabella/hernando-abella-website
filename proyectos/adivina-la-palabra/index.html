@@ -8,11 +8,29 @@
     <title>Adivina la Palabra</title>
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Mr+Dafoe|Nothing+You+Could+Do|Yellowtail|Roboto" rel="stylesheet">
     <link rel="stylesheet" href="./component.css">
-    <link rel="stylesheet" href="/temaPrism.css">
+    <link rel="stylesheet" href="/css/temaPrism.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body>
+<header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="../"><i class="fas fa-angle-left"></i></a>
+                </li>
+                <li>
+                    <a href="/">Inicio</a>
+                </li>
+                <li>
+                    <a href="/aprende/">Aprende</a>
+                </li>
+                <li>
+                    <a href="/snippets/">Snippets</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
     <section class="codigo__del__proyecto">
         <div class="app__background">
             <div class="app__container">
@@ -39,31 +57,21 @@
         </div>        
         <section class="contenido__proyecto">
             <h1 class="h1">🔮 Adivina la Palabra</h1>
-        <br>
-        <p>⚡ Adivine la palabra para ganar el juego.</p>
-        <br>
-        <p><b>Dificultad:</b> ★★★☆☆</p>
-        <br>
-        <div class="flexNav">
-            <ul class="breadcrumb">
-                <li><a href="/index.html">Inicio</a></li>
-                <li><a href="/proyectos">Proyectos</a></li>
-                <li>Adivina la Palabra</li>
-            </ul>
-        
-            <div class="download">
-                <a href="../adivina-la-palabra.rar" download><i class="fas fa-download"></i></a>
-                <a href="#">YouTube</a>
-            </div>
-        </div>
+            <p>Adivine la palabra para ganar el juego.</p>
 
-        <br>
+            <div class="download">
+                <a href="../adivina-la-palabra.rar" download><i class="fas fa-download descarga"></i></a>
+                <a class="youtube" href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        
+
+        <br><br>
 
         <div class="code__container">
             <h5 class="html__tag">HTML</h5>
             <div class="panel">
-                    <div class="codigo__htmlt">
-                        <div class="decor__bar html"></div>
+                    <div class="codigo__html">
+                        <div class="decor__bar "></div>
                         <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
@@ -99,7 +107,7 @@
             <h5 class="css__tag">CSS</h5>
             <div class="panel">
                     <div class="codigo__css">
-                        <div class="decor__bar css"></div>
+                        <div class="decor__bar "></div>
                         <pre class="line-numbers"><code class="language-css">body {
     background: #fff0ce;
     font-family: 'M PLUS Rounded 1c', sans-serif;
@@ -175,7 +183,7 @@
             
             <div class="panel">
                     <div class="codigo__javascript">
-                        <div class="decor__bar javascript"></div>
+                        <div class="decor__bar "></div>
                         <pre class="line-numbers"><code class="language-javascript">const possibleWords = [
   "MENTE", 
   "ALMA", 

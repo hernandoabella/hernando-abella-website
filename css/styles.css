@@ -9,7 +9,8 @@
 /* ---------------- variables ------------------- */
 
 :root{
-    --color-principal: #400ca9;
+    --color-principal: #3d348b;
+    --color-secundario: #7678ed;
     --sombra-de-caja: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
@@ -39,6 +40,10 @@ i{
     color: var(--color-principal);
 }
 
+h1{
+    font-size: 2.3em;
+}
+
 h1, h2, h3{
     color: var(--color-principal);
     font-family: 'Poppins', sans-serif;
@@ -53,12 +58,14 @@ h1, h2, h3{
     opacity: .5;
 }
 
-#front__page{
+.hero__container{
     display: flex;
+    padding: 50px;
 }
 
 .one{
     width: 50%;
+    
 }
 
 .one img{
@@ -75,6 +82,58 @@ h1, h2, h3{
     padding: 10px;
 }
 
+.html__hug{
+    background: #E34C26;
+    padding: 20px;
+    margin: 50px;
+}
+
+.html__hug h3{
+    color: #000;
+    text-align: center;
+}
+
+.css__hug{
+    background: #264de4;
+    padding: 20px;
+    margin: 50px auto;
+    color: #fff;
+}
+
+.css__hug h3{
+    color: #fff;
+    text-align: center;
+}
+
+.javascript__hug{
+    background: #F0DB4F;
+    padding: 20px;
+    margin: 50px auto;
+    color: #000;
+    width: 80%;
+}
+
+.javascript__hug h3{
+    color: #000;
+    text-align: center;
+}
+
+.git__hug{
+    background: #FF0800;
+    padding: 20px;
+    margin: 50px;
+    color: #000;
+}
+
+.git__hug h3{
+    color: #000;
+    text-align: center;
+}
+
+/* ---------------- estilos principales ------------------- */
+
+/* ---------------- nueva navegacion sencilla ------------------- */
+
 .navegacion{
     margin-top: 20px;
 }
@@ -88,10 +147,6 @@ h1, h2, h3{
 .navegacion a:hover{
     opacity: .5;
 }
-
-/* ---------------- estilos principales ------------------- */
-
-/* ---------------- nueva navegacion sencilla ------------------- */
 
 header{
     padding: 20px;
@@ -130,10 +185,10 @@ header a:hover{
 }
 
 .tarjeta__proyectos{
-    background: #35235b;
+    background: var(--color-secundario);
+    border-radius: 25px;
     padding: 10px;
     text-align: center;
-    box-shadow: var(--sombra-de-caja);
     transition: .3s;
 }
 
@@ -164,6 +219,7 @@ header a:hover{
     margin: 0px;
     text-align: center;
     color: #fff;
+    text-shadow: 3px 3px 0px var(--color-principal);
 }
 
 .top__header{
@@ -176,6 +232,7 @@ header a:hover{
 
 .estrellas i{
     color: #fff;
+    text-shadow: 3px 3px 0px var(--color-principal);
 }
 
 .html__tag{
@@ -195,7 +252,7 @@ header a:hover{
 
 .javascript__tag{
     background-color: #F0DB4F;
-    color: #323330;
+    color: #000;
     display: inline;
     padding: 10px;
 }
@@ -261,11 +318,19 @@ hr{
     font-family: 'Poppins';
 }
 
+.css i{
+    color: #fff;
+}
+
 .sass{
-    background: #cd6799 ;
+    background: #fff;
     color: #000;
     padding: 10px;
     font-family: 'Poppins';
+}
+
+.sass i{
+    color: #cd6799;
 }
 
 .bootstrap{
@@ -273,6 +338,10 @@ hr{
     color: #fff;
     padding: 10px;
     font-family: 'Poppins';
+}
+
+.bootstrap i{
+    color: #fff;
 }
 
 .javascript{
@@ -293,11 +362,19 @@ hr{
     font-family: 'Poppins';
 }
 
+.jquery i{
+    color: #fff;
+}
+
 .react{
     background: #61DBFB;
     color: #000;
     padding: 10px;
     font-family: 'Poppins';
+}
+
+.react i{
+    color: #000;
 }
 
 .angular{
@@ -307,11 +384,19 @@ hr{
     font-family: 'Poppins';
 }
 
+.angular i{
+    color: #fff;
+}
+
 .vue{
     background: #41B883;
     color: #000;
     padding: 10px;
     font-family: 'Poppins';
+}
+
+.vue i{
+    color: #000;
 }
 
 .php{
@@ -322,12 +407,15 @@ hr{
 
 }
 
-.sql{
+.mysql{
     background: #165CAA;
     color: #fff;
     padding: 10px;
     font-family: 'Poppins';
+}
 
+.mysql i{
+    color: #fff;
 }
 
 .nodejs{
@@ -404,23 +492,54 @@ hr{
 .card{
     border-radius: 25px;
     padding: 50px;
-    box-shadow: var(--sombra-de-caja);
+    box-shadow: var(--sombra-de-caja);   
+    transition: .3s;
+}
+
+.card:hover{
+    opacity: .5;
+}
+
+
+.card span{
+    font-size: 2em;
+    font-family: 'Poppins', sans-serif;
 }
 
 .html__card{
-    background: #E34C26;
-    color: #000;
+    background-image: linear-gradient(-20deg, #E34C26 0%, #ff9a44 100%);
+    color: #c84626;
+}
 
+.html__card h3{
+    color: #c84626;
 }
 
 .css__card{
-    background: #264de4;
-    color: #fff;
+    background-image: linear-gradient(-20deg, #264de4 0%, #1D8FE1 100%);
+    color: #193ac1;
+}
+
+.css__card h3{
+    color: #193ac1;
 }
 
 .js__card{
-    background: #F0DB4F;
-    color: #323330;
+    background-image: linear-gradient(-20deg, #F0DB4F 0%, #cdab24 100%);
+    color: #8f8020;
+}
+
+.js__card h3{
+    color: #8f8020;
+}
+
+.git__card{
+    background-image: linear-gradient(-20deg, #FF0800 0%, #be0c06 100%);
+    color: #96100b;
+}
+
+.git__card h3{
+    color: #96100b;
 }
 
 /* ---------------- Snippets ------------------- */

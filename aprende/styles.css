@@ -1,3 +1,19 @@
+body{
+    background: var(--color-principal);
+}
+
+header a{
+    color: #fff;
+}
+
+h1{
+    color: #fff;
+}
+
+p{
+    color: #fff;
+}
+
 .aprende__hero{
     padding: 20px;
     text-align: center;
@@ -34,6 +50,12 @@ ul li a i{
 }
 
 .steps ul{
-    background: #23104b;
+    background: var(--color-secundario);
+    border-radius: 25px;
     padding: 0px;
+}
+
+.steps ul li a{
+    border-radius: 20%;
+    margin: 10px;
 }
