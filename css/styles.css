@@ -85,7 +85,8 @@ h1, h2, h3{
 .html__hug{
     background: #E34C26;
     padding: 20px;
-    margin: 50px;
+    margin: 50px auto;
+    width: 80%;
 }
 
 .html__hug h3{
@@ -121,8 +122,9 @@ h1, h2, h3{
 .git__hug{
     background: #FF0800;
     padding: 20px;
-    margin: 50px;
+    margin: 50px auto;
     color: #000;
+    width: 80%;
 }
 
 .git__hug h3{

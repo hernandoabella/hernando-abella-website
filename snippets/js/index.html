@@ -314,7 +314,7 @@ closest([29, 87, 8, 78, 97, 20, 75, 33, 24, 17], 50);   // 33</code></pre></div>
                     </div>
                
                     
-                    
+                    <div class="javascript__hug">
                     <h3 >Find the index of the last matching item of an array</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -328,9 +328,9 @@ const lastIndex = (arr, predicate) => arr.map(item => predicate(item)).lastIndex
 lastIndex([1, 3, 5, 7, 9, 2, 4, 6, 8], i => i % 2 === 1);   // 4
 lastIndex([1, 3, 5, 7, 9, 8, 6, 4, 2], i => i > 6);         // 5</code></pre></div>
                     </div>
-               
-                    
-                 
+                    </div>
+
+                    <div class="javascript__hug">
                     <h3 >Find the index of the maximum item of an array</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -341,10 +341,10 @@ lastIndex([1, 3, 5, 7, 9, 8, 6, 4, 2], i => i > 6);         // 5</code></pre></d
 indexOfMax([1, 3, 9, 7, 5]);        // 2
 indexOfMax([1, 3, 7, 7, 5]);        // 2</code></pre></div>
                     </div>
-
+                    </div>
                     
-                 
-                    <h3 >Find the index of the minimum item of an array</h3>
+                    <div class="javascript__hug">
+                        <h3 >Find the index of the minimum item of an array</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -354,9 +354,9 @@ indexOfMax([1, 3, 7, 7, 5]);        // 2</code></pre></div>
 indexOfMin([6, 4, 8, 2, 10]);       // 3
 indexOfMin([6, 4, 2, 2, 10]);       // 2</code></pre></div>
                     </div>
-
+                    </div>
                     
-                
+                    <div class="javascript__hug">
                     <h3 >Find the length of the longest string in an array</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -366,18 +366,18 @@ indexOfMin([6, 4, 2, 2, 10]);       // 2</code></pre></div>
 // Example
 findLongest(['always','look','on','the','bright','side','of','life']);  // 6</code></pre></div>
                     </div>
-               
+                    </div>
                     
-                 
+                    <div class="javascript__hug">
                     <h3 >Find the maximum item of an array</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
                             <pre class="line-numbers"><code class="language-javascript">const max = arr => Math.max(...arr);</code></pre></div>
                     </div>
-               
+                    </div>
                     
-                  
+                    <div class="javascript__hug">
                     <h3 >Find the maximum item of an array by given key</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -393,18 +393,18 @@ const people = [
 ];
 maxBy(people, 'age');   // { name: 'Foo', age: 42 }</code></pre></div>
                     </div>
-                
-                 
+                    </div>
                     
+                    <div class="javascript__hug">
                     <h3 >Find the minimum item of an array</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
                             <pre class="line-numbers"><code class="language-javascript">const min = arr => Math.min(...arr);</code></pre></div>
                     </div>
-               
-                
+                    </div>
                     
+                    <div class="javascript__hug">
                     <h3 >Find the minimum item of an array by given key</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -420,8 +420,9 @@ const people = [
 ];
 minBy(people, 'age');   // { name: 'Bar', age: 24 }</code></pre></div>
                     </div>
-                
+                    </div>
                     
+                    <div class="javascript__hug">
                     <h3 >Flatten an array</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -437,9 +438,9 @@ const flat = arr => arr.flat();
 // Example
 flat(['cat', ['lion', 'tiger']]);   // ['cat', 'lion', 'tiger']</code></pre></div>
                     </div>
-                
-                  
+                    </div>
                     
+                    <div class="javascript__hug">
                     <h3 >Get all arrays of consecutive elements</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -451,8 +452,9 @@ getConsecutiveArrays([1, 2, 3, 4, 5], 2);   // [[1, 2], [2, 3], [3, 4], [4, 5]]
 getConsecutiveArrays([1, 2, 3, 4, 5], 3);   // [[1, 2, 3], [2, 3, 4], [3, 4, 5]]
 getConsecutiveArrays([1, 2, 3, 4, 5], 6);   // []</code></pre></div>
                     </div>
-                
+                    </div>
                     
+                    <div class="javascript__hug">
                     <h3 >Get all n-th items of an array</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -463,8 +465,9 @@ getConsecutiveArrays([1, 2, 3, 4, 5], 6);   // []</code></pre></div>
 getNthItems([1, 2, 3, 4, 5, 6, 7, 8, 9], 2);    // [2, 4, 6, 8]
 getNthItems([1, 2, 3, 4, 5, 6, 7, 8, 9], 3);    // [3, 6, 9]</code></pre></div>
                     </div>
-                
+                    </div>
                     
+                    <div class="javascript__hug">
                     <h3 >Get all subsets of an array</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -475,8 +478,9 @@ getNthItems([1, 2, 3, 4, 5, 6, 7, 8, 9], 3);    // [3, 6, 9]</code></pre></div>
 getSubsets([1, 2]);     // [[], [1], [2], [1, 2]]
 getSubsets([1, 2, 3]);  // [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]</code></pre></div>
                     </div>
-               
+                    </div>
                     
+                    <div class="javascript__hug">
                     <h3 >Get indices of a value in an array</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -490,16 +494,18 @@ const indices = (arr, value) => arr.map((v, i) => v === value ? i : false).filte
 indices(['h', 'e', 'l', 'l', 'o'], 'l');    // [2, 3]
 indices(['h', 'e', 'l', 'l', 'o'], 'w');    // []</code></pre></div>
                     </div>
-              
+                    </div>
                     
+                    <div class="javascript__hug">
                     <h3 >Get the average of an array</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
                             <pre class="line-numbers"><code class="language-javascript">const average = arr => arr.reduce((a, b) => a + b, 0) / arr.length;</code></pre></div>
                     </div>
-                
+                    </div>
                     
+                    <div class="javascript__hug">
                     <h3 >Get the intersection of arrays</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -510,8 +516,9 @@ indices(['h', 'e', 'l', 'l', 'o'], 'w');    // []</code></pre></div>
 getIntersection([1, 2, 3], [2, 3, 4, 5]);               // [2, 3]
 getIntersection([1, 2, 3], [2, 3, 4, 5], [1, 3, 5]);    // [3]</code></pre></div>
                     </div>
-                
+                    </div>
                     
+                    <div class="javascript__hug">
                     <h3 >Get the rank of an array of numbers</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -523,16 +530,18 @@ ranking([80, 65, 90, 50]);      // [2, 3, 1, 4]
 ranking([80, 80, 70, 50]);      // [1, 1, 3, 4]
 ranking([80, 80, 80, 50]);      // [1, 1, 1, 4]</code></pre></div>
                     </div>
-               
+                    </div>
                     
+                    <div class="javascript__hug">
                     <h3 >Get the sum of an array of numbers</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
                             <pre class="line-numbers"><code class="language-javascript">const sum = arr => arr.reduce((a, b) => a + b, 0);</code></pre></div>
                     </div>
-               
+                    </div>
                     
+                    <div class="javascript__hug">
                     <h3 >Get the unique values of an array</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -545,8 +554,9 @@ const unique = arr => arr.filter((el, i, array) => array.indexOf(el) === i);
 // Or
 const unique = arr => arr.reduce((acc, el) => acc.includes(el) ? acc : [...acc, el], []);</code></pre></div>
                     </div>
-                
+                    </div>
                     
+                    <div class="javascript__hug">
                     <h3 >Get union of arrays</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -556,8 +566,9 @@ const unique = arr => arr.reduce((acc, el) => acc.includes(el) ? acc : [...acc, 
 // Example
 union([1, 2], [2, 3], [3]);     // [1, 2, 3]</code></pre></div>
                     </div>
-                
+                    </div>
                     
+                    <div class="javascript__hug">
                     <h3 >Group an array of objects by a key</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -589,8 +600,9 @@ groupBy([
 }
 */</code></pre></div>
                     </div>
-                
+                    </div>
                     
+                    <div class="javascript__hug">
                     <h3 >Merge two arrays</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -605,8 +617,9 @@ const merge = [...new Set(a.concat(b))];
 // Or
 const merge = [...new Set([...a, ...b])];</code></pre></div>
                     </div>
-               
+                    </div>
                     
+                    <div class="javascript__hug">
                     <h3 >Partition an array based on a condition</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -616,19 +629,20 @@ const merge = [...new Set([...a, ...b])];</code></pre></div>
 // Example
 partition([1, 2, 3, 4, 5], n => n % 2);     // [[2, 4], [1, 3, 5]]</code></pre></div>
                     </div>
-              
+                    </div>
                     
+                    <div class="javascript__hug">
                     <h3 >Remove duplicate values in an array</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
-                            <div class="decor__bar javascript">const removeDuplicate = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexOf(i));
+                            <pre class="line-numbers"><code class="language-javascript">const removeDuplicate = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexOf(i));
 
 // Example
-removeDuplicate(['h', 'e', 'l', 'l', 'o', 'w', 'o', 'r', 'l', 'd']); //  ['h', 'e', 'w', 'r', 'd']</div>
-                            <pre class="line-numbers"><code class="language-javascript"></code></pre></div>
+removeDuplicate(['h', 'e', 'l', 'l', 'o', 'w', 'o', 'r', 'l', 'd']); //  ['h', 'e', 'w', 'r', 'd']</code></pre></div>
                     </div>
-               
+                    </div>
                     
+                    <div class="javascript__hug">
                     <h3 >Remove falsy values from array</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -638,8 +652,9 @@ removeDuplicate(['h', 'e', 'l', 'l', 'o', 'w', 'o', 'r', 'l', 'd']); //  ['h', '
 // Example
 removeFalsy([0, 'a string', '', NaN, true, 5, undefined, 'another string', false]); // ['a string', true, 5, 'another string']</code></pre></div>
                     </div>
-               
+                    </div>
                     
+                    <div class="javascript__hug">
                     <h3 >Shuffle an array
                     </h3>
                     <div class="panel">
@@ -653,8 +668,9 @@ const shuffle = arr => arr.sort(() => .5 - Math.random());
 // Example
 shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);   // [9, 1, 10, 6, 8, 5, 2, 3, 7, 4]</code></pre></div>
                     </div>
-               
+                    </div>
                     
+                    <div class="javascript__hug">
                     <h3 >Sort an array of items by given key</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -678,8 +694,9 @@ sortBy(people, 'age');
 //      { name: 'Foo', age: 42 },
 //  ]</code></pre></div>
                     </div>
-                
+                    </div>
                     
+                    <div class="javascript__hug">
                     <h3 >Sort an array of numbers</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -689,8 +706,9 @@ sortBy(people, 'age');
 // Example
 sort([1, 5, 2, 4, 3]);      // [1, 2, 3, 4, 5]</code></pre></div>
                     </div>
-                
+                    </div>
                     
+                    <div class="javascript__hug">
                     <h3 >Split an array into chunks</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -701,8 +719,9 @@ sort([1, 5, 2, 4, 3]);      // [1, 2, 3, 4, 5]</code></pre></div>
 chunk([1, 2, 3, 4, 5, 6, 7, 8], 3);     // [[1, 2, 3], [4, 5, 6], [7, 8]]
 chunk([1, 2, 3, 4, 5, 6, 7, 8], 4);     // [[1, 2, 3, 4], [5, 6, 7, 8]]</code></pre></div>
                     </div>
-               
+                    </div>
                     
+                    <div class="javascript__hug">
                     <h3 >Swap the rows and columns of a matrix</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -722,8 +741,9 @@ transpose([             // [
     [7, 8, 9],          //      [3, 6, 9],
 ]);                     //  ]</code></pre></div>
                     </div>
-                
+                    </div>
                     
+                    <div class="javascript__hug">
                     <h3 >Swap two array items</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -734,8 +754,9 @@ const swapItems = (a, i, j) => a[i] && a[j] && [...a.slice(0, i), a[j], ...a.sli
 // Example
 swapItems([1, 2, 3, 4, 5], 1, 4);   // [1, 5, 3, 4, 2] </code></pre></div>
                     </div>
-               
+                    </div>
                     
+                    <div class="javascript__hug">
                     <h3 >Unzip an array of arrays</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -753,8 +774,9 @@ unzip([['a', 1], ['b', 2], ['c', 3], ['d', 4], ['e', 5]]);  // [['a', 'b', 'c', 
       e 5
 */</code></pre></div>
                     </div>
-               
+                    </div>
                     
+                    <div class="javascript__hug">
                     <h3 >Zip multiple arrays</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -773,11 +795,14 @@ Does it look like a zipper?
      e       5
 */</code></pre></div>
                     </div>
-                
+                    </div>
 
-                <div class="ribbon__shet">
-                    <h2>DOM</h2>
-                </div>
+                    <div class="ribbon__shet">
+                        <h2>DOM</h2>
+                    </div>
+                    
+                    <div class="javascript__hug">
+                    
               
                     <h3 >Check if an element is a descendant of another</h3>
                     <div class="panel">
@@ -785,41 +810,45 @@ Does it look like a zipper?
                             
                             <pre class="line-numbers"><code class="language-javascript">const isDescendant = (child, parent) => parent.contains(child);</code></pre></div>
                     </div>
-
-                     
-               
-         
+                    </div>
+                    
+                    <div class="javascript__hug">
                     <h3 >Check if an element is focused</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
                             <pre class="line-numbers"><code class="language-javascript">const hasFocus = ele => (ele === document.activeElement);</code></pre></div>
                     </div>
-               
+                    </div>
                     
-               
+                    <div class="javascript__hug">
                     <h3 >Check if the touch events are supported</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
                             <pre class="line-numbers"><code class="language-javascript">const touchSupported = () => ('ontouchstart' in window || window.DocumentTouch && document instanceof window.DocumentTouch);</code></pre></div>
                     </div>
+                    </div>
                     
-               
+                    <div class="javascript__hug">
                     <h3 >Check if user scrolls to the bottom of the page</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
                             <pre class="line-numbers"><code class="language-javascript">const isAtBottom = () => document.documentElement.clientHeight + window.scrollY >= document.documentElement.scrollHeight;</code></pre></div>
                     </div>
+                    </div>
                     
+                    <div class="javascript__hug">
                     <h3 >Detect Internet Explorer browser</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
                             <pre class="line-numbers"><code class="language-javascript">const isIE = !!document.documentMode;</code></pre></div>
                     </div>
+                    </div>
                     
+                    <div class="javascript__hug">
                     <h3 >Detect macOS browser
                     </h3>
                     <div class="panel">
@@ -827,16 +856,18 @@ Does it look like a zipper?
                             
                             <pre class="line-numbers"><code class="language-javascript">const isMacBrowser = /Mac|iPod|iPhone|iPad/.test(navigator.platform);</code></pre></div>
                     </div>
-               
+                    </div>
                     
-                    <h3 >Get all siblings of an element</h3>
+                    <div class="javascript__hug">
+                        <h3 >Get all siblings of an element</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
                             <pre class="line-numbers"><code class="language-javascript">const siblings = ele => [].slice.call(ele.parentNode.children).filter((child) => (child !== ele));</code></pre></div>
                     </div>
-              
+                    </div>
                     
+                    <div class="javascript__hug">
                     <h3 >Get the position of an element relative to the document</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -846,16 +877,18 @@ Does it look like a zipper?
 // Example
 getPosition(document.body);     // { left: 0, top: 0 }</code></pre></div>
                     </div>
-               
+                    </div>
                     
+                    <div class="javascript__hug">
                     <h3 >Get the selected text</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
                             <pre class="line-numbers"><code class="language-javascript">const getSelectedText = () => window.getSelection().toString();</code></pre></div>
                     </div>
-               
+                    </div>
                     
+                    <div class="javascript__hug">
                     <h3 >Go back to the previous page</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -865,9 +898,10 @@ getPosition(document.body);     // { left: 0, top: 0 }</code></pre></div>
 // Or
 history.go(-1);</code></pre></div>
                     </div>
-               
-                    
-                    <h3 >Hide an element</h3>
+                    </div>
+
+                    <div class="javascript__hug">
+                        <h3 >Hide an element</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -880,8 +914,9 @@ const hide = ele => ele.style.visibility = 'hidden';
 // Or
 const hide = ele => ele.hidden = true;</code></pre></div>
                     </div>
-                
-                    
+                    </div>
+
+                    <div class="javascript__hug">
                     <h3 >Insert an element after other one</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -891,8 +926,9 @@ const hide = ele => ele.hidden = true;</code></pre></div>
 // Or
 const insertAfter = (ele, anotherEle) => anotherEle.insertAdjacentElement('afterend', ele);</code></pre></div>
                     </div>
-                
-                    
+                    </div>
+
+                    <div class="javascript__hug">
                     <h3 >Insert an element before other one</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -902,6 +938,50 @@ const insertAfter = (ele, anotherEle) => anotherEle.insertAdjacentElement('after
 // Or
 const insertBefore = (ele, anotherEle) => anotherEle.insertAdjacentElement('beforebegin', ele);</code></pre></div>
                     </div>
+                    </div>
+
+                    <div class="javascript__hug"></div>
+
+                    <div class="javascript__hug"></div>
+
+                    <div class="javascript__hug"></div>
+
+                    <div class="javascript__hug"></div>
+
+                    <div class="javascript__hug"></div>
+
+                    <div class="javascript__hug"></div>
+
+                    <div class="javascript__hug"></div>
+
+                    <div class="javascript__hug"></div>
+
+                    <div class="javascript__hug"></div>
+
+                    <div class="javascript__hug"></div>
+
+                    <div class="javascript__hug"></div>
+
+                    <div class="javascript__hug"></div>
+
+                    <div class="javascript__hug"></div>
+
+                    <div class="javascript__hug"></div>
+
+                    
+                    
+               
+                    
+                    
+               
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
                     
                     <h3 >Insert given HTML after an element</h3>
                     <div class="panel">
