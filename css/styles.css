@@ -22,6 +22,8 @@
 *{
     box-sizing: border-box;
     scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
 }
 
 body{
@@ -238,6 +240,29 @@ header a:hover{
     text-shadow: 3px 3px 0px var(--color-principal);
 }
 
+.code__container div{
+    margin-bottom: 20px;
+}
+
+.html__container pre{
+    border: 5px solid #E34C26;
+    border-radius: 25px;
+    box-shadow: var(--sombra-de-caja);
+    
+}
+
+.css__container pre{
+    border: 5px solid #264de4;
+    border-radius: 25px;
+    box-shadow: var(--sombra-de-caja);
+}
+
+.js__container pre{
+    border: 5px solid #F0DB4F;
+    border-radius: 25px;
+    box-shadow: var(--sombra-de-caja);
+}
+
 .html__tag{
     background-color: #E34C26;
     color: #fff;
@@ -265,9 +290,17 @@ hr{
     border: 3px solid #322931;
 }
 
+.download{
+    padding: 20px 0px;
+}
+
+.download a{
+    margin-right: 10px;
+}
+
 .descarga{
-    background: var(--color-principal);
-    color: #fff;
+    background: var(--color-secundario);
+    color: #000;
     padding: 10px;
     border-radius: 50%;
     transition: .3s;

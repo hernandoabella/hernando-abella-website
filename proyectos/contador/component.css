@@ -123,8 +123,26 @@ hr{
   transform: translate(-50%, -50%);
 }
 
+body{
+    background: var(--color-principal) !important;
+    color: #fff;
+}
+
+header a{
+    color: #fff;
+}
+
+header i{
+    color: #fff;
+}
+
 h1{
     font-size: 2em;
+    color: #fff !important;
+}
+
+p{
+    color: #fff !important
 }
 
 .contenido__proyecto{
