@@ -130,9 +130,25 @@ button{
   transform: translate(-50%, -50%);
 }
 
+body{
+    background-color: var(--color-principal) !important;
+}
+
+header a{
+    color: #fff;
+}
+
+header i{
+    color: #fff;
+}
+
 h1{
-    color: var(--);
     font-size: 2em;
+    color: #fff !important;
+}
+
+p{
+    color: #fff;
 }
 
 .contenido__proyecto{

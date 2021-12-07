@@ -51,6 +51,10 @@ h1, h2, h3{
     font-family: 'Poppins', sans-serif;
 }
 
+.redes__sociales{
+    padding: 20px 0px;
+}
+
 .redes__sociales a{
     margin-right: 10px;
     transition: .3s;
@@ -601,3 +605,15 @@ hr{
 }
 
 /* ---------------- Snippets ------------------- */
+
+/* ---------------- Contacto ------------------- */
+
+.informacion__contacto{
+    padding: 10px 0px;
+}
+
+.informacion__contacto p{
+    padding: 10px 0px;
+}
+
+/* ---------------- Contacto ------------------- */

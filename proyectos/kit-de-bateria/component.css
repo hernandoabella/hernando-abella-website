@@ -313,9 +313,21 @@
   transform: translate(-50%, -50%);
 }
 
+body{
+  background: var(--color-principal) !important;
+}
+
+header a, header i{
+  color: #fff;
+}
+
 h1{
-    color: #6320ee;
+    color: #fff !important;
     font-size: 2em;
+}
+
+p{
+  color: #fff;
 }
 
 .contenido__proyecto{

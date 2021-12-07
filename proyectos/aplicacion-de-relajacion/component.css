@@ -126,9 +126,21 @@ body {
   transform: translate(-50%, -50%);
 }
 
+body{
+  background: var(--color-principal) !important;
+}
+
 h1{
-    color: #6320ee;
+    color: #fff !important;
     font-size: 2em;
+}
+
+header a, header i{
+  color: #fff;
+}
+
+p{
+  color: #fff;
 }
 
 .contenido__proyecto{
