@@ -44,9 +44,12 @@ ul li a i{
 }
 
 .steps{
-    display: flex;
+    width: 80%;
     background: var(--color-principal);
     padding: 20px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .steps ul{
@@ -57,5 +60,6 @@ ul li a i{
 
 .steps ul li a{
     border-radius: 20%;
-    margin: 10px;
+    
+    
 }

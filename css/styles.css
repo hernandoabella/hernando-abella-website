@@ -99,6 +99,7 @@ h1, h2, h3{
     padding: 20px;
     margin: 50px auto;
     color: #fff;
+    width: 80%;
 }
 
 .css__hug h3{
@@ -120,7 +121,7 @@ h1, h2, h3{
 }
 
 .git__hug{
-    background: #FF0800;
+    background: #F1502F;
     padding: 20px;
     margin: 50px auto;
     color: #000;
@@ -487,6 +488,28 @@ hr{
     color: #fff;
 }
 
+.bash{
+    background: #07091c;
+    color: #fff;
+    padding: 10px;
+    font-family: 'Poppins';
+}
+
+.bash i{
+    color: #fff;
+}
+
+.c{
+    background: #283593;
+    color: #fff;
+    padding: 10px;
+    font-family: 'Poppins';
+}
+
+.c i{
+    color: #fff;
+}
+
 /* ---------------- Aprende ------------------- */
 
 /* ---------------- Snippets ------------------- */
@@ -536,7 +559,7 @@ hr{
 }
 
 .git__card{
-    background-image: linear-gradient(-20deg, #FF0800 0%, #be0c06 100%);
+    background-image: linear-gradient(-20deg, #F1502F 0%, #be0c06 100%);
     color: #96100b;
 }
 
