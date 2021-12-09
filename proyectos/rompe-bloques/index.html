@@ -7,11 +7,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rompe bloques</title>
     <link rel="stylesheet" href="./component.css">
-    <link rel="stylesheet" href="/temaPrism.css">
+    <link rel="stylesheet" href="/css/temaPrism.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body>
+<header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="../"><i class="fas fa-angle-left"></i></a>
+                </li>
+                <li>
+                    <a href="/">Inicio</a>
+                </li>
+                <li>
+                    <a href="/aprende/">Aprende</a>
+                </li>
+                <li>
+                    <a href="/snippets/">Snippets</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
     <section class="codigo__del__proyecto">
         <div class="app__background">
             <div class="app__container">
@@ -41,29 +59,21 @@
         
         <section class="contenido__proyecto">
             <h1>Rompe bloques</h1>
-        <br>
-        <p>Usa las teclas derecha e izquierda para mover la paleta para hacer rebotar la pelota y romper los bloques.</p>
-        <br>
-        <div class="flexNav">
-            <ul class="breadcrumb">
-                <li><a href="/index.html">Inicio</a></li>
-                <li><a href="/proyectos">Proyectos</a></li>
-                <li>Rompe bloques</li>
-            </ul>
         
-            <div class="download">
-                <a href="../rompe-bloques.rar" download><i class="fas fa-download"></i></a>
-                <a href="https://www.youtube.com/watch?v=sgGEDuY5zOs&t">YouTube</a>
+        <p>Usa las teclas derecha e izquierda para mover la paleta para hacer rebotar la pelota y romper los bloques.</p>
+        
+        
+        <div class="download">
+                <a href="../rompe-bloques.rar" download><i class="fas fa-download descarga"></i></a>
+                <a class="youtube" href="https://www.youtube.com/watch?v=sgGEDuY5zOs&t"><i class="fab fa-youtube"></i></a>
             </div>
-        </div>
-
-        <br>
 
         <div class="code__container">
-            <h5 class="html__tag">HTML</h5>
+           
+            <div class="html__container">
             <div class="panel">
                     <div class="codigo__htmlt">
-                        <div class="decor__bar html"></div>
+                        <div class="decor__bar "></div>
                         <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
   &lt;head&gt;
@@ -93,13 +103,14 @@
 &lt;/html&gt;
 </code></pre></div>
                 </div>
+            </div>
             
-            <hr>
+            
 
-            <h5 class="css__tag">CSS</h5>
+            <div class="css__container">
             <div class="panel">
                     <div class="codigo__css">
-                        <div class="decor__bar css"></div>
+                        <div class="decor__bar "></div>
                         <pre class="line-numbers"><code class="language-css">* {
   box-sizing: border-box;
 }
@@ -172,14 +183,12 @@ canvas {
 }
 </code></pre></div>
                 </div>
+            </div>
 
-            <hr>
-
-            <h5 class="javascript__tag">JAVASCRIPT</h5>
-            
+            <div class="js__container">
             <div class="panel">
                     <div class="codigo__javascript">
-                        <div class="decor__bar javascript"></div>
+                        <div class="decor__bar "></div>
                         <pre class="line-numbers"><code class="language-javascript">const rulesBtn = document.getElementById('rules-btn');
 const closeBtn = document.getElementById('close-btn');
 const rules = document.getElementById('rules');
@@ -422,14 +431,13 @@ rulesBtn.addEventListener('click', () => rules.classList.add('show'));
 closeBtn.addEventListener('click', () => rules.classList.remove('show'));
 </code></pre></div>
                 </div>
+            </div>
+            
+            
         </div>
         </section>
         
-    </section>
 
-    <footer>
-        <p>&copy; 2021 Hernando Abella</p>
-    </footer>
 
     <!--Scripts-->
 

@@ -46,7 +46,7 @@ h1{
     font-size: 2.3em;
 }
 
-h1, h2, h3{
+h1, h2, h3, h4, h5, h6{
     color: var(--color-principal);
     font-family: 'Poppins', sans-serif;
 }
@@ -137,6 +137,32 @@ h1, h2, h3{
 .git__hug h3{
     color: #000;
     text-align: center;
+}
+
+.panel__de__codigos h3{
+    padding: 20px;
+}
+
+.panel__de__codigos p{
+    padding: 20px 0px;
+}
+
+.panel__de__codigos ul{
+    margin: 20px;
+}
+
+.panel__de__codigos ul li{
+    margin: 10px;
+}
+
+.panel__de__codigos h4{
+    color: #000;
+    padding: 10px 0px;
+}
+
+.panel__de__codigos img{
+    width: 100%;
+    margin: auto;
 }
 
 /* ---------------- estilos principales ------------------- */

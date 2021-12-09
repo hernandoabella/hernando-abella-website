@@ -4,7 +4,7 @@ body{
     background: var(--color-principal);
 }
 
-header a{
+header a, header i{
     color: #fff;
 }
 
@@ -17,10 +17,12 @@ h2{
 .snippets__hero{
     text-align: center;
     color: #fff;
-}
+    padding: 20px;
+}    
 
 .snippets__hero h1{
     color: #fff;
+    padding: 10px;
 }
 
 .panel{
