@@ -1,4 +1,4 @@
-/* CSS styles by Hernando Abella */
+/* CSS styles by HA */
 
 /* ---------------- Fuentes ------------------- */
 
@@ -10,7 +10,7 @@
 
 :root{
     --color-principal: #3d348b;
-    --color-secundario: #7678ed;
+    --color-secundario: #332c74;
     --sombra-de-caja: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
@@ -66,7 +66,12 @@ h1, h2, h3, h4, h5, h6{
 
 .hero__container{
     display: flex;
-    padding: 50px;
+    padding: 60px;
+    flex-direction: row-reverse;
+}
+
+.hero__container h1{
+    padding: 20px 0px;
 }
 
 .one{
@@ -80,7 +85,8 @@ h1, h2, h3, h4, h5, h6{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 300px;
+    width: 450px;
+    box-shadow: var(--sombra-de-caja);
 }
 
 .two{
@@ -89,7 +95,8 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .html__hug{
-    background: #E34C26;
+    background: var(--color-secundario);
+    border: 5px solid #E34C26;
     padding: 20px;
     margin: 50px auto;
     width: 80%;
@@ -101,20 +108,22 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .css__hug{
-    background: #264de4;
+    background: var(--color-secundario);
+    border: 5px solid #264de4;
     padding: 20px;
     margin: 50px auto;
-    color: #fff;
+    color: #000;
     width: 80%;
 }
 
 .css__hug h3{
-    color: #fff;
+    color: #000;
     text-align: center;
 }
 
 .javascript__hug{
-    background: #F0DB4F;
+    background: var(--color-secundario);
+    border: 5px solid #F0DB4F;
     padding: 20px;
     margin: 50px auto;
     color: #000;
@@ -127,15 +136,17 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .git__hug{
-    background: #F1502F;
+    background: var(--color-secundario);
+    border: 5px solid #F1502F;
     padding: 20px;
     margin: 50px auto;
     color: #000;
     width: 80%;
 }
 
+
 .git__hug h3{
-    color: #000;
+   
     text-align: center;
 }
 
@@ -185,11 +196,7 @@ h1, h2, h3, h4, h5, h6{
 
 header{
     padding: 20px;
-}
-
-header ul{
-    padding: 0;
-    margin: 0;
+    background: #332c74;
 }
 
 header ul li{
@@ -200,6 +207,7 @@ header ul li{
 header a{
     transition: .3s;
     margin-right: 10px;
+    color: #fff !important;
 }
 
 header a:hover{

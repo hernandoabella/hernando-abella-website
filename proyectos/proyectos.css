@@ -2,10 +2,6 @@ body{
   background: var(--color-principal);
 }
 
-header a{
-  color: #fff;
-}
-
 footer{
   color: #fff;
   padding: 20px;

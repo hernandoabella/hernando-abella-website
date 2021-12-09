@@ -19,11 +19,6 @@ p{
     text-align: center;
 }
 
-ul{
-    margin: 10px;
-    
-}
-
 ul li{
     list-style-type: none;
     display: inline-block;
@@ -32,7 +27,7 @@ ul li{
 ul li a{
     display: block;
     transition: .3s;
-    margin: 10px;
+    
 }
 
 ul li a:hover{
@@ -44,7 +39,6 @@ ul li a i{
 }
 
 .steps{
-    width: 80%;
     background: var(--color-principal);
     padding: 20px;
     margin: 0 auto;
@@ -56,10 +50,10 @@ ul li a i{
     background: var(--color-secundario);
     border-radius: 25px;
     padding: 0px;
+    margin: 10px;
 }
 
 .steps ul li a{
     border-radius: 20%;
-    
-    
+    margin: 10px;
 }

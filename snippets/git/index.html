@@ -1852,56 +1852,83 @@ git reset --hard c0d30f305
                     </div>  
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Undo the last commit</h3>
+                    <p>Undoes the last commit without rewriting history.</p>
+
+                    <ul>
+                        <li>Use git revert HEAD to revert the last commit, creating a new commit with the inverse of the commit's changes.</li>
+                    </ul>
+
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git revert HEAD</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git revert HEAD
+# Reverts the last commit</code></pre></div>
                     </div>
 
                     </div>  
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>View last commit</h3>
+                    <p>Prints the last commit.</p>
+
+                    <ul>
+                        <li>Use git log -1 to view the last commit.
+</li>
+                        <li>Use arrow keys to navigate, press Q to exit.
+</li>
+                    </ul>
+
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git log -1</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git log -1
+# commit c191f90c7766ee6d5f24e90b552a6d446f0d02e4
+# Author: 30 seconds of code
+# Date: Tue Apr 6 11:11:08 2021 +0300
+# [...]</code></pre></div>
                     </div>
 
                     </div>  
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Change the remote URL</h3>
+                    <p>Changes the URL of the remote repository.</p>
+
+                    <ul>
+                        <li>Use git remote set-url origin &lt;url&gt; to change the URL of the remote repository to &lt;url&gt;.
+</li>
+                    </ul>
+
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git remote set-url origin &lt;url&gt;</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git remote set-url origin https://github.com/30-seconds/30-seconds-of-code
+# The remote URL is now "https://github.com/30-seconds/30-seconds-of-code"</code></pre></div>
                     </div>
 
                     </div>  
-
 
                     <div class="git__hug">
                     <h3>View merged branches</h3>
