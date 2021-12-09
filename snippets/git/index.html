@@ -615,11 +615,542 @@ git stash save "Bugfix WIP"
                     </div>  
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Create a commit with a different date</h3>
+                    <p>Sometimes, you might run into a situation where you need to create a commit with a different date than the current one. Luckily, you can handle this using GIT_AUTHOR_DATE and GIT_COMMITTER_DATE:
+
+</p>
+                    <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">GIT_AUTHOR_DATE='Mon May 18 19:32:10 2020 -0400' \
+  GIT_COMMITTER_DATE='Mon May 18 19:32:10 2020 -0400'\
+  git commit -m 'Commit from the past'</code></pre></div>
+                    </div>
+
+                    <p>As shown in the example above, you can set both values to any date you like and your code will be committed on that date. Note that the format for the values above is 'date +"%s %z"', also referred to as internal raw git format, but you can also use other formats, such as RFC 2822 ('Mon, 18 May 2020 19:32:10 -0400'), ISO 8601 ('2020-05-18 19:32:10 -0400'), local ('Mon May 18 19:32:10 2020'), short ('2020-05-18') or relative (5.seconds.ago, 2.years.3.months.ago, '6am yesterday').</p>
+
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>Find branches containing a commit</h3>
+                    <p>Prints all the branches containing a specific commit.
+
+</p>
+                    <ul>
+                        <li>Use git branch --contains &lt;commit&gt; to see a list of all branches containing &lt;commit&gt;.
+</li>
+                    </ul>
+
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git branch --contains &lt;commit&gt;</code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git branch --contains 3050fc0d3
+# patch-1
+# patch-2</code></pre></div>
+                    </div>
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>Find branches not containing a commit</h3>
+                    <p>Prints all the branches not containing a specific commit.
+
+</p>
+                    <ul>
+                        <li>Use git branch --no-contains &lt;commit&gt; to see a list of all branches not containing &lt;commit&gt;.
+</li>
+                    </ul>
+
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git branch --no-contains &lt;commit&gt;</code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git branch --no-contains 3050fc0d3
+# patch-3
+# patch-4</code></pre></div>
+                    </div>
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>Delete detached branches</h3>
+                    <p>Deletes all detached branches.</p>
+
+                    <ul>
+                        <li>Use git fetch --all --prune to garbage collect any detached branches.
+</li>                   <li>This is especially useful if the remote repository is set to automatically delete merged branches.
+</li>
+                    </ul>
+
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git fetch --all --prune</code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git checkout master
+git branch
+# master
+# patch-1
+# patch-2
+
+# Assuming `patch-1` is detached
+git fetch --all --prune
+
+git branch
+# master
+# patch-2</code></pre></div>
+                    </div>
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>Merge a branch</h3>
+                    <p>Merges a branch into the current branch.</p>
+
+                    <ul>
+                        <li>Use git checkout &lt;target-branch&gt; to switch to the branch into which you want to merge.
+</li>
+                        <li>Use git merge &lt;source-branch&gt; to merge a branch into the current branch.
+</li>
+                    </ul>
+
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git checkout &lt;target-branch&gt;
+git merge &lt;source-branch&gt;</code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git checkout master
+git merge patch-1 # Merges the `patch-1` branch into `master`</code></pre></div>
+                    </div>
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>Reset master to match remote</h3>
+                    <p>Resets the local master branch to match the one on the remote.</p>
+
+
+                    <ul>
+                        <li>Use git fetch origin to retrieve the latest updates from the remote.
+</li>
+                        <li>Use git checkout master to switch to the master branch.
+</li>
+                        <li>Use git reset --hard origin/master to reset the local master branch to match the one on the remote.
+</li>
+                    </ul>
+
+                    <h4>Comandos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git fetch origin
+git checkout master
+git reset --hard origin/master</code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git fetch origin
+git checkout master
+git reset --hard origin/master
+# Local `master` branch is now up to date with remote `master`</code></pre></div>
+                    </div>
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>View a short summary of commits</h3>
+                    <p>Prints a short summary of all commits.</p>
+                    <ul>
+                        <li>Use git log --oneline to list a short summary of all commits.
+</li>
+                    </ul>
+
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git log --oneline</code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git log --oneline
+# d540ba1ab Merge network bug fix
+# 3050fc0de Fix network bug
+# c191f90c7 Initial commit</code></pre></div>
+                    </div>
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>View "undo" history</h3>
+                    <p>View git's reference logs. This is especially useful for finding references that don't show up in commit history.
+
+</p>
+                    <ul>
+                        <li>Use git reflog to display the git reference log.</li>
+                        <li>View your "undo" history</li>
+                    </ul>
+                    <p>Because sometimes git log doesn't cut it, especially for commands that don't show up in your commit history.
+
+</p>
+                    <p>reflog is basically your safety net after running "scary" commands like git rebase. You'll be able to see not only the commits you made, but each of the actions that led you there.
+
+</p>
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git reflog</code></pre></div>
+                    </div>
+
+
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git reflog
+# b6a4f9d6ff9 (HEAD -> patch-1, origin/patch-1) HEAD@{0}: Update docs
+# 3050fc0de HEAD@{1}: rebase -i (finish): returning to refs/heads/patch-1
+# 3050fc0de HEAD@{2}: rebase -i (pick): Fix network bug
+# 93df3f495 (origin/patch-2) HEAD@{3}: rebase -i (start): checkout origin/master
+# 69beaeabb HEAD@{4}: rebase -i (finish): returning to refs/heads/patch-1</code></pre></div>
+                    </div>
+
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>Automatically find the commit that introduced a bug</h3>
+                    <p>Uses a binary search algorithm and a given script to find which commit in history introduced a bug.
+
+</p>
+
+                    <ul>
+                        <li>Use git bisect start to start the process.
+</li>
+                        <li>Use git bisect good &lt;commit&gt; to mark a &lt;commit&gt; as &quot;good&quot;, indicating it is known to be bug-free.
+</li>
+                        <li>Use git bisect bad &lt;commit&gt; to mark a different &lt;commit&gt; as &quot;bad&quot; indicating it has the bug.
+</li>
+                        <li>Use git bisect run &lt;command&gt; to run the given &lt;command&gt; on each subsequent commit to find which commit introduce the bug.
+</li>
+                        <li>Use git bisect reset to reset to the original branch. You can optionally specify a &lt;commit&gt; to reset to.
+</li>
+                    </ul>
+
+                    <h4>Comandos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git bisect start
+git bisect good &lt;commit&gt;
+git bisect bad &lt;commit&gt;
+git bisect run &lt;command&gt;
+git bisect reset [&lt;commit&gt;]</code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git bisect start
+git bisect good 3050fc0de
+git bisect bad c191f90c7
+git bisect run npm test # Run `npm test` for each commit
+# ... some time later the bad commit will be printed
+git bisect reset # Goes to the original branch</code></pre></div>
+                    </div>
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>Delete a remote branch</h3>
+                    <p>Deletes a remote branch.</p>
+                    <ul>
+                        <li>Use git push -d &lt;remote&gt; &lt;branch&gt; to delete the specified remote &lt;branch&gt; on the given &lt;remote&gt;.
+</li>
+                    </ul>
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git push -d &lt;remote&gt; &lt;branch&gt;</code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git checkout master
+git push -d origin patch-1 # Deletes the `patch-1` remote branch</code></pre></div>
+                    </div>
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>Manually find the commit that introduced a bug</h3>
+
+                    <p>Uses a binary search algorithm to manually find which commit in history introduced a bug.
+
+</p>
+
+                    <ul>
+                        <li>Use git bisect start to start the process.
+</li>
+                        <li>Use git bisect good &lt;commit&gt; to mark a &lt;commit&gt; as &quot;good&quot;, indicating it is known to be bug-free.
+</li>
+                        <li>Use git bisect bad &lt;commit&gt; to mark a different &lt;commit&gt; as &quot;bad&quot; indicating it has the bug.
+</li>
+                        <li>Use git bisect (bad | good) marking each subsequent commit as "good" or "bad" depending if it has the bug or not.
+</li>
+                        <li>Use git bisect reset to reset to the original branch. You can optionally specify a &lt;commit&gt; to reset to.
+</li>
+                    </ul>
+
+                    <h4>Comandos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git bisect start
+git bisect good &lt;commit&gt;
+git bisect bad &lt;commit&gt;
+git bisect (bad | good)
+git bisect reset [&lt;commit&gt;]</code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git bisect start
+git bisect good 3050fc0de
+git bisect bad c191f90c7
+git bisect good # Current commit is good
+git bisect bad # Current commit is buggy
+# ... some time later the bad commit will be printed
+git bisect reset # Goes to the original branch</code></pre></div>
+                    </div>
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>Change the last commit's message</h3>
+                    <p>Updates the last commit's message without changing its contents.</p>
+
+                    <ul>
+                        <li>Use git commit --amend -m &lt;message&gt; to replace the last commit&apos;s message with the new &lt;message&gt;.
+</li>
+                    </ul>
+                    
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git commit --amend -m &lt;message&gt;</code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git add .
+git commit -m "Fix the newtork bug"
+git commit --amend -m "Fix the network bug"
+# The last commit's message is now "Fix the network bug"</code></pre></div>
+                    </div>
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>Clone missing submodules</h3>
+                    <p>Clones missing submodules and checks out commits.</p>
+
+                    <ul>
+                        <li>Use git submodule update --init --recursive to clone missing submodules and checkout commits.
+</li>
+                    </ul>
+
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git submodule update --init --recursive</code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git submodule update --init --recursive
+# Clones missing submodules and checks out commits</code></pre></div>
+                    </div>
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>Perform an interactive rebase</h3>
+                    <p>Performs an interactive rebase.</p>
+
+                    <ul>
+                        <li>Use git rebase -i &lt;commit&gt; to perform an interactive rebase.
+</li>
+                        <li>You can edit the rebase file to change the order of the commits and the action to perform for each one (pick, squash, drop, reword etc.).
+</li>
+                        <li>You can optionally use the --autosquash option to automatically squash fixup commits.
+</li>
+                        <li>If you have merge conflicts or stop to make changes, you can continue the rebase when ready using git rebase --continue or abort it using git rebase --abort.
+</li>
+                    </ul>
+
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git rebase -i [--autosquash] &lt;commit&gt;</code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git rebase -i 3050fc0de
+# Performs an interactive rebase starting from `3050fc0de`
+
+git rebase -i --autosquash HEAD~5
+# Performs an interactive rebase of the last 5 commits,
+# automatically squashing fixup commits</code></pre></div>
+                    </div>
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>List all git aliases</h3>
+                    <p>Prints a list of all git aliases.</p>
+
+                    <ul>
+                        <li>Use git config -l to list all variables set in the configuration file.
+</li>
+                        <li>Use the pipe operator (|) to pipe the output and grep alias to only keep aliases.
+</li>
+                        <li>Use the pipe operator (|) to pipe the output and sed 's/^alias\.//g' to remove the alias. part from each alias.
+</li>
+                    </ul>
+
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git config -l | grep alias | sed 's/^alias\.//g'</code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git config -l | grep alias | sed 's/^alias\.//g'
+# st=status
+# co=checkout
+# rb=rebase</code></pre></div>
+                    </div>
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>Pick changes from one or more commits</h3>
+                    <p>Applies the changes introduced by one or more commits.</p>
+
+                    <ul>
+                        <li>Use git cherry-pick &lt;commit&gt; to pick changes from a single commit.
+</li>
+                        <li>Use git cherry-pick &lt;commit-1&gt; &lt;commit-2&gt;... to pick changes from all space-separated commits.
+</li>
+                        <li>Use git cherry-pick &lt;first-commit&gt;..&lt;last-commit&gt; to pick changes from a range of commits.
+</li>
+                    </ul>
+
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git cherry-pick (&lt;commit&gt;... | &lt;first-commit&gt;..&lt;last-commit&gt;)</code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git cherry-pick 3050fc0de # Picks changes from the commit `3050fc0de`
+
+git cherry-pick 3050fc0de c191f90c7
+# Picks changes from the commits `3050fc0de`, `c191f90c7` and `0b552a6d4`
+
+git cherry-pick 3050fc0de..c191f90c7
+# Picks changes from the commits in the range `3050fc0de` - `c191f90c7`</code></pre></div>
+                    </div>
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>Set default push branch name</h3>
+                    <p>Use the name of the current branch when pushing by default as the name of the remote branch.</p>
+                    
+                    <ul>
+                        <li>Use git config push.default current to set the name of the remote branch to the one of the current local branch as the default.
+</li>           
+                        <li>You can use the --global flag to configure this option globally.
+</li>
+                    </ul>
+
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git config [--global] push.default current</code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git config --global push.default current
+
+git checkout -b my-branch
+git push -u
+# Pushes to origin/my-branch</code></pre></div>
+                    </div>
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>View commits by author</h3>
+                    <p>Prints all commits by the specified author.</p>
+
+                    <ul>
+                        <li>Use git log --author=&lt;author&gt; to retrieve all commits by the specified &lt;author&gt;.
+</li>
+                        <li>Use arrow keys to navigate, press Q to exit.
+</li>
+                    </ul>
+
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git log --author=&lt;author&gt;</code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git log --author="Duck Quacking"
+# commit c191f90c7766ee6d5f24e90b552a6d446f0d02e4
+# Author: 30 seconds of code
+# Date: Tue Apr 6 11:11:08 2021 +0300
+# [...]</code></pre></div>
                     </div>
                     </div>  
 
@@ -634,164 +1165,633 @@ git stash save "Bugfix WIP"
 
                     <div class="git__hug">
                     <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
                             <pre class="line-numbers"><code class="language-git"></code></pre></div>
                     </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
                     </div>  
 
                     <div class="git__hug">
                     <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
                             <pre class="line-numbers"><code class="language-git"></code></pre></div>
                     </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
+                    </div>  
+
+
+                    <div class="git__hug">
+                    <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
                     </div>  
 
                     <div class="git__hug">
                     <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
                             <pre class="line-numbers"><code class="language-git"></code></pre></div>
                     </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
                     </div>  
 
                     <div class="git__hug">
                     <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
                             <pre class="line-numbers"><code class="language-git"></code></pre></div>
                     </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
                     </div>  
 
                     <div class="git__hug">
                     <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
                             <pre class="line-numbers"><code class="language-git"></code></pre></div>
                     </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
                     </div>  
 
                     <div class="git__hug">
                     <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
                             <pre class="line-numbers"><code class="language-git"></code></pre></div>
                     </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
                     </div>  
 
                     <div class="git__hug">
                     <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
                             <pre class="line-numbers"><code class="language-git"></code></pre></div>
                     </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
                     </div>  
 
                     <div class="git__hug">
                     <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
                             <pre class="line-numbers"><code class="language-git"></code></pre></div>
                     </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
                     </div>  
 
                     <div class="git__hug">
                     <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
                             <pre class="line-numbers"><code class="language-git"></code></pre></div>
                     </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
                     </div>  
 
                     <div class="git__hug">
                     <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
                             <pre class="line-numbers"><code class="language-git"></code></pre></div>
                     </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
                     </div>  
 
                     <div class="git__hug">
                     <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
                             <pre class="line-numbers"><code class="language-git"></code></pre></div>
                     </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
                     </div>  
 
                     <div class="git__hug">
                     <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
                             <pre class="line-numbers"><code class="language-git"></code></pre></div>
                     </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
                     </div>  
 
                     <div class="git__hug">
                     <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
                             <pre class="line-numbers"><code class="language-git"></code></pre></div>
                     </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
                     </div>  
 
                     <div class="git__hug">
                     <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
                             <pre class="line-numbers"><code class="language-git"></code></pre></div>
                     </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
                     </div>  
 
                     <div class="git__hug">
                     <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
                             <pre class="line-numbers"><code class="language-git"></code></pre></div>
                     </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
                     </div>  
 
                     <div class="git__hug">
                     <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
                             <pre class="line-numbers"><code class="language-git"></code></pre></div>
                     </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
                     </div>  
 
                     <div class="git__hug">
                     <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
                             <pre class="line-numbers"><code class="language-git"></code></pre></div>
                     </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
                     </div>  
 
                     <div class="git__hug">
                     <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
                             <pre class="line-numbers"><code class="language-git"></code></pre></div>
                     </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
+                    </div>  
+
+
+                    <div class="git__hug">
+                    <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>View merged branches</h3>
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+                    <h4>Ejemplos:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                    </div>
+
                     </div>  
                     
                 
