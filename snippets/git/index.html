@@ -1155,453 +1155,698 @@ git push -u
                     </div>  
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
-                    </div>
-                    </div>  
+                    <h3>Push local changes to remote</h3>
+                    <p>Pushes the current branch's changes to the remote.</p>
 
-                    <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <ul>
+                        <li>Use git push to push the latest changes from the local branch to the remote.
+</li>
+                    </ul>
+
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git push</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git"># Assuming the local `patch-1` branch is ahead of the remote one
+git checkout patch-1
+git push # The remote `patch-1` branch is now up to date with the local branch</code></pre></div>
                     </div>
 
                     </div>  
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Remove a file from the last commit</h3>
+                    <p>Removes a file from the last commit without changing its message.</p>
+
+                    <ul>
+                        <li>Use git rm &mdash;-cached &lt;file&gt; to remove the specified &lt;file&gt; from the index.
+</li>               
+                        <li>Use git commit —-amend to update the contents of the last commit, without changing its message.
+</li>
+                    </ul>
+
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git rm &mdash;-cached &lt;file&gt;
+git commit &mdash;-amend</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git rm &mdash;-cached &quot;30-seconds.txt&quot;
+git commit &mdash;-amend
+# Removes &grave;30-seconds.txt&grave; from the last commit</code></pre></div>
                     </div>
 
                     </div>  
 
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>View the remote URL</h3>
+                    <p>Displays the URL of the remote repository.</p>
+                    <ul>
+                        <li>Use git config --get remote.origin.url to view the URL of the remote repository.
+</li>
+                    </ul>
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git config --get remote.origin.url</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git config --get remote.origin.url
+# https://github.com/30-seconds/30-seconds-of-code</code></pre></div>
                     </div>
 
                     </div>  
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>How to add multiple authors to a commit</h3>
+                    <p>You can add multiple authors to a git commit, by adding one or more Co-authored-by trailers to the commit's message:
+
+</p>
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git commit -m &quot;Refactor usability tests.
+&gt;
+&gt;
+Co-authored-by: name &lt;name@example.com&gt;
+Co-authored-by: another-name &lt;another-name@example.com&gt;&quot;</code></pre></div>
+                    </div>
+                    
+                    <h4>Notas:</h4>
+                    <ul>
+                        <li>To correctly attribute a commit to a co-author, you must use the email associated with their GitHub account.
+</li>
+                        <li>If a person's email is private, you can use their GitHub-provided no-reply email.
+</li>
+                        <li>Leave one or preferably two empty lines before any Co-authored-by trailers.
+</li>
+                    </ul>
+                    </div>  
+
+                    <div class="git__hug">
+                    <h3>Add a commit message template</h3>
+
+                    <p>Sets up a commit message template for the current repository.</p>
+
+                    <ul>
+                        <li>Use git config commit.template &lt;file&gt; to specify &lt;file&gt; as the commit message template for the current repository.
+</li>
+                    </ul>
+
+                    <h4>Comando:</h4>
+                    <div class="panel">
+                        <div class="codigo__javascript">
+                            
+                            <pre class="line-numbers"><code class="language-git">git config commit.template &lt;file&gt;</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git config commit.template "commit-template"
+# Sets "commit-template" as the commit message template</code></pre></div>
                     </div>
 
                     </div>  
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Commit without running git hooks</h3>
+                    <p>Creates a new commit skipping the pre-commit and commit-msg hooks.
+
+</p>
+                    <ul>
+                        <li>Use git commit --no-verify -m &lt;message&gt; to commit staged changes without running git hooks.
+</li>
+                    </ul>
+
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git commit --no-verify -m &lt;message&gt;</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git"># Make some changes to files, ones that your precommit hook might not allow
+git add .
+git commit --no-verify -m &quot;Unsafe commit&quot;
+# Creates a commit with the message &quot;Unsafe commit&quot;, without running git hooks</code></pre></div>
                     </div>
 
                     </div>  
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Copy a file from another branch</h3>
+                    <p>Copies a file from another branch to the current branch.</p>
+
+                    <ul>
+                        <li>Use git checkout &lt;branch&gt; &lt;file&gt; to copy the specified &lt;file&gt; from the specified &lt;branch&gt;.
+</li>
+                    </ul>
+
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git checkout &lt;branch&gt; &lt;file&gt;</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git checkout patch-2
+git checkout patch-1 &quot;30seconds.txt&quot;
+# &grave;patch-2&grave; branch now contains the 30seconds.txt file from &grave;patch-1&grave;</code></pre></div>
                     </div>
 
                     </div>  
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Delete a branch</h3>
+                    <p>Deletes a local branch.</p>
+
+                    <ul>
+                        <li>Use git branch -d &lt;branch&gt; to delete the specified local &lt;branch&gt;.
+</li>
+                    </ul>
+
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git branch -d &lt;branch&gt;</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git checkout master
+git branch -d patch-1 # Deletes the &grave;patch-1&grave; local branch</code></pre></div>
                     </div>
 
                     </div>  
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Optimize the local repository</h3>
+                    <p>Optimizes the local repository.</p>
+
+
+                    <ul>
+                        <li>Use git gc --prune=now --aggressive to garbage collect loose objects.
+</li>
+                    </ul>
+
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git gc --prune=now --aggressive</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git gc --prune=now --aggressive # Optimizes the local repository</code></pre></div>
                     </div>
 
                     </div>  
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Pull all submodules from remote</h3>
+                    <p>Pulls all submodules from their respective remotes.</p>
+
+                    <ul>
+                        <li>Use git submodule update --recursive --remote to pull all submodules from their respective remotes.
+</li>
+                    </ul>
+
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git submodule update --recursive --remote</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git submodule update --recursive --remote
+# Pulls all submodules from their respective remotes</code></pre></div>
                     </div>
 
                     </div>  
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Edit the last commit</h3>
+                    <p>Updates the last commit's contents without changing its message.</p>
+
+                    <ul>
+                        <li>Use git commit --amend --no-edit to add any staged changes to the last commit, without changing its message.
+</li>
+                    </ul>
+
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git commit --amend --no-edit</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git add .
+git commit -m "Fix the network bug"
+# Edit or add files
+git add .
+git commit --amend --no-edit
+# The last commit includes the edited/added files</code></pre></div>
                     </div>
 
                     </div>  
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>View differences in changes</h3>
+                    <p>Displays differences between staged or unstaged changes and the last commit.</p>
+                    
+                    <ul>
+                        <li>Use git diff to view differences between your unstaged changes and the last commit.
+</li>
+                        <li>You can use the --staged option to view differences between your staged changes and the last commit instead.
+</li>
+                    </ul>
+                    
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git diff [--staged]</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git diff
+# Displays the differences between unstaged changes and the last commit
+
+git diff --staged
+# Displays the differences between staged changes and the last commit</code></pre></div>
                     </div>
 
                     </div>  
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Apply the latest stash</h3>
+                    <p>Applies the latest stash.</p>
+
+                    <ul>
+                        <li>Use git stash apply to apply the latest stash.</li>
+                    </ul>
+
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git stash apply &lt;stash&gt;</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git stash apply # Applies the latest stash</code></pre></div>
                     </div>
 
                     </div>  
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Apply a stash</h3>
+                    <p>Applies a specific stash.</p>
+
+                    <ul>
+                        <li>Use git stash apply &lt;stash&gt; to apply the given &lt;stash&gt;.
+</li>
+                    </ul>
+
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git stash apply &lt;stash&gt;</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git stash apply stash@{1} # Applies `stash@{1}`</code></pre></div>
                     </div>
 
                     </div>  
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Clone a repository</h3>
+                    <p>Clones an existing repository, creating a local copy of it.</p>
+
+                    <ul>
+                        <li>Use git clone &lt;url&gt; to clone an existing repository from &lt;url&gt; to a local directory. The directory&apos;s name will be based on the name of the cloned repository.
+</li>
+                        <li>Alternatively, use git clone &lt;url&gt; [&lt;directory&gt;] to clone the repository into the specified local &lt;directory&gt;.
+</li>
+                    </ul>
+
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git clone &lt;url&gt; [&lt;directory&gt;]</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git clone https://github.com/30-seconds/30-seconds-of-code.git
+# Clones the repository in a new directory named '30-seconds-of-code'
+cd 30-seconds-of-code
+
+git clone https://github.com/30-seconds/30-seconds-of-code.git my-project
+# Clones the repository in a new directory named 'my-project'
+cd my-project</code></pre></div>
                     </div>
 
                     </div>  
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Configure git user information</h3>
+                    <p>Configures user information for git.</p>
+
+                    <ul>
+                        <li>Use git config user.email &lt;email&gt; to set the user&apos;s email for the current repository.
+</li>
+                        <li>Use git config user.name &lt;name&gt; to set the user&apos;s name for the current repository.
+</li>
+                        <li>You can use the --global flag to configure global user information.
+</li>
+                    </ul>
+                    
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git config [--global] user.email &lt;email&gt;
+git config [--global] user.name &lt;name&gt;</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git config user.email "cool.duck@qua.ck"
+git config user.name "Duck Quackers"
+# Configures user for current repository
+
+git config --global user.email "cool.duck@qua.ck"
+git config --global user.name "Duck Quackers"
+# Configures global git user</code></pre></div>
                     </div>
 
                     </div>  
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Get the current branch name</h3>
+                    <p>Prints the current branch name.</p>
+
+                    <ul>
+                        <li>Use git rev-parse --abbrev-ref HEAD to print the name of the current branch.
+</li>
+                    </ul>
+
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git rev-parse --abbrev-ref HEAD</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git checkout patch-1
+git rev-parse --abbrev-ref HEAD # Prints `patch-1`</code></pre></div>
                     </div>
 
                     </div>  
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Delete a stash</h3>
+                    <p>Deletes a specific stash.</p>
+
+                    <ul>
+                        <li>Use git stash drop &lt;stash&gt; to delete the given &lt;stash&gt;.
+</li>
+                    </ul>
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git stash drop &lt;stash&gt;</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git stash drop stash@{1} # Deletes &grave;stash@{1}&grave;</code></pre></div>
                     </div>
 
                     </div>  
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Delete all stashes</h3>
+                    <p>Deletes all stashes.</p>
+
+                    <ul>
+                        <li>Use git stash clear to delete all stashes.</li>
+                    </ul>
+
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git stash clear</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git stash clear
+# Deletes all stashes</code></pre></div>
                     </div>
 
                     </div>  
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Discard uncommitted changes</h3>
+                    <p>Discards all uncommitted changes to the current branch.</p>
+                    <ul>
+                        <li>Use git reset --hard HEAD to reset the local directory to match the latest commit and discard all unstaged changes.
+</li>
+                    </ul>
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git reset --hard HEAD</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git reset --hard HEAD
+# Discards all unstaged changes</code></pre></div>
                     </div>
 
                     </div>  
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Configure line endings</h3>
+                    <p>Configures the line endings for a repository.</p>
+
+
+                    <ul>
+                        <li>Use git config core.eol [lf | crlf] to configure the line endings.
+</li>
+                        <li>lf is the UNIX line ending (\n), whereas crlf is the DOS line ending (\r\n).
+</li>
+                    </ul>
+
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git config core.eol [lf | crlf]</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git config core.eol lf # Configured to use UNIX line endings</code></pre></div>
                     </div>
 
                     </div>  
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Rename remote branch</h3>
+                    <p>Renames a branch both locally and on the remote.</p>
+                    <ul>
+                        <li>Use git branch -m &lt;old-name&gt; &lt;new-name&gt; to rename the local &lt;old-name&gt; branch to &lt;new-name&gt;.</li>
+                        <li>Use git push origin --delete &lt;old-name&gt; to delete the old remote branch.</li>
+                        <li>Use git checkout &lt;new-name&gt; to switch to the renamed branch.</li>
+                        <li>Use git push origin -u &lt;new-name&gt; to set &lt;new-name&gt; as the remote branch for the renamed branch.</li>
+                    </ul>
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git branch -m &lt;old-name&gt; &lt;new-name&gt;
+git push origin --delete &lt;old-name&gt;
+git checkout &lt;new-name&gt;
+git push origin -u &lt;new-name&gt;</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git checkout master
+git branch -m patch-1 patch-2    # Renamed the local branch to `patch-2`
+git push origin --delete patch-1
+git checkout patch-2
+git push origin -u patch-2 # Renames the remote branch to `patch-2`</code></pre></div>
                     </div>
 
                     </div>  
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Restore a deleted file</h3>
+                    <p>Restores a file deleted in a specific commit.</p>
+
+                    <ul>
+                        <li>Use git checkout &lt;commit&gt;^ -- &lt;file&gt; to restore the specified &lt;file&gt; deleted in the specified &lt;commit&gt;.
+</li>
+                    </ul>
+
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git checkout &lt;commit&gt;^ -- &lt;file&gt;</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git"># "30seconds.txt" was deleted in the commit `3050fc0de`
+git checkout 3050fc0de^ -- "30seconds.txt"
+# Restores the 30seconds.txt file</code></pre></div>
                     </div>
 
                     </div>  
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Rewind back n commits</h3>
+
+                    <p>Rewinds the current branch by a given number of commits.</p>
+
+                    <ul>
+                        <li>Use git reset HEAD~&lt;n&gt; to rewind the current branch &lt;n&gt; commits.</li>
+                        <li>This command will uncommit and unstage changes, but leave them in the working directory.</li>
+                        <li>You can use the --hard flag to uncommit, unstage and delete changes instead.</li>
+                    </ul>
+
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git reset [--hard] HEAD~&lt;n&gt;</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git reset HEAD~5
+# Rewinds back 5 commits but keeps changes in the working directory
+
+git reset --hard HEAD~3
+# Rewinds back 3 commits and deletes changes</code></pre></div>
                     </div>
 
                     </div>  
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Rewind back to a specific commit</h3>
+                    <p>Rewinds the current branch by a given number of commits.</p>
+
+                    <ul>
+                        <li>Use git reset &lt;commit&gt; to rewind the current branch to the specified &lt;commit&gt;.</li>
+                        <li>This command will uncommit and unstage changes, but leave them in the working directory.</li>
+                        <li>You can use the --hard flag to uncommit, unstage and delete changes instead.</li>
+                    </ul>
+
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git reset [--hard] &lt;commit&gt;</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git reset 3050fc0d3
+# Rewinds back to `3050fc0d3` but keeps changes in the working directory
+
+git reset --hard c0d30f305
+# Rewinds back to `c0d30f305` and deletes changes</code></pre></div>
                     </div>
 
                     </div>  
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Undo a commit</h3>
+                    <p>Undoes a specified commit without rewriting history.</p>
+
+                    <ul>
+                        <li>Use git revert &lt;commit&gt; to revert the specified &lt;commit&gt;, creating a new commit with the inverse of the commit&apos;s changes.
+</li>
+                    </ul>
+
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git revert &lt;commit&gt;</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
-                    </div>
-
-                    </div>  
-
-                    <div class="git__hug">
-                    <h3>View merged branches</h3>
-                    <h4>Comando:</h4>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
-                    </div>
-                    <h4>Ejemplos:</h4>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git revert 3050fc0d3
+# Reverts the commit `3050fc0d3`</code></pre></div>
                     </div>
 
                     </div>  
