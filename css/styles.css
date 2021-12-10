@@ -178,6 +178,12 @@ h1, h2, h3, h4, h5, h6{
     margin: auto;
 }
 
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+    
+}
+
+
 /* ---------------- estilos principales ------------------- */
 
 /* ---------------- nueva navegacion sencilla ------------------- */
