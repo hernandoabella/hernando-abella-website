@@ -48,3 +48,68 @@ section ul li{
 b{
     color: var(--color-secundario);
 }
+
+#course__sidebar{
+    background: #fff;
+    width: 300px;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    overflow-y: scroll;
+    z-index: 2;
+    font-family: 'Poppins', sans-serif;
+    transition: .3s;
+    transform: translate(-300px);
+}
+
+#course__sidebar a{
+    padding: 10px;
+    display: block;
+    transition: .3s;
+}
+
+.closebtn {
+    position: absolute;
+    top: -10px;
+    right: 0;
+    font-size: 2em;
+}
+
+.openbtn{
+    top: 10px;
+    left: 10px;
+    position: fixed;
+    padding: 10px;
+   
+}  
+
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    background-color: #f1f1f1;
+}
+  
+.header h2 {
+    text-align: center;
+}
+  
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background: #ccc;
+}
+  
+.progress-bar {
+    height: 8px;
+    background: #04AA6D;
+    width: 0%;
+}
+  
+.content {
+    padding: 100px 0;
+    margin: 50px auto 0 auto;
+    width: 80%;
+}
