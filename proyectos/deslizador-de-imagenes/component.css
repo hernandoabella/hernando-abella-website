@@ -85,12 +85,24 @@ img{
 }
 
 .h1{
-    color: #6320ee;
+    color: #fff;
     font-size: 2em;
 }
 
+p{
+  color: #fff;
+}
+
+body{
+  background: var(--color-principal) !important;
+}
+
+header i{
+  color: #fff;
+}
+
 .contenido__proyecto{
-    padding: 20px;
+    padding: 50px;
 }
 
 footer{

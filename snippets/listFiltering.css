@@ -16,12 +16,12 @@ h2{
 
 .snippets__hero{
     text-align: center;
-    color: #fff;
+    color: var(--color-secundario);
     padding: 20px;
 }    
 
 .snippets__hero h1{
-    color: #fff;
+    color: var(--color-secundario);
     padding: 10px;
 }
 

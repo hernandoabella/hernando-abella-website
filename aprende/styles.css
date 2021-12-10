@@ -7,11 +7,11 @@ header a{
 }
 
 h1{
-    color: #fff;
+    color: var(--color-secundario);
 }
 
 p{
-    color: #fff;
+    color: var(--color-secundario);
 }
 
 .aprende__hero{
@@ -47,7 +47,7 @@ ul li a i{
 }
 
 .steps ul{
-    background: var(--color-secundario);
+    background: var(--color-terciario);
     border-radius: 25px;
     padding: 0px;
     margin: 10px;

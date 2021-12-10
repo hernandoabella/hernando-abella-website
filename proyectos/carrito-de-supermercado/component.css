@@ -4,7 +4,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Glory', sans-serif;
+}
+
+body{
+    background-color: var(--color-principal) !important;
 }
 
 .container{
@@ -119,12 +122,20 @@
 }
 
 h1{
-    color: #6320ee;
+    color: #fff !important;
     font-size: 2em;
 }
 
+p{
+    color: #fff;
+}
+
+header i{
+    color: #fff;
+}
+
 .contenido__proyecto{
-    padding: 20px;
+    padding: 50px;
 }
 
 footer{

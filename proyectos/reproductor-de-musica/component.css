@@ -144,8 +144,20 @@
 }
 
 .h1{
-    color: #6320ee;
+    color: #fff;
     font-size: 2em;
+}
+
+header i{
+  color: #fff;
+}
+
+p{
+  color: #fff;
+}
+
+body{
+  background: var(--color-principal) !important;
 }
 
 .contenido__proyecto{

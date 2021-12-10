@@ -7,11 +7,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Significado de tu nombre</title>
     <link rel="stylesheet" href="./component.css">
-    <link rel="stylesheet" href="/temaPrism.css">
+    <link rel="stylesheet" href="/css/temaPrism.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body>
+<header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="../"><i class="fas fa-angle-left"></i></a>
+                </li>
+                <li>
+                    <a href="/">Inicio</a>
+                </li>
+                <li>
+                    <a href="/aprende/">Aprende</a>
+                </li>
+                <li>
+                    <a href="/snippets/">Snippets</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
     <section class="codigo__del__proyecto">
         <div class="app__background">
             <div class="app__container">
@@ -45,29 +63,20 @@
         </div>        
         <section class="contenido__proyecto">
             <h1 class="h1">Significado de tu nombre</h1>
-        <br>
-        <p>Encuentra el significado de tu nombre con esta aplicación.</p>
-        <br>
-        <div class="flexNav">
-            <ul class="breadcrumb">
-                <li><a href="/index.html">Inicio</a></li>
-                <li><a href="/proyectos">Proyectos</a></li>
-                <li>Significado de tu nombre</li>
-            </ul>
         
-            <div class="download">
-                <a href="../significado-de-tu-nombre.rar" download><i class="fas fa-download"></i></a>
-                <a href="#">YouTube</a>
+        <p>Encuentra el significado de tu nombre con esta aplicación.</p>
+
+        <div class="download">
+                <a href="../significado-de-tu-nombre.rar" download><i class="fas fa-download descarga"></i></a>
+                <a class="youtube" href="#"><i class="fab fa-youtube"></i></a>
             </div>
-        </div>
-
-        <br>
-
+      
         <div class="code__container">
-            <h5 class="html__tag">HTML</h5>
+            
+            <div class="html__container">
             <div class="panel">
                     <div class="codigo__htmlt">
-                        <div class="decor__bar html"></div>
+                        <div class="decor__bar "></div>
                         <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
@@ -101,13 +110,12 @@
   &lt;/body&gt;
 &lt;/html&gt;</code></pre></div>
                 </div>
+            </div>
             
-            <hr>
-
-            <h5 class="css__tag">CSS</h5>
+            <div class="css__container">
             <div class="panel">
                     <div class="codigo__css">
-                        <div class="decor__bar css"></div>
+                        <div class="decor__bar "></div>
                         <pre class="line-numbers"><code class="language-css">@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 
 * {
@@ -206,14 +214,12 @@ h1{
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }</code></pre></div>
                 </div>
+            </div>
 
-            <hr>
-
-            <h5 class="javascript__tag">JAVASCRIPT</h5>
-            
-            <div class="panel">
+                <div class="js__container">
+                <div class="panel">
                     <div class="codigo__javascript">
-                        <div class="decor__bar javascript"></div>
+                        <div class="decor__bar "></div>
                         <pre class="line-numbers"><code class="language-javascript">let form = document.getElementById(&apos;form1&apos;);
 
 function submit(e){
@@ -337,14 +343,12 @@ function submit(e){
 
 form.addEventListener(&apos;submit&apos;, submit);</code></pre></div>
                 </div>
+                </div>
+            
         </div>
         </section>
         
     </section>
-
-    <footer>
-        <p>&copy; 2021 Hernando Abella</p>
-    </footer>
 
     <!--Scripts-->
 

@@ -10,7 +10,8 @@
 
 :root{
     --color-principal: #3d348b;
-    --color-secundario: #332c74;
+    --color-secundario: #d5d0ff;
+    --color-terciario: #332c74;
     --sombra-de-caja: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
@@ -197,6 +198,7 @@ h1, h2, h3, h4, h5, h6{
 header{
     padding: 20px;
     background: #332c74;
+    font-family: 'Poppins', sans-serif;
 }
 
 header ul li{
@@ -228,7 +230,7 @@ header a:hover{
 }
 
 .tarjeta__proyectos{
-    background: var(--color-secundario);
+    background: var(--color-terciario);
     border-radius: 25px;
     padding: 10px;
     text-align: center;
@@ -258,11 +260,10 @@ header a:hover{
 }
 
 .tarjeta__proyectos h3{
+    color: var(--color-secundario);
     padding: 0px;
     margin: 0px;
     text-align: center;
-    color: #fff;
-    text-shadow: 3px 3px 0px var(--color-principal);
 }
 
 .top__header{
@@ -274,8 +275,7 @@ header a:hover{
 }
 
 .estrellas i{
-    color: #fff;
-    text-shadow: 3px 3px 0px var(--color-principal);
+    color: var(--color-secundario) !important;
 }
 
 .code__container div{
@@ -418,6 +418,16 @@ hr{
     color: #fff;
 }
 
+.git{
+    background: #fff;
+    padding: 10px;
+    font-family: 'Poppins'
+}
+
+.git i{
+    color: #F1502F;
+}
+
 .javascript{
     background: #F0DB4F;
     color: #323330;
@@ -478,7 +488,6 @@ hr{
     color: #000;
     padding: 10px;
     font-family: 'Poppins';
-
 }
 
 .mysql{
@@ -499,11 +508,19 @@ hr{
     font-family: 'Poppins';
 }
 
+.nodejs i{
+    color: #303030;
+}
+
 .express{
     background: #303030;
     color: #68A063;
     padding: 10px;
     font-family: 'Poppins';
+}
+
+.express i{
+    color: #fff;
 }
 
 .mongodb{
@@ -513,12 +530,37 @@ hr{
     font-family: 'Poppins';
 }
 
+.docker{
+    background: #0DB7ED;
+    color: #C1BEBC;
+    padding: 10px;
+    font-family: 'Poppins';
+}
+
+.docker i{
+    color: #000;
+}
+
+.deno{
+    background: #07091c;
+    color: #fff;
+    padding: 10px;
+    font-family: 'Poppins';
+}
+
+.deno i{
+    color: #fff;
+}
+
 .python{
     background: #FFE873;
     color: #000;
     padding: 10px;
     font-family: 'Poppins';
+}
 
+.python i{
+    color: #000;
 }
 
 .numpy{
@@ -529,12 +571,41 @@ hr{
 
 }
 
-.r{
+.numpy i{
+    color: #000;
+}
 
+.pandas{
+    background: #130654;
+    color: #000;
+    padding: 10px;
+    font-family: 'Poppins';
+}
+
+.pandas i{
+    color: #fff;
+}
+
+.r{
     background: #165CAA;
     color: #fff;
     padding: 10px;
     font-family: 'Poppins';
+}
+
+.r i{
+    color: #fff;
+}
+
+.django{
+    background: #092e20;
+    color: #fff;
+    padding: 10px;
+    font-family: 'Poppins';
+}
+
+.django i{
+    color: #fff;
 }
 
 .java{
@@ -578,6 +649,17 @@ hr{
 }
 
 .c i{
+    color: #fff;
+}
+
+.cs{
+    background: #283593;
+    color: #fff;
+    padding: 10px;
+    font-family: 'Poppins';
+}
+
+.cs i{
     color: #fff;
 }
 
