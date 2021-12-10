@@ -9,9 +9,9 @@
 /* ---------------- variables ------------------- */
 
 :root{
-    --color-principal: #3d348b;
+    --color-principal: #2f2778;
     --color-secundario: #d5d0ff;
-    --color-terciario: #332c74;
+    --color-terciario: #1e175b;
     --sombra-de-caja: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
@@ -101,10 +101,11 @@ h1, h2, h3, h4, h5, h6{
     padding: 20px;
     margin: 50px auto;
     width: 80%;
+    box-shadow: var(--sombra-de-caja);
 }
 
 .html__hug h3{
-    color: #000;
+    
     text-align: center;
 }
 
@@ -115,10 +116,10 @@ h1, h2, h3, h4, h5, h6{
     margin: 50px auto;
     color: #000;
     width: 80%;
+    box-shadow: var(--sombra-de-caja);
 }
 
 .css__hug h3{
-    color: #000;
     text-align: center;
 }
 
@@ -129,10 +130,10 @@ h1, h2, h3, h4, h5, h6{
     margin: 50px auto;
     color: #000;
     width: 80%;
+    box-shadow: var(--sombra-de-caja);
 }
 
 .javascript__hug h3{
-    color: #000;
     text-align: center;
 }
 
@@ -143,11 +144,11 @@ h1, h2, h3, h4, h5, h6{
     margin: 50px auto;
     color: #000;
     width: 80%;
+    box-shadow: var(--sombra-de-caja);
 }
 
 
 .git__hug h3{
-   
     text-align: center;
 }
 
@@ -197,7 +198,7 @@ h1, h2, h3, h4, h5, h6{
 
 header{
     padding: 20px;
-    background: #332c74;
+    background: var(--color-terciario);
     font-family: 'Poppins', sans-serif;
 }
 
@@ -733,3 +734,11 @@ hr{
 }
 
 /* ---------------- Contacto ------------------- */
+
+/* ---------------- Footer ------------------- */
+
+footer{
+    background: var(--color-terciario);
+}
+
+/* ---------------- Footer ------------------- */

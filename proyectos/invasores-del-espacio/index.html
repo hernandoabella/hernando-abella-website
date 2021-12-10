@@ -7,11 +7,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invasores del espacio</title>
     <link rel="stylesheet" href="./component.css">
-    <link rel="stylesheet" href="/temaPrism.css">
+    <link rel="stylesheet" href="/css/temaPrism.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body>
+<header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="../"><i class="fas fa-angle-left"></i></a>
+                </li>
+                <li>
+                    <a href="/">Inicio</a>
+                </li>
+                <li>
+                    <a href="/aprende/">Aprende</a>
+                </li>
+                <li>
+                    <a href="/snippets/">Snippets</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
     <section class="codigo__del__proyecto">
         <div class="app__background">
             <div class="app__container">
@@ -28,29 +46,20 @@
         </div>        
         <section class="contenido__proyecto">
             <h1 class="h1">Invasores del espacio</h1>
-        <br>
+       
         <p>El objetivo de este juego es desplazarse por una pantalla y disparar a un enjambre de alienígenas descentes.</p>
-        <br>
-        <div class="flexNav">
-            <ul class="breadcrumb">
-                <li><a href="/index.html">Inicio</a></li>
-                <li><a href="/proyectos">Proyectos</a></li>
-                <li>Invasores del espacio</li>
-            </ul>
         
-            <div class="download">
-                <a href="../invasores-del-espacio.rar" download><i class="fas fa-download"></i></a>
-                <a href="#">YouTube</a>
+        <div class="download">
+                <a href="../contador.rar" download><i class="fas fa-download descarga"></i></a>
+                <a class="youtube" href="https://www.youtube.com/watch?v=sgGEDuY5zOs&t"><i class="fab fa-youtube"></i></a>
             </div>
-        </div>
-
-        <br>
 
         <div class="code__container">
-            <h5 class="html__tag">HTML</h5>
+         
+            <div class="html__container">
             <div class="panel">
                     <div class="codigo__htmlt">
-                        <div class="decor__bar html"></div>
+                        <div class="decor__bar "></div>
                         <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
@@ -67,13 +76,12 @@
 &lt;/body&gt;
 &lt;/html&gt;</code></pre></div>
                 </div>
-            
-            <hr>
-
-            <h5 class="css__tag">CSS</h5>
+            </div>
+         
+            <div class="css__container">
             <div class="panel">
                     <div class="codigo__css">
-                        <div class="decor__bar css"></div>
+                        <div class="decor__bar "></div>
                         <pre class="line-numbers"><code class="language-css">@font-face {
     font-family: "Play";
     src: url("Play-Regular.ttf");
@@ -104,14 +112,12 @@ canvas{
     background-color: #000;
 }</code></pre></div>
                 </div>
+            </div>
 
-            <hr>
-
-            <h5 class="javascript__tag">JAVASCRIPT</h5>
-            
+            <div class="js__container">
             <div class="panel">
                     <div class="codigo__javascript">
-                        <div class="decor__bar javascript"></div>
+                        <div class="decor__bar "></div>
                         <pre class="line-numbers"><code class="language-javascript">let canvas = document.getElementById('myCanvas');
   /** @type {CanvasRenderingContext2D}  */
 let ctx = canvas.getContext("2d");
@@ -826,14 +832,11 @@ function randInt(min, max, positive) {
 
 </code></pre></div>
                 </div>
+            </div>
         </div>
         </section>
         
     </section>
-
-    <footer>
-        <p>&copy; 2021 Hernando Abella</p>
-    </footer>
 
     <!--Scripts-->
 
