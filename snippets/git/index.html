@@ -2221,286 +2221,312 @@ git rm -f 30code
                     <p>Rebases the current branch onto another branch.</p>
 
                     <ul>
-                        <li></li>
-                        <li></li>
+                        <li>Use git checkout &lt;branch&gt; to switch to the &lt;branch&gt; to be rebased.</li>
+                        <li>Use git rebase &lt;base-branch&gt; to rebase the current branch onto &lt;base-branch&gt;.</li>
                     </ul>
 
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git checkout &lt;branch&gt;
+git rebase &lt;base-branch&gt;</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git checkout patch-1
+git rebase master
+# `patch-1` is rebased onto `master`
+
+git checkout patch-2
+git fetch origin # Fetch latest remote branches
+git rebase origin/master
+# `patch-2` is rebased onto the latest remote `master`</code></pre></div>
                     </div>
 
                     </div> 
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Configure the git text editor</h3>
+                    <p>Configures the text editor used by git.</p>
+
+                    <ul>
+                        <li>Use git config --global core.editor &lt;editor-command&gt; to call &lt;editor-command&gt; as the git text editor.
+</li>
+                    </ul>
+
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git config --global core.editor &lt;editor-command&gt;</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git config --global core.editor "code --wait"
+# Sets VS Code as the git text editor</code></pre></div>
                     </div>
 
                     </div> 
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Create a new branch</h3>
+
+                    <p>Creates and switches to a new branch, optionally setting up a remote tracking branch.
+
+</p>
+
+                    <ul>
+                        <li>Use git checkout -b &lt;branch&gt; to create a new branch with the specified name and switch to it.</li>
+                        <li>You can optionally add -t &lt;remote&gt;/&lt;branch&gt; to set up a remote tracking branch for the newly created branch.</li>
+                        <li>Note: You can alternatively use git branch &lt;branch&gt; [-t &lt;remote&gt;/&lt;branch&gt;] and then git checkout &lt;branch&gt; separately.</li>
+                    </ul>
+
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git checkout -b &lt;branch&gt; [-t &lt;remote&gt;/&lt;branch&gt;]</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git checkout -b patch-1
+# Local branch, without a remote tracking branch
+
+git checkout -b patch-2 -t origin/patch-2
+# Local branch and remote tracking branch with the same name</code></pre></div>
                     </div>
 
                     </div> 
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Switch to a branch</h3>
+                    <p>Switches to an existing branch.</p>
+                    <ul>
+                        <li>Use git checkout &lt;branch&gt; to switch to the specified branch.</li>
+                        <li>Note: In newer versions of git, you can also use git switch &lt;branch&gt;.</li>
+                    </ul>
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git checkout &lt;branch&gt;</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git checkout patch-1 # Switches to the branch named `patch-1`</code></pre></div>
                     </div>
 
                     </div> 
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Return to previous branch</h3>
+
+                    <p>Switches back to the last branch.</p>
+
+                    <ul>
+                        <li>Use git checkout - to switch back to the previous branch.
+</li>
+                    </ul>
+
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git checkout -</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git checkout patch-1
+git checkout master
+git checkout - # Switches to `patch-1`</code></pre></div>
                     </div>
 
                     </div> 
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>View current status</h3>
+                    <p>Prints the current status of the working tree.</p>
+                    <ul>
+                        <li>Use git status to view the current status of the working tree.</li>
+                        <li>You can optionally add the -sb flag to view the short form of the same output</li>
+                    </ul>
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git status [-sb]</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git status
+# On branch patch-1
+# Your branch is up to date with 'origin/patch-1'.
+#
+# Untracked files:
+#  (use "git add <file>..." to include in what will be committed)
+#  30-seconds.txt
+#
+# nothing added to commit but untracked files present (use "git add" to track)
+
+git status -sb
+# ## patch-1...origin/patch-1
+# ?? 30-seconds.txt</code></pre></div>
                     </div>
 
                     </div> 
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Create a commit</h3>
+                    <p>Creates a new commit containing the staged changes.</p>
+
+                    <ul>
+                        <li>Use git commit -m &lt;message&gt; to create a new commit with the specified &lt;message&gt;.
+</li>
+                    </ul>
+
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git commit -m &lt;message&gt;</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git"># Make some changes to files
+git add .
+git commit -m "Fix the network bug"
+# Creates a commit with the message "Fix the network bug"</code></pre></div>
                     </div>
 
                     </div> 
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Create an empty commit</h3>
+                    <p>Creates an empty commit.</p>
+
+                    <ul>
+                        <li>Use git commit --allow-empty -m &lt;message&gt; to create an empty commit with the provided &lt;message&gt;.
+</li>
+                    </ul>
+
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git commit --allow-empty -m &lt;message&gt;</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git commit --allow-empty -m "Empty commit"
+# Creates an empty commit with the message "Empty commit"</code></pre></div>
                     </div>
 
                     </div> 
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Edit git configuration file</h3>
+                    <p>Opens the git configuration file in the git text editor.</p>
+
+                    <ul>
+                        <li>Use git config --global -e to open the git configuration file in the git text editor.
+</li>
+                    </ul>
+
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git config --global -e</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git config --global -e
+# Opens the git configuration file in the default git text editor</code></pre></div>
                     </div>
 
                     </div> 
 
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Add files to the staging area</h3>
+                    <p>Adds files to the staging area.</p>
+                    <ul>
+                        <li>Use git add &lt;pathspec&gt; to add files to the staging area.
+</li>
+                        <li>&lt;pathspec&gt; can be a filename or a fileglob.</li>
+                    </ul>
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git add &lt;pathspec&gt;</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git add "30seconds.txt"
+# Add the file `30seconds.txt` to the staging area
+
+git add src/*.json
+# Add all files with a `.json` extension in the `src` directory
+
+git add .
+# Adds all changes to the staging area</code></pre></div>
                     </div>
 
                     </div> 
 
                     <div class="git__hug">
-                    <h3>View merged branches</h3>
+                    <h3>Remove files from the staging area</h3>
+                    <p>Removes files from the staging area.</p>
+
+                    <ul>
+                        <li>Use git restore --staged &lt;pathspec&gt; to remove files from the staging area.</li>
+                        <li>&lt;pathspec&gt; can be a filename or a fileglob.</li>
+                    </ul>
+
                     <h4>Comando:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git restore --staged &lt;pathspec&gt;</code></pre></div>
                     </div>
                     <h4>Ejemplos:</h4>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
+                            <pre class="line-numbers"><code class="language-git">git restore --staged "30seconds.txt"
+# Remove the file `30seconds.txt` from the staging area
+
+git restore --staged src/*.json
+# Remove all files with a `.json` extension in the `src` directory
+
+git restore --staged .
+# Remove all changes from the staging area</code></pre></div>
                     </div>
 
                     </div> 
 
-                    <div class="git__hug">
-                    <h3>View merged branches</h3>
-                    <h4>Comando:</h4>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
-                    </div>
-                    <h4>Ejemplos:</h4>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
-                    </div>
-
-                    </div> 
-
-                    <div class="git__hug">
-                    <h3>View merged branches</h3>
-                    <h4>Comando:</h4>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
-                    </div>
-                    <h4>Ejemplos:</h4>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
-                    </div>
-
-                    </div> 
-
-                    <div class="git__hug">
-                    <h3>View merged branches</h3>
-                    <h4>Comando:</h4>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
-                    </div>
-                    <h4>Ejemplos:</h4>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
-                    </div>
-
-                    </div> 
-
-                    <div class="git__hug">
-                    <h3>View merged branches</h3>
-                    <h4>Comando:</h4>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
-                    </div>
-                    <h4>Ejemplos:</h4>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
-                    </div>
-
-                    </div> 
-
-                    <div class="git__hug">
-                    <h3>View merged branches</h3>
-                    <h4>Comando:</h4>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
-                    </div>
-                    <h4>Ejemplos:</h4>
-                    <div class="panel">
-                        <div class="codigo__javascript">
-                            
-                            <pre class="line-numbers"><code class="language-git"></code></pre></div>
-                    </div>
-
-                    </div> 
-                    
-                
-                    
-                
-
-           
         </div>
 
     </section>
