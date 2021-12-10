@@ -1,5 +1,5 @@
 body{
-    background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
+    background-image: linear-gradient(-60deg, #E34C26 0%, #f09819 100%);
 }
 
 section{
@@ -50,13 +50,14 @@ b{
 }
 
 #course__sidebar{
-    background: #fff;
+    background-image: linear-gradient(-60deg, #E34C26 0%, #f09819 100%);
     width: 300px;
     padding: 10px;
     position: fixed;
     top: 0;
     height: 100vh;
     overflow-y: scroll;
+    overflow-x:hidden;
     z-index: 2;
     font-family: 'Poppins', sans-serif;
     transition: .3s;
@@ -67,6 +68,11 @@ b{
     padding: 10px;
     display: block;
     transition: .3s;
+    color: #000;
+}
+
+.closebtn:hover{
+    transform: rotate(90deg);
 }
 
 .closebtn {
@@ -74,14 +80,19 @@ b{
     top: -10px;
     right: 0;
     font-size: 2em;
+    
+}
+
+.openbtn:hover{
+    transform: scale(1.5);
 }
 
 .openbtn{
+    transition: .3s;
     top: 10px;
     left: 10px;
     position: fixed;
     padding: 10px;
-   
 }  
 
 .header {
@@ -104,7 +115,7 @@ b{
   
 .progress-bar {
     height: 8px;
-    background: #04AA6D;
+    background: #E34C26;
     width: 0%;
 }
   

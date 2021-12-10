@@ -9,9 +9,9 @@
 /* ---------------- variables ------------------- */
 
 :root{
-    --color-principal: #2f2778;
-    --color-secundario: #d5d0ff;
-    --color-terciario: #1e175b;
+    --color-principal: #e76f51;
+    --color-secundario: #f4a261;
+    --color-terciario: #2a9d8f;
     --sombra-de-caja: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
@@ -516,6 +516,10 @@ hr{
     font-family: 'Poppins';
 }
 
+.php i{
+    color: #000;
+}
+
 .mysql{
     background: #165CAA;
     color: #fff;
@@ -554,6 +558,10 @@ hr{
     color: #C1BEBC;
     padding: 10px;
     font-family: 'Poppins';
+}
+
+.mongodb i{
+    color: #000;
 }
 
 .docker{
