@@ -9,9 +9,9 @@
 /* ---------------- variables ------------------- */
 
 :root{
-    --color-principal: #e76f51;
-    --color-secundario: #f4a261;
-    --color-terciario: #2a9d8f;
+    --color-principal: #264653;
+    --color-secundario: #e9c46a;
+    --color-terciario: #13323e;
     --sombra-de-caja: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 

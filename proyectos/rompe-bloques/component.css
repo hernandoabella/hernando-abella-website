@@ -79,6 +79,10 @@ body{
   background: var(--color-principal) !important;
 }
 
+header i{
+  color: #fff;
+}
+
 h1{
     color: #fff !important;
     font-size: 2em;
