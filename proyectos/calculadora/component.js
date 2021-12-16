@@ -1,62 +1,90 @@
-//Variables
+let operador = document.getElementsByClassName("operador");
+let numero = document.getElementsByClassName("numero");
 
-const numero = document.getElementById('numero');
-const btn1 = document.getElementById('btn1');
-const btn2 = document.getElementById('btn2');
-
-const sumar = () => {
-
-   removeAnimationClass();
-
-   setTimeout(() =>{
-      numero.classList.add('animation');
-   }, 10);
-
-   numero.innerText++;
-
-   testColor();
-
-   console.log(numero.innerHTML);
-   
-   return numero.innerText;
-
+function obtenerHistorial(){
+    return document.getElementById("valor-historial").innerText;
 }
 
-const restar = () => {
-
-   removeAnimationClass();
-
-   setTimeout(() =>{
-      numero.classList.add('animation2');
-   }, 10);
-
-   numero.innerText--;
-
-   testColor();
-
-   console.log(numero.innerHTML);
-
-   return numero.innerText;
+function imprimirHistorial(num){
+    document.getElementById("valor-historial").innerText=num;
 }
 
-const removeAnimationClass = () => {
-   numero.classList.remove('animation2', 'animation');
+function obtenerSalida(){
+    return document.getElementById("valor-salida").innerText;
 }
 
-const testColor = () =>{
-   if(numero.innerText === '0'){
-      numero.style.color = '#999';
-   }else if(numero.innerText < '0'){
-      numero.style.color = "red";
-   }else{
-      numero.style.color = "green";
-   }
+function imprimirSalida(num){
+    if(num==""){
+    document.getElementById("valor-salida").innerText=num;
+    }
+    else{
+        document.getElementById("valor-salida").innerText=obtenerNumeroFormateado(num);
+    }
 }
 
-// Activar contador automático: 
+function obtenerNumeroFormateado(num){
+    if(num=="-"){
+        return "";
+    }
+    let n=Number(num);
+    let value= n.toLocaleString("en");
 
-// Suma automáticamente
-// setInterval(sumar, 1000);
- 
-// Resta automáticamente
-// setInterval(restar, 1000); 
+    return value;
+}
+
+function revertirFormatoNumero(num){
+    return Number(num.replace(/,/g, ''));
+}
+
+
+
+for(let i=0;i<operador.length;i++){
+    operador[i].addEventListener('click',function(){
+            if(this.id=="clear"){
+                imprimirHistorial("");
+                imprimirSalida("");
+            }else if(this.id=="backspace"){
+                let
+                salida=revertirFormatoNumero(obtenerSalida()).toString();
+                if(salida){// Si (salida tiene un valor) {...}
+                    salida= salida.substr(0,salida.length-1);
+                imprimirSalida(salida);
+                }
+            }else{
+                let salida = obtenerSalida();
+                let historial = obtenerHistorial();
+
+                if(salida=="" && historial != ""){
+                    if(isNaN(historial[historial.length-1])){
+                        historial=historial.substr(0,historial.length-1);
+                    }
+                }
+
+                if(salida != "" || historial != ""){
+                    salida= salida==""?
+                    salida:revertirFormatoNumero(salida);
+                    historial=historial+salida;
+
+                    if(this.id=="="){
+                        let result= eval(historial);
+                        imprimirSalida(result);
+                        imprimirHistorial("");
+                    }else{
+                        historial=historial+this.id;
+                        imprimirHistorial(historial);
+                        imprimirSalida("");
+                    }
+                }
+            }
+    });
+}
+
+for(let i=0;i<numero.length;i++){
+    numero[i].addEventListener('click', function(){
+        let salida = revertirFormatoNumero(obtenerSalida());
+        if(salida!=NaN){
+            salida=salida+this.id;
+            imprimirSalida(salida);
+        }
+    });
+}
