@@ -1,62 +1,33 @@
-//Variables
+let dropDown = document.querySelector(".breeds")
+let imageContainer = document.querySelector(".slideshow")
 
-const numero = document.getElementById('numero');
-const btn1 = document.getElementById('btn1');
-const btn2 = document.getElementById('btn2');
-
-const sumar = () => {
-
-   removeAnimationClass();
-
-   setTimeout(() =>{
-      numero.classList.add('animation');
-   }, 10);
-
-   numero.innerText++;
-
-   testColor();
-
-   console.log(numero.innerHTML);
-   
-   return numero.innerText;
-
+async function getPetName() {
+    let response = await fetch("https://dog.ceo/api/breeds/list/all")
+    let data = await response.json()
+    return data
 }
 
-const restar = () => {
-
-   removeAnimationClass();
-
-   setTimeout(() =>{
-      numero.classList.add('animation2');
-   }, 10);
-
-   numero.innerText--;
-
-   testColor();
-
-   console.log(numero.innerHTML);
-
-   return numero.innerText;
+async function getPetImage(pet) {
+    let response = await fetch(`https://dog.ceo/api/breed/${pet}/images/random`)
+    let data = await response.json()
+    return data
 }
 
-const removeAnimationClass = () => {
-   numero.classList.remove('animation2', 'animation');
+function addPetNamesToHtml() {
+    getPetName().then(data => {
+        let breeds = Object.keys(data.message)
+        breeds.forEach(item => {
+            dropDown.innerHTML += `<option value=${item}>${item}</option>`
+        })
+    })
 }
 
-const testColor = () =>{
-   if(numero.innerText === '0'){
-      numero.style.color = '#999';
-   }else if(numero.innerText < '0'){
-      numero.style.color = "red";
-   }else{
-      numero.style.color = "green";
-   }
-}
+addPetNamesToHtml()
 
-// Activar contador automático: 
-
-// Suma automáticamente
-// setInterval(sumar, 1000);
- 
-// Resta automáticamente
-// setInterval(restar, 1000); 
+dropDown.addEventListener("change", e => {
+    imageContainer.innerHTML = `<p class="loading">Cargando...</p>`
+    getPetImage(e.target.value).then(data => {
+        let url = data.message
+        imageContainer.innerHTML = `<img src="${url}">`
+    })
+})

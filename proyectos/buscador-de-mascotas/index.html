@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contador</title>
+    <title>Buscador de Mascotas</title>
     <link rel="stylesheet" href="./component.css">
     <link rel="stylesheet" href="/css/temaPrism.css">
     <link rel="stylesheet" href="/css/styles.css">
@@ -37,14 +37,19 @@
                 <!-- app code goes here -->
 
                 <div class="s">
-                    <div id="container">
-                        <div id="numero" class="numero">0</div>
-                        <hr>
-                        <div class="flexStyle">
-                        <button id="btn2" onclick="restar()"><i class="fas fa-minus"></i></button>
-                        <button id="btn1" onclick="sumar()"><i class="fas fa-plus"></i></button>
-                        </div>
-                    </div>
+                <div class="app">
+            <div class="header">
+                <h1 class="title">Buscador de Mascotas</h1>
+                <h3 class="subtitle">¿No estás segura de qué raza de perro seleccionar?</h3>
+                <p class="txt">Seleccione una raza de perro del menú desplegable a continuación para obtener sus imágenes.</p>
+                <div class="breed-container">
+                    <select name="breeds" class="breeds">
+                        <option value="Select">Seleccionar</option>
+                    </select>
+                </div>
+            </div>
+            <div class="slideshow"></div>
+        </div>
                 </div>
                 
                 <!-- app code goes here -->
@@ -54,13 +59,13 @@
         
         <section class="contenido__proyecto">
             
-        <h1>Contador</h1>
+        <h1>Buscador de Mascotas</h1>
         
-        <p>Esta aplicación te permite contar números.</p>
+        <p>Encuentra la mascota ideal para ti con esta aplicación.</p>
         
             <div class="download">
-                <a href="../contador.rar" download><i class="fas fa-download descarga"></i></a>
-                <a class="youtube" href="https://www.youtube.com/watch?v=sgGEDuY5zOs&t"><i class="fab fa-youtube"></i></a>
+                <a href="../buscador-de-mascotas.rar" download><i class="fas fa-download descarga"></i></a>
+                <a class="youtube" href="#"><i class="fab fa-youtube"></i></a>
             </div>
         
 
@@ -74,28 +79,32 @@
                         
                         <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Contador&lt;/title&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt; 
-    &lt;link rel=&quot;icon&quot; type=&quot;image/x-icon&quot; href=&quot;../images/favicon.ico&quot; &gt;
-    &lt;link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;../images/favicon.ico&quot;/&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://pro.fontawesome.com/releases/v5.10.0/css/all.css&quot; integrity=&quot;sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p&quot; crossorigin=&quot;anonymous&quot;/&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div id=&quot;container&quot;&gt;
-        &lt;div id=&quot;numero&quot; class=&quot;numero&quot;&gt;0&lt;/div&gt;
-        &lt;hr&gt;
-        &lt;div class=&quot;flexStyle&quot;&gt;
-        &lt;button id=&quot;btn2&quot; onclick=&quot;restar()&quot;&gt;&lt;i class=&quot;fas fa-minus&quot;&gt;&lt;/i&gt;&lt;/button&gt;
-        &lt;button id=&quot;btn1&quot; onclick=&quot;sumar()&quot;&gt;&lt;i class=&quot;fas fa-plus&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot; /&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;
+        &lt;title&gt;Buscador de Mascotas&lt;/title&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot; /&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class=&quot;app&quot;&gt;
+            &lt;div class=&quot;header&quot;&gt;
+                &lt;h1 class=&quot;title&quot;&gt;Buscador de Mascotas&lt;/h1&gt;
+                &lt;h3 class=&quot;subtitle&quot;&gt;&iquest;No est&aacute;s segura de qu&eacute; raza de perro seleccionar?&lt;/h3&gt;
+                &lt;p class=&quot;txt&quot;&gt;Seleccione una raza de perro del men&uacute; desplegable a continuaci&oacute;n para obtener sus im&aacute;genes.&lt;/p&gt;
+                &lt;div class=&quot;breed-container&quot;&gt;
+                    &lt;select name=&quot;breeds&quot; class=&quot;breeds&quot;&gt;
+                        &lt;option value=&quot;Select&quot;&gt;Seleccionar&lt;/option&gt;
+                    &lt;/select&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;slideshow&quot;&gt;&lt;/div&gt;
         &lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;script src=&quot;./script.js&quot;&gt;&lt;/script&gt; 
-&lt;/body&gt;
-&lt;/html&gt;</code></pre></div>
+        
+        &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div>
                 </div>
             </div>
 
@@ -105,121 +114,84 @@
             <div class="panel">
                     <div class="codigo__css">
                         <div class="decor__bar"></div>
-                        <pre class="line-numbers"><code class="language-css">@import url(&#x27;https://fonts.googleapis.com/css2?family=Fraunces:wght@300&#x26;display=swap&#x27;);
+                        <pre class="line-numbers"><code class="language-css">@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
 
-*{
+body {
+    font-family: sans-serif;
+    background: #FABC2A;
+}
+
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    font-size: 1.3em;
-    font-family: &#x27;Fraunces&#x27;, serif;
-    background: #fcbf49;
-    overflow: hidden;
-}
-
-#container{
-    background: #fff;
-    color: #999;
-    width: 200px;
-    border-radius: 5px;
-    padding: 20px;
+.app {
+    background: #F2EDEB;
+    width: 400px;
     position: absolute;
     transform: translate(-50%, -50%);
-    top: 50%;
     left: 50%;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    top: 50%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
-.flexStyle{
-    display: flex;
-    justify-content: space-around;
-}
-
-hr{
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    margin: 20px 10px;
-}
-
-#numero{
-    font-size: 3em;
-    text-align: center;
-    margin-bottom: 20px;
-    user-select: none;
-    font-weight: bold;
-}
-
-#btn1, #btn2{
-    padding: 20px;
-    margin: 10px;
-    border-radius: 5px;
+select{
+    width: 100%;
+    cursor: pointer;
     border: none;
     outline: none;
-    cursor: pointer;
-    transition: .4s;
-    color: #999;
-    background: #fff;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    width: 50%;
 }
 
-#btn1:hover, #btn2:hover{
-  animation: shake 0.5s;
-  animation-iteration-count: infinite;
+option{
+    padding: 10px;
 }
 
-#btn1:hover{
-    background: green;
-    color: #fff;
+.header {
+    text-align: center;
+    font-family: "Kumbh Sans", sans-serif;
 }
 
-#btn2:hover{
-    background: red;
-    color: #fff;
+.title{
+    padding: 10px;
 }
 
-.animation{
-    animation: animation .3s;
+.txt{
+    padding: 10px;
+    text-align: justify;
 }
 
-.animation2{
-    animation: animation2 .3s;
+.subtitle{
+    font-size: 1em;
+    padding: 10px;
 }
 
-@keyframes animation{
-    0%{
-        transform: rotate(-180deg) scale(5.3) skew(30deg);
-        
-    }
 
-    80%{
-        opacity: 0.5;
-    }
+.breed-container {
+    margin-top: 1rem;
 }
 
-@keyframes animation2{
-    0%{
-        transform: rotate(180deg) scale(5.3) skew(-30deg);
-    }
-
-    80%{
-        opacity: 0.5;
-    }
+.breeds {
+    padding: 5px 10px;
+    font-size: 1rem;
 }
 
-@keyframes shake {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    20% { transform: translate(-3px, 0px) rotate(1deg); }
-    30% { transform: translate(3px, 2px) rotate(0deg); }
-    40% { transform: translate(1px, -1px) rotate(1deg); }
-    50% { transform: translate(-1px, 2px) rotate(-1deg); }
-    60% { transform: translate(-3px, 1px) rotate(0deg); }
-    70% { transform: translate(3px, 1px) rotate(-1deg); }
-    80% { transform: translate(-1px, -1px) rotate(1deg); }
-    90% { transform: translate(1px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -2px) rotate(-1deg); }
+.slideshow img{
+    position: relative;
+    transform: translate(-50%, 0%);
+    left: 50%;
+    height: 350px;
+    width: 100%;
+    display: block;
+}
+
+.slideshow p {
+    text-align: center;
+}
+
+.loading{
+    padding: 10px;
 }</code></pre></div>
                 </div>
             </div>
@@ -228,68 +200,39 @@ hr{
             <div class="panel">
                     <div class="codigo__javascript">
                         <div class="decor__bar"></div>
-                        <pre class="line-numbers"><code class="language-javascript">//Variables
+                        <pre class="line-numbers"><code class="language-javascript">let dropDown = document.querySelector(".breeds")
+let imageContainer = document.querySelector(".slideshow")
 
-const numero = document.getElementById(&#x27;numero&#x27;);
-const btn1 = document.getElementById(&#x27;btn1&#x27;);
-const btn2 = document.getElementById(&#x27;btn2&#x27;);
-
-const sumar = () =&#x3E; {
-
-   removeAnimationClass();
-
-   setTimeout(() =&#x3E;{
-      numero.classList.add(&#x27;animation&#x27;);
-   }, 10);
-
-   numero.innerText++;
-
-   testColor();
-
-   console.log(numero.innerHTML);
-   
-   return numero.innerText;
-
+async function getPetName() {
+    let response = await fetch("https://dog.ceo/api/breeds/list/all")
+    let data = await response.json()
+    return data
 }
 
-const restar = () =&#x3E; {
-
-   removeAnimationClass();
-
-   setTimeout(() =&#x3E;{
-      numero.classList.add(&#x27;animation2&#x27;);
-   }, 10);
-
-   numero.innerText--;
-
-   testColor();
-
-   console.log(numero.innerHTML);
-
-   return numero.innerText;
+async function getPetImage(pet) {
+    let response = await fetch(`https://dog.ceo/api/breed/${pet}/images/random`)
+    let data = await response.json()
+    return data
 }
 
-const removeAnimationClass = () =&#x3E; {
-   numero.classList.remove(&#x27;animation2&#x27;, &#x27;animation&#x27;);
+function addPetNamesToHtml() {
+    getPetName().then(data => {
+        let breeds = Object.keys(data.message)
+        breeds.forEach(item => {
+            dropDown.innerHTML += `<option value=${item}>${item}</option>`
+        })
+    })
 }
 
-const testColor = () =&#x3E;{
-   if(numero.innerText === &#x27;0&#x27;){
-      numero.style.color = &#x27;#999&#x27;;
-   }else if(numero.innerText &#x3C; &#x27;0&#x27;){
-      numero.style.color = &#x22;red&#x22;;
-   }else{
-      numero.style.color = &#x22;green&#x22;;
-   }
-}
+addPetNamesToHtml()
 
-// Activar contador autom&#xE1;tico: 
-
-// Suma autom&#xE1;ticamente
-// setInterval(sumar, 1000);
- 
-// Resta autom&#xE1;ticamente
-// setInterval(restar, 1000); 
+dropDown.addEventListener("change", e => {
+    imageContainer.innerHTML = `<p class="loading">Cargando...</p>`
+    getPetImage(e.target.value).then(data => {
+        let url = data.message
+        imageContainer.innerHTML = `<img src="${url}">`
+    })
+})
 </code></pre></div>
                 </div>
             </div>

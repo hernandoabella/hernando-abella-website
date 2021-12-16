@@ -1,103 +1,78 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
 
-#container{
-    background: #fff;
-    color: #999;
-    width: 200px;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+.app {
+    background: #F2EDEB;
+    width: 400px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
-.flexStyle{
-    display: flex;
-    justify-content: space-around;
-}
-
-hr{
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    margin: 20px 10px;
-}
-
-#numero{
-    font-size: 3em;
-    text-align: center;
-    margin-bottom: 20px;
-    user-select: none;
-    font-weight: bold;
-}
-
-#btn1, #btn2{
-    padding: 20px;
-    margin: 10px;
-    border-radius: 5px;
+select{
+    width: 100%;
+    cursor: pointer;
     border: none;
     outline: none;
-    cursor: pointer;
-    transition: .4s;
-    color: #999;
-    background: #fff;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    width: 50%;
 }
 
-#btn1:hover, #btn2:hover{
-  animation: shake 0.5s;
-  animation-iteration-count: infinite;
+option{
+    padding: 10px;
 }
 
-#btn1:hover{
-    background: green;
-    color: #fff;
+.header {
+    text-align: center;
+    font-family: "Kumbh Sans", sans-serif !important;
 }
 
-#btn2:hover{
-    background: red;
-    color: #fff;
+.header h1{
+    font-size: 1em;
+    color: #000 !important;
 }
 
-.animation{
-    animation: animation .3s;
+.header h3{
+    color: #000;
+    font-size: .5em;
 }
 
-.animation2{
-    animation: animation2 .3s;
+.title{
+    padding: 10px;
 }
 
-@keyframes animation{
-    0%{
-        transform: rotate(-180deg) scale(5.3) skew(30deg);
-        
-    }
-
-    80%{
-        opacity: 0.5;
-    }
+.txt{
+    padding: 10px;
+    text-align: justify;
+    color: #000 !important;
+    font-size: .6em;
 }
 
-@keyframes animation2{
-    0%{
-        transform: rotate(180deg) scale(5.3) skew(-30deg);
-    }
-
-    80%{
-        opacity: 0.5;
-    }
+.subtitle{
+    font-size: 1em;
+    padding: 10px;
 }
 
-@keyframes shake {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    20% { transform: translate(-3px, 0px) rotate(1deg); }
-    30% { transform: translate(3px, 2px) rotate(0deg); }
-    40% { transform: translate(1px, -1px) rotate(1deg); }
-    50% { transform: translate(-1px, 2px) rotate(-1deg); }
-    60% { transform: translate(-3px, 1px) rotate(0deg); }
-    70% { transform: translate(3px, 1px) rotate(-1deg); }
-    80% { transform: translate(-1px, -1px) rotate(1deg); }
-    90% { transform: translate(1px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -2px) rotate(-1deg); }
+
+.breed-container {
+    margin-top: 1rem;
+}
+
+.breeds {
+    padding: 5px 10px;
+    font-size: 1rem;
+}
+
+.slideshow img{
+    position: relative;
+    transform: translate(-50%, 0%);
+    left: 50%;
+    height: 350px;
+    width: 100%;
+    display: block;
+}
+
+.slideshow p {
+    text-align: center;
+}
+
+.loading{
+    padding: 10px;
 }
   
 .s{
@@ -111,8 +86,7 @@ hr{
 
 .app__background{
   font-size: 1.3em;
-  font-family: 'Fraunces', serif;
-  background: #fcbf49;
+  background: #FABC2A;
   padding: 50px; 
 }
 
