@@ -12,7 +12,7 @@
 <body>
         <div class="header">
             <div class="progress-container">
-             <div class="progress-bar" id="myBar"></div>
+            <div class="progress-bar" id="myBar"></div>
         </div>  
 </div>
 
@@ -21,7 +21,7 @@
             <a href="#item1">Introducción</a>
             <a href="#item2">Empezando</a>
             <a href="#item3">Nuevos archivos de git</a>
-            <a href="#item4">item 1</a>
+            <a href="#item4">Área de preparación</a>
             <a href="#item5">item 1</a>
             <a href="#item6">item 1</a>
             <a href="#item7">item 1</a>
@@ -243,10 +243,126 @@ cd miproyecto</code></pre>
 
             <p>Luego verificamos el <code class="codigo">status</code> de Git y vemos si es parte de nuestro repositorio:</p>
 
+            <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-git">git status</code></pre>
+            </div>
+
+            <h4>Resultado:</h4>
+
+            <p><pre class="resultado">On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add ..." to include in what will be committed)
+    index.html
+
+nothing added to commit but untracked files present (use "git add" to track)</pre></p>
+
+            <p>Ahora Git conoce el archivo, ¡pero no lo ha agregado a nuestro repositorio!</p><br>
+
+            <p>Los archivos en su carpeta de repositorio de Git pueden estar en uno de 2 estados:</p><br>
+
+            <p><b>Tracked:</b> archivos que Git conoce y que se agregan al repositorio</p><br>
+
+            <p><b>Untracked:</b> archivos que están en su directorio de trabajo, pero no agregados al repositorio.</p><br>
+
+            <p>Cuando agrega archivos por primera vez a un repositorio vacío, no se realiza el seguimiento de todos ellos. Para que Git los rastree, debe organizarlos o agregarlos a el área de preparación.</p>
+
+
             </section>
 
             <section id="item4">
-                
+
+            <h2>Área de preparación</h2>
+            
+            <p>Una de las funciones principales de Git son los conceptos del área de preparación y el commit.</p><br>
+            
+            <p>Mientras trabaja, puede agregar, editar y eliminar archivos. Pero cada vez que alcanza un hito o termina una parte del trabajo, debe agregar los archivos a un área de preparación.</p><br>
+            
+            <p>Los archivos preparados son archivos que están listos para ser enviados al repositorio en el que estás trabajando.</p><br>
+            
+            <p>Por ahora, hemos terminado de trabajar con index.html. Entonces podemos agregarlo a el área de preparación.</p>
+
+            <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-git">git add index.html</code></pre>
+            </div>
+
+            <p>El archivo debería estar preparado. Verifiquemos su estado:</p>
+
+            <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-git">git status</code></pre>
+            </div>
+
+            <h4>Resultado:</h4>
+
+            <pre class="resultado">On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached ..." to unstage)
+    new file: index.html</pre>
+
+            <p>Ahora el archivo ha sido agregado al área de preparación.</p>
+
+            <h4>Agrega más de un archivo</h4>
+
+            <p>También puedes preparar más de un archivo al mismo tiempo. Agreguemos 2 archivos más a nuestra carpeta. Usa el editor de texto nuevamente.</p><br>
+
+            <p>Un archivo <code class="codigo">README.md</code> describe el repositorio (recomendado para todos los repositorios):</p>
+
+            <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-git"># Hola Mundo
+
+Tutorial del repositorio de Hello World para Git
+
+Este es un repositorio de ejemplo para el tutorial de Git en https://www.hernandoabella.com
+
+Este repositorio se crea paso a paso en el tutorial.</code></pre>
+            </div>
+
+            <p>Una hoja de estilo externa básica (bluestyle.css):</p>
+
+            <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-css">body {
+    background-color: lightblue;
+}
+
+h1 {
+    color: navy;
+    margin-left: 20px;
+}</code></pre>
+            </div>
+
+            <p>Ahora agrega todos los archivos de la carpeta actual al área de preparación:</p>
+
+            <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-git">git add -all</code></pre>
+            </div>
+
+            <p>El uso de --all en lugar del nombre de  los archivos individuales preparará todos los cambios de los archivos (nuevos, modificados y eliminados).</p>
+
+            <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-git">git status</code></pre>
+            </div>
+
+            <h4>Resultado:</h4>
+
+            <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-git">On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached ..." to unstage)
+        new file:   README.md
+        new file:   bluestyle.css
+        new file:   index.html</code></pre>
+            </div>
+
+            <p>Ahora los 3 archivos han sido agregados al área de preparación y estamos listo para hacer nuestro primer commit.</p>
+
             </section>
 
             <section id="item5">
@@ -263,8 +379,6 @@ cd miproyecto</code></pre>
         
         
         </div>
-   
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
     <script src="./main.js"></script>

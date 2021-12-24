@@ -133,4 +133,12 @@ section ul li{
 
 .codigo{
     color: crimson;
+    background: #f1f1f1;
+}
+
+.resultado{
+    background: #322931;
+    color: #b9b5b8;
+    padding: 20px;
+    margin: 20px 0px;
 }
