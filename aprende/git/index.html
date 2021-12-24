@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hernando Abella | Tutorial de Git</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="./estilos.css">
+    <link rel="stylesheet" href="/css/temaPrism.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body>
+        <div class="header">
+            <div class="progress-container">
+             <div class="progress-bar" id="myBar"></div>
+        </div>  
+</div>
+
+        <aside id="course__sidebar">
+            <div href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</div>
+            <a href="#item1">Introducción</a>
+            <a href="#item2">Empezando</a>
+            <a href="#item3">Nuevos archivos de git</a>
+            <a href="#item4">item 1</a>
+            <a href="#item5">item 1</a>
+            <a href="#item6">item 1</a>
+            <a href="#item7">item 1</a>
+            <a href="#item8">item 1</a>
+            <a href="#item9">item 1</a>
+            <a href="#item10">item 1</a>
+            <a href="#item11">item 1</a>
+            <a href="#item12">item 1</a>
+            <a href="#item13">item 1</a>
+            <a href="#item14">item 1</a>
+        </aside>
+
+        <div class="articles">
+
+            <span class="openbtn" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+            <section id="item1">
+                
+                <h1>Tutorial de GIT</h1>
+                <h2>Introducción</h2>
+                <p>Git es un Sistema de Control de Versiones muy popular. Fue creado por <b>Linus Torvalds</b> en <em>2005</em> y desde entonces ha sido mantenido por <b>Junio ​​Hamano</b>.
+
+</p>
+
+                <h4>Se utiliza para:</h4>
+                
+                <ul>
+                    <li>Hacer seguimiento de cambios en el código</li>
+                    <li>Hacer seguimiento de quién hizo los cambios</li>
+                    <li>Colaborar en la codificación</li>
+                </ul>
+                
+                <!-- <div class="codigo__git">
+                    <div class="decor__bar"></div>
+                    <pre class="line-numbers"><code class="language-git">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Título de la página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1&gt;Mi primer encabezado&lt;/h1&gt;
+&lt;p&gt;Mi primer párrafo.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div> -->
+
+                <h4>¿Qué hace Git?</h4>
+
+                <ul>
+                    <li>Manejar proyectos con <b>Repositorios</b></li>
+                    <li><b>Clonar</b> un proyecto para trabajar en una copia local</li>
+                    <li>Controlar y rastraer los cambios con <b>Staging</b> y <b>Commiting</b></li>
+                    <li>Utilizar <b>Branch</b> y <b>Merge</b> te permite trabajar en diferentes partes y versiones de un proyecto.</li>
+                    <li><b>Pull</b> (Extraiga) la última versión del proyecto a una copia local</li>
+                    <li><b>Push</b> (envía) actualizaciones locales al proyecto principal.</li>
+                </ul>
+
+                <h4>Trabajando con Git</h4>
+
+                <ul>
+                    <li>Inicializa Git en una carpeta haciéndola un <b>Repositorio</b></li>
+                    <li>Ahora Git crea una carpeta oculta para mantener el rastro de los cambios en esa carpeta</li>
+                    <li>Cuando un archivo es cambiado, agregado o eliminado, se considera <b>modificado</b></li>
+                    <li>Seleccionas los archivos modificados que quieras ordenar</li>
+                    <li>Los archivos en etapas están confirmados, lo que le dice a Git que almacene una captura de pantalla de los archivos.</li>
+                    <li>Git te permite ver un historial completo de cada commit</li>
+                    <li>Puedes revertir cualquier commit anterior</li>
+                    <li>Git no almacena una copia separada de cada archivo en cada commit, pero realiza un seguimiento de los cambios realizados en cada commit.</li>
+                </ul>
+
+                <h4>¿Por qué Git?</h4>
+
+                <ul>
+                    <li>¡Más del 70% de los desarrolladores usan Git!</li>
+                    <li>Los desarrolladores pueden trabajar juntos desde cualquier parte del mundo.</li>
+                    <li>Los desarrolladores pueden ver el historial completo del proyecto.</li>
+                    <li>Los desarrolladores pueden volver a versiones anteriores de un proyecto.</li>
+                </ul>
+
+                <h4>¿Qué es GitHub?</h4>
+
+                <ul>
+                    <li>Git no es lo mismo que GitHub.</li>
+                    <li>GitHub crea herramientas que usan Git.</li>
+                    <li>GitHub es el mayor host de código fuente del mundo y ha sido propiedad de Microsoft desde 2018.</li>
+                    <li>En este tutorial, nos centraremos en usar Git con GitHub.</li>
+                </ul>
+
+                
+
+
+            </section>
+
+            <section id="item2">
+
+            <h2>Empezando</h2>
+
+            <h4>Instalar Git</h4>
+
+            <p>Puede descargar Git de forma gratuita desde el siguiente sitio web: <a href="https://www.git-scm.com/">https://www.git-scm.com/</a></p>
+
+            <h4>Usando Git con la línea de comandos</h4>
+            
+            <p>Para comenzar a usar Git, primero vamos a abrir nuestro shell de comandos.</p>
+
+            <p>Para Windows, puede usar Git bash, que viene incluido en Git para Windows. Para Mac y Linux, puede utilizar el terminal integrado.</p><br>
+
+            <p>Lo primero que debemos hacer es verificar si Git está instalado correctamente:</p>
+
+            <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-git">git --version</code></pre>
+            </div>
+
+            <h4>Resultado:</h4>
+
+            <p>git version 2.30.2.windows.1</p>
+            
+            <h4>Configurar Git</h4>
+
+            <p>Ahora hazle saber a Git quién eres. Esto es importante para los sistemas de control de versiones, ya que cada commit de Git utiliza esta información:</p>
+        
+            <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-git">git config --global user.name "Hernando Abella"
+git config --global user.email "hernandoabella@gmail.com"</code></pre>
+            </div>
+
+            <p>Cambie el nombre de usuario y la dirección de correo electrónico por los suyos. Probablemente también desee usar esto cuando se registre en GitHub más adelante.</p>
+
+            <div class="nota">
+                <p><b>Nota:</b> Usa <code class="codigo">--global</code> para ajustar el nombre de usuario y el correo electrónico de <b>cada repositorio</b> en tu computadora.</p><br>
+                <p>Si quieres ajustar el nombre de usuario / correo electrónico para el repositorio actual, puedes remover <code class="codigo">global</code>.</p>
+            </div>
+
+            <h4>Creando una carpeta Git</h4>
+
+            <p>Ahora crearemos una carpeta nueva para nuestro proyecto:</p>
+
+            <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-git">mkdir miproyecto
+cd miproyecto</code></pre>
+            </div>
+
+            <p><code class="codigo">mkdir</code> crea un nuevo directorio.</p><br>
+            
+            <p><code class="codigo">cd</code> cambia la carpeta de trabajo actual.</p><br>
+
+            <p>Ahora que estamos en la carpetaa correcta. ¡Podemos inicializar Git!</p>
+
+            <div class="nota">
+                <p><b>Nota:</b> Si ya tienes una carpeta para Git:</p><br>
+                <p>Navega en la línea de comandos, o ábrela desde el explorador de archivos, click-derecho  y selecciona "Git Bash here"</p>
+            </div>
+
+            <h4>Inicializar Git</h4>
+
+            <p>Una vez que hayas navegado a la carpeta correcta, puedes inicializar Git en esa carpeta:</p>
+
+            <h4>Ejemplo:</h4>
+
+            <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-git">git init</code></pre>
+            </div>
+
+            <h4>Resultado:</h4>
+
+            <p>Initialized empty Git repository in /Users/user/myproject/.git/</p><br>
+
+            <p>¡Haz creado tu primer Respositorio!</p>
+
+            <div class="nota">
+                <p><b>Nota:</b> Ahora Git sabe que debe observar la carpeta que haz inicializado.</p><br>
+                <p>Git crea una carpeta oculta para llevar el seguimiento de los cambios.</p>
+            </div>
+
+            </section>
+
+            <section id="item3">
+
+            <h2>Nuevos archivos de Git</h2>
+
+            <h4>Agregando nuevos archivos</h4>
+
+            <p>Acabas de crear tu primer repositorio local de Git. Pero está vacio.</p> <br>
+
+            <p>Así que agreguemos algunos archivos, o creemos un archivo nuevo usando nuestro editor de texto favorito. Luego guárdalo y muévelo a la carpeta que acabas de crear.</p><br>
+                
+            <p>Para este ejemplo, voy a utilizar un archivo HTML simple como este:</p>
+
+            <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;&iexcl;Hola Mundo!&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1&gt;&iexcl;Hola Mundo!&lt;/h1&gt;
+&lt;p&gt;Este es el primer archivo en mi nuevo Repo Git.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+
+            <p>Y guárdelo en nuestra nueva carpeta como index.html.</p><br>
+
+            <p>Regresemos a la terminal y enumeremos los archivos en nuestra carpeta de trabajo actual:</p>
+
+            <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-git">ls</code></pre>
+            </div>
+
+            <h4>Resultado:</h4>
+
+            <p>index.html</p> <br>
+
+            <p><code class="codigo">ls</code> enlistará los archivos de la carpeta. Podemos ver que index.html está ahí.</p> <br>
+
+            <p>Luego verificamos el <code class="codigo">status</code> de Git y vemos si es parte de nuestro repositorio:</p>
+
+            </section>
+
+            <section id="item4">
+                
+            </section>
+
+            <section id="item5">
+                
+            </section>
+
+            <section id="item6">
+                
+            </section>
+
+            <section id="item7">
+                
+            </section>
+        
+        
+        </div>
+   
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="./main.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>
