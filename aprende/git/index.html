@@ -17,15 +17,15 @@
 </div>
 
         <aside id="course__sidebar">
-            <div href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</div>
+            <div href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fal fa-times"></i></div>
             <a href="#item1">Introducción</a>
             <a href="#item2">Empezando</a>
             <a href="#item3">Nuevos archivos de git</a>
             <a href="#item4">Área de preparación</a>
-            <a href="#item5">item 1</a>
-            <a href="#item6">item 1</a>
-            <a href="#item7">item 1</a>
-            <a href="#item8">item 1</a>
+            <a href="#item5">Commit</a>
+            <a href="#item6">Ayuda</a>
+            <a href="#item7">Ramas</a>
+            <a href="#item8">Fusionar ramas</a>
             <a href="#item9">item 1</a>
             <a href="#item10">item 1</a>
             <a href="#item11">item 1</a>
@@ -36,7 +36,7 @@
 
         <div class="articles">
 
-            <span class="openbtn" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+            <span class="openbtn"  onclick="openNav()"></span>
 
             <section id="item1">
                 
@@ -249,7 +249,8 @@ cd miproyecto</code></pre>
 
             <h4>Resultado:</h4>
 
-            <p><pre class="resultado">On branch master
+            <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-git">On branch master
 
 No commits yet
 
@@ -257,7 +258,8 @@ Untracked files:
   (use "git add ..." to include in what will be committed)
     index.html
 
-nothing added to commit but untracked files present (use "git add" to track)</pre></p>
+nothing added to commit but untracked files present (use "git add" to track)</code></pre>
+            </div>
 
             <p>Ahora Git conoce el archivo, ¡pero no lo ha agregado a nuestro repositorio!</p><br>
 
@@ -296,13 +298,15 @@ nothing added to commit but untracked files present (use "git add" to track)</pr
 
             <h4>Resultado:</h4>
 
-            <pre class="resultado">On branch master
+            <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-git">On branch master
 
 No commits yet
 
 Changes to be committed:
   (use "git rm --cached ..." to unstage)
-    new file: index.html</pre>
+    new file: index.html</code></pre>
+            </div>
 
             <p>Ahora el archivo ha sido agregado al área de preparación.</p>
 
@@ -363,22 +367,498 @@ Changes to be committed:
 
             <p>Ahora los 3 archivos han sido agregados al área de preparación y estamos listo para hacer nuestro primer commit.</p>
 
+            <div class="nota">
+                <p><b>Nota:</b> El comando abreviado para git add --all es git add -A</p>
+            </div>
+
             </section>
 
             <section id="item5">
+
+            <h2>Git Commit</h2>
+
+            <p>Agregar commits realiza un seguimiento de nuestro progreso y cambios a medida ue trabajamos. Git considera cada punto de guardado. Es un punto del proyecto al que puedes volver si encuentras un error o si deseas realizar un cambio.</p><br>
+
+            <p>Cuando hacemos commit, siempre debemos incluir un mensaje.</p><br>
+
+            <p>Al agregar menajes claros a cada confirmación, es fácil para ti (y para los demás) ver qué ha cambiado y cuándo.</p>
+
+            <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-git">git commit -m "¡Primera versión de Hola Mundo!"</code></pre>
+            </div>
+
+            <h4>Resultado:</h4>
+
+            <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-git">[master (root-commit) 221ec6e] ¡Primera versión de Hola Mundo!
+ 3 files changed, 26 insertions(+)
+ create mode 100644 README.md
+ create mode 100644 bluestyle.css
+ create mode 100644 index.html</code></pre>
+            </div>
+
+            <p>El commando <code class="codigo">commit</code> realiza una confirmación y el -m "mensaje" agrega un mensaje.</p><br>
+
+            <p>El área de preparación ha sido enviada a nuestro repositorio con el mensaje:</p><br>
+            <p>"¡Primera versión de Hola Mundo!"</p>
+
+            <h4>Commit sin preparación</h4>
+
+            <p>Aveces, cuando realizas pequeños cambios, utilizar el área de preparación parece una pérdida de tiempo. Es posible realizar cambios directamente, omitiendo el área de preparación. la opción -a organizará automáticamente todos los archivos modificados y ya registrados.</p> 
                 
+            <p>Agreguemos una pequeña actualización a index.html:</p>
+
+            <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Hello World!&lt;/title&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;bluestyle.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1&gt;&iexcl;Hola Mundo!&lt;/h1&gt;
+&lt;p&gt;Este es el primer archivo en mi nuevo Git Repo.&lt;/p&gt;
+&lt;p&gt;&iexcl;Una nueva l&iacute;nea en nuestro archivo!&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+
+            <p>Verifique el estado de nuestro repositorio. Pero esta vez, usaremos la opción <code class="codigo">--short</code> para ver los cambios de una manera más compacta:</p>
+
+            <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-git">git status --short</code></pre>
+            </div>
+
+            <h4>Resultado:</h4>
+
+            <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-git">M index.html</code></pre>
+            </div>
+
+            <div class="nota">
+                <p><b>Nota:</b> Los indicadores de estado cortos son:</p>
+
+                <ul>
+                    <li>?? - Archivos sin seguimiento</li>
+                    <li>A - Archivos agregados al área de preparación</li>
+                    <li>M - Archivos modificados</li>
+                    <li>D - Archivos eliminados</li>
+                </ul>
+            </div>
+
+            <p>Vemos que el archivo que esperábamos está modificado. Así que vamos a actualizarlo directamente</p>
+
+            <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-git">git commit -a -m "index.html actualizado con una nueva línea"</code></pre>
+            </div>
+
+            <h4>Resultado:</h4>
+
+            <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-git">[master 09f4acd] Updated index.html with a new line
+ 1 file changed, 1 insertion(+)</code></pre>
+            </div>
+
+            <div class="precaucion">
+                <p><b>Advertencia: No se recomienda omitir el área de preparación.</b></p><br>
+                <p>Saltarse el paso de preparación puede hacer que incluya cambios no deseados.</p>
+            </div>
+
+            <h4>Historial de commits</h4>
+            
+            <p>Para ver el historial de commits de un repositorio, puedes usar el comando <code class="codigo">log</code>:</p>
+
+            <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-git">git log</code></pre>
+            </div>
+
+            <h4>Resultado:</h4>
+
+            <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-git">commit 09f4acd3f8836b7f6fc44ad9e012f82faf861803 (HEAD -> master)
+Author: hernando abella
+Date:   Fri Mar 26 09:35:54 2021 +0100
+
+    index.html actualizado con una nueva línea
+
+commit 221ec6e10aeedbfd02b85264087cd9adc18e4b26
+Author: hernando abella 
+Date:   Fri Mar 26 09:13:07 2021 +0100
+
+    ¡Primera versión de Hola Mundo!</code></pre>
+            </div>
+
             </section>
 
             <section id="item6">
-                
+                <h2>Ayuda de Git</h2>
+                <p>Si tienes problemas recordando los comandos, puedes utilizar <code class="codigo">help</code></p>
+                <p>Hay muchas formas de usar el comando <code class="codigo">help</code> en la línea de comandos:</p>
+
+                <ul>
+                    <li><b>Utilizando el comando -help</b>: Observa todas las opciones especificas para el comando específico.</li>
+                    <li><b>Utilizando el comando help --all</b>: Para ver todos los comandos posibles.</li>
+                </ul>
+
+                <p>¡Repasemos los diferentes comandos!</p>
+
+                <h4>Git -help observa opciones para un comando específico</h4>
+
+                <p>Siempre que necesites ayuda para recordar la opción específica de un comando, puedes usar el comando -help:</p>
+
+                <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-git">git commit -help</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-git">usage: git commit [] [--] ...
+
+-q, --quiet           suppress summary after successful commit
+-v, --verbose         show diff in commit message template
+
+Commit message options
+-F, --file      read message from file
+--author      override author for commit
+--date          override date for commit
+-m, --message 
+                      commit message
+-c, --reedit-message 
+                      reuse and edit message from specified commit
+-C, --reuse-message 
+                      reuse message from specified commit
+--fixup       use autosquash formatted message to fixup specified commit
+--squash      use autosquash formatted message to squash specified commit
+--reset-author        the commit is authored by me now (used with -C/-c/--amend)
+-s, --signoff         add a Signed-off-by trailer
+-t, --template 
+                      use specified template file
+-e, --edit            force edit of commit
+--cleanup       how to strip spaces and #comments from message
+--status              include status in commit message template
+-S, --gpg-sign[=]
+                      GPG sign commit
+
+Commit contents options
+-a, --all             commit all changed files
+-i, --include         add specified files to index for commit
+--interactive         interactively add files
+-p, --patch           interactively add changes
+-o, --only            commit only specified files
+-n, --no-verify       bypass pre-commit and commit-msg hooks
+--dry-run             show what would be committed
+--short               show status concisely
+--branch              show branch information
+--ahead-behind        compute full ahead/behind values
+--porcelain           machine-readable output
+--long                show status in long format (default)
+-z, --null            terminate entries with NUL
+--amend               amend previous commit
+--no-post-rewrite     bypass post-rewrite hook
+-u, --untracked-files[=]
+                      show untracked files, optional modes: all, normal, no. (Default: all)
+--pathspec-from-file 
+                      read pathspec from file
+--pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character</code></pre>
+                </div>
+
+                <div class="nota">
+                    <p><b>Nota:</b> También puedes usar --help en lugar de -help para abrir la página relevante del manual de Git.</p>
+                </div>
+
+                <h4>help --all observa todos los comandos posibles</h4>
+
+                <p>Para enlistar todos los comandos, usa el comando <code class="codigo">help --all</code></p>
+
+                <div class="precaucion">
+                    <p><b>Advertencia</b>: Esto mostrará una lista muy larga de comandos</p>
+                </div>
+
+                <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-git">git help --all</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-git">See 'git help ' to read about a specific subcommand
+
+Main Porcelain Commands
+   add                  Add file contents to the index
+   am                   Apply a series of patches from a mailbox
+   archive              Create an archive of files from a named tree
+   bisect               Use binary search to find the commit that introduced a bug
+   branch               List, create, or delete branches
+   bundle               Move objects and refs by archive
+   checkout             Switch branches or restore working tree files
+   cherry-pick          Apply the changes introduced by some existing commits
+   citool               Graphical alternative to git-commit
+   clean                Remove untracked files from the working tree
+   clone                Clone a repository into a new directory
+   commit               Record changes to the repository
+   describe             Give an object a human readable name based on an available ref
+   diff                 Show changes between commits, commit and working tree, etc
+   fetch                Download objects and refs from another repository
+   format-patch         Prepare patches for e-mail submission
+   gc                   Cleanup unnecessary files and optimize the local repository
+   gitk                 The Git repository browser
+   grep                 Print lines matching a pattern
+   gui                  A portable graphical interface to Git
+   init                 Create an empty Git repository or reinitialize an existing one
+   log                  Show commit logs
+   maintenance          Run tasks to optimize Git repository data
+   merge                Join two or more development histories together
+   mv                   Move or rename a file, a directory, or a symlink
+   notes                Add or inspect object notes
+   pull                 Fetch from and integrate with another repository or a local branch
+   push                 Update remote refs along with associated objects
+   range-diff           Compare two commit ranges (e.g. two versions of a branch)
+   rebase               Reapply commits on top of another base tip
+   reset                Reset current HEAD to the specified state
+   restore              Restore working tree files
+   revert               Revert some existing commits
+   rm                   Remove files from the working tree and from the index
+   shortlog             Summarize 'git log' output
+   show                 Show various types of objects
+   sparse-checkout      Initialize and modify the sparse-checkout
+   stash                Stash the changes in a dirty working directory away
+   status               Show the working tree status
+   submodule            Initialize, update or inspect submodules
+   switch               Switch branches
+   tag                  Create, list, delete or verify a tag object signed with GPG
+   worktree             Manage multiple working trees
+
+Ancillary Commands / Manipulators
+   config               Get and set repository or global options
+   fast-export          Git data exporter
+   fast-import          Backend for fast Git data importers
+   filter-branch        Rewrite branches
+   mergetool            Run merge conflict resolution tools to resolve merge conflicts
+   pack-refs            Pack heads and tags for efficient repository access
+   prune                Prune all unreachable objects from the object database
+   reflog               Manage reflog information
+   remote               Manage set of tracked repositories
+   repack               Pack unpacked objects in a repository
+   replace              Create, list, delete refs to replace objects
+
+Ancillary Commands / Interrogators
+   annotate             Annotate file lines with commit information
+   blame                Show what revision and author last modified each line of a file
+   bugreport            Collect information for user to file a bug report
+   count-objects        Count unpacked number of objects and their disk consumption
+   difftool             Show changes using common diff tools
+   fsck                 Verifies the connectivity and validity of the objects in the database
+   gitweb               Git web interface (web frontend to Git repositories)
+   help                 Display help information about Git
+   instaweb             Instantly browse your working repository in gitweb
+   merge-tree           Show three-way merge without touching index
+   rerere               Reuse recorded resolution of conflicted merges
+   show-branch          Show branches and their commits
+   verify-commit        Check the GPG signature of commits
+   verify-tag           Check the GPG signature of tags
+   whatchanged          Show logs with difference each commit introduces
+
+Interacting with Others
+   archimport           Import a GNU Arch repository into Git
+   cvsexportcommit      Export a single commit to a CVS checkout
+   cvsimport            Salvage your data out of another SCM people love to hate
+   cvsserver            A CVS server emulator for Git
+   imap-send            Send a collection of patches from stdin to an IMAP folder
+   p4                   Import from and submit to Perforce repositories
+   quiltimport          Applies a quilt patchset onto the current branch
+   request-pull         Generates a summary of pending changes
+   send-email           Send a collection of patches as emails
+   svn                  Bidirectional operation between a Subversion repository and Git
+
+Low-level Commands / Manipulators
+   apply                Apply a patch to files and/or to the index
+   checkout-index       Copy files from the index to the working tree
+   commit-graph         Write and verify Git commit-graph files
+   commit-tree          Create a new commit object
+   hash-object          Compute object ID and optionally creates a blob from a file
+   index-pack           Build pack index file for an existing packed archive
+   merge-file           Run a three-way file merge
+   merge-index          Run a merge for files needing merging
+   mktag                Creates a tag object
+   mktree               Build a tree-object from ls-tree formatted text
+   multi-pack-index     Write and verify multi-pack-indexes
+   pack-objects         Create a packed archive of objects
+   prune-packed         Remove extra objects that are already in pack files
+   read-tree            Reads tree information into the index
+   symbolic-ref         Read, modify and delete symbolic refs
+   unpack-objects       Unpack objects from a packed archive
+   update-index         Register file contents in the working tree to the index
+   update-ref           Update the object name stored in a ref safely
+   write-tree           Create a tree object from the current index
+
+Low-level Commands / Interrogators
+   cat-file             Provide content or type and size information for repository objects
+   cherry               Find commits yet to be applied to upstream
+   diff-files           Compares files in the working tree and the index
+   diff-index           Compare a tree to the working tree or index
+   diff-tree            Compares the content and mode of blobs found via two tree objects
+   for-each-ref         Output information on each ref
+   for-each-repo        Run a Git command on a list of repositories
+   get-tar-commit-id    Extract commit ID from an archive created using git-archive
+   ls-files             Show information about files in the index and the working tree
+   ls-remote            List references in a remote repository
+   ls-tree              List the contents of a tree object
+   merge-base           Find as good common ancestors as possible for a merge
+   name-rev             Find symbolic names for given revs
+   pack-redundant       Find redundant pack files
+   rev-list             Lists commit objects in reverse chronological order
+   rev-parse            Pick out and massage parameters
+   show-index           Show packed archive index
+   show-ref             List references in a local repository
+   unpack-file          Creates a temporary file with a blob's contents
+   var                  Show a Git logical variable
+   verify-pack          Validate packed Git archive files
+
+Low-level Commands / Syncing Repositories
+   daemon               A really simple server for Git repositories
+   fetch-pack           Receive missing objects from another repository
+   http-backend         Server side implementation of Git over HTTP
+   send-pack            Push objects over Git protocol to another repository
+   update-server-info   Update auxiliary info file to help dumb servers
+
+Low-level Commands / Internal Helpers
+   check-attr           Display gitattributes information
+   check-ignore         Debug gitignore / exclude files
+   check-mailmap        Show canonical names and email addresses of contacts
+   check-ref-format     Ensures that a reference name is well formed
+   column               Display data in columns
+   credential           Retrieve and store user credentials
+   credential-cache     Helper to temporarily store passwords in memory
+   credential-store     Helper to store credentials on disk
+   fmt-merge-msg        Produce a merge commit message
+   interpret-trailers   Add or parse structured information in commit messages
+   mailinfo             Extracts patch and authorship from a single e-mail message
+   mailsplit            Simple UNIX mbox splitter program
+   merge-one-file       The standard helper program to use with git-merge-index
+   patch-id             Compute unique ID for a patch
+   sh-i18n              Git's i18n setup code for shell scripts
+   sh-setup             Common Git shell script setup code
+   stripspace           Remove unnecessary whitespace
+
+External commands
+   askyesno
+   credential-helper-selector
+   flow
+   lfs</code></pre>
+                </div>
+
+            <div class="nota">
+                <p><b>Nota:</b> Si te encuentras atascado en la vista de la lista, presiona <b>Shift + G</b> para saltar al final de la lista, luego presiona <b>q</b> para salir de la vista.</p>
+            </div>
+
+
             </section>
 
             <section id="item7">
+                <h2>Ramas</h2>
+
+                <h4>Trabajando con Ramas</h4>
+
+                <p>En Git, un <code class="codigo">branch</code> (rama) es una versión nueva / separada del repositorio principal.</p><br>
+
+                <p>Digamos que tienes un proyecto extenso, y necesitas actualizar su diseño.</p>
+
+                <p>Cómo funcionaría con o sin Git:</p>
+
+                <h4>Sin Git:</h4>
+
+                <ul>
+                    <li>Hace copias de todos los archivos relevantes para evitar afectar la versión en vivo</li>
+                    <li>Empiece a trabajar con el diseño y descubra que el código depende del código de otros archivos, ¡que también deben cambiarse!</li>
+                    <li>Haga también copias de los archivos dependientes. Asegúrese de que cada dependencia de archivo haga referencia al nombre de arcivo correcto.</li>
+                    <li>¡Emergencia! Hay un error no relacionado en algún otro lugar del proyecto que debe arreglarse lo antes posible.</li>
+                    <li>Guarde todos sus archivos, tomando nota de los nombres de las copias en las que estaba trabajando.</li>
+                    <li>Trabaje en el error no relacionado y actualice el código para solucionarlo</li>
+                    <li>Regrese al diseño y termine el trabajo allí.</li>
+                    <li>Copie el código o cambie el nombre de los archivos, para que el diseño actualizado esté en la versión en vivo.</li>
+                    <li>(2 semanas después, se da cuenta de que el error no relacionado no se solucionó en la nueva versión de diseño porque copió los archivos antes de la corrección)</li>
+                </ul>
+
+                <h4>Con Git:</h4>
+
+                <ul>
+                    <li>Con una nueva rama llamada nuevo diseño, edite el código directamente sin afectar la rama principal</li>
+                    <li>¡Emergencia! hay un error no relacionado en algún otro lugar del proyecto que debe arreglarse lo antes posible</li>
+                    <li>Cree una nueva rama del proyecto principal llamada small-error-fix</li>
+                    <li>Corrija el error no relacionado y combine la rama de corrección de errores pequeños con la rama principal</li>
+                    <li>Vuelve a la rama de nuevo diseño y termina el trabajo allí.</li>
+                    <li>Fusiona la rama del nuevo diseño con la rama principal (main) recibiendo una alerta sobre la pequeña corrección de error que faltaba</li>
+                </ul>
+
+                <p>Las ramas te permiten trabajar en diferentes partes de tu proyecto sin tener ningun impacto con la rama principal.</p><br>
+
+                <p>Cuando el trabajo está completo, una rama puede ser fusionada con el proyecto principal.</p><br>
+
+                <p>Incluso puedes cambiar entre ramas y trabajar en diferentes proyectos sin que interfieran entre sí.</p>
+
+                <p>La ramificación en Git es muy rápida y ligera.</p>
+
+                <h4>Nueva Rama de Git</h4>
+
+                <p>Agreguemos algunas características nuevas a nuestra pagina <code class="codigo">index.html</code></p><br>
+
+                <p>Estamos trabajando en nuestro repositorio local y no queremos molestar o posiblemente destruir el proyecto principal.</p><br>
+
+                <p>Asi que creamos una nueva rama:</p>
+
+                <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-git">git branch imagenes-hola-mundo</code></pre>
+                </div>
+
+                <p>Ahora hemos creado una nueva rama llamada "imagens-hola-mundo"</p><br>
+
+                <p>Confirmemos que ha sido creada una nueva rama:</p>
+
+                <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-git">git branch</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-git">  imagenes-hola-mundo
+* master</code></pre>
+                </div>
+
+                <p>Podemos ver la nueva rama con el nombre de "imagenes-hola-mundo", pero el asterisco * al lado de <code class="codigo">master</code> especifica que actualmente estamos en esa rama.</p><br>
+
+                <p>El comando <code class="codigo">checkout</code> se usa para verificar una rama. Moviéndonos de la rama actual, a la especificada al final del comando:</p>
+
+                
+
+
+
+            </section>
+
+            <section id="item8">
+                
+            </section>
+
+            <section id="item9">
+                
+            </section>
+
+            <section id="item10">
+                
+            </section>
+
+            <section id="item11">
                 
             </section>
         
         
         </div>
+
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
     <script src="./main.js"></script>
