@@ -832,14 +832,350 @@ External commands
 
                 <p>El comando <code class="codigo">checkout</code> se usa para verificar una rama. Moviéndonos de la rama actual, a la especificada al final del comando:</p>
 
-                
+                <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-git">git checkout imagenes-hola-mundo</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-git">Switched to branch 'imagenes-hola-mundo'</code></pre>
+                </div>
+
+                <p>Ahora nos hemos movido a nuestro espacio de trabajo actual desde la rama master hasta la nueva rama</p>
+
+                <p>Abre tu editor favorito y haz algunos cambios.</p>
+
+                <p>Para este ejemplo, hemo agregado una nueva imagen (imagen_hola_mundo.jpg) a la carpeta y a una linea de codigo en el archivo <code class="codigo">index.html</code></p>
+
+                <h4>Ejemplo:</h4>
+
+                <div class="codigo__git">
+                    <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;&iexcl;Hola Mundo!&lt;/title&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;bluestyle.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1&gt;&iexcl;Hola Mundo!&lt;/h1&gt;
+&lt;div&gt;&lt;img src=&quot;imagen_hola_mundo.jpg&quot; alt=&quot;Hola mundo desde el espacio&quot;
+style=&quot;width:100%;max-width:960px&quot;&gt;&lt;/div&gt;
+&lt;p&gt;Este es el primer archivo en mi nuevo Git Repo.&lt;/p&gt;
+&lt;p&gt;&iexcl;Una nueva l&iacute;nea en su archivo!&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+
+                <p>Hemos realizado cambios en un archivo y agregado un nuevo archivo en el directorio de trabajo (en el mismo directorio que la rama principal).</p>
+
+                <p>Ahora verifica el estado de la rama actual:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git status</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">On branch hello-world-images
+Changes not staged for commit:
+  (use "git add ..." to update what will be committed)
+  (use "git restore ..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add ..." to include in what will be committed)
+        img_hello_world.jpg
+
+no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
+                </div>
+
+                <p>Veamos que sucede aquí:</p>
+
+                <ul>
+                    <li>Hay cambios en nuestro archivo index.html, pero el archivo no ha sido preparado para hacer commit</li>
+                    <li>imagen_hola_mundo.jpg no está rastreado</li>
+                </ul>
+
+                <p>Necesitamos agregar ambos archivos al área de preparación para esta rama:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git add --all</code></pre>
+                </div>
+
+                <p>El uso de <code class="codigo">--all</code> en lugar de nombres de archivos individuales te permitirará preparar todos los cambios (nuevo, modificado y eliminado)</p>
+
+                <p>Verifica el estado de la rama:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git status</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">On branch imagenes-hola-mundo
+Changes to be committed:
+  (use "git restore --staged ..." to unstage)
+    new file: imagen_hola_mundo.jpg
+    modified: index.html</code></pre>
+                </div>
+
+                <p>Estamos felices con nuestros cambios. Ahora haremos commit en la rama:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git commit -m "Imagen agregada a Hola Mundo"</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">[imagen-hola-mundo 0312c55] Imagen agregada a Hola Mundo
+2 files changed, 1 insertion(+)
+create mode 100644 imagen_hola_mundo.jpg</code></pre>
+                </div>
+
+                <p>Ahora hemos creado una nueva rama diferente a la rama maestra.</p>
+
+                <div class="nota">
+                    <p><b>Nota:</b> Usando la opción <code class="codigo">-b</code> en <code class="codigo">checkout</code> creará una nueva rama, y lo moverá a ella si no existe</p>
+                </div>
 
 
+                <h4>Cambiar entre ramas</h4>
+
+                <p>Ahora veamos que tan fácil y rapido es trabajar con diferentes ramas y cómo funciona bien.</p>
+
+                <p>Actualmente estamos en la rama imagenes-hola-mundo. Agregamos una imagen a esta rama, asi que ahora enlistaremos los archivos en la carpeta / directorio:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">ls</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">README.md  bluestyle.css  imagen_hola_mundo.jpg  index.html</code></pre>
+                </div>
+
+                <p>Podemos ver el nuevo archivo imagen_hola_mundo.jpg, y si abrimos el archivo html, podemos ver que el código ha sido alterado. Todo es como debe ser.</p>
+
+                <p>Ahora, vamos a ver que sucede cuando nos cambiamos a la rama maestra</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git checkout master</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">Switched to branch 'master'</code></pre>
+                </div>
+
+                <p>La nueva imagen no es parte de esta rama. Enlista los archivos en la carpeta actual nuevamente:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">ls</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">README.md  bluestyle.css  index.html</code></pre>
+                </div>
+
+                <p>imagen_hola_mundo.jpg no está ahí! y si abrimos el archivo html, podemos ver el código revertido a lo que era antes de la alteración.</p>
+
+                <p>¿Ves lo fácil que es trabajar con ramas? ¿Y cómo esto te permite trabajar en diferentes cosas?</p>
+
+                <h4>Rama de Emergencia</h4>
+
+                <p>Ahora imagina que aún no hemos terminado con las imágenes de hola-mundo, pero necesitamos corregir un error en la rama master.</p>
+
+                <p>No quiero meterme con la rama maestra directamente, y no quiero meterme con las imagenes de hola mundo, ya que aún no está hecho.</p>
+
+                <p>Para eso creamos una rama nueva para hacerle frente a la emergencia:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git checkout -b emergency-fix</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">Switched to a new branch 'emergency-fix'</code></pre>
+                </div>
+
+                <p>Ahora hemos creado una nueva rama desde la rama maestra, y la hemos cambiado. Podemos arreglar el error de manera segura sin molestar las otras ramas.</p>
+
+                <p>Arreglemos nuestro error imaginario:</p>
+
+                <h4>Ejemplo:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;&iexcl;Hola Mundo!&lt;/title&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;bluestyle.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1&gt;&iexcl;Hola Mundo!&lt;/h1&gt;
+&lt;p&gt;Este es el primer archivo en mi nuevo Git Repo.&lt;/p&gt;
+&lt;p&gt;Esta l&iacute;nea est&aacute; aqu&iacute; para mostrar c&oacute;mo funciona la fusi&oacute;n.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>    
+
+                <p>Hemos realizado cambios en este archivo y necesitamos obtener esos cambios en la rama maestra.</p>
+
+                <p>Verifica el estado:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git status</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">On branch emergency-fix
+Changes not staged for commit:
+  (use "git add ..." to update what will be committed)
+  (use "git restore ..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
+                </div>
+
+                <p>Prepara el archivo y commit</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git add index.html
+git commit -m "index.html actualizado con arreglo de emergencia"</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">[emergency-fix dfa79db] index.html actualizado con arreglo de emergencia
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+</code></pre>
+                </div>
+
+                <p>Ahora tenemos una solución lista para la rama master y necesitamos fusionar las dos ramas.</p>
 
             </section>
 
             <section id="item8">
+
+                <h2>Fusionar Ramas</h2>
+
+                <p>Tenemos la solución de emergencia lista, ahora fusionemos las dos ramas, la rama maestra y la rama de repación de emergencia.</p><br>
                 
+                <p>Primero, necesitamos cambiar a la rama maestra:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git checkout master</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">Switched to branch 'master'</code></pre>
+                </div>
+
+                <p>Ahora vamos a fusionar la rama maestra con la rama reparación de emergencia:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git merge emergency-fix</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">Updating 09f4acd..dfa79db
+Fast-forward
+ index.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)</code></pre>
+                </div>
+
+                <p>Dado que la rama emergency-fix viene directamente desde la rama master, y no hay otros cambios hechos en la rama maestra mientras estuvimos trabajando, Git mira esto como una continuación de la rama maestra. Así que puede avanzar rápido, simplemente apuntando tanto la rama maestra como emergency-fix en el mismo commit.</p>
+
+                <p>Como master y emergency-fix son escencialmente lo mismo, podemos eliminar emergency-fix, ya que ya no es necesario:</p>
+           
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git branch -d emergency-fix</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">Deleted branch emergency-fix (was dfa79db).
+</code></pre>
+                </div>
+
+                <h4>Fusionar conflictos</h4>
+
+                <p>Ahora podemos movernos a imagen_hola_mundo y seguir trabajando. Agrega otra imagen (imagen_hola_git.jpg) y cambia index.html para que la muestre:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git checkout imagen-hola-mundo</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">Switched to branch 'imagen-hola-mundo'</code></pre>
+                </div>
+
+                <h4>Ejemplo:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;&iexcl;Hola Mundo!&lt;/title&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;bluestyle.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1&gt;&iexcl;Hola Mundo!&lt;/h1&gt;
+&lt;div&gt;&lt;img src=&quot;imagen_hola_mundo.jpg&quot; alt=&quot;Hola Mundo desde el espacio&quot; style=&quot;width:100%;max-width:960px&quot;&gt;&lt;/div&gt;
+&lt;p&gt;Este es el primer archivo en mi nuevo Git Repo.&lt;/p&gt;
+&lt;p&gt;&iexcl;Una nueva l&iacute;nea en su archivo!&lt;/p&gt;
+&lt;div&gt;&lt;img src=&quot;imagen_hola_git.jpg&quot; alt=&quot;Hola Git&quot; style=&quot;width:100%;max-width:640px&quot;&gt;&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+
+                <p>Terminamos nuestro trabajo aquí y podemos preparar los archivos y hacer commit en esta rama:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git add --all
+git commit -m "Nueva imagen agregada"</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">[imagen-hola-mundo 1f1584e] Nueva imagen agregada
+ 2 files changed, 1 insertion(+)
+ create mode 100644 imagen_hola_git.jpg</code></pre>
+                </div>
+
+                <p>Podemos ver que index.html ha cambiado en ambas ramas. Ahora estamos listo para fusionar imagen-hola-mundo con la rama maestra. Pero qué pasa con los cambios que hemos hecho recientemente en la rama maestra?</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git checkout master
+git merge imagen-hola-mundo</code></pre>
+                </div>
+
             </section>
 
             <section id="item9">

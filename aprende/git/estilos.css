@@ -2,10 +2,6 @@ body{
     background-image: linear-gradient(-60deg, #f34f29  0%, #fd990c 100%);
 }
 
-p{
-    line-height: 30px;
-}
-
 section{
     margin: 50px auto;
     padding: 50px;
@@ -39,6 +35,8 @@ section h4{
 
 section p{
     text-align: justify;
+    line-height: 30px;
+    display: block;
 }
 
 section ul{
