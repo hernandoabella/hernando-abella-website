@@ -1383,28 +1383,560 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.</code></pr
 
                 <p>Recuerda agrega una descripción para el <code class="codigo">commit</code>.</p>
 
-                <img src="/images/img_github_edit_commit" alt="editar commit"> 
+                <img src="/images/img_github_edit_commit.png" alt="editar commit"> 
+
+                <p>Así es como se edita el código directamente en GitHub.</p>
 
                 </section>
 
                 <section id="item11">
+                <h2>Pull de GitHub</h2>
+
+                <p>Hacer pull para mantenerse al día con los cambios.</p>
+
+                <p>Cuando se trabaja en equipo en un proyecto, es importante que todos se mantengan actualizados.</p>
+
+                <p>Cada vez que empiece a trabajar en un proyecto, debería obtener los cambios más recientes en su copia local.</p>
                         
+                <p>Con Git, puedes hacerlo con <code class="codigo">pull</code>.</p>
+
+                <p><code class="codigo">pull</code> es una combinación de 2 comandos diferentes:</p>
+
+                <ul>
+                        <li>fetch</li>
+                        <li>merge</li>
+                </ul>
+
+                <p>Veamos más de cerca como funcionan los comandos: <code class="codigo">fetch</code>, <code class="codigo">merge</code> y <code class="codigo">pull</code>.</p>
+
+                <h4>Fetch</h4>
+
+                <p><code class="codigo">fetch</code> obtiene todo el historial de cambios de una rama / repositorio rastreado.</p>
+
+                <p>En su Git local, busque actualizaciones para ver qué ha cambiado en GitHub:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git fetch origin</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 733 bytes | 3.00 KiB/s, done.
+From https://github.com/hernandoabella/hola-mundo
+   e0b6038..d29d69f  master     -> origin/master</code></pre>
+                </div>
+
+                <p>Ahora que tenemos los cambios recientes, podemos ver nuestro estado:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git status</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">On branch master
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+nothing to commit, working tree clean</code></pre>
+                </div>
+
+                <p>Estamos detrás del origin / master por 1 commit. Eso debería ser el README.md actualizado, revisemos el registro:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git log origin/master</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">commit d29d69ffe2ee9e6df6fa0d313bb0592b50f3b853 (origin/master)
+Author: w3schools-test &lt;77673807+w3schools-test@users.noreply.github.com&gt;
+Date:   Fri Mar 26 14:59:14 2021 +0100
+
+    Updated README.md with a line about GitHub
+
+commit e0b6038b1345e50aca8885d8fd322fc0e5765c3b (HEAD -&gt; master)
+Merge: dfa79db 1f1584e
+Author: w3schools-test 
+Date:   Fri Mar 26 12:42:56 2021 +0100
+
+    merged with hello-world-images after fixing conflicts
+
+...
+...</code></pre>
+                </div>
+
+                <p>Se ve como esperaba, pero también podemos verificar mostrando las diferencias entre nuestro master local y origin/master:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git diff origin/master</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">diff --git a/README.md b/README.md
+index 23a0122..a980c39 100644
+--- a/README.md
++++ b/README.md
+@@ -2,6 +2,4 @@
+ Hello World repository for Git tutorial
+ This is an example repository for the Git tutoial on https://www.w3schools.com
+
+-This repository is built step by step in the tutorial.
+-
+-It now includes steps for GitHub
++This repository is built step by step in the tutorial.
+\ No newline at end of file</code></pre>
+                </div>
+
+                <p>¡Eso se ve exactamente como se esperaba! Ahora podemos fusionarnos de forma segura.</p>
+
+                <h4>Merge (fusión)</h4>
+
+                <p><code class="codigo">merge</code > combina la rrama actual, con una rama especifica.</p>
+
+                <p>Hemos confirmado que las actualizaciones son las esperadas y podemos fusionar nuestra rama actual (maestra) con origin / master:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git merge origin/master</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">Updating e0b6038..d29d69f
+Fast-forward
+ README.md | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)</code></pre>
+                </div>
+
+                <p>Verifica el estado nuevamente para confirmar que estamos actualizados:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git status</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean</code></pre>
+                </div>
+
+                <p>¡Tu git local está actualizado!</p>
+
+                <h4>Pull</h4>
+
+                <p>Pero, ¿qué pasa si solo desea actualizar su repositorio local, sin seguir todos esos pasos?</p>
+
+                <p>pull es una combinación de <code class="codigo">fetch</code> y <code class="codigo">merge</code>. Se utiliza para extraer todos los cambios de un repositorio remoto a la rama en la que está trabajando.</p>
+
+                <p>Realice otro cambio en el archivo Readme.md en GitHub.</p>
+
+                <img src="/images/img_github_create_readme2.png" alt="crear-readme">
+
+                <p>Usa <code class="codigo">pull</code> para actualizar nuestro repositorio local de Git:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git pull origin</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 794 bytes | 1024 bytes/s, done.
+From https://github.com/w3schools-test/hello-world
+   a7cdd4b..ab6b4ed  master       -> origin/master
+Updating a7cdd4b..ab6b4ed
+Fast-forward
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)</code></pre>
+                </div>
+
+                <p>Así es como mantienes actualizado tu Git local desde un repositorio remoto.</p>
+
+
                 </section>
 
                 <section id="item12">
-                        
+
+                <h2>Enviar Cambios a GitHub</h2>
+
+                <p>Intentemos hacer algunos cambios en nuestro git local y luego enviarlos a GitHub.</p>
+                
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;&iexcl;Hola Mundo!&lt;/title&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;bluestyle.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1&gt;&iexcl;Hola Mundo!&lt;/h1&gt;
+&lt;div&gt;&lt;img src=&quot;imagen_hola_mundo.jpg&quot; alt=&quot;Hola Mundo desde el espacio&quot; style=&quot;width:100%;max-width:640px&quot;&gt;&lt;/div&gt;
+&lt;p&gt;Este es el primer archivo en mi nuevo Git Repo.&lt;/p&gt;
+&lt;p&gt;Esta l&iacute;nea est&aacute; aqu&iacute; para mostrar c&oacute;mo funciona la fusi&oacute;n.&lt;/p&gt;
+&lt;div&gt;&lt;img src=&quot;imagen_hola_git.jpg&quot; alt=&quot;Hola Git&quot; style=&quot;width:100%;max-width:640px&quot;&gt;&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+
+                <p>Commit los cambios:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git commit -a -m "index.html actualizado. Imagen redimensionada"</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">[master e7de78f] index.html actualizado. Imagen redimensionada
+ 1 file changed, 1 insertion(+), 1 deletion(-)</code></pre>
+                </div>
+
+                <p>Y verifica el estado:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git status</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean</code></pre>
+                </div>
+
+                <p>Ahora enviemos nuestros cambios a nuestro origen remoto:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git push origin</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">Enumerating objects: 9, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 578 bytes | 578.00 KiB/s, done.
+Total 5 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/hernandoabella/hola-mundo.git
+   5a04b6f..facaeae  master -> master</code></pre>
+                </div>
+
+                <p>Vaya a GitHub y confirme que el repositorio tiene un nuevo commit:</p>
+
+                <img src="/images/img_git_push_to_github.png" alt="push-to-git">
+
+                <p>Ahora, empezaremos a trabajar con ramas en GitHub.</p>
+
                 </section>
 
                 <section id="item13">
+
+                <h2>Ramas en GitHub</h2>
+
+                <h4>Crear una nueva rama en GitHub</h4>
+
+                <p>En GitHub, accede a tu repositorio y haz clic en el botón de la rama "master"</p>
                         
+                <p>Ahí puedes crear una nueva rama. Escriba un nombre descriptivo y haga clic en create branch:</p>
+
+                <img src="/images/img_github_new_branch.png" alt="new-branch">
+
+                <p>Ahora la rama debería estar creada y activa. Puedes confirmar en qué rama estas trabajando mirando el botón de rama. ¿Ves que ahora dice "html-skeleton" en lugar de "main"?</p>
+
+                <img src="/images/img_github_new_branch_created.png" alt="new-branch-created">
+
+                <p>Empieza a trabajar en un archivo existente en esta rama. Haz clic en el archivo "<code class="codigo">index.html</code>" y empieza a editar:</p>
+
+                <img src="/images/img_github_edit_file.png" alt="edit-file">
+
+                <p>Después de que termines de editar el archivo, puedes hacer clic en la pestaña "Preview changes" para ver los cambios resaltados que has hecho.</p>
+
+                <img src="/images/img_github_preview_and_commit.png" alt="preview-and-commit">
+
+                <p>Si estás feliz con el cambio, agrega un comentario que explique lo que hiciste y has clic en Commit changes.</p>
+
+                <p>¡Ahora tienes una nueva rama en GitHub, actualizada con algunos cambios!</p>
+
+                
                 </section>
 
                 <section id="item14">
+
+                <h2>Actualizando ramas desde GitHub</h2>
+
+                <h4>Actualizando una rama desde Github</h4>
+
+                <p>Ahora continuemos trabajando nuetra rama en nuestro Git local.</p>
+
+                <p>Hagamos pull desde nuestro repositorio de GitHub nuevamente de esta manera nuestro código estará actualizado.</p>
                         
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git pull</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 851 bytes | 9.00 KiB/s, done.
+From https://github.com/hernandoabella/hola-mundo
+ * [new branch]      html-skeleton -> origin/html-skeleton
+Already up to date.</code></pre>
+                </div>
+
+                <p>Ahora nuestra rama principal está actualizada. Y ahora podemos ver que nuestra rama está disponible en GitHub.</p>
+
+                <p>Hagamos una rápida verificación del estado:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git status</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean</code></pre>
+                </div>
+
+                <p>Y confirmemos cuáles ramas tenemos y en dónde estamos trabjaando en este momento:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git branch</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">* master</code></pre>
+                </div>
+
+                <p>No tenemos una nueva rama en nuestro Git local. Pero sabemos que está disponible en GitHub. Podemos usar la opción <code class="codigo">-a</code> para ver todas las ramas locales y remotas:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git branch -a</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">* master
+  remotes/origin/html-skeleton
+  remotes/origin/master</code></pre>
+                </div>
+
+                <div class="nota">
+                        <p><b>Nota:</b> <code>branch -r</code > es solo para ramas remotas.</p>
+                </div>
+
+                <p>Vemos que la rama <code>html-skeleton</code> está remotamente disponible, pero no en nuestro git local. Veamoslo: </p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git checkout html-skeleton</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">Switched to a new branch 'html-skeleton'
+Branch 'html-skeleton' set up to track remote branch 'html-skeleton' from 'origin'.</code></pre>
+                </div>
+
+                <p>Verifica si todo está actualizado:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git pull</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">Already up to date.</code></pre>
+                </div>
+
+                <p>¿Qué rama tenemos ahora y desde dónde estamos trabajando?</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git branch</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">* html-skeleton
+  master</code></pre>
+                </div>
+
+                <p>Ahora, abre tu editor favorito y confirma que los cambios de la rama de GitHub se mantuvieron.</p>
+
+                <p>Así es como actualizas una rama de GitHub a tu Git local.</p>
+
                 </section>
 
                 <section id="item15">
-                        
+
+                <h2>Enviar Rama a GitHub</h2>
+
+                <p>Intentemos crear una nueva rama local y luego enviarla a GitHub.</p>
+                
+                <p>Empecemos por crear una nueva rama como lo hicimos antes:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git checkout -b update-readme</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">Switched to a new branch 'update-readme'</code></pre>
+                </div>
+
+                <p>Y realizamos algunos cambios en el archivo README.md. Simplemente agregue una nueva línea.</p>
+
+                <p>Ahora verificamos el estado de la rama actual.</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git status</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">On branch update-readme
+Changes not staged for commit:
+  (use "git add ..." to update what will be committed)
+  (use "git restore ..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
+                </div>
+
+                <p>Podemos ver que README.md se modifica pero no se agrega al área de preparación:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git add README.md</code></pre>
+                </div>
+
+                <p>Verifica el estado de la rama:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git status</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">On branch update-readme
+Changes to be committed:
+  (use "git restore --staged ..." to unstage)
+        modified:   README.md</code></pre>
+                </div>
+
+                <p>Estamos felices con nuestros cambios, así que haremos <code class="codigo">commit</code> en la rama:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git commit -m "readme actualizado para las ramas de GitHub"</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">[update-readme 836e5bf] readme actualizado para las ramas de GitHub
+ 1 file changed, 1 insertion(+)</code></pre>
+                </div>
+
+                Ahora enviemos la rama desde nuestro repositorio local de Git hasta GitHub, en donde todos puedan ver los cambios:
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git push origin update-readme</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 366 bytes | 366.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'update-readme' on GitHub by visiting:
+remote:      https://github.com/hernandoabella/hola-mundo/pull/new/update-readme
+remote:
+To https://github.com/hernandoabella/hola-mundo.git
+ * [new branch]      update-readme -> update-readme</code></pre>
+                </div>
+
+                <p>Vamos a GitHub y confirmamos que el repositorio tiene una nueva rama:</p>
+
+                <img src="/images/img_git_push_branch_to_github.png" alt="git-push-branch">
+
+                <p>En GitHub, ahora podemos ver los cambios y fusionarlos en la rama maestra si lo aprobamos.</p>
+
+                <p>Si hace clic en "Compare & pull request", puede revisar los cambios realizados y los nuevos archivos agregados:</p>
+
+                <img src="/images/img_github_branch_check_changes.png" alt="git-push-branch">
+
+                <div class="nota">
+                        <p><b>Nota:</b> Esta comparación muestra los cambios de update-readme y html-skeleton porque creamos la nueva rama desde html-skeleton.</p>
+                </div>
+
+                <p>Si los cambios lucen bien, puedes avanzar creando un <code class="codigo">pull request</code>:</p>
+
+                <img src="/images/img_github_branch_create_pull_request.png" alt="git-push-branch">
+
+                <p>Una pull request es la forma en que propones cambios. uedes pedirle a algunos que revisen sus cambios o que los fusionen en su rama.</p>
+
+                <p>Dado que este es tu propio repositorio, puedes fusionar tu pull request tu mismo:</p>
+
+                <img src="/images/img_github_branch_merge_pull_request.png" alt="git-push-branch">
+
+                <p>El pull request registrará los cambios, lo que ignifica que puedes revisarlos más tarde para ver qué cambió.</p>
+
+                <p>El resultado debería ser algo como esto:</p>
+
+                <img src="/images/img_github_branch_merged.png" alt="git-push-branch">
+
+                <p>Para evitar que el repositorio se vuelva demasiado complicado, puedes eliminar la rama que ahora no se utiliza haciendo clic en "Delete branch".</p>
+
+                <img src="/images/img_github_branch_delete.png" alt="git-push-branch">
+
+                <p>Después de confirmar que se incluyeron los cambios de la rama anterior, elimínelos también:</p>
+
+                <img src="/images/img_github_branch_delete_other.png" alt="git-push-branch">
+
                 </section>
 
                 <section id="item16">
