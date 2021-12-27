@@ -2357,13 +2357,190 @@ To https://github.com/kaijim/hola-mundo.github.io.git
 
                 <p>Comenta los cambios y fusiona</p>
 
+                <img src="/images/img_github_pull_request_merge.png" alt="_request_merge">
 
+                <p>Confirma:</p>
 
+                <img src="/images/img_github_pull_request_confirm_merge.png" alt="_request_merge">
+
+                <p>Y los cambios han sido fusionados con master:</p>
+
+                <img src="/images/img_github_pull_request_merged" alt="_request_merge">
+
+                <p>¡Ahora inténtalo!</p>
 
                 </section>
 
                 <section id="item21">
-                        
+
+                <h1>Git Avanzado</h1>
+
+                <h4>Archivo .gitignore</h4>
+
+                <p>Cuando compartes tu código con otras personas, a menudo hay archivos o partes de tu proyecto que no deseas compartir.</p>
+
+                <h4>Ejemplo:</h4>
+
+                <ul>
+                        <li>Archivos de registro</li>
+                        <li>Archivos temporales</li>
+                        <li>Archivos ocultos</li>
+                        <li>Archivos personales</li>
+                        <li>ect.</li>
+                </ul>
+
+                <p>Git puede especificar qué archivos o partes de tu proyecto deben ser ignorados por Git usando un archivo .gitignore.</p>
+
+                <p>Git no rastrará los archivos y carpetas especificadas en .gitignore. Sin embargo, Git rastrea el archivo .gitignore.</p>    
+                
+                <h4>Crear Archivo .gitignore</h4>
+
+                <p>Para crear el archivo <code class="codigo">.gitignore</code>, ve a la raíz de tu Git local, y créalo:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">touch .gitignore</code></pre>
+                </div>
+
+                <p>Ahora abre el archivo usando un editor de texto.</p>
+
+                <p>Vamos a agregar 2 reglas simples:</p>
+
+                <ul>
+                        <li>Ignorar cualquier archivos con la extensión <code class="codigo">.log</code></li>
+                        <li>Ignorar todo en cualquier directorio con el nombre <code class="codigo">temp</code></li>
+                </ul>
+
+                <h4>Ejemplo:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git"># ignora TODOS los archivos .log
+*.log
+
+# ignora TODOS los archivos en CUALQUIER directorio llamado temp
+temp/e</code></pre>
+                </div>
+
+                <p>Ahora todos los archivos .log y cualquier cosa en las carpetas temp serán ignorados por Git.</p>
+
+                <div class="nota">
+                        <p><b>Nota:</b> En este caso usamos un solo .gitignore el cual aplica al repositorio entero.</p>
+                        <p>También es posible tener archivos .gitignore adicionales en subdirectorios. Estos solo se aplican a archivos o carpetas dentro de ese directorio.</p>                
+                </div>
+
+                <h4>Reglas para el Archivo .gitignore</h4>
+
+                Estas son las reglas generales para hacer coincidir patrones en archivos <code>.gitignore</code>:
+
+                <table>
+                        <th>
+                                <tr>Patrón</tr>
+                                <tr>Explicación</tr>
+                                <tr>Ejemplos</tr>
+                        </th>
+                        <td>
+                                <tr></tr>
+                                <tr></tr>
+                                <tr></tr>
+                        </td>
+                        <td>
+                                <tr></tr>
+                                <tr></tr>
+                                <tr></tr>
+                        </td>
+                        <td>
+                                <tr></tr>
+                                <tr></tr>
+                                <tr></tr>
+                        </td>
+                        <td>
+                                <tr></tr>
+                                <tr></tr>
+                                <tr></tr>
+                        </td>
+                        <td>
+                                <tr></tr>
+                                <tr></tr>
+                                <tr></tr>
+                        </td>
+                        <td>
+                                <tr></tr>
+                                <tr></tr>
+                                <tr></tr>
+                        </td>
+                        <td>
+                                <tr></tr>
+                                <tr></tr>
+                                <tr></tr>
+                        </td>
+                        <td>
+                                <tr></tr>
+                                <tr></tr>
+                                <tr></tr>
+                        </td>
+                        <td>
+                                <tr></tr>
+                                <tr></tr>
+                                <tr></tr>
+                        </td>
+                        <td>
+                                <tr></tr>
+                                <tr></tr>
+                                <tr></tr>
+                        </td>
+                        <td>
+                                <tr></tr>
+                                <tr></tr>
+                                <tr></tr>
+                        </td>
+                        <td>
+                                <tr></tr>
+                                <tr></tr>
+                                <tr></tr>
+                        </td>
+                        <td>
+                                <tr></tr>
+                                <tr></tr>
+                                <tr></tr>
+                        </td>
+                        <td>
+                                <tr></tr>
+                                <tr></tr>
+                                <tr></tr>
+                        </td>
+                        <td>
+                                <tr></tr>
+                                <tr></tr>
+                                <tr></tr>
+                        </td>
+                        <td>
+                                <tr></tr>
+                                <tr></tr>
+                                <tr></tr>
+                        </td>
+                        <td>
+                                <tr></tr>
+                                <tr></tr>
+                                <tr></tr>
+                        </td>
+                        <td>
+                                <tr></tr>
+                                <tr></tr>
+                                <tr></tr>
+                        </td>
+                        <td>
+                                <tr></tr>
+                                <tr></tr>
+                                <tr></tr>
+                        </td>
+                        <td>
+                                <tr></tr>
+                                <tr></tr>
+                                <tr></tr>
+                        </td>
+                </table>
+
+
+
                 </section>
 
                 <section id="item22">
