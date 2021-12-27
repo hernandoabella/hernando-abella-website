@@ -34,6 +34,18 @@
                 <a href="#item12">item 1</a>
                 <a href="#item13">item 1</a>
                 <a href="#item14">item 1</a>
+                <a href="#item15">item 1</a>
+                <a href="#item16">item 1</a>
+                <a href="#item17">item 1</a>
+                <a href="#item18">item 1</a>
+                <a href="#item19">item 1</a>
+                <a href="#item20">item 1</a>
+                <a href="#item21">item 1</a>
+                <a href="#item22">item 1</a>
+                <a href="#item23">item 1</a>
+                <a href="#item24">item 1</a>
+                <a href="#item25">item 1</a>
+                <a href="#item16">item 1</a>
         </aside>
 
         <div class="articles">
@@ -2031,19 +2043,323 @@ To https://github.com/hernandoabella/hola-mundo.git
                 <h2>Páginas de GitHub</h2>
 
                 <h4>Aloja tu Página en GitHub</h4>
-                        
+
+                <p>Con las páginas de GitHub, GitHub te permite alojar una página web desde su repositorio. Intentemos usar las páginas de GitHub para alojar nuestro repositorio.</p>
+
+                <h4>Crea un Nuevo Repositorio</h4>
+
+                <p>Comience iniciando sesión en GitHub. Las páginas de GitHub necesitan un nombre especial y una configuración para funcionar, así que comenzamos creando un nuevo repositorio:</p>
+
+                <img src="/images/img_github_new_repository.png" alt="git-push-branch">
+
+                <p>Este repositorio necesita un nombre especial para funcionar como una página de GitHub. Debe ser su nombre de usuario de GitHub, seguido de <code class="codigo">.github.io</code>:</p>
+
+                <img src="/images/img_github_pages_name.png" alt="pages_name">
+
+                <h4>Envíe el repositorio local a las páginas de GitHub</h4>
+
+                <p>Agregamos este nuevo repositorio como un control remoto para nuestro repositorio local, lo llamamos gh-page (para las páginas de GitHub).</p>
+
+                <p>Copie la URL desde aquí:</p>
+
+                <img src="/images/img_github_pages_repository_url.png" alt="pages_name">
+
+                <p>Y agréguela como un nuevo control remoto:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git remote add gh-page https://github.com/hernadoabella/hola-mundo.github.io.git
+</code></pre>
+                </div>
+
+                <p>Asegúrate de que estás en la rama maestra, luego envía la rama maestra al nuevo control remoto:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git push gh-page master</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">Enumerating objects: 33, done.
+Counting objects: 100% (33/33), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (33/33), done.
+Writing objects: 100% (33/33), 94.79 KiB | 15.80 MiB/s, done.
+Total 33 (delta 18), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (18/18), done.
+To https://github.com/hernandoabella/hola-mundo.github.io.git
+ * [new branch]      master -> master</code></pre>
+                </div>
+
+                <div class="nota">
+                        <p><b>Nota:</b> Si esta es tu primera ve conectandote a GitHub, obtendrás una notificación para autenticar esta conexión.</p>
+                </div>
+
+                <p>Verifica que ese nuevo repositorio ha recibido todos los archivos:</p>
+
+                <img src="/images/img_github_pages_pushed.png" alt="pages_name">
+
+                <h4>Echa un vistazo a tu propia página de GitHub</h4>
+                
+                <p>Eso se ve bien, ahora haga clic en el menú Settings y navegue hasta la pestaña Páginas:</p>
+
+                <img src="/images/img_github_pages_created_url.png" alt="pages_name">
+
+                <p>Se crea la página de GitHub y puede hacer clic en la URL para ver el resultado.</p>
+
                 </section>
 
                 <section id="item18">
+
+                <h1>Contribuir</h1>
+
+                <h4>Agregar al repositorio de otra persona</h4>
+
+                <p>En el corazón de Git está la colaboración. Sin embargo, Git no te permite agregar código al repositorio de otra persona sin derechos de acceso.</p>
+
+                <p>En estos próximos 3 capítulos, le mostraremos cómo copiar un repositorio, realizar cambios en él y sugerir que esos cambios se implementen en el repositorio original.</p>
+                Al final de estos capítulos, tendrá la oportunidad de agregar un mensaje a nuestra página pública de GitHub: https://hola-mundo.github.io/
+
+                <h4>Bifurcar un Repositorio</h4>
+
+                <p>Un <code class="codigo">fork</code> es una copia de un repositorio. Esto es util cuando deseas contribuir en el proyecto de alguien más o comenzar tu propio proyecto basándote en el de alguien más.</p>
+
+                <p><code class="codigo">fork</code> no es un comando en Git, pero es algo que se ofrece en GitHub y otros hosts del repositorio. Comencemos iniciando sesión en GitHub y bifurquemos nuestro repositorio: </p>
                         
+                <p>https://github.com/hernandoabella/hola-mundo.github.io</p>
+
+                <img src="/images/img_github_fork.png" alt="pages_name">
+
+                <p>Ahora tenemos nuestra propia copia de hola-mundo.github.io</p>
+
+                <img src="/images/img_github_fork_complete.png" alt="pages_name">
+
+                <p>Ahora veamos cómo agregamos una copia local de esto para que podamos trabajar.</p>
+
                 </section>
 
                 <section id="item19">
-                        
+
+                <h2>Clonar desde GitHub</h2>
+
+                <h4>Clonar una bifurcación de GitHub</h4>
+
+                <p>Hemos creado nuestro propio <code class="codigo">fork</code>, pero solo en GitHub. También queremos clonarlo en nuestro Git local para seguir trabajando.</p>
+
+                <p> Un <code class="codigo">clone</code> (clon) es una copia completa de un repositorio, incluye todos los registros y versiones de los archivos.</p>
+
+                <p>Regrese al repositorio original y haga clic en el botón verde "Code" para obtener la URL para clonar:</p>
+
+                <img src="/images/img_github_clone_url.png" alt="clone_url">
+
+                <p>Abre tu Git bash y clona el repositorio:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git clone https://github.com/hernandoabella/hola-mundo.github.io.git</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">Cloning into 'hola-mundo.github.io'...
+remote: Enumerating objects: 33, done.
+remote: Counting objects: 100% (33/33), done.
+remote: Compressing objects: 100% (15/15), done.
+remote: Total 33 (delta 18), reused 33 (delta 18), pack-reused 0
+Receiving objects: 100% (33/33), 94.79 KiB | 3.16 MiB/s, done.
+Resolving deltas: 100% (18/18), done.</code></pre>
+                </div>
+
+                <p>Eche un vistazo a su sistema de archivos y verá un nuevo directorio con el nombre del proyecto clonado:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">ls</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">hola-mundo.github.io/
+</code></pre>
+                </div>
+
+                <div class="nota">
+                        <p><b>Nota:</b> Para especificar una carpeta específica para clonar, agrega el nombre de la carpeta después de la URL del repositorio, así: git clone https://github.com/hernandoabella/hola-mundo.github.io.git micarpeta</p>
+                </div>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">cd hola-mundo.github.io
+git status</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean</code></pre>
+                </div>
+
+                <p>Y verifica el <code>log</code> para confirmar que tenemos los datos completos del repositorio: </p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git log</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">commit facaeae8fd87dcb63629f108f401aa9c3614d4e6 (HEAD -> master, origin/master, origin/HEAD)
+Merge: e7de78f 5a04b6f
+Author: hernando abella
+Date:   Fri Mar 26 15:44:10 2021 +0100
+
+    Merge branch 'master' of https://github.com/hernandoabella/hello-world
+
+commit e7de78fdefdda51f6f961829fcbdf197e9b926b6
+Author: hernando abella 
+Date:   Fri Mar 26 15:37:22 2021 +0100
+
+    index.html actualizado. Imagen redimensionada
+    
+.....</code></pre>
+                </div>        
+
+                <p>Ahora tenemos una copia completa del repositorio original.</p>
+
+                <h4>Configuración de controles remotos</h4>
+
+                <p>Básicamente, tenemos una copia completa de un repositorio, en cuyo origen no podemos realizar cambios.</p>                
+
+                <p>Veamos cómo se configuran los mandos a distancia de este Git:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git remote -v</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">origin  https://github.com/hernandoabella/hola-mundo.github.io.git (fetch)
+origin  https://github.com/hernandoabella/hola-mundo.github.io.git (push)</code></pre>
+                </div> 
+                
+                <p>Vemos que el origen está configurado en el repositorio "hola-mundo" original, también queremos agregar nuestra propia bifurcación.</p>
+
+                <p>Primero, cambiamos el nombre del control remoto de origen original:</p>
+
+                <p>Primero, renombramos el origin remote original:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git remote rename origin upstream
+git remote -v</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">upstream        https://github.com/hernandoabella/hola-mundo.github.io.git (fetch)
+upstream        https://github.com/hernandoabella/hola-mundo.github.io.git (push)</code></pre>
+                </div> 
+
+                <p>Luego de eso busca la URL de nuestro <code class="codigo">fork</code>:</p>
+
+                <img src="/images/img_github_clone_fork_url.png" alt="clone_url">
+
+                <p>Y agrégalo como <code class="codigo">origin</code></p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git remote add origin https://github.com/kaijim/hola-mundo.github.io.git
+git remote -v</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">origin  https://github.com/kaijim/hola-mundo.github.io.git (fetch)
+origin  https://github.com/kaijim/hola-mundo.github.io.git (push)
+upstream        https://github.com/hernandoabella/hola-mundo.github.io.git (fetch)
+upstream        https://github.com/hernandoabella/hola-mundo.github.io.git (push)</code></pre>
+                </div>           
+                
+                <div class="nota">
+                        <p><b>Nota:</b> De acuerdo con las convenciones de nomenclatura de Git, se recomienda nombrar el origen de tu propio repositorio y el que se bifurcó para <code class="codigo">upstream</code></p>
+                </div>
+
+                <p>Ahora tenemos 2 remotos:</p>
+
+                <ul>
+                        <li><code class="codigo">origin</code>: nuestro propio <code class="codigo">fork</code> en donde tenemos acceso para leer y escribir.</li>
+                        <li><code class="codigo">upstream</code>: el remoto original, en donde tenemos acceso solo para leer.</li>
+                </ul>
+
+                <p>Ahora realizaremos algunos cambios en el código.</p>
+
                 </section>
 
                 <section id="item20">
-                        
+
+                <h2>Enviar Pull Request</h2>
+
+                <h4>Envir los cambios a nuestra bifurcación de GitHub</h4>
+
+                <p>Hemos hecho muchos cambios en nuestro Git local.</p>
+
+                <p>Ahora enviamos los cambios a nuestro <code class="codigo">fork</code> de GitHub:</p>
+
+                <p>commit los cambios.</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git push origin</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 393.96 KiB | 32.83 MiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/kaijim/hola-mundo.github.io.git
+   facaeae..ebb1a5c  master -> master</code></pre>
+                </div> 
+
+                
+
+                <p>Vaya a GitHub y vemos que el repositorio tiene una nueva confirmación. Y podemos enviar una Pull Request (solicitud de extracción) al repositorio original:</p>
+                
+                <img src="/images/img_github_fork_pull_request.png" alt="clone_url">
+
+                <p>Cliquéalo y crea una pull request:</p>
+
+                <img src="/images/img_github_fork_create_pull_request.png" alt="clone_url">
+
+                <p>Recuerda agregar una explicación para los administradores.</p>
+                
+                <img src="/images/img_github_fork_create_pull_request_comment.png" alt="clone_url">
+
+                <p>La solicitud de extracción fue enviada:</p>
+
+                <img src="/images/img_github_fork_pull_request_sent.png" alt="clone_url">                        
+
+                <h4>Aprovando Pull Requests</h4>
+
+                <p>Ahora cualquier miembro con acceso puede ver la solicitud de extracción cuando vean el repositorio original:</p>
+
+                <img src="/images/img_github_new_pull_request.png" alt="clone_url">  
+
+                <p>Y ellos pueden ver los cambios propuestos:</p>
+
+                <img src="/images/img_github_pull_requests_overview.png" alt="clone_url"> 
+
+                <p>Comenta los cambios y fusiona</p>
+
+
+
+
                 </section>
 
                 <section id="item21">
@@ -2066,7 +2382,9 @@ To https://github.com/hernandoabella/hola-mundo.git
                         
                 </section>
 
-        
+                <section id="item26">
+                        
+                </section>
         
         </div>
 
