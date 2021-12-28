@@ -2365,7 +2365,7 @@ To https://github.com/kaijim/hola-mundo.github.io.git
 
                 <p>Y los cambios han sido fusionados con master:</p>
 
-                <img src="/images/img_github_pull_request_merged" alt="_request_merge">
+                <img src="/images/img_github_pull_request_merged.png" alt="_request_merge">
 
                 <p>¡Ahora inténtalo!</p>
 
@@ -2429,137 +2429,389 @@ temp/e</code></pre>
 
                 <h4>Reglas para el Archivo .gitignore</h4>
 
-                Estas son las reglas generales para hacer coincidir patrones en archivos <code>.gitignore</code>:
+                Estas son las reglas generales para hacer coincidir patrones en archivos <code class="codigo">.gitignore</code>:
 
                 <table>
-                        <th>
-                                <tr>Patrón</tr>
-                                <tr>Explicación</tr>
-                                <tr>Ejemplos</tr>
-                        </th>
-                        <td>
-                                <tr></tr>
-                                <tr></tr>
-                                <tr></tr>
-                        </td>
-                        <td>
-                                <tr></tr>
-                                <tr></tr>
-                                <tr></tr>
-                        </td>
-                        <td>
-                                <tr></tr>
-                                <tr></tr>
-                                <tr></tr>
-                        </td>
-                        <td>
-                                <tr></tr>
-                                <tr></tr>
-                                <tr></tr>
-                        </td>
-                        <td>
-                                <tr></tr>
-                                <tr></tr>
-                                <tr></tr>
-                        </td>
-                        <td>
-                                <tr></tr>
-                                <tr></tr>
-                                <tr></tr>
-                        </td>
-                        <td>
-                                <tr></tr>
-                                <tr></tr>
-                                <tr></tr>
-                        </td>
-                        <td>
-                                <tr></tr>
-                                <tr></tr>
-                                <tr></tr>
-                        </td>
-                        <td>
-                                <tr></tr>
-                                <tr></tr>
-                                <tr></tr>
-                        </td>
-                        <td>
-                                <tr></tr>
-                                <tr></tr>
-                                <tr></tr>
-                        </td>
-                        <td>
-                                <tr></tr>
-                                <tr></tr>
-                                <tr></tr>
-                        </td>
-                        <td>
-                                <tr></tr>
-                                <tr></tr>
-                                <tr></tr>
-                        </td>
-                        <td>
-                                <tr></tr>
-                                <tr></tr>
-                                <tr></tr>
-                        </td>
-                        <td>
-                                <tr></tr>
-                                <tr></tr>
-                                <tr></tr>
-                        </td>
-                        <td>
-                                <tr></tr>
-                                <tr></tr>
-                                <tr></tr>
-                        </td>
-                        <td>
-                                <tr></tr>
-                                <tr></tr>
-                                <tr></tr>
-                        </td>
-                        <td>
-                                <tr></tr>
-                                <tr></tr>
-                                <tr></tr>
-                        </td>
-                        <td>
-                                <tr></tr>
-                                <tr></tr>
-                                <tr></tr>
-                        </td>
-                        <td>
-                                <tr></tr>
-                                <tr></tr>
-                                <tr></tr>
-                        </td>
-                        <td>
-                                <tr></tr>
-                                <tr></tr>
-                                <tr></tr>
-                        </td>
+                        <tr>
+                                <th>Patrón</th>
+                                <th>Explicación</th>
+                                <th>Ejemplos</th>
+                        </tr>
+                        <tr>
+                                <td></td>
+                                <td>Las líneas en blanco son ignoradas</td>
+                                <td></td>
+                        </tr>
+                        <tr>
+                                <td>Comentario de Texto</td>
+                                <td>Las líneas que empiezan con # son ignoradas</td>
+                                <td></td>
+                        </tr>
+                        <tr>
+                                <td>nombre</td>
+                                <td>Todos los nombres de archivos, y archivos y carpetas en cualquier folder nombre</td>
+                                <td>/name.log<br>
+/nombre/file.txt<br>
+/lib/nombre.log</td>
+                        </tr>
+                        <tr>
+                                <td>nombre/</td>
+                                <td></td>
+                                <td></td>
+                        </tr>
+                        <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                        </tr>
+                        <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                        </tr>
+                        <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                        </tr>
+                        <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                        </tr>
+                        <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                        </tr>
+                        <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                        </tr>
+                        <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                        </tr>
+                        <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                        </tr>
+                        <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                        </tr>
+                        <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                        </tr>
+                        <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                        </tr>
+                        <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                        </tr>
+                        <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                        </tr>
+                        <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                        </tr>
+                        <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                        </tr>
+                        <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                        </tr>
                 </table>
 
+                <h4>Reglas Locales y Personales de Git Ignore</h4>
 
+                <p>También es posible ignorar archivos o carpetas pero no es posible mostrarlos en el archivo .gitignore distribuido.</p>
 
+                <p>Estos tipos de ignorados se especifican en el archivo .git/info/exclude. Pero no se muestra a nadie más.</p>
                 </section>
 
                 <section id="item22">
+                <h2>Seguridad SSH</h2>
+
+                <h4>Seguridad de Git</h4>
+
+                <p>Hasta este punto, hemos utilizado HTTPS para conectarnos a nuestro repositorio remoto.</p>
+
+                <p>Los HTTPS generalmente funcionará bien, pero debe usar SSH si trabaja con redes no seguras. Y a veces, un proyecto requerirá que uses SSH.</p>
                         
+                <h4>¿Qué es SSH?</h4>
+
+                <p>SSH es un protocolo de red shell seguro que se utiliza para la gestión de redes, la transferencia remota de archivos y el acceso remoto al sistema.</p>
+                
+                <p>SSH utiliza un par de claves SSH para establecer un protocolo de red seguro autenticado y cifrado. Permite la comunicación remota segura en redes abiertas no seguras.</p>
+
+                <p>Las claves SSH se utilizan para iniciar un "apretón de manos" seguro. Al generar un conjunto de claves, generará una clave "pública" y "privada".</p>
+
+                <p>La clave "pública" es la que comparte con la parte remota. Piense en esto más como la cerradura.</p>
+
+                <p>La clave "privada" es la que usted guarda en un lugar seguro. Piense en esto como la llave de la cerradura.</p>
+
+                <p>Las claves SSH se generan mediante un algoritmo de seguridad. Todo es muy complicado, pero usa números primos y números aleatorios grandes para hacer la clave pública y privada.</p>
+
+                <p>Se crea para que la clave pública se pueda derivar de la clave privada, pero no al revés.</p>
+
+                <h4>Generando un par de claves SSH</h4>
+
+                <p>En la línea de comandos para Linux, Apple, y en el Git Bash para Windows, puedes generar una clave SSH.</p>
+
+                <p>Vamos paso a paso.</p>
+
+                <p>Empieza creando una nueva clave usando tu correo electrónico como una etiqueta:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">ssh-keygen -t rsa -b 4096 -C "hernandoabella@gmail.com"</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/user/.ssh/id_rsa):
+Created directory '/Users/user/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /Users/user/.ssh/id_rsa
+Your public key has been saved in /Users/user/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:******************************************* hernandoabella@gmail.com
+The key's randomart image is:
++---[RSA 4096]----+
+|                 |
+|                 |
+|                 |
+|                 |
+|                 |
+|                 |
+|                 |
+|                 |
+|                 |
++----[SHA256]-----+</code></pre>
+                </div>
+
+                <p>Se le pedirá lo siguiente a través de esta creación:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">Enter file in which to save the key (/c/Users/user/.ssh/id_rsa):
+</code></pre>
+                </div>
+
+                <p>Seleccione una ubicación de archivo o presione "Enter" para usar la ubicación de archivo predeterminada.</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">Enter passphrase (empty for no passphrase):
+Enter same passphrase again:</code></pre>
+                </div>
+
+                <p>Ingresar una frase de contraseña segura creará una capa adicional de seguridad. Prevenga que cualquier persona que tenga acceso a la computadora use esa clave sin la frase de contraseña. Sin embargo, le pedirá que proporcione la frase de contraseña cada vez que utilice la clave SSH.</p>
+
+                <p>Ahora agregamos este par de claves SSH al SSH-Agent (usando la ubicación del archivo de arriba):</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">ssh-add /Users/user/.ssh/id_rsa
+Enter passphrase for /Users/user/.ssh/id_rsa:
+Identity added: /Users/user/.ssh/id_rsa (hernandoabella@gmail.com)</code></pre>
+                </div>
+
+                <p>Se le pedirá que proporcione la frase de contraseña, si agregó una.</p>
+                
+                <p>Ahora el par de claves SSH está listo para usarse.</p>
+
                 </section>
 
                 <section id="item23">
-                        
+
+                <h2>Agregar SSH a GitHub</h2>
+
+                <h4>Copia la Clave Pública SSH</h4>
+
+                <p>En el capítulo anterior, creamos un par de claves SSH.</p>
+
+                <p>Ahora usaremos el comando clip < para copiar la clave pública a nuestro portapapeles:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">clip < /Users/user/.ssh/id_rsa.pub</code></pre>
+                </div>
+
+                <p>Vaya a GitHub, navegue hasta la esquina superior izquierda, haga clic en su perfil y seleccione: Settings:</p>
+
+                <img style="width: auto !important;" src="/images/img_github_profile_settings.png" alt="img_github_profile_settings">
+
+                <p>Luego seleccione "SSH and GPG keys". y haga clic en el botón "New SSH key":</p>
+
+                <img src="/images/img_github_profile_settings_ssh.png" alt="img_github_profile_settings">
+
+                <p>Seleccione un título, pegue la clave SSH pública en el campo "Clave" y haga clic en "Add SSH Key":</p>
+
+                <img src="/images/img_github_profile_settings_ssh_add.png" alt="img_github_profile_settings">
+
+                <p>Se le pedirá que proporcione su contraseña de GitHub.</p>
+
+                <p>Verás tu nueva clave SSH agregada:</p>
+
+                <img src="/images/img_github_profile_settings_ssh_added.png" alt="img_github_profile_settings">
+
+                <h4>Probar la conexión SSH a GitHub</h4>
+
+                <p>Ahora podemos probar nuestra conexión a través de SSH a GitHub:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">ssh -T git@github.com</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">The authenticity of host 'github.com (140.82.121.3)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com,140.82.121.3' (RSA) to the list of known hosts.
+Hi w3schools-test! You've successfully authenticated, but GitHub does not provide shell access.</code></pre>
+                </div>
+
+                <p>Si la última línea contiene su nombre de usuario en GitHub, ¡está autenticado correctamente!</p>
+
+                <h4>Agregar nuevo remoto SSH de GitHub</h4>
+
+                <p>Ahora podemos agregar un nuevo control remoto a través de SSH a nuestro Git.</p>
+
+                <p>Primero, obtengamos la dirección SSH de nuestro repositorio en GitHub:</p>
+
+                <img src="/images/img_github_repository_code_ssh.png" alt="img_github_profile_settings">
+
+                <p>Luego usa esa dirección para agregar un nuevo origen:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git remote add ssh-origin git@github.com:hernandoabella/hola-mundo.git</code></pre>
+                </div>
+
+                <div class="nota">
+                        <p><b>Nota:</b> Puede cambiar un origen remoto de HTTPS a SSH con el comando: git remote set-url remote-name git@github.com: nombredeusuario / repository.git</p>
+                </div>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git remote set-url origin git@github.com:hernandoabella/hola-mundo.git</code></pre>
+                </div>
+
                 </section>
 
                 <section id="item24">
+
+                <h2>Git Revert</h2>
+
+                <p>El comando <code class="codigo">revert</code> lo usamos cuando queremos tomar un commit anterior y agregarlo como un nuevo commit, manteniendo el registro intacto.</p>
                         
+                <p>Paso 1: Encontrar el commit anterior:</p>
+
+                <img src="/images/img_revert_part1.gif" alt="img_github_profile_settings">
+
+                <p>Paso 2: Usalo para crear un nuevo <code class="codigo">commit</code>:</p>
+
+                <img src="/images/img_revert_part2.gif" alt="img_github_profile_settings">
+
+                <p>Hagamos un nuevo commit donde hayamos accidentalmente eliminado un archivo:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git commit -m "Solo una actualización regular, definitivamente no hay accidentes aquí ..."</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">[master 16a6f19] Solo una actualización regular, definitivamente no hay accidentes aquí ...
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 imagen_hola_git.jpg</code></pre>
+                </div>
+
+                <p>Ahora tenemos una parte en nuestro historial de commits a la que queremos volver. Intentemos hacer eso con <code class="codigo">revert</code>.</p>
+
+                <h4>Revert HEAD</h4>
+
+                <p>Revertimos el ultimo commit usando git revert HEAD (revertimos el último cambio y luego commit), agregando la opción --no-edit para omitir el editor de mensajes de commit (obteniendo el mensaje de reversión predeterminado)</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git revert HEAD --no-edit</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">[master e56ba1f] Revert "Just a regular update, definitely no accidents here..."
+ Date: Thu Apr 22 10:50:13 2021 +0200
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 imagen_hola_git.jpg</code></pre>
+                </div>
+
+                <p>Ahora, verifiquemos el registro nuevamente:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git log --oneline</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">e56ba1f (HEAD -> master) Revert "Just a regular update, definitely no accidents here..."
+52418f7 Just a regular update, definitely no accidents here...
+9a9add8 (origin/master) Added .gitignore
+81912ba Corrected spelling error
+3fdaa5b Merge pull request #1 from w3schools-test/update-readme
+836e5bf (origin/update-readme, update-readme) Updated readme for GitHub Branches
+daf4f7c (origin/html-skeleton, html-skeleton) Updated index.html with basic meta
+facaeae (gh-page/master) Merge branch 'master' of https://github.com/w3schools-test/hello-world
+e7de78f Updated index.html. Resized image
+5a04b6f Updated README.md with a line about focus
+d29d69f Updated README.md with a line about GitHub
+e0b6038 merged with hello-world-images after fixing conflicts
+1f1584e added new image
+dfa79db updated index.html with emergency fix
+0312c55 Added image to Hello World
+09f4acd Updated index.html with a new line
+221ec6e First release of Hello World!</code></pre>
+                </div>
+
+                <div class="nota">
+                        <p><b>Nota:</b> Para volver a las confirmaciones anteriores, use git revert HEAD ~ x (x es un número. 1 retrocede uno más, 2 retrocede dos más, etc.)</p>
+                </div>
+
+                <p>En la página siguiente, repasaremos git reset, que devuelve el repositorio a un estado anterior en las commits sin realizar una nueva commit.</p>
+
+
+
+
                 </section>
 
                 <section id="item25">
+
+                <h2>Git Reset</h2>
                         
                 </section>
 
                 <section id="item26">
+
+                <h2>Git Amend</h2>
                         
                 </section>
         
