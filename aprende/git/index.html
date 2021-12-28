@@ -2793,20 +2793,119 @@ dfa79db updated index.html with emergency fix
                 </div>
 
                 <div class="nota">
-                        <p><b>Nota:</b> Para volver a las confirmaciones anteriores, use git revert HEAD ~ x (x es un número. 1 retrocede uno más, 2 retrocede dos más, etc.)</p>
+                        <p><b>Nota:</b> Para volver a las confirmaciones anteriores, use <code class="codigo">git revert HEAD~x</code> (x es un número. 1 retrocede uno más, 2 retrocede dos más, etc.)</p>
                 </div>
 
                 <p>En la página siguiente, repasaremos git reset, que devuelve el repositorio a un estado anterior en las commits sin realizar una nueva commit.</p>
-
-
-
 
                 </section>
 
                 <section id="item25">
 
                 <h2>Git Reset</h2>
-                        
+
+                <p><code class="codigo">reset</code> es el comando que usamos cuando queremos mover el repositorio a un commit anterior, descartando cualquier cambio realizado después de ese commit.</p>
+
+                <p>Paso 1: busque el commit anterior:</p>
+
+                <img src="/images/img_reset_part1.gif" alt="img_github_profile_settings">
+
+                <p>Paso 2: Mueva el repositorio de regreso a ese paso:</p>
+
+                <img src="/images/img_reset_part2.gif" alt="img_github_profile_settings">
+
+                <p>Después del capítulo anterior, tenemos una parte de nuestro historial de commits a la que podríamos volver. Intentemos hacer eso con reinicio.</p>
+
+                <h4>Encuentra un Commit en el Registro</h4>
+
+                <p>Primero, necesitamos encontrar el punto al que queremos volver. Para hacer eso, necesitamos revisar el registro.</p>
+
+                <p>Para evitar una lista de registros muy larga, usaremos la opción --oneline, que muestra solo una línea por commit:</p>
+
+                <ul>
+                        <li>Los primeros siete caracteres del hash de confirmación: esto es a lo que debemos referirnos en nuestro comando de reinicio.</li>
+                        <li>El mensaje del commit</li>
+                </ul>
+
+                <p>Así que busquemos el punto al que queremos restablecer:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git log --oneline</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">e56ba1f (HEAD -> master) Revert "Just a regular update, definitely no accidents here..."
+52418f7 Just a regular update, definitely no accidents here...
+9a9add8 (origin/master) Added .gitignore
+81912ba Corrected spelling error
+3fdaa5b Merge pull request #1 from w3schools-test/update-readme
+836e5bf (origin/update-readme, update-readme) Updated readme for GitHub Branches
+daf4f7c (origin/html-skeleton, html-skeleton) Updated index.html with basic meta
+facaeae (gh-page/master) Merge branch 'master' of https://github.com/w3schools-test/hello-world
+e7de78f Updated index.html. Resized image
+5a04b6f Updated README.md with a line about focus
+d29d69f Updated README.md with a line about GitHub
+e0b6038 merged with hello-world-images after fixing conflicts
+1f1584e added new image
+dfa79db updated index.html with emergency fix
+0312c55 Added image to Hello World
+09f4acd Updated index.html with a new line
+221ec6e First release of Hello World!</code></pre>
+                </div>
+
+
+                <h4>Git Reset</h4>
+
+                <p>Restablecemos nuestro repositorio a el commit específico usando <code class="codigo">git reset commithash</code> (siendo commithash los primeros 7 caracteres del hash de confirmación que encontramos en el registro):</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git reset 9a9add8e</code></pre>
+                </div>
+
+                <p>Ahora revisemos el registro nuevamente:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git log --oneline</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">9a9add8 (HEAD -> master, origin/master) Added .gitignore
+81912ba Corrected spelling error
+3fdaa5b Merge pull request #1 from w3schools-test/update-readme
+836e5bf (origin/update-readme, update-readme) Updated readme for GitHub Branches
+daf4f7c (origin/html-skeleton, html-skeleton) Updated index.html with basic meta
+facaeae (gh-page/master) Merge branch 'master' of https://github.com/w3schools-test/hello-world
+e7de78f Updated index.html. Resized image
+5a04b6f Updated README.md with a line about focus
+d29d69f Updated README.md with a line about GitHub
+e0b6038 merged with hello-world-images after fixing conflicts
+1f1584e added new image
+dfa79db updated index.html with emergency fix
+0312c55 Added image to Hello World
+09f4acd Updated index.html with a new line
+221ec6e First release of Hello World!</code></pre>
+                </div>
+
+                <div class="precaucion">
+                        <p><b>Advertencia:</b> Jugar con el historial de commits de un repositorio puede ser peligroso. Por lo general, está bien realizar este tipo de cambios en tu propio repositorio local. Sin embargo, debes evitar realizar cambios que reescriban el historial en repositorios remotos, especialmente si otros están trabajando con ellos.</p>
+                </div>
+
+                <h4>Deshacer Reset</h4>
+
+                <p>Aunque los commits ya no aparezcan en el registro, no se eliminan de Git.</p>
+
+                <p></p>
+
+
+
+
+
+                
+
                 </section>
 
                 <section id="item26">
