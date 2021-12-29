@@ -6,17 +6,23 @@ function closeNav() {
     document.getElementById("course__sidebar").style.transform = "translate(-300px)";
 }
 
-var ladoOscuro = document.querySelector('darkSide');
-
 
 
 function darkSide(){
+  var ladoOscuro, cuerpo;
 
-  var cuerpo = querySelector('body');
+  ladoOscuro = document.querySelector('.darkSide');
+  cuerpo = document.querySelector('body');
 
-  cuerpo.style.backgroundColor = "#000 !important";
-
+  ladoOscuro.classList.toggle('dark');
+  cuerpo.classList.toggle('dark');
 }
+
+function irAtras(){
+  document.location.href = "../";
+}
+
+
 
 
 // When the user scrolls the page, execute myFunction 

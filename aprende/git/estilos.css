@@ -1,5 +1,6 @@
 body{
-    background-image: linear-gradient(-60deg, #f34f29  0%, #fd990c 100%);
+    background: #f34f29;
+    transition: .3s;
 }
 
 section{
@@ -103,10 +104,14 @@ section ul li{
     margin: 20px 10px;
 }
 
+.dark{
+    background: #000;
+}
+
 .openbtn{
     transition: .3s;
     padding: 10px;
-    background: #1b5268 !important;
+    background: #1b5268;
     color: #fff;
     border-radius: 10%;
     cursor: pointer; 
@@ -120,7 +125,7 @@ section ul li{
 .gobackbtn{
     transition: .3s;
     padding: 10px;
-    background: var(--color-secundario) !important;
+    background: var(--color-secundario);
     color: #fff;
     border-radius: 10%;
     cursor: pointer; 
@@ -134,7 +139,7 @@ section ul li{
 .darkSide{
     transition: .3s;
     padding: 10px;
-    background: #000 !important;
+    background: #000;
     color: #fff;
     border-radius: 10%;
     cursor: pointer; 
@@ -143,6 +148,10 @@ section ul li{
 
 .darkSide:hover{
     transform: rotate(130deg);
+}
+
+.darkSide.dark{
+    background: #f34f29;
 }
 
 .header {
