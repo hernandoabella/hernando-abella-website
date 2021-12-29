@@ -16,6 +16,13 @@
                 <div class="progress-bar" id="myBar"></div>
         </div>  
         </div>
+
+        <div class="botones">
+                <div class="openbtn" onclick="openNav()"></div>
+                <div class="darkSide"></div>
+                <div class="gobackbtn"></div>
+        </div>
+
         <aside id="course__sidebar">
                 <div href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fal fa-times"></i></div>
                 <h4>Tutorial de Git</h4>
@@ -28,29 +35,32 @@
                 <a href="#item7">Ramas</a>
                 <a href="#item8">Fusionar ramas</a>
                 <h4>Git y GitHub</h4>
-                <a href="#item9">item 1</a>
-                <a href="#item10">item 1</a>
-                <a href="#item11">item 1</a>
-                <a href="#item12">item 1</a>
-                <a href="#item13">item 1</a>
-                <a href="#item14">item 1</a>
-                <a href="#item15">item 1</a>
-                <a href="#item16">item 1</a>
-                <a href="#item17">item 1</a>
-                <a href="#item18">item 1</a>
-                <a href="#item19">item 1</a>
-                <a href="#item20">item 1</a>
-                <a href="#item21">item 1</a>
-                <a href="#item22">item 1</a>
-                <a href="#item23">item 1</a>
-                <a href="#item24">item 1</a>
-                <a href="#item25">item 1</a>
-                <a href="#item16">item 1</a>
+                <a href="#item9">Empezando con GitHub</a>
+                <a href="#item10">Editar Código en Github</a>
+                <a href="#item11">Pull en GitHub</a>
+                <a href="#item12">Enviar Cambios a GitHub</a>
+                <a href="#item13">Ramas en GitHub</a>
+                <a href="#item14">Actualizando Ramas desde GitHub</a>
+                <a href="#item15">Enviar Rama a GitHub</a>
+                <a href="#item16">Flujo de GitHub</a>
+                <a href="#item17">Páginas de GitHub</a>
+                <h4>Contribuir</h4>
+                <a href="#item18">Contribuir</a>
+                <a href="#item19">Clonar desde GitHub</a>
+                <a href="#item20">Enviar Pull Request</a>
+                <h4>Git Avanzado</h4>
+                <a href="#item21">Archivo .gitignore</a>
+                <a href="#item22">Seguridad SSH</a>
+                <a href="#item23">Agregar SSH en GitHub</a>
+                <h4>Deshacer</h4>
+                <a href="#item24">Revertir</a>
+                <a href="#item25">Reiniciar</a>
+                <a href="#item16">Corregir</a>
         </aside>
 
         <div class="articles">
 
-        <span class="openbtn"  onclick="openNav()"></span>
+        
 
         <section id="item1">
                 
@@ -2898,12 +2908,41 @@ dfa79db updated index.html with emergency fix
 
                 <p>Aunque los commits ya no aparezcan en el registro, no se eliminan de Git.</p>
 
-                <p></p>
+                <p>Si conoces el hash del commit puedes restablecerlo:</p>
 
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git reset e56ba1f</code></pre>
+                </div>
 
+                <p>Ahora verifiquemos el registro nuevamente:</p>
 
+                <h4>Ejemplo:</h4>
 
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git log --oneline</code></pre>
+                </div>
 
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">e56ba1f (HEAD -> master) Revert "Just a regular update, definitely no accidents here..."
+52418f7 Just a regular update, definitely no accidents here...
+9a9add8 (origin/master) Added .gitignore
+81912ba Corrected spelling error
+3fdaa5b Merge pull request #1 from w3schools-test/update-readme
+836e5bf (origin/update-readme, update-readme) Updated readme for GitHub Branches
+daf4f7c (origin/html-skeleton, html-skeleton) Updated index.html with basic meta
+facaeae (gh-page/master) Merge branch 'master' of https://github.com/w3schools-test/hello-world
+e7de78f Updated index.html. Resized image
+5a04b6f Updated README.md with a line about focus
+d29d69f Updated README.md with a line about GitHub
+e0b6038 merged with hello-world-images after fixing conflicts
+1f1584e added new image
+dfa79db updated index.html with emergency fix
+0312c55 Added image to Hello World
+09f4acd Updated index.html with a new line
+221ec6e First release of Hello World!</code></pre>
+                </div>
                 
 
                 </section>
@@ -2911,6 +2950,118 @@ dfa79db updated index.html with emergency fix
                 <section id="item26">
 
                 <h2>Git Amend</h2>
+
+                <h4>commit --amend</h4>
+
+                <p><code class="codigo">commit --amend</code> se utiliza para modificar el commit más reciente.</p>
+
+                <p>Combina los cambios del área de preparación con el último commit y crea un nuevo commit.</p>
+        
+                <p>Este nuevo commit remplaza el último commit por completo.</p>
+
+                <h4>Modifica el mensaje del commit</h4>
+
+                <p>Una de las cosas más simple que puedes hacer con --amend es cambiar un mensaje de commit.</p>
+
+                <p>Actualicemos el <code class="code">README.md</code> y el <code class="codigo">commit</code></p>
+
+                <h4>Ejemplo:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git commit -m "Agregando lineas al reedme"</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">[master 07c5bc5] Agregando lineas al reedme
+ 1 file changed, 3 insertions(+), 1 deletion(-)</code></pre>
+                </div>
+
+                <p>Ahora veamos el registro:</p>
+
+                <h4>Ejemplo:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git log --oneline</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">07c5bc5 (HEAD -> master) Adding plines to reddme
+9a9add8 (origin/master) Added .gitignore
+81912ba Corrected spelling error
+3fdaa5b Merge pull request #1 from w3schools-test/update-readme
+836e5bf (origin/update-readme, update-readme) Updated readme for GitHub Branches
+daf4f7c (origin/html-skeleton, html-skeleton) Updated index.html with basic meta
+facaeae (gh-page/master) Merge branch 'master' of https://github.com/w3schools-test/hello-world
+e7de78f Updated index.html. Resized image
+5a04b6f Updated README.md with a line about focus
+d29d69f Updated README.md with a line about GitHub
+e0b6038 merged with hello-world-images after fixing conflicts
+1f1584e added new image
+dfa79db updated index.html with emergency fix
+0312c55 Added image to Hello World
+09f4acd Updated index.html with a new line
+221ec6e First release of Hello World!</code></pre>
+                </div>
+
+                <p>¡Oh, no! el mensaje del commit está lleno de errores ortográficos. Embarazoso. Arreglemos eso:</p>
+
+                <h4>Ejemplo:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git commit --amend -m "Agregando lineas al README.md"</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">[master eaa69ce] git commit --amend -m "Agregando lineas al README.md"
+ Date: Thu Apr 22 12:18:52 2021 +0200
+ 1 file changed, 3 insertions(+), 1 deletion(-))</code></pre>
+                </div>
+
+                <p>Vuelve a verificar el registro:</p>
+
+                <h4>Ejemplo:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">git log --oneline</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-git">eaa69ce (HEAD -> master) Added lines to README.md
+9a9add8 (origin/master) Added .gitignore
+81912ba Corrected spelling error
+3fdaa5b Merge pull request #1 from w3schools-test/update-readme
+836e5bf (origin/update-readme, update-readme) Updated readme for GitHub Branches
+daf4f7c (origin/html-skeleton, html-skeleton) Updated index.html with basic meta
+facaeae (gh-page/master) Merge branch 'master' of https://github.com/w3schools-test/hello-world
+e7de78f Updated index.html. Resized image
+5a04b6f Updated README.md with a line about focus
+d29d69f Updated README.md with a line about GitHub
+e0b6038 merged with hello-world-images after fixing conflicts
+1f1584e added new image
+dfa79db updated index.html with emergency fix
+0312c55 Added image to Hello World
+09f4acd Updated index.html with a new line
+221ec6e First release of Hello World!</code></pre>
+                </div>
+
+                <p>Vemos que el commit anterior fue remplazado por el modificado.</p>
+
+                <div class="precaucion">
+                        <p><b>Advertencia</b> Alterar el historial de commits de un repositorio puede ser peligroso. Por lo general, está bien realizar este tipo de cambios en su propio repositorio local. Sin embargo, debe evitar realizar cambios que reescriban el historial en repositorio remotos, especialmente si otros están trabajando con ellos.</p>
+                </div>
+
+                <h4>Modificar Archivos</h4>
+
+                <p>Agregar archivos con <code class="codigo">--amend</code> funciona de la misma manera que arriba. Solo agrégalos al área de preparación antes de hacer commit.</p>
+
                         
                 </section>
         

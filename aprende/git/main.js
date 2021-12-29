@@ -6,6 +6,19 @@ function closeNav() {
     document.getElementById("course__sidebar").style.transform = "translate(-300px)";
 }
 
+var ladoOscuro = document.querySelector('darkSide');
+
+
+
+function darkSide(){
+
+  var cuerpo = querySelector('body');
+
+  cuerpo.style.backgroundColor = "#000 !important";
+
+}
+
+
 // When the user scrolls the page, execute myFunction 
 window.onscroll = function() {myFunction()};
 

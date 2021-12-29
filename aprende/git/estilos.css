@@ -21,8 +21,6 @@ section h1{
 
 section h2{
     margin: 20px 0px;
-    text-align: center;
-    
 }
 
 section h3{
@@ -71,9 +69,14 @@ section ul li{
 }
 
 #course__sidebar a{
-    padding: 10px;
+    margin: 10px 0px;
     display: block;
     transition: .3s;
+}
+
+#course__sidebar a:hover{
+    background: var(--color-principal);
+    color: #fff;
 }
 
 .closebtn {
@@ -91,19 +94,54 @@ section ul li{
     transform: scale(1.5) rotate(180deg);
 }
 
+.botones{
+    position: fixed;
+    top: 40%;
+}
+
+.botones > div{
+    margin: 20px 10px;
+}
+
 .openbtn{
     transition: .3s;
-    top: 15px;
-    left: 10px;
-    position: fixed;
     padding: 10px;
     background: #1b5268 !important;
     color: #fff;
     border-radius: 10%;
-    cursor: pointer;
+    cursor: pointer; 
+    z-index: 1;
 }  
 
 .openbtn:hover{
+    transform: rotate(130deg);
+}
+
+.gobackbtn{
+    transition: .3s;
+    padding: 10px;
+    background: var(--color-secundario) !important;
+    color: #fff;
+    border-radius: 10%;
+    cursor: pointer; 
+    z-index: 1;
+}
+
+.gobackbtn:hover{
+    transform: rotate(130deg);
+}
+
+.darkSide{
+    transition: .3s;
+    padding: 10px;
+    background: #000 !important;
+    color: #fff;
+    border-radius: 10%;
+    cursor: pointer; 
+    z-index: 1;
+}
+
+.darkSide:hover{
     transform: rotate(130deg);
 }
 
@@ -201,8 +239,12 @@ tr:nth-child(even) {
 
 @media only screen and (max-width: 768px){
 
+    #myBtn{
+        display: none !important;
+    }
+
     section{
-        margin: 20px auto;
+        margin: 10px auto;
         padding: 20px;
         border-width: 5px;
         background: rgb(255, 255, 255);
