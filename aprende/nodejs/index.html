@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hernando Abella | Tutorial de Node.js</title>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="./estilos.css">
+        <link rel="stylesheet" href="/css/temaPrism.css">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+
+<body>
+        <div class="header">
+        <div class="progress-container">
+                <div class="progress-bar" id="myBar"></div>
+        </div>  
+        </div>
+
+        <div class="botones">
+                <div class="openbtn" onclick="openNav()"></div>
+                <div class="darkSide" onclick="darkSide()"></div>
+                <div class="gobackbtn" onclick="irAtras()"></div>
+        </div>
+
+        <aside id="course__sidebar">
+                <input type="text" id="entrada" onkeyup="filtrarLista()" placeholder="Buscar..." title="Escribe algo...">
+                <div href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fal fa-times"></i></div>
+                <h4>Tutorial de NodeJS</h4>
+                <a href="#item1"></a>
+                <a href="#item2"></a>
+                <a href="#item3"></a>
+                <a href="#item4"></a>
+                <a href="#item5"></a>
+                <a href="#item6"></a>
+                <a href="#item7"></a>
+                <a href="#item8"></a>
+                <h4></h4>
+                <a href="#item9"></a>
+                <a href="#item10"></a>
+                <a href="#item11"></a>
+                <a href="#item12"></a>
+                <a href="#item13"></a>
+                <a href="#item14"></a>
+                <a href="#item15"></a>
+                <a href="#item16"></a>
+                <a href="#item17"></a>
+                <h4></h4>
+                <a href="#item18"></a>
+                <a href="#item19"></a>
+                <a href="#item20"></a>
+                <h4></h4>
+                <a href="#item21"></a>
+                <a href="#item22"></a>
+                <a href="#item23"></a>
+                <h4></h4>
+                <a href="#item24"></a>
+                <a href="#item25"></a>
+                <a href="#item16"></a>
+        </aside>
+
+        <div class="articles">
+
+        
+
+        <section id="item1">
+                
+                <h1>Tutorial de Node.js</h1>
+               
+
+        </section>
+
+        <section id="item2">
+
+        
+        
+        <div class="codigo__git">
+                <pre class="line-numbers"><code class="language-git">git config --global user.name "Hernando Abella"
+git config --global user.email "hernandoabella@gmail.com"</code></pre>
+        </div>
+
+
+            </section>
+        
+        </div>
+
+        <button onclick="topFunction()" id="myBtn" title="Ir arriba"><i class="fas fa-arrow-up"></i></button>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
+        <script src="./main.js"></script>
+        <script src="./js/script.js"></script>
+        </body>
+</html>
