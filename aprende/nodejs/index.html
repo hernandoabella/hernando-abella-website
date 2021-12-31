@@ -24,7 +24,6 @@
         </div>
 
         <aside id="course__sidebar">
-                <input type="text" id="entrada" onkeyup="filtrarLista()" placeholder="Buscar..." title="Escribe algo...">
                 <div href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fal fa-times"></i></div>
                 <h4>Tutorial de NodeJS</h4>
                 <a href="#item1">Introducción</a>
@@ -102,19 +101,205 @@
                         <li>Cuando el sistema de archivos se ha abierto y leído el archivo, el servidor devuelve el contenido al cliente.</li>
                 </ol>
 
+                <p>Node.js elimina la espera y simplemente continúa con la siguiente solicitud.</p>
+
+                <p>Node.js ejecuta programación asíncrona de un solo subproceso, sin bloqueo, que es muy eficiente en la memoria.</p>
+
+                <h4>¿Qué puede hacer Node.js?</h4>
+
+                <ul>
+                        <li>Node.js puede generar contenido de página dinámico</li>
+                        <li>Node.js puede crear, abrir, leer, escribir, eliminar y cerrar archivos en el servidor</li>
+                        <li>Node.js puede recopilar datos de formularios</li>
+                        <li>Node.js puede agregar, eliminar, modificar datos en su base de datos</li>
+                </ul>
+
+                <h4>¿Qué es un archivo Node.js?</h4>
+
+                <ul>
+                        <li>Los archivos Node.js contienen tareas que se ejecutarán en ciertos eventos</li>
+                        <li>Un evento típico es alguien que intenta acceder a un puerto en el servidor</li>
+                        <li>Los archivos Node.js deben iniciarse en el servidor antes de tener algun efecto</li>
+                        <li>Los archivos Node.js tienen la extensión ".js"</li>
+                </ul>
+
+
         </section>
 
         <section id="item2">
 
+                <h2>Empezando con Node.js</h2>
+
+                <h4>Descarga Node.js</h4>
+
+                <p>El sitio web oficial de Node.js tiene instrucciones de instalación para Node.js: https://nodejs.org</p>
+
+                <p>Una vez que haya descargado e instalado Node.js en su computadora, intentemos mostrar "Hola Mundo" en el navegador web.</p>
         
+                <p>Crea un archivo Node.js llamado "miprimer.js" y luego agrega el siguiente código:</p>
         
-        <div class="codigo__git">
-                <pre class="line-numbers"><code class="language-git">git config --global user.name "Hernando Abella"
-git config --global user.email "hernandoabella@gmail.com"</code></pre>
-        </div>
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-js">var http = require('http');
+
+        http.createServer(function (req, res) {
+        res.writeHead(200, {'Content-Type': 'text/html'});
+        res.end('¡Hola Mundo!');
+        }).listen(8080);</code></pre>
+                </div>
+
+                <p>Guarde el archivo en su computadora: C:\Users\Tu Nombre\miprimer.js</p>
+
+                <p>El código le dice a la computadora que escriba "¡Hola mundo!" si alguien (por ejemplo, un navegador web) intenta acceder a su computadora en el puerto 8080.</p>
+
+                <p>Por ahora, no es necesario que comprenda el código. Se explicará más adelante.</p>
+
+                <h4>Línea de Comandos</h4>
+
+                <p>Los archivos Node.js deben iniciarse en el programa "Interfaz de línea de comandos" de su computadora.</p>
+
+                <p>La forma de abrir la interfaz de línea de comandos en su computadora depende del sistema operativo. Para los usuarios de Windows, presione el botón de inicio y busque "Símbolo del sistema", o simplemente escriba "cmd" en el campo de búsqueda.</p>
+
+                <p>Navegue hasta la carpeta que contiene el archivo "miprimer.js", la ventana de la interfaz de línea de comandos debería verse así:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-powershell">C:\Users\Tu Nombre>_</code></pre>
+                </div>
+
+                <h4>Iniciar el Archivo Node.js</h4>
+
+                <p>Node.js debe iniciar el archivo que acabas de crear antes de que pueda llevarse a cabo cualquier acción.</p>
+
+                <p>Inicie su de línea de comandos, escriba node miprimer.js y presione enter:</p>
+
+                <div class="codigo__git">
+                        <pre class="line-numbers"><code class="language-powershell">C:\Users\Tu Nombre>node miprimer.js</code></pre>
+                </div>
+
+                <p>¡Ahora tu computadora funciona como servidor!</p>
+
+                <p>Si alguien intenta acceder a su computadora en el puerto 8080, obtendrá un "¡Hola mundo!" mensaje a cambio!</p>
+
+                <p>Inicie su navegador de Internet y escriba la dirección: http://localhost:8080</p>
 
 
-        ¿</section>
+
+        </section>
+
+        <section id="item3">
+
+        </section>
+
+        <section id="item3">
+
+        </section>
+
+        <section id="item3">
+
+        </section>
+
+        <section id="item3">
+
+        </section>
+
+        <section id="item3">
+
+        </section>
+
+        <section id="item3">
+
+        </section>
+
+        <section id="item3">
+
+        </section>
+
+        <section id="item3">
+
+        </section>
+
+        <section id="item3">
+
+        </section>
+
+        <section id="item3">
+
+        </section>
+
+        <section id="item3">
+
+        </section>
+
+        <section id="item3">
+
+        </section>
+
+        <section id="item3">
+
+        </section>
+
+        <section id="item3">
+
+        </section>
+
+        <section id="item3">
+
+        </section>
+
+        <section id="item3">
+
+        </section>
+
+        <section id="item3">
+
+        </section>
+
+        <section id="item3">
+
+        </section>
+
+        <section id="item3">
+
+        </section>
+
+        <section id="item3">
+
+        </section>
+
+        <section id="item3">
+
+        </section>
+
+        <section id="item3">
+
+        </section>
+
+        <section id="item3">
+
+        </section>
+
+        <section id="item3">
+
+        </section>
+
+        <section id="item3">
+
+        </section>
+
+        <section id="item3">
+
+        </section>
+
+        <section id="item3">
+
+        </section>
+
+        <section id="item3">
+
+        </section>
+
+        <section id="item3">
+
+        </section>
         
         </div>
 
