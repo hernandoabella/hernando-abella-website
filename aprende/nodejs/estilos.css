@@ -53,6 +53,13 @@ section ul li{
     margin: 10px;
 }
 
+section ol{
+    margin: 20px;
+}
+
+section ol li{
+    margin: 10px;
+}
 
 #course__sidebar{
     background: #f1f1f1;
