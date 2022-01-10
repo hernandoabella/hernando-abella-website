@@ -183,7 +183,7 @@ section ol li{
   
 
 
-.codigo__git{
+.codigo__nodejs{
     margin: 20px 0px;
 }
 
@@ -199,10 +199,21 @@ section ol li{
 }
 
 .resultado{
-    background: #322931;
-    color: #b9b5b8;
+    background: #fffeff;
     padding: 20px;
     margin: 20px 0px;
+    border: 3px dashed var(--color-principal);
+}
+
+.resultado h1{
+    text-align: left;
+    font-size: 1em;
+    margin: 0;
+    color: #000;
+}
+
+.resultado p{
+    font-size: 1em;
 }
 
 .precaucion{
