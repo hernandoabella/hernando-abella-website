@@ -246,10 +246,6 @@ header a:hover{
 
 /* ---------------- Practica ------------------- */
 
-.practica{
-    padding: 100px;
-}
-
 .fila{
     display: flex;
 }
@@ -394,10 +390,6 @@ hr{
 }
 
 @media only screen and (max-width: 768px){
-    .practica{
-        padding: 0;
-    }
-
     .fila{
         flex-direction: column;
     }
