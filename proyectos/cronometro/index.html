@@ -1,0 +1,274 @@
+<!-- Made by Hernando Abella -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronómetro</title>
+    <link rel="stylesheet" href="./component.css">
+    <link rel="stylesheet" href="/css/temaPrism.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="../"><i class="fas fa-angle-left"></i></a>
+                </li>
+                <li>
+                    <a href="/">Inicio</a>
+                </li>
+                <li>
+                    <a href="/aprende/">Aprende</a>
+                </li>
+                <li>
+                    <a href="/snippets/">Snippets</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="codigo__del__proyecto">
+        <div class="app__background">
+            <div class="app__container">
+                
+                <!-- app code goes here -->
+
+                <div class="s">
+                <div class="container">
+        <div class="header">
+            <h2>Cronómetro</h2>
+        </div>
+        <div class="counter">
+            <span id="minutes">00</span>:
+            <span id="seconds">00</span>:
+            <span id="m-seconds">00</span>
+        </div>
+        <div class="buttons">
+            <button id="start" class="btn">Iniciar</button>
+            <button id="stop" class="btn">Detener</button>
+            <button id="reset" class="btn">Reiniciar</button>
+        </div>
+    </div>
+                </div>
+                
+                <!-- app code goes here -->
+
+            </div>
+        </div>
+        
+        <section class="contenido__proyecto">
+            
+        <h1>Cronómetro</h1>
+        
+        <p>Esta aplicación te permite medir la cantidad de tiempo que transcurre entre su activación y desactivación.</p>
+        
+            <div class="download">
+                <a href="../cronometro.rar" download><i class="fas fa-download descarga"></i></a>
+                <a class="youtube" href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        
+
+        
+
+        <div class="code__container">
+
+            <div class="html__container">
+            <div class="panel">
+                    <div class="codigo__html">
+                        
+                        <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Cron&oacute;metro&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;header&quot;&gt;
+            &lt;h2&gt;Cron&oacute;metro&lt;/h2&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;counter&quot;&gt;
+            &lt;span id=&quot;minutes&quot;&gt;00&lt;/span&gt;:
+            &lt;span id=&quot;seconds&quot;&gt;00&lt;/span&gt;:
+            &lt;span id=&quot;m-seconds&quot;&gt;00&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;buttons&quot;&gt;
+            &lt;button id=&quot;start&quot; class=&quot;btn&quot;&gt;Iniciar&lt;/button&gt;
+            &lt;button id=&quot;stop&quot; class=&quot;btn&quot;&gt;Detener&lt;/button&gt;
+            &lt;button id=&quot;reset&quot; class=&quot;btn&quot;&gt;Reiniciar&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+
+    &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+            </div>
+
+            
+            
+            <div class="css__container">
+            <div class="panel">
+                    <div class="codigo__css">
+                        <div class="decor__bar"></div>
+                        <pre class="line-numbers"><code class="language-css">* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	text-align: center;
+	font-family: "Lato", sans-serif;
+}
+
+.header {
+	border-bottom: 1px solid black;
+	margin-bottom: 32px;
+}
+
+h2 {
+	margin-bottom: 12px;
+	text-transform: uppercase;
+}
+
+.counter {
+	font-size: 5rem;
+}
+
+.buttons {
+	margin-top: 32px;
+	border-top: 1px solid black;
+}
+
+.btn {
+	padding: 8px 16px;
+	font-size: 16px;
+	border: none;
+	border-radius: 32px;
+	margin: 32px 12px 0 0;
+	color: white;
+}
+
+#start {
+	background-color: rgba(16, 151, 16, 0.877);
+}
+
+#start:hover {
+	background-color: rgba(8, 92, 8, 0.877);
+}
+
+#stop {
+	background-color: rgba(230, 0, 0, 0.877);
+}
+
+#stop:hover {
+	background-color: rgba(172, 0, 0, 0.877);
+}
+
+#reset {
+	background-color: rgba(255, 166, 0, 0.877);
+}
+
+#reset:hover {
+	background-color: rgba(170, 111, 0, 0.877);
+}
+</code></pre></div>
+                </div>
+            </div>
+
+            <div class="js__container">
+            <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const start = document.querySelector("#start");
+const detener = document.querySelector("#stop");
+const reset = document.querySelector("#reset");
+
+let count = 0;
+
+let minutes = 0;
+let seconds = 0;
+let milliSeconds = 0;
+
+let startTimer = () => {
+	count++;
+	// Fórmula para calcular el tiempo
+	// minutes = Math.floor((count / 100) / 60);
+	// seconds = Math.floor((count / 100 ) - (minutes * 60));
+	// milliSeconds = Math.floor(count - (seconds * 100 ) - (minutes * 6000));
+
+	minutes = Math.floor(count / 100 / 60);
+	seconds = Math.floor(count / 100 - minutes * 60);
+	milliSeconds = Math.floor(count - seconds * 100 - minutes * 6000);
+
+	document.querySelector("#minutes").innerText = addZero(minutes);
+	document.querySelector("#seconds").innerText = addZero(seconds);
+	document.querySelector("#m-seconds").innerText = addZero(milliSeconds);
+};
+
+// Inicia el temporizador
+let interval = 0;
+
+// Verifica que el tiempo del temporizador esté corriendo
+let timerRunning = false;
+
+start.addEventListener("click", function () {
+	if (!timerRunning) {
+		interval = setInterval(startTimer, 10);
+		timerRunning = true;
+	}
+});
+
+// Detiene el temporizador
+detener.addEventListener("click", function () {
+	clearInterval(interval);
+});
+
+// Reinicia el temporizador
+reset.addEventListener("click", function () {
+	clearInterval(interval);
+	count = 0;
+	minutes = 0;
+	seconds = 0;
+	milliSeconds = 0;
+	interval = 0;
+	timerRunning = false;
+	document.querySelector("#minutes").innerText = "00";
+	document.querySelector("#seconds").innerText = "00";
+	document.querySelector("#m-seconds").innerText = "00";
+});
+
+// Agrega zero a los números por debajo de 10
+let addZero = (time) => {
+	if (time <= 9) {
+		return "0" + time;
+	}
+	return time;
+};
+</code></pre></div>
+                </div>
+            </div>
+            
+        </div>
+        </section>
+        
+    </section>
+
+    <!--Scripts-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+    <script src="./component.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
