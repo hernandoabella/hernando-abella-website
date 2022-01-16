@@ -64,6 +64,8 @@
                 
                 <h1>Tutorial de JavaScript</h1>
 
+                <h2>Introducción</h2>
+
                 <p>JavaScript es el lenguaje de programación más popular del mundo, es el lenguaje de programación de la web y es muy fácil de aprender.</p>
 
                 <h4>¿Por qué estudiar JavaScript?</h4>
@@ -85,27 +87,231 @@
                         <li>Las adiciones anuales (2016, 2017, 2018)</li>
                 </ul>
 
+                <h4>Velocidad de aprendizaje</h4>
+
+                <p>En este tutorial, la velocidad de aprendizaje es de tu elección.</p>
+
+                <p>Todo depende de ti.</p>
+
+                <p>Si tienes dificultades, tómate un descanso o vuelve a leer el material.</p>
+
+                <p>Siempre asegúrate de comprender todos los ejemplos.</p>
+
+                <p>La única forma de convertirte en un programar inteligente es: Practicar.</p>
+
+                <h4>Preguntas frecuentes</h4>
+
+                <ul>
+                        <li>¿Cómo obtengo JavaScript?</li>
+                        <li>¿Dónde puedo descargar JavaScript?</li>
+                        <li>¿JavaScript es gratuito?</li>
+                </ul>
+
+                <h4>Respuestas</h4>
+
+                <p>No es necesario que obtengas o descargues JavaScript.</p>
+
+                <p>JavaScript ya se está ejecutando en tu navegador, en tu computadora, en tu tableta o teléfono inteligente.</p>
+
+                <p>JavaScript es de uso gratuito para todos.</p>
                 
+                <h4>JavaScript puede cambiar el contenido HTML</h4>
 
+                <p>Uno de los muchos métodos HTML de JavaScript es <code class="codigo">getElementById()</code>.</p>
 
+                <p>El siguiente ejemplo "busca" un elemento HTML (con el id="demo") y cambia el contenido del elemento (innerHTML) a "Hola JavaScript":</p>
 
+                <h4>Ejemplo:</h4>
 
+                <div class="codigo__html">
+                        <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
 
+&lt;h2&gt;&iquest;Qu&eacute; puede hacer JavaScript?&lt;/h2&gt;
+
+&lt;p id=&quot;demo&quot;&gt;JavaScrit puede cambiar el contenido HTML.&lt;/p&gt;
+
+&lt;button type=&quot;button&quot; onclick=&apos;document.getElementById(&quot;demo&quot;).innerHTML = &quot;&iexcl;Hola JavaScript!&quot;&apos;&gt;¡Haz clic en m&iacute;!&lt;/button&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="ejemplo">
+                <h2>¿Qué puede hacer JavaScript?</h2>
+
+                <p id="demo1">JavaScript puede cambiar el contenido HTML.</p>
+
+                <button type="button" onclick='document.getElementById("demo1").innerHTML = "¡Hola JavaScript!"'>¡Haz clic en mí!</button>
+                </div>
+
+                <p>JavaScript acepta comillas simples y comillas dobles:</p>
+
+                <div class="codigo__html">
+                        <pre class="line-numbers"><code class="language-html">document.getElementById(&apos;demo&apos;).innerHTML = &apos;Hola JavaScript&apos;;</code></pre>
+                </div>
+
+                <h4>JavaScript puede cambiar los valores de los atributos HTML</h4>
+
+                <p>En este ejemplo, JavaScript cambie el valor del atributo <code class="codigo">src</code> de una etiqueta <code class="codigo">&lt;img&gt;</code>.</p>
+
+                <h4>Ejemplo:</h4>
+
+                <div class="codigo__html">
+                        <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;&iquest;Qu&eacute; puede hacer JavaScript?&lt;/h2&gt;
+
+&lt;p&gt;JavaScript puede cambiar los valores de los atributos HTML.&lt;/p&gt;
+
+&lt;p&gt;En este caso JavaScript cambia el valor del atributo src (source) de una imagen.&lt;/p&gt;
+
+&lt;button onclick=&quot;document.getElementById(&apos;miImagen&apos;).src=&apos;pic_bulbon.gif&apos;&quot;&gt;Encender la luz&lt;/button&gt;
+
+&lt;img id=&quot;miImagen&quot; src=&quot;pic_bulboff.gif&quot; style=&quot;width:100px&quot;&gt;
+
+&lt;button onclick=&quot;document.getElementById(&apos;myImage&apos;).src=&apos;pic_bulboff.gif&apos;&quot;&gt;Apagar la luz&lt;/button&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="ejemplo">
+                        <h2>¿Qué puede hacer JavaScript?</h2>
+
+                        <p>JavaScript puede cambiar los valores de los atributos HTML.</p>
+
+                        <p>En este caso JavaScript cambia el valor del atributo src (source) de una imagen.</p>
+
+                        <button onclick="document.getElementById('myImage').src='/images/pic_bulbon.gif'">Encender la luz</button>
+
+                        <img id="myImage" src="/images/pic_bulboff.gif" style="width:100px">
+
+                        <button onclick="document.getElementById('myImage').src='/images/pic_bulboff.gif'">Apagar la luz</button>
+                </div>
+
+                <h4>JavaScript puede cambiar los estilos HTML (CSS)</h4>
+
+                <p>Cambiar el estilo de un elemento HTML es una variante de cambiar un atributo HTML:</p>
+
+                <h4>Ejemplo:</h4>
+
+                <div class="codigo__html">
+                        <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;&iquest;Qu&eacute; puede hacer JavaScript?&lt;/h2&gt;
+
+&lt;p id=&quot;demo&quot;&gt;JavaScript puede cambiar el estilo de un elemento HTML.&lt;/p&gt;
+
+&lt;button type=&quot;button&quot; onclick=&quot;document.getElementById(&apos;demo&apos;).style.fontSize=&apos;35px&apos;&quot;&gt;Haz clic en m&iacute;&lt;/button&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; 
+</code></pre>
+                </div>
+
+                <h4>Resultado:</h4>
+
+                <div class="ejemplo">
+                        <h2>¿Qué puede hacer JavaScript?</h2>
+
+                        <p id="demo2">JavaScript puede cambiar el estilo de un elemento HTML.</p>
+
+                        <button type="button" onclick="document.getElementById('demo2').style.fontSize='35px'">Haz clic en mí</button>
+                </div>
+
+                <h4>JavaScript puede ocultar elementos HTML</h4>
+
+                <p>Se pueden ocultar elementos HTML cambiando el estilo de la propiedad de CSS <code class="codigo">display</code>.</p>
+
+                <h4>Ejemplo:</h4>
+
+                <div class="codigo__html">
+                        <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;&iquest;Qu&eacute; puede hacer JavaScript?&lt;/h2&gt;
+
+&lt;p id=&quot;demo&quot;&gt;JavaScript puede ocultar elementos HTML.&lt;/p&gt;
+
+&lt;button type=&quot;button&quot; onclick=&quot;document.getElementById(&apos;demo&apos;).style.display=&apos;none&apos;&quot;&gt;¡Haz clic en mí!&lt;/button&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; 
+</code></pre></div>
+
+                <h4>Resultado:</h4>
+
+                <div class="ejemplo">
+                        <h2>¿Qué puede hacer JavaScript?</h2>
+
+                        <p id="demo3">JavaScript puede ocultar elementos HTML.</p>
+
+                        <button type="button" onclick="document.getElementById('demo3').style.display='none'">¡Haz clic en mí!</button>
+                </div>
+                
+                <h4>JavaScript puede mostrar elementos HTML</h4>
+
+                <p>También se puede mostrar elementos HTML ocultos cambiando la propiedad <code class="codigo">display</code>.</p>
+
+                <h4>Ejemplo:</h4>
+
+                <div class="codigo__html">
+                        <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;&iquest;Qu&eacute; puede hacer JavaScript?&lt;/h2&gt;
+
+&lt;p&gt;JavaScript puede mostrar elementos HTML ocultos.&lt;/p&gt;
+
+&lt;p id=&quot;demo&quot; style=&quot;display:none&quot;&gt;&iexcl;Hola JavaScript!&lt;/p&gt;
+
+&lt;button type=&quot;button&quot; onclick=&quot;document.getElementById(&apos;demo&apos;).style.display=&apos;block&apos;&quot;&gt;&iexcl;Haz clic en m&iacute;!&lt;/button&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; 
+</code></pre></div>
+
+                <h4>Resultado:</h4>
+
+                <div class="ejemplo">
+                        <h2>¿Qué puede hacer JavaScript?</h2>
+
+                        <p>JavaScript puede mostrar elementos HTML ocultos.</p>
+
+                        <p id="demo4" style="display:none">¡Hola JavaScript!</p>
+
+                        <button type="button" onclick="document.getElementById('demo4').style.display='block'">¡Haz clic en mí!</button>
+                </div>
+
+                <div class="nota">
+                        <h4>¿Sabías qué?...</h4>
+
+                        <p><b>JavaScript</b> y <b>Java</b> son lenguajes completamente diferentes, tanto en concepto como en diseño.</p>
+
+                        <p>JavaScript fue inventado por Brendan Eich en 1995 y se convirtió en un estándar ECMA en 1997.</p>
+
+                        <p><b>ECMA-262</b> es el nombre oficial del estándar. <b>EcmaScript</b> es el nombre oficial del lenguaje.</p>
+                </div>
 
         </section>
 
         <section id="item2">
 
-                
+                <h2>¿En dónde va JavaScript?</h2>
         
-                <div class="codigo__javascript">
-                        <pre class="line-numbers"><code class="language-js">var http = require('http');
-
-        http.createServer(function (req, res) {
-        res.writeHead(200, {'Content-Type': 'text/html'});
-        res.end('¡Hola Mundo!');
-        }).listen(8080);</code></pre>
-                </div>
+                
 
                 
 
