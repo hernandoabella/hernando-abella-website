@@ -1,0 +1,196 @@
+<!-- Made by Hernando Abella -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Seguidores</title>
+    <link rel="stylesheet" href="./component.css">
+    <link rel="stylesheet" href="/css/temaPrism.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="../"><i class="fas fa-angle-left"></i></a>
+                </li>
+                <li>
+                    <a href="/">Inicio</a>
+                </li>
+                <li>
+                    <a href="/aprende/">Aprende</a>
+                </li>
+                <li>
+                    <a href="/snippets/">Snippets</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="codigo__del__proyecto">
+        <div class="app__background">
+            <div class="app__container">
+                
+                <!-- app code goes here -->
+
+                <div class="s">
+                
+                </div>
+                
+                <!-- app code goes here -->
+
+            </div>
+        </div>
+        
+        <section class="contenido__proyecto">
+            
+        <h1>Contador de Seguidores</h1>
+        
+        <p>Cuenta la cantidad de seguidores que tienes en tus redes sociales con esta aplicación.</p>
+        
+            <div class="download">
+                <a href="../contador-de-seguidores.rar" download><i class="fas fa-download descarga"></i></a>
+                <a class="youtube" href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        
+
+        
+
+        <div class="code__container">
+
+            <div class="html__container">
+            <div class="panel">
+                    <div class="codigo__html">
+                        
+                        <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Caja Modal&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+    &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;button id=&quot;open&quot;&gt;Haz click en mi&lt;/button&gt;
+
+    &lt;div class=&quot;modal-container&quot;&gt;
+        &lt;div class=&quot;modal&quot;&gt;
+            &lt;h1&gt;Lorem, ipsum.&lt;/h1&gt;
+            &lt;p&gt;Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima, repellendus iusto. Laboriosam hic ipsam accusantium ea ut? Saepe sint, tempora nisi recusandae adipisci quae facilis!&lt;/p&gt;
+            &lt;button id=&quot;close&quot;&gt;Cerrar&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+            </div>
+
+            
+            
+            <div class="css__container">
+            <div class="panel">
+                    <div class="codigo__css">
+                        <div class="decor__bar"></div>
+                        <pre class="line-numbers"><code class="language-css">body {
+    font-family: 'Playfair Display', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: #EFEEEB;
+}
+
+.modal-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    width: 600px;
+    max-width: 85%;
+    background: #EFEEEB;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+h1 {
+    color: #202329;
+}
+
+p {
+    color: #40434A;
+}
+
+button {
+    cursor: pointer;
+    font-size: 1rem;
+    color: #202329;
+    font-family: 'Playfair Display', serif;
+    border: none;
+    background: #009A9C;
+    color: #EFEEEB;
+    padding: 7px 14px;
+    border-radius: 25px;
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#open{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+
+.toggle-modal {
+    display: flex;
+}</code></pre></div>
+                </div>
+            </div>
+
+            <div class="js__container">
+            <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const openBtn = document.getElementById('open');
+const closeBtn = document.getElementById('close');
+const modal = document.getElementsByClassName('modal-container')[0];
+
+openBtn.addEventListener('click', () => {
+    modal.classList.toggle('toggle-modal');
+});
+
+closeBtn.addEventListener('click', () => {
+    modal.classList.toggle('toggle-modal');
+});</code></pre></div>
+                </div>
+            </div>
+            
+        </div>
+        </section>
+        
+    </section>
+
+    <!--Scripts-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+    <script src="./component.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
