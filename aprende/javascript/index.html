@@ -1,70 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hernando Abella | Tutorial de HTML</title>
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="./estilos.css">
-    <link rel="stylesheet" href="/css/temaPrism.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hernando Abella | Tutorial de JavaScript</title>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="./estilos.css">
+        <link rel="stylesheet" href="/css/temaPrism.css">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
+
 <body>
+        <div class="header">
+        <div class="progress-container">
+                <div class="progress-bar" id="myBar"></div>
+        </div>  
+        </div>
+
+        <div class="botones">
+                <div class="openbtn" onclick="openNav()"></div>
+                <div class="darkSide" onclick="darkSide()"></div>
+                <div class="gobackbtn" onclick="irAtras()"></div>
+        </div>
+
+        <aside id="course__sidebar">
+                <div href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fal fa-times"></i></div>
+                <h4>Tutorial de JS</h4>
+                <a href="#item1">Introducción</a>
+                <a href="#item2"></a>
+                <a href="#item3"></a>
+                <a href="#item4"></a>
+                <a href="#item5"></a>
+                <a href="#item6"></a>
+                <a href="#item7"></a>
+                <a href="#item8"></a>
+                <h4></h4>
+                <a href="#item9"></a>
+                <a href="#item10"></a>
+                <a href="#item11"></a>
+                <a href="#item12"></a>
+                <a href="#item13"></a>
+                <a href="#item14"></a>
+                <a href="#item15"></a>
+                <a href="#item16"></a>
+                <a href="#item17"></a>
+                <h4></h4>
+                <a href="#item18"></a>
+                <a href="#item19"></a>
+                <a href="#item20"></a>
+                <h4></h4>
+                <a href="#item21"></a>
+                <a href="#item22"></a>
+                <a href="#item23"></a>
+                <h4></h4>
+                <a href="#item24"></a>
+                <a href="#item25"></a>
+                <a href="#item16"></a>
+        </aside>
+
         <div class="articles">
-            <section id="item1">
+
+        <section id="item1">
                 
-                <h1>Tutorial de HTML</h1>
-                <h2>Introducción</h2>
-                <p>HTML es el lenguaje de marcado estándar para crear páginas web.</p>
-                <h3>¿Qué es HTML?</h3>
-                
+                <h1>Tutorial de JavaScript</h1>
+
+                <p>JavaScript es el lenguaje de programación más popular del mundo, es el lenguaje de programación de la web y es muy fácil de aprender.</p>
+
+                <h4>¿Por qué estudiar JavaScript?</h4>
+
+                <p>JavaScript es uno de los 3 lenguajes que todos los desarrolladores web deben aprender:</p>
+
+                <ol>
+                        <li><b>HTML</b> para definir el contenido de las páginas web.</li>
+                        <li><b>CSS</b> para especificar el diseño de las páginas web.</li>
+                        <li><b>JavaScript</b> para programar el comportamiento de las páginas web.</li>
+                </ol>
+
+                <p>Este tutorial cubre todas las versiones de JavaScript:</p>
+
                 <ul>
-                    <li>HTML se define por las siglas de <b>Hyper Text Markup Language</b></li>
-                    <li>HTML es el lenguaje de marcado estándar para crear páginas web.</li>
-                    <li>HTML describe la estructura de una página web</li>
-                    <li>HTML consta de una serie de elementos</li>
-                    <li>Los elementos HTML le dicen al navegador cómo mostrar el contenido.</li>
-                    <li>Los elementos HTML etiquetan partes de contenido como "esto es un encabezado", "esto es un párrafo", "esto es un enlace", etc.</li>
+                        <li>El JavaScript original ES1 ES2 ES3 (1997-1999)</li>
+                        <li>La primera revisión principal ES5 (2009)</li>
+                        <li>La segunda revisión ES6 (2015)</li>
+                        <li>Las adiciones anuales (2016, 2017, 2018)</li>
                 </ul>
+
                 
-                <div class="codigo__html">
-                    <div class="decor__bar"></div>
-                    <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;Título de la página&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
 
-&lt;h1&gt;Mi primer encabezado&lt;/h1&gt;
-&lt;p&gt;Mi primer párrafo.&lt;/p&gt;
 
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+
+
+
+
+        </section>
+
+        <section id="item2">
+
+                
+        
+                <div class="codigo__javascript">
+                        <pre class="line-numbers"><code class="language-js">var http = require('http');
+
+        http.createServer(function (req, res) {
+        res.writeHead(200, {'Content-Type': 'text/html'});
+        res.end('¡Hola Mundo!');
+        }).listen(8080);</code></pre>
                 </div>
 
-                <h4>Ejemplo explicado:</h4>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
+                
 
-            </section>
-        
+
+
+        </section>
+
+        <section id="item3">
+                
+        </section>
+
+        <section id="item4">
+
+                
+        </section>
+
+        <section id="item5">
+                
+
+        </section>
+
+        <section id="item6">
+                
+
+        </section>
+
+        <section id="item7">
+                
+
+        </section>
+
+        <section id="item8">
+
+                <h2>Eventos de Node.js</h2>
+
+        </section>
+
+        <section id="item9">
+
+        </section>
+
+        <section id="item10">
+
+        </section>
+
+        <section id="item11">
+
+        </section>
+
+        <section id="item12">
+
+        </section>
+
+        <section id="item13">
+
+        </section>
+
+        <section id="item14">
+
+        </section>
+
+        <section id="item15">
+
+        </section>
+
+        <section id="item16">
+
+        </section>
+
+        <section id="item17">
+
+        </section>
+
+        <section id="item18">
+
+        </section>
+
+        <section id="item19">
+
+        </section>
+
+        <section id="item20">
+
+        </section>
+
+        <section id="item21">
+
+        </section>
+
+        <section id="item22">
+
+        </section>
+
+        <section id="item23">
+
+        </section>
+
+        <section id="item24">
+
+        </section>
+
+        <section id="item25">
+
+        </section>
+
+        <section id="item26">
+
+        </section>
+
+        <section id="item27">
+
+        </section>
+
+        <section id="item28">
+
+        </section>
+
+        <section id="item29">
+
+        </section>
+
+        <section id="item30">
+
+        </section>
+
+        <section id="item31">
+
+        </section>
         
         </div>
-   
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
-    <script src="./main.js"></script>
-    <script src="./js/script.js"></script>
-</body>
+        <button onclick="topFunction()" id="myBtn" title="Ir arriba"><i class="fas fa-arrow-up"></i></button>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
+        <script src="./main.js"></script>
+        <script src="./js/script.js"></script>
+        </body>
 </html>
