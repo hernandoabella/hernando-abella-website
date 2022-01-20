@@ -44,12 +44,12 @@
                     </div>
 
                     <div class="javascript__hug">
-                        <h3>Lanzar un valor como un arreglo</h3>
-                        <pre class="line-numbers"><code class="language-javascript">const lanzarArreglo = valor => Array.isArray(valor) ? valor : [valor];
+                        <h3>Convierte el tipo de dato del resultado de una expresión en un arreglo</h3>
+                        <pre class="line-numbers"><code class="language-javascript">const castearValor = valor => Array.isArray(valor) ? valor : [valor];
     
 // Ejemplos
-lanzarArreglo(1);               // [1]
-lanzarArreglo([1, 2, 3]);       // [1, 2, 3]</code></pre>
+castearValor(1);               // [1]
+castearValor([1, 2, 3]);       // [1, 2, 3]</code></pre>
                     </div>
 
                     
@@ -199,10 +199,8 @@ countBy([
                     </div>
                     </div>
 
-                    
-              
                     <div class="javascript__hug">
-                    <h3>Count the occurrences of a value in an array</h3> 
+                    <h3>Contar las ocurrencias de un valor en una matriz</h3> 
                     
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -218,13 +216,10 @@ countOccurrences(['a', 'b', 'a', 'c', 'a', 'b'], 'a');  // 3</code></pre></div>
                     </div>
                     </div>
 
-                    
-               
-                      
-                    
+
                     <div class="javascript__hug">
 
-                    <h3>Count the occurrences of array elements</h3>
+                    <h3>Cuente las ocurrencias de los elementos de la matriz</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -239,7 +234,7 @@ countOccurrences(['a', 'b', 'a', 'c', 'a', 'b']);   // { 'a': 3, 'b': 2, 'c': 1 
                     
                 
                     <div class="javascript__hug">
-                    <h3>Create an array of numbers in the given range</h3> 
+                    <h3>Crear una matriz de números en el rango dado</h3> 
                     
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -260,7 +255,7 @@ range(5, 10);   // [5, 6, 7, 8, 9, 10]</code></pre></div>
                     
                 
                    <div class="javascript__hug"> 
-                   <h3>Create cartesian product</h3> 
+                   <h3>Crear producto cartesiano</h3> 
                     
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -284,7 +279,7 @@ cartesian([1, 2], [3, 4]);   // [ [1, 3], [1, 4], [2, 3], [2, 4] ]
                     
                 
                     <div class="javascript__hug">
-                    <h3>Empty an array</h3> 
+                    <h3>Vaciar una matriz</h3> 
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -298,7 +293,7 @@ arr = [];</code></pre></div>
                     
                  
                     <div class="javascript__hug">
-                    <h3 >Find the closest number from an array</h3>
+                    <h3 >Encuentra el número más cercano de una matriz</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -331,7 +326,7 @@ lastIndex([1, 3, 5, 7, 9, 8, 6, 4, 2], i => i > 6);         // 5</code></pre></d
                     </div>
 
                     <div class="javascript__hug">
-                    <h3 >Find the index of the maximum item of an array</h3>
+                    <h3 >Encuentre el índice del elemento máximo de una matriz</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -344,7 +339,7 @@ indexOfMax([1, 3, 7, 7, 5]);        // 2</code></pre></div>
                     </div>
                     
                     <div class="javascript__hug">
-                        <h3 >Find the index of the minimum item of an array</h3>
+                        <h3 >Encuentre el índice del elemento mínimo de una matriz</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -357,7 +352,7 @@ indexOfMin([6, 4, 2, 2, 10]);       // 2</code></pre></div>
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Find the length of the longest string in an array</h3>
+                    <h3 >Encuentre la longitud de la cadena más larga en una matriz</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -369,7 +364,7 @@ findLongest(['always','look','on','the','bright','side','of','life']);  // 6</co
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Find the maximum item of an array</h3>
+                    <h3 >Encuentra el elemento máximo de una matriz</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -378,7 +373,7 @@ findLongest(['always','look','on','the','bright','side','of','life']);  // 6</co
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Find the maximum item of an array by given key</h3>
+                    <h3 >Encuentre el elemento máximo de una matriz por clave dada</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -396,7 +391,7 @@ maxBy(people, 'age');   // { name: 'Foo', age: 42 }</code></pre></div>
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Find the minimum item of an array</h3>
+                    <h3 >Encuentra el elemento mínimo de una matriz</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -405,7 +400,7 @@ maxBy(people, 'age');   // { name: 'Foo', age: 42 }</code></pre></div>
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Find the minimum item of an array by given key</h3>
+                    <h3 >Encuentre el elemento mínimo de una matriz por clave dada</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -423,7 +418,7 @@ minBy(people, 'age');   // { name: 'Bar', age: 24 }</code></pre></div>
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Flatten an array</h3>
+                    <h3 >Aplanar una matriz</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -441,7 +436,7 @@ flat(['cat', ['lion', 'tiger']]);   // ['cat', 'lion', 'tiger']</code></pre></di
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Get all arrays of consecutive elements</h3>
+                    <h3 >Obtener todas las matrices de elementos consecutivos</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -455,7 +450,7 @@ getConsecutiveArrays([1, 2, 3, 4, 5], 6);   // []</code></pre></div>
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Get all n-th items of an array</h3>
+                    <h3 >Obtener todos los n-ésimos elementos de una matriz</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -468,7 +463,7 @@ getNthItems([1, 2, 3, 4, 5, 6, 7, 8, 9], 3);    // [3, 6, 9]</code></pre></div>
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Get all subsets of an array</h3>
+                    <h3 >Obtener todos los subconjuntos de una matriz</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -481,7 +476,7 @@ getSubsets([1, 2, 3]);  // [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Get indices of a value in an array</h3>
+                    <h3 >Obtener índices de un valor en una matriz</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -497,7 +492,7 @@ indices(['h', 'e', 'l', 'l', 'o'], 'w');    // []</code></pre></div>
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Get the average of an array</h3>
+                    <h3 >Obtener el promedio de una matriz</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -506,7 +501,7 @@ indices(['h', 'e', 'l', 'l', 'o'], 'w');    // []</code></pre></div>
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Get the intersection of arrays</h3>
+                    <h3 >Obtener la intersección de matrices</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -519,7 +514,7 @@ getIntersection([1, 2, 3], [2, 3, 4, 5], [1, 3, 5]);    // [3]</code></pre></div
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Get the rank of an array of numbers</h3>
+                    <h3 >Obtener el rango de una matriz de números</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -533,7 +528,7 @@ ranking([80, 80, 80, 50]);      // [1, 1, 1, 4]</code></pre></div>
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Get the sum of an array of numbers</h3>
+                    <h3 >Obtener la suma de una matriz de números</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -542,7 +537,7 @@ ranking([80, 80, 80, 50]);      // [1, 1, 1, 4]</code></pre></div>
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Get the unique values of an array</h3>
+                    <h3 >Obtener los valores únicos de una matriz</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -557,7 +552,7 @@ const unique = arr => arr.reduce((acc, el) => acc.includes(el) ? acc : [...acc, 
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Get union of arrays</h3>
+                    <h3 >Obtener unión de arreglos</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -569,7 +564,7 @@ union([1, 2], [2, 3], [3]);     // [1, 2, 3]</code></pre></div>
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Group an array of objects by a key</h3>
+                    <h3 >Agrupar una matriz de objetos por una clave</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -603,7 +598,7 @@ groupBy([
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Merge two arrays</h3>
+                    <h3 >Combinar dos matrices</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -620,7 +615,7 @@ const merge = [...new Set([...a, ...b])];</code></pre></div>
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Partition an array based on a condition</h3>
+                    <h3 >Particionar una matriz en función de una condición</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -632,7 +627,7 @@ partition([1, 2, 3, 4, 5], n => n % 2);     // [[2, 4], [1, 3, 5]]</code></pre><
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Remove duplicate values in an array</h3>
+                    <h3 >Eliminar valores duplicados en una matriz</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             <pre class="line-numbers"><code class="language-javascript">const removeDuplicate = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexOf(i));
@@ -643,7 +638,7 @@ removeDuplicate(['h', 'e', 'l', 'l', 'o', 'w', 'o', 'r', 'l', 'd']); //  ['h', '
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Remove falsy values from array</h3>
+                    <h3 >Eliminar valores falsos de la matriz</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -655,8 +650,7 @@ removeFalsy([0, 'a string', '', NaN, true, 5, undefined, 'another string', false
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Shuffle an array
-                    </h3>
+                    <h3 >Mezclar una matriz</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -671,7 +665,7 @@ shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);   // [9, 1, 10, 6, 8, 5, 2, 3, 7, 4]</
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Sort an array of items by given key</h3>
+                    <h3 >Ordenar una matriz de elementos por clave dada</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -697,7 +691,7 @@ sortBy(people, 'age');
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Sort an array of numbers</h3>
+                    <h3 >Ordenar una matriz de números</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -709,7 +703,7 @@ sort([1, 5, 2, 4, 3]);      // [1, 2, 3, 4, 5]</code></pre></div>
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Split an array into chunks</h3>
+                    <h3 >Dividir una matriz en trozos</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -722,7 +716,7 @@ chunk([1, 2, 3, 4, 5, 6, 7, 8], 4);     // [[1, 2, 3, 4], [5, 6, 7, 8]]</code></
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Swap the rows and columns of a matrix</h3>
+                    <h3 >Intercambiar filas y columnas de una matriz</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -744,7 +738,7 @@ transpose([             // [
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Swap two array items</h3>
+                    <h3 >Intercambiar dos elementos de matriz</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -757,7 +751,7 @@ swapItems([1, 2, 3, 4, 5], 1, 4);   // [1, 5, 3, 4, 2] </code></pre></div>
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Unzip an array of arrays</h3>
+                    <h3 >Descomprimir una matriz de matrices</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -804,7 +798,7 @@ Does it look like a zipper?
                     <div class="javascript__hug">
                     
               
-                    <h3 >Check if an element is a descendant of another</h3>
+                    <h3 >Comprobar si un elemento es descendiente de otro</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -813,7 +807,7 @@ Does it look like a zipper?
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Check if an element is focused</h3>
+                    <h3 >Comprobar si un elemento está enfocado</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -822,7 +816,7 @@ Does it look like a zipper?
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Check if the touch events are supported</h3>
+                    <h3 >Compruebe si los eventos táctiles son compatibles</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -831,7 +825,7 @@ Does it look like a zipper?
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Check if user scrolls to the bottom of the page</h3>
+                    <h3 >Comprobar si el usuario se desplaza hasta la parte inferior de la página</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -840,7 +834,7 @@ Does it look like a zipper?
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Detect Internet Explorer browser</h3>
+                    <h3 >Detectar navegador Internet Explorer</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -849,8 +843,7 @@ Does it look like a zipper?
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Detect macOS browser
-                    </h3>
+                    <h3 >Detectar navegador macOS</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -859,7 +852,7 @@ Does it look like a zipper?
                     </div>
                     
                     <div class="javascript__hug">
-                        <h3 >Get all siblings of an element</h3>
+                        <h3 >Obtener todos los hermanos de un elemento</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -868,7 +861,7 @@ Does it look like a zipper?
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Get the position of an element relative to the document</h3>
+                    <h3 >Obtener la posición de un elemento en relación con el documento</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -880,7 +873,7 @@ getPosition(document.body);     // { left: 0, top: 0 }</code></pre></div>
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Get the selected text</h3>
+                    <h3 >Obtener el texto seleccionado</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -889,7 +882,7 @@ getPosition(document.body);     // { left: 0, top: 0 }</code></pre></div>
                     </div>
                     
                     <div class="javascript__hug">
-                    <h3 >Go back to the previous page</h3>
+                    <h3 >Vuelve a la pagina anterior</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -901,7 +894,7 @@ history.go(-1);</code></pre></div>
                     </div>
 
                     <div class="javascript__hug">
-                        <h3 >Hide an element</h3>
+                        <h3 >Ocultar un elemento</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -917,7 +910,7 @@ const hide = ele => ele.hidden = true;</code></pre></div>
                     </div>
 
                     <div class="javascript__hug">
-                    <h3 >Insert an element after other one</h3>
+                    <h3 >Insertar un elemento después de otro</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -929,7 +922,7 @@ const insertAfter = (ele, anotherEle) => anotherEle.insertAdjacentElement('after
                     </div>
 
                     <div class="javascript__hug">
-                    <h3 >Insert an element before other one</h3>
+                    <h3 >Insertar un elemento antes de otro</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -941,7 +934,7 @@ const insertBefore = (ele, anotherEle) => anotherEle.insertAdjacentElement('befo
                     </div>
 
                     <div class="javascript__hug">
-                    <h3 >Insert given HTML after an element</h3>
+                    <h3 >Insertar HTML dado después de un elemento</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -950,7 +943,7 @@ const insertBefore = (ele, anotherEle) => anotherEle.insertAdjacentElement('befo
                     </div>
 
                     <div class="javascript__hug">
-                    <h3 >Insert given HTML before an element</h3>
+                    <h3 >Insertar HTML dado antes de un elemento</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -959,7 +952,7 @@ const insertBefore = (ele, anotherEle) => anotherEle.insertAdjacentElement('befo
                     </div>
 
                     <div class="javascript__hug">
-                        <h3 >Redirect to another page</h3>
+                        <h3 >Redirigir a otra página</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -968,7 +961,7 @@ const insertBefore = (ele, anotherEle) => anotherEle.insertAdjacentElement('befo
                     </div>
 
                     <div class="javascript__hug">
-                    <h3 >Reload the current page</h3>
+                    <h3 >Recargar la página actual</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -980,7 +973,7 @@ const reload = () => (location.href = location.href);</code></pre></div>
                     </div>
 
                     <div class="javascript__hug">
-                    <h3 >Replace an element</h3>
+                    <h3 >Reemplazar un elemento</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -989,7 +982,7 @@ const reload = () => (location.href = location.href);</code></pre></div>
                     </div>
 
                     <div class="javascript__hug">
-                    <h3 >Scroll to top of the page</h3>
+                    <h3 >Desplácese hasta la parte superior de la página</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -998,7 +991,7 @@ const reload = () => (location.href = location.href);</code></pre></div>
                     </div>
 
                     <div class="javascript__hug">
-                    <h3 >Serialize form data</h3>
+                    <h3 >Serializar datos de formulario</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1007,7 +1000,7 @@ const reload = () => (location.href = location.href);</code></pre></div>
                     </div>
 
                     <div class="javascript__hug">
-                        <h3 >Show an element</h3>
+                        <h3 >Mostrar un elemento</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1016,7 +1009,7 @@ const reload = () => (location.href = location.href);</code></pre></div>
                     </div>
 
                     <div class="javascript__hug">
-                    <h3 >Strip HTML from a given text</h3>
+                    <h3 >Eliminar HTML de un texto dado</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1025,7 +1018,7 @@ const reload = () => (location.href = location.href);</code></pre></div>
                     </div>
 
                     <div class="javascript__hug">
-                    <h3 >Toggle an element</h3>
+                    <h3 >Alternar un elemento</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1041,7 +1034,7 @@ const toggle = ele => ele.hidden = !ele.hidden;</code></pre></div>
                     </div>
 
                     <div class="javascript__hug">
-                    <h3 >Add AM PM suffix to an hour</h3>
+                    <h3>Agregue el sufijo AM PM a una hora</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1058,7 +1051,7 @@ suffixAmPm(23);     // '11pm'</code></pre></div>
                     </div>
 
                     <div class="javascript__hug">
-                    <h3 >Calculate the number of difference days between two dates</h3>
+                    <h3 >Calcular el número de días de diferencia entre dos fechas</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1070,7 +1063,7 @@ diffDays(new Date('2014-12-19'), new Date('2020-01-01'));   // 1839</code></pre>
                     </div>
 
                     <div class="javascript__hug">
-                    <h3 >Calculate the number of months between two dates</h3>
+                    <h3 >Calcular el número de meses entre dos fechas</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1082,7 +1075,7 @@ monthDiff(new Date('2020-01-01'), new Date('2021-01-01'));  // 12</code></pre></
                     </div>
 
                     <div class="javascript__hug">
-                    <h3 >Compare two dates</h3>
+                    <h3 >Compara dos fechas</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1095,7 +1088,7 @@ compare(new Date('2020-03-30'), new Date('2020-01-01'));    // true</code></pre>
                     </div>
 
                     <div class="javascript__hug">
-                    <h3 >Convert a date to YYYY-MM-DD format</h3>
+                    <h3 >Convertir una fecha al formato AAAA-MM-DD</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1108,7 +1101,7 @@ formatYmd(new Date());      // 2020-05-06</code></pre></div>
                     </div>
 
                     <div class="javascript__hug">
-                    <h3 >Convert seconds to hh:mm:ss format</h3>
+                    <h3 >Convertir segundos a formato hh:mm:ss</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1128,7 +1121,7 @@ formatSeconds(500);     // 00:08:20</code></pre></div>
                     </div>
 
                     <div class="javascript__hug">
-                    <h3 >Extract year, month, day, hour, minute, second and millisecond from a date</h3>
+                    <h3>Extraer año, mes, día, hora, minuto, segundo y milisegundo de una fecha</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1140,7 +1133,7 @@ const extract = date => date.toISOString().split(/[^0-9]/).slice(0, -1);
                     </div>
 
                     <div class="javascript__hug">
-                    <h3 >Format a date for the given locale</h3>
+                    <h3 >Dar formato a una fecha para la configuración regional dada</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1154,7 +1147,7 @@ format(new Date(), 'pt-BR');    // 06/05/2020</code></pre></div>
                     </div>
 
                     <div class="javascript__hug">
-                    <h3 >Get the current quarter of a date</h3>
+                    <h3>Obtener el trimestre actual de una fecha</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1163,8 +1156,7 @@ format(new Date(), 'pt-BR');    // 06/05/2020</code></pre></div>
                     </div>
 
                     <div class="javascript__hug">
-                    <h3 >Get the current timestamp in seconds
-                    </h3>
+                    <h3>Obtener la marca de tiempo actual en segundos</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1173,7 +1165,7 @@ format(new Date(), 'pt-BR');    // 06/05/2020</code></pre></div>
                     </div>
 
                     <div class="javascript__hug">
-                    <h3 >Get the day of the year from a date</h3>
+                    <h3>Obtener el día del año a partir de una fecha</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1186,7 +1178,7 @@ dayOfYear(new Date(2020, 04, 16));      // 137</code></pre></div>
                     </div>
 
                     <div class="javascript__hug">
-                    <h3 >Get the first date in the month of a date</h3>
+                    <h3 >Obtener la primera fecha en el mes de una fecha</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1195,7 +1187,7 @@ dayOfYear(new Date(2020, 04, 16));      // 137</code></pre></div>
                     </div>
 
                     <div class="javascript__hug">
-                        <h3 >Get the last date in the month of a date</h3>
+                        <h3>Obtener la última fecha en el mes de una fecha</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1204,7 +1196,7 @@ dayOfYear(new Date(2020, 04, 16));      // 137</code></pre></div>
                     </div>
 
                     <div class="javascript__hug">
-                    <h3 >Get the month name of a date</h3>
+                    <h3>Obtener el nombre del mes de una fecha</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1214,7 +1206,7 @@ const getMonthName = date => ['January', 'February', 'March', 'April', 'May', 'J
                     </div>
 
                     <div class="javascript__hug">
-                    <h3>Get the number of days in given month</h3>
+                    <h3>Obtener el número de días en un mes dado</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1224,7 +1216,7 @@ const daysInMonth = (month, year) => new Date(year, month, 0).getDate();</code><
                     </div>
 
                     <div class="javascript__hug">
-                    <h3 >Get the timezone string</h3>
+                    <h3 >Obtener la cadena de zona horaria</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1236,7 +1228,7 @@ getTimezone();      // 'Asia/Saigon'</code></pre></div>
                     </div>
 
                     <div class="javascript__hug">
-                    <h3 >Get the tomorrow date</h3>
+                    <h3 >Obtener la fecha de mañana</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1248,7 +1240,7 @@ const tomorrow = new Date((new Date()).valueOf() + 1000 * 60 * 60 * 24);</code><
                     </div>
 
                     <div class="javascript__hug">
-                    <h3 >Get the total number of days in a year</h3>
+                    <h3 >Obtener el número total de días en un año</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1260,7 +1252,7 @@ const numberOfDays = year => new Date(year, 1, 29).getDate() === 29 ? 366 : 365;
                     </div>
 
                     <div class="javascript__hug">
-                    <h3 >Get the weekday of a date</h3>
+                    <h3 >Obtener el día de la semana de una fecha</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1270,8 +1262,7 @@ const getWeekday = date => ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursda
                     </div>
 
                     <div class="javascript__hug">
-                    <h3 >Get the yesterday date
-                    </h3>
+                    <h3 >Obtener la fecha de ayer</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1283,7 +1274,7 @@ const yesterday = new Date((new Date()).valueOf() - 1000 * 60 * 60 * 24);</code>
                     </div>
 
                     <div class="javascript__hug">
-                    <h3 >Initialize the current date but set time to midnight</h3>
+                    <h3>Inicialice la fecha actual pero ajuste la hora a la medianoche</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1292,7 +1283,7 @@ const yesterday = new Date((new Date()).valueOf() - 1000 * 60 * 60 * 24);</code>
                     </div>
 
                     <div class="javascript__hug">
-                    <h3 >Sort an array of dates</h3>
+                    <h3 >Ordenar una matriz de fechas</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1307,7 +1298,7 @@ const sortAscending = arr => arr.sort((a, b) => a.getTime() < b.getTime());</cod
                 </div>
 
                 <div class="javascript__hug">
-                <h3 >Box handler</h3>
+                <h3 >Manipulador de cajas</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1329,7 +1320,7 @@ getDiscountPrice('$6.00', '20%');    // 4.8</code></pre></div>
                 </div>
 
                 <div class="javascript__hug">
-                <h3 >Check if a value is a function</h3>
+                <h3 >Comprobar si un valor es una función</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1343,8 +1334,7 @@ isFunction(async function() {});    // true</code></pre></div>
                 </div>
 
                 <div class="javascript__hug">
-                <h3 >Check if a value is a generator function
-</h3>
+                <h3 >Comprobar si un valor es una función generadora</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1357,7 +1347,7 @@ isGeneratorFunction(function*() {});    // true</code></pre></div>
                 </div>
 
                 <div class="javascript__hug">
-                    <h3 >Check if a value is an async function</h3>
+                    <h3 >Comprobar si un valor es una función asíncrona</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1371,7 +1361,7 @@ isAsyncFunction(async function() {});   // true</code></pre></div>
                 </div>
 
                 <div class="javascript__hug">
-                <h3 >Compose functions</h3>
+                <h3 >Componer funciones</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1391,7 +1381,7 @@ fn('Hello World') === 'dlrow olleH';</code></pre></div>
                 </div>
 
                 <div class="javascript__hug">
-                <h3 >Compose functions from left to right</h3>
+                <h3 >Componer funciones de izquierda a derecha</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1411,7 +1401,7 @@ fn('Hello World') === 'dlrow olleH';</code></pre></div>
                 </div>
 
                 <div class="javascript__hug">
-                <h3 >Create a function that accepts a single argument</h3>
+                <h3 >Crear una función que acepte un único argumento</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1423,7 +1413,7 @@ fn('Hello World') === 'dlrow olleH';</code></pre></div>
                 </div>
 
                 <div class="javascript__hug">
-                <h3 >Create an empty function</h3>
+                <h3 >Crear una función vacía</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1436,7 +1426,7 @@ const noop = Function();
                 </div>
 
                 <div class="javascript__hug">
-                <h3 >Curry a function</h3>
+                <h3 >Curry una función</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1454,7 +1444,7 @@ curry(sum, 1, 2, 3);    // 6</code></pre></div>
                 </div>
 
                 <div class="javascript__hug">
-                <h3 >Delay the evaluation of a function</h3>
+                <h3 >Retrasar la evaluación de una función</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1471,7 +1461,7 @@ const probablyFaster = manyThings.map(thunkfy(heavyComputation))
                 </div>
 
                 <div class="javascript__hug">
-                <h3 >Execute a function once</h3>
+                <h3 >Ejecutar una función una vez</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1487,7 +1477,7 @@ incOnce();      // n = 1</code></pre></div>
                 </div>
 
                 <div class="javascript__hug">
-                <h3 >Flip the arguments of a function</h3>
+                <h3 >Voltear los argumentos de una función</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1507,7 +1497,7 @@ const isChild = flip(isParent);</code></pre></div>
                 </div>
 
                 <div class="javascript__hug">
-                <h3 >Identity function</h3>
+                <h3 >función de identidad</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1516,7 +1506,7 @@ const isChild = flip(isParent);</code></pre></div>
                 </div>
 
                 <div class="javascript__hug">
-                <h3 >Logical xor operator</h3>
+                <h3 >Operador lógico xor</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1539,7 +1529,7 @@ xor(false, true);       // true</code></pre></div>
                 </div>
 
                 <div class="javascript__hug">
-                <h3 >Memoize a function</h3>
+                <h3 >Memoizar una función</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1559,7 +1549,7 @@ fibo(6);    // 8</code></pre></div>
                 </div>
 
                 <div class="javascript__hug">
-                <h3 >Partially apply a function</h3>
+                <h3 >Aplicar parcialmente una función</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1573,7 +1563,7 @@ inc(9);     // 10</code></pre></div>
                 </div>
 
                 <div class="javascript__hug">
-                <h3>Uncurry a function</h3>
+                <h3>Deshacer una función</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1596,7 +1586,7 @@ uncurry(sum, 3)(1, 2, 3);       // 6</code></pre></div>
                 </div>
 
                 <div class="javascript__hug">
-                <h3 >Calculate the angle of a line defined by two points</h3>
+                <h3 >Calcular el ángulo de una recta definida por dos puntos</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1609,7 +1599,7 @@ const degreesAngle = (p1, p2) => Math.atan2(p2.y - p1.y, p2.x - p1.x) * 180 / Ma
                 </div>
 
                 <div class="javascript__hug">
-                <h3 >Calculate the distance between two points</h3>
+                <h3 >Calcular la distancia entre dos puntos</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1618,7 +1608,7 @@ const degreesAngle = (p1, p2) => Math.atan2(p2.y - p1.y, p2.x - p1.x) * 180 / Ma
                 </div>
 
                 <div class="javascript__hug">
-                <h3 >Calculate the linear interpolation between two numbers</h3>
+                <h3>Calcular la interpolación lineal entre dos números</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1628,7 +1618,7 @@ const degreesAngle = (p1, p2) => Math.atan2(p2.y - p1.y, p2.x - p1.x) * 180 / Ma
                 </div>
 
                 <div class="javascript__hug">
-                <h3 >Calculate the midpoint between two points</h3>
+                <h3 >Calcular el punto medio entre dos puntos</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1637,7 +1627,7 @@ const degreesAngle = (p1, p2) => Math.atan2(p2.y - p1.y, p2.x - p1.x) * 180 / Ma
                 </div>
 
                 <div class="javascript__hug">
-                <h3 >Check if a point is inside a rectangle</h3>
+                <h3 >Comprobar si un punto está dentro de un rectángulo</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1646,7 +1636,7 @@ const degreesAngle = (p1, p2) => Math.atan2(p2.y - p1.y, p2.x - p1.x) * 180 / Ma
                 </div>
 
                 <div class="javascript__hug">
-                <h3 >Check if a rectangle contains other one</h3>
+                <h3 >Comprobar si un rectángulo contiene otro</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1657,7 +1647,7 @@ const contains = (a, b) => (a.x1 <= b.x1 && a.y1 <= b.y1 && a.x2 >= b.x2 && a.y2
                 </div>
 
                 <div class="javascript__hug">
-                <h3 >Check if a rectangle overlaps other one</h3>
+                <h3 >Comprobar si un rectángulo se superpone a otro</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1668,7 +1658,7 @@ const overlaps = (a, b) => (a.x1 < b.x2 && b.x1 < a.x2) || (a.y1 < b.y2 && b.y1 
                 </div>
 
                 <div class="javascript__hug">
-                <h3 >Convert degrees to radians</h3>
+                <h3>Convertir grados a radianes</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1677,7 +1667,7 @@ const overlaps = (a, b) => (a.x1 < b.x2 && b.x1 < a.x2) || (a.y1 < b.y2 && b.y1 
                 </div>
 
                 <div class="javascript__hug">
-                <h3 >Convert radians to degrees</h3>
+                <h3 >Convertir radianes a grados</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1686,7 +1676,7 @@ const overlaps = (a, b) => (a.x1 < b.x2 && b.x1 < a.x2) || (a.y1 < b.y2 && b.y1 
                 </div>
 
                 <div class="javascript__hug">
-                <h3 >Normalize the ratio of a number in a range</h3>
+                <h3 >Normalizar la razón de un número en un rango</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1695,7 +1685,7 @@ const overlaps = (a, b) => (a.x1 < b.x2 && b.x1 < a.x2) || (a.y1 < b.y2 && b.y1 
                 </div>
 
                 <div class="javascript__hug">
-                <h3 >Round a number to the nearest multiple of a given value</h3>
+                <h3>Redondear un número al múltiplo más cercano de un valor dado</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1707,22 +1697,13 @@ roundNearest(200, 30);      // 210
 roundNearest(200, 40);      // 200</code></pre></div>
                     </div>
                 </div>
-                
-                
-
-
-                    
-                    
-                
-
-
 
                 <div class="ribbon__shet">
                     <h2>Misceláneo</h2>
                 </div>
 
                 <div class="javascript__hug">
-                <h3 >Check if the code is running in NodeJS</h3>
+                <h3 >Compruebe si el código se está ejecutando en NodeJS</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1731,7 +1712,7 @@ roundNearest(200, 40);      // 200</code></pre></div>
                 </div>
 
                 <div class="javascript__hug">
-                <h3 >Check if the code is running in the browser</h3>
+                <h3 >Comprobar si el código se está ejecutando en el navegador</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1740,7 +1721,7 @@ roundNearest(200, 40);      // 200</code></pre></div>
                 </div>
 
                 <div class="javascript__hug">
-                <h3 >Clear all cookies</h3>
+                <h3 >Borrar todas las cookies</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1750,7 +1731,7 @@ roundNearest(200, 40);      // 200</code></pre></div>
                 </div>
 
                 <div class="javascript__hug">
-                <h3 >Convert 3 digits color to 6 digits color</h3>
+                <h3>Convertir color de 3 dígitos a color de 6 dígitos</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1764,7 +1745,7 @@ toFullHexColor('#abc');     // '#aabbcc'</code></pre></div>
                 </div>
 
                 <div class="javascript__hug">
-                <h3 >Convert Celsius to Fahrenheit</h3>
+                <h3 >Convertir Celsius a Fahrenheit</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -1778,7 +1759,7 @@ celsiusToFahrenheit(-20);   // -4</code></pre></div>
                 </div>
 
                 <div class="javascript__hug">
-                <h3 >Convert cookie to object</h3>
+                <h3 ></h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
