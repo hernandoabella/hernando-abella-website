@@ -732,7 +732,6 @@ hr{
 .card{
     border-radius: 25px;
     padding: 50px;
-    box-shadow: var(--sombra-de-caja);   
     transition: .3s;
 }
 
@@ -780,6 +779,11 @@ hr{
 
 .git__card h3{
     color: #fff;
+}
+
+.contenedor__snippets{
+    width: 80%;
+    margin: 20px auto;
 }
 
 /* ---------------- Snippets ------------------- */
