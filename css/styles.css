@@ -747,39 +747,39 @@ hr{
 }
 
 .html__card{
-    background-image: linear-gradient(-20deg, #E34C26 0%, #ff9a44 100%);
-    color: #c84626;
+    background: #E34C26;
+    color: #000;
 }
 
 .html__card h3{
-    color: #c84626;
+    color: #000;
 }
 
 .css__card{
-    background-image: linear-gradient(-20deg, #264de4 0%, #1D8FE1 100%);
-    color: #193ac1;
+    background: #193ac1;
+    color: #fff;
 }
 
 .css__card h3{
-    color: #193ac1;
+    color: #fff;
 }
 
 .js__card{
-    background-image: linear-gradient(-20deg, #F0DB4F 0%, #cdab24 100%);
-    color: #8f8020;
+    background: #F0DB4F;
+    color: #000;
 }
 
 .js__card h3{
-    color: #8f8020;
+    color: #000;
 }
 
 .git__card{
-    background-image: linear-gradient(-20deg, #F1502F 0%, #be0c06 100%);
-    color: #96100b;
+    background: #be0c06;
+    color: #fff;
 }
 
 .git__card h3{
-    color: #96100b;
+    color: #fff;
 }
 
 /* ---------------- Snippets ------------------- */
