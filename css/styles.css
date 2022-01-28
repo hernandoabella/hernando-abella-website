@@ -228,6 +228,18 @@ h1, h2, h3, h4, h5, h6{
 
 /* ---------------- estilos principales ------------------- */
 
+/* ---------------- diseño frontPage ------------------- */
+
+#front__page h1 {
+    color: #fff;
+}
+
+#front__page h3 {
+    color: #fff;
+}
+
+/* ---------------- diseño frontPage ------------------- */
+
 /* ---------------- nueva navegacion sencilla ------------------- */
 
 .navegacion{
