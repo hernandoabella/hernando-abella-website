@@ -30,6 +30,7 @@
 body{
     font-family: sans-serif;
     font-size: 1.3em;
+    background: var(--color-terciario);
 }
 
 a{
@@ -98,8 +99,8 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .html__hug{
-    background: var(--color-secundario);
-    border: 5px solid #E34C26;
+    background: #E34C26;
+    border: 5px solid #cb3813;
     padding: 20px;
     margin: 50px auto;
     width: 80%;
@@ -108,7 +109,7 @@ h1, h2, h3, h4, h5, h6{
 
 .html__hug h3{
     text-align: center;
-    color: #fff;
+    color: #000;
 }
 
 .css__hug{
@@ -228,7 +229,7 @@ h1, h2, h3, h4, h5, h6{
 /* ---------------- front__page ------------------- */
 
 #front__page{
-    background: var(--color-principal);
+    background: var(--color-terciario);
     height: 100vh;
 }
 
