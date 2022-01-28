@@ -30,8 +30,6 @@
 body{
     font-family: sans-serif;
     font-size: 1.3em;
-    background: var(--color-terciario);
-    color: #fff;
 }
 
 a{
@@ -45,7 +43,6 @@ i{
 
 h1{
     font-size: 2em;
-    color: #fff;
 }
 
 h3{
@@ -228,7 +225,12 @@ h1, h2, h3, h4, h5, h6{
 
 /* ---------------- estilos principales ------------------- */
 
-/* ---------------- diseño frontPage ------------------- */
+/* ---------------- front__page ------------------- */
+
+#front__page{
+    background: var(--color-principal);
+    height: 100vh;
+}
 
 #front__page h1 {
     color: #fff;
@@ -238,7 +240,11 @@ h1, h2, h3, h4, h5, h6{
     color: #fff;
 }
 
-/* ---------------- diseño frontPage ------------------- */
+#front__page p {
+    color: #fff;
+}
+
+/* ---------------- front__page ------------------- */
 
 /* ---------------- nueva navegacion sencilla ------------------- */
 

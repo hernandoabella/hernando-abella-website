@@ -20,7 +20,6 @@ h2{
     color: #fff;
     padding: 10px;
     transition: .3s;
-    text-shadow: 3px 3px 0px var(--color-secundario);
 }
 
 .snippets__hero p{
