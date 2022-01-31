@@ -115,9 +115,8 @@ esIgual([1, 2, 3], [1, '2', 3]);    // false</code></pre></div>
                     </div>
 
                     
-               
-                   <div class="javascript__hug">
-                   <h3>Compara dos arreglos sin importar el orden</h3> 
+                    <div class="javascript__hug">
+                    <h3>Compara dos arreglos sin importar el orden</h3> 
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -129,7 +128,7 @@ esIgual([1, 2, 3], [1, 2, 3]);      // true
 esIgual([1, 2, 3], [1, 3, 2]);      // true
 esIgual([1, 2, 3], [1, '2', 3]);    // false</code></pre></div>
                     </div>
-                   </div>
+                    </div>
 
                     
                 
@@ -140,7 +139,7 @@ esIgual([1, 2, 3], [1, '2', 3]);    // false</code></pre></div>
                             
                             <pre class="line-numbers"><code class="language-javascript">const aObjeto = (arreglo, clave) => arreglo.reduce((a, b) => ({ ...a, [b[clave]]: b }), {});
 
-// Ejemplos
+// Ejemplo
 aObjeto(
     [
         { id: '1', nombre: 'Alpha', genero: 'Masculino' },
