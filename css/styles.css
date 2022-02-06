@@ -1,12 +1,12 @@
 /* CSS styles by HA */
 
+/* ---------------- Fuentes de google ------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@100;200;300&family=Fraunces:wght@700&display=swap');
+
 /* ---------------- Fuentes ------------------- */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-/* ---------------- Fuentes ------------------- */
-
-/* ---------------- variables ------------------- */
+/* ---------------- Variables ------------------- */
 
 :root{
     --color-principal: #264653;
@@ -28,7 +28,7 @@
 }
 
 body{
-    font-family: sans-serif;
+    font-family: 'Commissioner', sans-serif;
     font-size: 1.3em;
 }
 
@@ -51,7 +51,7 @@ h3{
 
 h1, h2, h3, h4, h5, h6{
     color: var(--color-principal);
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Fraunces', serif;
 }
 
 .redes__sociales{
@@ -78,18 +78,15 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .one{
-    width: 50%;
-    
+    margin: auto;
 }
 
 .one img{
-    border-radius: 100%;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 450px;
+    border-radius: 5%;
+    width: 100%;
     box-shadow: var(--sombra-de-caja);
+    position: relative;
+    top: 20px;
 }
 
 .two{
@@ -244,7 +241,6 @@ h1, h2, h3, h4, h5, h6{
 #front__page p {
     color: #fff;
 }
-
 
 /* ---------------- front__page ------------------- */
 
