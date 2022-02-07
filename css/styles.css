@@ -197,27 +197,23 @@ h1, h2, h3, h4, h5, h6{
 #front__page p {
     color: #fff;
 }
+
 @media only screen and (max-width: 768px) {
     #front__page{
         background: var(--color-terciario);
         font-size: 1em;
     }
-
     #front__page img{
         width: 200px;
         height: 200px;
         border-radius: 100%;
     }
-
     #front__page h1{
         text-align: center;
     }
-
     #front__page h3{
         text-align: center;
     }
-    
-    
 }
 /* ---------------- front__page ------------------- */
 
@@ -258,12 +254,10 @@ header a:hover{
 .fila{
     display: flex;
 }
-
 .columna{
     width: 33.33%;
     padding: 20px;
 }
-
 .tarjeta__proyectos{
     background: var(--color-terciario);
     border-radius: 25px;
@@ -271,15 +265,12 @@ header a:hover{
     text-align: center;
     transition: .3s;
 }
-
 .tarjeta__proyectos:hover{
     opacity: .5;
 }
-
 .tarjeta__proyectos img{
     width: 100px;
 }
-
 .tarjeta__proyectos a{
     display: block;
     margin: 10px;
@@ -289,60 +280,49 @@ header a:hover{
     text-align: center;
     transition: .3s;
 }
-
 .tarjeta__proyectos a:hover{
     opacity: .5;
 }
-
 .tarjeta__proyectos h3{
     color: var(--color-secundario);
     padding: 0px;
     margin: 0px;
     text-align: center;
 }
-
 .top__header{
     padding: 10px;
 }
-
 .estrellas{
     padding: 20px;
 }
-
 .estrellas i{
     color: var(--color-secundario) !important;
 }
-
 .code__container div{
     margin-bottom: 20px;
 }
-
 .html__container pre{
     border: 5px solid #E34C26;
     border-radius: 25px;
     box-shadow: var(--sombra-de-caja);
     
 }
-
 .css__container pre{
     border: 5px solid #264de4;
     border-radius: 25px;
     box-shadow: var(--sombra-de-caja);
 }
-
 .js__container pre{
     border: 5px solid #F0DB4F;
     border-radius: 25px;
     box-shadow: var(--sombra-de-caja);
 }
-
 .html__tag{
     background-color: #E34C26;
     color: #fff;
     display: inline;
     padding: 10px;
 }
-
 .css__tag{
     background-color: #264de4;
     color: #fff;
@@ -350,27 +330,22 @@ header a:hover{
     padding: 10px;
 
 }
-
 .javascript__tag{
     background-color: #F0DB4F;
     color: #000;
     display: inline;
     padding: 10px;
 }
-
 hr{
     margin: 50px 0px;
     border: 3px solid #322931;
 }
-
 .download{
     padding: 20px 0px;
 }
-
 .download a{
     margin-right: 10px;
 }
-
 .descarga{
     background: var(--color-secundario);
     color: #000;
@@ -378,22 +353,18 @@ hr{
     border-radius: 50%;
     transition: .3s;
 }
-
 .descarga:hover{
     opacity: .5;
 }
-
 .youtube{
     background: #c4302b;
     padding: 10px;
     border-radius: 50%;
     transition: .3s;
 }
-
 .youtube:hover{
     opacity: .5;
 }
-
 .youtube i{
     color: #fff;
 }
@@ -408,11 +379,9 @@ hr{
         padding: 20px;
     }
 }
-
 /* ---------------- Practica ------------------- */
 
 /* ---------------- Aprende ------------------- */
-
 .internet{
     background: #0bb6ff;
     color: #000;
