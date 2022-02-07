@@ -1,7 +1,9 @@
+body{
+    background: var(--color-terciario);
+}
 .aprende__hero{
     padding: 20px;
     text-align: center;
-    background: var(--color-terciario);
 }
 #intro__text{
     margin: 30px;
@@ -29,20 +31,17 @@ ul li a{
     
 }
 
-ul li a:hover{
-    opacity: .5;
-}
-
 ul li a i{
-    font-size: 3em;
+    font-size: 2.5em;
 }
 
 .steps{
+    width: 80%;
     background: var(--color-secundario);
     display: flex;
     flex-wrap: wrap;
     border-radius: 25px;
-    margin: 51px 0px;
+    margin: 40px auto;
 }
 
 .steps ul{
