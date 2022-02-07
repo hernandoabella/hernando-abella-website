@@ -198,14 +198,11 @@ h1, h2, h3, h4, h5, h6{
 
     .hero__container{
         flex-direction: column;
+        padding: 10px;
     }
     
     .one img{
         border-radius: 0%;
-        position: relative;
-        top: 0%;
-        left: 0%;
-        transform: translate(-0%, -0%);
         width: 100%;
         box-shadow: var(--sombra-de-caja);
     }
@@ -214,7 +211,6 @@ h1, h2, h3, h4, h5, h6{
         width: 100%;
     }
     
-
 }
 
 
@@ -239,6 +235,29 @@ h1, h2, h3, h4, h5, h6{
 
 #front__page p {
     color: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+    #front__page{
+        background: var(--color-terciario);
+        font-size: 1em;
+    }
+
+    #front__page img{
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+    }
+
+    #front__page h1{
+        text-align: center;
+    }
+
+    #front__page h3{
+        text-align: center;
+    }
+    
+    
 }
 
 /* ---------------- front__page ------------------- */
