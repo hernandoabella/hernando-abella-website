@@ -1,13 +1,17 @@
 .aprende__hero{
     padding: 20px;
     text-align: center;
+    background: var(--color-terciario);
 }
-
+#intro__text{
+    margin: 30px;
+}
 .aprende__hero h1{
     color: #fff;
     padding: 10px;
+    margin: 10px;
     transition: .3s;
-    text-shadow: 3px 3px 0px var(--color-secundario);
+    text-shadow: 3px 3px 0px var(--color-primario);
 }
 
 .aprende__hero p{
@@ -34,12 +38,11 @@ ul li a i{
 }
 
 .steps{
-    background: var(--color-principal);
-    padding: 20px;
-    margin: auto 20px;
+    background: var(--color-secundario);
     display: flex;
     flex-wrap: wrap;
     border-radius: 25px;
+    margin: 51px 0px;
 }
 
 .steps ul{
