@@ -26,59 +26,46 @@
     padding: 0;
     margin: 0;
 }
-
 body{
     font-family: 'Commissioner', sans-serif;
 }
-
 a{
     color: #fff;
     text-decoration: none;
 }
-
 i{
     color: #fff;
 }
-
 h1{
     font-size: 2em;
 }
-
 h3{
     color: #fff;
 }
-
 h1, h2, h3, h4, h5, h6{
     color: var(--color-principal);
     font-family: 'Fraunces', serif;
 }
-
 .redes__sociales{
     padding: 20px 0px;
 }
-
 .redes__sociales a{
     margin-right: 10px;
     transition: .3s;
 }
-
 .redes__sociales a:hover{
     opacity: .5;
 }
-
 .hero__container{
     display: flex;
     padding: 60px;
 }
-
 .hero__container h1{
     padding: 20px 0px;
 }
-
 .one{
     margin: auto;
 }
-
 .one img{
     border-radius: 5%;
     width: 100%;
@@ -86,12 +73,10 @@ h1, h2, h3, h4, h5, h6{
     position: relative;
     top: 20px;
 }
-
 .two{
     width: 50%;
     padding: 10px;
 }
-
 .html__hug{
     background: #E34C26;
     border: 5px solid #cb3813;
@@ -100,12 +85,10 @@ h1, h2, h3, h4, h5, h6{
     width: 80%;
     box-shadow: var(--sombra-de-caja);
 }
-
 .html__hug h3{
     text-align: center;
     color: #000;
 }
-
 .css__hug{
     background: #264de4;
     border: 5px solid #1536bc;
@@ -115,12 +98,10 @@ h1, h2, h3, h4, h5, h6{
     width: 80%;
     box-shadow: var(--sombra-de-caja);
 }
-
 .css__hug h3{
     text-align: center;
     color: #fff;
 }
-
 .javascript__hug{
     background: #F0DB4F;
     border: 5px solid #b8a633;
@@ -130,13 +111,11 @@ h1, h2, h3, h4, h5, h6{
     width: 80%;
     box-shadow: var(--sombra-de-caja);
 }
-
 .javascript__hug h3{
     text-align: center;
     margin: 40px;
     color: #323330;
 }
-
 .git__hug{
     background: #F1502F;
     border: 5px solid #cd3618;
@@ -146,71 +125,58 @@ h1, h2, h3, h4, h5, h6{
     width: 80%;
     box-shadow: var(--sombra-de-caja);
 }
-
 .git__hug h3{
     text-align: center;
     color: #000;
 }
-
 .panel__de__Ws h3{
     padding: 20px;
 }
-
 .panel__de__codigos p{
     padding: 20px 0px;
 }
-
 .panel__de__codigos ul{
     margin: 20px;
 }
-
 .panel__de__codigos ul li{
     margin: 10px;
 }
-
 .panel__de__codigos h4{
     color: #000;
     padding: 10px 0px;
 }
-
 .panel__de__codigos img{
     width: 100%;
     margin: auto;
 }
-
 .ejemplo{
     border: 1px solid #000;
     padding: 10px;
     margin: 20px 0px;
 }
-
 .ejemplo h2{
     color: #000;
     font-size: 1em;
 }
-
 .ejemplo p{
     font-size: 1em;
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
-
     .hero__container{
         flex-direction: column;
         padding: 10px;
     }
-    
     .one img{
         border-radius: 0%;
         width: 100%;
         box-shadow: var(--sombra-de-caja);
+        top: 0px;
     }
-
     .one, .two{
         width: 100%;
     }
-    
 }
 
 
