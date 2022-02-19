@@ -1,7 +1,7 @@
 /* CSS styles by Hernando Abella */
 
 /* ---------------- Fuentes de google ------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@100;200;300&family=Fraunces:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Montserrat:wght@700;900&display=swap');
 /* ---------------- Fuentes de google ------------------- */
 
 /* ---------------- Variables ------------------- */
@@ -30,7 +30,7 @@
 }
 
 body{
-    font-family: 'Commissioner', sans-serif;
+    font-family: var(--fuente-texto);
     background: var(--color-3);
     background: linear-gradient(45deg, var(--color-1), var(--color-2), var(--color-3), var(--color-4), var(--color-5));
 	background-size: 400% 400%;
@@ -40,7 +40,7 @@ body{
 
 h1, h2, h3, h4, h5, h6{
     color: var(--color-1);
-    font-family: 'Fraunces', serif;
+    font-family: var(--fuente-titulo);
 }
 
 a{
