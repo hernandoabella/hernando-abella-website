@@ -12,6 +12,10 @@ h2{
     text-align: center;
 }
 
+p{
+    line-height: 25px;
+}
+
 .snippets__hero{
     text-align: center;
     color: var(--color-secundario);
@@ -19,7 +23,7 @@ h2{
 }    
 
 .snippets__hero h1{
-    color: #fff;
+    color: var(--color-secundario);
     padding: 10px;
     transition: .3s;
 }
