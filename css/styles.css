@@ -314,7 +314,7 @@ a{
 
 
 header{
-    font-family: 'Fraunces', serif;
+    font-family: var(--fuente-titulo);
     padding: 20px;
     background: var(--color-terciario);
 
@@ -335,127 +335,8 @@ header a:hover{
     opacity: .3;
 }
 
-/* ---------------- navegacion sencilla ------------------- */
-
-/* ---------------- Practica ------------------- */
-
-.fila{
-    display: flex;
-}
-.columna{
-    width: 33.33%;
-    padding: 20px;
-}
-
-.tarjeta__proyectos{
-    background: var(--color-terciario);
-    border-radius: 25px;
-    padding: 10px;
-    text-align: center;
-    transition: .3s;
-}
-
-.tarjeta__proyectos:hover{
-    opacity: .5;
-}
-
-.tarjeta__proyectos img{
-    width: 100px;
-}
-
-.tarjeta__proyectos a{
-    display: block;
-    margin: 10px;
-    padding: 10px;
-    background: rgb(132, 20, 117);
-    color: #fff;
-    text-align: center;
-    transition: .3s;
-}
-
-.tarjeta__proyectos a:hover{
-    opacity: .5;
-}
-
-.tarjeta__proyectos h3{
-    color: var(--color-secundario);
-    padding: 0px;
-    margin: 0px;
-    text-align: center;
-}
-
-.top__header{
-    padding: 10px;
-}
-
-.estrellas{
-    padding: 20px;
-}
-
-.estrellas i{
-    color: var(--color-secundario) !important;
-}
-
-.code__container div{
-    margin-bottom: 20px;
-}
-
-.html__container pre{
-    border: 5px solid #E34C26;
-    border-radius: 25px;
-    box-shadow: var(--sombra-de-caja);
-
-}
-
-.css__container pre{
-    border: 5px solid #264de4;
-    border-radius: 25px;
-    box-shadow: var(--sombra-de-caja);
-}
-
-.js__container pre{
-    border: 5px solid #F0DB4F;
-    border-radius: 25px;
-    box-shadow: var(--sombra-de-caja);
-}
-
-.html__tag{
-    background-color: #E34C26;
-    color: #fff;
-    display: inline;
-    padding: 10px;
-}
-
-.css__tag{
-    background-color: #264de4;
-    color: #fff;
-    display: inline;
-    padding: 10px;
-
-}
-
-.javascript__tag{
-    background-color: #F0DB4F;
-    color: #000;
-    display: inline;
-    padding: 10px;
-}
-
-hr{
-    margin: 50px 0px;
-    border: 3px solid #322931;
-}
-
-.download{
-    padding: 20px 0px;
-}
-
-.download a{
-    margin-right: 10px;
-}
-
 .descarga{
-    background: var(--color-secundario);
+    background: var(--color-3);
     color: #000;
     padding: 10px;
     border-radius: 50%;
@@ -481,16 +362,29 @@ hr{
     color: #fff;
 }
 
-@media only screen and (max-width: 768px){
-    .fila{
-        flex-direction: column;
-    }
-
-    .columna{
-        width: 100%;
-        padding: 20px;
-    }
+.github{
+    background: #000;
+    padding: 10px;
+    border-radius: 100px;
+    transition: .3s;
 }
+
+.github:hover{
+    opacity: .5;
+}
+/* ---------------- navegacion sencilla ------------------- */
+
+/* ---------------- Practica ------------------- */
+
+.fila{
+    display: flex;
+}
+.columna{
+    width: 33.33%;
+    padding: 20px;
+}
+
+
 /* ---------------- Practica ------------------- */
 
 /* ---------------- Aprende ------------------- */
