@@ -61,7 +61,6 @@ footer p{
 }
 
 
-
 .html__tag{
     background-color: #E34C26;
     color: #fff;
@@ -88,10 +87,6 @@ hr{
     margin: 50px 0px;
     border: 3px solid #322931;
 }
-
-
-
-
 
 @media only screen and (max-width: 768px){
     .fila{

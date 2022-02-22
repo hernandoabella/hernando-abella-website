@@ -1,5 +1,38 @@
-body{
-    background: var(--color-2);
+.aprende-flex{
+  display: flex;
+}
+
+.back i{
+  background: var(--color-1);
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 25px;
+}
+
+aside{
+  background: var(--color-1);
+  width: 300px;
+  height: 100vh;
+}
+
+aside p{
+ color: #fff;
+ padding: 10px;
+}
+
+aside h3{
+  color: var(--color-3);
+  padding: 20px 10px;
+}
+
+aside h4{
+  color: var(--color-5);
+  padding: 10px;
+}
+
+.aprende{
+  width: 100%;
+  height: 100vh;
 }
 
 .aprende__hero{
@@ -23,6 +56,10 @@ body{
     color: #fff;
 }
 
+.steps ul{
+  background: var(--color-2);
+}
+
 ul li{
     list-style-type: none;
     display: inline-block;
@@ -39,21 +76,22 @@ ul li a i{
 }
 
 .steps{
-    width: 80%;
+    width: 100%;
     background: var(--color-1);
     display: flex;
     flex-wrap: wrap;
     border-radius: 25px;
-    margin: 40px auto;
+    margin: 30px auto;
 }
 
 .steps > div{
-  width: 50%;
+  width: 33.33%;
 }
 
 .steps h3{
-    color: #fff !important;
-    padding: 10px;
+    color: var(--color-3) !important;
+    padding: 20px;
+    text-decoration: underline;
 }
 
 .steps ul{
@@ -369,4 +407,9 @@ ul li a i{
 
 .cs i{
     color: #fff;
+}
+
+.tag{
+  background: var(--color-3);
+  color: #000;
 }

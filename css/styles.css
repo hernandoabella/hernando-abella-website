@@ -196,6 +196,10 @@ a{
   margin: 0px 20px;
 }
 
+.redes__sociales a{
+    padding-right: 10px;
+}
+
 .redes__sociales a:hover{
     opacity: .5;
 }
@@ -255,8 +259,6 @@ a{
 
 /* ---------------- navegacion sencilla ------------------- */
 
-
-
 header{
     font-family: var(--fuente-titulo);
     padding: 20px;
@@ -278,6 +280,11 @@ header a{
 header a:hover{
     opacity: .3;
 }
+
+
+/* ---------------- navegacion sencilla ------------------- */
+
+/* ---------------- Practica ------------------- */
 
 .descarga{
     background: var(--color-3);
@@ -316,9 +323,6 @@ header a:hover{
 .github:hover{
     opacity: .5;
 }
-/* ---------------- navegacion sencilla ------------------- */
-
-/* ---------------- Practica ------------------- */
 
 .fila{
     display: flex;
