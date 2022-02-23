@@ -9,25 +9,39 @@
   border-radius: 25px;
 }
 
+.bottom-right-social{
+  margin: 20px 10px;
+}
+
+.bottom-right-social a{
+  color: #fff;
+  background: var(--color-2);
+  padding: 15px;
+  margin-right: 5px;
+}
+
 aside{
-  background: var(--color-1);
+  background: #f6f6f6;
   width: 300px;
   height: 100vh;
+  box-shadow: var(--box-shadow);
 }
 
 aside p{
- color: #fff;
+ color: #000;
  padding: 10px;
 }
 
 aside h3{
-  color: var(--color-3);
+  color: var(--color-1);
   padding: 20px 10px;
 }
 
 aside h4{
-  color: var(--color-5);
-  padding: 10px;
+  color: var(--color-2);
+  padding-top: 10px;
+  padding-left: 10px;
+  text-decoration: underline;
 }
 
 .aprende{
