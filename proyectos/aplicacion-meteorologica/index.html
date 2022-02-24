@@ -16,7 +16,7 @@
         <nav>
             <ul>
                 <li>
-                    <a href="../"><i class="fas fa-angle-left"></i></a>
+                    <a href="../" class="back-green"><i class="fas fa-angle-left"></i></a>
                 </li>
                 <li>
                     <a href="/">Inicio</a>
@@ -33,7 +33,7 @@
     <section class="codigo__del__proyecto">
         <div class="app__background">
             <div class="app__container">
-                
+
                 <!-- app code goes here -->
 
                 <div class="s">
@@ -52,34 +52,34 @@
     </p>
 
     <p class="temprature"></p>
-    
+
     <div class="flex">
         <img src="" class="icono">
         <p class="sky"></p>
     </div>
-    
+
     <p class="min-max"></p>
 </div>
 </div>
                 </div>
-                
+
                 <!-- app code goes here -->
 
             </div>
         </div>
-        
+
         <section class="contenido__proyecto">
 
         <h1>Aplicación meteorológica</h1>
-        
+
         <p>Esta aplicación te permite ver el estado del clima.</p>
-        
-        
+
+
             <div class="download">
                 <a href="../aplicacion-meteorologica.rar" download><i class="fas fa-download descarga"></i></a>
                 <a class="youtube" href="#"><i class="fab fa-youtube"></i></a>
             </div>
-        
+
 
         <div class="code__container">
             <div class="html__container">
@@ -112,12 +112,12 @@
                 &lt;/p&gt;
 
                 &lt;p class=&quot;temprature&quot;&gt;&lt;/p&gt;
-                
+
                 &lt;div class=&quot;flex&quot;&gt;
                     &lt;img src=&quot;&quot; class=&quot;icono&quot;&gt;
                     &lt;p class=&quot;sky&quot;&gt;&lt;/p&gt;
                 &lt;/div&gt;
-                
+
                 &lt;p class=&quot;min-max&quot;&gt;&lt;/p&gt;
             &lt;/div&gt;
         &lt;/div&gt;
@@ -128,9 +128,9 @@
 </code></pre></div>
                 </div>
             </div>
-            
 
-            
+
+
 
             <div class="css__container">
             <div class="panel">
@@ -250,8 +250,8 @@ body {
 }</code></pre></div>
                 </div>
             </div>
-            
-            
+
+
             <div class="js__container">
             <div class="panel">
                     <div class="codigo__javascript">
@@ -267,24 +267,24 @@ function handleSubmit(e) {
     e.preventDefault();
     const city = document.querySelector(".inputCity").value;
     fetchWeatherData(city);
-   
+
 }
 
 async function fetchWeatherData(city) {
-    
-    const apiResponse = 
+
+    const apiResponse =
     await fetch(`${baseUrl}q=${city}&units=metric&lang=${lang}&APPID=${apiKey}`)
     const weatherData = apiResponse.json();
     weatherData.then(data => {
         console.log(data)
         document.querySelector(".city").textContent = data.name;
         document.querySelector(".country").textContent = `, ${data.sys.country}`;
-        document.querySelector(".temprature").textContent = 
+        document.querySelector(".temprature").textContent =
         `${Math.round(data.main.temp)}°c`;
-        document.querySelector(".icono").src = 
+        document.querySelector(".icono").src =
         `https://api.openweathermap.org/img/w/${data.weather[0].icon}.png`
         document.querySelector(".sky").textContent = data.weather[0].main;
-        document.querySelector(".min-max").textContent = 
+        document.querySelector(".min-max").textContent =
         `${data.main.temp_min}°c / ${data.main.temp_max}°c`;
     });
 }
@@ -298,7 +298,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         </div>
         </section>
-        
+
     </section>
 
     <!--Scripts-->

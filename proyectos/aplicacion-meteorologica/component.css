@@ -1,111 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap");
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.container{
-    background: #fff;
-    padding: 1rem;
-    border-radius: 5px;
-    width: 300px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    animation: coolAnimation 1s;
-}
-
-.flex{
-    display: flex;
-    text-align: center;
-    width: 145px;
-    margin: auto;
-}
-
-.flex img{
-    margin-right: 10px;
-}
-
-.inputCity{
-    width: 219.2px;
-    border-left: none;
-    border-top: none;
-    border-right: none;
-    outline: none;
-    border-bottom: 1px solid rgb(239, 239, 239);
-    color: #7F0799;
-    animation: coolAnimation 1s;
-    display: inline !important;
-}
-
-.inputCity,
-.formBtn {
-    font-size: 1rem;
-    padding: 7px 14px;
-    border-radius: 5px;
-    outline: none;
-    font-family: "Nanum Gothic", sans-serif;
-    margin-bottom: 1rem;
-}
-
-.formBtn{
-    background: #9649CB;
-    color: #fff;
-    cursor: pointer;
-    border: none;
-    transition: 0.3s all ease;
-    animation: coolAnimation 1s;
-}
-
-.formBtn:hover {
-    background: #7F0799;
-    color: #fff;
-}
-
-button{
-    width: 44px !important;
-    margin: 0 !important;
-    display: inline !important;
-}
-
-.result p {
-    margin: 1rem 0;
-    text-align: center;
-    animation: coolAnimation 1s;
-}
-
-.result i{
-    font-size: 1.4rem;
-    color: #7F0799;
-}
-
-.city,
-.country {
-    font-size: 1.5rem;
-}
-
-.temprature {
-    font-size: 5rem;
-    font-weight: bold;
-    color: #7F0799;
-}
-
-.sky {
-    font-size: 1.3rem;
-}
-
-.min-max {
-    font-size: 1.1rem;
-}
-
-@keyframes coolAnimation{
-
-    0%{
-        opacity: 0;
-    }
-
-}
-  
 .s{
     display: flex;
     flex-direction: column;
@@ -118,7 +10,7 @@ button{
   font-size: 1.3em;
   font-family: 'Fraunces', serif;
   background: #AFBBF2;
-  padding: 50px; 
+  padding: 50px;
   color: #292E1E;
   font-family: "Nanum Gothic", sans-serif;
 }
@@ -132,6 +24,10 @@ button{
 
 body{
     background-color: var(--color-principal) !important;
+}
+
+header{
+  background: var(--color-2) !important;
 }
 
 header a{

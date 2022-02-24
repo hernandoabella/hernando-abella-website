@@ -2,13 +2,50 @@ body{
   background: var(--color-1);
 }
 
-footer{
-  color: #fff;
-  padding: 20px;
+.flex-proyecto{
+  display: flex;
 }
 
-footer p{
-  text-align: center;
+.contenedor-practica{
+  background: var(--color-3);
+  height: 90.5vh;
+  overflow-y: scroll;
+  width: 1065px;
+}
+
+.bottom-right-social{
+  padding: 10px;
+}
+
+.bottom-right-social a{
+  padding: 10px;
+  background: var(--color-2);
+  color: #fff;
+}
+
+aside{
+  background: #f6f6f6;
+  width: 300px;
+  height: 100vh;
+  box-shadow: var(--box-shadow);
+}
+
+aside p{
+ color: #000;
+ padding: 10px;
+}
+
+aside h3{
+  color: var(--color-1);
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+aside h4{
+  color: var(--color-2);
+  padding-top: 10px;
+  padding-left: 10px;
+  text-decoration: underline;
 }
 
 .tarjeta__proyectos{
@@ -17,6 +54,7 @@ footer p{
     padding: 10px;
     text-align: center;
     transition: .3s;
+    box-shadow: var(--box-shadow);
 }
 
 .tarjeta__proyectos:hover{
@@ -42,10 +80,8 @@ footer p{
 }
 
 .tarjeta__proyectos h3{
-    color: var(--color-secundario);
-    padding: 0px;
-    margin: 0px;
-    text-align: center;
+    color: var(--color-1);
+    font-size: 1em;
 }
 
 .top__header{
@@ -57,7 +93,7 @@ footer p{
 }
 
 .estrellas i{
-    color: var(--color-secundario) !important;
+    color: var(--color-1) !important;
 }
 
 
@@ -86,6 +122,21 @@ footer p{
 hr{
     margin: 50px 0px;
     border: 3px solid #322931;
+}
+
+.back{
+  background: var(--color-2);
+  padding: 10px;
+  border-radius: 25px;
+}
+
+footer{
+  color: #fff;
+  padding: 20px;
+}
+
+footer p{
+  text-align: center;
 }
 
 @media only screen and (max-width: 768px){
