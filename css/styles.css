@@ -225,23 +225,18 @@ a{
     opacity: .5;
 }
 
-
+.floating{
+   animation-name: floating;
+   animation-duration: 3s;
+   animation-iteration-count: infinite;
+   animation-timing-function: ease-in-out;
+}
 
 .informacion__contacto{
     margin: 20px 0px;
 }
 
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
+/* mobile devices */
 
 @media only screen and (max-width: 768px) {
 
@@ -276,6 +271,26 @@ a{
     }
 
 }
+
+/* animaciones */
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 15px); }
+    100%   { transform: translate(0, -0px); }
+}
 /* ---------------- front__page ------------------- */
 
 /* ---------------- navegacion sencilla ------------------- */
@@ -284,7 +299,6 @@ header{
     font-family: var(--fuente-titulo);
     padding: 20px;
     background: var(--color-terciario);
-
 }
 
 header ul li{
