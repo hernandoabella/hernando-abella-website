@@ -99,10 +99,38 @@ pre[class*="language-"]{
 }
 
 footer{
-    display: flex;
-    padding: 14px;
+    padding: 14.3px;
     background: var(--color-1);
     justify-content: space-between;
+}
+
+.footer-btns{
+  float: right;
+}
+
+.footer-btns a{
+  font-family: var(--fuente-titulo);
+  cursor: pointer;
+  background: #fff;
+  color: #000;
+  display: inline-block;
+  padding: 5px;
+  margin-left: 10px;
+  top: -2px;
+  position: relative;
+  border-radius: 25px;
+  transition: .3s;
+  font-size: .8em;
+  user-select: none;
+}
+
+.footer-btns a:hover{
+  background: var(--color-5);
+  color: #fff;
+}
+
+.footer-btns a:active{
+  transform: scale(.8);
 }
 
 .share-box{
@@ -179,10 +207,8 @@ footer{
   clear: right;
 }
 
-.compartir{
-  font-family: var(--fuente-titulo);
-  cursor: pointer;
-}
+
+
 
 /* mbile */
 @media only screen and (max-width: 950px){

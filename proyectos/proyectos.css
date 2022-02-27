@@ -2,6 +2,12 @@ body{
   background: var(--color-1);
 }
 
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .practica{
   width: 100%;
 }
@@ -9,8 +15,9 @@ body{
 .contenedor-practica{
   background: var(--color-3);
   overflow-y: scroll;
-  height: 90.5vh;
+  height: 84vh;
   width: 100%;
+
 }
 
 .flex-proyecto{
@@ -19,10 +26,36 @@ body{
 
 .bottom-right-social{
   padding: 10px;
+  margin: 10px 0px;
 }
 
 .bottom-right-social a{
   padding: 10px;
+  background: var(--color-2);
+  color: #fff;
+}
+
+.lista-projectos ul{
+  background: #E8E8E8;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 300px;
+  margin-top: 10px;
+}
+
+.lista-projectos ul li{
+  list-style: none;
+}
+
+.lista-projectos ul li a{
+  color: #000;
+  display: block;
+  transition: .3s;
+  padding: 10px;
+}
+
+.lista-projectos ul li a:hover{
+  transform: translate(10px);
   background: var(--color-2);
   color: #fff;
 }
@@ -37,13 +70,12 @@ aside{
 
 aside p{
  color: #000;
- padding: 10px;
+ padding: 0px 10px;
 }
 
 aside h3{
   color: var(--color-1);
-  padding-top: 10px;
-  padding-left: 10px;
+  padding: 10px;
 }
 
 aside h4{
@@ -63,7 +95,8 @@ aside h4{
 }
 
 .tarjeta__proyectos:hover{
-    opacity: .5;
+    border-radius: 50px;
+    transform: scale(.9);
 }
 
 .tarjeta__proyectos img{
@@ -80,12 +113,9 @@ aside h4{
     transition: .3s;
 }
 
-.tarjeta__proyectos a:hover{
-    opacity: .5;
-}
 
 .tarjeta__proyectos h3{
-    color: var(--color-1);
+    color: #fff;
     font-size: 1em;
 }
 
@@ -98,7 +128,7 @@ aside h4{
 }
 
 .estrellas i{
-    color: var(--color-1) !important;
+    color: #fff !important;
 }
 
 
@@ -125,14 +155,28 @@ aside h4{
 }
 
 hr{
-    margin: 50px 0px;
-    border: 3px solid #322931;
+    margin: 10px;
+    border: 2px solid #322931;
 }
 
 .back{
   background: var(--color-2);
   padding: 10px;
   border-radius: 25px;
+}
+
+.search-container button {
+  background: var(--color-2);
+  float: right;
+  padding: 10.6px;
+  border: none;
+  color: #fff;
+}
+
+.search-container input{
+  border: none;
+  padding: 10px;
+  font-family: var(--texto-titulo);
 }
 
 footer{

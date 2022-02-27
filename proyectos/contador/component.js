@@ -2,8 +2,20 @@
 const compartir = document.querySelector('.compartir');
 const copiarLink = document.querySelector('.copy-link');
 const cajaCompartir = document.querySelector('.share-box');
-const html = document.querySelector('html');
 const clsBtn = document.querySelector('.closebtn');
+const currentSite = window.location.href;
+const urlName = document.querySelector('.project__title').innerText;
+const cadenaRecortada = urlName.substr(3).toLowerCase()
+
+const twitterURL = `http://twitter.com/share?text=${urlName}&url=${currentSite}&hashtags=${cadenaRecortada},javascript`;
+const twitterShareBtn = document.querySelector('.twitter-share-button');
+twitterShareBtn.href = twitterURL;
+twitterShareBtn.target = "_blank";
+
+const facebookShareBtn = document.querySelector('.facebook-share-button');
+facebookShareBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${currentSite}`;
+facebookShareBtn.target = "_blank";
+
 const showShareBox = (e) => {
   cajaCompartir.classList.toggle('transformActive');
 }
