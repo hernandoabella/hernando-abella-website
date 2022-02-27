@@ -1,0 +1,42 @@
+.videos{
+  background: #fff;
+  padding: 20px;
+}
+
+.videos h1{
+  margin: 10px;
+  color: var(--color-2)
+}
+
+.videos p{
+  margin: 10px;
+}
+
+.videos hr{
+  margin: 20px 10px;
+  border: 1px solid var(--color-2);
+}
+
+.back{
+  background: var(--color-2);
+  padding: 10px;
+  border-radius: 100px;
+}
+
+header{
+  background: var(--color-1);
+}
+
+footer{
+  background: var(--color-1);
+  padding: 10px;
+}
+
+.social-right{
+  float: right;
+}
+
+.social-right a{
+  color: #fff;
+  margin: 5px;
+}
