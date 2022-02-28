@@ -1,421 +1,207 @@
-<!-- Made by Hernando Abella -->
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kit de batería</title>
+    <title>Contador</title>
     <link rel="stylesheet" href="./component.css">
     <link rel="stylesheet" href="/css/temaPrism.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body>
-<header>
-        <nav>
-            <ul>
-                <li>
-                    <a href="../"><i class="fas fa-angle-left"></i></a>
-                </li>
-                <li>
-                    <a href="/">Inicio</a>
-                </li>
-                <li>
-                    <a href="/aprende/">Aprende</a>
-                </li>
-                <li>
-                    <a href="/snippets/">Snippets</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+
     <section class="codigo__del__proyecto">
-        <div class="app__background">
-            <div class="app__container">
-                
-                <!-- app code goes here -->
-
-                <div class="se">
-                <div class="container">
-                    <button class="q drum"></button>
-                    <button class="w drum"></button>
-                    <button class="e drum"></button>
-                    <button class="r drum"></button>
-                    <button class="t drum"></button>
-                    <button class="y drum"></button>
-                    <button class="u drum"></button>
-                    <button class="i drum"></button>
-                    <button class="a drum"></button>
-                    <button class="s drum"></button>
-                    <button class="d drum"></button>
-                    <button class="f drum"></button>
-                    <button class="g drum"></button>
-                    <button class="h drum"></button>
-                    <button class="j drum"></button>
-                    <button class="k drum"></button>
-                </div>
-                </div>
-                
-                <!-- app code goes here -->
-
+        <div class="app-container">
+            <div class="project__info">
+              <h3 class="project__title">🥁 Kit de batería</h3>
+              <p>Esta aplicación te permite tocar la batería con el teclado de tu computadora.</p>
+            </div>
+            <div>
+                <!-- app goes here -->
+                <iframe src="https://hernandoabella.github.io/caja-de-ritmos/"></iframe>
+                <!-- app goes here -->
             </div>
         </div>
-        
-        <section class="contenido__proyecto">
-            <h1>Kit de batería</h1>
-        
-        <p>Esta aplicación te permite tocar la batería con el teclado de tu computadora.</p>
-        
-        
-        <div class="download">
-                <a href="../contador.rar" download><i class="fas fa-download descarga"></i></a>
-                <a class="youtube" href="https://www.youtube.com/watch?v=sgGEDuY5zOs&t"><i class="fab fa-youtube"></i></a>
-            </div>
 
+        <section class="contenido__proyecto">
+          <header>
+              <nav>
+                  <ul>
+                      <li>
+                          <a class="back" href="../"><i class="fas fa-angle-left"></i></a>
+                      </li>
+                      <li>
+                          <a href="/">Inicio</a>
+                      </li>
+                      <li>
+                          <a href="/aprende/">Aprende</a>
+                      </li>
+                      <li>
+                          <a href="/snippets/">Snippets</a>
+                      </li>
+                  </ul>
+              </nav>
+              <div class="download">
+                  <a href="../contador.rar" download><i class="fas fa-download descarga"></i></a>
+                  <a class="youtube" href="https://www.youtube.com/watch?v=sgGEDuY5zOs&t"><i class="fab fa-youtube"></i></a>
+                  <a class="github" href="https://www.github.com/hernandoabella/contador"><i class="fab fa-github-alt"></i></a>
+              </div>
+
+          </header>
 
         <div class="code__container">
-
             <div class="html__container">
             <div class="panel">
-                    <div class="codigo__htmlt">
-                        <div class="decor__bar "></div>
+                    <div class="codigo__html">
                         <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
-
 &lt;head&gt;
-  &lt;meta charset=&quot;utf-8&quot;&gt;
-  &lt;title&gt;Kit de bater&iacute;a&lt;/title&gt;
-  &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Contador&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;
+    &lt;link rel=&quot;icon&quot; type=&quot;image/x-icon&quot; href=&quot;../images/favicon.ico&quot; &gt;
+    &lt;link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;../images/favicon.ico&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://pro.fontawesome.com/releases/v5.10.0/css/all.css&quot; integrity=&quot;sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p&quot; crossorigin=&quot;anonymous&quot;/&gt;
 &lt;/head&gt;
-
 &lt;body&gt;
-  
-  &lt;div class=&quot;container&quot;&gt;
-    &lt;button class=&quot;q drum&quot;&gt;&lt;/button&gt;
-    &lt;button class=&quot;w drum&quot;&gt;&lt;/button&gt;
-    &lt;button class=&quot;e drum&quot;&gt;&lt;/button&gt;
-    &lt;button class=&quot;r drum&quot;&gt;&lt;/button&gt;
-    &lt;button class=&quot;t drum&quot;&gt;&lt;/button&gt;
-    &lt;button class=&quot;y drum&quot;&gt;&lt;/button&gt;
-    &lt;button class=&quot;u drum&quot;&gt;&lt;/button&gt;
-    &lt;button class=&quot;i drum&quot;&gt;&lt;/button&gt;
-    &lt;button class=&quot;a drum&quot;&gt;&lt;/button&gt;
-    &lt;button class=&quot;s drum&quot;&gt;&lt;/button&gt;
-    &lt;button class=&quot;d drum&quot;&gt;&lt;/button&gt;
-    &lt;button class=&quot;f drum&quot;&gt;&lt;/button&gt;
-    &lt;button class=&quot;g drum&quot;&gt;&lt;/button&gt;
-    &lt;button class=&quot;h drum&quot;&gt;&lt;/button&gt;
-    &lt;button class=&quot;j drum&quot;&gt;&lt;/button&gt;
-    &lt;button class=&quot;k drum&quot;&gt;&lt;/button&gt;
-  &lt;/div&gt;
+    &lt;div id=&quot;container&quot;&gt;
+        &lt;div id=&quot;numero&quot; class=&quot;numero&quot;&gt;0&lt;/div&gt;
+        &lt;hr&gt;
+        &lt;div class=&quot;flexStyle&quot;&gt;
+        &lt;button id=&quot;btn2&quot; onclick=&quot;restar()&quot;&gt;&lt;i class=&quot;fas fa-minus&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+        &lt;button id=&quot;btn1&quot; onclick=&quot;sumar()&quot;&gt;&lt;i class=&quot;fas fa-plus&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
 
-  &lt;script src=&quot;./script.js&quot;&gt;&lt;/script&gt;
-
+    &lt;script src=&quot;./script.js&quot;&gt;&lt;/script&gt;
 &lt;/body&gt;
-&lt;/html&gt;
-</code></pre></div>
+&lt;/html&gt;</code></pre></div>
                 </div>
             </div>
-            
+
+
+
             <div class="css__container">
             <div class="panel">
                     <div class="codigo__css">
-                        <div class="decor__bar "></div>
-                        <pre class="line-numbers"><code class="language-css">*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+                        <div class="decor__bar"></div>
+                        <pre class="line-numbers"><code class="language-css">@import url(&#x27;https://fonts.googleapis.com/css2?family=Fraunces:wght@300&#x26;display=swap&#x27;);
+
+*{
+    box-sizing: border-box;
 }
 
-body {
-  background: #5922c7;
+body{
+    font-size: 1.3em;
+    font-family: &#x27;Fraunces&#x27;, serif;
+    background: #fcbf49;
+    overflow: hidden;
 }
 
-.container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #333;
-  border-radius: 5px;
-  display: flex;
-  flex-wrap: wrap;
-  width: 310px;
-  padding: 10px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+#container{
+    background: #fff;
+    color: #999;
+    width: 200px;
+    border-radius: 5px;
+    padding: 20px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.q {
-  background: rgb(212, 0, 255);
-  animation: coolAnimation .5s;
+.flexStyle{
+    display: flex;
+    justify-content: space-around;
 }
 
-.w {
-  background: rgb(212, 0, 255);
-  animation: coolAnimation .5s;
-  animation-delay: .2s;
+hr{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 20px 10px;
 }
 
-.e {
-  background: rgb(212, 0, 255);
-  animation: coolAnimation .5s;
-  animation-delay: .3s;
+#numero{
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 20px;
+    user-select: none;
+    font-weight: bold;
 }
 
-.r {
-  background: rgb(212, 0, 255);
-  animation: coolAnimation .5s;
-  animation-delay: .4s;
+#btn1, #btn2{
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: .4s;
+    color: #999;
+    background: #fff;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 50%;
 }
 
-.t {
-  background: rgb(0, 255, 72);
-  animation: coolAnimation2 .5s;
-  animation-delay: .5s;
+#btn1:hover, #btn2:hover{
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
 }
 
-.y {
-  background: rgb(0, 255, 72);
-  animation: coolAnimation2 .5s;
-  animation-delay: .6s;
+#btn1:hover{
+    background: green;
+    color: #fff;
 }
 
-.u {
-  background: rgb(0, 255, 72);
-  animation: coolAnimation2 .5s;
-  animation-delay: .7s;
+#btn2:hover{
+    background: red;
+    color: #fff;
 }
 
-.i{
-  background: rgb(0, 255, 72);
-  animation: coolAnimation2 .5s;
-  animation-delay: .8s;
+.animation{
+    animation: animation .3s;
 }
 
-.a{
-  background: rgb(33, 9, 250);
-  animation: coolAnimation3 .5s;
-  animation-delay: .9s;
+.animation2{
+    animation: animation2 .3s;
 }
 
-.s{
-  background: rgb(33, 9, 250);
-  animation: coolAnimation3 .5s;
-  animation-delay: 1s;
+@keyframes animation{
+    0%{
+        transform: rotate(-180deg) scale(5.3) skew(30deg);
+
+    }
+
+    80%{
+        opacity: 0.5;
+    }
 }
 
-.d{
-  background: rgb(33, 9, 250);
-  animation: coolAnimation3 .5s;
-  animation-delay: 1.1s;
+@keyframes animation2{
+    0%{
+        transform: rotate(180deg) scale(5.3) skew(-30deg);
+    }
+
+    80%{
+        opacity: 0.5;
+    }
 }
 
-.f{
-  background: rgb(33, 9, 250);
-  animation: coolAnimation3 .5s;
-  animation-delay: 1.2s;
-}
-
-.g{
-  background: rgb(199, 0, 53);
-  animation: coolAnimation4 .5s;
-  animation-delay: 1.3s;
-  
-}
-
-.h{
-  background: rgb(199, 0, 53);
-  animation: coolAnimation4 .5s;
-  animation-delay: 1.4s;
-}
-
-.j{
-  background: rgb(199, 0, 53);
-  animation: coolAnimation4 .5s;
-  animation-delay: 1.5s;
-}
-
-.k{
-  background: rgb(199, 0, 53);
-  animation: coolAnimation4 .5s;
-  animation-delay: 1.6s;
-}
-
-/* 🤗 esquinas */
-
-.drum:nth-child(1){
-  border-radius: 5px 0px 0px 0px;
-}
-
-.drum:nth-child(4){
-  border-radius: 0px 5px 0px 0px;
-}
-
-.drum:nth-child(13){
-  border-radius: 0px 0px 0px 5px;
-}
-
-.drum:nth-child(16){
-  border-radius: 0px 0px 5px 0px;
-}
-
-/* esquinas */
-
-
-.pressed {
-  opacity: 0.5;
-  transform: scale(1.1);
-  background: rgb(42, 237, 17) !important;
-}
-
-.pressed:nth-child(5){
-  background: rgb(251, 255, 0) !important;
-}
-
-.pressed:nth-child(6){
-  background: rgb(251, 255, 0) !important;
-}
-
-.pressed:nth-child(7){
-  background: rgb(251, 255, 0) !important;
-}
-
-.pressed:nth-child(8){
-  background: rgb(251, 255, 0) !important;
-}
-
-.pressed:nth-child(9){
-  background: rgb(14, 237, 233) !important;
-}
-
-.pressed:nth-child(10){
-  background: rgb(14, 237, 233) !important;
-}
-
-.pressed:nth-child(11){
-  background: rgb(14, 237, 233) !important;
-}
-
-.pressed:nth-child(12){
-  background: rgb(14, 237, 233) !important;
-}
-
-.pressed:nth-child(13){
-  background: rgb(199, 0, 176) !important;
-}
-
-.pressed:nth-child(14){
-  background: rgb(199, 0, 176) !important;
-}
-
-.pressed:nth-child(15){
-  background: rgb(199, 0, 176) !important;
-}
-
-.pressed:nth-child(16){
-  background: rgb(199, 0, 176) !important;
-}
-
-.drum {
-  outline: none;
-  color: #fff;
-  width: 25%;
-  height: 80px;
-  font-size: 2em;
-}
-
-.drum:nth-child(1){
-  background: radial-gradient(circle, rgb(35, 206, 12), rgb(42, 237, 17));
-}
-
-.drum:nth-child(2){
-  background: radial-gradient(circle, rgb(35, 206, 12), rgb(42, 237, 17));
-}
-
-.drum:nth-child(3){
-  background: radial-gradient(circle, rgb(35, 206, 12), rgb(42, 237, 17));
-}
-
-.drum:nth-child(4){
-  background: radial-gradient(circle, rgb(35, 206, 12), rgb(42, 237, 17));
-}
-
-.drum:nth-child(5){
-  background: radial-gradient(circle, rgb(208, 211, 13), rgb(251, 255, 0));
-}
-
-.drum:nth-child(6){
-  background: radial-gradient(circle, rgb(208, 211, 13), rgb(251, 255, 0));
-}
-
-.drum:nth-child(7){
-  background: radial-gradient(circle, rgb(208, 211, 13), rgb(251, 255, 0));
-}
-
-.drum:nth-child(8){
-  background: radial-gradient(circle, rgb(208, 211, 13), rgb(251, 255, 0));
-}
-
-.drum:nth-child(9){
-  background: radial-gradient(circle, rgb(26, 196, 193), rgb(14, 237, 233));
-}
-
-.drum:nth-child(10){
-  background: radial-gradient(circle, rgb(26, 196, 193), rgb(14, 237, 233));
-}
-
-.drum:nth-child(11){
-  background: radial-gradient(circle, rgb(26, 196, 193), rgb(14, 237, 233));
-}
-
-.drum:nth-child(12){
-  background: radial-gradient(circle, rgb(26, 196, 193), rgb(14, 237, 233));
-}
-
-.drum:nth-child(13){
-  background: radial-gradient(circle, rgb(157, 27, 141), rgb(199, 0, 176));
-}
-
-.drum:nth-child(14){
-  background: radial-gradient(circle, rgb(157, 27, 141), rgb(199, 0, 176));
-}
-
-.drum:nth-child(15){
-  background: radial-gradient(circle, rgb(157, 27, 141), rgb(199, 0, 176)); 
-}
-
-.drum:nth-child(16){
-  background: radial-gradient(circle, rgb(157, 27, 141), rgb(199, 0, 176));
-}
-
-
-@keyframes coolAnimation{
-  0%{
-    opacity: 0.5;
-    background: rgb(42, 237, 17);
-  }
-}
-
-@keyframes coolAnimation2{
-  0%{
-    opacity: 0.5;
-    background: rgb(251, 255, 0);
-  }
-}
-
-@keyframes coolAnimation3{
-  0%{
-    opacity: 0.5;
-    background: rgb(14, 237, 233);
-  }
-}
-
-@keyframes coolAnimation4{
-  0%{
-    opacity: 0.5;
-    background: rgb(199, 0, 176);
-  }
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
 }</code></pre></div>
                 </div>
             </div>
@@ -423,141 +209,110 @@ body {
             <div class="js__container">
             <div class="panel">
                     <div class="codigo__javascript">
-                        <div class="decor__bar "></div>
-                        <pre class="line-numbers"><code class="language-javascript">var numberOfDrumButtons = document.querySelectorAll(".drum").length;
+                        <div class="decor__bar"></div>
+                        <pre class="line-numbers"><code class="language-javascript">//Variables
 
-for (var i = 0; i < numberOfDrumButtons; i++) {
+const numero = document.getElementById(&#x27;numero&#x27;);
+const btn1 = document.getElementById(&#x27;btn1&#x27;);
+const btn2 = document.getElementById(&#x27;btn2&#x27;);
 
-  document.querySelectorAll(".drum")[i].addEventListener("click", function() {
+const sumar = () =&#x3E; {
 
-    var buttonInnerHTML = this.innerHTML;
+   removeAnimationClass();
 
-    makeSound(buttonInnerHTML);
+   setTimeout(() =&#x3E;{
+      numero.classList.add(&#x27;animation&#x27;);
+   }, 10);
 
-    buttonAnimation(buttonInnerHTML);
+   numero.innerText++;
 
-  });
+   testColor();
 
-}
+   console.log(numero.innerHTML);
 
-document.addEventListener("keypress", function(event) {
-
-  makeSound(event.key);
-
-  buttonAnimation(event.key);
-
-});
-
-
-function makeSound(key) {
-
-  switch (key) {
-    case "q":
-      var tom1 = new Audio("sounds/sound1.mp3");
-      tom1.play();
-      break;
-
-    case "w":
-      var tom1 = new Audio("sounds/sound2.mp3");
-      
-      tom1.play();
-      break;
-
-    case "e":
-      var tom1 = new Audio("sounds/sound3.mp3");
-      tom1.play();
-      break;  
-
-    case "r":
-      var tom1 = new Audio("sounds/sound4.mp3");
-      tom1.play();
-      break;  
-
-    case "t":
-      var tom1 = new Audio("sounds/sound5.mp3");
-      tom1.play();
-      break;
-    
-    case "y":
-      var tom1 = new Audio("sounds/sound6.mp3");
-      tom1.play();
-      break;
-    
-    case "u":
-      var tom1 = new Audio("sounds/sound7.mp3");
-      tom1.play();
-      break;
-      
-    case "i":
-      var tom1 = new Audio("sounds/sound8.mp3");
-      tom1.play();
-      break;  
-
-    case "a":
-      var tom2 = new Audio("sounds/sound9.mp3");
-      tom2.play();
-      break;
-
-    case "s":
-      var tom3 = new Audio('sounds/sound10.mp3');
-      tom3.play();
-      break;
-
-    case "d":
-      var tom4 = new Audio('sounds/sound11.mp3');
-      tom4.play();
-      break;
-
-    case "f":
-      var tom1 = new Audio("sounds/sound12.mp3");
-      tom1.play();
-      break;  
-
-    case "g":
-      var snare = new Audio('sounds/sound13.mp3');
-      snare.play();
-      break;
-
-    case "h":
-      var crash = new Audio('sounds/sound14.mp3');
-      crash.play();
-      break;
-
-    case "j":
-      var kick = new Audio('sounds/sound15.mp3');
-      kick.play();
-      break;
-
-    case "k":
-      var kick = new Audio('sounds/sound16.mp3');
-      kick.play();
-      break      
-
-    default: console.log(key);
-
-  }
-}
-
-
-function buttonAnimation(currentKey) {
-
-  var activeButton = document.querySelector("." + currentKey);
-
-  activeButton.classList.add("pressed");
-
-  setTimeout(function() {
-    activeButton.classList.remove("pressed");
-  }, 100);
+   return numero.innerText;
 
 }
+
+const restar = () =&#x3E; {
+
+   removeAnimationClass();
+
+   setTimeout(() =&#x3E;{
+      numero.classList.add(&#x27;animation2&#x27;);
+   }, 10);
+
+   numero.innerText--;
+
+   testColor();
+
+   console.log(numero.innerHTML);
+
+   return numero.innerText;
+}
+
+const removeAnimationClass = () =&#x3E; {
+   numero.classList.remove(&#x27;animation2&#x27;, &#x27;animation&#x27;);
+}
+
+const testColor = () =&#x3E;{
+   if(numero.innerText === &#x27;0&#x27;){
+      numero.style.color = &#x27;#999&#x27;;
+   }else if(numero.innerText &#x3C; &#x27;0&#x27;){
+      numero.style.color = &#x22;red&#x22;;
+   }else{
+      numero.style.color = &#x22;green&#x22;;
+   }
+}
+
+// Activar contador autom&#xE1;tico:
+
+// Suma autom&#xE1;ticamente
+// setInterval(sumar, 1000);
+
+// Resta autom&#xE1;ticamente
+// setInterval(restar, 1000);
 </code></pre></div>
                 </div>
+                <!-- share box -->
+
+                <div class="share-box">
+                  <div class="share-box-inner">
+                    <div class="closebtn">
+                      <i class="fa fa-times"></i>
+                    </div>
+                    <div class="share-on">
+                      <a class="facebook-share-button"><i class="fab fa-facebook"></i> Compartir en facebook</a>
+                      <a class="twitter-share-button"><i class="fab fa-twitter"></i> Compartir en Twitter</a>
+                      <a class="copy-link"><i class="fa fa-clipboard"></i> Copiar enlace</a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- share box -->
             </div>
 
         </div>
+
+        <footer>
+
+
+            <div class="footer-btns">
+                <a href="https://www.github.com/hernandoabella/contador">Mejorar Proyecto</a>
+                <a href="https://www.buymeacoffee.com/hernandoabella" target="_blank">Cómprame un café</a>
+                <a class="compartir">Compartir</a>
+            </div>
+
+             <div class="clearfix">&nbsp;</div> <!-- Add this line -->
+
+        </footer>
+
         </section>
-        
+
+
     </section>
+
+
 
     <!--Scripts-->
 

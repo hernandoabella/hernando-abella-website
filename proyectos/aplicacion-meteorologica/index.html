@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contador</title>
+    <title>Aplicación meteorológica</title>
     <link rel="stylesheet" href="./component.css">
     <link rel="stylesheet" href="/css/temaPrism.css">
     <link rel="stylesheet" href="/css/styles.css">
@@ -56,27 +56,42 @@
                     <div class="codigo__html">
                         <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Contador&lt;/title&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;
-    &lt;link rel=&quot;icon&quot; type=&quot;image/x-icon&quot; href=&quot;../images/favicon.ico&quot; &gt;
-    &lt;link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;../images/favicon.ico&quot;/&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://pro.fontawesome.com/releases/v5.10.0/css/all.css&quot; integrity=&quot;sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p&quot; crossorigin=&quot;anonymous&quot;/&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div id=&quot;container&quot;&gt;
-        &lt;div id=&quot;numero&quot; class=&quot;numero&quot;&gt;0&lt;/div&gt;
-        &lt;hr&gt;
-        &lt;div class=&quot;flexStyle&quot;&gt;
-        &lt;button id=&quot;btn2&quot; onclick=&quot;restar()&quot;&gt;&lt;i class=&quot;fas fa-minus&quot;&gt;&lt;/i&gt;&lt;/button&gt;
-        &lt;button id=&quot;btn1&quot; onclick=&quot;sumar()&quot;&gt;&lt;i class=&quot;fas fa-plus&quot;&gt;&lt;/i&gt;&lt;/button&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot; /&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;
+        &lt;title&gt;Aplicaci&oacute;n del clima&lt;/title&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot; /&gt;
+        &lt;link href=&quot;https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class=&quot;container&quot;&gt;
 
-    &lt;script src=&quot;./script.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
+            &lt;form class=&quot;inputForm&quot;&gt;
+                &lt;input class=&quot;inputCity&quot; type=&quot;text&quot; placeholder=&quot;Busca una ciudad...&quot;/&gt;
+                &lt;button class=&quot;formBtn&quot;&gt;&lt;i class=&quot;far fa-search&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+            &lt;/form&gt;
+
+            &lt;div class=&quot;result&quot;&gt;
+                &lt;p&gt;
+                    &lt;i class=&quot;fal fa-map-marker-alt&quot;&gt;&lt;/i&gt;
+                    &lt;span class=&quot;city&quot;&gt;&lt;/span&gt;
+                    &lt;span class=&quot;country&quot;&gt;&lt;/span&gt;
+                &lt;/p&gt;
+
+                &lt;p class=&quot;temprature&quot;&gt;&lt;/p&gt;
+
+                &lt;div class=&quot;flex&quot;&gt;
+                    &lt;img src=&quot;&quot; class=&quot;icono&quot;&gt;
+                    &lt;p class=&quot;sky&quot;&gt;&lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;p class=&quot;min-max&quot;&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;script src=&quot;app.js&quot;&gt;&lt;/script&gt;
+    &lt;/body&gt;
 &lt;/html&gt;</code></pre></div>
                 </div>
             </div>
@@ -87,121 +102,117 @@
             <div class="panel">
                     <div class="codigo__css">
                         <div class="decor__bar"></div>
-                        <pre class="line-numbers"><code class="language-css">@import url(&#x27;https://fonts.googleapis.com/css2?family=Fraunces:wght@300&#x26;display=swap&#x27;);
+                        <pre class="line-numbers"><code class="language-css">@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap");
 
-*{
+* {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-body{
-    font-size: 1.3em;
-    font-family: &#x27;Fraunces&#x27;, serif;
-    background: #fcbf49;
-    overflow: hidden;
+body {
+    background: #AFBBF2;
+    color: #292E1E;
+    font-family: "Nanum Gothic", sans-serif;
 }
 
-#container{
+.container{
     background: #fff;
-    color: #999;
-    width: 200px;
+    padding: 1rem;
     border-radius: 5px;
-    padding: 20px;
+    width: 300px;
     position: absolute;
-    transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    animation: coolAnimation 1s;
 }
 
-.flexStyle{
+.flex{
     display: flex;
-    justify-content: space-around;
-}
-
-hr{
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    margin: 20px 10px;
-}
-
-#numero{
-    font-size: 3em;
     text-align: center;
-    margin-bottom: 20px;
-    user-select: none;
-    font-weight: bold;
+    width: 145px;
+    margin: auto;
 }
 
-#btn1, #btn2{
-    padding: 20px;
-    margin: 10px;
-    border-radius: 5px;
-    border: none;
+.flex img{
+    margin-right: 10px;
+}
+
+.inputCity{
+    width: 219.5px;
+    border-left: none;
+    border-top: none;
+    border-right: none;
     outline: none;
+    border-bottom: 1px solid rgb(239, 239, 239);
+    color: #7F0799;
+    animation: coolAnimation 1s;
+}
+
+.inputCity,
+.formBtn {
+    font-size: 1rem;
+    padding: 7px 14px;
+    border-radius: 5px;
+    outline: none;
+    font-family: "Nanum Gothic", sans-serif;
+    margin-bottom: 1rem;
+}
+
+.formBtn{
+    background: #9649CB;
+    color: #fff;
     cursor: pointer;
-    transition: .4s;
-    color: #999;
-    background: #fff;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    width: 50%;
+    border: none;
+    transition: 0.3s all ease;
+    animation: coolAnimation 1s;
 }
 
-#btn1:hover, #btn2:hover{
-  animation: shake 0.5s;
-  animation-iteration-count: infinite;
-}
-
-#btn1:hover{
-    background: green;
+.formBtn:hover {
+    background: #7F0799;
     color: #fff;
 }
 
-#btn2:hover{
-    background: red;
-    color: #fff;
+.result p {
+    margin: 1rem 0;
+    text-align: center;
+    animation: coolAnimation 1s;
 }
 
-.animation{
-    animation: animation .3s;
+.result i{
+    font-size: 1.4rem;
+    color: #7F0799;
 }
 
-.animation2{
-    animation: animation2 .3s;
+.city,
+.country {
+    font-size: 1.5rem;
 }
 
-@keyframes animation{
+.temprature {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #7F0799;
+}
+
+.sky {
+    font-size: 1.3rem;
+}
+
+.min-max {
+    font-size: 1.1rem;
+}
+
+
+
+@keyframes coolAnimation{
+
     0%{
-        transform: rotate(-180deg) scale(5.3) skew(30deg);
-
+        opacity: 0;
     }
 
-    80%{
-        opacity: 0.5;
-    }
-}
-
-@keyframes animation2{
-    0%{
-        transform: rotate(180deg) scale(5.3) skew(-30deg);
-    }
-
-    80%{
-        opacity: 0.5;
-    }
-}
-
-@keyframes shake {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    20% { transform: translate(-3px, 0px) rotate(1deg); }
-    30% { transform: translate(3px, 2px) rotate(0deg); }
-    40% { transform: translate(1px, -1px) rotate(1deg); }
-    50% { transform: translate(-1px, 2px) rotate(-1deg); }
-    60% { transform: translate(-3px, 1px) rotate(0deg); }
-    70% { transform: translate(3px, 1px) rotate(-1deg); }
-    80% { transform: translate(-1px, -1px) rotate(1deg); }
-    90% { transform: translate(1px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -2px) rotate(-1deg); }
 }</code></pre></div>
                 </div>
             </div>
@@ -210,69 +221,42 @@ hr{
             <div class="panel">
                     <div class="codigo__javascript">
                         <div class="decor__bar"></div>
-                        <pre class="line-numbers"><code class="language-javascript">//Variables
+                        <pre class="line-numbers"><code class="language-javascript">const apiKey = "16f00dd6edca31d9934c7fd9cdfba77c";
+const baseUrl = "https://api.openweathermap.org/data/2.5/weather?";
+const form = document.querySelector(".inputForm");
+const lang = "sp";
 
-const numero = document.getElementById(&#x27;numero&#x27;);
-const btn1 = document.getElementById(&#x27;btn1&#x27;);
-const btn2 = document.getElementById(&#x27;btn2&#x27;);
+form.addEventListener("submit", handleSubmit);
 
-const sumar = () =&#x3E; {
-
-   removeAnimationClass();
-
-   setTimeout(() =&#x3E;{
-      numero.classList.add(&#x27;animation&#x27;);
-   }, 10);
-
-   numero.innerText++;
-
-   testColor();
-
-   console.log(numero.innerHTML);
-
-   return numero.innerText;
+function handleSubmit(e) {
+    e.preventDefault();
+    const city = document.querySelector(".inputCity").value;
+    fetchWeatherData(city);
 
 }
 
-const restar = () =&#x3E; {
+async function fetchWeatherData(city) {
 
-   removeAnimationClass();
-
-   setTimeout(() =&#x3E;{
-      numero.classList.add(&#x27;animation2&#x27;);
-   }, 10);
-
-   numero.innerText--;
-
-   testColor();
-
-   console.log(numero.innerHTML);
-
-   return numero.innerText;
+    const apiResponse =
+    await fetch(`${baseUrl}q=${city}&units=metric&lang=${lang}&APPID=${apiKey}`)
+    const weatherData = apiResponse.json();
+    weatherData.then(data => {
+        console.log(data)
+        document.querySelector(".city").textContent = data.name;
+        document.querySelector(".country").textContent = `, ${data.sys.country}`;
+        document.querySelector(".temprature").textContent =
+        `${Math.round(data.main.temp)}°c`;
+        document.querySelector(".icono").src =
+        `https://api.openweathermap.org/img/w/${data.weather[0].icon}.png`
+        document.querySelector(".sky").textContent = data.weather[0].main;
+        document.querySelector(".min-max").textContent =
+        `${data.main.temp_min}°c / ${data.main.temp_max}°c`;
+    });
 }
 
-const removeAnimationClass = () =&#x3E; {
-   numero.classList.remove(&#x27;animation2&#x27;, &#x27;animation&#x27;);
-}
-
-const testColor = () =&#x3E;{
-   if(numero.innerText === &#x27;0&#x27;){
-      numero.style.color = &#x27;#999&#x27;;
-   }else if(numero.innerText &#x3C; &#x27;0&#x27;){
-      numero.style.color = &#x22;red&#x22;;
-   }else{
-      numero.style.color = &#x22;green&#x22;;
-   }
-}
-
-// Activar contador autom&#xE1;tico:
-
-// Suma autom&#xE1;ticamente
-// setInterval(sumar, 1000);
-
-// Resta autom&#xE1;ticamente
-// setInterval(restar, 1000);
-</code></pre></div>
+document.addEventListener("DOMContentLoaded", function() {
+    fetchWeatherData("Santa Marta");
+});</code></pre></div>
                 </div>
                 <!-- share box -->
 
@@ -298,7 +282,7 @@ const testColor = () =&#x3E;{
 
 
             <div class="footer-btns">
-                <a>Mejorar Proyecto</a>
+                <a href="https://www.github.com/hernandoabella/aplicacion-meteorologica" target="_blank">Mejorar Proyecto</a>
                 <a href="https://www.buymeacoffee.com/hernandoabella" target="_blank">Cómprame un café</a>
                 <a class="compartir">Compartir</a>
             </div>
