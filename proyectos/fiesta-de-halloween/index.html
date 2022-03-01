@@ -1,115 +1,60 @@
-<!-- Made by Hernando Abella -->
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fiesta de Halloween</title>
-    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Mr+Dafoe|Nothing+You+Could+Do|Yellowtail|Roboto" rel="stylesheet">
+    <title>Fiesta de halloween</title>
     <link rel="stylesheet" href="./component.css">
     <link rel="stylesheet" href="/css/temaPrism.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body>
+
     <section class="codigo__del__proyecto">
-        <div class="app__background">
-            <div class="app__container">
-                
-                <!-- app code goes here -->
-
-                <div class="s">
-                <form class="form">
-  
-  <h1>🎃 Fiesta de Halloween</h1>
-  
-  <div class="signup__field">
-    <label for="halloween_name" class="label"><b>Nombre:</b></label>
-    <input type="text" name="halloween_name" id="halloween_name" class="name_field" maxlength="20" placeholder="Por favor ingresa tu nombre." />
-  </div>
-
-  <fieldset>
-
-    <legend>Detalles:</legend>
-
-    <div class="signup__field">
-      <label class="label" for="costume_type">¿Qué clase de disfráz estás usando?</label>
-      <div class="select-field">
-        <select name="costume_type" id="costume_type" class="select-field__menu">
-          <option>Elige uno</option>
-          <option value="monster">Monstruo</option>
-          <option value="spellcaster">Hechicero</option>
-          <option value="vampire">Vampiro</option>
-          <option value="ghost">Fantasma</option>
-          <option value="zombie">Zombie</option>
-          <option value="pop_culture">Referencia de la cultura pop</option>
-          <option value="other">Otro</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="signup__field">
-      <div class="label">¿Prefieres dulces o trucos?</div>
-      <input type="radio" value="tricks" id="tricks" name="prefers" checked="checked" />
-      <label for="tricks">Trucos</label>
-      <input type="radio" value="treats" id="treats" name="prefers" />
-      <label for="treats">Dulces</label>
-      
-    </div>
-  </fieldset>
-
-  <div class="signup__field">
-    <input type="checkbox" id="bringing_snacks" name="bringing_snacks" />
-    <label for="bringing_snacks">Me ofrezco de voluntario para traer un refrigerio.</label>
-  </div>
-
-  <div class="signup__button">
-    <button class="button" type="submit">Enviar</button>
-  </div>
-
-</form>
-
-<div id="name-tag">
-  <h1>Hola mi nombre es</h1>
-  <p id="namefield">Hernando</p>
-  <p id="costume">Se supone que soy un Vampire</p>
-  <p id="prefer">Yo prefiero</p>
-  <p id="snack">No hay bocadillos, así que cómeme</p>
-  <p class="present">¡Muestra esta tarjeta en la puerta!</p>
-</div>
-
-                </div>
-                
-                <!-- app code goes here -->
-
+        <div class="app-container">
+            <div class="project__info">
+              <h3 class="project__title">🎃 Fiesta de halloween</h3>
+              <p>Reserva tu entrada para la fiesta del día de brujas.</p>
             </div>
-        </div>        
-        <section class="contenido__proyecto">
-            <h1 class="h1">Fiesta de Halloween</h1>
-        <br>
-        <p>Este sistema te permite ordenar pizzas.</p>
-        <br>
-        <div class="flexNav">
-            <ul class="breadcrumb">
-                <li><a href="/index.html">Inicio</a></li>
-                <li><a href="/proyectos">Proyectos</a></li>
-                <li>Sistema para ordenar pizzas</li>
-            </ul>
-        
-            <div class="download">
-                <a href="../sistema-para-ordenar-pizzas.rar" download><i class="fas fa-download"></i></a>
-                <a href="#">YouTube</a>
+            <div>
+                <!-- app goes here -->
+                <iframe src="https://hernandoabella.github.io/fiesta-de-halloween/"></iframe>
+                <!-- app goes here -->
             </div>
+            <div class="project__bottom"></div>
         </div>
 
-        <br>
+        <section class="contenido__proyecto">
+          <header>
+              <nav>
+                  <ul>
+                      <li>
+                          <a class="back" href="../"><i class="fas fa-angle-left"></i></a>
+                      </li>
+                      <li>
+                          <a href="/">Inicio</a>
+                      </li>
+                      <li>
+                          <a href="/aprende/">Aprende</a>
+                      </li>
+                      <li>
+                          <a href="/snippets/">Snippets</a>
+                      </li>
+                  </ul>
+              </nav>
+              <div class="download">
+                  <a href="../fiesta-de-halloween.rar" download><i class="fas fa-download descarga"></i></a>
+                  <a class="youtube" href="https://www.youtube.com/watch?v=sgGEDuY5zOs&t"><i class="fab fa-youtube"></i></a>
+                  <a class="github" href="https://www.github.com/hernandoabella/fiesta-de-halloween"><i class="fab fa-github-alt"></i></a>
+              </div>
+
+          </header>
 
         <div class="code__container">
-            <h5 class="html__tag">HTML</h5>
+            <div class="html__container">
             <div class="panel">
-                    <div class="codigo__htmlt">
-                        <div class="decor__bar html"></div>
+                    <div class="codigo__html">
                         <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
@@ -121,9 +66,9 @@
 &lt;/head&gt;
 &lt;body&gt;
 &lt;form class=&quot;form&quot;&gt;
-  
+
   &lt;h1&gt;&#x1F383; Fiesta de Halloween&lt;/h1&gt;
-  
+
   &lt;div class=&quot;signup__field&quot;&gt;
     &lt;label for=&quot;halloween_name&quot; class=&quot;label&quot;&gt;&lt;b&gt;Nombre:&lt;/b&gt;&lt;/label&gt;
     &lt;input type=&quot;text&quot; name=&quot;halloween_name&quot; id=&quot;halloween_name&quot; class=&quot;name_field&quot; maxlength=&quot;20&quot; placeholder=&quot;Por favor ingresa tu nombre.&quot; /&gt;
@@ -155,7 +100,7 @@
       &lt;label for=&quot;tricks&quot;&gt;Trucos&lt;/label&gt;
       &lt;input type=&quot;radio&quot; value=&quot;treats&quot; id=&quot;treats&quot; name=&quot;prefers&quot; /&gt;
       &lt;label for=&quot;treats&quot;&gt;Dulces&lt;/label&gt;
-      
+
     &lt;/div&gt;
   &lt;/fieldset&gt;
 
@@ -184,13 +129,14 @@
 &lt;/body&gt;
 &lt;/html&gt;</code></pre></div>
                 </div>
-            
-            <hr>
+            </div>
 
-            <h5 class="css__tag">CSS</h5>
+
+
+            <div class="css__container">
             <div class="panel">
                     <div class="codigo__css">
-                        <div class="decor__bar css"></div>
+                        <div class="decor__bar"></div>
                         <pre class="line-numbers"><code class="language-css">body{
     background: rgb(6, 6, 6);
 }
@@ -226,7 +172,7 @@ form{
     border-radius: 1rem;
     cursor: pointer;
 }
-  
+
 #name-tag {
     width: 340px;
     border: 2px solid orange;
@@ -253,23 +199,20 @@ input[type="text"]{
     margin-top: 5px;
 }</code></pre></div>
                 </div>
+            </div>
 
-            <hr>
-
-            <h5 class="javascript__tag">JAVASCRIPT</h5>
-            
+            <div class="js__container">
             <div class="panel">
                     <div class="codigo__javascript">
-                        <div class="decor__bar javascript"></div>
+                        <div class="decor__bar"></div>
                         <pre class="line-numbers"><code class="language-javascript">const form = document.querySelector("form");
 const namefield = document.getElementById("namefield");
 const prefer = document.getElementById("prefer");
 const costume = document.getElementById("costume");
 
 form.addEventListener("submit", (event) => {
-    
+
   let name = document.getElementById("halloween_name").value;
-  
   if (name.length > 0) {
     namefield.innerHTML = name;
   } else {
@@ -301,18 +244,48 @@ form.addEventListener("submit", (event) => {
   document.getElementById("name-tag").style.display = "block";
   form.reset();
   event.preventDefault();
-  
-});
-</code></pre></div>
+
+});</code></pre></div>
                 </div>
+                <!-- share box -->
+
+                <div class="share-box">
+                  <div class="share-box-inner">
+                    <div class="closebtn">
+                      <i class="fa fa-times"></i>
+                    </div>
+                    <div class="share-on">
+                      <a class="facebook-share-button"><i class="fab fa-facebook"></i> Compartir en facebook</a>
+                      <a class="twitter-share-button"><i class="fab fa-twitter"></i> Compartir en Twitter</a>
+                      <a class="copy-link"><i class="fa fa-clipboard"></i> Copiar enlace</a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- share box -->
+            </div>
+
         </div>
+
+        <footer>
+
+
+            <div class="footer-btns">
+                <a href="https://www.github.com/hernandoabella/fiesta-de-halloween">Mejorar Proyecto</a>
+                <a href="https://www.buymeacoffee.com/hernandoabella" target="_blank">Cómprame un café</a>
+                <a class="compartir">Compartir</a>
+            </div>
+
+             <div class="clearfix">&nbsp;</div> <!-- Add this line -->
+
+        </footer>
+
         </section>
-        
+
+
     </section>
 
-    <footer>
-        <p>&copy; 2021 Hernando Abella</p>
-    </footer>
+
 
     <!--Scripts-->
 

@@ -1,24 +1,46 @@
-var indice = 1;
-mostrarSlides(indice);
+// botones para compartir proyectos
+const compartir = document.querySelector('.compartir');
+const copiarLink = document.querySelector('.copy-link');
+const cajaCompartir = document.querySelector('.share-box');
+const clsBtn = document.querySelector('.closebtn');
+const currentSite = window.location.href;
+const urlName = document.querySelector('.project__title').innerText;
+const cadenaRecortada = urlName.substr(3).toLowerCase()
 
-function siguienteSlide(n) {
-  mostrarSlides(indice += n);
+const twitterURL = `http://twitter.com/share?text=${urlName}&url=${currentSite}&hashtags=${cadenaRecortada},javascript`;
+const twitterShareBtn = document.querySelector('.twitter-share-button');
+twitterShareBtn.href = twitterURL;
+twitterShareBtn.target = "_blank";
+
+const facebookShareBtn = document.querySelector('.facebook-share-button');
+facebookShareBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${currentSite}`;
+facebookShareBtn.target = "_blank";
+
+const showShareBox = (e) => {
+  cajaCompartir.classList.toggle('transformActive');
 }
 
-function slideActual(n) {
-  mostrarSlides(indice = n);
+const copiarEnlace = () => {
+  let url = window.location.href;
+  let stringURL = url.toString();
+  navigator.clipboard.writeText(url);
+  copiarLink.innerHTML = '¡Enlace copiado!';
+  console.log('¡Enlace copiado!');
 }
 
-function mostrarSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  if (n > slides.length) {indice = 1}
-  if (n < 1) {indice = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+const outFunc = () => {
+  copiarLink.innerHTML = '<i class="fa fa-clipboard"></i> ' + 'Copiar enlace';
+}
+
+window.onclick = function(e) {
+  if(e.target == cajaCompartir) {
+    cajaCompartir.classList.toggle('transformActive');
   }
-  
-  slides[indice-1].style.display = "block";
-  
 }
 
+compartir.addEventListener('click', showShareBox);
+copiarLink.addEventListener('click', copiarEnlace);
+copiarLink.addEventListener('mouseout', outFunc);
+clsBtn.addEventListener('click', function(){
+  cajaCompartir.classList.toggle('transformActive');
+})

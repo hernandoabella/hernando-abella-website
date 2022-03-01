@@ -8,7 +8,7 @@ h1{
 }
 
 p{
-    color: #fff !important
+    color: #f6f6f6 !important
 }
 
 nav{
@@ -17,7 +17,7 @@ nav{
 
 header{
     display: flex;
-    background: var(--color-2) !important;
+    background: var(--color-1) !important;
     justify-content: space-between;
 }
 
@@ -28,21 +28,22 @@ header{
 iframe{
     border: none;
     width: 100%;
-    height: 500px;
+    height: 80vh;
+    display: block;
 }
 
 .project__info{
-  background: var(--color-1);
+  background: var(--color-2);
   padding: 10px;
 }
 
 .project__info h3{
-  color: var(--color-3);
+  color: #fff;
   padding: 5.3px 0px;
 }
 
 .back{
-    background: var(--color-1);
+    background: var(--color-2);
     padding: 10px;
     border-radius: 100px;
 }
@@ -53,7 +54,7 @@ iframe{
 
 .code__container{
     background: var(--color-4);
-    height: 500px;
+    height: 80vh;
     width: 100%;
 }
 
@@ -76,22 +77,23 @@ pre[class*="language-"]{
 .html__container pre{
     border: 5px solid #E34C26;
     box-shadow: var(--sombra-de-caja);
-    height: 153px !important;
+    height: 24.6vh !important;
     margin: 0px !important;
 }
 
 .css__container pre{
     border: 5px solid #264de4;
     box-shadow: var(--sombra-de-caja);
-    height: 153px !important;
+    height: 24.6vh !important;
     margin: 0px !important;
 }
 
 .js__container pre{
     border: 5px solid #F0DB4F;
     box-shadow: var(--sombra-de-caja);
-    height: 153px !important;
+    height: 24.6vh !important;
     margin: 0px !important;
+    resize: true;
 }
 
 .contenido__proyecto{
@@ -207,10 +209,13 @@ footer{
   clear: right;
 }
 
+.project__bottom{
+  padding: 24.5px;
+  background: var(--color-2);
+}
 
 
-
-/* mbile */
+/* mobile */
 @media only screen and (max-width: 950px){
 
 

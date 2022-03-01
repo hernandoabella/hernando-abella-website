@@ -1,122 +1,46 @@
-let form = document.getElementById('form1');
+// botones para compartir proyectos
+const compartir = document.querySelector('.compartir');
+const copiarLink = document.querySelector('.copy-link');
+const cajaCompartir = document.querySelector('.share-box');
+const clsBtn = document.querySelector('.closebtn');
+const currentSite = window.location.href;
+const urlName = document.querySelector('.project__title').innerText;
+const cadenaRecortada = urlName.substr(3).toLowerCase()
 
-function submit(e){
-    
-    e.preventDefault();
+const twitterURL = `http://twitter.com/share?text=${urlName}&url=${currentSite}&hashtags=${cadenaRecortada},javascript`;
+const twitterShareBtn = document.querySelector('.twitter-share-button');
+twitterShareBtn.href = twitterURL;
+twitterShareBtn.target = "_blank";
 
-    let name1 = document.getElementById("input1").value;
-    let name2 = name1.toLowerCase();
-    let len_ = name1.length;
-    let name4 = "";
+const facebookShareBtn = document.querySelector('.facebook-share-button');
+facebookShareBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${currentSite}`;
+facebookShareBtn.target = "_blank";
 
-    if (len_ < 2){
-        return false
-    }
-        
-    for (i = 0; i < len_; i++){
-    name3 = name2.charAt(i);
-
-    switch(name3) {
-        case "a":
-        name4 = "Amable 😊"
-        break;
-        case "b":
-        name4 = "Bueno 👌"
-        break;
-        case "c":
-        name4 = "Comedido 🤗"
-        break;
-        case "d":
-        name4 = "Decente 😌"
-        break;
-        case "e":
-        name4 = "Elegante 🤵‍"
-        break;
-        case "f":
-        name4 = "Fabuloso 🤩"
-        break;
-        case "g":
-        name4 = "Gigante 🌍"
-        break;
-        case "h":
-        name4 = "Hábil 🤹"
-        break;
-        case "i":
-        name4 = "Imparable 🏃"
-        break;
-        case "j":
-        name4 = "Jefe 😎"
-        break;
-        case "k":
-        name4 = "Kinético 🙋"
-        break;
-        case "l":
-        name4 = "Leopardo 🐆"
-        break;
-        case "m":
-        name4 = "Misionero 🤠"
-        break; 
-        case "n": 
-        name4 = "Nocturno 🌃" 
-        break; 
-        case "o": 
-        name4 = "Obrador 🤭" 
-        break; 
-        case "p": 
-        name4 = "Paciente 🕔" 
-        break; 
-        case "q": 
-        name4 = "Quejoso 😤" 
-        break; 
-        case "r": 
-        name4 = "Respetuoso 🙇" 
-        break; 
-        case "s": 
-        name4 = "Sinarca 👨‍⚖️" 
-        break; 
-        case "t": 
-        name4 = "Tigre 🐯" 
-        break; 
-        case "u": 
-        name4 = "Unicornio 🦄" 
-        break; 
-        case "v": 
-        name4 = "Valioso 💎" 
-        break; 
-        case "w": 
-        name4 = "Web 🌐" 
-        break; 
-        case "x": 
-        name4 = "X-men 🦸" 
-        break; 
-        case "y": 
-        name4 = "Yacente 💀" 
-        break; 
-        case "z": 
-        name4 = "Zafiro 🔷" 
-        break; 
-        default:
-        name3 = "";
-        name1 = "";
-        name4 = ""
-    }
-
-    document.getElementById("div22").innerHTML += 
-    "<div><span class='name3'> " + name3 + " - </span><span class='name4'>  " + name4 + "</span></div>";
-
-    }
-
-    let letters = /^[A-Za-z]+$/;
-    
-    if(name1.match(letters)){
-        document.getElementById("div1").style.display = "none";
-        document.getElementById("div2").style.display = "block";
-        document.querySelector('h1').style.display = "none";
-        
-    } else {
-        document.getElementById("div22").innerHTML = "";
-        return false;
-    }
+const showShareBox = (e) => {
+  cajaCompartir.classList.toggle('transformActive');
 }
 
-form.addEventListener('submit', submit);
+const copiarEnlace = () => {
+  let url = window.location.href;
+  let stringURL = url.toString();
+  navigator.clipboard.writeText(url);
+  copiarLink.innerHTML = '¡Enlace copiado!';
+  console.log('¡Enlace copiado!');
+}
+
+const outFunc = () => {
+  copiarLink.innerHTML = '<i class="fa fa-clipboard"></i> ' + 'Copiar enlace';
+}
+
+window.onclick = function(e) {
+  if(e.target == cajaCompartir) {
+    cajaCompartir.classList.toggle('transformActive');
+  }
+}
+
+compartir.addEventListener('click', showShareBox);
+copiarLink.addEventListener('click', copiarEnlace);
+copiarLink.addEventListener('mouseout', outFunc);
+clsBtn.addEventListener('click', function(){
+  cajaCompartir.classList.toggle('transformActive');
+})

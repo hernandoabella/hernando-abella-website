@@ -1,7 +1,5 @@
-<!-- Made by Hernando Abella -->
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,71 +10,50 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body>
-<header>
-        <nav>
-            <ul>
-                <li>
-                    <a href="../"><i class="fas fa-angle-left"></i></a>
-                </li>
-                <li>
-                    <a href="/">Inicio</a>
-                </li>
-                <li>
-                    <a href="/aprende/">Aprende</a>
-                </li>
-                <li>
-                    <a href="/snippets/">Snippets</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+
     <section class="codigo__del__proyecto">
-        <div class="app__background">
-            <div class="app__container">
-                
-                <!-- app code goes here -->
-
-                <div class="s">
-                <div class="contenedor">
-                  <div class="mySlides fade">
-                    <img src="assets/imagen1.jpg" style="width:100%">
-                  </div>
-                
-                  <div class="mySlides fade">
-                    <img src="assets/imagen2.jpg" style="width:100%">
-                  </div>
-                
-                  <div class="mySlides fade">
-                    <img src="assets/imagen3.jpg" style="width:100%">
-                  </div>
-              
-                  <a class="prev" onclick="siguienteSlide(-1)">&#10094;</a>
-                  <a class="next" onclick="siguienteSlide(1)">&#10095;</a>
-              </div>
-                </div>
-                
-                <!-- app code goes here -->
-
+        <div class="app-container">
+            <div class="project__info">
+              <h3 class="project__title">🖼️ Deslizador de imágenes</h3>
+              <p>Esta aplicación te permite recorrer imágenes en forma de diapositivas.</p>
             </div>
-        </div>        
+            <div>
+                <!-- app goes here -->
+                <iframe src="https://hernandoabella.github.io/deslizador-de-imagenes/"></iframe>
+                <!-- app goes here -->
+            </div>
+        </div>
+
         <section class="contenido__proyecto">
-            <h1 class="h1">Deslizador de imágenes</h1>
-      
-        <p>Este deslizador te permite insertar imágenes en forma de diapositiva.</p>
-      
-        <div class="download">
-                <a href="../contador.rar" download><i class="fas fa-download descarga"></i></a>
-                <a class="youtube" href="https://www.youtube.com/watch?v=sgGEDuY5zOs&t"><i class="fab fa-youtube"></i></a>
-            </div>
+          <header>
+              <nav>
+                  <ul>
+                      <li>
+                          <a class="back" href="../"><i class="fas fa-angle-left"></i></a>
+                      </li>
+                      <li>
+                          <a href="/">Inicio</a>
+                      </li>
+                      <li>
+                          <a href="/aprende/">Aprende</a>
+                      </li>
+                      <li>
+                          <a href="/snippets/">Snippets</a>
+                      </li>
+                  </ul>
+              </nav>
+              <div class="download">
+                  <a href="../reproductor-de-musica.rar" download><i class="fas fa-download descarga"></i></a>
+                  <a class="youtube" href="#"><i class="fab fa-youtube"></i></a>
+                  <a class="github" href="https://www.github.com/hernandoabella/reproductor-de-musica" target="_blank"><i class="fab fa-github-alt"></i></a>
+              </div>
 
-    
+          </header>
 
         <div class="code__container">
-
             <div class="html__container">
             <div class="panel">
-                    <div class="codigo__htmlt">
-                        <div class="decor__bar "></div>
+                    <div class="codigo__html">
                         <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
@@ -91,31 +68,30 @@
         &lt;div class=&quot;mySlides fade&quot;&gt;
           &lt;img src=&quot;assets/imagen1.jpg&quot; style=&quot;width:100%&quot;&gt;
         &lt;/div&gt;
-      
+
         &lt;div class=&quot;mySlides fade&quot;&gt;
           &lt;img src=&quot;assets/imagen2.jpg&quot; style=&quot;width:100%&quot;&gt;
         &lt;/div&gt;
-      
+
         &lt;div class=&quot;mySlides fade&quot;&gt;
           &lt;img src=&quot;assets/imagen3.jpg&quot; style=&quot;width:100%&quot;&gt;
         &lt;/div&gt;
-    
+
         &lt;a class=&quot;prev&quot; onclick=&quot;siguienteSlide(-1)&quot;&gt;&amp;#10094;&lt;/a&gt;
         &lt;a class=&quot;next&quot; onclick=&quot;siguienteSlide(1)&quot;&gt;&amp;#10095;&lt;/a&gt;
     &lt;/div&gt;
-    
+
 
     &lt;script src=&quot;./script.js&quot;&gt;&lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre></div>
                 </div>
             </div>
-            
-           
+
             <div class="css__container">
             <div class="panel">
                     <div class="codigo__css">
-                        <div class="decor__bar "></div>
+                        <div class="decor__bar"></div>
                         <pre class="line-numbers"><code class="language-css">* {
   box-sizing: border-box;
 }
@@ -185,8 +161,6 @@ img{
   from {opacity: .4}
   to {opacity: 1}
 }
-
-
 </code></pre></div>
                 </div>
             </div>
@@ -194,7 +168,7 @@ img{
             <div class="js__container">
             <div class="panel">
                     <div class="codigo__javascript">
-                        <div class="decor__bar "></div>
+                        <div class="decor__bar"></div>
                         <pre class="line-numbers"><code class="language-javascript">var indice = 1;
 mostrarSlides(indice);
 
@@ -214,18 +188,51 @@ function mostrarSlides(n) {
   for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
   }
-  
-  slides[indice-1].style.display = "block";
-  
-}
 
+  slides[indice-1].style.display = "block";
+
+}
 </code></pre></div>
                 </div>
+                <!-- share box -->
+
+                <div class="share-box">
+                  <div class="share-box-inner">
+                    <div class="closebtn">
+                      <i class="fa fa-times"></i>
+                    </div>
+                    <div class="share-on">
+                      <a class="facebook-share-button"><i class="fab fa-facebook"></i> Compartir en facebook</a>
+                      <a class="twitter-share-button"><i class="fab fa-twitter"></i> Compartir en Twitter</a>
+                      <a class="copy-link"><i class="fa fa-clipboard"></i> Copiar enlace</a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- share box -->
             </div>
+
         </div>
+
+        <footer>
+
+
+            <div class="footer-btns">
+                <a href="https://www.github.com/hernandoabella/galeria-de-imagenes" target="_blank">Mejorar Proyecto</a>
+                <a href="https://www.buymeacoffee.com/hernandoabella" target="_blank">Cómprame un café</a>
+                <a class="compartir">Compartir</a>
+            </div>
+
+             <div class="clearfix">&nbsp;</div> <!-- Add this line -->
+
+        </footer>
+
         </section>
-        
+
+
     </section>
+
+
 
     <!--Scripts-->
 

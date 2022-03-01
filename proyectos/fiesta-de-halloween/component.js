@@ -1,42 +1,46 @@
-const form = document.querySelector("form");
-const namefield = document.getElementById("namefield");
-const prefer = document.getElementById("prefer");
-const costume = document.getElementById("costume");
+// botones para compartir proyectos
+const compartir = document.querySelector('.compartir');
+const copiarLink = document.querySelector('.copy-link');
+const cajaCompartir = document.querySelector('.share-box');
+const clsBtn = document.querySelector('.closebtn');
+const currentSite = window.location.href;
+const urlName = document.querySelector('.project__title').innerText;
+const cadenaRecortada = urlName.substr(3).toLowerCase()
 
-form.addEventListener("submit", (event) => {
-    
-  let name = document.getElementById("halloween_name").value;
-  
-  if (name.length > 0) {
-    namefield.innerHTML = name;
-  } else {
-    namefield.innerHTML = "No se quien soy.";
+const twitterURL = `http://twitter.com/share?text=${urlName}&url=${currentSite}&hashtags=${cadenaRecortada},javascript`;
+const twitterShareBtn = document.querySelector('.twitter-share-button');
+twitterShareBtn.href = twitterURL;
+twitterShareBtn.target = "_blank";
+
+const facebookShareBtn = document.querySelector('.facebook-share-button');
+facebookShareBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${currentSite}`;
+facebookShareBtn.target = "_blank";
+
+const showShareBox = (e) => {
+  cajaCompartir.classList.toggle('transformActive');
+}
+
+const copiarEnlace = () => {
+  let url = window.location.href;
+  let stringURL = url.toString();
+  navigator.clipboard.writeText(url);
+  copiarLink.innerHTML = '¡Enlace copiado!';
+  console.log('¡Enlace copiado!');
+}
+
+const outFunc = () => {
+  copiarLink.innerHTML = '<i class="fa fa-clipboard"></i> ' + 'Copiar enlace';
+}
+
+window.onclick = function(e) {
+  if(e.target == cajaCompartir) {
+    cajaCompartir.classList.toggle('transformActive');
   }
+}
 
-  let select = document.getElementById("costume_type");
-  let text = select.options[select.selectedIndex].text;
-
-  if (text == "Elige uno" || text == "Otro") {
-    costume.innerHTML = "¡No sé quién se supone que debo ser!";
-  } else {
-    costume.innerHTML = `Se supone que soy un ${text}`;
-  }
-
-  if (document.getElementById("treats").checked) {
-    prefer.innerHTML = "¡Prefiero dulces!";
-  } else {
-    prefer.innerHTML = "¡Prefiero trucos!";
-  }
-
-  let snack = document.getElementById("snack");
-  snack.innerHTML = "¡No hay bocadillos, así que cómeme!";
-
-  if (document.getElementById("bringing_snacks").checked) {
-    snack.innerHTML = "¡Traigo bocadillos!";
-  }
-
-  document.getElementById("name-tag").style.display = "block";
-  form.reset();
-  event.preventDefault();
-  
-});
+compartir.addEventListener('click', showShareBox);
+copiarLink.addEventListener('click', copiarEnlace);
+copiarLink.addEventListener('mouseout', outFunc);
+clsBtn.addEventListener('click', function(){
+  cajaCompartir.classList.toggle('transformActive');
+})

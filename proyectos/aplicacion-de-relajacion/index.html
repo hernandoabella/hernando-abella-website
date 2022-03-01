@@ -1,7 +1,5 @@
-<!-- Made by Hernando Abella -->
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,65 +11,49 @@
 </head>
 <body>
 
-<header>
-        <nav>
-            <ul>
-                <li>
-                    <a href="../"><i class="fas fa-angle-left"></i></a>
-                </li>
-                <li>
-                    <a href="/">Inicio</a>
-                </li>
-                <li>
-                    <a href="/aprende/">Aprende</a>
-                </li>
-                <li>
-                    <a href="/snippets/">Snippets</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
     <section class="codigo__del__proyecto">
-        <div class="app__background">
-            <div class="app__container">
-                
-                <!-- app code goes here -->
-
-                <div class="se">
-                      <div class="container" id="container">
-            <div class="circle"></div>
-
-            <p id="text"></p>
-
-            <div class="pointer-container">
-              <span class="pointer"></span>
+        <div class="app-container">
+            <div class="project__info">
+              <h3 class="project__title">💆 Aplicación de relajación</h3>
+              <p>Esta aplicación te ayuda a relajarte.</p>
             </div>
-
-            <div class="gradient-circle"></div>
-          </div>
-                </div>
-                
-                <!-- app code goes here -->
-
+            <div>
+                <!-- app goes here -->
+                <iframe src="https://hernandoabella.github.io/aplicacion-de-relajacion/"></iframe>
+                <!-- app goes here -->
             </div>
         </div>
-        
-        <section class="contenido__proyecto">
-          <h1>Aplicación de relajación</h1>
-          <p>Esta aplicación te permite relajarte.</p>
-          <div class="download">
-                <a href="../aplicacion-de-relajacion.rar" download><i class="fas fa-download descarga"></i></a>
-                <a class="youtube" href="https://www.youtube.com/watch?v=sgGEDuY5zOs&t"><i class="fab fa-youtube"></i></a>
-            </div>
 
+        <section class="contenido__proyecto">
+          <header>
+              <nav>
+                  <ul>
+                      <li>
+                          <a class="back" href="../"><i class="fas fa-angle-left"></i></a>
+                      </li>
+                      <li>
+                          <a href="/">Inicio</a>
+                      </li>
+                      <li>
+                          <a href="/aprende/">Aprende</a>
+                      </li>
+                      <li>
+                          <a href="/snippets/">Snippets</a>
+                      </li>
+                  </ul>
+              </nav>
+              <div class="download">
+                  <a href="../contador.rar" download><i class="fas fa-download descarga"></i></a>
+                  <a class="youtube" href="#"><i class="fab fa-youtube"></i></a>
+                  <a class="github" href="https://www.github.com/hernandoabella/aplicacion-de-relajacion"><i class="fab fa-github-alt"></i></a>
+              </div>
+
+          </header>
 
         <div class="code__container">
-           
             <div class="html__container">
             <div class="panel">
-                    <div class="codigo__htmlt">
-                        <div class="decor__bar "></div>
+                    <div class="codigo__html">
                         <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
   &lt;head&gt;
@@ -97,17 +79,16 @@
 
     &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
   &lt;/body&gt;
-&lt;/html&gt;
-</code></pre></div>
+&lt;/html&gt;</code></pre></div>
                 </div>
             </div>
-            
-            
+
+
 
             <div class="css__container">
             <div class="panel">
                     <div class="codigo__css">
-                        <div class="decor__bar "></div>
+                        <div class="decor__bar"></div>
                         <pre class="line-numbers"><code class="language-css">@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 * {
@@ -220,16 +201,14 @@ body {
   to {
     transform: scale(1);
   }
-}
-</code></pre></div>
+}</code></pre></div>
                 </div>
             </div>
-            
 
             <div class="js__container">
             <div class="panel">
                     <div class="codigo__javascript">
-                        <div class="decor__bar "></div>
+                        <div class="decor__bar"></div>
                         <pre class="line-numbers"><code class="language-javascript">const container = document.getElementById('container');
 const text = document.getElementById('text');
 
@@ -256,13 +235,45 @@ function breathAnimation() {
 setInterval(breathAnimation, totalTime);
 </code></pre></div>
                 </div>
+                <!-- share box -->
+
+                <div class="share-box">
+                  <div class="share-box-inner">
+                    <div class="closebtn">
+                      <i class="fa fa-times"></i>
+                    </div>
+                    <div class="share-on">
+                      <a class="facebook-share-button"><i class="fab fa-facebook"></i> Compartir en facebook</a>
+                      <a class="twitter-share-button"><i class="fab fa-twitter"></i> Compartir en Twitter</a>
+                      <a class="copy-link"><i class="fa fa-clipboard"></i> Copiar enlace</a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- share box -->
             </div>
 
-            
         </div>
+
+        <footer>
+
+
+            <div class="footer-btns">
+                <a href="https://www.github.com/hernandoabella/aplicacion-de-relajacion" target="_blank">Mejorar Proyecto</a>
+                <a href="https://www.buymeacoffee.com/hernandoabella" target="_blank">Cómprame un café</a>
+                <a class="compartir">Compartir</a>
+            </div>
+
+             <div class="clearfix">&nbsp;</div> <!-- Add this line -->
+
+        </footer>
+
         </section>
-        
+
+
     </section>
+
+
 
     <!--Scripts-->
 

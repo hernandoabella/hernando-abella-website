@@ -1,723 +1,343 @@
-<!-- Made by Hernando Abella -->
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito de Compras</title>
+    <title>Carrito de compras</title>
     <link rel="stylesheet" href="./component.css">
     <link rel="stylesheet" href="/css/temaPrism.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body>
-<header>
-        <nav>
-            <ul>
-                <li>
-                    <a href="../"><i class="fas fa-angle-left"></i></a>
-                </li>
-                <li>
-                    <a href="/">Inicio</a>
-                </li>
-                <li>
-                    <a href="/aprende/">Aprende</a>
-                </li>
-                <li>
-                    <a href="/snippets/">Snippets</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+
     <section class="codigo__del__proyecto">
-        <div class="app__background">
-            <div class="app__container">
-                
-                <!-- app code goes here -->
-
-                <div class="se">
-                  <div class="container">
-                  <table id="choices">
-                <tbody>
-                    <tr>
-                        <td><img src="./images/egg.png" alt="Egg" id="egg" /></td>
-                        <td><img src="./images/muffin.png" alt="muffin" id="muffin" /></td>
-                        <td><img src="./images/pancake.png" alt="pancakes" id="pancake" /></td>
-                        <td><img src="./images/biscuit.png" alt="biscuit" id="biscuit" /></td>
-                        <td><img src="./images/oj.png" alt="Orange juice" id="oj" /></td>
-                    </tr>
-                    <tr>
-                        <td><img src="./images/pbj.png" alt="Peanut butter and jelly" id="pbj" /></td>
-                        <td><img src="./images/bologna.png" alt="bologna" id="bologna" /></td>
-                        <td><img src="./images/taco.png" alt="taco" id="taco" /></td>
-                        <td><img src="./images/soup.png" alt="soup" id="soup" /></td>
-                        <td><img src="./images/water.png" alt="water" id="water" /></td>
-                    </tr>
-                    <tr>
-                        <td><img src="./images/burger.gif" alt="burger" id="burger" /></td>
-                        <td><img src="./images/pizza.png" alt="pizza" id="pizza" /></td>
-                        <td><img src="./images/chicken.png" alt="chicken" id="chicken" /></td>
-                        <td><img src="./images/salad.png" alt="salad" id="salad" /></td>
-                        <td><img src="./images/soda.png" alt="soda" id="soda" /></td>
-                    </tr>
-                    <tr>
-                        <td><img src="./images/icecream.png" alt="Ice cream" id="icecream" /></td>
-                        <td><img src="./images//flan.png" alt="flan" id="flan" /></td>
-                        <td><img src="./images/cookie.png" alt="cookie" id="cookie" /></td>
-                        <td><img src="./images/cupcake.png" alt="cupcake" id="cupcake" /></td>
-                        <td><img src="./images/milkshake.png" alt="milkshake" id="milkshake" /></td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <table id="carrito">
-                <tbody>
-                    <tr>
-                        <td>
-                            <div id="breakfast"></div>
-                        </td>
-
-                        <td>
-                            <div id="lunch"></div>
-                            
-                        </td>
-                        
-                        <td>
-                            <div id="dinner"></div>
-                          
-                        </td>
-                        
-                        <td>
-                            <div id="sweet"></div>
-                            
-                        </td>
-                        
-                        <td>
-                            <div id="drink"></div>
-                            
-                        </td>
-                    </tr>
-                </tbody>
-
-            </table>
-
-            <div id="contain">
-                <div>
-                    <input type="button" value="Vaciar carrito" onclick="clearList()" />
-                    <input type="button" value="Total" onclick="calculatePrice()" />
-                </div>
-                <div id="total">
-                    Total: $0.00
-                </div>
+        <div class="app-container">
+            <div class="project__info">
+              <h3 class="project__title">🛍️ Carrito de compras</h3>
+              <p>Esta aplicación te permite agregar productos y mostrarlos en una lista.</p>
             </div>
-        
-    </div>
-                  </div>
-                </div>
-                
-                <!-- app code goes here -->
-
+            <div>
+                <!-- app goes here -->
+                <iframe src="https://hernandoabella.github.io/carrito-de-compras/"></iframe>
+                <!-- app goes here -->
             </div>
         </div>
-        
+
         <section class="contenido__proyecto">
-            <h1>Carrito de Compras</h1>
-       
-        <p>Con este carrito de compras puedes comprar productos del supermercado selecciona la cantidad y paga al instante.</p>
-        
-        <div class="download">
-                <a href="../carrito-de-supermercado.rar" download><i class="fas fa-download descarga"></i></a>
-                <a class="youtube" href="#"><i class="fab fa-youtube"></i></a>
-            </div>
+          <header>
+              <nav>
+                  <ul>
+                      <li>
+                          <a class="back" href="../"><i class="fas fa-angle-left"></i></a>
+                      </li>
+                      <li>
+                          <a href="/">Inicio</a>
+                      </li>
+                      <li>
+                          <a href="/aprende/">Aprende</a>
+                      </li>
+                      <li>
+                          <a href="/snippets/">Snippets</a>
+                      </li>
+                  </ul>
+              </nav>
+              <div class="download">
+                  <a href="../carrito-de-compras.rar" download><i class="fas fa-download descarga"></i></a>
+                  <a class="youtube" href="#"><i class="fab fa-youtube"></i></a>
+                  <a class="github" href="https://www.github.com/hernandoabella/carrito-de-compras" target="_blank"><i class="fab fa-github-alt"></i></a>
+              </div>
+
+          </header>
 
         <div class="code__container">
-           
             <div class="html__container">
             <div class="panel">
-                    <div class="codigo__htmlt">
-                        <div class="decor__bar "></div>
+                    <div class="codigo__html">
                         <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&apos;en-US&apos;&gt;
-&lt;head&gt;
-    &lt;meta charset=&apos;UTF-8&apos; /&gt;
-    &lt;title&gt;Carrito de supermercado&lt;/title&gt;
-    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;./styles.css&quot;&gt;
-    &lt;link href=&quot;https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
-&lt;/head&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;meta name=&quot;author&quot; content=&quot;CodeHim&quot;&gt;
+    &lt;title&gt;Carrito de compras &#x1F6D2;&#x1F4AF;&#x1F525;&#x2728;&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;
+    &lt;link href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
 
-&lt;body&gt;
-
-    &lt;div class=&quot;container&quot;&gt;
-        &lt;table id=&quot;choices&quot;&gt;
-            &lt;tbody&gt;
-                &lt;tr&gt;
-                    &lt;td&gt;&lt;img src=&quot;./images/egg.png&quot; alt=&quot;Egg&quot; id=&quot;egg&quot; /&gt;&lt;/td&gt;
-                    &lt;td&gt;&lt;img src=&quot;./images/muffin.png&quot; alt=&quot;muffin&quot; id=&quot;muffin&quot; /&gt;&lt;/td&gt;
-                    &lt;td&gt;&lt;img src=&quot;./images/pancake.png&quot; alt=&quot;pancakes&quot; id=&quot;pancake&quot; /&gt;&lt;/td&gt;
-                    &lt;td&gt;&lt;img src=&quot;./images/biscuit.png&quot; alt=&quot;biscuit&quot; id=&quot;biscuit&quot; /&gt;&lt;/td&gt;
-                    &lt;td&gt;&lt;img src=&quot;./images/oj.png&quot; alt=&quot;Orange juice&quot; id=&quot;oj&quot; /&gt;&lt;/td&gt;
-                &lt;/tr&gt;
-                &lt;tr&gt;
-                    &lt;td&gt;&lt;img src=&quot;./images/pbj.png&quot; alt=&quot;Peanut butter and jelly&quot; id=&quot;pbj&quot; /&gt;&lt;/td&gt;
-                    &lt;td&gt;&lt;img src=&quot;./images/bologna.png&quot; alt=&quot;bologna&quot; id=&quot;bologna&quot; /&gt;&lt;/td&gt;
-                    &lt;td&gt;&lt;img src=&quot;./images/taco.png&quot; alt=&quot;taco&quot; id=&quot;taco&quot; /&gt;&lt;/td&gt;
-                    &lt;td&gt;&lt;img src=&quot;./images/soup.png&quot; alt=&quot;soup&quot; id=&quot;soup&quot; /&gt;&lt;/td&gt;
-                    &lt;td&gt;&lt;img src=&quot;./images/water.png&quot; alt=&quot;water&quot; id=&quot;water&quot; /&gt;&lt;/td&gt;
-                &lt;/tr&gt;
-                &lt;tr&gt;
-                    &lt;td&gt;&lt;img src=&quot;./images/burger.gif&quot; alt=&quot;burger&quot; id=&quot;burger&quot; /&gt;&lt;/td&gt;
-                    &lt;td&gt;&lt;img src=&quot;./images/pizza.png&quot; alt=&quot;pizza&quot; id=&quot;pizza&quot; /&gt;&lt;/td&gt;
-                    &lt;td&gt;&lt;img src=&quot;./images/chicken.png&quot; alt=&quot;chicken&quot; id=&quot;chicken&quot; /&gt;&lt;/td&gt;
-                    &lt;td&gt;&lt;img src=&quot;./images/salad.png&quot; alt=&quot;salad&quot; id=&quot;salad&quot; /&gt;&lt;/td&gt;
-                    &lt;td&gt;&lt;img src=&quot;./images/soda.png&quot; alt=&quot;soda&quot; id=&quot;soda&quot; /&gt;&lt;/td&gt;
-                &lt;/tr&gt;
-                &lt;tr&gt;
-                    &lt;td&gt;&lt;img src=&quot;./images/icecream.png&quot; alt=&quot;Ice cream&quot; id=&quot;icecream&quot; /&gt;&lt;/td&gt;
-                    &lt;td&gt;&lt;img src=&quot;./images//flan.png&quot; alt=&quot;flan&quot; id=&quot;flan&quot; /&gt;&lt;/td&gt;
-                    &lt;td&gt;&lt;img src=&quot;./images/cookie.png&quot; alt=&quot;cookie&quot; id=&quot;cookie&quot; /&gt;&lt;/td&gt;
-                    &lt;td&gt;&lt;img src=&quot;./images/cupcake.png&quot; alt=&quot;cupcake&quot; id=&quot;cupcake&quot; /&gt;&lt;/td&gt;
-                    &lt;td&gt;&lt;img src=&quot;./images/milkshake.png&quot; alt=&quot;milkshake&quot; id=&quot;milkshake&quot; /&gt;&lt;/td&gt;
-                &lt;/tr&gt;
-            &lt;/tbody&gt;
-        &lt;/table&gt;
-        
-        &lt;table id=&quot;carrito&quot;&gt;
-            &lt;tbody&gt;
-                &lt;tr&gt;
-                    &lt;td&gt;
-                        &lt;div id=&quot;breakfast&quot;&gt;&lt;/div&gt;
-                    &lt;/td&gt;
-
-                    &lt;td&gt;
-                        &lt;div id=&quot;lunch&quot;&gt;&lt;/div&gt;
-                        
-                    &lt;/td&gt;
-                    
-                    &lt;td&gt;
-                        &lt;div id=&quot;dinner&quot;&gt;&lt;/div&gt;
-                       
-                    &lt;/td&gt;
-                    
-                    &lt;td&gt;
-                        &lt;div id=&quot;sweet&quot;&gt;&lt;/div&gt;
-                        
-                    &lt;/td&gt;
-                    
-                    &lt;td&gt;
-                        &lt;div id=&quot;drink&quot;&gt;&lt;/div&gt;
-                        
-                    &lt;/td&gt;
-                &lt;/tr&gt;
-            &lt;/tbody&gt;
-
-        &lt;/table&gt;
-
-        &lt;div id=&quot;contain&quot;&gt;
-            &lt;div&gt;
-                &lt;input type=&quot;button&quot; value=&quot;Vaciar carrito&quot; onclick=&quot;clearList()&quot; /&gt;
-                &lt;input type=&quot;button&quot; value=&quot;Total&quot; onclick=&quot;calculatePrice()&quot; /&gt;
-            &lt;/div&gt;
-            &lt;div id=&quot;total&quot;&gt;
-                Total: $0.00
-            &lt;/div&gt;
-        &lt;/div&gt;
-        
+  &lt;div class=&quot;contenedor&quot;&gt;
+    &lt;div class=&quot;top&quot;&gt;
+      &lt;div class=&quot;carrito&quot;&gt;&lt;i class=&quot;fa-solid fa-bag-shopping&quot;&gt;&lt;/i&gt; &lt;span class=&quot;numeroCarrito&quot;&gt;0&lt;/span&gt;&lt;/div&gt;
     &lt;/div&gt;
 
-    &lt;script src=&quot;./script.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+    &lt;div class=&quot;inner__elements&quot;&gt;
+      &lt;div class=&quot;element__container&quot;&gt;
+        &lt;div class=&quot;img__container&quot;&gt;
+          &lt;img src=&quot;./img/image-1.jpg&quot; alt=&quot;image 1&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;element__data&quot;&gt;
+          &lt;h3&gt;element title 1&lt;/h3&gt;
+          &lt;div class=&quot;precio&quot;&gt;$449.4&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;counter__container&quot;&gt;
+          &lt;button class=&quot;mas&quot;&gt;&lt;i class=&quot;fas fa-plus&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+          &lt;span class=&quot;placehold__number&quot;&gt;0&lt;/span&gt;
+          &lt;button class=&quot;menos&quot;&gt;&lt;i class=&quot;fas fa-minus&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;element__container&quot;&gt;
+        &lt;div class=&quot;img__container&quot;&gt;
+          &lt;img src=&quot;./img/image-2.jpg&quot; alt=&quot;image 2&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;element__data&quot;&gt;
+          &lt;h3&gt;element title 2&lt;/h3&gt;
+          &lt;div class=&quot;precio&quot;&gt;$449.4&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;counter__container&quot;&gt;
+          &lt;button class=&quot;mas&quot;&gt;&lt;i class=&quot;fas fa-plus&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+          &lt;span class=&quot;placehold__number&quot;&gt;0&lt;/span&gt;
+          &lt;button class=&quot;menos&quot;&gt;&lt;i class=&quot;fas fa-minus&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;element__container&quot;&gt;
+        &lt;div class=&quot;img__container&quot;&gt;
+          &lt;img src=&quot;./img/image-3.jpg&quot; alt=&quot;image 2&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;element__data&quot;&gt;
+          &lt;h3&gt;element title 3 &lt;/h3&gt;
+          &lt;div class=&quot;precio&quot;&gt;$449.4&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;counter__container&quot;&gt;
+          &lt;button class=&quot;mas&quot;&gt;&lt;i class=&quot;fas fa-plus&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+          &lt;span class=&quot;placehold__number&quot;&gt;0&lt;/span&gt;
+          &lt;button class=&quot;menos&quot;&gt;&lt;i class=&quot;fas fa-minus&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;boton__checkout__container&quot;&gt;
+      &lt;button class=&quot;checkout&quot;&gt;boton 1&lt;/button&gt;
+      &lt;button class=&quot;checkout&quot;&gt;checkout&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 
+&lt;script  src=&quot;./js/script.js&quot;&gt;&lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre></div>
                 </div>
             </div>
-            
+
+
 
             <div class="css__container">
             <div class="panel">
                     <div class="codigo__css">
-                        <div class="decor__bar "></div>
-                        <pre class="line-numbers"><code class="language-css">@import url('https://fonts.googleapis.com/css2?family=Glory:wght@300&display=swap');
+                        <div class="decor__bar"></div>
+                        <pre class="line-numbers"><code class="language-css">@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300&family=Poppins:wght@700&display=swap');
+
+:root{
+    --color-fondo: #0077b6;
+    --fuenteTitulo: 'Poppins', sans-serif;
+    --fuenteTexto: 'Lato', sans-serif;
+}
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    user-select: none;
-    font-family: 'Glory', sans-serif;
 }
 
 body{
-    background: #FF3562;
+    background: #0077b6;
+    font-family: var(--fuenteTexto);
 }
 
-.container{
-    width: 320px;
-    background: #1B1B3A;
-    padding: 10px;
+h1, h2, h3, h4, h5, h6{
+    font-family: var(--fuenteTitulo);
+    color: rgb(28, 102, 75);
+    text-transform: uppercase;
+}
+
+.contenedor{
+    width: 380px;
+    background: #e8e8e8;
+    border-radius: 25px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
-#choices{
-    width: 100%;
-}
-
-#choices td{
-    background: #F84AA7;
-    cursor: pointer;
-    transition: .3s;
-}
-
-#choices td img{
-    width: 100% !important;
-    height: 100% !important;
-    line-height: 0;
-}
-
-#choices td:hover{
-    opacity: .8;
-}
-
-#carrito{
-    height: 230px;
-    width: 100%;
-}
-
-#carrito td{
-    height: 220px;
-    width: 57.59px;
-    background: #fff;
-    text-align: center;
-}
-
-#carrito .fixed{
+.top{
     display: block;
 }
 
-.fixed{
-    position: relative;
-    top: 15px;
-    color: #000;
+.img__container{
+    border-radius: 25%;
 }
 
-.fa-times {
-    color: #000;
+.img__container img{
+    width: 100px;
+    height: 100px;
+    border-radius: 25px;
+}
+
+.carrito{
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.numeroCarrito{
+    background: rgb(255, 76, 76);
+    padding: 5px;
+    border-radius: 25px;
+}
+
+.checkout{
+    width: 100%;
+    padding: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    display: block;
+}
+
+.element__container{
+    display: flex;
+    padding: 10px;
+    background: #d7d7d7;
+    border-radius: 25px;
+    margin: 10px;
+    align-items: center;
+}
+
+.counter__container{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 10px;
+}
+
+.counter__container button{
+    border-radius: 25px;
+    color: #fff;
+    padding: 10px;
+    width: 35px;
     cursor: pointer;
     border: none;
-    position: relative;
-    top: -36px;
-    right: -22px;
-    font-size: 0.8em;
 }
 
-#contain{
-    padding: 10px 0px 0px 0px;
+.mas{
+    background: rgb(27, 188, 129);
+}
+
+.menos{
+    background: rgb(255, 76, 76);
+}
+
+.element__data{
+    padding: 10px;
+}
+
+.placehold__number{
+    padding: 10px;
+    font-weight: bold;
+}
+
+.precio{
+    margin: 10px 0px;
+}
+
+.boton__checkout__container{
     display: flex;
 }
 
-#contain div{
-    width: 50%;
-}
-
-#contain input{
-    padding: 10px;
-    cursor: pointer;
-    transition: .3s;
+.boton__checkout__container button{
+    margin: 10px;
     border: none;
 }
-
-#contain input:hover{
-    background: #F84AA7;
-    color: #fff;
+.animacion1{
+    animation: animation1 1s;
 }
 
-#total{
-    font-weight: bold;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-}
-
-</code></pre></div>
+@keyframes animation1{
+    0%{
+        opacity: .5;
+    }
+}</code></pre></div>
                 </div>
             </div>
 
-           
             <div class="js__container">
             <div class="panel">
                     <div class="codigo__javascript">
-                        <div class="decor__bar "></div>
-                        <pre class="line-numbers"><code class="language-javascript">// Define los precios de cada artículo
+                        <div class="decor__bar"></div>
+                        <pre class="line-numbers"><code class="language-javascript">// variables
 
-const price = {
-  egg: 2.00,
-  muffin: 1.75,
-  pancake: 3.00,
-  biscuit: 2.00,
-  oj: 1.50,
-  pbj: 2.00,
-  bologna: 2.00,
-  taco: 2.00,
-  soup: 2.00,
-  water: 1.00,
-  burger: 4.00,
-  pizza: 2.00,
-  chicken: 3.00,
-  salad: 2.50,
-  soda: 1.60,
-  icecream: 2.50,
-  flan: 3.00,
-  cookie: 1.25,
-  cupcake: 1.75,
-  milkshake: 3.00
-};
-
-// Define las categorias para cada artículo
-
-let drink = ["oj", "water", "soda", "milkshake"];
-let breakfast = ["egg", "muffin", "pancake", "biscuit"];
-let lunch = ["pbj", "bologna", "taco", "soup"];
-let dinner = ["burger", "pizza", "chicken", "salad"];
-let sweet = ["icecream", "flan", "cookie", "cupcake"];
-
-// Agrega cada categoria a un objeto ()
-// add each category to an object (used for match individual items to their categories)
-
-let cats = { drink, breakfast, lunch, dinner, sweet };
-
-/* índices para elementos agregados a divisiones de categoría
-   * p.ej. si se agrega muffin después del panqueque, el muffin tendrá un índice de 1
-   */
-
-let drinkIdx = 0;
-let breakfastIdx = 0;
-let lunchIdx = 0;
-let dinnerIdx = 0;
-let sweetIdx = 0;
-
-/* establece atributos de imagen que se aplican a todas las imágenes
-   * esto también ahorra algo de desorden en el HTML
-   */
-
-function setAttributes() {
-  let unassigned = document.getElementsByTagName("img");
-  for (i = 0; i < unassigned.length; i++) {
-    unassigned[i].onclick = function () { addItem(this); };
-    unassigned[i].style.width = "150px";
-  }
-} setAttributes();
-
-// devuelve el precio de un artículo según la identificación de la imagen
-
-function getPrice(obj) {
-  let id = obj.id;
-  for (i in price) {
-    if (i == id) {
-      return price[i];
-    }
-  }
-};
-
-// devuelve la categoría de un artículo según la identificación de la imagen
-
-function getCategory(obj) {
-  let id = obj.id;
-  for (i in cats) {
-    for (j = 0; j < cats[i].length; j++) {
-      if (id == cats[i][j]) {
-        return i;
-      }
-    }
-  }
-};
-
-// calcula el precio total de todos los artículos en cada div categoría 
-
-function calculatePrice() {
-  let total = 0;
-  for (i in cats) {
-    let div = document.getElementById(i);
-    let nodes = div.childNodes;
-    for (j = 0; j < nodes.length; j++) {
-      total += parseFloat(nodes[j].getAttribute("price"));
-    }
-  }
-  let parseTotal = total.toFixed(2);
-  let totalDiv = document.getElementById("total");
-  totalDiv.innerHTML = "Total: $" + parseTotal;
+let numeroCarrito = document.querySelector('.numeroCarrito');
+let btnPlus = document.querySelector('.mas');
+let btnLess = document.querySelector('.menos');
+let precio = document.querySelector('.precio');
+let counter = document.querySelector('.placehold__number');
+const mas = () => {
+    +numeroCarrito.innerHTML++;
+    +counter.innerHTML++;
 }
-
-// borra la salida de calculatePrice () y la reemplaza con un espacio que no se rompe
-
-function clearTotal() {
-  let div = document.getElementById("total");
-  if (div.innerHTML != "") {
-    div.innerHTML = "&nbsp";
-  }
+const menos = () => {
+    +numeroCarrito.innerHTML--;
+    +counter.innerHTML--;
 }
-
-// borra cada div de categoría y restablece el índice de cada categoría a 0
-
-function clearList() {
-  for (i in cats) {
-    let div = document.getElementById(i)
-    while (div.hasChildNodes()) {
-      let nodes = div.childNodes;
-      div.removeChild(nodes[0]);
-    }
-  }
-  drinkIdx = 0;
-  breakfastIdx = 0;
-  lunchIdx = 0;
-  dinnerIdx = 0;
-  sweetIdx = 0;
-  clearTotal();
+const checkout = () => {
 }
-
-// borra una columna de categorías, restablece ese índice a 0 y borra el precio total (si está presente)
-
-function clearColumn(obj) {
-  let cat = obj.nextElementSibling.id;
-  let div = document.getElementById(cat);
-  while (div.hasChildNodes()) {
-    div.removeChild(div.childNodes[0]);
-  }
-  switch (cat) {
-    case "drink":
-      if (drinkIdx > 0) {
-        clearTotal();
-      }
-      drinkIdx = 0;
-      break;
-    case "breakfast":
-      if (breakfastIdx > 0) {
-        clearTotal();
-      }
-      breakfastIdx = 0;
-      break;
-    case "lunch":
-      if (lunchIdx > 0) {
-        clearTotal();
-      }
-      lunchIdx = 0;
-      break;
-    case "dinner":
-      if (dinnerIdx > 0) {
-        clearTotal();
-      }
-      dinnerIdx = 0;
-      break;
-    case "sweet":
-      if (sweetIdx > 0) {
-        clearTotal();
-      }
-      sweetIdx = 0;
-      break;
-  }
-}
-
-/* borra el contenido de una sola celda.
-   * porque el botón de borrar se superpone en la parte superior de la imagen del artículo
-   * hacer clic en el botón da como resultado dos llamadas
-   * 1) clearCell (...) elimina la "pila" de imágenes (realmente reduce el atributo de precio)
-   * 2) deleteItem (...) elimina la imagen real de la columna
-   */
-
-function clearCell(obj, category, price) {
-  let idx = obj.tabIndex;
-  let div = document.getElementById(category);
-  let nodes = div.childNodes;
-  let itemP = nodes[idx].getAttribute("price");
-  let n = itemP / price;
-  for (i = 0; i < n - 1; i++) {
-    deleteItem(obj, category, price);
-  }
-}
-
-// agrega la imagen de un elemento en una categoría div en función de la identificación de la imagen
-
-function addItem(obj) {
-  let idx; //used to idicate what position an item is in a column
-  let category = getCategory(obj);
-  let div = document.getElementById(category);
-
-  switch (category) {
-    case "drink":
-      idx = drinkIdx;
-      break;
-    case "breakfast":
-      idx = breakfastIdx;
-      break;
-    case "lunch":
-      idx = lunchIdx;
-      break;
-    case "dinner":
-      idx = dinnerIdx;
-      break;
-    case "sweet":
-      idx = sweetIdx;
-      break;
-  }
-
-  // determina si la siguiente entrada de imagen es una copia de una imagen anterior
-
-  var stack = false;
-  if (idx > 0) {
-    var srcImg = 'url("' + obj.src + '")';
-    var nodes = document.getElementById(category).childNodes;
-    for (i = 0; i < nodes.length; i++) {
-      if (nodes[i].style.backgroundImage == srcImg) {
-        stack = true;
-      }
-    }
-  }
-
-  /* si no hay pilas
-     * la imagen se agrega a un nuevo div como imagen de fondo
-     * el uso de la imagen de fondo permite la superposición de texto
-     * se establecen nuevos atributos div, así como información superpuesta
-     *
-     * si la imagen es una pila
-     * primero se recupera el índice de imágenes
-     * luego se actualiza la información de superposición
-     */
-
-  if (!stack) {
-    let newDiv = document.createElement("div");
-    newDiv.setAttribute("class", "fix");
-    newDiv.style.backgroundImage = "url(" + obj.src + ")";
-    newDiv.style.backgroundSize = "100px 100px";
-    newDiv.style.backgroundRepeat = "no-repeat";
-    newDiv.setAttribute("price", getPrice(obj));
-    newDiv.tabIndex = idx;
-    newDiv.onclick = function () { deleteItem(this, category, getPrice(obj)); };
-
-    let text = document.createElement("div");
-    text.innerHTML = "x1";
-    text.setAttribute("class", "fixed")
-
-    let dollar = document.createElement("div");
-    dollar.innerHTML = "$" + getPrice(obj).toFixed(2);
-    dollar.setAttribute("class", "fixed")
-
-    let inputDiv = document.createElement("div");
-    let icono = document.createElement("i");
-
-    icono.setAttribute("class", "fas fa-times");
-
-    icono.onclick = function () { clearCell(newDiv, category, getPrice(obj)); };
-    inputDiv.setAttribute("class", "fixer")
-    inputDiv.appendChild(icono);
-    newDiv.appendChild(text);
-    newDiv.appendChild(dollar);
-    newDiv.appendChild(inputDiv);
-    div.appendChild(newDiv);
-
-    switch (category) {
-      case "drink":
-        drinkIdx++;
-        break;
-      case "breakfast":
-        breakfastIdx++;
-        break;
-      case "lunch":
-        lunchIdx++;
-        break;
-      case "dinner":
-        dinnerIdx++;
-        break;
-      case "sweet":
-        sweetIdx++;
-        break;
-    }
-  } else {
-    let index;
-    for (i = 0; i < div.childNodes.length; i++) {
-      if (div.childNodes[i].style.backgroundImage == srcImg) {
-        index = i;
-      }
-    }
-    let node = div.childNodes[index];
-    let itemP = parseFloat(node.getAttribute("price"));
-    let count = node.firstElementChild;
-    let num = parseInt(count.innerHTML.substr(1, count.innerHTML.length)) + 1;
-
-    let dollar = count.nextElementSibling;
-    let amount = parseFloat(dollar.innerHTML.substr(1, dollar.innerHTML.length));
-    amount += getPrice(obj);
-
-    count.innerHTML = "x" + num;
-    dollar.innerHTML = "$" + amount.toFixed(2);
-    node.setAttribute("price", itemP + getPrice(obj));
-  }
-  clearTotal();
-};
-
-
- /* detecta un elemento de la columna
-   * si el artículo está apilado (es decir, su atributo de precio es mayor que el precio del artículo)
-   * entonces la función disminuye el precio por el precio del artículo hasta que el precio base permanece
-   * 
-   * si la imagen no está apilada
-   * la función elimina la imagen, disminuye el índice de categoría,
-   * y actualiza el tabIndex para cada imagen
-   */
-
-function deleteItem(obj, category, price) {
-  let idx = obj.tabIndex;
-  let div = document.getElementById(category);
-  let nodes = div.childNodes;
-  let itemP = parseFloat(nodes[idx].getAttribute("price")).toFixed(2);
-
-  if (itemP > price) {
-    nodes[idx].setAttribute("price", itemP - price);
-    let count = nodes[idx].firstElementChild;
-    let dollar = count.nextElementSibling;
-
-    let num = parseInt(count.innerHTML.substr(1, count.innerHTML.length)) - 1;
-    let amount = parseFloat(dollar.innerHTML.substr(1, dollar.innerHTML.length));
-    amount -= price;
-
-    count.innerHTML = "x" + num;
-    dollar.innerHTML = "$" + amount.toFixed(2);
-  } else {
-    div.removeChild(nodes[idx])
-    for (i = idx; i < nodes.length; i++) {
-      nodes[i].tabIndex = i;
-    }
-
-    switch (category) {
-      case "drink":
-        drinkIdx--;
-        break;
-      case "breakfast":
-        breakfastIdx--;
-        break;
-      case "lunch":
-        lunchIdx--;
-        break;
-      case "dinner":
-        dinnerIdx--;
-        break;
-      case "sweet":
-        sweetIdx--;
-        break;
-    }
-  }
-  clearTotal();
-};</code></pre></div>
+// const lessthanZero = (numero) => {
+//     if(numero <= 0){
+//         return 0;
+//     }
+// }
+btnPlus.addEventListener('click', mas)
+btnLess.addEventListener('click', menos)</code></pre></div>
                 </div>
+                <!-- share box -->
+
+                <div class="share-box">
+                  <div class="share-box-inner">
+                    <div class="closebtn">
+                      <i class="fa fa-times"></i>
+                    </div>
+                    <div class="share-on">
+                      <a class="facebook-share-button"><i class="fab fa-facebook"></i> Compartir en facebook</a>
+                      <a class="twitter-share-button"><i class="fab fa-twitter"></i> Compartir en Twitter</a>
+                      <a class="copy-link"><i class="fa fa-clipboard"></i> Copiar enlace</a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- share box -->
             </div>
+
         </div>
+
+        <footer>
+
+
+            <div class="footer-btns">
+                <a href="https://www.github.com/hernandoabella/carrito-de-compras" target="_blank">Mejorar Proyecto</a>
+                <a href="https://www.buymeacoffee.com/hernandoabella" target="_blank">Cómprame un café</a>
+                <a class="compartir">Compartir</a>
+            </div>
+
+             <div class="clearfix">&nbsp;</div> <!-- Add this line -->
+
+        </footer>
+
         </section>
-        
+
+
     </section>
 
-    
+
 
     <!--Scripts-->
 

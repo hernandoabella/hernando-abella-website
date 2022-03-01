@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caja de ritmos</title>
+    <link rel="stylesheet" href="./component.css">
+    <link rel="stylesheet" href="/css/temaPrism.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body>
+
+    <section class="codigo__del__proyecto">
+        <div class="app-container">
+            <div class="project__info">
+              <h3 class="project__title">🥁 Caja de ritmos</h3>
+              <p>Esta aplicación te permite tocar la batería con el teclado de tu computadora.</p>
+            </div>
+            <div>
+                <!-- app goes here -->
+                <iframe src="https://hernandoabella.github.io/caja-de-ritmos/"></iframe>
+                <!-- app goes here -->
+            </div>
+        </div>
+
+        <section class="contenido__proyecto">
+          <header>
+              <nav>
+                  <ul>
+                      <li>
+                          <a class="back" href="../"><i class="fas fa-angle-left"></i></a>
+                      </li>
+                      <li>
+                          <a href="/">Inicio</a>
+                      </li>
+                      <li>
+                          <a href="/aprende/">Aprende</a>
+                      </li>
+                      <li>
+                          <a href="/snippets/">Snippets</a>
+                      </li>
+                  </ul>
+              </nav>
+              <div class="download">
+                  <a href="../contador.rar" download><i class="fas fa-download descarga"></i></a>
+                  <a class="youtube" href="#"><i class="fab fa-youtube"></i></a>
+                  <a class="github" href="https://www.github.com/hernandoabella/caja-de-ritmos"><i class="fab fa-github-alt"></i></a>
+              </div>
+
+          </header>
+
+        <div class="code__container">
+            <div class="html__container">
+            <div class="panel">
+                    <div class="codigo__html">
+                        <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;Caja de Ritmos&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+  &lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;pantalla&quot;&gt;
+      &lt;div class=&quot;sound__info&quot;&gt;sound no play&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;botones&quot;&gt;
+      &lt;button class=&quot;q drum&quot;&gt;&lt;/button&gt;
+      &lt;button class=&quot;w drum&quot;&gt;&lt;/button&gt;
+      &lt;button class=&quot;e drum&quot;&gt;&lt;/button&gt;
+      &lt;button class=&quot;r drum&quot;&gt;&lt;/button&gt;
+      &lt;button class=&quot;t drum&quot;&gt;&lt;/button&gt;
+      &lt;button class=&quot;y drum&quot;&gt;&lt;/button&gt;
+      &lt;button class=&quot;u drum&quot;&gt;&lt;/button&gt;
+      &lt;button class=&quot;i drum&quot;&gt;&lt;/button&gt;
+      &lt;button class=&quot;a drum&quot;&gt;&lt;/button&gt;
+      &lt;button class=&quot;s drum&quot;&gt;&lt;/button&gt;
+      &lt;button class=&quot;d drum&quot;&gt;&lt;/button&gt;
+      &lt;button class=&quot;f drum&quot;&gt;&lt;/button&gt;
+      &lt;button class=&quot;g drum&quot;&gt;&lt;/button&gt;
+      &lt;button class=&quot;h drum&quot;&gt;&lt;/button&gt;
+      &lt;button class=&quot;j drum&quot;&gt;&lt;/button&gt;
+      &lt;button class=&quot;k drum&quot;&gt;&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;script src=&quot;./script.js&quot;&gt;&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                </div>
+            </div>
+
+
+
+            <div class="css__container">
+            <div class="panel">
+                    <div class="codigo__css">
+                        <div class="decor__bar"></div>
+                        <pre class="line-numbers"><code class="language-css">@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+:root{
+  --color-principal: #5922c7;
+  --verde: rgb(35, 206, 12);
+  --amarillo: rgb(208, 211, 13);
+  --azul: rgb(26, 196, 193);
+  --morado: rgb(157, 27, 141);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--color-principal);
+  height: 100vh;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 25px;
+  width: 350px;
+  padding: 10px;
+  background: rgba( 255, 255, 255, .25);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+}
+
+.pantalla{
+  background: pink;
+  color: #000;
+  width: 100%;
+  height: 100px;
+  margin: 0px 0px 20px;
+  border-radius: 25px;
+  background: rgba( 255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  font-family: 'PT Sans', sans-serif;
+}
+
+.sound__info{
+  color: var(--color-principal);
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 1.3em;
+}
+
+.drum {
+  outline: none;
+  color: #fff;
+  width: 79.5px;
+  height: 79.5px;
+  font-size: 2em;
+  border-radius: 25px;
+}
+
+.drum{
+  cursor: pointer;
+}
+
+.drum:nth-child(1){
+  background: radial-gradient(circle, rgb(35, 206, 12), rgb(42, 237, 17));
+}
+
+.drum:nth-child(2){
+  background: radial-gradient(circle, rgb(35, 206, 12), rgb(42, 237, 17));
+}
+
+.drum:nth-child(3){
+  background: radial-gradient(circle, rgb(35, 206, 12), rgb(42, 237, 17));
+}
+
+.drum:nth-child(4){
+  background: radial-gradient(circle, rgb(35, 206, 12), rgb(42, 237, 17));
+}
+
+.drum:nth-child(5){
+  background: radial-gradient(circle, rgb(208, 211, 13), rgb(251, 255, 0));
+}
+
+.drum:nth-child(6){
+  background: radial-gradient(circle, rgb(208, 211, 13), rgb(251, 255, 0));
+}
+
+.drum:nth-child(7){
+  background: radial-gradient(circle, rgb(208, 211, 13), rgb(251, 255, 0));
+}
+
+.drum:nth-child(8){
+  background: radial-gradient(circle, rgb(208, 211, 13), rgb(251, 255, 0));
+}
+
+.drum:nth-child(9){
+  background: radial-gradient(circle, rgb(26, 196, 193), rgb(14, 237, 233));
+}
+
+.drum:nth-child(10){
+  background: radial-gradient(circle, rgb(26, 196, 193), rgb(14, 237, 233));
+}
+
+.drum:nth-child(11){
+  background: radial-gradient(circle, rgb(26, 196, 193), rgb(14, 237, 233));
+}
+
+.drum:nth-child(12){
+  background: radial-gradient(circle, rgb(26, 196, 193), rgb(14, 237, 233));
+}
+
+.drum:nth-child(13){
+  background: radial-gradient(circle, rgb(157, 27, 141), rgb(199, 0, 176));
+}
+
+.drum:nth-child(14){
+  background: radial-gradient(circle, rgb(157, 27, 141), rgb(199, 0, 176));
+}
+
+.drum:nth-child(15){
+  background: radial-gradient(circle, rgb(157, 27, 141), rgb(199, 0, 176));
+}
+
+.drum:nth-child(16){
+  background: radial-gradient(circle, rgb(157, 27, 141), rgb(199, 0, 176));
+}
+
+.q {
+  background: rgb(212, 0, 255);
+  animation: coolAnimation .5s;
+}
+
+.w {
+  background: rgb(212, 0, 255);
+  animation: coolAnimation .5s;
+  animation-delay: .2s;
+}
+
+.e {
+  background: rgb(212, 0, 255);
+  animation: coolAnimation .5s;
+  animation-delay: .3s;
+}
+
+.r {
+  background: rgb(212, 0, 255);
+  animation: coolAnimation .5s;
+  animation-delay: .4s;
+}
+
+.t {
+  background: rgb(0, 255, 72);
+  animation: coolAnimation .5s;
+  animation-delay: .5s;
+}
+
+.y {
+  background: rgb(0, 255, 72);
+  animation: coolAnimation .5s;
+  animation-delay: .6s;
+}
+
+.u {
+  background: rgb(0, 255, 72);
+  animation: coolAnimation .5s;
+  animation-delay: .7s;
+}
+
+.i{
+  background: rgb(0, 255, 72);
+  animation: coolAnimation .5s;
+  animation-delay: .8s;
+}
+
+.a{
+  background: rgb(33, 9, 250);
+  animation: coolAnimation .5s;
+  animation-delay: .9s;
+}
+
+.s{
+  background: rgb(33, 9, 250);
+  animation: coolAnimation .5s;
+  animation-delay: 1s;
+}
+
+.d{
+  background: rgb(33, 9, 250);
+  animation: coolAnimation .5s;
+  animation-delay: 1.1s;
+}
+
+.f{
+  background: rgb(33, 9, 250);
+  animation: coolAnimation .5s;
+  animation-delay: 1.2s;
+}
+
+.g{
+  background: rgb(199, 0, 53);
+  animation: coolAnimation .5s;
+  animation-delay: 1.3s;
+
+}
+
+.h{
+  background: rgb(199, 0, 53);
+  animation: coolAnimation .5s;
+  animation-delay: 1.4s;
+}
+
+.j{
+  background: rgb(199, 0, 53);
+  animation: coolAnimation .5s;
+  animation-delay: 1.5s;
+}
+
+.k{
+  background: rgb(199, 0, 53);
+  animation: coolAnimation .5s;
+  animation-delay: 1.6s;
+}
+
+.pressed {
+  transform: scale(.8);
+  background: rgb(42, 237, 17) !important;
+}
+
+.pressed:nth-child(5){
+  background: rgb(251, 255, 0) !important;
+}
+
+.pressed:nth-child(6){
+  background: rgb(251, 255, 0) !important;
+}
+
+.pressed:nth-child(7){
+  background: rgb(251, 255, 0) !important;
+}
+
+.pressed:nth-child(8){
+  background: rgb(251, 255, 0) !important;
+}
+
+.pressed:nth-child(9){
+  background: rgb(14, 237, 233) !important;
+}
+
+.pressed:nth-child(10){
+  background: rgb(14, 237, 233) !important;
+}
+
+.pressed:nth-child(11){
+  background: rgb(14, 237, 233) !important;
+}
+
+.pressed:nth-child(12){
+  background: rgb(14, 237, 233) !important;
+}
+
+.pressed:nth-child(13){
+  background: rgb(199, 0, 176) !important;
+}
+
+.pressed:nth-child(14){
+  background: rgb(199, 0, 176) !important;
+}
+
+.pressed:nth-child(15){
+  background: rgb(199, 0, 176) !important;
+}
+
+.pressed:nth-child(16){
+  background: rgb(199, 0, 176) !important;
+}
+
+@keyframes coolAnimation{
+  0%{
+    opacity: 0.5;
+  }
+}</code></pre></div>
+                </div>
+            </div>
+
+            <div class="js__container">
+            <div class="panel">
+                    <div class="codigo__javascript">
+                        <div class="decor__bar"></div>
+                        <pre class="line-numbers"><code class="language-javascript">const numeroDeBotones = document.querySelectorAll(".drum").length;
+const soundInfo = document.querySelector('.sound__info');
+
+for (let i = 0; i < numeroDeBotones; i++) {
+  document.querySelectorAll(".drum")[i].addEventListener("click", function() {
+    let buttonInnerHTML = this.innerHTML;
+    crearSonido(buttonInnerHTML);
+    buttonAnimation(buttonInnerHTML);
+  });
+}
+
+document.addEventListener("keypress", function(event) {
+  crearSonido(event.key);
+  buttonAnimation(event.key);
+});
+
+function crearSonido(key) {
+  switch (key) {
+    case "q":
+      let sonido1 = new Audio("sounds/sound1.mp3");
+      soundInfo.innerHTML = sonido1.src.substring(32, 43);
+      sonido1.play();
+      break;
+    case "w":
+      let sonido2 = new Audio("sounds/sound2.mp3");
+      sonido2.play();
+      soundInfo.innerHTML = sonido2.src.substring(32, 43);
+      break;
+    case "e":
+      let sonido3 = new Audio("sounds/sound3.mp3");
+      sonido3.play();
+      soundInfo.innerHTML = sonido3.src.substring(32, 43);
+      break;
+    case "r":
+      let sonido4 = new Audio("sounds/sound4.mp3");
+      sonido4.play();
+      soundInfo.innerHTML = sonido4.src.substring(32, 43);
+      break;
+    case "t":
+      let sonido5 = new Audio("sounds/sound5.mp3");
+      sonido5.play();
+      soundInfo.innerHTML = sonido5.src.substring(32, 43);
+      break;
+    case "y":
+      let sonido6 = new Audio("sounds/sound6.mp3");
+      sonido6.play();
+      soundInfo.innerHTML = sonido6.src.substring(32, 43);
+      break;
+    case "u":
+      let sonido7 = new Audio("sounds/sound7.mp3");
+      sonido7.play();
+      soundInfo.innerHTML = sonido7.src.substring(32, 43);
+      break;
+    case "i":
+      let sonido8 = new Audio("sounds/sound8.mp3");
+      sonido8.play();
+      soundInfo.innerHTML = sonido8.src.substring(32, 43);
+      break;
+    case "a":
+      let sonido9 = new Audio("sounds/sound9.mp3");
+      sonido9.play();
+      soundInfo.innerHTML = sonido9.src.substring(32, 43);
+      break;
+    case "s":
+      let sonido10 = new Audio('sounds/sound10.mp3');
+      sonido10.play();
+      soundInfo.innerHTML = sonido10.src.substring(32, 43);
+      break;
+    case "d":
+      let sonido11 = new Audio('sounds/sound11.mp3');
+      sonido11.play();
+      soundInfo.innerHTML = sonido11.src.substring(32, 43);
+      break;
+    case "f":
+      let sonido12 = new Audio("sounds/sound12.mp3");
+      sonido12.play();
+      soundInfo.innerHTML = sonido12.src.substring(32, 43);
+      break;
+    case "g":
+      let sonido13 = new Audio('sounds/sound13.mp3');
+      sonido13.play();
+      soundInfo.innerHTML = sonido13.src.substring(32, 43);
+      break;
+    case "h":
+      let sonido14 = new Audio('sounds/sound14.mp3');
+      sonido14.play();
+      soundInfo.innerHTML = sonido14.src.substring(32, 43);
+      break;
+    case "j":
+      let sonido15 = new Audio('sounds/sound15.mp3');
+      sonido15.play();
+      soundInfo.innerHTML = sonido15.src.substring(32, 43);
+      break;
+    case "k":
+      let sonido16 = new Audio('sounds/sound16.mp3');
+      sonido16.play();
+      soundInfo.innerHTML = sonido16.src.substring(32, 43);
+      break
+    default: console.log(key);
+  }
+}
+
+function buttonAnimation(currentKey) {
+  let activeButton = document.querySelector("." + currentKey);
+  activeButton.classList.add("pressed");
+  setTimeout(function() {
+    activeButton.classList.remove("pressed");
+  }, 100);
+}
+</code></pre></div>
+                </div>
+                <!-- share box -->
+
+                <div class="share-box">
+                  <div class="share-box-inner">
+                    <div class="closebtn">
+                      <i class="fa fa-times"></i>
+                    </div>
+                    <div class="share-on">
+                      <a class="facebook-share-button"><i class="fab fa-facebook"></i> Compartir en facebook</a>
+                      <a class="twitter-share-button"><i class="fab fa-twitter"></i> Compartir en Twitter</a>
+                      <a class="copy-link"><i class="fa fa-clipboard"></i> Copiar enlace</a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- share box -->
+            </div>
+
+        </div>
+
+        <footer>
+
+
+            <div class="footer-btns">
+                <a href="https://www.github.com/hernandoabella/contador" target="_blank">Mejorar Proyecto</a>
+                <a href="https://www.buymeacoffee.com/hernandoabella" target="_blank">Cómprame un café</a>
+                <a class="compartir">Compartir</a>
+            </div>
+
+             <div class="clearfix">&nbsp;</div> <!-- Add this line -->
+
+        </footer>
+
+        </section>
+
+
+    </section>
+
+
+
+    <!--Scripts-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+    <script src="./component.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
