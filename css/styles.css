@@ -24,6 +24,7 @@
 
 /* ---------------- estilos principales ------------------- */
 
+
 *{
     box-sizing: border-box;
     scroll-behavior: smooth;
@@ -33,13 +34,10 @@
 
 body{
     font-family: var(--fuente-texto);
-    background: linear-gradient(-45deg, var(--color-1), var(--color-2), var(--color-3), var(--color-4), var(--color-5));
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
+	background-image: url('https://picsum.photos/1920/1080?random');
+    background-repeat: no-repeat;
+    background-size: cover;
 	height: 100vh;
-    /* background: var(--color-1); */
-  	animation: gradient 15s ease infinite;
-  	height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -94,24 +92,24 @@ a{
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+    width: 10px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+    background: #f1f1f1;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--color-2);
+    background: var(--color-2);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  opacity: .5;
+    opacity: .5;
 }
-</st
+
 
 @media only screen and (max-width: 768px) {
 
@@ -154,6 +152,7 @@ a{
 
 #front__page{
     background: var(--color-1);
+    border-radius: 10px;
     width: 900px;
     border-radius: 25px;
     font-size: 1.2em;
@@ -214,7 +213,7 @@ a{
 }
 
 .redes__sociales{
-  margin: 0px 20px;
+    margin: 0px 20px;
 }
 
 .redes__sociales a{
@@ -226,10 +225,10 @@ a{
 }
 
 .floating{
-   animation-name: floating;
-   animation-duration: 3s;
-   animation-iteration-count: infinite;
-   animation-timing-function: ease-in-out;
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
 }
 
 .informacion__contacto{
