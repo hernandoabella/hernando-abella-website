@@ -7,24 +7,29 @@
         <link rel="stylesheet" href="/css/styles.css">
         <link rel="stylesheet" href="./estilos.css">
         <link rel="stylesheet" href="/css/temaPrism.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cooltipz-css/cooltipz.min.css" />
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 
 <body>
         <div class="botones">
-                <div class="openbtn" onclick="openNav()"></div>
-                <div class="darkSide" onclick="darkSide()"></div>
-                <div class="gobackbtn" onclick="irAtras()"></div>
+                <div class="openbtn" onclick="openNav()" data-cooltipz-dir="right" aria-label="Barra de navegación"></div>
+                <div class="darkSide" onclick="darkSide()" data-cooltipz-dir="right" aria-label="Modo Oscuro"></div>
+                <div class="gobackbtn" onclick="irAtras()" data-cooltipz-dir="right" aria-label="Ir atrás"></div>
         </div>
 
         <aside id="course__sidebar">
+                
                 <div href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fal fa-times"></i></div>
                 <h4>Tutorial de JS</h4>
+
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+                
                 <a href="#item1">Introducción</a>
-                <a href="#item2"></a>
-                <a href="#item3"></a>
-                <a href="#item4"></a>
-                <a href="#item5"></a>
+                <a href="#item2">Item 2</a>
+                <a href="#item3">Item 3</a>
+                <a href="#item4">Item 4</a>
+                <a href="#item5">Item 5</a>
                 <a href="#item6"></a>
                 <a href="#item7"></a>
                 <a href="#item8"></a>
@@ -53,387 +58,56 @@
         </aside>
 
         <div class="articles">
-
+        <button class="accordion">Introducción</button>
+        <div class="panel">
         <section id="item1">
                 
-                <h1>Tutorial de JavaScript</h1>
-
-                <h2>Introducción</h2>
-
-                <p>JavaScript es el lenguaje de programación más popular del mundo, es el lenguaje de programación de la web y es muy fácil de aprender.</p>
-
-                <h4>¿Por qué estudiar JavaScript?</h4>
-
-                <p>JavaScript es uno de los 3 lenguajes que todos los desarrolladores web deben aprender:</p>
-
-                <ol>
-                        <li><b>HTML</b> para definir el contenido de las páginas web.</li>
-                        <li><b>CSS</b> para especificar el diseño de las páginas web.</li>
-                        <li><b>JavaScript</b> para programar el comportamiento de las páginas web.</li>
-                </ol>
-
-                <p>Este tutorial cubre todas las versiones de JavaScript:</p>
-
-                <ul>
-                        <li>El JavaScript original ES1 ES2 ES3 (1997-1999)</li>
-                        <li>La primera revisión principal ES5 (2009)</li>
-                        <li>La segunda revisión ES6 (2015)</li>
-                        <li>Las adiciones anuales (2016, 2017, 2018)</li>
-                </ul>
-
-                <h4>Velocidad de aprendizaje</h4>
-
-                <p>En este tutorial, la velocidad de aprendizaje es de tu elección.</p>
-
-                <p>Todo depende de ti.</p>
-
-                <p>Si tienes dificultades, tómate un descanso o vuelve a leer el material.</p>
-
-                <p>Siempre asegúrate de comprender todos los ejemplos.</p>
-
-                <p>La única forma de convertirte en un programar inteligente es: Practicar.</p>
-
-                <h4>Preguntas frecuentes</h4>
-
-                <ul>
-                        <li>¿Cómo obtengo JavaScript?</li>
-                        <li>¿Dónde puedo descargar JavaScript?</li>
-                        <li>¿JavaScript es gratuito?</li>
-                </ul>
-
-                <h4>Respuestas</h4>
-
-                <p>No es necesario que obtengas o descargues JavaScript.</p>
-
-                <p>JavaScript ya se está ejecutando en tu navegador, en tu computadora, en tu tableta o teléfono inteligente.</p>
-
-                <p>JavaScript es de uso gratuito para todos.</p>
                 
-                <h4>JavaScript puede cambiar el contenido HTML</h4>
-
-                <p>Uno de los muchos métodos HTML de JavaScript es <code class="codigo">getElementById()</code>.</p>
-
-                <p>El siguiente ejemplo "busca" un elemento HTML (con el id="demo") y cambia el contenido del elemento (innerHTML) a "Hola JavaScript":</p>
-
-                <h4>Ejemplo:</h4>
-
-                <div class="codigo__html">
-                        <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;body&gt;
-
-&lt;h2&gt;&iquest;Qu&eacute; puede hacer JavaScript?&lt;/h2&gt;
-
-&lt;p id=&quot;demo&quot;&gt;JavaScrit puede cambiar el contenido HTML.&lt;/p&gt;
-
-&lt;button type=&quot;button&quot; onclick=&apos;document.getElementById(&quot;demo&quot;).innerHTML = &quot;&iexcl;Hola JavaScript!&quot;&apos;&gt;¡Haz clic en m&iacute;!&lt;/button&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-                </div>
-
-                <h4>Resultado:</h4>
-
-                <div class="ejemplo">
-                <h2>¿Qué puede hacer JavaScript?</h2>
-
-                <p id="demo1">JavaScript puede cambiar el contenido HTML.</p>
-
-                <button type="button" onclick='document.getElementById("demo1").innerHTML = "¡Hola JavaScript!"'>¡Haz clic en mí!</button>
-                </div>
-
-                <p>JavaScript acepta comillas simples y comillas dobles:</p>
-
-                <div class="codigo__html">
-                        <pre class="line-numbers"><code class="language-html">document.getElementById(&apos;demo&apos;).innerHTML = &apos;Hola JavaScript&apos;;</code></pre>
-                </div>
-
-                <h4>JavaScript puede cambiar los valores de los atributos HTML</h4>
-
-                <p>En este ejemplo, JavaScript cambie el valor del atributo <code class="codigo">src</code> de una etiqueta <code class="codigo">&lt;img&gt;</code>.</p>
-
-                <h4>Ejemplo:</h4>
-
-                <div class="codigo__html">
-                        <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;body&gt;
-
-&lt;h2&gt;&iquest;Qu&eacute; puede hacer JavaScript?&lt;/h2&gt;
-
-&lt;p&gt;JavaScript puede cambiar los valores de los atributos HTML.&lt;/p&gt;
-
-&lt;p&gt;En este caso JavaScript cambia el valor del atributo src (source) de una imagen.&lt;/p&gt;
-
-&lt;button onclick=&quot;document.getElementById(&apos;miImagen&apos;).src=&apos;pic_bulbon.gif&apos;&quot;&gt;Encender la luz&lt;/button&gt;
-
-&lt;img id=&quot;miImagen&quot; src=&quot;pic_bulboff.gif&quot; style=&quot;width:100px&quot;&gt;
-
-&lt;button onclick=&quot;document.getElementById(&apos;myImage&apos;).src=&apos;pic_bulboff.gif&apos;&quot;&gt;Apagar la luz&lt;/button&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-                </div>
-
-                <h4>Resultado:</h4>
-
-                <div class="ejemplo">
-                        <h2>¿Qué puede hacer JavaScript?</h2>
-
-                        <p>JavaScript puede cambiar los valores de los atributos HTML.</p>
-
-                        <p>En este caso JavaScript cambia el valor del atributo src (source) de una imagen.</p>
-
-                        <button onclick="document.getElementById('myImage').src='/images/pic_bulbon.gif'">Encender la luz</button>
-
-                        <img id="myImage" src="/images/pic_bulboff.gif" style="width:100px">
-
-                        <button onclick="document.getElementById('myImage').src='/images/pic_bulboff.gif'">Apagar la luz</button>
-                </div>
-
-                <h4>JavaScript puede cambiar los estilos HTML (CSS)</h4>
-
-                <p>Cambiar el estilo de un elemento HTML es una variante de cambiar un atributo HTML:</p>
-
-                <h4>Ejemplo:</h4>
-
-                <div class="codigo__html">
-                        <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;body&gt;
-
-&lt;h2&gt;&iquest;Qu&eacute; puede hacer JavaScript?&lt;/h2&gt;
-
-&lt;p id=&quot;demo&quot;&gt;JavaScript puede cambiar el estilo de un elemento HTML.&lt;/p&gt;
-
-&lt;button type=&quot;button&quot; onclick=&quot;document.getElementById(&apos;demo&apos;).style.fontSize=&apos;35px&apos;&quot;&gt;Haz clic en m&iacute;&lt;/button&gt;
-
-&lt;/body&gt;
-&lt;/html&gt; 
-</code></pre>
-                </div>
-
-                <h4>Resultado:</h4>
-
-                <div class="ejemplo">
-                        <h2>¿Qué puede hacer JavaScript?</h2>
-
-                        <p id="demo2">JavaScript puede cambiar el estilo de un elemento HTML.</p>
-
-                        <button type="button" onclick="document.getElementById('demo2').style.fontSize='35px'">Haz clic en mí</button>
-                </div>
-
-                <h4>JavaScript puede ocultar elementos HTML</h4>
-
-                <p>Se pueden ocultar elementos HTML cambiando el estilo de la propiedad de CSS <code class="codigo">display</code>.</p>
-
-                <h4>Ejemplo:</h4>
-
-                <div class="codigo__html">
-                        <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;body&gt;
-
-&lt;h2&gt;&iquest;Qu&eacute; puede hacer JavaScript?&lt;/h2&gt;
-
-&lt;p id=&quot;demo&quot;&gt;JavaScript puede ocultar elementos HTML.&lt;/p&gt;
-
-&lt;button type=&quot;button&quot; onclick=&quot;document.getElementById(&apos;demo&apos;).style.display=&apos;none&apos;&quot;&gt;¡Haz clic en mí!&lt;/button&gt;
-
-&lt;/body&gt;
-&lt;/html&gt; 
-</code></pre></div>
-
-                <h4>Resultado:</h4>
-
-                <div class="ejemplo">
-                        <h2>¿Qué puede hacer JavaScript?</h2>
-
-                        <p id="demo3">JavaScript puede ocultar elementos HTML.</p>
-
-                        <button type="button" onclick="document.getElementById('demo3').style.display='none'">¡Haz clic en mí!</button>
-                </div>
-                
-                <h4>JavaScript puede mostrar elementos HTML</h4>
-
-                <p>También se puede mostrar elementos HTML ocultos cambiando la propiedad <code class="codigo">display</code>.</p>
-
-                <h4>Ejemplo:</h4>
-
-                <div class="codigo__html">
-                        <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;body&gt;
-
-&lt;h2&gt;&iquest;Qu&eacute; puede hacer JavaScript?&lt;/h2&gt;
-
-&lt;p&gt;JavaScript puede mostrar elementos HTML ocultos.&lt;/p&gt;
-
-&lt;p id=&quot;demo&quot; style=&quot;display:none&quot;&gt;&iexcl;Hola JavaScript!&lt;/p&gt;
-
-&lt;button type=&quot;button&quot; onclick=&quot;document.getElementById(&apos;demo&apos;).style.display=&apos;block&apos;&quot;&gt;&iexcl;Haz clic en m&iacute;!&lt;/button&gt;
-
-&lt;/body&gt;
-&lt;/html&gt; 
-</code></pre></div>
-
-                <h4>Resultado:</h4>
-
-                <div class="ejemplo">
-                        <h2>¿Qué puede hacer JavaScript?</h2>
-
-                        <p>JavaScript puede mostrar elementos HTML ocultos.</p>
-
-                        <p id="demo4" style="display:none">¡Hola JavaScript!</p>
-
-                        <button type="button" onclick="document.getElementById('demo4').style.display='block'">¡Haz clic en mí!</button>
-                </div>
-
-                <div class="nota">
-                        <h4>¿Sabías qué?...</h4>
-
-                        <p><b>JavaScript</b> y <b>Java</b> son lenguajes completamente diferentes, tanto en concepto como en diseño.</p>
-
-                        <p>JavaScript fue inventado por Brendan Eich en 1995 y se convirtió en un estándar ECMA en 1997.</p>
-
-                        <p><b>ECMA-262</b> es el nombre oficial del estándar. <b>EcmaScript</b> es el nombre oficial del lenguaje.</p>
-                </div>
 
         </section>
+        </div>
 
-        <section id="item2">
+        <button class="accordion">Item 2</button>
+        <div class="panel">
+                <section id="item2">
 
-                <h2>¿En dónde va JavaScript?</h2>
+                <h2>item 2</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint maxime culpa magnam a tenetur perspiciatis? Suscipit at mollitia sapiente quisquam velit officia autem id quos. Odit doloremque dolores repellat alias.</p>
+
+                </section>
+        </div>
+
+        <button class="accordion">Item 3</button>
+        <div class="panel">
+                <section id="item2">
+
+                <h2>item 3</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint maxime culpa magnam a tenetur perspiciatis? Suscipit at mollitia sapiente quisquam velit officia autem id quos. Odit doloremque dolores repellat alias.</p>
+
+                </section>
+        </div>
+
+        <button class="accordion">Item 4</button>
+        <div class="panel">
+                <section id="item2">
+
+                <h2>item 4</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint maxime culpa magnam a tenetur perspiciatis? Suscipit at mollitia sapiente quisquam velit officia autem id quos. Odit doloremque dolores repellat alias.</p>
+
+                </section>
+        </div>
+
+        <button class="accordion">Item 5</button>
+        <div class="panel">
+                <section id="item2">
+
+                <h2>item 5</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint maxime culpa magnam a tenetur perspiciatis? Suscipit at mollitia sapiente quisquam velit officia autem id quos. Odit doloremque dolores repellat alias.</p>
+
+                </section>
+        </div>
         
-                
 
-                
-
-
-
-        </section>
-
-        <section id="item3">
-                
-        </section>
-
-        <section id="item4">
-
-                
-        </section>
-
-        <section id="item5">
-                
-
-        </section>
-
-        <section id="item6">
-                
-
-        </section>
-
-        <section id="item7">
-                
-
-        </section>
-
-        <section id="item8">
-
-                <h2>Eventos de Node.js</h2>
-
-        </section>
-
-        <section id="item9">
-
-        </section>
-
-        <section id="item10">
-
-        </section>
-
-        <section id="item11">
-
-        </section>
-
-        <section id="item12">
-
-        </section>
-
-        <section id="item13">
-
-        </section>
-
-        <section id="item14">
-
-        </section>
-
-        <section id="item15">
-
-        </section>
-
-        <section id="item16">
-
-        </section>
-
-        <section id="item17">
-
-        </section>
-
-        <section id="item18">
-
-        </section>
-
-        <section id="item19">
-
-        </section>
-
-        <section id="item20">
-
-        </section>
-
-        <section id="item21">
-
-        </section>
-
-        <section id="item22">
-
-        </section>
-
-        <section id="item23">
-
-        </section>
-
-        <section id="item24">
-
-        </section>
-
-        <section id="item25">
-
-        </section>
-
-        <section id="item26">
-
-        </section>
-
-        <section id="item27">
-
-        </section>
-
-        <section id="item28">
-
-        </section>
-
-        <section id="item29">
-
-        </section>
-
-        <section id="item30">
-
-        </section>
-
-        <section id="item31">
-
-        </section>
         
         </div>
 

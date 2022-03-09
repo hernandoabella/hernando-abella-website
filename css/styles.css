@@ -15,7 +15,7 @@
     --color-4: #f4a261;
     --color-5: #e76f51;
     --box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    --text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    --text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
     --fuente-titulo: 'Montserrat', serif;
     --fuente-texto: 'Lora', sans-serif;
 }
@@ -37,6 +37,7 @@ body{
 	background-image: url('https://picsum.photos/1920/1080?random');
     background-repeat: no-repeat;
     background-size: cover;
+    background: var(--color-5);
 	height: 100vh;
 }
 

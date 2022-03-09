@@ -1,5 +1,6 @@
 body{
     transition: .5s;
+    background: #F0DB4F;
 }
 
 .articles{
@@ -15,7 +16,6 @@ body{
 section{
     padding: 20px;
     background: rgb(255, 255, 255);
-    box-shadow: var(--box-shadow);
 }
 
 section h1{
@@ -67,7 +67,7 @@ section ol li{
 }
 
 #course__sidebar{
-    background: #f1f1f1;
+    background: var(--color-2);
     width: 300px;
     padding: 10px;
     position: fixed;
@@ -77,19 +77,22 @@ section ol li{
     overflow-x:hidden;
     z-index: 2;
     font-family: 'Poppins', sans-serif;
-    transition: .3s ease-out;
+    transition: .3s;
     transform: translate(-300px);
 }
 
 #course__sidebar a{
-    margin: 10px 0px;
+    padding: 10px;
     display: block;
     transition: .3s;
+    color: #fff;
+    text-shadow: var(--text-shadow);
 }
 
 #course__sidebar a:hover{
-    background: var(--color-principal);
+    background: var(--color-1);
     color: #fff;
+    border-left: 10px solid var(--color-3);
 }
 
 .closebtn {
@@ -100,6 +103,7 @@ section ol li{
     padding: 10px;
     cursor: pointer;
     transition: .3s;
+    color: #fff;
 }
 
 .closebtn:hover{
@@ -110,11 +114,18 @@ section ol li{
 .botones{
     position: fixed;
     top: 40%;
-    left: 10px;
+    padding: 20px;
 }
 
 .botones > div{
-    margin: 20px 10px;
+    width: 5px;
+    height: 5px;
+    border-radius: 100px;
+    margin: 10px 0px;
+}
+
+.botones > div:hover{
+    transform: scale(1.5);
 }
 
 .dark{
@@ -124,7 +135,7 @@ section ol li{
 .openbtn{
     transition: .3s;
     padding: 10px;
-    background: #1b5268;
+    background: var(--color-2);
     color: #fff;
     border-radius: 10%;
     cursor: pointer; 
@@ -138,7 +149,7 @@ section ol li{
 .gobackbtn{
     transition: .3s;
     padding: 10px;
-    background: var(--color-terciario);
+    background: var(--color-5);
     color: #fff;
     border-radius: 10%;
     cursor: pointer; 
@@ -152,7 +163,7 @@ section ol li{
 .darkSide{
     transition: .3s;
     padding: 10px;
-    background: #000;
+    background: var(--color-1);
     color: #fff;
     border-radius: 10%;
     cursor: pointer; 
@@ -183,7 +194,7 @@ section ol li{
 
 .progress-bar {
     height: 5px;
-    background: var(--color-principal);
+    background: var(--color-2);
     width: 0%;
 }
 
@@ -236,7 +247,7 @@ section ol li{
     font-size: 18px;
     border: none;
     outline: none;
-    background-color: var(--color-principal);
+    background-color: var(--color-1);
     color: white;
     cursor: pointer;
     padding: 15px;
@@ -275,7 +286,55 @@ tr:nth-child(even) {
     margin: 10px 0px;
 }
 
+/*  --------------- acordeón ---------------  */
+#myInput{
+    margin: 10px 0px;
+    padding: 10px;
+}
+/*  --------------- acordeón ---------------  */
 
+/*  --------------- acordeón ---------------  */
+
+.accordion {
+    background-color: var(--color-2);
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    transition: 0.4s;
+    padding: 10px;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+.active, .accordion:hover {
+    background-color: var(--color-1);
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #fff;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+/*  --------------- acordeón ---------------  */
+
+/*  --------------- mobile ---------------  */
 
 
 @media only screen and (max-width: 768px){
@@ -294,12 +353,14 @@ tr:nth-child(even) {
     .botones{
         position: fixed;
         top: 40%;
-        left: 5px;
+        padding: 5px;
     }
     
     .articles{
         width: 80%;
-        height: 80%;
+        
     }
 
 }
+
+/*  --------------- mobile ---------------  */

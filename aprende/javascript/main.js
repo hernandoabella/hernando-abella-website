@@ -1,7 +1,7 @@
 function openNav() {
     document.getElementById("course__sidebar").style.transform = "translate(0px)";
 }
-  
+
 function closeNav() {
     document.getElementById("course__sidebar").style.transform = "translate(-300px)";
 }
@@ -27,7 +27,7 @@ function myFunction() {
   document.getElementById("myBar").style.width = scrolled + "%";
 }
 
-//Get the button
+// Get the button
 var mybutton = document.getElementById("myBtn");
 
 // When the user scrolls down 20px from the top of the document, show the button
@@ -47,21 +47,39 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
-//filtrar lista
+// Filtrar lista
 
-function filtrarLista() {
-  var input, filter, ul, li, a, i, txtValue;
-  input = document.getElementById("entrada");
-  filter = input.value.toUpperCase();
-  ul = document.getElementById("myUL");
-  li = ul.getElementsByTagName("li");
-  for (i = 0; i < li.length; i++) {
-      a = li[i].getElementsByTagName("a")[0];
-      txtValue = a.textContent || a.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-          li[i].style.display = "";
-      } else {
-          li[i].style.display = "none";
-      }
-  }
+
+// Acordión
+var acc = document.getElementsByClassName("accordion");
+var e;
+var panel = document.querySelector('.panel');
+var i;
+var a = document.getElementsByTagName('a');
+
+for (e = 0; e < acc.length; e++) {
+  acc[e].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
+}
+
+var panelDOM = document.querySelectorAll('.panel');
+
+// Abrir acordión desde la navegación
+for (let i = 0; i < a.length; i++){
+  a[i].addEventListener("click", function(){
+    acc[i].classList.toggle('active');
+    if (panelDOM[i].style.maxHeight) {
+      panelDOM[i].style.maxHeight = null;
+    } else {
+      panelDOM[i].style.maxHeight = panelDOM[i].scrollHeight + "px";
+    }
+    
+  });
 }
