@@ -11,6 +11,7 @@ body{
     transform: translate(-50%, -50%);
     left: 50%;
     top: 50%;
+    box-shadow: var(--box-shadow);
 }
 
 section{
@@ -75,10 +76,12 @@ section ol li{
     height: 100vh;
     overflow-y: scroll;
     overflow-x:hidden;
-    z-index: 2;
+    z-index: 1;
     font-family: 'Poppins', sans-serif;
     transition: .3s;
     transform: translate(-300px);
+    box-shadow: var(--box-shadow);
+
 }
 
 #course__sidebar a{
@@ -96,19 +99,20 @@ section ol li{
 }
 
 .closebtn {
+    background: var(--color-1);
     position: absolute;
-    top: -5px;
-    right: 5px;
+    top: 0px;
+    right: 0px;
     font-size: 1.5em;
     padding: 10px;
     cursor: pointer;
     transition: .3s;
     color: #fff;
+    z-index: 1;
 }
 
 .closebtn:hover{
-    opacity: .5;
-    transform: scale(1.5);
+    transform: scale(1.1) rotate(-90deg);
 }
 
 .botones{

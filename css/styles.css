@@ -15,7 +15,7 @@
     --color-4: #f4a261;
     --color-5: #e76f51;
     --box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    --text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
+    --text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.5);
     --fuente-titulo: 'Montserrat', serif;
     --fuente-texto: 'Lora', sans-serif;
 }
@@ -34,7 +34,7 @@
 
 body{
     font-family: var(--fuente-texto);
-	background-image: url('https://picsum.photos/1920/1080?random');
+	background-image: url('https://picsum.photos/1920/1080?random') !important;
     background-repeat: no-repeat;
     background-size: cover;
     background: var(--color-5);
@@ -161,6 +161,7 @@ a{
     transform: translate(-50%, -50%);
     left: 50%;
     top: 50%;
+    box-shadow: var(--box-shadow);
 }
 
 #front__page h1 {
@@ -368,3 +369,32 @@ header a:hover{
 }
 
 /* ---------------- Practica ------------------- */
+
+.suscripcion__mensual{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    text-decoration: underline;
+    color: #fff;
+    padding: 10px;
+    transition: .3s;
+    text-shadow: var(--text-shadow);
+    transform: scale(.9);
+}
+
+.suscripcion__mensual:hover{
+    background: var(--color-1);
+    transform: scale(1);
+    text-shadow: none;
+}
+
+/* ---------------- Comprame un cafe ------------------- */
+
+.buyCoffe{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+/* ---------------- Comprame un cafe ------------------- */
+

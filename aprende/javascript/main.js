@@ -57,9 +57,14 @@ var panel = document.querySelector('.panel');
 var i;
 var a = document.getElementsByTagName('a');
 
+
 for (e = 0; e < acc.length; e++) {
   acc[e].addEventListener("click", function() {
     this.classList.toggle("active");
+    for (j = 0; j < acc.length; j++) {
+      if (j !== i)
+        acc[j].nextElementSibling.style.maxHeight = null;
+    }
     var panel = this.nextElementSibling;
     if (panel.style.maxHeight) {
       panel.style.maxHeight = null;
@@ -75,6 +80,10 @@ var panelDOM = document.querySelectorAll('.panel');
 for (let i = 0; i < a.length; i++){
   a[i].addEventListener("click", function(){
     acc[i].classList.toggle('active');
+    for (j = 0; j < acc.length; j++) {
+      if (j !== i)
+        acc[j].nextElementSibling.style.maxHeight = null;
+    }
     if (panelDOM[i].style.maxHeight) {
       panelDOM[i].style.maxHeight = null;
     } else {
