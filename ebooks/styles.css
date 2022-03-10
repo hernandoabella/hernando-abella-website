@@ -1,11 +1,13 @@
 .e-books{
-  background: #fff;
+  background: rgba(255, 255, 255, 0);
   padding: 20px;
+  height: 87.3vh;
 }
 
 .e-books h1{
   margin: 10px;
-  color: var(--color-5);
+  color: var(--color-4);
+  text-shadow: var(--text-shadow);
 }
 
 .e-books p{
@@ -21,6 +23,69 @@
   background: var(--color-1);
   padding: 10px;
   border-radius: 100px;
+}
+
+.e-card-container{
+  display: flex;
+}
+
+.e-card{
+  background: rgba(255, 255, 255, 0.4);
+  width: 200px;
+  margin: 20px;
+  border-radius: 25px;
+  box-shadow: var(--box-shadow);
+  transition: .3s;
+}
+
+.e-card:hover{
+  transform: scale(1.1);
+  outline: 1px solid var(--color-3);
+}
+
+.e-card h3{
+  color: #fff;
+  margin: 20px 10px;
+  font-size: .9em;
+  height: 40px;
+  text-shadow: var(--text-shadow);
+}
+
+.e-card .buyBtn{
+  background: var(--color-1);
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  display: block;
+  border-radius: 0px 0px 25px 25px;
+  text-align: center;
+  transition: .3s;
+}
+
+.e-card .buyBtn:hover{
+  background: var(--color-3);
+  color: #000;
+  border-radius: 25px;
+  transform: scale(1.1);
+  font-weight: bold;
+  box-shadow: var(--box-shadow);
+}
+
+.e-card-background img{
+  width: 100%;
+  border-radius: 25px;
+  
+}
+
+.e-card-price{
+  font-weight: bold;
+  background: var(--color-3);
+  padding: 10px;
+  position: absolute;
+  border-radius: 25px;
+  box-shadow: var(--box-shadow);
+  color: #000;
+  font-family: var(--titulo-texto)
 }
 
 header{
