@@ -34,10 +34,9 @@
 
 body{
     font-family: var(--fuente-texto);
-	background-image: url('https://picsum.photos/1920/1080?random') !important;
+	background-image: url('https://picsum.photos/1920/1080?random');
     background-repeat: no-repeat;
     background-size: cover;
-    background: var(--color-5);
 	height: 100vh;
 }
 
@@ -380,12 +379,14 @@ header a:hover{
     transition: .3s;
     text-shadow: var(--text-shadow);
     transform: scale(.9);
+    border-radius: 25px;
 }
 
 .suscripcion__mensual:hover{
     background: var(--color-1);
     transform: scale(1);
     text-shadow: none;
+    
 }
 
 /* ---------------- Comprame un cafe ------------------- */

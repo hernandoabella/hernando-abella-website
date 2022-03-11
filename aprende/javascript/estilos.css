@@ -75,7 +75,7 @@ section ol li{
     top: 0;
     height: 100vh;
     overflow-y: scroll;
-    overflow-x:hidden;
+    overflow-x: hidden;
     z-index: 1;
     font-family: 'Poppins', sans-serif;
     transition: .3s;
@@ -98,10 +98,13 @@ section ol li{
     border-left: 10px solid var(--color-3);
 }
 
+#course__sidebar h3{
+    color: var(--color-3);
+}
+
 .closebtn {
-    background: var(--color-1);
     position: absolute;
-    top: 0px;
+    top: -3px;
     right: 0px;
     font-size: 1.5em;
     padding: 10px;
@@ -113,6 +116,7 @@ section ol li{
 
 .closebtn:hover{
     transform: scale(1.1) rotate(-90deg);
+    color: var(--color-3);
 }
 
 .botones{
@@ -129,7 +133,7 @@ section ol li{
 }
 
 .botones > div:hover{
-    transform: scale(1.5);
+    transform: scale(1.1);
 }
 
 .dark{
@@ -284,12 +288,6 @@ tr:nth-child(even) {
     background-color: #dddddd;
 }
 
-#entrada{
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0px;
-}
-
 /*  --------------- acordeón ---------------  */
 #myInput{
     margin: 10px 0px;
@@ -310,7 +308,7 @@ tr:nth-child(even) {
     transition: 0.4s;
     padding: 10px;
     font-size: 1.3em;
-    text-align: center;
+    font-weight: bold;
 }
 
 .active, .accordion:hover {
@@ -337,6 +335,30 @@ tr:nth-child(even) {
 }
 
 /*  --------------- acordeón ---------------  */
+
+/*  --------------- search box ---------------  */
+
+.search-container{
+    display: flex;
+    margin: 10px 0px;
+}
+
+input[type=text] {
+    border: none;
+    padding: 10px;
+    width: 100%;
+}
+
+.search-container button {
+    padding: 10px;
+    background: #ddd;
+    border: none;
+    cursor: pointer;
+}
+
+
+/*  --------------- search box ---------------  */
+
 
 /*  --------------- mobile ---------------  */
 

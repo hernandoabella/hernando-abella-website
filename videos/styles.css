@@ -1,26 +1,54 @@
 .videos{
-  background: #fff;
   padding: 20px;
+  height: 84.1vh;
 }
 
 .videos h1{
   margin: 10px;
-  color: var(--color-2)
+  color: var(--color-3)
 }
 
 .videos p{
   margin: 10px;
+  color: #fff;
 }
 
 .videos hr{
   margin: 20px 10px;
-  border: 1px solid var(--color-2);
+  border: 1px solid var(--color-3);
 }
 
 .back{
   background: var(--color-2);
   padding: 10px;
   border-radius: 100px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.video-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-video{
+  background: var(--color-1);
+  margin: 10px;
+  padding: 20px;
+  border-radius: 25px;
+  width: 33.33%;
+}
+
+.card-video h3{
+  color: #fff;
+}
+
+.card-video p{
+  color: #fff;
 }
 
 header{
