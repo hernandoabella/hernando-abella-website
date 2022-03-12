@@ -1,11 +1,8 @@
-body{
-  background: var(--color-1);
-}
-
 header{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: var(--color-1);
 }
 
 .practica{
@@ -13,11 +10,10 @@ header{
 }
 
 .contenedor-practica{
-  background: var(--color-3);
   overflow-y: scroll;
-  height: 84vh;
+  height: 87.8vh;
   width: 100%;
-
+  padding: 10px;
 }
 
 .flex-proyecto{
@@ -182,6 +178,7 @@ hr{
 footer{
   color: #fff;
   padding: 20px;
+  background: var(--color-1) !important;
 }
 
 footer p{

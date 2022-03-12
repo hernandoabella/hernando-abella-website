@@ -1,13 +1,5 @@
-body{
-    background: var(--color-3);
-}
-
 header{
-  background: var(--color-1) !important;
-}
-
-header a, header i{
-    color: var(--color-5) !important;
+    background: var(--color-1) !important;
 }
 
 h2{
@@ -24,10 +16,11 @@ p{
 .snippets__hero{
     text-align: center;
     color: var(--color-5);
+    margin: 30px;
 }
 
 .snippets__hero h1{
-    color: var(--color-secundario);
+    color: var(--color-4);
     padding: 10px;
     transition: .3s;
 }
@@ -103,7 +96,7 @@ p{
 }
 
 .card:hover{
-    opacity: .5;
+    transform: scale(1.1);
 }
 
 
@@ -115,6 +108,7 @@ p{
 .html__card{
     background: #E34C26;
     color: #000;
+    box-shadow: var(--box-shadow);
 }
 
 .html__card h3{
@@ -124,6 +118,7 @@ p{
 .css__card{
     background: #193ac1;
     color: #fff;
+    box-shadow: var(--box-shadow);
 }
 
 .css__card h3{
@@ -133,6 +128,7 @@ p{
 .js__card{
     background: #F0DB4F;
     color: #000;
+    box-shadow: var(--box-shadow);
 }
 
 .js__card h3{
@@ -142,6 +138,7 @@ p{
 .git__card{
     background: #be0c06;
     color: #fff;
+    box-shadow: var(--box-shadow);
 }
 
 .git__card h3{
@@ -150,7 +147,15 @@ p{
 
 .contenedor__snippets{
     width: 80%;
-    margin: 20px auto;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.panel__de__codigos{
+    overflow-y: scroll;
+    height: 80vh;
+    width: 80%;
+    margin: 30px auto;
 }
 
 @media only screen and (max-width: 768px){
