@@ -124,6 +124,8 @@ a{
     width: 300px;
     border-radius: 100%;
     box-shadow: var(--box-shadow);
+    display: block;
+    margin: auto;
 }
 
 #front__page .navegacion{
@@ -159,7 +161,7 @@ a{
 .front-container{
     display: flex;
     position: absolute;
-    justify-content: space-evenly;
+    justify-content: space-around;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -168,13 +170,12 @@ a{
 }
 
 .image-container{
-    margin: 0px 50px;
+    width: 50%;
 }
 
 .info-container{
     text-shadow: var(--text-shadow);
-    margin: 0px 10px;
-    width: 100%;
+    width: 60%;
 }
 
 .info-container h1{
@@ -205,7 +206,7 @@ a{
     }
 
     .image-container{
-        margin: 30px auto;
+        margin: auto;
     }
 
     .image-container img{
@@ -215,10 +216,12 @@ a{
 
     .front-container{
         flex-direction: column;
+        transform: translate(-50%, -60%);
     }
 
     .info-container{
-        width: 100%;
+        margin: 30px auto;
+        width: 80%;
     }
 
     .info-container h1{
