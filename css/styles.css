@@ -127,9 +127,61 @@ a{
 
 #front__page .navegacion{
     background: #fff;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+#front__page h1{
+    color: #fff;
+}
+
+#front__page h3{
+    color: #fff;
+}
+
+#front__page .navegacion a{
+    color: var(--color-1);
+    transition: .3s;
+    
+    padding: 10px;
+
+}
+
+#front__page .navegacion a:hover{
+    background-color: var(--color-1);
+    color: #fff;
+}
+
+.front-container{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding: 10px;
 }
 
+.image-container{
+    width: 50%;
+}
+
+.info-container{
+    width: 50%;
+}
+
+.info-container h1{
+    font-size: 3em;
+}
+
+.info-container h3{
+    font-size: 1.5em;
+}
 /* mobile devices */
 
 @media only screen and (min-width: 768px) { 
@@ -140,31 +192,7 @@ a{
 
 /* ---------------- front__page ------------------- */
 
-/* ---------------- navegacion sencilla ------------------- */
 
-header{
-    font-family: var(--fuente-titulo);
-    padding: 20px;
-    background: var(--color-terciario);
-}
-
-header ul li{
-    list-style-type: square;
-    display: inline-block;
-}
-
-header a{
-    transition: .3s;
-    margin-right: 10px;
-    color: #fff !important;
-}
-
-header a:hover{
-    opacity: .3;
-}
-
-
-/* ---------------- navegacion sencilla ------------------- */
 
 /* ---------------- Practica ------------------- */
 
