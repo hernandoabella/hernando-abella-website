@@ -111,17 +111,17 @@ a{
 }
 
 
-@media only screen and (max-width: 768px) {
+/* @media only screen and (max-width: 768px) {
 
-}
+} */
 
 /* ---------------- estilos principales ------------------- */
 
 /* ---------------- front__page ------------------- */
 
 #front__page img{
-    height: 280px;
-    width: 280px;
+    height: 300px;
+    width: 300px;
     border-radius: 100%;
     box-shadow: var(--box-shadow);
 }
@@ -147,7 +147,6 @@ a{
 #front__page .navegacion a{
     color: var(--color-1);
     transition: .3s;
-    
     padding: 10px;
 
 }
@@ -160,18 +159,16 @@ a{
 .front-container{
     display: flex;
     position: absolute;
-    
     justify-content: space-evenly;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 10px;
-    width: 80%;
+    width: 100%;
 }
 
 .image-container{
-    margin: 0px 10px;
-    width: 50%;
+    margin: 0px 50px;
 }
 
 .info-container{
@@ -188,10 +185,53 @@ a{
     font-size: 1.5em;
     margin: 20px 0px;
 }
+
+.info-container p{
+    margin: 20px 0px;
+    color: #fff;
+    font-size: 1.2em;
+}
+
+.info-container i{
+    color: var(--color-4);
+}
 /* mobile devices */
 
-@media only screen and (min-width: 768px) { 
-    
+@media only screen and (max-width: 768px) { 
+
+    body{
+        background: var(--color-2);
+        height: auto !important;
+    }
+
+    .image-container{
+        margin: 30px auto;
+    }
+
+    .image-container img{
+        width: 200px !important;
+        height: 200px !important;
+    }
+
+    .front-container{
+        flex-direction: column;
+    }
+
+    .info-container{
+        width: 100%;
+    }
+
+    .info-container h1{
+        font-size: 1.5em;
+    }
+
+    .info-container h3{
+        font-size: 1.1em;
+    }
+
+    .info-container p{
+        font-size: 1.2em;
+    }
 }
 
 /* animaciones */
@@ -260,7 +300,6 @@ a{
     transition: .3s;
     text-shadow: var(--text-shadow);
     transform: scale(.9);
-    border-radius: 25px;
 }
 
 .suscripcion__mensual:hover{
@@ -268,6 +307,10 @@ a{
     transform: scale(1);
     text-shadow: none;
     
+}
+
+.suscripcion__mensual:active{
+    transform: scale(8);
 }
 
 /* ---------------- Comprame un cafe ------------------- */
