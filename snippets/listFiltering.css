@@ -57,7 +57,8 @@ p{
 .snippets__hero{
     text-align: center;
     color: var(--color-5);
-    margin: 30px;
+    margin: 50px;
+    text-shadow: var(--text-shadow);
 }
 
 .snippets__hero h1{
@@ -67,7 +68,7 @@ p{
 }
 
 .snippets__hero p{
-    color: #fff;
+    color: #fff !important;
 }
 
 .html__hug{
@@ -133,7 +134,9 @@ p{
 .card{
     border-radius: 25px;
     transition: .3s;
-    padding: 10px;
+    display: flex;
+    align-content: center;
+    align-items: center;
 }
 
 .card:hover{
@@ -146,14 +149,20 @@ p{
     font-family: 'Poppins', sans-serif;
 }
 
+.card h3{
+    display: inline-block;
+    margin: auto;
+
+}
+
 .html__card{
-    background: #E34C26;
+    background: #cb3813;
     color: #000;
     box-shadow: var(--box-shadow);
 }
 
 .html__card h3{
-    color: #000;
+    color: #fff;
 }
 
 .css__card{
@@ -168,7 +177,7 @@ p{
 
 .js__card{
     background: #F0DB4F;
-    color: #000;
+    color: #323330;
     box-shadow: var(--box-shadow);
 }
 
@@ -199,6 +208,18 @@ p{
     margin: 30px auto;
 }
 
+.icono{
+    background: var(--color-1);
+    color: #fff;
+    padding: 10px;
+    border-radius: 25px;
+    box-shadow: var(--box-shadow);
+}
+
+.icono i{
+    font-size: 3em;
+}
+
 /* mobile */
 
 @media only screen and (max-width: 768px){
@@ -206,7 +227,7 @@ p{
         justify-content: center;
         padding: 0px;
     }
-
+    
     ul li a i{
         font-size: 1.4em;
     }
@@ -217,8 +238,16 @@ p{
     }
 
     .card{
-        width: 80%;
+        width: 100%;
         margin: auto;
         text-align: center;
+    }
+
+    .fila{
+        flex-direction: column;
+    }
+
+    .columna{
+        width: 100%;
     }
 }
