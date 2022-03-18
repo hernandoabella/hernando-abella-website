@@ -149,8 +149,7 @@ a{
 #front__page .navegacion a{
     color: var(--color-1);
     transition: .3s;
-    padding: 10px;
-
+    padding: 20px 50px;
 }
 
 #front__page .navegacion a:hover{
@@ -194,8 +193,21 @@ a{
 }
 
 .info-container i{
-    color: var(--color-4);
+    color: var(--color-3);
 }
+
+.social a{
+    padding-right: 10px;
+    font-size: 1.3em;
+    transition: .3s;
+}
+
+.social a:hover{
+    transform: scale(2);
+}
+
+
+
 /* mobile devices */
 
 @media only screen and (max-width: 768px) { 
@@ -203,6 +215,11 @@ a{
     body{
         background: var(--color-2);
         height: auto !important;
+    }
+
+    #front__page .navegacion a{
+        width: 25%;
+        padding: 20px 0px;
     }
 
     .image-container{
