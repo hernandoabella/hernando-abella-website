@@ -2,6 +2,7 @@ header{
     background: #fff;
     padding: 10px;
     box-shadow: var(--box-shadow);
+    display: flex;
 }
 
 header a{
@@ -198,7 +199,18 @@ p{
     margin: 30px auto;
 }
 
+/* mobile */
+
 @media only screen and (max-width: 768px){
+    header{
+        justify-content: center;
+        padding: 0px;
+    }
+
+    ul li a i{
+        font-size: 1.4em;
+    }
+    
     .contenedor__snippets{
         width: 100%;
         margin: 20px auto;
