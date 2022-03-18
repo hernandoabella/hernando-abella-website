@@ -39,9 +39,11 @@ ul li a i{
 .back i:hover{
   background: var(--color-1);
 }
+
 .videos{
   padding: 20px;
-  height: 84.1vh;
+  overflow-y: scroll;
+  height: 81.5vh;
 }
 
 .videos h1{
@@ -59,11 +61,6 @@ ul li a i{
   border: 1px solid var(--color-3);
 }
 
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
 
 .video-container{
   display: flex;
@@ -79,7 +76,7 @@ ul li a i{
 }
 
 .card-video:hover{
-  transform: scale(1.1);
+  background-image: linear-gradient(to right, #00f2fe 0%, #4facfe 100%);
 }
 
 .card-video h3{
@@ -91,8 +88,11 @@ ul li a i{
 }
 
 footer{
-  background: var(--color-1);
+  background: #fff;
   padding: 10px;
+  position: absolute;
+  width: 100%;
+  
 }
 
 .social-right{
@@ -100,7 +100,7 @@ footer{
 }
 
 .social-right a{
-  color: var(--color-3);
+  color: var(--color-1);
   margin: 5px;
 }
 
@@ -112,6 +112,10 @@ footer{
   
   ul li a i{
       font-size: 1.4em;
+  }
+
+  .videos{
+    height: auto;
   }
   
 }

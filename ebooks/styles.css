@@ -65,51 +65,19 @@ ul li a i{
 }
 
 .e-card{
-  background: rgba(255, 255, 255, 0.4);
   width: 200px;
-  margin: 20px;
+  margin: 10px;
   border-radius: 25px;
-  box-shadow: var(--box-shadow);
   transition: .3s;
 }
 
 .e-card:hover{
   transform: scale(1.1);
-  outline: 1px solid var(--color-3);
-}
-
-.e-card h3{
-  color: #fff;
-  margin: 20px 10px;
-  font-size: .9em;
-  height: 40px;
-  text-shadow: var(--text-shadow);
-}
-
-.e-card .buyBtn{
-  background: var(--color-1);
-  color: #fff;
-  padding: 10px;
-  cursor: pointer;
-  display: block;
-  border-radius: 0px 0px 25px 25px;
-  text-align: center;
-  transition: .3s;
-}
-
-.e-card .buyBtn:hover{
-  background: var(--color-3);
-  color: #000;
-  border-radius: 25px;
-  transform: scale(1.1);
-  font-weight: bold;
-  box-shadow: var(--box-shadow);
 }
 
 .e-card-background img{
   width: 100%;
   border-radius: 25px;
-  
 }
 
 .e-card-price{
@@ -117,10 +85,11 @@ ul li a i{
   background: var(--color-3);
   padding: 10px;
   position: absolute;
-  border-radius: 25px;
+  border-radius: 25px 0px 0px 0px;
   box-shadow: var(--box-shadow);
   color: #000;
-  font-family: var(--titulo-texto)
+  font-family: var(--fuente-titulo);
+  border: none;
 }
 
 @media only screen and (max-width: 768px){
@@ -131,6 +100,14 @@ ul li a i{
   
   ul li a i{
       font-size: 1.4em;
+  }
+
+  .e-card-container{
+    flex-direction: column;
+  }
+
+  .e-card{
+    width: 95%;
   }
   
 }
