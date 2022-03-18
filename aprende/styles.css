@@ -3,6 +3,7 @@ header{
     display: flex;
     padding: 10px;
     box-shadow: var(--box-shadow);
+    font-family: var(--fuente-titulo);
 }
 
 header a{

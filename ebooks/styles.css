@@ -1,12 +1,53 @@
+header{
+  background: #fff;
+  padding: 10px;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  font-family: var(--fuente-titulo);
+}
+
+header a{
+  color: var(--color-1);
+  margin: 10px;
+  transition: .3s;
+}
+
+ul li{
+  list-style-type: none;
+  display: inline-block;
+}
+
+ul li a{
+  display: block;
+  transition: .3s;
+
+}
+
+ul li a i{
+  font-size: 2.5em;
+}
+
+.back i{
+  background: var(--color-2);
+  color: #fff;
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 25px;
+  transition: .3s;
+}
+
+.back i:hover{
+  background: var(--color-1);
+}
+
 .e-books{
   background: rgba(255, 255, 255, 0);
   padding: 20px;
-  height: 87.3vh;
 }
 
 .e-books h1{
   margin: 10px;
-  color: var(--color-4);
+  color: var(--color-3);
   text-shadow: var(--text-shadow);
 }
 
@@ -16,13 +57,7 @@
 
 .e-books hr{
   margin: 20px 10px;
-  border: 1px solid var(--color-2);
-}
-
-.back{
-  background: var(--color-1);
-  padding: 10px;
-  border-radius: 100px;
+  border: 1px solid var(--color-3);
 }
 
 .e-card-container{
@@ -88,11 +123,14 @@
   font-family: var(--titulo-texto)
 }
 
-header{
-  background: var(--color-2);
-}
-
-footer{
-  background: var(--color-1);
-  padding: 10px;
+@media only screen and (max-width: 768px){
+  header{
+      justify-content: center;
+      padding: 0px;
+  }
+  
+  ul li a i{
+      font-size: 1.4em;
+  }
+  
 }

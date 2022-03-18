@@ -1,7 +1,44 @@
 header{
+  background: #fff;
+  padding: 10px;
+  box-shadow: var(--box-shadow);
   display: flex;
-  align-items: center;
+  font-family: var(--fuente-titulo);
   justify-content: space-between;
+  align-items: center;
+}
+
+header a{
+  color: var(--color-1);
+  margin: 10px;
+  transition: .3s;
+}
+
+ul li{
+  list-style-type: none;
+  display: inline-block;
+}
+
+ul li a{
+  display: block;
+  transition: .3s;
+
+}
+
+ul li a i{
+  font-size: 2.5em;
+}
+
+.back i{
+  background: var(--color-2);
+  color: #fff;
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 25px;
+  transition: .3s;
+}
+
+.back i:hover{
   background: var(--color-1);
 }
 
@@ -82,7 +119,7 @@ aside h4{
 }
 
 .tarjeta__proyectos{
-    background: var(--color-2);
+    background: var(--color-1);
     border-radius: 25px;
     padding: 10px;
     text-align: center;
@@ -155,24 +192,16 @@ hr{
     border: 2px solid #322931;
 }
 
-.back{
-  background: var(--color-2);
-  padding: 10px;
-  border-radius: 25px;
-}
-
-.search-container button {
-  background: var(--color-2);
-  float: right;
-  padding: 10.6px;
-  border: none;
-  color: #fff;
+.search-container{
+  position: absolute;
+  right: 16.5px;
+  top: 16.5px;
 }
 
 .search-container input{
-  border: none;
   padding: 10px;
   font-family: var(--texto-titulo);
+  border-radius: 25px;
 }
 
 footer{
@@ -186,6 +215,16 @@ footer p{
 }
 
 @media only screen and (max-width: 768px){
+
+    header{
+      justify-content: center;
+      padding: 0px;
+    }
+
+    ul li a i{
+        font-size: 1.4em;
+    }
+  
     .fila{
         flex-direction: column;
     }
@@ -195,10 +234,7 @@ footer p{
         padding: 20px;
     }
 
-    aside{
-      width: 100%;
-      box-shadow: var(--box-shadow);
-      position: absolute;
-      transform: translate(-800px);
+    .search-container{
+      display: none;
     }
 }
