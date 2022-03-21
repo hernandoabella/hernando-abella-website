@@ -173,6 +173,7 @@ section ol li{
 
 .darkSide.dark{
     background: #F0DB4F;
+    color: #000;
 }
 
 .nota{
@@ -308,7 +309,6 @@ input[type=text] {
 
     .articles{
         width: 90%;
-        height: 600px;
     }
 
     #course__sidebar{

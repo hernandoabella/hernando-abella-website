@@ -10,17 +10,16 @@ function closeNav() {
 
 // modo oscuro
 function darkSide(){
-  var ladoOscuro, cuerpo;
+  var ladoOscuro, cuerpo, icono;
 
   ladoOscuro = document.querySelector('.darkSide');
   cuerpo = document.querySelector('body');
+  icono = document.querySelector('i.fa.fa-moon');
 
+  icono.classList.toggle('fa-sun');
   ladoOscuro.classList.toggle('dark');
   cuerpo.classList.toggle('dark');
 }
-
-// cambiar icono de modo oscuro al hacer clic
-
 
 // Acordión
 var acc = document.getElementsByClassName("accordion");
