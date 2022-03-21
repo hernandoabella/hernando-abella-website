@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hernando Abella | Snippets</title>
+    <title>Snippets de Git | Hernando Abella </title>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="../listFiltering.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -13,30 +13,25 @@
     <link rel="stylesheet" href="/css/temaPrism.css">
 </head>
 <body>
-    <header>
-        <nav> 
-            <ul>
-                <li>
-                    <a href="../"> <i class="fas fa-angle-left"></i></a>
-                </li>
-                <li>
-                    <a href="/"> Inicio</a>
-                </li>
-                <li>
-                    <a href="/aprende/">Aprende</a>
-                </li>
-                <li>
-                    <a href="/proyectos/">Practica</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+<header>
+            <nav>
+                <ul>
+                    <li>
+                        <a class="back" href="../"><i class="fas fa-angle-left"></i></a>
+                    </li>
+                    <li>
+                        <a href="../">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="../aprende/"> Aprende</a>
+                    </li>
+                    <li>
+                        <a href="/proyectos/">Practica</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
     <section class="snippets">
-        <div class="snippets__hero">
-            <h1>Snippets de Git</h1>
-            <p>Colección de fragmentos de códigos para todas tus necesidades de desarrollo.</p>
-        </div>
-
         <div class="panel__de__codigos">
 
                     <div class="git__hug">
@@ -55,7 +50,7 @@
 # patch-2</code></pre>
                     </div>
 
-                    
+                    <hr>
                 
                     <div class="git__hug">
                     <h3>Creating aliases</h3>
@@ -65,6 +60,8 @@
                             
                             <pre class="line-numbers"><code class="language-git">git config --global alias.&lt;alias&gt; &lt;command&gt;</code></pre></div>
                     </div>
+
+                    <hr>
 
                     <h3>Creating aliases</h3>
 
@@ -102,7 +99,7 @@
 
                     </div>
 
-                    
+                    <hr>
 
                     
 
@@ -130,7 +127,8 @@ git branch -a --merged
 # patch-2</code></pre></div>
                     </div>
                     </div> 
-                               
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>How does Git's fast-forward mode work?</h3>
@@ -147,7 +145,9 @@ git branch -a --merged
                     <p>As a side note, you can configure the default Git merge behavior, using git config. To learn how to do so, you can take a look at the relevant snippet.
 
 </p>
-                    </div>    
+                    </div>   
+                    
+                    <hr>
 
 
                     <div class="git__hug">
@@ -188,9 +188,11 @@ git branch
 # patch-2</code></pre></div>
                     </div>
 
-
+                    
 
                     </div>    
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>View a visual graph of the repository</h3>
@@ -215,7 +217,9 @@ git branch
 # * 3050fc0de Fix network bug
 # * c191f90c7 Initial commit</code></pre></div>
                     </div>
-                    </div>    
+                    </div>   
+                    
+                    <hr>
 
                     <div class="git__hug">
                     <h3>View commits in a specific date range</h3>
@@ -253,7 +257,9 @@ git log --since='2 weeks ago'
 # Date: Tue Apr 6 11:11:08 2021 +0300
 # [...]</code></pre></div>
                     </div>
-                    </div>    
+                    </div>   
+
+                    <hr> 
 
                     <div class="git__hug">
                     <h3>Disable fast forward merging by default</h3>
@@ -284,7 +290,9 @@ git checkout master
 git merge my-branch
 # Will never fast forward even if it's possible</code></pre></div>
                     </div>
-                    </div>    
+                    </div>  
+                    
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Merge a branch and create a merge commit</h3>
@@ -313,7 +321,9 @@ git merge --no-ff -m "Merge patch-1" patch-1
 # Merges the `patch-1` branch into `master` and creates a commit
 # with the message "Merge patch-1"</code></pre></div>
                     </div>
-                    </div>    
+                    </div> 
+                    
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Purge a file from history</h3>
@@ -355,6 +365,8 @@ git push origin --force --all
                     </div>
                     </div>    
 
+                    <hr>
+
                     <div class="git__hug">
                     <h3>View a short summary of commits without merge commits</h3>
                     <p>Prints a short summary of all commits excluding merge commits.</p>
@@ -376,7 +388,9 @@ git push origin --force --all
 # 3050fc0de Fix network bug
 # c191f90c7 Initial commit</code></pre></div>
                     </div>
-                    </div>    
+                    </div>   
+
+                    <hr> 
 
                     <div class="git__hug">
                     <h3>Find lost files</h3>
@@ -406,7 +420,9 @@ git push origin --force --all
 # dangling blob 807e3fa41
 # dangling commit 59ff8481d</code></pre></div>
                     </div>
-                    </div>    
+                    </div>   
+
+                    <hr> 
 
                     <div class="git__hug">
                     <h3>Update remote branch after rewriting history</h3>
@@ -436,7 +452,9 @@ git rebase master
 
 git push -f # Force update the remote `patch-1` branch</code></pre></div>
                     </div>
-                    </div>    
+                    </div>  
+
+                    <hr>  
 
                     <div class="git__hug">
                     <h3>View local branches</h3>
@@ -463,6 +481,8 @@ git push -f # Force update the remote `patch-1` branch</code></pre></div>
 # patch-2</code></pre></div>
                     </div>
                     </div>    
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>View commits that manipulated a specific string</h3>
@@ -491,6 +511,8 @@ git push -f # Force update the remote `patch-1` branch</code></pre></div>
                     </div>
                     </div>    
 
+                    <hr>
+
                     <div class="git__hug">
                     <h3>Lists all stashes</h3>
                     <p>Displays a list of all stashes.</p>
@@ -511,6 +533,8 @@ git push -f # Force update the remote `patch-1` branch</code></pre></div>
 # stash@{0}: WIP on patch-1: ee52eda Fix network bug</code></pre></div>
                     </div>
                     </div>    
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Move commits from master to a new branch</h3>
@@ -548,7 +572,9 @@ git branch patch-1
 git reset HEAD~1 --hard # Remove the commit from &grave;master&grave;
 git checkout patch-1</code></pre></div>
                     </div>
-                    </div>    
+                    </div>  
+                    
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Create a stash</h3>
@@ -583,6 +609,8 @@ git stash save "Bugfix WIP"
 # Creates a new stash with the message "Bugfix WIP"</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="git__hug">
                     <h3>View a summary of changes between two commits
@@ -614,6 +642,8 @@ git stash save "Bugfix WIP"
                     </div>
                     </div>  
 
+                    <hr>
+
                     <div class="git__hug">
                     <h3>Create a commit with a different date</h3>
                     <p>Sometimes, you might run into a situation where you need to create a commit with a different date than the current one. Luckily, you can handle this using GIT_AUTHOR_DATE and GIT_COMMITTER_DATE:
@@ -631,6 +661,8 @@ git stash save "Bugfix WIP"
                     <p>As shown in the example above, you can set both values to any date you like and your code will be committed on that date. Note that the format for the values above is 'date +"%s %z"', also referred to as internal raw git format, but you can also use other formats, such as RFC 2822 ('Mon, 18 May 2020 19:32:10 -0400'), ISO 8601 ('2020-05-18 19:32:10 -0400'), local ('Mon May 18 19:32:10 2020'), short ('2020-05-18') or relative (5.seconds.ago, 2.years.3.months.ago, '6am yesterday').</p>
 
                     </div>  
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Find branches containing a commit</h3>
@@ -658,6 +690,8 @@ git stash save "Bugfix WIP"
                     </div>
                     </div>  
 
+                    <hr>
+
                     <div class="git__hug">
                     <h3>Find branches not containing a commit</h3>
                     <p>Prints all the branches not containing a specific commit.
@@ -683,6 +717,8 @@ git stash save "Bugfix WIP"
 # patch-4</code></pre></div>
                     </div>
                     </div>  
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Delete detached branches</h3>
@@ -719,6 +755,8 @@ git branch
                     </div>
                     </div>  
 
+                    <hr>
+
                     <div class="git__hug">
                     <h3>Merge a branch</h3>
                     <p>Merges a branch into the current branch.</p>
@@ -745,6 +783,8 @@ git merge &lt;source-branch&gt;</code></pre></div>
 git merge patch-1 # Merges the `patch-1` branch into `master`</code></pre></div>
                     </div>
                     </div>  
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Reset master to match remote</h3>
@@ -779,6 +819,8 @@ git reset --hard origin/master
                     </div>
                     </div>  
 
+                    <hr>
+
                     <div class="git__hug">
                     <h3>View a short summary of commits</h3>
                     <p>Prints a short summary of all commits.</p>
@@ -803,6 +845,8 @@ git reset --hard origin/master
 # c191f90c7 Initial commit</code></pre></div>
                     </div>
                     </div>  
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>View "undo" history</h3>
@@ -840,6 +884,8 @@ git reset --hard origin/master
                     </div>
 
                     </div>  
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Automatically find the commit that introduced a bug</h3>
@@ -883,6 +929,8 @@ git bisect reset # Goes to the original branch</code></pre></div>
                     </div>
                     </div>  
 
+                    <hr>
+
                     <div class="git__hug">
                     <h3>Delete a remote branch</h3>
                     <p>Deletes a remote branch.</p>
@@ -904,6 +952,8 @@ git bisect reset # Goes to the original branch</code></pre></div>
 git push -d origin patch-1 # Deletes the `patch-1` remote branch</code></pre></div>
                     </div>
                     </div>  
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Manually find the commit that introduced a bug</h3>
@@ -947,7 +997,9 @@ git bisect bad # Current commit is buggy
 # ... some time later the bad commit will be printed
 git bisect reset # Goes to the original branch</code></pre></div>
                     </div>
-                    </div>  
+                    </div> 
+                    
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Change the last commit's message</h3>
@@ -975,6 +1027,8 @@ git commit --amend -m "Fix the network bug"
                     </div>
                     </div>  
 
+                    <hr>
+
                     <div class="git__hug">
                     <h3>Clone missing submodules</h3>
                     <p>Clones missing submodules and checks out commits.</p>
@@ -998,6 +1052,8 @@ git commit --amend -m "Fix the network bug"
 # Clones missing submodules and checks out commits</code></pre></div>
                     </div>
                     </div>  
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Perform an interactive rebase</h3>
@@ -1033,6 +1089,8 @@ git rebase -i --autosquash HEAD~5
                     </div>
                     </div>  
 
+                    <hr>
+
                     <div class="git__hug">
                     <h3>List all git aliases</h3>
                     <p>Prints a list of all git aliases.</p>
@@ -1062,6 +1120,8 @@ git rebase -i --autosquash HEAD~5
 # rb=rebase</code></pre></div>
                     </div>
                     </div>  
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Pick changes from one or more commits</h3>
@@ -1096,6 +1156,8 @@ git cherry-pick 3050fc0de..c191f90c7
                     </div>
                     </div>  
 
+                    <hr>
+
                     <div class="git__hug">
                     <h3>Set default push branch name</h3>
                     <p>Use the name of the current branch when pushing by default as the name of the remote branch.</p>
@@ -1124,6 +1186,8 @@ git push -u
 # Pushes to origin/my-branch</code></pre></div>
                     </div>
                     </div>  
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>View commits by author</h3>
@@ -1154,6 +1218,8 @@ git push -u
                     </div>
                     </div>  
 
+                    <hr>
+
                     <div class="git__hug">
                     <h3>Push local changes to remote</h3>
                     <p>Pushes the current branch's changes to the remote.</p>
@@ -1179,6 +1245,8 @@ git push # The remote `patch-1` branch is now up to date with the local branch</
                     </div>
 
                     </div>  
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Remove a file from the last commit</h3>
@@ -1209,6 +1277,7 @@ git commit &mdash;-amend
 
                     </div>  
 
+                    <hr>
 
                     <div class="git__hug">
                     <h3>View the remote URL</h3>
@@ -1232,6 +1301,8 @@ git commit &mdash;-amend
                     </div>
 
                     </div>  
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>How to add multiple authors to a commit</h3>
@@ -1260,6 +1331,8 @@ Co-authored-by: another-name &lt;another-name@example.com&gt;&quot;</code></pre>
                     </ul>
                     </div>  
 
+                    <hr>
+
                     <div class="git__hug">
                     <h3>Add a commit message template</h3>
 
@@ -1285,6 +1358,8 @@ Co-authored-by: another-name &lt;another-name@example.com&gt;&quot;</code></pre>
                     </div>
 
                     </div>  
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Commit without running git hooks</h3>
@@ -1314,6 +1389,8 @@ git commit --no-verify -m &quot;Unsafe commit&quot;
 
                     </div>  
 
+                    <hr>
+
                     <div class="git__hug">
                     <h3>Copy a file from another branch</h3>
                     <p>Copies a file from another branch to the current branch.</p>
@@ -1338,7 +1415,9 @@ git checkout patch-1 &quot;30seconds.txt&quot;
 # &grave;patch-2&grave; branch now contains the 30seconds.txt file from &grave;patch-1&grave;</code></pre></div>
                     </div>
 
-                    </div>  
+                    </div> 
+                    
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Delete a branch</h3>
@@ -1363,7 +1442,9 @@ git checkout patch-1 &quot;30seconds.txt&quot;
 git branch -d patch-1 # Deletes the &grave;patch-1&grave; local branch</code></pre></div>
                     </div>
 
-                    </div>  
+                    </div> 
+
+                    <hr> 
 
                     <div class="git__hug">
                     <h3>Optimize the local repository</h3>
@@ -1388,7 +1469,9 @@ git branch -d patch-1 # Deletes the &grave;patch-1&grave; local branch</code></p
                             <pre class="line-numbers"><code class="language-git">git gc --prune=now --aggressive # Optimizes the local repository</code></pre></div>
                     </div>
 
-                    </div>  
+                    </div> 
+
+                    <hr> 
 
                     <div class="git__hug">
                     <h3>Pull all submodules from remote</h3>
@@ -1414,6 +1497,8 @@ git branch -d patch-1 # Deletes the &grave;patch-1&grave; local branch</code></p
                     </div>
 
                     </div>  
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Edit the last commit</h3>
@@ -1442,7 +1527,9 @@ git commit --amend --no-edit
 # The last commit includes the edited/added files</code></pre></div>
                     </div>
 
-                    </div>  
+                    </div> 
+                    
+                    <hr>
 
                     <div class="git__hug">
                     <h3>View differences in changes</h3>
@@ -1474,6 +1561,8 @@ git diff --staged
 
                     </div>  
 
+                    <hr>
+
                     <div class="git__hug">
                     <h3>Apply the latest stash</h3>
                     <p>Applies the latest stash.</p>
@@ -1496,6 +1585,8 @@ git diff --staged
                     </div>
 
                     </div>  
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Apply a stash</h3>
@@ -1520,6 +1611,8 @@ git diff --staged
                     </div>
 
                     </div>  
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Clone a repository</h3>
@@ -1552,6 +1645,8 @@ cd my-project</code></pre></div>
                     </div>
 
                     </div>  
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Configure git user information</h3>
@@ -1588,6 +1683,8 @@ git config --global user.name "Duck Quackers"
 
                     </div>  
 
+                    <hr>
+
                     <div class="git__hug">
                     <h3>Get the current branch name</h3>
                     <p>Prints the current branch name.</p>
@@ -1613,6 +1710,8 @@ git rev-parse --abbrev-ref HEAD # Prints `patch-1`</code></pre></div>
 
                     </div>  
 
+                    <hr>
+
                     <div class="git__hug">
                     <h3>Delete a stash</h3>
                     <p>Deletes a specific stash.</p>
@@ -1635,6 +1734,8 @@ git rev-parse --abbrev-ref HEAD # Prints `patch-1`</code></pre></div>
                     </div>
 
                     </div>  
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Delete all stashes</h3>
@@ -1660,6 +1761,8 @@ git rev-parse --abbrev-ref HEAD # Prints `patch-1`</code></pre></div>
 
                     </div>  
 
+                    <hr>
+
                     <div class="git__hug">
                     <h3>Discard uncommitted changes</h3>
                     <p>Discards all uncommitted changes to the current branch.</p>
@@ -1682,6 +1785,8 @@ git rev-parse --abbrev-ref HEAD # Prints `patch-1`</code></pre></div>
                     </div>
 
                     </div>  
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Configure line endings</h3>
@@ -1709,6 +1814,8 @@ git rev-parse --abbrev-ref HEAD # Prints `patch-1`</code></pre></div>
                     </div>
 
                     </div>  
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Rename remote branch</h3>
@@ -1741,6 +1848,8 @@ git push origin -u patch-2 # Renames the remote branch to `patch-2`</code></pre>
 
                     </div>  
 
+                    <hr>
+
                     <div class="git__hug">
                     <h3>Restore a deleted file</h3>
                     <p>Restores a file deleted in a specific commit.</p>
@@ -1766,6 +1875,8 @@ git checkout 3050fc0de^ -- "30seconds.txt"
                     </div>
 
                     </div>  
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Rewind back n commits</h3>
@@ -1797,6 +1908,8 @@ git reset --hard HEAD~3
 
                     </div>  
 
+                    <hr>
+
                     <div class="git__hug">
                     <h3>Rewind back to a specific commit</h3>
                     <p>Rewinds the current branch by a given number of commits.</p>
@@ -1826,6 +1939,8 @@ git reset --hard c0d30f305
 
                     </div>  
 
+                    <hr>
+
                     <div class="git__hug">
                     <h3>Undo a commit</h3>
                     <p>Undoes a specified commit without rewriting history.</p>
@@ -1850,6 +1965,8 @@ git reset --hard c0d30f305
                     </div>
 
                     </div>  
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Undo the last commit</h3>
@@ -1903,7 +2020,9 @@ git reset --hard c0d30f305
 # [...]</code></pre></div>
                     </div>
 
-                    </div>  
+                    </div> 
+                    
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Change the remote URL</h3>
@@ -1930,6 +2049,8 @@ git reset --hard c0d30f305
 
                     </div>  
 
+                    <hr>
+
                     <div class="git__hug">
                     <h3>View difference between two branches</h3>
                     <p>Displays the difference between two branches.</p>
@@ -1955,6 +2076,8 @@ git reset --hard c0d30f305
 
                     </div>  
 
+                    <hr>
+
                     <div class="git__hug">
                     <h3>Pull latest changes from remote</h3>
                     <p>Pulls the latest changes from the remote tracking branch.</p>
@@ -1975,6 +2098,8 @@ git pull # The local `patch-1` branch is now up to date with the remote branch</
                     </div>
 
                     </div>  
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Autocorrect git commands</h3>
@@ -2001,6 +2126,8 @@ git sttaus # Runs `git status` instead</code></pre></div>
                     </div>
 
                     </div>  
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Create a fixup commit</h3>
@@ -2029,6 +2156,8 @@ git rebase HEAD~5 --autosquash
                     </div>
 
                     </div>  
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Create a new repository</h3>
@@ -2060,6 +2189,8 @@ git init my_project # Initializes a repo in ~/my_project</code></pre></div>
 
                     </div>  
 
+                    <hr>
+
                     <div class="git__hug">
                     <h3>Discard untracked changes</h3>
 
@@ -2083,7 +2214,9 @@ git init my_project # Initializes a repo in ~/my_project</code></pre></div>
 # Discards all untracked changes</code></pre></div>
                     </div>
 
-                    </div>  
+                    </div> 
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Fetch latest changes from remote</h3>
@@ -2106,6 +2239,8 @@ git init my_project # Initializes a repo in ~/my_project</code></pre></div>
                     </div>
 
                     </div>  
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Rename a branch</h3>
@@ -2133,6 +2268,8 @@ git branch -m patch-1 patch-2
 
                     </div>  
 
+                    <hr>
+
                     <div class="git__hug">
                     <h3>Add a submodule</h3>
                     <p>Adds a new submodule to the repository.</p>
@@ -2158,6 +2295,8 @@ git branch -m patch-1 patch-2
                     </div>
 
                     </div> 
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Create a commit by a different author</h3>
@@ -2185,6 +2324,8 @@ git commit -m &quot;Fix the network bug&quot; --author=&quot;Duck Quackers &lt;c
                     </div>
 
                     </div> 
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Delete a submodule</h3>
@@ -2215,6 +2356,8 @@ git rm -f 30code
                     </div>
 
                     </div> 
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Rebase onto another branch</h3>
@@ -2248,6 +2391,8 @@ git rebase origin/master
 
                     </div> 
 
+                    <hr>
+
                     <div class="git__hug">
                     <h3>Configure the git text editor</h3>
                     <p>Configures the text editor used by git.</p>
@@ -2272,6 +2417,8 @@ git rebase origin/master
                     </div>
 
                     </div> 
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Create a new branch</h3>
@@ -2305,6 +2452,8 @@ git checkout -b patch-2 -t origin/patch-2
 
                     </div> 
 
+                    <hr>
+
                     <div class="git__hug">
                     <h3>Switch to a branch</h3>
                     <p>Switches to an existing branch.</p>
@@ -2326,6 +2475,8 @@ git checkout -b patch-2 -t origin/patch-2
                     </div>
 
                     </div> 
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Return to previous branch</h3>
@@ -2353,6 +2504,8 @@ git checkout - # Switches to `patch-1`</code></pre></div>
                     </div>
 
                     </div> 
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>View current status</h3>
@@ -2388,6 +2541,8 @@ git status -sb
 
                     </div> 
 
+                    <hr>
+
                     <div class="git__hug">
                     <h3>Create a commit</h3>
                     <p>Creates a new commit containing the staged changes.</p>
@@ -2415,6 +2570,8 @@ git commit -m "Fix the network bug"
 
                     </div> 
 
+                    <hr>
+
                     <div class="git__hug">
                     <h3>Create an empty commit</h3>
                     <p>Creates an empty commit.</p>
@@ -2439,6 +2596,8 @@ git commit -m "Fix the network bug"
                     </div>
 
                     </div> 
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Edit git configuration file</h3>
@@ -2465,6 +2624,7 @@ git commit -m "Fix the network bug"
 
                     </div> 
 
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Add files to the staging area</h3>
@@ -2495,6 +2655,8 @@ git add .
                     </div>
 
                     </div> 
+
+                    <hr>
 
                     <div class="git__hug">
                     <h3>Remove files from the staging area</h3>

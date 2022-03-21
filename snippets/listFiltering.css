@@ -55,6 +55,11 @@ p{
     color: #000 !important;
 }
 
+hr{
+    margin: 20px;
+    border: 1px solid #fff;
+}
+
 .snippets__hero{
     text-align: center;
     color: var(--color-5);
@@ -73,11 +78,9 @@ p{
 }
 
 .html__hug{
-    background: #ff8161;
-    border: 5px solid #cb3813;
+    background: #fff;
     padding: 20px;
-    margin: 50px auto;
-    width: 80%;
+    margin: 0px auto;
     box-shadow: var(--sombra-de-caja);
 }
 
@@ -87,43 +90,36 @@ p{
 }
 
 .css__hug{
-    background: #264de4;
-    border: 5px solid #1536bc;
+    background: #fff;
     padding: 20px;
-    margin: 50px auto;
-    color: #fff;
-    width: 80%;
+    margin: 0px auto;
     box-shadow: var(--sombra-de-caja);
 }
 
 .css__hug h3{
     text-align: center;
-    color: #fff;
+    color: #000;
 }
 
 .javascript__hug{
-    background: #F0DB4F;
-    border: 5px solid #b8a633;
-    padding: 20px;
-    margin: 50px auto;
+    background: #fff;
     color: #000;
-    width: 80%;
+    padding: 20px;
+    margin: 0px auto;
     box-shadow: var(--sombra-de-caja);
 }
 
 .javascript__hug h3{
     text-align: center;
-    margin: 40px;
+    margin: 40px 0px;
     color: #323330;
 }
 
 .git__hug{
-    background: #F1502F;
-    border: 5px solid #cd3618;
+    background: #fff;
     padding: 20px;
-    margin: 50px auto;
+    margin: 0px auto;
     color: #000;
-    width: 80%;
     box-shadow: var(--sombra-de-caja);
 }
 
@@ -205,8 +201,13 @@ p{
 .panel__de__codigos{
     overflow-y: scroll;
     height: 80vh;
-    width: 80%;
-    margin: 30px auto;
+    width: 90%;
+    margin: 24px auto;
+}
+
+.panel__de__codigos h2{
+    background: var(--color-3);
+    color: #000;
 }
 
 .icono{

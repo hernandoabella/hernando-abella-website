@@ -64,6 +64,9 @@ var a = document.getElementsByTagName('a');
 for (e = 0; e < acc.length; e++) {
   acc[e].addEventListener("click", function() {
     this.classList.toggle("active");
+    // for() {
+
+    // }
     var panel = this.nextElementSibling;
     if (panel.style.maxHeight) {
       panel.style.maxHeight = null;

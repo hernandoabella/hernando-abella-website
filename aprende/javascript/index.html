@@ -12,11 +12,9 @@
 </head>
 
 <body>
-        <div class="botones">
-                <div class="openbtn" onclick="openNav()" data-cooltipz-dir="right" aria-label="Barra de navegación"></div>
-                <div class="darkSide" onclick="darkSide()" data-cooltipz-dir="right" aria-label="Modo Oscuro"></div>
-                <div class="gobackbtn" onclick="irAtras()" data-cooltipz-dir="right" aria-label="Ir atrás"></div>
-        </div>
+        <div class="darkSide" onclick="darkSide()"></div>
+
+        <div class="openbtn" onclick="openNav()"><i class="fas fa-angle-right"></i></div>
 
         <aside id="course__sidebar">
                 
@@ -30,7 +28,7 @@
                 
                 </div>
 
-                <a href="#item1">Conceptos básicos de JavaScript</a>
+                <a href="#item1">Conceptos básicos</a>
                 <a href="#item2">Conversión de tipos</a>
                 <a href="#item3">Estructuras de control de flujo</a>
                 <a href="#item4">Funciones</a>
@@ -58,7 +56,7 @@
         </aside>
 
         <div class="articles">
-        <button class="accordion">Conceptos básicos de JavaScript</button>
+        <button class="accordion">Conceptos básicos</button>
         <div class="panel">
         <section id="item1">
         <h2>Introducción</h2>
@@ -547,8 +545,6 @@
 
 
         </div>
-
-        <button onclick="topFunction()" id="myBtn" title="Ir arriba"><i class="fas fa-arrow-up"></i></button>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>

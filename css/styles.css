@@ -97,12 +97,12 @@ a{
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #dbdada;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: var(--color-2);
+    background: var(--color-1);
 }
 
 /* Handle on hover */
@@ -114,8 +114,6 @@ a{
 /* @media only screen and (max-width: 768px) {
 
 } */
-
-/* ---------------- estilos principales ------------------- */
 
 /* ---------------- front__page ------------------- */
 

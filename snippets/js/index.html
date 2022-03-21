@@ -13,24 +13,24 @@
     <link rel="stylesheet" href="/css/temaPrism.css">
 </head>
 <body>
-    <header>
-        <nav> 
-            <ul>
-                <li>
-                    <a href="../"> <i class="fas fa-angle-left"></i></a>
-                </li>
-                <li>
-                    <a href="/"> Inicio</a>
-                </li>
-                <li>
-                    <a href="/aprende/">Aprende</a>
-                </li>
-                <li>
-                    <a href="/proyectos/">Practica</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+<header>
+            <nav>
+                <ul>
+                    <li>
+                        <a class="back" href="../"><i class="fas fa-angle-left"></i></a>
+                    </li>
+                    <li>
+                        <a href="../">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="../aprende/"> Aprende</a>
+                    </li>
+                    <li>
+                        <a href="/proyectos/">Practica</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
     <section class="snippets">
         
         <div class="panel__de__codigos">
@@ -48,7 +48,7 @@ castearValor(1);               // [1]
 castearValor([1, 2, 3]);       // [1, 2, 3]</code></pre>
                     </div>
 
-                    
+                    <hr>
                 
                     <div class="javascript__hug">
                     <h3>Comprueba si un arreglo esta vacío</h3>
@@ -64,7 +64,7 @@ estaVacio([1, 2, 3]);     // false</code></pre></div>
                     </div>
                     </div>
 
-                    
+                    <hr>
 
                     <div class="javascript__hug">
                     <h3>Clona un arreglo</h3>
@@ -91,7 +91,7 @@ const clonar = arreglo => arreglo.concat([]);</code></pre></div>
                     </div>
                     </div>            
 
-                    
+                    <hr>
                 
                     <div class="javascript__hug">
                     <h3>Compara dos arreglo</h3>
@@ -110,6 +110,7 @@ esIgual([1, 2, 3], [1, '2', 3]);    // false</code></pre></div>
                     </div>
                     </div>
 
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3>Compara dos arreglos sin importar el orden</h3> 
@@ -126,7 +127,7 @@ esIgual([1, 2, 3], [1, '2', 3]);    // false</code></pre></div>
                     </div>
                     </div>
 
-                    
+                    <hr>
                 
                     <div class="javascript__hug">
                     <h3>Convierte un arreglo de objetos en un solo objeto</h3>  
@@ -154,7 +155,7 @@ aObjeto(
                     </div>
                     </div>
 
-                    
+                    <hr>
                 
                     <div class="javascript__hug">
                     <h3>Convierte un arreglo de strings en números</h3> 
@@ -171,7 +172,7 @@ aNumeros(['2', '3', '4']);     // [2, 3, 4]</code></pre></div>
                     </div>
                     </div>
 
-                    
+                    <hr>
                 
                     <div class="javascript__hug">
                     <h3>Contar según las propiedades de un arreglo de objetos</h3> 
@@ -194,6 +195,8 @@ countBy([
                     </div>
                     </div>
 
+                    <hr>
+
                     <div class="javascript__hug">
                     <h3>Contar las ocurrencias de un valor en una matriz</h3> 
                     
@@ -211,6 +214,7 @@ countOccurrences(['a', 'b', 'a', 'c', 'a', 'b'], 'a');  // 3</code></pre></div>
                     </div>
                     </div>
 
+                    <hr>
 
                     <div class="javascript__hug">
 
@@ -226,7 +230,7 @@ countOccurrences(['a', 'b', 'a', 'c', 'a', 'b']);   // { 'a': 3, 'b': 2, 'c': 1 
                     </div>
                     </div>
 
-                    
+                    <hr>
                 
                     <div class="javascript__hug">
                     <h3>Crear una matriz de números en el rango dado</h3> 
@@ -247,10 +251,10 @@ range(5, 10);   // [5, 6, 7, 8, 9, 10]</code></pre></div>
                     </div>
                     </div>
 
-                    
+                    <hr>
                 
-                   <div class="javascript__hug"> 
-                   <h3>Crear producto cartesiano</h3> 
+                    <div class="javascript__hug"> 
+                    <h3>Crear producto cartesiano</h3> 
                     
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -271,7 +275,7 @@ cartesian([1, 2], [3, 4]);   // [ [1, 3], [1, 4], [2, 3], [2, 4] ]
                     </div>
                    </div>
 
-                    
+                   <hr>
                 
                     <div class="javascript__hug">
                     <h3>Vaciar una matriz</h3> 
@@ -285,7 +289,7 @@ arr = [];</code></pre></div>
                     </div>
                     </div>
 
-                    
+                    <hr>
                  
                     <div class="javascript__hug">
                     <h3 >Encuentra el número más cercano de una matriz</h3>
@@ -302,7 +306,8 @@ const closest = (arr, n) => arr.sort((a, b) => Math.abs(a - n) - Math.abs(b - n)
 closest([29, 87, 8, 78, 97, 20, 75, 33, 24, 17], 50);   // 33</code></pre></div>
                     </div>
                     </div>
-               
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Find the index of the last matching item of an array</h3>
@@ -320,6 +325,8 @@ lastIndex([1, 3, 5, 7, 9, 8, 6, 4, 2], i => i > 6);         // 5</code></pre></d
                     </div>
                     </div>
 
+                    <hr>
+
                     <div class="javascript__hug">
                     <h3 >Encuentre el índice del elemento máximo de una matriz</h3>
                     <div class="panel">
@@ -332,6 +339,8 @@ indexOfMax([1, 3, 9, 7, 5]);        // 2
 indexOfMax([1, 3, 7, 7, 5]);        // 2</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                         <h3 >Encuentre el índice del elemento mínimo de una matriz</h3>
@@ -345,6 +354,8 @@ indexOfMin([6, 4, 8, 2, 10]);       // 3
 indexOfMin([6, 4, 2, 2, 10]);       // 2</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Encuentre la longitud de la cadena más larga en una matriz</h3>
@@ -357,6 +368,8 @@ indexOfMin([6, 4, 2, 2, 10]);       // 2</code></pre></div>
 findLongest(['always','look','on','the','bright','side','of','life']);  // 6</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Encuentra el elemento máximo de una matriz</h3>
@@ -366,6 +379,8 @@ findLongest(['always','look','on','the','bright','side','of','life']);  // 6</co
                             <pre class="line-numbers"><code class="language-javascript">const max = arr => Math.max(...arr);</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Encuentre el elemento máximo de una matriz por clave dada</h3>
@@ -384,6 +399,8 @@ const people = [
 maxBy(people, 'age');   // { name: 'Foo', age: 42 }</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Encuentra el elemento mínimo de una matriz</h3>
@@ -393,6 +410,8 @@ maxBy(people, 'age');   // { name: 'Foo', age: 42 }</code></pre></div>
                             <pre class="line-numbers"><code class="language-javascript">const min = arr => Math.min(...arr);</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Encuentre el elemento mínimo de una matriz por clave dada</h3>
@@ -411,6 +430,8 @@ const people = [
 minBy(people, 'age');   // { name: 'Bar', age: 24 }</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Aplanar una matriz</h3>
@@ -429,6 +450,8 @@ const flat = arr => arr.flat();
 flat(['cat', ['lion', 'tiger']]);   // ['cat', 'lion', 'tiger']</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Obtener todas las matrices de elementos consecutivos</h3>
@@ -443,6 +466,8 @@ getConsecutiveArrays([1, 2, 3, 4, 5], 3);   // [[1, 2, 3], [2, 3, 4], [3, 4, 5]]
 getConsecutiveArrays([1, 2, 3, 4, 5], 6);   // []</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Obtener todos los n-ésimos elementos de una matriz</h3>
@@ -456,6 +481,8 @@ getNthItems([1, 2, 3, 4, 5, 6, 7, 8, 9], 2);    // [2, 4, 6, 8]
 getNthItems([1, 2, 3, 4, 5, 6, 7, 8, 9], 3);    // [3, 6, 9]</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Obtener todos los subconjuntos de una matriz</h3>
@@ -469,6 +496,8 @@ getSubsets([1, 2]);     // [[], [1], [2], [1, 2]]
 getSubsets([1, 2, 3]);  // [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Obtener índices de un valor en una matriz</h3>
@@ -485,6 +514,8 @@ indices(['h', 'e', 'l', 'l', 'o'], 'l');    // [2, 3]
 indices(['h', 'e', 'l', 'l', 'o'], 'w');    // []</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Obtener el promedio de una matriz</h3>
@@ -494,6 +525,8 @@ indices(['h', 'e', 'l', 'l', 'o'], 'w');    // []</code></pre></div>
                             <pre class="line-numbers"><code class="language-javascript">const average = arr => arr.reduce((a, b) => a + b, 0) / arr.length;</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Obtener la intersección de matrices</h3>
@@ -507,6 +540,8 @@ getIntersection([1, 2, 3], [2, 3, 4, 5]);               // [2, 3]
 getIntersection([1, 2, 3], [2, 3, 4, 5], [1, 3, 5]);    // [3]</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Obtener el rango de una matriz de números</h3>
@@ -521,6 +556,8 @@ ranking([80, 80, 70, 50]);      // [1, 1, 3, 4]
 ranking([80, 80, 80, 50]);      // [1, 1, 1, 4]</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Obtener la suma de una matriz de números</h3>
@@ -530,6 +567,8 @@ ranking([80, 80, 80, 50]);      // [1, 1, 1, 4]</code></pre></div>
                             <pre class="line-numbers"><code class="language-javascript">const sum = arr => arr.reduce((a, b) => a + b, 0);</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Obtener los valores únicos de una matriz</h3>
@@ -545,6 +584,8 @@ const unique = arr => arr.filter((el, i, array) => array.indexOf(el) === i);
 const unique = arr => arr.reduce((acc, el) => acc.includes(el) ? acc : [...acc, el], []);</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Obtener unión de arreglos</h3>
@@ -557,6 +598,8 @@ const unique = arr => arr.reduce((acc, el) => acc.includes(el) ? acc : [...acc, 
 union([1, 2], [2, 3], [3]);     // [1, 2, 3]</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Agrupar una matriz de objetos por una clave</h3>
@@ -591,6 +634,8 @@ groupBy([
 */</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Combinar dos matrices</h3>
@@ -608,6 +653,8 @@ const merge = [...new Set(a.concat(b))];
 const merge = [...new Set([...a, ...b])];</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Particionar una matriz en función de una condición</h3>
@@ -620,6 +667,8 @@ const merge = [...new Set([...a, ...b])];</code></pre></div>
 partition([1, 2, 3, 4, 5], n => n % 2);     // [[2, 4], [1, 3, 5]]</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Eliminar valores duplicados en una matriz</h3>
@@ -631,6 +680,8 @@ partition([1, 2, 3, 4, 5], n => n % 2);     // [[2, 4], [1, 3, 5]]</code></pre><
 removeDuplicate(['h', 'e', 'l', 'l', 'o', 'w', 'o', 'r', 'l', 'd']); //  ['h', 'e', 'w', 'r', 'd']</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Eliminar valores falsos de la matriz</h3>
@@ -643,6 +694,8 @@ removeDuplicate(['h', 'e', 'l', 'l', 'o', 'w', 'o', 'r', 'l', 'd']); //  ['h', '
 removeFalsy([0, 'a string', '', NaN, true, 5, undefined, 'another string', false]); // ['a string', true, 5, 'another string']</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Mezclar una matriz</h3>
@@ -658,6 +711,8 @@ const shuffle = arr => arr.sort(() => .5 - Math.random());
 shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);   // [9, 1, 10, 6, 8, 5, 2, 3, 7, 4]</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Ordenar una matriz de elementos por clave dada</h3>
@@ -684,6 +739,8 @@ sortBy(people, 'age');
 //  ]</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Ordenar una matriz de números</h3>
@@ -696,6 +753,8 @@ sortBy(people, 'age');
 sort([1, 5, 2, 4, 3]);      // [1, 2, 3, 4, 5]</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Dividir una matriz en trozos</h3>
@@ -709,6 +768,8 @@ chunk([1, 2, 3, 4, 5, 6, 7, 8], 3);     // [[1, 2, 3], [4, 5, 6], [7, 8]]
 chunk([1, 2, 3, 4, 5, 6, 7, 8], 4);     // [[1, 2, 3, 4], [5, 6, 7, 8]]</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Intercambiar filas y columnas de una matriz</h3>
@@ -731,6 +792,8 @@ transpose([             // [
 ]);                     //  ]</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Intercambiar dos elementos de matriz</h3>
@@ -744,6 +807,8 @@ const swapItems = (a, i, j) => a[i] && a[j] && [...a.slice(0, i), a[j], ...a.sli
 swapItems([1, 2, 3, 4, 5], 1, 4);   // [1, 5, 3, 4, 2] </code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Descomprimir una matriz de matrices</h3>
@@ -764,6 +829,8 @@ unzip([['a', 1], ['b', 2], ['c', 3], ['d', 4], ['e', 5]]);  // [['a', 'b', 'c', 
 */</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Zip multiple arrays</h3>
@@ -800,6 +867,8 @@ Does it look like a zipper?
                             <pre class="line-numbers"><code class="language-javascript">const isDescendant = (child, parent) => parent.contains(child);</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Comprobar si un elemento está enfocado</h3>
@@ -809,6 +878,8 @@ Does it look like a zipper?
                             <pre class="line-numbers"><code class="language-javascript">const hasFocus = ele => (ele === document.activeElement);</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Compruebe si los eventos táctiles son compatibles</h3>
@@ -818,6 +889,8 @@ Does it look like a zipper?
                             <pre class="line-numbers"><code class="language-javascript">const touchSupported = () => ('ontouchstart' in window || window.DocumentTouch && document instanceof window.DocumentTouch);</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Comprobar si el usuario se desplaza hasta la parte inferior de la página</h3>
@@ -827,6 +900,8 @@ Does it look like a zipper?
                             <pre class="line-numbers"><code class="language-javascript">const isAtBottom = () => document.documentElement.clientHeight + window.scrollY >= document.documentElement.scrollHeight;</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Detectar navegador Internet Explorer</h3>
@@ -836,6 +911,8 @@ Does it look like a zipper?
                             <pre class="line-numbers"><code class="language-javascript">const isIE = !!document.documentMode;</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Detectar navegador macOS</h3>
@@ -845,6 +922,8 @@ Does it look like a zipper?
                             <pre class="line-numbers"><code class="language-javascript">const isMacBrowser = /Mac|iPod|iPhone|iPad/.test(navigator.platform);</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                         <h3 >Obtener todos los hermanos de un elemento</h3>
@@ -854,6 +933,8 @@ Does it look like a zipper?
                             <pre class="line-numbers"><code class="language-javascript">const siblings = ele => [].slice.call(ele.parentNode.children).filter((child) => (child !== ele));</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Obtener la posición de un elemento en relación con el documento</h3>
@@ -866,6 +947,8 @@ Does it look like a zipper?
 getPosition(document.body);     // { left: 0, top: 0 }</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Obtener el texto seleccionado</h3>
@@ -875,6 +958,8 @@ getPosition(document.body);     // { left: 0, top: 0 }</code></pre></div>
                             <pre class="line-numbers"><code class="language-javascript">const getSelectedText = () => window.getSelection().toString();</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Vuelve a la pagina anterior</h3>
@@ -887,6 +972,8 @@ getPosition(document.body);     // { left: 0, top: 0 }</code></pre></div>
 history.go(-1);</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
 
                     <div class="javascript__hug">
                         <h3 >Ocultar un elemento</h3>
@@ -904,6 +991,8 @@ const hide = ele => ele.hidden = true;</code></pre></div>
                     </div>
                     </div>
 
+                    <hr>
+
                     <div class="javascript__hug">
                     <h3 >Insertar un elemento después de otro</h3>
                     <div class="panel">
@@ -915,6 +1004,8 @@ const hide = ele => ele.hidden = true;</code></pre></div>
 const insertAfter = (ele, anotherEle) => anotherEle.insertAdjacentElement('afterend', ele);</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
 
                     <div class="javascript__hug">
                     <h3 >Insertar un elemento antes de otro</h3>
@@ -928,6 +1019,8 @@ const insertBefore = (ele, anotherEle) => anotherEle.insertAdjacentElement('befo
                     </div>
                     </div>
 
+                    <hr>
+
                     <div class="javascript__hug">
                     <h3 >Insertar HTML dado después de un elemento</h3>
                     <div class="panel">
@@ -936,6 +1029,8 @@ const insertBefore = (ele, anotherEle) => anotherEle.insertAdjacentElement('befo
                             <pre class="line-numbers"><code class="language-javascript">const insertHtmlAfter = (html, ele) => ele.insertAdjacentHTML('afterend', html);</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
 
                     <div class="javascript__hug">
                     <h3 >Insertar HTML dado antes de un elemento</h3>
@@ -946,6 +1041,8 @@ const insertBefore = (ele, anotherEle) => anotherEle.insertAdjacentElement('befo
                     </div>
                     </div>
 
+                    <hr>
+
                     <div class="javascript__hug">
                         <h3 >Redirigir a otra página</h3>
                     <div class="panel">
@@ -954,6 +1051,8 @@ const insertBefore = (ele, anotherEle) => anotherEle.insertAdjacentElement('befo
                             <pre class="line-numbers"><code class="language-javascript">const goTo = url => location.href = url;</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
 
                     <div class="javascript__hug">
                     <h3 >Recargar la página actual</h3>
@@ -967,6 +1066,8 @@ const reload = () => (location.href = location.href);</code></pre></div>
                     </div>
                     </div>
 
+                    <hr>
+
                     <div class="javascript__hug">
                     <h3 >Reemplazar un elemento</h3>
                     <div class="panel">
@@ -975,6 +1076,8 @@ const reload = () => (location.href = location.href);</code></pre></div>
                             <pre class="line-numbers"><code class="language-javascript">const replace = (ele, newEle) => ele.parentNode.replaceChild(newEle, ele);</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
 
                     <div class="javascript__hug">
                     <h3 >Desplácese hasta la parte superior de la página</h3>
@@ -985,6 +1088,8 @@ const reload = () => (location.href = location.href);</code></pre></div>
                     </div>
                     </div>
 
+                    <hr>
+
                     <div class="javascript__hug">
                     <h3 >Serializar datos de formulario</h3>
                     <div class="panel">
@@ -993,6 +1098,8 @@ const reload = () => (location.href = location.href);</code></pre></div>
                             <pre class="line-numbers"><code class="language-javascript">const serialize = formEle => Array.from(new FormData(formEle)).reduce((p, [k, v]) => Object.assign({}, p, { [k]: p[k] ? (Array.isArray(p[k]) ? p[k] : [p[k]]).concat(v) : v}), {});</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
 
                     <div class="javascript__hug">
                         <h3 >Mostrar un elemento</h3>
@@ -1003,6 +1110,8 @@ const reload = () => (location.href = location.href);</code></pre></div>
                     </div>
                     </div>
 
+                    <hr>
+
                     <div class="javascript__hug">
                     <h3 >Eliminar HTML de un texto dado</h3>
                     <div class="panel">
@@ -1011,6 +1120,8 @@ const reload = () => (location.href = location.href);</code></pre></div>
                             <pre class="line-numbers"><code class="language-javascript">const stripHtml = html => (new DOMParser().parseFromString(html, 'text/html')).body.textContent || '';</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
 
                     <div class="javascript__hug">
                     <h3 >Alternar un elemento</h3>
@@ -1045,6 +1156,8 @@ suffixAmPm(23);     // '11pm'</code></pre></div>
                     </div>
                     </div>
 
+                    <hr>
+
                     <div class="javascript__hug">
                     <h3 >Calcular el número de días de diferencia entre dos fechas</h3>
                     <div class="panel">
@@ -1057,6 +1170,8 @@ diffDays(new Date('2014-12-19'), new Date('2020-01-01'));   // 1839</code></pre>
                     </div>
                     </div>
 
+                    <hr>
+
                     <div class="javascript__hug">
                     <h3 >Calcular el número de meses entre dos fechas</h3>
                     <div class="panel">
@@ -1068,6 +1183,8 @@ diffDays(new Date('2014-12-19'), new Date('2020-01-01'));   // 1839</code></pre>
 monthDiff(new Date('2020-01-01'), new Date('2021-01-01'));  // 12</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
 
                     <div class="javascript__hug">
                     <h3 >Compara dos fechas</h3>
@@ -1082,6 +1199,8 @@ compare(new Date('2020-03-30'), new Date('2020-01-01'));    // true</code></pre>
                     </div>
                     </div>
 
+                    <hr>
+
                     <div class="javascript__hug">
                     <h3 >Convertir una fecha al formato AAAA-MM-DD</h3>
                     <div class="panel">
@@ -1094,6 +1213,8 @@ const formatYmd = date => date.toISOString().slice(0, 10);
 formatYmd(new Date());      // 2020-05-06</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
 
                     <div class="javascript__hug">
                     <h3 >Convertir segundos a formato hh:mm:ss</h3>
@@ -1115,6 +1236,8 @@ formatSeconds(500);     // 00:08:20</code></pre></div>
                     </div>
                     </div>
 
+                    <hr>
+
                     <div class="javascript__hug">
                     <h3>Extraer año, mes, día, hora, minuto, segundo y milisegundo de una fecha</h3>
                     <div class="panel">
@@ -1126,6 +1249,8 @@ const extract = date => date.toISOString().split(/[^0-9]/).slice(0, -1);
 // `extract` is an array of [year, month, day, hour, minute, second, millisecond]</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
 
                     <div class="javascript__hug">
                     <h3 >Dar formato a una fecha para la configuración regional dada</h3>
@@ -1141,6 +1266,8 @@ format(new Date(), 'pt-BR');    // 06/05/2020</code></pre></div>
                     </div>
                     </div>
 
+                    <hr>
+
                     <div class="javascript__hug">
                     <h3>Obtener el trimestre actual de una fecha</h3>
                     <div class="panel">
@@ -1150,6 +1277,8 @@ format(new Date(), 'pt-BR');    // 06/05/2020</code></pre></div>
                     </div>
                     </div>
 
+                    <hr>
+
                     <div class="javascript__hug">
                     <h3>Obtener la marca de tiempo actual en segundos</h3>
                     <div class="panel">
@@ -1158,6 +1287,8 @@ format(new Date(), 'pt-BR');    // 06/05/2020</code></pre></div>
                             <pre class="line-numbers"><code class="language-javascript">const ts = () => Math.floor(new Date().getTime() / 1000);</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
 
                     <div class="javascript__hug">
                     <h3>Obtener el día del año a partir de una fecha</h3>
@@ -1172,6 +1303,8 @@ dayOfYear(new Date(2020, 04, 16));      // 137</code></pre></div>
                     </div>
                     </div>
 
+                    <hr>
+
                     <div class="javascript__hug">
                     <h3 >Obtener la primera fecha en el mes de una fecha</h3>
                     <div class="panel">
@@ -1181,6 +1314,8 @@ dayOfYear(new Date(2020, 04, 16));      // 137</code></pre></div>
                     </div>
                     </div>
 
+                    <hr>
+
                     <div class="javascript__hug">
                         <h3>Obtener la última fecha en el mes de una fecha</h3>
                     <div class="panel">
@@ -1189,6 +1324,8 @@ dayOfYear(new Date(2020, 04, 16));      // 137</code></pre></div>
                             <pre class="line-numbers"><code class="language-javascript">const getLastDate = (d = new Date()) => new Date(d.getFullYear(), d.getMonth() + 1, 0);</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
 
                     <div class="javascript__hug">
                     <h3>Obtener el nombre del mes de una fecha</h3>
@@ -1200,6 +1337,8 @@ const getMonthName = date => ['January', 'February', 'March', 'April', 'May', 'J
                     </div>
                     </div>
 
+                    <hr>
+
                     <div class="javascript__hug">
                     <h3>Obtener el número de días en un mes dado</h3>
                     <div class="panel">
@@ -1209,6 +1348,8 @@ const getMonthName = date => ['January', 'February', 'March', 'April', 'May', 'J
 const daysInMonth = (month, year) => new Date(year, month, 0).getDate();</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
 
                     <div class="javascript__hug">
                     <h3 >Obtener la cadena de zona horaria</h3>
@@ -1222,6 +1363,8 @@ getTimezone();      // 'Asia/Saigon'</code></pre></div>
                     </div>
                     </div>
 
+                    <hr>
+
                     <div class="javascript__hug">
                     <h3 >Obtener la fecha de mañana</h3>
                     <div class="panel">
@@ -1233,6 +1376,8 @@ getTimezone();      // 'Asia/Saigon'</code></pre></div>
 const tomorrow = new Date((new Date()).valueOf() + 1000 * 60 * 60 * 24);</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
 
                     <div class="javascript__hug">
                     <h3 >Obtener el número total de días en un año</h3>
@@ -1246,6 +1391,8 @@ const numberOfDays = year => new Date(year, 1, 29).getDate() === 29 ? 366 : 365;
                     </div>
                     </div>
 
+                    <hr>
+
                     <div class="javascript__hug">
                     <h3 >Obtener el día de la semana de una fecha</h3>
                     <div class="panel">
@@ -1255,6 +1402,8 @@ const numberOfDays = year => new Date(year, 1, 29).getDate() === 29 ? 366 : 365;
 const getWeekday = date => ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][date.getDay()];</code></pre></div>
                     </div>
                     </div>
+                    
+                    <hr>
 
                     <div class="javascript__hug">
                     <h3 >Obtener la fecha de ayer</h3>
@@ -1268,6 +1417,8 @@ const yesterday = new Date((new Date()).valueOf() - 1000 * 60 * 60 * 24);</code>
                     </div>
                     </div>
 
+                    <hr>
+
                     <div class="javascript__hug">
                     <h3>Inicialice la fecha actual pero ajuste la hora a la medianoche</h3>
                     <div class="panel">
@@ -1276,6 +1427,8 @@ const yesterday = new Date((new Date()).valueOf() - 1000 * 60 * 60 * 24);</code>
                             <pre class="line-numbers"><code class="language-javascript">const midnightOfToday = () => new Date(new Date().setHours(0, 0, 0, 0));</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
 
                     <div class="javascript__hug">
                     <h3 >Ordenar una matriz de fechas</h3>
@@ -1287,6 +1440,7 @@ const sortDescending = arr => arr.sort((a, b) => a.getTime() > b.getTime());
 const sortAscending = arr => arr.sort((a, b) => a.getTime() < b.getTime());</code></pre></div>
                     </div>
                     </div>
+                    
 
                 <div class="ribbon__shet">
                     <h2>Funciones</h2>
@@ -1314,6 +1468,8 @@ getDiscountPrice('$6.00', '20%');    // 4.8</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Comprobar si un valor es una función</h3>
                     <div class="panel">
@@ -1328,6 +1484,8 @@ isFunction(async function() {});    // true</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Comprobar si un valor es una función generadora</h3>
                     <div class="panel">
@@ -1340,6 +1498,8 @@ isGeneratorFunction(function() {});     // false
 isGeneratorFunction(function*() {});    // true</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                     <h3 >Comprobar si un valor es una función asíncrona</h3>
@@ -1354,6 +1514,8 @@ isAsyncFunction(function*() {});        // false
 isAsyncFunction(async function() {});   // true</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Componer funciones</h3>
@@ -1375,6 +1537,8 @@ fn('Hello World') === 'dlrow olleH';</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Componer funciones de izquierda a derecha</h3>
                     <div class="panel">
@@ -1395,6 +1559,8 @@ fn('Hello World') === 'dlrow olleH';</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Crear una función que acepte un único argumento</h3>
                     <div class="panel">
@@ -1406,6 +1572,8 @@ fn('Hello World') === 'dlrow olleH';</code></pre></div>
 ['1', '2', '3', '4', '5'].map(unary(parseInt));     // [1, 2, 3, 4, 5]</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Crear una función vacía</h3>
@@ -1419,6 +1587,8 @@ const noop = Function();
 // calling Function() might be detected as using eval by some security tools</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Curry una función</h3>
@@ -1438,6 +1608,8 @@ curry(sum, 1, 2, 3);    // 6</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Retrasar la evaluación de una función</h3>
                     <div class="panel">
@@ -1455,6 +1627,8 @@ const probablyFaster = manyThings.map(thunkfy(heavyComputation))
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Ejecutar una función una vez</h3>
                     <div class="panel">
@@ -1470,6 +1644,8 @@ incOnce();      // n = 1
 incOnce();      // n = 1</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Voltear los argumentos de una función</h3>
@@ -1491,6 +1667,8 @@ const isChild = flip(isParent);</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >función de identidad</h3>
                     <div class="panel">
@@ -1499,6 +1677,8 @@ const isChild = flip(isParent);</code></pre></div>
                             <pre class="line-numbers"><code class="language-javascript">const identity = x => x;</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Operador lógico xor</h3>
@@ -1523,6 +1703,8 @@ xor(false, true);       // true</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Memoizar una función</h3>
                     <div class="panel">
@@ -1543,6 +1725,8 @@ fibo(6);    // 8</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Aplicar parcialmente una función</h3>
                     <div class="panel">
@@ -1556,6 +1740,8 @@ const inc = partial(sum, 1);
 inc(9);     // 10</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3>Deshacer una función</h3>
@@ -1574,8 +1760,6 @@ uncurry(sum, 3)(1, 2, 3);       // 6</code></pre></div>
                     </div>
                 </div>
 
-                >
-
                 <div class="ribbon__shet">
                     <h2>Matemáticas</h2>
                 </div>
@@ -1593,6 +1777,8 @@ const degreesAngle = (p1, p2) => Math.atan2(p2.y - p1.y, p2.x - p1.x) * 180 / Ma
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Calcular la distancia entre dos puntos</h3>
                     <div class="panel">
@@ -1601,6 +1787,8 @@ const degreesAngle = (p1, p2) => Math.atan2(p2.y - p1.y, p2.x - p1.x) * 180 / Ma
                             <pre class="line-numbers"><code class="language-javascript">const distance = (p1, p2) => Math.sqrt(Math.pow(p2.x - p1.x, 2) + Math.pow(p2.y - p1.y, 2));</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3>Calcular la interpolación lineal entre dos números</h3>
@@ -1612,6 +1800,8 @@ const degreesAngle = (p1, p2) => Math.atan2(p2.y - p1.y, p2.x - p1.x) * 180 / Ma
                
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Calcular el punto medio entre dos puntos</h3>
                     <div class="panel">
@@ -1621,6 +1811,8 @@ const degreesAngle = (p1, p2) => Math.atan2(p2.y - p1.y, p2.x - p1.x) * 180 / Ma
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Comprobar si un punto está dentro de un rectángulo</h3>
                     <div class="panel">
@@ -1629,6 +1821,8 @@ const degreesAngle = (p1, p2) => Math.atan2(p2.y - p1.y, p2.x - p1.x) * 180 / Ma
                             <pre class="line-numbers"><code class="language-javascript">const isInside = (point, rect) => point.x > rect.left && point.x < rect.right && point.y > rect.top && point.y < rect.bottom;</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Comprobar si un rectángulo contiene otro</h3>
@@ -1641,6 +1835,8 @@ const contains = (a, b) => (a.x1 <= b.x1 && a.y1 <= b.y1 && a.x2 >= b.x2 && a.y2
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Comprobar si un rectángulo se superpone a otro</h3>
                     <div class="panel">
@@ -1652,6 +1848,8 @@ const overlaps = (a, b) => (a.x1 < b.x2 && b.x1 < a.x2) || (a.y1 < b.y2 && b.y1 
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3>Convertir grados a radianes</h3>
                     <div class="panel">
@@ -1660,6 +1858,8 @@ const overlaps = (a, b) => (a.x1 < b.x2 && b.x1 < a.x2) || (a.y1 < b.y2 && b.y1 
                             <pre class="line-numbers"><code class="language-javascript">const degsToRads = deg => deg * Math.PI / 180.0;</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Convertir radianes a grados</h3>
@@ -1670,6 +1870,8 @@ const overlaps = (a, b) => (a.x1 < b.x2 && b.x1 < a.x2) || (a.y1 < b.y2 && b.y1 
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Normalizar la razón de un número en un rango</h3>
                     <div class="panel">
@@ -1678,6 +1880,8 @@ const overlaps = (a, b) => (a.x1 < b.x2 && b.x1 < a.x2) || (a.y1 < b.y2 && b.y1 
                             <pre class="line-numbers"><code class="language-javascript">const normalizeRatio = (value, min, max) => (value - min) / (max - min);</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3>Redondear un número al múltiplo más cercano de un valor dado</h3>
@@ -1693,6 +1897,8 @@ roundNearest(200, 40);      // 200</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="ribbon__shet">
                     <h2>Misceláneo</h2>
                 </div>
@@ -1706,6 +1912,8 @@ roundNearest(200, 40);      // 200</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Comprobar si el código se está ejecutando en el navegador</h3>
                     <div class="panel">
@@ -1714,6 +1922,8 @@ roundNearest(200, 40);      // 200</code></pre></div>
                             <pre class="line-numbers"><code class="language-javascript">const isBrowser = typeof window === 'object' && typeof document === 'object';</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Borrar todas las cookies</h3>
@@ -1724,6 +1934,8 @@ roundNearest(200, 40);      // 200</code></pre></div>
 </code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3>Convertir color de 3 dígitos a color de 6 dígitos</h3>
@@ -1739,6 +1951,8 @@ toFullHexColor('#abc');     // '#aabbcc'</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Convertir Celsius a Fahrenheit</h3>
                     <div class="panel">
@@ -1753,6 +1967,8 @@ celsiusToFahrenheit(-20);   // -4</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 ></h3>
                     <div class="panel">
@@ -1762,6 +1978,8 @@ celsiusToFahrenheit(-20);   // -4</code></pre></div>
 </code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Convert Fahrenheit to Celsius</h3>
@@ -1776,6 +1994,8 @@ fahrenheitToCelsius(32);    // 0</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Convert hex to rgb</h3>
                     <div class="panel">
@@ -1788,6 +2008,8 @@ hexToRgb('#00ffff');    // [0, 255, 255]
 hexToRgb('#0ff');       // [0, 255, 255]</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                     <h3 >Convert rgb color to hex</h3>
@@ -1803,6 +2025,8 @@ const rgbToHex = (red, green, blue) => `#${[red, green, blue].map(v => v.toStrin
 rgbToHex(0, 255, 255);      // '#00ffff' </code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Convert URL parameters to object</h3>
@@ -1820,6 +2044,8 @@ getUrlParams('foo=Foo&bar=Bar');            // { foo: "Foo", bar: "Bar" }
 getUrlParams('foo=Foo&foo=Fuzz&bar=Bar');   // { foo: ["Foo", "Fuzz"], bar: "Bar" }</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Decode a JWT token</h3>
@@ -1839,6 +2065,8 @@ decode(`
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Detect dark mode</h3>
                     <div class="panel">
@@ -1848,6 +2076,8 @@ decode(`
 </code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Easing functions</h3>
@@ -1885,6 +2115,8 @@ const easeInOutElastic = t => (t -= .5) < 0 ? (.02 + .01 / t) * Math.sin(50 * t)
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Emulate a dice throw</h3>
                     <div class="panel">
@@ -1899,6 +2131,8 @@ throwdice();    // 6 </code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Encode a URL</h3>
                     <div class="panel">
@@ -1908,6 +2142,8 @@ throwdice();    // 6 </code></pre></div>
 const encode = url => encodeURIComponent(url).replace(/!/g, '%21').replace(/~/g, '%7E').replace(/\*/g, '%2A').replace(/'/g, '%27').replace(/\(/g, '%28').replace(/\)/g, '%29').replace(/%20/g, '+');</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Generate an unique and increment id</h3>
@@ -1924,6 +2160,8 @@ uid();          // 3</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Get the first defined and non null argument</h3>
                     <div class="panel">
@@ -1939,6 +2177,8 @@ coalesce(undefined, null, 'helloworld', NaN);     // 'helloworld'</code></pre></
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Get the value of a cookie</h3>
                     <div class="panel">
@@ -1951,6 +2191,8 @@ cookie('_ga');      // GA1.2.825309271.1581874719</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Get the value of a param from a URL</h3>
                     <div class="panel">
@@ -1962,6 +2204,8 @@ cookie('_ga');      // GA1.2.825309271.1581874719</code></pre></div>
 getParam('http://domain.com?message=hello', 'message');     // 'hello'</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >title</h3>
@@ -1990,6 +2234,8 @@ getTypeOf(document);                // HTMLDocument</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Redirect the page to HTTPS if it is in HTTP</h3>
                     <div class="panel">
@@ -2017,6 +2263,8 @@ run(promises).then((results) => {
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Swap two variables</h3>
                     <div class="panel">
@@ -2037,6 +2285,8 @@ a = b + (b = a, 0);
 a = b * (b = a, 1);</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
 
                 <div class="javascript__hug">
@@ -2079,6 +2329,8 @@ addOrdinal(13);     // '13th'</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Calculate Fibonacci numbers
                     </h3>
@@ -2097,6 +2349,8 @@ fibo(6);    // 8</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Calculate the average of arguments</h3>
                     <div class="panel">
@@ -2109,6 +2363,8 @@ average(1, 2, 3, 4);    // 2.5</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Calculate the division of arguments</h3>
                     <div class="panel">
@@ -2120,6 +2376,8 @@ average(1, 2, 3, 4);    // 2.5</code></pre></div>
 division(1, 2, 3, 4);   // 0.04166666666666666</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Calculate the factorial of a number</h3>
@@ -2137,6 +2395,8 @@ factorial(6);   // 720</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Calculate the mod of collection index</h3>
                     <div class="panel">
@@ -2151,6 +2411,8 @@ mod(6, 5);      // 1</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                     <h3 >Calculate the remainder of division of arguments</h3>
                     <div class="panel">
@@ -2162,6 +2424,8 @@ mod(6, 5);      // 1</code></pre></div>
 remainder(1, 2, 3, 4);      // 1</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                     <h3 >Calculate the sum of arguments</h3>
@@ -2175,6 +2439,8 @@ sum(1, 2, 3, 4);    // 10</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Clamp a number between two values</h3>
                     <div class="panel">
@@ -2187,6 +2453,8 @@ clamp(199, 10, 25);     // 25</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Compute the greatest common divisor between two numbers</h3>
                     <div class="panel">
@@ -2198,6 +2466,8 @@ clamp(199, 10, 25);     // 25</code></pre></div>
 gcd(10, 15);    // 5</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Convert a number to equivalent characters</h3>
@@ -2221,6 +2491,8 @@ toChars(703);   // AAB</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Convert a string to number</h3>
                     <div class="panel">
@@ -2232,6 +2504,8 @@ toChars(703);   // AAB</code></pre></div>
 toNumber('42');     // 42</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Convert decimal to binary recursively</h3>
@@ -2245,6 +2519,8 @@ toNumber('42');     // 42</code></pre></div>
 decToBi(10);      //1010</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Get the arrays of digits from a number</h3>
@@ -2260,6 +2536,8 @@ const digitize = n => [...`${n}`].map(v => parseInt(v, 10));
 digitize(123);    // [1, 2, 3]</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Multiply arguments</h3>
@@ -2291,6 +2569,8 @@ prefixWithZeros(42, 5);     // '00042'</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Round a number to a given number of digits</h3>
                     <div class="panel">
@@ -2304,6 +2584,8 @@ round(1.234567, 4);     // 1.2346</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Subtract arguments</h3>
                     <div class="panel">
@@ -2315,6 +2597,8 @@ round(1.234567, 4);     // 1.2346</code></pre></div>
 subtract(1, 2, 3, 4);       // -8</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Truncate a number at decimal</h3>
@@ -2328,6 +2612,8 @@ truncate(25.198726354);         // 25
 truncate(-25.198726354);        // -25</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Truncate a number to a given number of decimal places without rounding</h3>
@@ -2366,6 +2652,8 @@ isEqual({ foo: 'bar' }, { bar: 'foo' });    // false</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Create an empty map that does not have properties</h3>
                     <div class="panel">
@@ -2378,6 +2666,8 @@ const map = Object.create(null);
 // const map = {};</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                     <h3 >Create an object from the pairs of key and value</h3>
@@ -2393,6 +2683,8 @@ const toObj = arr => arr.reduce((a, c) => ((a[c[0]] = c[1]), a), {});
 toObj([['a', 1], ['b', 2], ['c', 3]]);      // { a: 1, b: 2, c: 3 }</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Extract values of a property from an array of objects</h3>
@@ -2410,6 +2702,8 @@ pluck([
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Get the value at given path of an object</h3>
                     <div class="panel">
@@ -2421,6 +2715,8 @@ pluck([
 getValue('a.b', { a: { b: 'Hello World' } });   // 'Hello World';</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Immutably rename object keys</h3>
@@ -2435,6 +2731,8 @@ const keysMap = { a: 'd', b: 'e', c: 'f' };
 renameKeys(keysMap, obj);       // { d: 1, e: 2, f: 3 }</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Invert keys and values of an object</h3>
@@ -2451,6 +2749,8 @@ invert({ a: '1', b: '2', c: '3' });     // { 1: 'a', 2: 'b', 3: 'c' }</code></pr
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Omit a subset of properties from an object</h3>
                     <div class="panel">
@@ -2463,6 +2763,8 @@ omit({a: '1', b: '2', c: '3'}, ['a', 'b']);     // { c: '3' }</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Pick a subset of properties of an object</h3>
                     <div class="panel">
@@ -2474,6 +2776,8 @@ omit({a: '1', b: '2', c: '3'}, ['a', 'b']);     // { c: '3' }</code></pre></div>
 pick({ a: '1', b: '2', c: '3' }, ['a', 'b']);   // { a: '1', b: '2' }</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Remove all null and undefined properties from an object</h3>
@@ -2497,6 +2801,8 @@ removeNullUndefined({
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Shallow copy an object</h3>
                     <div class="panel">
@@ -2508,6 +2814,8 @@ removeNullUndefined({
 const shallowCopy = obj => {...obj};</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Sort an object by its properties</h3>
@@ -2551,6 +2859,8 @@ sort(colors);
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Generate a random floating point number in given range</h3>
                     <div class="panel">
@@ -2559,6 +2869,8 @@ sort(colors);
                             <pre class="line-numbers"><code class="language-javascript">const randomFloat = (min, max) => Math.random() * (max - min) + min;</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Generate a random hex color</h3>
@@ -2572,6 +2884,8 @@ const randomColor = () => `#${(~~(Math.random()*(1<<24))).toString(16)}`;</code>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Generate a random integer in given range</h3>
                     <div class="panel">
@@ -2580,6 +2894,8 @@ const randomColor = () => `#${(~~(Math.random()*(1<<24))).toString(16)}`;</code>
                             <pre class="line-numbers"><code class="language-javascript">const randomInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Generate a random IP address</h3>
@@ -2593,6 +2909,8 @@ randomIp();     // 175.89.174.131</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Generate a random sign</h3>
                     <div class="panel">
@@ -2601,6 +2919,8 @@ randomIp();     // 175.89.174.131</code></pre></div>
                             <pre class="line-numbers"><code class="language-javascript">const randomSign = () => Math.random() >= 0.5 ? 1 : -1;</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Generate a random string from given characters</h3>
@@ -2614,6 +2934,8 @@ generateString(10, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWX
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Generate a random string using Node crypto module</h3>
                     <div class="panel">
@@ -2622,6 +2944,8 @@ generateString(10, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWX
                             <pre class="line-numbers"><code class="language-javascript">const randomStr = () => require('crypto').randomBytes(32).toString('hex');</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Generate a random string with given length</h3>
@@ -2632,6 +2956,8 @@ generateString(10, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWX
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Generate a random UUID</h3>
                     <div class="panel">
@@ -2640,6 +2966,8 @@ generateString(10, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWX
                             <pre class="line-numbers"><code class="language-javascript">const uuid = (a) => a ? (a ^ Math.random() * 16 >> a / 4).toString(16) : ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, uuid);</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Generate an array of random integers in a given range</h3>
@@ -2653,7 +2981,10 @@ randomArrayInRange(1, 100, 10);     // [11, 82, 41, 35, 76, 83, 43, 15, 60, 54]<
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
+                
                 <h3 >Get a random item and remove it from an array</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
@@ -2667,6 +2998,8 @@ randomItem(arr);    // 7
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                     <h3 >Get a random item from an array</h3>
                     <div class="panel">
@@ -2675,6 +3008,8 @@ randomItem(arr);    // 7
                             <pre class="line-numbers"><code class="language-javascript">const randomItem = arr => arr[(Math.random() * arr.length) | 0];</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Get random items of an array</h3>
@@ -2688,6 +3023,8 @@ randomItems([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3);                        // [4, 8
 randomItems(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'], 4);     // ['e', 'c', 'h', 'j']</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Elija una propiedad aleatoria de un objeto</h3>
@@ -2746,6 +3083,8 @@ randomProp(colors);     // 'red'</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
 
                 <h3 >Elija líneas aleatorias de un documento de texto</h3>
@@ -2785,6 +3124,8 @@ capitalize('hello world');      // 'Hello world'</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Comprobar si una ruta es relativa</h3>
                     <div class="panel">
@@ -2799,6 +3140,8 @@ isRelative('foo/bar/baz.txt');      // true
 isRelative('foo.md');               // true</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Comprobar si una cadena consta de una secuencia de caracteres repetida</h3>
@@ -2815,6 +3158,8 @@ consistsRepeatedSubstring('abc');           // false</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Comprobar si una cadena es un palíndromo</h3>
                     <div class="panel">
@@ -2827,6 +3172,8 @@ isPalindrome('abc');        // false
 isPalindrom('abcba');       // true</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Comprobar si una URL es absoluta</h3>
@@ -2843,6 +3190,8 @@ isAbsoluteUrl('//1loc.dev');                // false</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Comprobar si dos cadenas son anagrama</h3>
                     <div class="panel">
@@ -2857,6 +3206,8 @@ areAnagram('node', 'deno');             // true</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Convertir una letra para asociar emoji</h3>
                     <div class="panel">
@@ -2869,6 +3220,8 @@ letterToEmoji('a');     // 🇦
 letterToEmoji('b');     // 🇧</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Convertir una cadena a camelCase</h3>
@@ -2885,6 +3238,8 @@ toCamelCase('hello_world');                 // helloWorld</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Convertir una cadena a PascalCase</h3>
                     <div class="panel">
@@ -2899,6 +3254,8 @@ toPascalCase('foo_bar-baz');    // FooBarBaz</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Convertir una cadena en slug de URL</h3>
                     <div class="panel">
@@ -2910,6 +3267,8 @@ toPascalCase('foo_bar-baz');    // FooBarBaz</code></pre></div>
 slugify('Chapter One: Once upon a time...');    // 'chapter-one-once-upon-a-time'</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                     <h3 >Convierta una ruta de archivo de Windows a una ruta de Unix</h3>
@@ -2923,6 +3282,8 @@ toUnixPath('./foo/bar/baz');        // foo/bar/baz
 toUnixPath('C:\\foo\\bar\\baz');    // /foo/bar/baz</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Convertir camelCase a kebab-case y viceversa</h3>
@@ -2939,6 +3300,8 @@ camelToKebab('backgroundColor');    // 'background-color'</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Convert snake_case to camelCase</h3>
                     <div class="panel">
@@ -2950,6 +3313,8 @@ camelToKebab('backgroundColor');    // 'background-color'</code></pre></div>
 snakeToCamel('HELLO_world');    // 'helloWorld'</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Convertir el nombre de una columna de Excel en número</h3>
@@ -2974,6 +3339,8 @@ getIndex('AAB');    // 704</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Contar el número de palabras en una cadena</h3>
                     <div class="panel">
@@ -2987,6 +3354,8 @@ countWords('Hello    World');     // 2
 countWords('  Hello  World  ');   // 2</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Contar las ocurrencias de un carácter en una cadena</h3>
@@ -3009,6 +3378,8 @@ countOccurrences('a.b.c.d.e', '.');     // 4</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Descapitalizar una cadena</h3>
                     <div class="panel">
@@ -3024,6 +3395,8 @@ decapitalize('Hello world');    // 'hello world'</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Escape de caracteres especiales HTML</h3>
                     <div class="panel">
@@ -3036,8 +3409,10 @@ const escape = str => str.replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;',
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
-                <h3 >Generar un hash de una cadena</h3>
+                <h3>Generar un hash de una cadena</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -3050,6 +3425,8 @@ const hash = str => str.split('').reduce((prev, curr) => (((prev << 5) - prev) +
 hash('hello');      // 99162322</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Obtenga la URL base sin ningún parámetro</h3>
@@ -3067,6 +3444,8 @@ baseUrl('https://domain.com/path/sub/path?foo=bar&hello=world');    // 'https://
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                     <h3 >Obtener la extensión de archivo de un nombre de archivo</h3>
                     <div class="panel">
@@ -3075,6 +3454,8 @@ baseUrl('https://domain.com/path/sub/path?foo=bar&hello=world');    // 'https://
                             <pre class="line-numbers"><code class="language-javascript">const ext = fileName => fileName.split('.').pop();</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Obtenga el nombre del archivo de una URL</h3>
@@ -3088,6 +3469,8 @@ fileName('http://domain.com/path/to/document.pdf');     // 'document.pdf'</code>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Obtener la longitud de una cadena en bytes</h3>
                     <div class="panel">
@@ -3100,6 +3483,8 @@ bytes('hello world');       // 11
 bytes('🎉');                // 4</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Obtener el número de un carácter en una cadena</h3>
@@ -3117,6 +3502,8 @@ characterCount('star wars', 's');       // 2</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                     <h3 >Poner el primer carácter de una cadena en minúsculas</h3>
                     <div class="panel">
@@ -3128,6 +3515,8 @@ characterCount('star wars', 's');       // 2</code></pre></div>
 lowercaseFirst('Hello World');      // 'hello World'</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Normalizar las barras de la ruta del archivo</h3>
@@ -3141,6 +3530,8 @@ normalizePath('\\foo\\bar\\baz\\');         // /foo/bar/baz/
 normalizePath('.//foo//bar///////baz/');    // ./foo/bar/baz/</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Anteponer un número de línea a cada línea de un documento de texto</h3>
@@ -3164,6 +3555,8 @@ four`);
 */</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Eliminar líneas duplicadas de un documento de texto</h3>
@@ -3190,6 +3583,8 @@ four
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Eliminar líneas vacías de un documento de texto</h3>
                     <div class="panel">
@@ -3215,8 +3610,10 @@ yellow
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
-                <h3 >Eliminar espacios de una cadena</h3>
+                <h3>Eliminar espacios de una cadena</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -3227,8 +3624,10 @@ removeSpaces('hel lo wor ld');      // 'helloworld'</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
-                <h3 >repetir una cadena</h3>
+                <h3>Repetir una cadena</h3>
                     <div class="panel">
                         <div class="codigo__javascript">
                             
@@ -3238,6 +3637,8 @@ removeSpaces('hel lo wor ld');      // 'helloworld'</code></pre></div>
 const repeat = (str, numberOfTimes) => Array(numberOfTimes + 1).join(str);</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Reemplace todos los saltos de línea con elementos br</h3>
@@ -3251,6 +3652,8 @@ str.split('\n').map((item, index) => <React.Fragment key={index}>{item}<br /></R
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Reemplace todos los caracteres de tabulación con espacios</h3>
                     <div class="panel">
@@ -3259,6 +3662,8 @@ str.split('\n').map((item, index) => <React.Fragment key={index}>{item}<br /></R
                             <pre class="line-numbers"><code class="language-javascript">const replace = (str, numSpaces = 4) => str.replaceAll('\t', ' '.repeat(numSpaces));</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Reemplace múltiples espacios con un solo espacio</h3>
@@ -3276,6 +3681,8 @@ replaceSpaces('this\n   is     \ta    \rmessage');  // 'this is a message'</code
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Reemplace el primer número dado de caracteres de una cadena con otro carácter</h3>
                     <div class="panel">
@@ -3287,6 +3694,8 @@ replaceSpaces('this\n   is     \ta    \rmessage');  // 'this is a message'</code
 mask(1234567890, 3, '*');       // ***4567890</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Invertir una cadena</h3>
@@ -3309,6 +3718,8 @@ reverse('hello world');     // 'dlrow olleh'</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Invertir el orden de las líneas de un texto</h3>
                     <div class="panel">
@@ -3329,6 +3740,8 @@ one
 */</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Ordena líneas de un documento de texto en orden alfabético</h3>
@@ -3368,6 +3781,8 @@ Theodore Rogers
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Ordena los carácteres de una cadena en orden alfabético</h3>
                     <div class="panel">
@@ -3379,6 +3794,8 @@ Theodore Rogers
 sort('hello world');    // dehllloorw</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Quita los códigos ANSI de una cadena de texto</h3>
@@ -3393,6 +3810,8 @@ stripAnsiCodes('\u001B[0m\u001B[4m\u001B[42m\u001B[31mfoo\u001B[39m\u001B[49m\u0
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Cambia de mayúsculas a minúsculas los carácteres de una cadena</h3>
                     <div class="panel">
@@ -3404,6 +3823,8 @@ stripAnsiCodes('\u001B[0m\u001B[4m\u001B[42m\u001B[31mfoo\u001B[39m\u001B[49m\u0
 swapCase('Hello World');      // 'hELLO wORLD'</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Recorta los slash de una cadena de texto de principio a fin</h3>
@@ -3420,6 +3841,8 @@ trimSlashes('//hello/world///');    // hello/world</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                     <h3 >Recorta algún carácter</h3>
                     <div class="panel">
@@ -3433,6 +3856,8 @@ trim('"hello world"', '"');         // hello world
 trim('   hello world ', ' ');       // hello world</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Recorta la extensión del archivo desde un nombre de archivo</h3>
@@ -3448,6 +3873,8 @@ trimExt('document.2020.pdf');   // document.2020</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Corta una cadena de texto en palabras completas</h3>
                     <div class="panel">
@@ -3460,6 +3887,8 @@ truncate('This is a long message', 20, '...');  // 'This is a long...'</code></p
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >No escapar carácteres especiales de HTML</h3>
                     <div class="panel">
@@ -3468,6 +3897,8 @@ truncate('This is a long message', 20, '...');  // 'This is a long...'</code></p
                             <pre class="line-numbers"><code class="language-javascript">const unescape = str => str.replace(/&amp;/g , '&').replace(/&lt;/g  , '<').replace(/&gt;/g  , '>').replace(/�*39;/g , "'").replace(/&quot;/g, '"');</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Convierte el primer carácter de una cadena de texto en mayúsculas</h3>
@@ -3498,6 +3929,8 @@ const isWeekday = (date = new Date()) => date.getDay() % 6 !== 0;</code></pre></
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3>Verifica si una fecha es fin de semana</h3>
                     <div class="panel">
@@ -3507,6 +3940,8 @@ const isWeekday = (date = new Date()) => date.getDay() % 6 !== 0;</code></pre></
 const isWeekend = (date = new Date()) => date.getDay() % 6 === 0;</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3>Verifica si una fecha está entre dos fechas</h3>
@@ -3518,6 +3953,8 @@ const isBetween = (date, min, max) => (date.getTime() >= min.getTime() && date.g
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3>Verifica si una fecha es hoy</h3>
                     <div class="panel">
@@ -3528,6 +3965,8 @@ const isToday = (date) => date.toISOString().slice(0, 10) === new Date().toISOSt
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Verifica si una fecha ocurre en el año actual</h3>
                     <div class="panel">
@@ -3537,6 +3976,8 @@ const isToday = (date) => date.toISOString().slice(0, 10) === new Date().toISOSt
 const isCurrentYear = (date) => date.getUTCFullYear() === new Date().getUTCFullYear();</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3>Verifica si un arreglo plano contiene valores duplicados</h3>
@@ -3551,6 +3992,8 @@ hasDuplicateValues(['w', 'o', 'r', 'd']);           // false</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Verifica si un dado entero es un número primo</h3>
                     <div class="panel">
@@ -3559,6 +4002,8 @@ hasDuplicateValues(['w', 'o', 'r', 'd']);           // false</code></pre></div>
                             <pre class="line-numbers"><code class="language-javascript">const isPrime = num => (num > 1) && Array(Math.floor(Math.sqrt(num)) - 1).fill(0).map((_, i) => i + 2).every(i => num % i !== 0);</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Verifica si un número es potencia de 2</h3>
@@ -3572,6 +4017,8 @@ isPowerOfTwo(256);      // true
 isPowerOfTwo(129);      // false</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Verifica si un número es par</h3>
@@ -3595,6 +4042,8 @@ isEven(2);      // true</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Verifica si un número está en un rango dado</h3>
                     <div class="panel">
@@ -3609,6 +4058,8 @@ inRange(10, 15, 5);         // true
 inRange(-10, -5, -15);      // true</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Verifica si un número es negativo</h3>
@@ -3625,6 +4076,8 @@ isNegative(-3);     // true
 isNegative(8);      // false</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Verifica si un número es impar</h3>
@@ -3645,6 +4098,8 @@ isOdd(2);   // false</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Verifica si un número es positivo</h3>
                     <div class="panel">
@@ -3657,6 +4112,8 @@ isPositive(3);      // true
 isPositive(-8);     // false</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Verifica si una cadena de texto solo contiene carácteres en minúsculas</h3>
@@ -3671,6 +4128,8 @@ containsLowerCase('HELLO WORLD');   // false</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Verifica si una cadena de texto contiene solamente carácteres ASCII</h3>
                     <div class="panel">
@@ -3679,6 +4138,8 @@ containsLowerCase('HELLO WORLD');   // false</code></pre></div>
                             <pre class="line-numbers"><code class="language-javascript">const isAscii = str => /^[\x00-\x7F]+$/.test(str);</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Verifica si una cadena de texto contiene solo digitos</h3>
@@ -3699,6 +4160,8 @@ isNumeric('NaN');           // false</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Verifica si una cadena de texto contiene solo letras</h3>
                     <div class="panel">
@@ -3713,6 +4176,8 @@ isAlpha('hello world');         // false
 isAlpha('0123456789');          // false</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Verifica si una cadena de texto contiene solo letras y números </h3>
@@ -3730,6 +4195,8 @@ isAlphanumeric('hello 123');            // false</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Verifica si una cadena de texto contiene carácteres en mayúsculas</h3>
                     <div class="panel">
@@ -3743,6 +4210,8 @@ containsUpperCase('hello world');   // false</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Verifica si una cadena de texto contiene espacios en blanco</h3>
                     <div class="panel">
@@ -3754,6 +4223,8 @@ containsUpperCase('hello world');   // false</code></pre></div>
 containsWhitespace('hello world');      // true</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Verifica si una cadena de texto es de color hexadecimal</h3>
@@ -3769,6 +4240,8 @@ isHexColor('012');          // false
 isHexColor('#GHIJKL');      // false</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Verifica si una cadena de texto es un número hexadecimal</h3>
@@ -3787,6 +4260,8 @@ isHexadecimal('#123');      // false</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3>Verifica si una cadena de texto es un ObjectId de MongoDB</h3>
                     <div class="panel">
@@ -3799,6 +4274,8 @@ const isMongoId = str => str.length === 24 && str.split('').every(c => '01234567
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3>Verifica si una cadena de texto es un número octal</h3>
                     <div class="panel">
@@ -3807,6 +4284,8 @@ const isMongoId = str => str.length === 24 && str.split('').every(c => '01234567
                             <pre class="line-numbers"><code class="language-javascript">const isOctal = str => /^(0o)?[0-7]+$/i.test(str);</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3>Verifica si una cadena de texto está en minúsculas</h3>
@@ -3817,6 +4296,8 @@ const isMongoId = str => str.length === 24 && str.split('').every(c => '01234567
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3>Verifica si una cadena de texto está en mayúsculas</h3>
                     <div class="panel">
@@ -3825,6 +4306,8 @@ const isMongoId = str => str.length === 24 && str.split('').every(c => '01234567
                             <pre class="line-numbers"><code class="language-javascript">const isUpperCase = str => str === str.toUpperCase();</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
                 
                 <div class="javascript__hug">
                 <h3>Verifica si un valor es un código de identificación comercial</h3>
@@ -3835,6 +4318,8 @@ const isMongoId = str => str.length === 24 && str.split('').every(c => '01234567
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3>Verifica si un valor es un número</h3>
                     <div class="panel">
@@ -3843,6 +4328,8 @@ const isMongoId = str => str.length === 24 && str.split('').every(c => '01234567
                             <pre class="line-numbers"><code class="language-javascript">const isNumber = value => !isNaN(parseFloat(value)) && isFinite(value);</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3>Verifica si un valor es un objeto plano</h3>
@@ -3863,6 +4350,8 @@ isPlainObject({ a: '1', b: '2' });      // true</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Verifica si un valor es una expresión regular</h3>
                     <div class="panel">
@@ -3871,6 +4360,8 @@ isPlainObject({ a: '1', b: '2' });      // true</code></pre></div>
                             <pre class="line-numbers"><code class="language-javascript">const isRegExp = value => Object.prototype.toString.call(value) === '[object RegExp]';</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3>Verifica si un valor es una candena de texto</h3>
@@ -3885,6 +4376,8 @@ isString(new String('hello world'));    // true
 isString(10);                           // false</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Verifica si un valor es un objeto</h3>
@@ -3902,6 +4395,8 @@ isObject([]);               // true </code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Verifica si un valor está codificado en base32</h3>
                     <div class="panel">
@@ -3910,6 +4405,8 @@ isObject([]);               // true </code></pre></div>
                             <pre class="line-numbers"><code class="language-javascript">const isBase32 = value => value.length % 8 === 0 && /^[A-Z2-7]+=*$/.test(value);</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Verifica si un valor está codificado en base58</h3>
@@ -3921,6 +4418,8 @@ const isBase58 = value => /^[A-HJ-NP-Za-km-z1-9]*$/.test(value);</code></pre></d
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                     <h3 >Verifica si un valor está codificado en base64</h3>
                     <div class="panel">
@@ -3929,6 +4428,8 @@ const isBase58 = value => /^[A-HJ-NP-Za-km-z1-9]*$/.test(value);</code></pre></d
                             <pre class="line-numbers"><code class="language-javascript">const isBase64 = value => /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$/.test(value);</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
                 
                 <div class="javascript__hug">
                 <h3 >Verifica si un valor es nulo</h3>
@@ -3938,6 +4439,8 @@ const isBase58 = value => /^[A-HJ-NP-Za-km-z1-9]*$/.test(value);</code></pre></d
                             <pre class="line-numbers"><code class="language-javascript">const isNil = (value) => value == null;</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Verifica si un año es bisiesto</h3>
@@ -3951,6 +4454,8 @@ const isBase58 = value => /^[A-HJ-NP-Za-km-z1-9]*$/.test(value);</code></pre></d
 const isLeapYear = year => new Date(year, 1, 29).getDate() === 29;</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Verifica si todos los elementos de un arreglo son iguales a un valor dado</h3>
@@ -3970,6 +4475,8 @@ isEqual(['bar', 'bar'], 'foo');     // false</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Verifica si todos los elementos de un arreglo son iguales</h3>
                     <div class="panel">
@@ -3985,6 +4492,8 @@ areEqual([1, 2, 3, 4]);                 // false
 areEqual(['hello', 'hello', 'hello']);  // true</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="javascript__hug">
                 <h3 >Verifica si un arreglo contiene un valor que coincida con algunos criterios</h3>
@@ -4006,6 +4515,8 @@ contains([10, 20, 30], v => v > 100 );              // false</code></pre></div>
                     </div>
                 </div>
 
+                <hr>
+
                 <div class="javascript__hug">
                 <h3 >Verifica si un arreglo no está vacio</h3>
                     <div class="panel">
@@ -4018,6 +4529,8 @@ isNotEmpty([]);             // false
 isNotEmpty([1, 2, 3]);      // true</code></pre></div>
                     </div>
                 </div>
+
+                <hr>
                     
                     <div class="javascript__hug">
                     <h3 >Verifica si un arreglo es un subconjunto de otro arreglo</h3>
@@ -4036,6 +4549,8 @@ isSubset([1, 2, 5], [1, 2, 3, 4]);  // false
 isSubset([6], [1, 2, 3, 4]);        // false</code></pre></div>
                     </div>
                     </div>
+
+                    <hr>
                 
                     
                     <div class="javascript__hug">
@@ -4047,6 +4562,7 @@ isSubset([6], [1, 2, 3, 4]);        // false</code></pre></div>
                     </div>
                     </div>
                 
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3>Verifica si un objeto es un arreglo</h3>
@@ -4057,7 +4573,7 @@ isSubset([6], [1, 2, 3, 4]);        // false</code></pre></div>
                     </div>
                     </div>
                 
-                    
+                    <hr>    
                     
                     <div class="javascript__hug">
                     <h3>Verifica si un objeto está vacío</h3>
@@ -4071,7 +4587,7 @@ const isEmpty = obj => JSON.stringify(obj) === '{}';</code></pre></div>
                     </div>
                     </div>
                 
-                    
+                    <hr>
                     
                     <div class="javascript__hug">
                     <h3>Validar una fecha gregoriana</h3>
