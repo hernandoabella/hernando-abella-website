@@ -1,11 +1,11 @@
 body{
-    transition: .5s;
+    transition: .3s;
     background: #F0DB4F;
 }
 
 .articles{
-    width: 80%;
-    height: 500px;
+    width: 60%;
+    height: 90vh;
     overflow-y: scroll;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -127,11 +127,13 @@ section ol li{
     padding: 10px;
     background: var(--color-2);
     color: #fff;
-    border-radius: 25px;
+    border-radius: 100%;
+    width: 36px;
     cursor: pointer; 
     z-index: 1;
     margin: 20px;
-    display: inline-block;
+    position: absolute;
+    text-align: center;
 }  
 
 .openbtn:hover{
@@ -157,13 +159,16 @@ section ol li{
     padding: 10px;
     background: var(--color-1);
     color: #fff;
-    border-radius: 10%;
+    border-radius: 100%;
     cursor: pointer; 
     z-index: 1;
+    position: absolute;
+    right: 20px;
+    top: 20px;
 }
 
 .darkSide:hover{
-    transform: rotate(130deg);
+    transform: scale(1.3);
 }
 
 .darkSide.dark{
@@ -223,17 +228,10 @@ tr:nth-child(even) {
 }
 
 /*  --------------- acordeón ---------------  */
-#myInput{
-    margin: 10px 0px;
-    padding: 10px;
-}
-/*  --------------- acordeón ---------------  */
-
-/*  --------------- acordeón ---------------  */
 
 .accordion {
-    background-color: var(--color-2);
-    color: #fff;
+    background-color: var(--color-4);
+    color: #000;
     cursor: pointer;
     width: 100%;
     border: none;
@@ -310,7 +308,11 @@ input[type=text] {
 
     .articles{
         width: 90%;
-        
+        height: 600px;
+    }
+
+    #course__sidebar{
+        height: 785px;
     }
 
 }

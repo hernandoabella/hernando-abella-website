@@ -19,9 +19,10 @@ function darkSide(){
   cuerpo.classList.toggle('dark');
 }
 
-// ir atras
-function irAtras(){
-  document.location.href = "../";
+// cambiar icono de modo oscuro al hacer clic
+
+function cambiarIcono(x) {
+  x.classList.toggle("fa-thumbs-down");
 }
 
 function myFunction() {
@@ -114,3 +115,4 @@ function buscarNav(){
     }
   }
 }
+
