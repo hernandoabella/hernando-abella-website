@@ -4,7 +4,7 @@ body{
 }
 
 .articles{
-    width: 60%;
+    width: 80%;
     height: 500px;
     overflow-y: scroll;
     position: absolute;
@@ -69,7 +69,7 @@ section ol li{
 
 #course__sidebar{
     background: var(--color-2);
-    width: 300px;
+    width: 280px;
     padding: 10px;
     position: fixed;
     top: 0;
@@ -95,7 +95,7 @@ section ol li{
 #course__sidebar a:hover{
     background: var(--color-1);
     color: #fff;
-    border-left: 10px solid var(--color-3);
+    border-left: 10px solid var(--color-4);
 }
 
 #course__sidebar h3{
@@ -116,22 +116,6 @@ section ol li{
 
 .closebtn:hover{
     transform: scale(1.1) rotate(-90deg);
-}
-
-.botones{
-    position: absolute;
-    right: 10px;
-}
-
-.botones > div{
-    width: 5px;
-    height: 5px;
-    border-radius: 100px;
-    margin: 10px 0px;
-}
-
-.botones > div:hover{
-    transform: scale(1.1);
 }
 
 .dark{
@@ -254,7 +238,7 @@ tr:nth-child(even) {
     cursor: pointer;
     width: 100%;
     border: none;
-    text-align: left;
+    text-align: center;
     outline: none;
     transition: 0.4s;
     padding: 10px;
@@ -263,7 +247,9 @@ tr:nth-child(even) {
 }
 
 .active, .accordion:hover {
-    background-color: var(--color-1);
+    background-color: var(--color-3);
+    color: #000;
+    padding: 20px;
 }
 
 .accordion:after {
