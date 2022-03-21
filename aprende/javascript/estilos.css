@@ -170,7 +170,6 @@ section ol li{
     background: #F0DB4F;
 }
 
-
 .nota{
     background: #ffffcc;
     padding: 20px;
@@ -301,10 +300,6 @@ input[type=text] {
 
 
 @media only screen and (max-width: 768px){
-
-    #myBtn{
-        display: none !important;
-    }
 
     section{
         padding: 20px;
