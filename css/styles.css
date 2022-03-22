@@ -146,7 +146,6 @@ a{
 #front__page .navegacion a{
     color: var(--color-1);
     transition: .3s;
-    padding: 20px 50px;
 }
 
 #front__page .navegacion a:hover{
@@ -203,7 +202,10 @@ a{
     transform: scale(2);
 }
 
-
+.activo{
+    background: var(--color-1);
+    color: #fff;
+}
 
 /* mobile devices */
 
@@ -307,6 +309,8 @@ a{
 
 /* ---------------- Practica ------------------- */
 
+/* ---------------- Botón de suscripción ------------------- */
+
 .suscripcion__mensual{
     position: absolute;
     right: 10px;
@@ -330,13 +334,4 @@ a{
     transform: scale(8);
 }
 
-/* ---------------- Comprame un cafe ------------------- */
-
-.buyCoffe{
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-}
-
-/* ---------------- Comprame un cafe ------------------- */
-
+/* ---------------- Botón de suscripción ------------------- */
