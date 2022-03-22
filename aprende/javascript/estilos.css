@@ -73,7 +73,7 @@ section ol li{
     padding: 10px;
     position: fixed;
     top: 0;
-    height: 785px;
+    height: 100vh;
     overflow-y: scroll;
     overflow-x: hidden;
     z-index: 1;
@@ -81,7 +81,6 @@ section ol li{
     transition: .3s;
     transform: translate(-300px);
     box-shadow: var(--box-shadow);
-
 }
 
 #course__sidebar a{
@@ -95,7 +94,6 @@ section ol li{
 #course__sidebar a:hover{
     background: var(--color-1);
     color: #fff;
-    border-left: 10px solid var(--color-4);
 }
 
 #course__sidebar h3{
@@ -217,8 +215,8 @@ tr:nth-child(even) {
 /*  --------------- acordeón ---------------  */
 
 .accordion {
-    background-color: var(--color-4);
-    color: #000;
+    background-color: var(--color-2);
+    color: #fff;
     cursor: pointer;
     width: 100%;
     border: none;
@@ -228,24 +226,12 @@ tr:nth-child(even) {
     padding: 10px;
     font-size: 1.3em;
     font-weight: bold;
+    border-bottom: 1px solid #cdcdcd;
 }
 
 .active, .accordion:hover {
-    background-color: var(--color-3);
-    color: #000;
-    padding: 20px;
-}
-
-.accordion:after {
-    content: '\002B';
+    background-color: var(--color-2);
     color: #fff;
-    font-weight: bold;
-    float: right;
-    margin-left: 5px;
-}
-
-.active:after {
-    content: "\2212";
 }
 
 .panel {
@@ -277,12 +263,10 @@ input[type=text] {
     cursor: pointer;
 }
 
-
 /*  --------------- search box ---------------  */
 
 
 /*  --------------- mobile ---------------  */
-
 
 @media only screen and (max-width: 768px){
 
@@ -295,6 +279,7 @@ input[type=text] {
 
     .articles{
         width: 90%;
+        height: 600px;
     }
 
     #course__sidebar{

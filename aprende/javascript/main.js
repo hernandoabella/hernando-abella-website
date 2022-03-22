@@ -31,9 +31,6 @@ var a = document.getElementsByTagName('a');
 for (e = 0; e < acc.length; e++) {
   acc[e].addEventListener("click", function() {
     this.classList.toggle("active");
-    // for() {
-
-    // }
     var panel = this.nextElementSibling;
     if (panel.style.maxHeight) {
       panel.style.maxHeight = null;
@@ -50,9 +47,10 @@ for (let i = 0; i < a.length; i++){
   a[i].addEventListener("click", function(){
     acc[i].classList.toggle('active');
     for (j = 0; j < acc.length; j++) {
-      if (j !== i)
+      if (j !== i){
         acc[j].classList.remove('active');
         acc[j].nextElementSibling.style.maxHeight = null;
+      }
     }
     if (panelDOM[i].style.maxHeight) {
       panelDOM[i].style.maxHeight = null;
