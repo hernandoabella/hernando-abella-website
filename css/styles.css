@@ -135,6 +135,10 @@ a{
     justify-content: center;
 }
 
+.navegacion i{
+    padding: 20px;
+}
+
 #front__page h1{
     color: #fff;
 }
@@ -204,7 +208,7 @@ a{
 
 .activo{
     background: var(--color-1);
-    color: #fff;
+    color: #fff !important;
 }
 
 /* mobile devices */
@@ -217,8 +221,7 @@ a{
     }
 
     #front__page .navegacion a{
-        width: 25%;
-        padding: 20px 0px;
+        width: 100%;
     }
 
     .image-container{
