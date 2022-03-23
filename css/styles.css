@@ -114,6 +114,9 @@ a{
 
 } */
 
+/* ---------------- Navegación principal ------------------- */
+/* ---------------- Navegación Principal ------------------- */
+
 /* ---------------- front__page ------------------- */
 
 #front__page img{
@@ -125,7 +128,7 @@ a{
     margin: auto;
 }
 
-#front__page .navegacion{
+.navegacion{
     background: #fff;
     position: absolute;
     width: 100%;
@@ -136,7 +139,7 @@ a{
 }
 
 .navegacion i{
-    padding: 20px;
+    padding: 20px 50px;
 }
 
 #front__page h1{
@@ -147,12 +150,12 @@ a{
     color: #fff;
 }
 
-#front__page .navegacion a{
+.navegacion a{
     color: var(--color-1);
     transition: .3s;
 }
 
-#front__page .navegacion a:hover{
+.navegacion a:hover{
     background-color: var(--color-1);
     color: #fff;
 }
@@ -220,7 +223,11 @@ a{
         height: auto !important;
     }
 
-    #front__page .navegacion a{
+    .navegacion i{
+        padding: 20px;
+    }
+
+    .navegacion a{
         width: 100%;
     }
 
