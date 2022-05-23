@@ -1,28 +1,22 @@
-.videos{
-  padding: 20px;
-  overflow-y: scroll;
-  height: 81.5vh;
-}
-
 .videos h1{
-  margin: 10px;
+  margin: 20px;
   color: var(--color-3)
 }
 
 .videos p{
-  margin: 10px;
+  margin: 20px;
   color: #fff;
 }
 
 .videos hr{
-  margin: 20px 10px;
+  margin: 20px;
   border: 1px solid var(--color-3);
 }
-
 
 .video-container{
   display: flex;
   flex-wrap: wrap;
+  padding: 10px;
 }
 
 .card-video{
@@ -45,35 +39,6 @@
   color: #fff;
 }
 
-footer{
-  background: #fff;
-  padding: 10px;
-  position: absolute;
-  width: 100%;
-  
-}
-
-.social-right{
-  float: right;
-}
-
-.social-right a{
-  color: var(--color-1);
-  margin: 5px;
-}
-
 @media only screen and (max-width: 768px){
-  header{
-      justify-content: center;
-      padding: 0px;
-  }
-  
-  ul li a i{
-      font-size: 1.4em;
-  }
-
-  .videos{
-    height: auto;
-  }
   
 }
