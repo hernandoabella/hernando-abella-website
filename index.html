@@ -1,63 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Bienvenido a mi sitio web, en este espacio te enseño a crear aplicaciones web y te doy todos los recursos para que puedas construir cualquier cosa."
+    />
+    <meta name="keywords" content="HTML,CSS,JavaScript" />
+    <meta name="author" content="Hernando Abella" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/cooltipz-css/cooltipz.min.css"
+    />
+    <link
+      href="https://rawcdn.githack.com/hung1001/font-awesome-pro/4cac1a6/css/all.css"
+      rel="stylesheet"
+      type="text/css"
+    />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="description" content="Bienvenido a mi sitio web, en este espacio te enseño a crear aplicaciones web y te doy todos los recursos para que puedas construir cualquier cosa.">
-  <meta name="keywords" content="HTML,CSS,JavaScript">
-  <meta name="author" content="Hernando Abella">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cooltipz-css/cooltipz.min.css" />
-  <link href="https://rawcdn.githack.com/hung1001/font-awesome-pro/4cac1a6/css/all.css" rel="stylesheet" type="text/css" />
+    <title>Hernando Abella | Home</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
 
-  <title>Página Principal | Hernando Abella</title>
+  </head>
 
-  <link rel="stylesheet" href="./css/styles.css">
-  <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
-  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+  <body>
+    <section id="front__page">
+      <div class="front-container">
+        <div class="image-container">
+          <img src="./images/profile.jpg" alt="imagen-perfil" />
+        </div>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-906TQRPM26"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
+        <div class="info-container">
+          <h1>👋 ¡Hola! Soy, <span>Hernando</span>.</h1>
+          <h3>👨‍💻 Desarrollador Web</h3>
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-156876439-1');
-  </script>
-
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4738686264045512" crossorigin="anonymous"></script>
-</head>
-
-<body>
-
-  <section id="front__page">
-
-        <div class="front-container">
-
-          <div class="image-container">
-            
-            <img src="./images/profile.png" alt="imagen-perfil">
-            
+          <div class="informacion__contacto">
+            <p><i class="fad fa-phone"></i> +57-304-393-2597</p>
+            <p><i class="fad fa-envelope"></i> hernandoabella@gmail.com</p>
           </div>
 
-          <div class="info-container">
-
-            <h1>👋 ¡Hola! Soy, <span style="color: var(--color-3)">Hernando</span>.</h1>
-            <h3>👨‍💻 Desarrollador Web</h3>
-
-            <div class="informacion__contacto">
-
-              <p><i class="fad fa-phone"></i> +57-304-393-2597</p>
-              <p><i class="fad fa-envelope"></i> hernandoabella@gmail.com</p>
-
-            </div>
-
-            <div class="social">
-              <a href="https://www.facebook.com/hernandoabellaoficial" target="_blank"><i class="fab fa-facebook"></i></a>
+          <div class="social">
+            <!-- <a href="https://www.facebook.com/hernandoabellaoficial" target="_blank"><i class="fab fa-facebook"></i></a>
               <a href="https://www.twitter.com/hernandoabella" target="_blank"><i class="fab fa-twitter"></i></a>
               <a href="https://www.instagram.com/hernandoabellaoficial" target="_blank"><i class="fab fa-instagram"></i></a>
               <a href="https://www.youtube.com/c/hernandoabella" target="_blank"><i class="fab fa-youtube"></i></a>
@@ -65,32 +51,43 @@
               <a href="https://es.stackoverflow.com/users/245244/hernando-abella" target="_blank"><i class="fab fa-stack-overflow"></i></a>
               <a href="https://www.github.com/hernandoabella" target="_blank"><i class="fab fa-github"></i></a>
               <a href="https://medium.com/@hernandoabella" target="_blank"><i class="fab fa-linkedin"></i></a>
-              <a href="https://medium.com/@hernandoabella" target="_blank"><i class="fab fa-medium"></i></a>
-              <!-- <a href="https://www.paypal.me/haoficial" target="_blank"><i class="fab fa-paypal"></i></a> -->
-            </div>
-
+              <a href="https://medium.com/@hernandoabella" target="_blank"><i class="fab fa-medium"></i></a> -->
+            <!-- <a href="https://www.paypal.me/haoficial" target="_blank"><i class="fab fa-paypal"></i></a> -->
           </div>
         </div>
+      </div>
 
-        <div class="navegacion">
-          <a class="activo" href="./" data-cooltipz-dir="top" aria-label="Inicio"><i class="fad fa-home link"></i> </a>
-          <a href="./aprende/" data-cooltipz-dir="top" aria-label="Aprende"><i class="fad fa-code link"></i> </a>
-          <a href="./proyectos/" data-cooltipz-dir="top" aria-label="Practica"><i class="fad fa-laptop-code link"></i> </a>
-          <a href="./snippets/" data-cooltipz-dir="top" aria-label="Snippets"><i class="fad fa-brackets-curly link"></i> </a>
-          <a href="./ebooks/" data-cooltipz-dir="top" aria-label="E-books"><i class="fad fa-books link"></i> </a>
-          <a href="./videos/" data-cooltipz-dir="top" aria-label="Vídeos"><i class="fad fa-video link"></i> </a>
-        </div>
+      <nav class="navegacion">
+        <a class="activo" href="./" data-cooltipz-dir="top" aria-label="Home"
+          ><i class="fad fa-home link"></i>
+        </a>
+        <a href="./books/" data-cooltipz-dir="top" aria-label="Books"
+          ><i class="fad fa-books link"></i>
+        </a>
+        <a
+          href="https://youtube.com/c/hernandoabella"
+          target="_blank"
+          data-cooltipz-dir="top"
+          aria-label="Videos"
+          rel="videos"
+          ><i class="fad fa-video link"></i>
+        </a>
+      </nav>
+    </section>
 
-  </section>
+    <!-- <a href="https://app.gumroad.com/products/lxuvzt" target="_blank" class="suscripcion__mensual">Suscribe</a> -->
 
-  <a href="https://app.gumroad.com/products/lxuvzt" target="_blank" class="suscripcion__mensual">Suscríbete</a>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-NSBP787"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NSBP787" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-  <script src="./js/script.js"></script>
-
-</body>
-
+    <script src="./js/script.js"></script>
+  </body>
 </html>
