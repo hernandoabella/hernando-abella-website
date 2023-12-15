@@ -1,6 +1,26 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.bottom_navbar {
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  background: rgb(23, 23, 23);
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.bottom_navbar a {
+  color: aquamarine;
+  margin: 20px;
+  transition: 0.3s;
+  font-size: 1.3em;
+}
+
+.bottom_navbar a:hover {
 }
