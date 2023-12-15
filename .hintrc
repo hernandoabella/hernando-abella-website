@@ -9,6 +9,12 @@
       {
         "link-name": "off"
       }
+    ],
+    "axe/aria": [
+      "default",
+      {
+        "aria-allowed-attr": "off"
+      }
     ]
   }
 }
