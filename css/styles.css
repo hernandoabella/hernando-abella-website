@@ -10,17 +10,21 @@
   bottom: 0;
   margin: 0 auto;
   background: rgb(23, 23, 23);
-  padding: 20px;
   width: 100%;
   text-align: center;
+  padding: 20px;
 }
 
 .bottom_navbar a {
   color: aquamarine;
-  margin: 20px;
+  margin: 10px;
   transition: 0.3s;
   font-size: 1.3em;
+  padding: 10px;
 }
 
 .bottom_navbar a:hover {
+  background: #333;
+  padding: 10px;
+  border-radius: 10px;
 }
