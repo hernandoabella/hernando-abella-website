@@ -72,14 +72,15 @@ header {
   margin-bottom: 20px;
 }
 
-h1 {
+.hero h1 {
   font-size: 2em;
   margin-bottom: 10px;
 }
 
-h3 {
+.hero h3 {
   font-size: 1.2em;
   margin-bottom: 30px;
+  color: #c9c8c8;
 }
 
 .social {
@@ -121,15 +122,15 @@ h3 {
 .book-image {
   width: 100px;
   height: 150px;
-  margin-right: 15px;
   border-radius: 8px;
+  margin-right: 15px;
 }
 
 .book-details {
   flex: 1;
 }
 
-.books h3 {
+.book h3 {
   font-size: 1.5em;
   color: #555;
   border-bottom: 2px solid #ddd;
@@ -142,8 +143,22 @@ h3 {
 }
 
 .star {
-  font-size: 1.2em;
-  color: #ffd700; /* Gold color for stars */
+  font-size: 1.3em;
+  color: #ffa41c; /* Gold color for stars */
+}
+
+.buy-now-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.buy-now-btn:hover {
+  background-color: #0056b3;
 }
 
 .resources {
@@ -230,6 +245,67 @@ h3 {
 .videos p {
   font-size: 1.2em;
 }
+
+.side-projects {
+  padding: 20px;
+}
+
+.side-projects img {
+  width: 150px;
+}
+
+.side-projects h3 {
+  font-size: 2em;
+  color: #333;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.project {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+}
+
+.project-details {
+  padding: 15px;
+}
+
+.project-details h4 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.project-details p {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.project-link {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #3498db;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.project-link:hover {
+  background-color: #2980b9;
+}
+
 
 .support-me {
   padding: 20px;
