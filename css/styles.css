@@ -149,13 +149,11 @@ h3 {
   color: #ffd700; /* Gold color for stars */
 }
 
-.support-me {
-  background: rosybrown;
-  padding: 20px;
-}
+
+
 
 .resources {
-  margin-top: 20px;
+  padding: 20px;
 }
 
 .resources h3 {
@@ -237,6 +235,51 @@ h3 {
 
 .videos p {
   font-size: 1.2em;
+}
+
+.support-me {
+  padding: 20px;
+}
+
+.support-me h3 {
+  font-size: 1.5em;
+  color: #555;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.support-me p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.support-options {
+  display: flex;
+  justify-content: space-around;
+}
+
+.support-option {
+  text-align: center;
+}
+
+.support-option img {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.support-option p {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.support-option a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.support-option a:hover {
+  text-decoration: underline;
 }
 
 .contact {
