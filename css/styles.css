@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&display=swap");
 
 * {
   padding: 0;
@@ -7,15 +7,21 @@
   scroll-behavior: smooth;
 }
 
+body {
+  font-family: "DM Sans", sans-serif;
+}
+
 header {
   padding: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: rgb(23, 23, 23);
+  color: aquamarine;
 }
 
 .bottom_navbar {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   background: rgb(23, 23, 23);
   width: 100%;
@@ -34,9 +40,232 @@ header {
 
 .bottom_navbar a:hover {
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 50px;
+  background: #383838;
+}
+
+.bottom_navbar a:active {
+  color: dodgerblue;
+}
+
+.bottom_navbar .active {
+  color: dodgerblue;
+}
+
+.hero {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.hero-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.profile-image {
+  width: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+}
+
+.social a {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 1.5em;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.social a:hover {
+  color: #ffd700;
+}
+
+.resources {
+  background: lightsteelblue;
+  padding: 20px;
+}
+
+.videos {
+  background: plum;
+  padding: 20px;
+}
+
+.books {
+  padding: 20px;
+}
+
+.book {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.book-image {
+  width: 100px;
+  height: 150px;
+  margin-right: 15px;
+  border-radius: 8px;
+}
+
+.book-details {
+  flex: 1;
+}
+
+.books h3 {
+  font-size: 1.5em;
+  color: #555;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.rating {
+  margin-top: 10px;
+}
+
+.star {
+  font-size: 1.2em;
+  color: #ffd700; /* Gold color for stars */
 }
 
 .support-me {
-  background: lightgray;
+  background: rosybrown;
+  padding: 20px;
+}
+
+.resources {
+  margin-top: 20px;
+}
+
+.resources h3 {
+  font-size: 1.5em;
+  color: #555;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.resources p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.resource-card {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.resource-card img {
+  width: 150px;
+  height: 100px;
+  border-radius: 8px;
+  margin-right: 15px;
+}
+
+.resource-details {
+  flex: 1;
+}
+
+.resource-details h4 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.resource-details p {
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+.resource-details a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.resource-details a:hover {
+  text-decoration: underline;
+}
+
+.videos {
+  padding: 20px;
+}
+
+.videos h3 {
+  font-size: 1.5em;
+  color: #555;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.video-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.video-container a {
+  flex: 0 0 30%; /* Ajusta según sea necesario */
+  text-decoration: none;
+}
+
+.video-container img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.videos p {
+  font-size: 1.2em;
+}
+
+.contact {
+  padding: 20px;
+  margin-bottom: 50px;
+}
+
+.contact h3 {
+  font-size: 1.5em;
+  color: #555;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.contact-info {
+  font-size: 1.2em;
+}
+
+.contact-info a {
+  color: #007bff; /* Blue color for links */
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
 }
