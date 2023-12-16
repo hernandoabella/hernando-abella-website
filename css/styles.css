@@ -16,14 +16,14 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgb(23, 23, 23);
+  background: rgb(0 0 0);
   color: aquamarine;
 }
 
 .bottom_navbar {
   position: fixed;
   bottom: 0;
-  background: rgb(23, 23, 23);
+  background: rgb(0 0 0);
   width: 100%;
   text-align: center;
   padding: 20px;
@@ -53,7 +53,9 @@ header {
 }
 
 .hero {
+  background: url(/images/hero-background.jpg);
   background-color: #333;
+  background-size: cover;
   color: white;
   text-align: center;
   padding: 50px 0;
@@ -103,11 +105,6 @@ h3 {
   padding: 20px;
 }
 
-.videos {
-  background: plum;
-  padding: 20px;
-}
-
 .books {
   padding: 20px;
 }
@@ -148,9 +145,6 @@ h3 {
   font-size: 1.2em;
   color: #ffd700; /* Gold color for stars */
 }
-
-
-
 
 .resources {
   padding: 20px;
