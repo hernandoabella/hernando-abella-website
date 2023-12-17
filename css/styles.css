@@ -194,7 +194,7 @@ header {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 15px;
-  background-color: #3498db;
+  background-color: #344ADB;
   color: #fff;
   text-decoration: none;
   border-radius: 8px;
@@ -377,6 +377,9 @@ header {
 
 .support-option {
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .support-option img {
