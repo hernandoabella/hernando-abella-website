@@ -1,47 +1,46 @@
-header{
-    background: #fff;
-    display: flex;
-    padding: 10px;
-    box-shadow: var(--box-shadow);
-    font-family: var(--fuente-titulo);
+header {
+  background: #fff;
+  display: flex;
+  padding: 10px;
+  box-shadow: var(--box-shadow);
+  font-family: var(--fuente-titulo);
 }
 
-header a{
-    color: var(--color-1);
-    margin: 10px;
-    transition: .3s;
+header a {
+  color: var(--color-1);
+  margin: 10px;
+  transition: 0.3s;
 }
 
-ul li{
-    list-style-type: none;
-    display: inline-block;
+ul li {
+  list-style-type: none;
+  display: inline-block;
 }
 
-ul li a{
-    display: block;
-    transition: .3s;
-
+ul li a {
+  display: block;
+  transition: 0.3s;
 }
 
-ul li a i{
-    font-size: 2.5em;
+ul li a i {
+  font-size: 2.5em;
 }
 
-.aprende-flex{
-    display: flex;
+.aprende-flex {
+  display: flex;
 }
 
-.back i{
-    background: var(--color-2);
-    color: #fff;
-    padding: 10px;
-    font-size: 1em;
-    border-radius: 25px;
-    transition: .3s;
+.back i {
+  background: var(--color-2);
+  color: #fff;
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 25px;
+  transition: 0.3s;
 }
 
-.back i:hover{
-    background: var(--color-1);
+.back i:hover {
+  background: var(--color-1);
 }
 
 /* aside{
@@ -68,387 +67,389 @@ aside h4{
     text-decoration: underline;
 } */
 
-.aprende{
-    width: 100%;
+.aprende {
+  width: 100%;
 }
 
-.aprende__hero{
-    padding: 20px;
-    text-align: center;
+.aprende__hero {
+  padding: 20px;
+  text-align: center;
 }
 
-.aprende__hero h1{
-    color: #fff;
-    padding: 10px;
-    margin: 10px;
-    transition: .3s;
-    text-shadow: var(--text-shadow);
+.aprende__hero h1 {
+  color: #fff;
+  padding: 10px;
+  margin: 10px;
+  transition: 0.3s;
+  text-shadow: var(--text-shadow);
 }
 
-.aprende__hero p{
-    color: #fff;
+.aprende__hero p {
+  color: #fff;
 }
 
-.steps ul{
-    background: var(--color-3);
+.steps ul {
+  background: var(--color-3);
 }
 
-.steps{
-    background: var(--color-1);
-    display: flex;
-    flex-wrap: wrap;
-    border-radius: 25px;
-    margin: 10px auto;
+.steps {
+  background: var(--color-1);
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 25px;
+  margin: 10px auto;
 }
 
-.steps > div{
-    width: 33.33%;
+.steps > div {
+  width: 33.33%;
 }
 
-.steps h3{
-    color: var(--color-3) !important;
-    padding: 20px;
+.steps h3 {
+  color: var(--color-3) !important;
+  padding: 20px;
 }
 
-.steps ul{
-    border-radius: 25px;
-    padding: 0px;
-    margin: 10px;
+.steps ul {
+  border-radius: 25px;
+  padding: 0px;
+  margin: 10px;
 }
 
-.steps ul li a{
-    border-radius: 20%;
-    margin: 10px;
+.steps ul li a {
+  border-radius: 20%;
+  margin: 10px;
 }
 
-.internet{
-    background: #0bb6ff;
-    color: #000;
-    padding: 10px;
-    font-family: 'Poppins';
+.internet {
+  background: #0bb6ff;
+  color: #000;
+  padding: 10px;
+  font-family: "Poppins";
 }
 
-.html{
-    background: #E34C26;
-    color: #000;
-    padding: 10px;
-    font-family: 'Poppins';
+.html {
+  background: #e34c26;
+  color: #000;
+  padding: 10px;
+  font-family: "Poppins";
 }
 
-.html i{
-    color: #fff;
+.html i {
+  color: #fff;
 }
 
-.css{
-    background: #264de4;
-    color: #fff;
-    padding: 10px;
-    font-family: 'Poppins';
+.css {
+  background: #264de4;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
 }
 
-.css i{
-    color: #fff;
+.css i {
+  color: #fff;
 }
 
-.sass{
-    background: #fff;
-    color: #000;
-    padding: 10px;
-    font-family: 'Poppins';
+.sass {
+  background: #fff;
+  color: #000;
+  padding: 10px;
+  font-family: "Poppins";
 }
 
-.sass i{
-    color: #cd6799;
+.sass i {
+  color: #cd6799;
 }
 
-.bootstrap{
-    background: #602C50;
-    color: #fff;
-    padding: 10px;
-    font-family: 'Poppins';
+.bootstrap {
+  background: #602c50;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
 }
 
-.bootstrap i{
-    color: #fff;
+.bootstrap i {
+  color: #fff;
 }
 
-.git{
-    background: #fff;
-    padding: 10px;
-    font-family: 'Poppins'
+.git {
+  background: #fff;
+  padding: 10px;
+  font-family: "Poppins";
 }
 
-.git i{
-    color: #F1502F;
+.git i {
+  color: #f1502f;
 }
 
-.javascript{
-    background: #F0DB4F;
-    color: #323330;
-    padding: 10px;
-    font-family: 'Poppins';
+.javascript {
+  background: #f0db4f;
+  color: #323330;
+  padding: 10px;
+  font-family: "Poppins";
 }
 
-.javascript i{
-    color: #323330;
+.javascript i {
+  color: #323330;
 }
 
-.jquery{
-    background: #0868AC;
-    color: #fff;
-    padding: 10px;
-    font-family: 'Poppins';
+.jquery {
+  background: #0868ac;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
 }
 
-.jquery i{
-    color: #fff;
+.jquery i {
+  color: #fff;
 }
 
-.react{
-    background: #61DBFB;
-    color: #000;
-    padding: 10px;
-    font-family: 'Poppins';
+.react {
+  background: #61dbfb;
+  color: #000;
+  padding: 10px;
+  font-family: "Poppins";
 }
 
-.react i{
-    color: #000;
+.react i {
+  color: #000;
 }
 
-.angular{
-    background: #a6120d;
-    color: #fff;
-    padding: 10px;
-    font-family: 'Poppins';
+.angular {
+  background: #a6120d;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
 }
 
-.angular i{
-    color: #fff;
+.angular i {
+  color: #fff;
 }
 
-.vue{
-    background: #41B883;
-    color: #000;
-    padding: 10px;
-    font-family: 'Poppins';
+.vue {
+  background: #41b883;
+  color: #000;
+  padding: 10px;
+  font-family: "Poppins";
 }
 
-.vue i{
-    color: #000;
+.vue i {
+  color: #000;
 }
 
-.php{
-    background: #B0B3D6;
-    color: #000;
-    padding: 10px;
-    font-family: 'Poppins';
+.php {
+  background: #b0b3d6;
+  color: #000;
+  padding: 10px;
+  font-family: "Poppins";
 }
 
-.php i{
-    color: #000;
+.php i {
+  color: #000;
 }
 
-.mysql{
-    background: #165CAA;
-    color: #fff;
-    padding: 10px;
-    font-family: 'Poppins';
+.mysql {
+  background: #165caa;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
 }
 
-.mysql i{
-    color: #fff;
+.mysql i {
+  color: #fff;
 }
 
-.nodejs{
-    background: #68A063;
-    color: #303030;
-    padding: 10px;
-    font-family: 'Poppins';
+.nodejs {
+  background: #68a063;
+  color: #303030;
+  padding: 10px;
+  font-family: "Poppins";
 }
 
-.nodejs i{
-    color: #303030;
+.nodejs i {
+  color: #303030;
 }
 
-.express{
-    background: #303030;
-    color: #68A063;
-    padding: 10px;
-    font-family: 'Poppins';
+.express {
+  background: #303030;
+  color: #68a063;
+  padding: 10px;
+  font-family: "Poppins";
 }
 
-.express i{
-    color: #fff;
+.express i {
+  color: #fff;
 }
 
-.mongodb{
-    background: #4DB33D;
-    color: #C1BEBC;
-    padding: 10px;
-    font-family: 'Poppins';
+.mongodb {
+  background: #4db33d;
+  color: #c1bebc;
+  padding: 10px;
+  font-family: "Poppins";
 }
 
-.mongodb i{
-    color: #000;
+.mongodb i {
+  color: #000;
 }
 
-.docker{
-    background: #0DB7ED;
-    color: #C1BEBC;
-    padding: 10px;
-    font-family: 'Poppins';
+.docker {
+  background: #0db7ed;
+  color: #c1bebc;
+  padding: 10px;
+  font-family: "Poppins";
 }
 
-.docker i{
-    color: #000;
+.docker i {
+  color: #000;
 }
 
-.deno{
-    background: #07091c;
-    color: #fff;
-    padding: 10px;
-    font-family: 'Poppins';
+.deno {
+  background: #07091c;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
 }
 
-.deno i{
-    color: #fff;
+.deno i {
+  color: #fff;
 }
 
-.python{
-    background: #FFE873;
-    color: #000;
-    padding: 10px;
-    font-family: 'Poppins';
+.python {
+  background: #ffe873;
+  color: #000;
+  padding: 10px;
+  font-family: "Poppins";
 }
 
-.python i{
-    color: #000;
+.python i {
+  color: #000;
 }
 
-.numpy{
-    background: #4DABCF;
-    color: #000;
-    padding: 10px;
-    font-family: 'Poppins';
+.numpy {
+  background: #4dabcf;
+  color: #000;
+  padding: 10px;
+  font-family: "Poppins";
+}
 
+.numpy i {
+  color: #000;
 }
 
-.numpy i{
-    color: #000;
+.pandas {
+  background: #130654;
+  color: #000;
+  padding: 10px;
+  font-family: "Poppins";
 }
 
-.pandas{
-    background: #130654;
-    color: #000;
-    padding: 10px;
-    font-family: 'Poppins';
+.pandas i {
+  color: #fff;
 }
 
-.pandas i{
-    color: #fff;
+.r {
+  background: #165caa;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
 }
 
-.r{
-    background: #165CAA;
-    color: #fff;
-    padding: 10px;
-    font-family: 'Poppins';
+.r i {
+  color: #fff;
 }
 
-.r i{
-    color: #fff;
+.django {
+  background: #092e20;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
 }
 
-.django{
-    background: #092e20;
-    color: #fff;
-    padding: 10px;
-    font-family: 'Poppins';
+.django i {
+  color: #fff;
 }
 
-.django i{
-    color: #fff;
+.java {
+  background: #f89820;
+  color: #000;
+  padding: 10px;
+  font-family: "Poppins";
 }
 
-.java{
-    background: #f89820;
-    color: #000;
-    padding: 10px;
-    font-family: 'Poppins';
+.java i {
+  color: #000;
 }
 
-.java i{
-    color: #000;
+.cpp {
+  background: #283593;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
 }
 
-.cpp{
-    background: #283593;
-    color: #fff;
-    padding: 10px;
-    font-family: 'Poppins';
+.cpp i {
+  color: #fff;
 }
 
-.cpp i{
-    color: #fff;
+.bash {
+  background: #07091c;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
 }
 
-.bash{
-    background: #07091c;
-    color: #fff;
-    padding: 10px;
-    font-family: 'Poppins';
+.bash i {
+  color: #fff;
 }
 
-.bash i{
-    color: #fff;
+.c {
+  background: #283593;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
 }
 
-.c{
-    background: #283593;
-    color: #fff;
-    padding: 10px;
-    font-family: 'Poppins';
+.c i {
+  color: #fff;
 }
 
-.c i{
-    color: #fff;
+.cs {
+  background: #283593;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
 }
 
-.cs{
-    background: #283593;
-    color: #fff;
-    padding: 10px;
-    font-family: 'Poppins';
+.cs i {
+  color: #fff;
 }
 
-.cs i{
-    color: #fff;
+.top-banner {
+  width: 100%;
+  height: auto;
 }
 
-.tag{
-    background: var(--color-3);
-    color: #000;
+.top-banner img {
+  width: 100%;
 }
 
 /* mobile */
 
-@media only screen and (max-width: 768px) { 
-    header{
-        justify-content: center;
-        padding: 0px;
-    }
+@media only screen and (max-width: 768px) {
+  header {
+    justify-content: center;
+    padding: 0px;
+  }
 
-    .steps{
-        flex-direction: column;
-        flex-wrap: nowrap;
-    }
+  .steps {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
 
-    .steps > div{
-        width: 100%;
-    }
+  .steps > div {
+    width: 100%;
+  }
 
-    ul li a i{
-        font-size: 1.4em;
-    }
-
+  ul li a i {
+    font-size: 1.4em;
+  }
 }
