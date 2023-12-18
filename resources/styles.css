@@ -431,25 +431,3 @@ aside h4{
 .top-banner img {
   width: 100%;
 }
-
-/* mobile */
-
-@media only screen and (max-width: 768px) {
-  header {
-    justify-content: center;
-    padding: 0px;
-  }
-
-  .steps {
-    flex-direction: column;
-    flex-wrap: nowrap;
-  }
-
-  .steps > div {
-    width: 100%;
-  }
-
-  ul li a i {
-    font-size: 1.4em;
-  }
-}
