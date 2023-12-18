@@ -424,10 +424,5 @@ aside h4{
 }
 
 .top-banner {
-  width: 100%;
-  height: auto;
-}
-
-.top-banner img {
-  width: 100%;
+  padding: 50px;
 }
