@@ -66,6 +66,12 @@ header {
   color: aquamarine;
 }
 
+.navbar-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
 .hero {
   background: url(/images/hero-background.jpg);
   background-color: #333;
@@ -403,7 +409,7 @@ header {
 
 .contact {
   padding: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 
 .contact h3 {
