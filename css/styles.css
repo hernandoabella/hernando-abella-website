@@ -59,11 +59,11 @@ header {
 }
 
 .bottom_navbar a:active {
-  color: dodgerblue;
+  color: aquamarine;
 }
 
 .bottom_navbar .active {
-  color: dodgerblue;
+  color: aquamarine;
 }
 
 .hero {
@@ -106,7 +106,7 @@ header {
   display: inline-block;
   margin: 0 10px;
   font-size: 1.5em;
-  color: white;
+  color: aquamarine;
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
@@ -175,14 +175,14 @@ header {
   display: inline-block;
   margin-top: 10px;
   padding: 10px 15px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: aquamarine;
+  color: #000;
   text-decoration: none;
   border-radius: 8px;
 }
 
 .buy-now-btn:hover {
-  background-color: #0056b3;
+  background-color: rgb(91 236 188)
 }
 
 .view-more {
@@ -194,7 +194,7 @@ header {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 15px;
-  background-color: #344ADB;
+  background-color: #344adb;
   color: #fff;
   text-decoration: none;
   border-radius: 8px;
