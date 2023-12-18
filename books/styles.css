@@ -49,22 +49,6 @@
   border: none;
 }
 
-@media only screen and (max-width: 768px){
-  header{
-      justify-content: center;
-      padding: 0px;
-  }
-  
-  ul li a i{
-      font-size: 1.4em;
-  }
-
-  .e-card-container{
-    flex-direction: column;
-  }
-
-  .e-card{
-    width: 95%;
-  }
-  
+.top-banner {
+  padding: 50px;
 }
