@@ -26,7 +26,7 @@ body {
 }
 
 header {
-  padding: 20px;
+  padding: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -72,7 +72,7 @@ header {
   background-size: cover;
   color: white;
   text-align: center;
-  padding: 50px 0;
+  padding: 50px;
 }
 
 .hero-content {
@@ -121,7 +121,7 @@ header {
 }
 
 .books {
-  padding: 20px;
+  padding: 50px;
 }
 
 .books h3 {
@@ -182,7 +182,7 @@ header {
 }
 
 .buy-now-btn:hover {
-  background-color: rgb(91 236 188)
+  background-color: rgb(91 236 188);
 }
 
 .view-more {
