@@ -142,11 +142,6 @@ header {
   text-align: justify;
 }
 
-.books ul {
-  text-align: left;
-  margin-left: 30px;
-}
-
 .book-group {
   display: flex;
   flex-wrap: wrap;
@@ -156,7 +151,6 @@ header {
 .book {
   flex: 0 1 calc(30% - 20px);
   margin: 0 10px 20px;
-  border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
 }
@@ -164,18 +158,11 @@ header {
 .book-image {
   width: 100%;
   height: auto;
-  border-radius: 8px 8px 0 0;
-}
-
-.book-details {
-  padding: 15px;
-  text-align: center;
 }
 
 .buy-now-btn {
   display: inline-block;
-  margin-top: 10px;
-  padding: 10px 15px;
+  padding: 10px;
   background-color: aquamarine;
   color: #000;
   text-decoration: none;
@@ -207,10 +194,11 @@ header {
 
 .rating {
   color: #ffa41c;
+  padding: 20px 0;
 }
 
 .resources {
-  padding: 20px;
+  padding: 50px;
 }
 
 .resources h3 {
@@ -262,7 +250,7 @@ header {
 }
 
 .videos {
-  padding: 20px;
+  padding: 50px;
 }
 
 .videos h3 {
@@ -295,7 +283,7 @@ header {
 }
 
 .side-projects {
-  padding: 20px;
+  padding: 50px;
 }
 
 .side-projects img {
@@ -355,7 +343,7 @@ header {
 }
 
 .support-me {
-  padding: 20px;
+  padding: 50px;
 }
 
 .support-me h3 {
@@ -403,7 +391,7 @@ header {
 }
 
 .contact {
-  padding: 20px;
+  padding: 50px;
   margin-bottom: 100px;
 }
 
