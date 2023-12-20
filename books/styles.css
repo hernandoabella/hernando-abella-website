@@ -58,6 +58,7 @@
   justify-content: space-around;
   flex-wrap: wrap;
   padding: 20px;
+  margin-bottom: 100px;
 }
 
 .book-gallery .item-book {
@@ -66,4 +67,9 @@
 
 .book-gallery img {
   width: 100%;
+  transition: .3s;
+}
+
+.book-gallery img:hover {
+  transform: scale(1.1);
 }
