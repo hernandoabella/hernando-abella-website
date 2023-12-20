@@ -60,32 +60,10 @@
   padding: 20px;
 }
 
-.book {
-  width: 250px;
-  margin: 10px;
-  text-align: center;
+.book-gallery .item-book {
+  width: 400px;
 }
 
-.book img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-.book h3 {
-  margin: 10px 0;
-}
-
-.buy-now-btn {
-  display: inline-block;
-  padding: 8px 16px;
-  background-color: #007bff;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-.buy-now-btn:hover {
-  background-color: #0056b3;
+.book-gallery img {
+  width: 100%;
 }
