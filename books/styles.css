@@ -1,43 +1,43 @@
-.e-books{
+.e-books {
   background: rgba(255, 255, 255, 0);
 }
 
-.e-books h1{
+.e-books h1 {
   margin: 10px;
   color: var(--color-3);
   text-shadow: var(--text-shadow);
 }
 
-.e-books p{
+.e-books p {
   margin: 10px;
 }
 
-.e-books hr{
+.e-books hr {
   margin: 20px 10px;
   border: 1px solid var(--color-3);
 }
 
-.e-card-container{
+.e-card-container {
   display: flex;
 }
 
-.e-card{
+.e-card {
   width: 200px;
   margin: 10px;
   border-radius: 25px;
   transition: .3s;
 }
 
-.e-card:hover{
+.e-card:hover {
   transform: scale(1.1);
 }
 
-.e-card-background img{
+.e-card-background img {
   width: 100%;
   border-radius: 25px;
 }
 
-.e-card-price{
+.e-card-price {
   font-weight: bold;
   background: var(--color-3);
   padding: 10px;
@@ -51,4 +51,41 @@
 
 .top-banner {
   padding: 50px;
+}
+
+.book-gallery {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.book {
+  width: 250px;
+  margin: 10px;
+  text-align: center;
+}
+
+.book img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.book h3 {
+  margin: 10px 0;
+}
+
+.buy-now-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.buy-now-btn:hover {
+  background-color: #0056b3;
 }
