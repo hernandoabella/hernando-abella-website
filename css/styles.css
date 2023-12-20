@@ -287,6 +287,11 @@ header {
   padding: 50px;
 }
 
+.side-projects p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
 .side-projects h3 {
   font-size: 1.5em;
   color: #555;
