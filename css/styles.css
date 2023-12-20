@@ -268,7 +268,8 @@ header {
 }
 
 .video-container a {
-  flex: 0 0 30%; /* Ajusta según sea necesario */
+  flex: 0 0 30%;
+  /* Ajusta según sea necesario */
   text-decoration: none;
 }
 
@@ -286,16 +287,16 @@ header {
   padding: 50px;
 }
 
-.side-projects img {
-  width: 150px;
-}
-
 .side-projects h3 {
-  font-size: 2em;
-  color: #333;
-  border-bottom: 2px solid #3498db;
+  font-size: 1.5em;
+  color: #555;
+  border-bottom: 2px solid #ddd;
   padding-bottom: 10px;
   margin-bottom: 20px;
+}
+
+.side-projects img {
+  width: 150px;
 }
 
 .project {
@@ -412,7 +413,8 @@ header {
 }
 
 .contact-info a {
-  color: #007bff; /* Blue color for links */
+  color: #007bff;
+  /* Blue color for links */
   text-decoration: none;
 }
 
