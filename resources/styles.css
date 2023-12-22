@@ -1,7 +1,58 @@
+a {
+  text-decoration: none;
+}
+
 .top-banner {
   padding: 50px;
 }
 
 .top-resources {
-  padding: 50px;
+  padding: 0 50px;
+}
+
+.top-resources h2 {
+  margin: 20px 0;
+}
+
+.top-resources p {
+  margin-bottom: 20px;
+}
+
+.other {
+  display: flex;
+  gap: 10px;
+  padding: 20px 0;
+}
+
+.other a {
+  transition: .3s;
+  border-radius: 10px;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.other a:hover {
+  color: #333;
+  background: aquamarine;
+}
+
+.html a {
+  padding: 10px;
+  background: #333;
+  display: block;
+  color: aquamarine;
+}
+
+.css a {
+  padding: 10px;
+  background: #333;
+  display: block;
+  color: aquamarine;
+}
+
+.js a {
+  padding: 10px;
+  background: #333;
+  display: block;
+  color: aquamarine;
 }
