@@ -14,14 +14,37 @@ a {
   margin: 20px 0;
 }
 
-.top-resources p {
-  margin-bottom: 20px;
+p {
+  margin: 20px 0;
+}
+
+.general-programming {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+}
+
+.general-programming a {
+  color: #333;
+  transition: .3s;
+  display: block;
+  font-size: 1.3em;
+}
+
+.general-programming a:hover {
+  transform: scale(1.1);
+  text-shadow: 3px 3px 3px #999;
 }
 
 .other {
   display: flex;
   gap: 10px;
   padding: 20px 0;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
 }
 
 .other a {
