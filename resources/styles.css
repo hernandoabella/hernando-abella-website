@@ -1,3 +1,8 @@
+body {
+  background: url('../images/4k-tech-1eweq7h47kehxd7y.jpg');
+  color: #fff;
+}
+
 a {
   text-decoration: none;
 }
@@ -12,6 +17,8 @@ a {
 
 .top-resources h2 {
   margin: 20px 0;
+  text-align: center;
+  color: fuchsia;
 }
 
 p {
@@ -27,7 +34,7 @@ p {
 }
 
 .general-programming a {
-  color: #333;
+  color: #fff;
   transition: .3s;
   display: block;
   font-size: 1.3em;
