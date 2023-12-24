@@ -1,5 +1,5 @@
 body {
-  background: url('../images/4k-technology-abstract-animation-background-seamless-loop-blue-color-video.jpg');
+  background: url('../images/1338166.png');
   color: #fff;
 }
 
@@ -64,7 +64,6 @@ p {
 .other a:hover {
   color: #333;
   background: aquamarine;
-  transform: scale(1.1);
 }
 
 .html a {
