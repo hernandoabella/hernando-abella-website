@@ -19,6 +19,11 @@ a {
   margin: 20px 0;
   text-align: center;
   color: fuchsia;
+  font-size: 3em;
+}
+
+.top-resources img {
+  width: 50px;
 }
 
 p {
