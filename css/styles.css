@@ -50,6 +50,7 @@ header {
   text-decoration: none;
   text-align: center;
   padding: 10px;
+  width: 50px;
 }
 
 .bottom_navbar a:hover {
