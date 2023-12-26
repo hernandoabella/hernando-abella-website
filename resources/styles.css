@@ -1,5 +1,6 @@
 body {
   background: url('../images/1338166.png');
+  background: #181818;
   color: #fff;
 }
 
@@ -14,13 +15,6 @@ a {
 .top-resources {
   padding: 0 50px;
   padding-bottom: 100px;
-}
-
-.top-resources h2 {
-  margin: 20px 0;
-  text-align: center;
-  color: fuchsia;
-  font-size: 3em;
 }
 
 .top-resources img {
@@ -51,47 +45,6 @@ p {
   text-shadow: 3px 3px 3px fuchsia;
 }
 
-.other {
-  display: flex;
-  gap: 10px;
-  padding: 20px 0;
-  flex-wrap: wrap;
-  text-align: center;
-  justify-content: center;
-}
-
-.other a {
-  transition: .3s;
-  border-radius: 10px;
-  font-size: 1.3em;
-  font-weight: bold;
-}
-
-.other a:hover {
-  color: #333;
-  background: aquamarine;
-}
-
-.html a {
-  padding: 10px;
-  background: #000000;
-  display: block;
-  color: aquamarine;
-}
-
-.css a {
-  padding: 10px;
-  background: #000000;
-  display: block;
-  color: aquamarine;
-}
-
-.js a {
-  padding: 10px;
-  background: #000000;
-  display: block;
-  color: aquamarine;
-}
 
 .button {
   all: unset;
