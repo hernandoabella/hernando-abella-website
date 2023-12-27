@@ -41,6 +41,7 @@ header {
   width: 100%;
   text-align: center;
   padding: 20px;
+  z-index: 1;
 }
 
 .bottom_navbar a {
@@ -425,4 +426,37 @@ header {
 
 .contact-info a:hover {
   text-decoration: underline;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .books h3 {
+    text-align: center;
+
+  }
+
+  .book-group {
+    flex-direction: column;
+  }
+
+  .resources h3 {
+    text-align: center;
+  }
+
+  .resources p {
+    text-align: center;
+  }
+
+  .resource-card {
+    flex-direction: column;
+  }
+
+  .resource-card img {
+    margin: auto;
+  }
+
+  .resource-details {
+    margin-top: 20px;
+    text-align: center;
+  }
 }
