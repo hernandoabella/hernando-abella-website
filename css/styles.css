@@ -280,16 +280,11 @@ header {
   margin-bottom: 10px;
 }
 
-.videos p {
-  font-size: 1.2em;
-}
-
 .side-projects {
   padding: 50px;
 }
 
 .side-projects p {
-  font-size: 1.2em;
   margin-bottom: 20px;
 }
 
@@ -305,18 +300,20 @@ header {
   width: 150px;
 }
 
+.projects {
+  display: flex;
+  gap: 20px;
+}
+
 .project {
-  border: 1px solid #ddd;
   border-radius: 10px;
   overflow: hidden;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
 }
 
 .project-image {
   width: 100%;
   height: auto;
-  border-radius: 10px 10px 0 0;
 }
 
 .project-details {
@@ -361,8 +358,7 @@ header {
 }
 
 .support-me p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .support-options {
@@ -410,7 +406,6 @@ header {
 }
 
 .contact p {
-  font-size: 1.2em;
   margin-bottom: 20px;
 }
 
@@ -457,6 +452,40 @@ header {
 
   .resource-details {
     margin-top: 20px;
+    text-align: center;
+  }
+
+  .videos {
+    padding: 20px;
+  }
+
+  .videos h3 {
+    text-align: center;
+  }
+
+  .videos p {
+    text-align: center;
+  }
+
+  .side-projects {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .support-me {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .contact {
+    padding: 20px;
+  }
+
+  .contact h3 {
+    text-align: center;
+  }
+
+  .contact p {
     text-align: center;
   }
 }
