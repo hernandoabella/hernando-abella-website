@@ -272,6 +272,9 @@ header {
 
 .side-projects {
   padding: 50px;
+  background: url('../images/hero-background.jpg');
+  background-size: cover;
+  color: #fff;
 }
 
 .side-projects p {
@@ -280,7 +283,6 @@ header {
 
 .side-projects h3 {
   font-size: 1.5em;
-  color: #555;
   padding-bottom: 10px;
   margin-bottom: 20px;
 }
@@ -291,7 +293,8 @@ header {
 
 .projects {
   display: flex;
-  gap: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 .project {
@@ -311,12 +314,9 @@ header {
 
 .project-details h4 {
   font-size: 1.5em;
-  color: #333;
 }
 
 .project-details p {
-  font-size: 1.2em;
-  color: #555;
   padding: 10px 0px;
 }
 
