@@ -271,10 +271,17 @@ header {
 }
 
 .side-projects {
+  position: relative;
   padding: 50px;
   background: url('../images/hero-background.jpg');
   background-size: cover;
   color: #fff;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.6); /* Adjust the alpha value for the overlay */
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .side-projects p {
@@ -287,37 +294,33 @@ header {
   margin-bottom: 20px;
 }
 
-.side-projects img {
-  width: 150px;
-}
-
 .projects {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
 .project {
+  background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
+.project-details {
+  padding: 20px;
+  text-align: center;
 }
 
 .project-image {
   width: 100%;
   height: auto;
-}
-
-.project-details {
-  padding: 20px;
-}
-
-.project-details h4 {
-  font-size: 1.5em;
+  border-radius: 10px 10px 0 0;
 }
 
 .project-details p {
-  padding: 10px 0px;
+  margin-top: 10px;
 }
 
 .project-link {
@@ -334,35 +337,52 @@ header {
   background-color: #2980b9;
 }
 
+
+/* Common styles for both sections */
 .support-me {
   padding: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.support-me h3 {
+.support-me .support-content,
+.contact div {
+  width: 50%;
+}
+
+.support-me img,
+.contact img {
+  width: 100%;
+  max-width: 400px; /* Adjust the max-width as needed */
+}
+
+.support-me h3,
+.contact h3 {
   font-size: 1.5em;
-  color: #555;
   padding-bottom: 10px;
   margin-bottom: 20px;
 }
 
-.support-me p {
-  margin-bottom: 50px;
+.support-me p,
+.contact p {
+  margin-bottom: 20px;
 }
 
+/* Specific styles for the support-me section */
 .support-options {
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
 .support-option {
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .support-option img {
   width: 100px;
+  border-radius: 50%;
   margin-bottom: 10px;
 }
 
@@ -380,38 +400,21 @@ header {
   text-decoration: underline;
 }
 
-.contact {
-  padding: 50px;
-  margin-bottom: 100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
-.contact h3 {
-  font-size: 1.5em;
-  color: #555;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-}
-
-.contact p {
-  margin-bottom: 20px;
-}
-
+/* Specific styles for the contact section */
 .contact-info {
   font-size: 1.2em;
 }
 
 .contact-info a {
   color: #007bff;
-  /* Blue color for links */
   text-decoration: none;
 }
 
 .contact-info a:hover {
   text-decoration: underline;
 }
+
 
 .btn-23,
 .btn-23 *,
