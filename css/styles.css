@@ -190,7 +190,7 @@ header {
 
 .resources {
   padding: 50px;
-  background: url('../images/hero-background.jpg');
+  background: url('/images/wallpaperflare.com_wallpaper.jpg');
   background-size: cover;
   color: #fff;
 }
@@ -271,151 +271,23 @@ header {
 }
 
 .side-projects {
-  position: relative;
   padding: 50px;
-  background: url('../images/hero-background.jpg');
+  background: url('/images/wallpaperflare.com_wallpaper.jpg');
   background-size: cover;
   color: #fff;
 }
 
-.overlay {
-  background: rgba(0, 0, 0, 0.6);
-  /* Adjust the alpha value for the overlay */
-  padding: 20px;
-  border-radius: 10px;
-}
-
 .side-projects p {
-  margin-bottom: 20px;
-}
-
-.side-projects h3 {
-  font-size: 1.5em;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
+  margin: 20px 0px;
 }
 
 .projects {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
-}
-
-.project {
-  background-color: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  margin: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.project-details {
   padding: 20px;
-  text-align: center;
 }
 
-.project-image {
-  width: 100%;
-  height: auto;
-  border-radius: 10px 10px 0 0;
-}
-
-.project-details p {
-  margin-top: 10px;
-}
-
-.project-link {
-  display: inline-block;
-  padding: 10px 15px;
-  background-color: #3498db;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-.project-link:hover {
-  background-color: #2980b9;
-}
-
-
-/* Common styles for both sections */
-.support-me {
-  padding: 50px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.support-me .support-content,
-.contact div {
-  width: 50%;
-}
-
-.support-me img,
-.contact img {
-  width: 100%;
-  max-width: 400px;
-  /* Adjust the max-width as needed */
-}
-
-.support-me h3,
-.contact h3 {
-  font-size: 1.5em;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-}
-
-.support-me p,
-.contact p {
-  margin-bottom: 20px;
-}
-
-/* Specific styles for the support-me section */
-.support-options {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.support-option {
-  text-align: center;
-}
-
-.support-option img {
-  width: 100px;
-  border-radius: 50%;
-  margin-bottom: 10px;
-}
-
-.support-option p {
-  font-size: 1.2em;
-  margin-bottom: 10px;
-}
-
-.support-option a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.support-option a:hover {
-  text-decoration: underline;
-}
-
-
-/* Specific styles for the contact section */
-.contact-info {
-  font-size: 1.2em;
-}
-
-.contact-info a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.contact-info a:hover {
-  text-decoration: underline;
-}
 
 
 .btn-23,
