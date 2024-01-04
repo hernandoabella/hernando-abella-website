@@ -4,38 +4,10 @@ body {
   background-repeat: no-repeat;
 }
 
-.e-books {
-  background: rgba(255, 255, 255, 0);
-}
-
 .e-books h1 {
   margin: 10px;
   color: var(--color-3);
   text-shadow: var(--text-shadow);
-}
-
-.e-books p {
-  margin: 10px;
-}
-
-.e-books hr {
-  margin: 20px 10px;
-  border: 1px solid var(--color-3);
-}
-
-.e-card-container {
-  display: flex;
-}
-
-.e-card {
-  width: 200px;
-  margin: 10px;
-  border-radius: 25px;
-  transition: .3s;
-}
-
-.e-card:hover {
-  transform: scale(1.1);
 }
 
 .e-card-background img {
@@ -43,17 +15,6 @@ body {
   border-radius: 25px;
 }
 
-.e-card-price {
-  font-weight: bold;
-  background: var(--color-3);
-  padding: 10px;
-  position: absolute;
-  border-radius: 25px 0px 0px 0px;
-  box-shadow: var(--box-shadow);
-  color: #000;
-  font-family: var(--fuente-titulo);
-  border: none;
-}
 
 .top-banner {
   padding: 50px;
