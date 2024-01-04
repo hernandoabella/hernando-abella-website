@@ -30,6 +30,7 @@ header {
   align-items: center;
   justify-content: space-between;
   color: #fff;
+  margin-bottom: 50px;
 }
 
 .bottom_navbar {
@@ -72,6 +73,10 @@ header {
   gap: 10px;
 }
 
+.hero-img-container {
+  margin-bottom: 40px;
+}
+
 .hero {
   background: url('/images/wallpaperflare.com_wallpaper.jpg');
   background-color: #333;
@@ -89,7 +94,6 @@ header {
 .profile-image {
   width: 150px;
   border-radius: 50%;
-  margin-bottom: 20px;
 }
 
 .hero h1 {
@@ -483,6 +487,18 @@ header {
 
 
 @media only screen and (max-width: 768px) {
+
+  .video-container {
+    flex-direction: column;
+  }
+
+  .hero h1 {
+    font-size: 1.3em;
+  }
+
+  .hero h3 {
+    font-size: 1em;
+  }
 
   .projects {
     flex-direction: column;
