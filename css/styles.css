@@ -29,7 +29,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: aquamarine;
+  color: #fff;
 }
 
 .bottom_navbar {
@@ -100,7 +100,7 @@ header {
 .hero h3 {
   font-size: 1.2em;
   margin-bottom: 30px;
-  color: #c9c8c8;
+  color: #DBDBDB;
 }
 
 .social {
@@ -112,13 +112,13 @@ header {
   display: inline-block;
   margin: 0 10px;
   font-size: 1.5em;
-  color: aquamarine;
+  color: #fff;
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
 
 .social a:hover {
-  color: #ffd700;
+  color: #00ff00;
 }
 
 .books {
@@ -279,7 +279,8 @@ header {
 }
 
 .overlay {
-  background: rgba(0, 0, 0, 0.6); /* Adjust the alpha value for the overlay */
+  background: rgba(0, 0, 0, 0.6);
+  /* Adjust the alpha value for the overlay */
   padding: 20px;
   border-radius: 10px;
 }
@@ -354,7 +355,8 @@ header {
 .support-me img,
 .contact img {
   width: 100%;
-  max-width: 400px; /* Adjust the max-width as needed */
+  max-width: 400px;
+  /* Adjust the max-width as needed */
 }
 
 .support-me h3,
