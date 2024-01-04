@@ -296,6 +296,10 @@ header {
   color: #fff;
 }
 
+.side-projects h3 {
+  font-size: 1.5em;
+}
+
 .side-projects p {
   margin: 20px 0px;
 }
@@ -307,6 +311,39 @@ header {
   padding: 20px;
 }
 
+.support-me {
+  padding: 50px;
+}
+
+.support-me h3 {
+  margin-bottom: 20px;
+  font-size: 1.5em;
+}
+
+.support-me img {
+  width: 100px;
+}
+
+.support-options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 50px;
+}
+
+.contact {
+  padding: 50px;
+  margin-bottom: 100px;
+}
+
+.contact h3 {
+  font-size: 1.5em;
+}
+
+.contact p {
+  margin: 20px 0px;
+}
 
 
 .btn-23,
