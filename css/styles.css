@@ -14,6 +14,7 @@
 
 body {
   font-family: "DM Sans", sans-serif;
+  font-size: 1.3em;
 }
 
 .logo {
@@ -44,7 +45,7 @@ header {
 }
 
 .bottom_navbar a {
-  color: aquamarine;
+  color: #fff;
   transition: 0.3s;
   font-size: 1.3em;
   text-decoration: none;
@@ -56,7 +57,7 @@ header {
 .bottom_navbar a:hover {
   padding: 10px;
   border-radius: 50px;
-  background: #383838;
+  color: aquamarine;
 }
 
 .bottom_navbar a:active {
@@ -487,6 +488,10 @@ header {
 
 
 @media only screen and (max-width: 768px) {
+
+  body {
+    font-size: 1em;
+  }
 
   .video-container {
     flex-direction: column;
