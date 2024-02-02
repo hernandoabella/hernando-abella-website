@@ -225,13 +225,13 @@ header {
 
 .resource-container {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
 }
 
 .resource-card {
   display: flex;
-  align-items: center;
-  gap: 30px;
   margin: 50px 0px;
   background: #fff;
   color: #000;
@@ -240,8 +240,6 @@ header {
 }
 
 .resource-card img {
-  width: 200px;
-  height: auto;
   border-radius: 8px;
   margin-right: 15px;
 }
