@@ -223,6 +223,11 @@ header {
   margin-bottom: 20px;
 }
 
+.resource-container {
+  display: flex;
+  gap: 20px;
+}
+
 .resource-card {
   display: flex;
   align-items: center;
@@ -533,6 +538,10 @@ header {
 
   .resources p {
     text-align: center;
+  }
+
+  .resource-container {
+    flex-direction: column;
   }
 
   .resource-card {
