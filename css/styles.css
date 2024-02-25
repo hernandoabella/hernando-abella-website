@@ -180,13 +180,6 @@ header {
   transition: .3s;
 }
 
-.book-test-flex {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  margin-top: 10px;
-}
-
 .book-image:hover {
   transform: scale(1.1);
 }
