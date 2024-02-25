@@ -147,10 +147,11 @@ header {
 }
 
 .book-testimonial-group {
-  margin-top: 20px;
+  margin: 20px;
 }
 
 .book-testimonial {
+  margin-top: 20px;
   display: flex;
   gap: 50px;
 }
