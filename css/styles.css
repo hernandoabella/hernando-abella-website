@@ -146,6 +146,19 @@ header {
   text-align: justify;
 }
 
+.book-testimonial-group {
+  margin-top: 20px;
+}
+
+.book-testimonial {
+  display: flex;
+  gap: 50px;
+}
+
+.book-title {
+  margin: 10px 0px;
+}
+
 .book-group {
   margin-top: 20px;
   display: flex;
