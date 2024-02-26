@@ -153,7 +153,13 @@ header {
 .book-testimonial {
   margin-top: 20px;
   display: flex;
-  gap: 50px;
+  justify-content: space-between;
+}
+
+.book-testimonial-card {
+  background: rgba(0 234 255 / 0.13);
+  padding: 10px;
+  border-radius: 25px;
 }
 
 .book-title {
@@ -545,6 +551,16 @@ header {
 
   .book-group {
     flex-direction: column;
+  }
+
+  .book-testimonial {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .book-testimonial p {
+    text-align: center;
   }
 
   .resources h3 {
