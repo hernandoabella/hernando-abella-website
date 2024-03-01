@@ -17,6 +17,23 @@ body {
   font-size: 1.3em;
 }
 
+.go-back-btn {
+  display: block;
+  text-decoration: none;
+  background: #007bff;
+  color: #fff;
+  width: 120px;
+  margin: 20px 0px;
+  padding: 10px;
+  border-radius: 12px;
+  transition: .3s;
+  text-align: center;
+}
+
+.go-back-btn:hover {
+  transform: scale(.9) translateX(-3px);
+}
+
 .logo {
   font-family: amsterdam-four;
   font-size: 1.3em;
