@@ -4,39 +4,19 @@ body {
   background-repeat: no-repeat;
 }
 
-.e-books h1 {
-  margin: 10px;
-  color: var(--color-3);
-  text-shadow: var(--text-shadow);
-}
-
-.e-card-background img {
-  width: 100%;
-  border-radius: 25px;
-}
-
-
 .top-banner {
   padding: 50px;
 }
 
-.book-gallery {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  padding: 20px;
-  margin-bottom: 100px;
+
+.book-category h2 {
+  padding: 0px 50px;
 }
 
-.book-gallery .item-book {
-  width: 400px;
-}
-
-.book-gallery img {
+.book-category img {
   width: 100%;
-  transition: .3s;
 }
 
-.book-gallery img:hover {
-  transform: scale(1.1);
+.item-book-group {
+  display: flex;
 }
