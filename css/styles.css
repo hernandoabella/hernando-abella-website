@@ -177,7 +177,7 @@ header {
 
 .book-testimonial-card {
   border-radius: 25px;
-  width: 400px;
+  width: 100%;
 }
 
 .book-title {
