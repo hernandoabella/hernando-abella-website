@@ -170,6 +170,8 @@ header {
 .book-testimonial {
   margin-top: 20px;
   display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
   justify-content: space-between;
 }
 
@@ -390,6 +392,10 @@ header {
 
 .contact p {
   margin: 20px 0px;
+}
+
+.contact a {
+  text-decoration: none;
 }
 
 .button2 {
