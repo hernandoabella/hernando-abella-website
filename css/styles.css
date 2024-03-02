@@ -214,10 +214,15 @@ header {
   color: #ffa41c;
 }
 
+.view-more-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .view-more {
   text-align: center;
   margin: 50px 0px;
-  display: block;
 }
 
 .resources {
@@ -274,6 +279,12 @@ header {
 
 .resource-details a:hover {
   text-decoration: underline;
+}
+
+.sparkle-btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sparkle-button {
