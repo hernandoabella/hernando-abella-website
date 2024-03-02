@@ -59,6 +59,7 @@ header {
   text-align: center;
   padding: 20px;
   z-index: 1;
+  border-radius: 100px 100px 0px 0px;
 }
 
 .bottom_navbar a {
@@ -176,7 +177,7 @@ header {
 }
 
 .book-testimonial-card {
-  background: rgba(0 234 255 / 0.13);
+  background: rgba(255 0 72 / 0.13);
   padding: 10px;
   border-radius: 25px;
 }
