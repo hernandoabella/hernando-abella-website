@@ -144,6 +144,15 @@ header {
   color: aquamarine;
 }
 
+.upcoming-book>div {
+  width: 200px;
+  padding: 20px 0px;
+}
+
+.upcoming-book>div img {
+  width: 100%;
+}
+
 .books {
   padding: 50px;
   background: url('../images/white-blank-background-texture.jpg');
