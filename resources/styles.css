@@ -1,5 +1,4 @@
 body {
-  background: url('../images/1338166.png');
   background: #181818;
   color: #fff;
 }
@@ -30,19 +29,18 @@ p {
   gap: 20px;
   flex-wrap: wrap;
   text-align: center;
-  justify-content: center;
+
+  margin-bottom: 50px;
 }
 
 .general-programming a {
   color: #fff;
   transition: .3s;
   display: block;
-  font-size: 1.3em;
 }
 
 .general-programming a:hover {
   transform: scale(1.1);
-  text-shadow: 3px 3px 3px fuchsia;
 }
 
 
@@ -51,7 +49,7 @@ p {
   display: flex;
   align-items: center;
   position: relative;
-  padding: 0.6em 2em;
+  padding: 10px;
   border: aqua solid 0.15em;
   border-radius: 0.25em;
   color: aqua;
