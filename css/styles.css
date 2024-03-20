@@ -65,7 +65,6 @@ header {
 .bottom_navbar a {
   color: #fff;
   transition: 0.3s;
-  font-size: 1.3em;
   text-decoration: none;
   text-align: center;
   padding: 10px;
@@ -141,7 +140,7 @@ header {
 }
 
 .social a:hover {
-  color: mediumpurple;
+  color: indianred;
 }
 
 .upcoming-book>div {
