@@ -135,13 +135,13 @@ header {
   display: inline-block;
   margin: 0 10px;
   font-size: 1.5em;
-  color: #fff;
+  color: #333;
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
 
 .social a:hover {
-  color: aquamarine;
+  color: mediumpurple;
 }
 
 .upcoming-book>div {
