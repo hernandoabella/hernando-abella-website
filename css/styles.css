@@ -34,6 +34,15 @@ body {
   transform: scale(.9) translateX(-3px);
 }
 
+.newsletter_btn {
+  color: #f3f3f3;
+  transition: .3s;
+}
+
+.newsletter_btn:hover {
+  opacity: 0.5;
+}
+
 .logo {
   font-family: amsterdam-four;
   font-size: 1.3em;
