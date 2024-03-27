@@ -139,12 +139,11 @@ header {
 
 .social {
   display: flex;
-  justify-content: center;
+  gap: 20px;
 }
 
 .social a {
   display: inline-block;
-  margin: 0 10px;
   font-size: 1.5em;
   color: #333;
   text-decoration: none;
@@ -152,7 +151,7 @@ header {
 }
 
 .social a:hover {
-  color: indianred;
+  color: #999;
 }
 
 #aboutMeSection {
@@ -860,6 +859,12 @@ header {
   animation: pulse512 1.5s infinite;
 }
 
+.contact-container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+}
+
 @keyframes pulse512 {
   0% {
     box-shadow: 0 0 0 0 #05bada66;
@@ -903,6 +908,10 @@ header {
 
   .support-options {
     flex-direction: column;
+  }
+
+  .support-options img {
+    margin-bottom: 20px;
   }
 
   .support-btn {
@@ -1002,6 +1011,10 @@ header {
   .support-me {
     padding: 20px;
     text-align: center;
+  }
+
+  .contact-container {
+    flex-direction: column-reverse;
   }
 
   .contact {
