@@ -156,13 +156,23 @@ header {
   color: indianred;
 }
 
-.upcoming-book>div {
-  width: 200px;
-  padding: 20px 0px;
+#aboutMeSection {
+  display: none;
+  margin-top: 20px;
+  padding: 50px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
-.upcoming-book>div img {
-  width: 100%;
+.about-me-btn {
+  background: #fff;
+  border: 1px solid #000000;
+  border-radius: 100px;
+  padding: 10px;
+  text-decoration: none;
+  top: 570px;
+  cursor: pointer;
 }
 
 .books {
@@ -667,6 +677,7 @@ header {
   margin: 20px 0px;
 }
 
+
 .projects {
   display: flex;
   justify-content: space-evenly;
@@ -684,14 +695,13 @@ header {
 }
 
 .support-me img {
-  width: 100px;
+  width: 150px;
 }
 
 .support-options {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  gap: 20px;
+  justify-content: space-evenly;
   margin: 50px;
 }
 
@@ -891,6 +901,18 @@ header {
 
   body {
     font-size: 1em;
+  }
+
+  .support-options {
+    flex-direction: column;
+  }
+
+  .support-btn {
+    margin: 20px auto;
+  }
+
+  .newsletter_btn {
+    display: none;
   }
 
   .video-container {
