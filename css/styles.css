@@ -157,11 +157,11 @@ header {
 
 #aboutMeSection {
   display: none;
-  margin-top: 20px;
   padding: 50px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+}
+
+#aboutMeSection h2 {
+  margin-bottom: 20px;
 }
 
 .about-me-btn {
