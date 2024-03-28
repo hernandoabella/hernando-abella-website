@@ -170,9 +170,24 @@ header {
   color: burlywood;
 }
 
+.portfolio-btn {
+  color: aqua;
+  margin-top: 20px;
+  display: block;
+}
+
+.portfolio-btn:hover {
+  color: aquamarine;
+}
+
 .a-m-container {
   display: flex;
   gap: 20px;
+}
+
+.highlight {
+  color: darksalmon;
+  font-weight: bold;
 }
 
 .skills-container {
