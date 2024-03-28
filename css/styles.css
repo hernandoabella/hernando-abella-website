@@ -327,8 +327,9 @@ header {
 }
 
 .resource-container ul li {
-  list-style-type: square;
-  margin-left: 50px;
+  list-style-type: none;
+  margin-left: 20px;
+  padding: 10px;
 }
 
 .sparkle-btn-container {
