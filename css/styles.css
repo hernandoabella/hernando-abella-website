@@ -157,7 +157,7 @@ header {
 #aboutMeSection {
   background: black;
   color: #999;
-  display: block;
+  display: none;
   padding: 50px;
 }
 
@@ -953,6 +953,10 @@ header {
 
   .newsletter_btn {
     display: none;
+  }
+
+  .a-m-container {
+    flex-direction: column;
   }
 
   .video-container {
