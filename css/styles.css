@@ -155,12 +155,15 @@ header {
 }
 
 #aboutMeSection {
-  display: none;
+  background: black;
+  color: #fff;
+  display: block;
   padding: 50px;
 }
 
 #aboutMeSection h2 {
   margin-bottom: 20px;
+  color: aquamarine;
 }
 
 .about-me-btn {
