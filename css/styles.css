@@ -156,7 +156,7 @@ header {
 
 #aboutMeSection {
   background: black;
-  color: #fff;
+  color: #999;
   display: block;
   padding: 50px;
 }
@@ -164,6 +164,21 @@ header {
 #aboutMeSection h2 {
   margin-bottom: 20px;
   color: aquamarine;
+}
+
+#aboutMeSection h3 {
+  color: burlywood;
+}
+
+.a-m-container {
+  display: flex;
+  gap: 20px;
+}
+
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .about-me-btn {
