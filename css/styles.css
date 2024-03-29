@@ -190,6 +190,13 @@ header {
   font-weight: bold;
 }
 
+.work-xp-job {
+  padding: 10px;
+  background: #111;
+  border-radius: 25px;
+  margin-top: 20px;
+}
+
 .skills-container {
   display: flex;
   flex-direction: column;
