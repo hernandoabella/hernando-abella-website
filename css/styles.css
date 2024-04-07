@@ -651,6 +651,24 @@ header {
   }
 }
 
+.mega-section {
+  display: flex;
+}
+
+.tweets {
+  padding: 50px;
+  height: 100vh;
+  overflow: scroll;
+  
+}
+
+.tweets div {
+  width: 900px;
+  height: 850px;
+  margin: auto;
+  overflow: scroll;
+}
+
 .videos {
   padding: 50px;
 }
