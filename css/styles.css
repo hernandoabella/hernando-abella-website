@@ -659,7 +659,7 @@ header {
   padding: 50px;
   height: 100vh;
   overflow: scroll;
-  
+
 }
 
 .tweets div {
@@ -667,10 +667,18 @@ header {
   height: 850px;
   margin: auto;
   overflow: scroll;
+
 }
 
 .videos {
   padding: 50px;
+
+}
+
+.videos div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .videos h3 {
