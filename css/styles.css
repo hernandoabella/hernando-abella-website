@@ -675,7 +675,7 @@ header {
 
 }
 
-.videos div {
+.videos>div {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
