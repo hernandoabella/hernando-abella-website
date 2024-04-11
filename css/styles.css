@@ -73,7 +73,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 50px;
-  padding: 0px 50px;
+  padding: 0px 200px;
 }
 
 .hero {
@@ -140,7 +140,7 @@ body {
 #aboutMeSection {
   background: black;
   color: #B6B3B3;
-  /* display: none; */
+  display: none;
   padding: 50px 0px;
 }
 
@@ -179,10 +179,6 @@ body {
 
 .books p {
   text-align: justify;
-}
-
-.book-testimonial-group {
-  margin: 20px;
 }
 
 .book-testimonial {
@@ -344,6 +340,7 @@ header {
 
 .resource-container h4 {
   color: #FF58A3;
+  font-size: 1.2em;
 }
 
 .resource-container ul {
@@ -353,8 +350,8 @@ header {
 
 .resource-container ul li {
   list-style-type: none;
-  margin-left: 20px;
   padding: 10px;
+  color: #999;
 }
 
 .sparkle-btn-container {
@@ -674,18 +671,16 @@ header {
 }
 
 .tweets {
-  padding: 50px;
-  height: 100vh;
+  padding: 50px 200px;
+  height: 500px;
   overflow: scroll;
 
 }
 
 .tweets div {
   width: 900px;
-  height: 850px;
+  height: 200px;
   margin: auto;
-  overflow: scroll;
-
 }
 
 .videos {
@@ -726,7 +721,7 @@ header {
 }
 
 .side-projects {
-  padding: 50px;
+  padding: 50px 200px;
   background: #000;
   color: #fff;
   width: 100%;
@@ -750,11 +745,11 @@ header {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding: 50px;
+
 }
 
 .support-me {
-  padding: 50px;
+  padding: 50px 200px;
 }
 
 .support-me h3 {
@@ -774,7 +769,7 @@ header {
 }
 
 .contact {
-  padding: 50px;
+  padding: 50px 200px;
   margin-bottom: 100px;
 }
 
@@ -945,6 +940,8 @@ header {
   padding: 20px;
   z-index: 1;
   border-radius: 100px 100px 0px 0px;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 15px;
 }
 
 .bottom_navbar a {
@@ -952,21 +949,21 @@ header {
   text-decoration: none;
   text-align: center;
   padding: 10px;
-
+  color: #3f4549;
 }
 
 .bottom_navbar a:hover {
   padding: 10px;
   border-radius: 50px;
-  color: aquamarine;
+  color: #585BFF;
 }
 
 .bottom_navbar a:active {
-  color: aquamarine;
+  color: #585BFF;
 }
 
 .bottom_navbar .active {
-  color: aquamarine;
+  color: #585BFF;
 }
 
 .navbar-icons {
