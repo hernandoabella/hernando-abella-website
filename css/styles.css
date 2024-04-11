@@ -20,7 +20,7 @@ body {
 /* hero */
 
 .hero header {
-  padding: 50px;
+  padding: 20px 200px;
 }
 
 .hero header a {
@@ -137,11 +137,33 @@ body {
 
 /* about-me */
 
+#aboutMeSection {
+  background: black;
+  color: #B6B3B3;
+  /* display: none; */
+  padding: 50px 0px;
+}
+
+#aboutMeSection h2 {
+  margin-bottom: 20px;
+  color: aquamarine;
+}
+
+#aboutMeSection h3 {
+  color: burlywood;
+}
+
+.about-me {
+  padding: 0px 200px;
+  margin: auto;
+  text-align: justify;
+}
+
 /* about-me */
 
 /* books */
 .books {
-  padding: 50px;
+  padding: 50px 200px;
 }
 
 .books h3 {
@@ -287,24 +309,10 @@ header {
   color: #999;
 }
 
-#aboutMeSection {
-  background: black;
-  color: #B6B3B3;
-  /* display: none; */
-  padding: 50px;
-}
 
-#aboutMeSection h2 {
-  margin-bottom: 20px;
-  color: aquamarine;
-}
-
-#aboutMeSection h3 {
-  color: burlywood;
-}
 
 .resources {
-  padding: 50px;
+  padding: 50px 200px;
   background: #000;
   color: #fff;
   width: 100%;
