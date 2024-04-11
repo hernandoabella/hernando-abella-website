@@ -28,11 +28,9 @@ body {
 }
 
 .hero {
-  background: url('/images/wallpaperflare.com_wallpaper.jpg');
-  background-color: #333;
   background-size: cover;
-  color: white;
   text-align: center;
+  z-index: -1;
 }
 
 .hero-content {
@@ -56,30 +54,24 @@ body {
   color: #DBDBDB;
 }
 
-.transition-bar {
+.divisor-bar-one {
   width: 100%;
-  height: 100px;
+  height: 300px;
   background: #FBC638;
-  border-radius: 25px;
+  border-radius: 100px;
+  transform: rotate(5deg) translate(-400px, 100px);
+  position: absolute;
+  z-index: -1;
 }
 
-/* hero */
-
-.go-back-btn {
-  display: block;
-  text-decoration: none;
-  background: #007bff;
-  color: #fff;
-  width: 150px;
-  margin: 20px 0px;
-  padding: 10px;
-  border-radius: 12px;
-  transition: .3s;
-  text-align: center;
-}
-
-.go-back-btn:hover {
-  transform: scale(.9) translateX(-3px);
+.divisor-bar-two {
+  width: 100%;
+  height: 300px;
+  background: #ffa41c;
+  border-radius: 100px;
+  transform: rotate(-5deg) translate(0px, -200px);
+  position: absolute;
+  z-index: -1;
 }
 
 .newsletter_btn {
@@ -99,8 +91,73 @@ body {
   font-size: 1.3em;
 }
 
-.darkBtn {
+.about-btn {
+  font-size: 17px;
+  background: transparent;
+  border: none;
+  padding: 1em 1.5em;
+  color: #ffedd3;
+  text-transform: uppercase;
+  position: relative;
+  transition: 0.5s ease;
   cursor: pointer;
+}
+
+.about-btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #ffc506;
+  transition: 0.5s ease;
+}
+
+.about-btn:hover {
+  color: #E5E5E5;
+  transition-delay: 0.5s;
+}
+
+.about-btn:hover::before {
+  width: 100%;
+}
+
+.about-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color: #ffc506;
+  transition: 0.4s ease;
+  z-index: -1;
+}
+
+.about-btn:hover::after {
+  height: 100%;
+  transition-delay: 0.4s;
+  color: aliceblue;
+}
+
+/* hero */
+
+.go-back-btn {
+  display: block;
+  text-decoration: none;
+  background: #007bff;
+  color: #fff;
+  width: 150px;
+  margin: 20px 0px;
+  padding: 10px;
+  border-radius: 12px;
+  transition: .3s;
+  text-align: center;
+}
+
+.go-back-btn:hover {
+  transform: scale(.9) translateX(-3px);
 }
 
 header {
