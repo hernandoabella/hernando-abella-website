@@ -23,33 +23,94 @@ body {
   padding: 50px;
 }
 
+.hero header a {
+  color: #222831;
+  transition: .3s;
+  text-decoration: none;
+}
+
+.hero header a:hover {
+  color: #59616F;
+}
+
+.hero header div {
+  display: flex;
+  gap: 10px;
+}
+
+/* .image-shape-one {
+  background: green;
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  z-index: -1;
+  border-radius: 100%;
+  transform: translate(50px, 10px);
+}
+
+.image-shape-two {
+  background: blue;
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  z-index: -2;
+  border-radius: 100%;
+  transform: translate(-100px, 100px);
+}
+
+.image-shape-three {
+  background: red;
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  z-index: -3;
+  border-radius: 100%;
+  transform: translate(-80px, -80px);
+} */
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
 .hero {
   background-size: cover;
-  text-align: center;
+
   z-index: -1;
 }
 
 .profile-image {
-  width: 180px;
+  width: 300px;
   border-radius: 50%;
 }
 
 .hero h1 {
-  font-size: 2em;
+  font-size: 4rem;
+  padding: 10px;
+}
+
+.hero h2 {
+  font-size: 3rem;
   padding: 10px;
 }
 
 .hero h3 {
-  font-size: 1.2em;
+  font-size: 2rem;
   padding: 10px;
 }
 
-.divisor-bar-one {
+.colombian-flag {
+  width: 20px;
+}
+
+/* .divisor-bar-one {
   width: 200%;
   height: 500px;
   background: #4AFF68;
   border-radius: 100px;
-  transform: rotate(20deg) translate(-500px, 200px);
+  transform: rotate(20deg) translate(-500px, 500px);
   position: absolute;
   z-index: -1;
 }
@@ -57,12 +118,12 @@ body {
 .divisor-bar-two {
   width: 200%;
   height: 500px;
-  background: #4AFFAB;
+  background: #4AFF68;
   border-radius: 100px;
-  transform: rotate(-20deg) translate(500px, -400px);
+  transform: rotate(-20deg) translate(500px, -200px);
   position: absolute;
   z-index: -2;
-}
+} */
 
 .logo {
   font-family: amsterdam-four;
@@ -204,7 +265,6 @@ header {
 
 .books {
   padding: 50px;
-  background: url('../images/white-blank-background-texture.jpg');
 }
 
 .books h3 {
@@ -945,6 +1005,7 @@ header {
   justify-content: center;
   gap: 10px;
 }
+
 /*bottom nav*/
 
 @keyframes pulse512 {
@@ -986,6 +1047,10 @@ header {
 
   body {
     font-size: 1em;
+  }
+
+  .hero-content {
+    flex-direction: column;
   }
 
   .support-options {
