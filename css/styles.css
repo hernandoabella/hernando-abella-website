@@ -204,13 +204,6 @@ body {
   justify-content: space-between;
 }
 
-.book {
-  flex: 0 1 calc(30% - 20px);
-  margin: 0 10px 20px;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
 .book-image {
   width: 100%;
   height: auto;
@@ -235,6 +228,17 @@ body {
 .view-more {
   text-align: center;
   margin: 50px 0px;
+}
+
+.test-image {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+.test-image img {
+  width: 200px;
+  margin: auto;
 }
 
 /* books */
@@ -672,7 +676,7 @@ header {
 
 .tweets {
   padding: 50px 200px;
-  height: 500px;
+  height: 800px;
   overflow: scroll;
 
 }
