@@ -119,10 +119,10 @@ body {
   cursor: pointer;
   border: none;
   padding: 0.9rem 2rem;
-  margin: 0;
+  margin: 20px 0px;
   font-family: inherit;
   font-size: inherit;
-  position: absolute;
+  position: relative;
   display: inline-block;
   letter-spacing: 0.05rem;
   font-weight: 700;
@@ -131,7 +131,6 @@ body {
   overflow: hidden;
   background: #66ff66;
   color: ghostwhite;
-  transform: translateY(25px);
 }
 
 .about-me-btn span {
@@ -350,6 +349,11 @@ body {
   animation: pulse512 1.5s infinite;
 }
 
+.support-options {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* support */
 
 /* contact */
@@ -397,8 +401,6 @@ header {
 .social a:hover {
   color: #999;
 }
-
-
 
 .resources {
   padding: 50px 200px;
