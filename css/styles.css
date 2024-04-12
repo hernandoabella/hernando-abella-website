@@ -349,6 +349,20 @@ body {
   animation: pulse512 1.5s infinite;
 }
 
+.support-me {
+  padding: 50px 200px;
+}
+
+.support-me h3 {
+  margin-bottom: 20px;
+  font-size: 1.5em;
+}
+
+.support-me img {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
 /* support */
 
 /* contact */
@@ -830,19 +844,6 @@ header {
   align-items: center;
 }
 
-.support-me {
-  padding: 50px 200px;
-}
-
-.support-me h3 {
-  margin-bottom: 20px;
-  font-size: 1.5em;
-}
-
-.support-me img {
-  width: 150px;
-  margin-bottom: 20px;
-}
 
 
 .contact {
@@ -1073,8 +1074,19 @@ header {
     width: 180px;
   }
 
+  .hero header {
+    padding: 20px;
+  }
+
   .hero-content {
     flex-direction: column;
+    padding: 20px;
+  }
+
+  .about-me-btn {
+    margin: 30px auto;
+    text-align: center;
+    display: flex;
   }
 
   .support-options {
@@ -1112,6 +1124,10 @@ header {
     text-align: center;
   }
 
+  .based-in-colombia {
+    justify-content: center;
+  }
+
   .projects {
     flex-direction: column;
     gap: 30px;
@@ -1125,12 +1141,24 @@ header {
     width: 100%;
   }
 
+  .books {
+    padding: 20px;
+  }
+
+  .books p {
+    text-align: center;
+  }
+
   .books h3 {
     text-align: center;
   }
 
   .book-group {
     flex-direction: column;
+  }
+
+  .book-group img {
+    width: 100%;
   }
 
   .book-testimonial {
