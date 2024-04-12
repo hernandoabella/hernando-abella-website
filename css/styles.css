@@ -114,18 +114,59 @@ body {
   width: 50px;
 }
 
-.about-btn {
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  text-align: center;
-  background: #007bff;
+.about-me-btn {
   outline: none;
-  border: none;
-  border-radius: 100%;
-  transform: translateY(-10px);
   cursor: pointer;
+  border: none;
+  padding: 0.9rem 2rem;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  position: absolute;
+  display: inline-block;
+  letter-spacing: 0.05rem;
+  font-weight: 700;
+  font-size: 17px;
+  border-radius: 500px;
+  overflow: hidden;
+  background: #66ff66;
+  color: ghostwhite;
+  transform: translateY(25px);
 }
+
+.about-me-btn span {
+  position: relative;
+  z-index: 10;
+  transition: color 0.4s;
+}
+
+.about-me-btn:hover span {
+  color: black;
+}
+
+.about-me-btn::before,
+.about-me-btn::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.about-me-btn::before {
+  content: "";
+  background: #000;
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.about-me-btn:hover::before {
+  transform: translate3d(100%, 0, 0);
+}
+
 
 /* .divisor-bar-one {
   width: 200%;
@@ -944,7 +985,7 @@ header {
 .contact-container {
   display: flex;
   flex-direction: row-reverse;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 /*bottom nav*/
