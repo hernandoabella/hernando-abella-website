@@ -1,4 +1,3 @@
-
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&display=swap");
 
 @font-face {
@@ -91,20 +90,28 @@ body {
 .hero h1 {
   font-size: 4rem;
   padding: 10px;
+  color: #0c0a0a;
 }
 
 .hero h2 {
   font-size: 3rem;
   padding: 10px;
+  color: #242020;
 }
 
 .hero h3 {
   font-size: 2rem;
   padding: 10px;
+  color: #363131;
+}
+
+.based-in-colombia {
+  display: flex;
+  align-items: center;
 }
 
 .colombian-flag {
-  width: 20px;
+  width: 50px;
 }
 
 /* .divisor-bar-one {
@@ -199,10 +206,14 @@ body {
 }
 
 .book-group {
-  margin-top: 20px;
+  margin: 50px 0px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.book-group img {
+  width: 500px;
 }
 
 .book-image {
@@ -261,6 +272,29 @@ body {
 /* tweets */
 
 /* support */
+
+.support-btn {
+  border: none;
+  color: #fff;
+  background-image: linear-gradient(30deg, #0400ff, #4ce3f7);
+  border-radius: 20px;
+  background-size: 100% auto;
+  font-family: inherit;
+  font-size: 17px;
+  padding: 0.6em 1.5em;
+  display: block;
+  width: 160px;
+  text-align: center;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.support-btn:hover {
+  background-position: right center;
+  background-size: 200% auto;
+  -webkit-animation: pulse 2s infinite;
+  animation: pulse512 1.5s infinite;
+}
 
 /* support */
 
@@ -689,16 +723,9 @@ header {
 }
 
 .videos {
-  padding: 50px;
-
+  padding: 50px 200px;
 }
 
-.videos>div {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 50px;
-}
 
 .videos h3 {
   font-size: 1.5em;
@@ -748,9 +775,8 @@ header {
 
 .projects {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
-
 }
 
 .support-me {
@@ -764,14 +790,9 @@ header {
 
 .support-me img {
   width: 150px;
+  margin-bottom: 20px;
 }
 
-.support-options {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  margin: 50px;
-}
 
 .contact {
   padding: 50px 200px;
@@ -907,33 +928,10 @@ header {
   opacity: 0;
 }
 
-.support-btn {
-  border: none;
-  color: #fff;
-  background-image: linear-gradient(30deg, #0400ff, #4ce3f7);
-  border-radius: 20px;
-  background-size: 100% auto;
-  font-family: inherit;
-  font-size: 17px;
-  padding: 0.6em 1.5em;
-  display: block;
-  width: 160px;
-  text-align: center;
-  margin-top: 20px;
-  text-decoration: none;
-}
-
-.support-btn:hover {
-  background-position: right center;
-  background-size: 200% auto;
-  -webkit-animation: pulse 2s infinite;
-  animation: pulse512 1.5s infinite;
-}
-
 .contact-container {
   display: flex;
   flex-direction: row-reverse;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 /*bottom nav*/
