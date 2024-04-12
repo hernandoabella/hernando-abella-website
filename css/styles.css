@@ -1171,6 +1171,10 @@ header {
     text-align: center;
   }
 
+  .resources {
+    padding: 20px;
+  }
+
   .resources h3 {
     text-align: center;
   }
@@ -1201,10 +1205,6 @@ header {
     text-align: center;
   }
 
-  .contact-container {
-    flex-direction: column-reverse;
-  }
-
   .contact {
     padding: 20px;
   }
@@ -1215,5 +1215,17 @@ header {
 
   .contact p {
     text-align: center;
+  }
+
+  .contact img {
+    width: 100%;
+  }
+
+  .contact-container {
+    flex-direction: column-reverse;
+  }
+
+  .social {
+    justify-content: center;
   }
 }
