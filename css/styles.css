@@ -438,10 +438,6 @@ header {
   gap: 20px;
 }
 
-.resource-container div {
-  width: 50%;
-}
-
 .resource-container h4 {
   color: #FF58A3;
   font-size: 1.2em;
@@ -843,8 +839,6 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-
-
 
 .contact {
   padding: 50px 200px;
