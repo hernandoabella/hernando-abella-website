@@ -20,7 +20,9 @@ const BookList = () => {
           </div>
 
           <div className="w-full md:w-2/3 lg:w-3/4">
-            <h2>250+ Killer JavaScript One-Liners</h2>
+            <h2 className="text-2xl font-extrabold dark:text-white">
+              250+ Killer JavaScript One-Liners
+            </h2>
             <div className="flex mt-2">
               {[...Array(5)].map((_, index) => (
                 <FaStar key={index} className="text-yellow-500" />
