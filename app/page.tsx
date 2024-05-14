@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import Books from "@/components/Books";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import DarkMode from "@/components/DarkMode";
@@ -24,7 +25,7 @@ export default function Home() {
       case "about":
         return <About />;
       case "books":
-        return <div>Books content</div>;
+        return <Books />;
       case "resources":
         return <div>Resources</div>;
       case "sideProjects":
