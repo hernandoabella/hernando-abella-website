@@ -57,6 +57,7 @@ export default function Home() {
               </Button>
             ))}
           </div>
+
           <Footer />
         </div>
         <div className="w-1/2">{renderContent()}</div>
