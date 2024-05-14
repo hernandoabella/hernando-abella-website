@@ -62,6 +62,7 @@
 }
 
 .active-btn {
-  background-color: rgb(4, 4, 50);
-  color: white; /* Adjust text color if needed */
+  background-color: rgb(57, 57, 201);
+  color: white;
+  /* Adjust text color if needed */
 }
