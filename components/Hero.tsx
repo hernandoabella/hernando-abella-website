@@ -16,10 +16,17 @@ const Hero = () => {
         </div>
         <div>
           <h1 className="text-5xl font-extrabold dark:text-white">
-            👋 Hey there! <br /> I&apos;m, Hernando.
+            👋{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+              Hey there!
+            </span>
+            <br /> I&apos;m, Hernando.
           </h1>
           <h3 className="py-5 text-4xl font-bold dark:text-white">
-            👨‍💻 Creative Full-Stack Developer
+            👨‍💻{" "}
+            <span className="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">
+              Creative Full-Stack Developer
+            </span>
           </h3>
         </div>
       </div>
