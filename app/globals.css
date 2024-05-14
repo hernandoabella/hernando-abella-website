@@ -62,7 +62,9 @@
 }
 
 .active-btn {
-  background-color: rgb(57, 57, 201);
+  background-color: #334155;
+  /* Slate background color */
   color: white;
+  /* Text color */
   /* Adjust text color if needed */
 }
