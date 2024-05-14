@@ -1,4 +1,4 @@
-import React from "react";
+import { motion } from "framer-motion";
 
 function About() {
   // Define an array of skills
@@ -38,7 +38,12 @@ function About() {
   ];
 
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -50 }}
+      transition={{ duration: 0.5 }}
+    >
       <h2 className="mb-5 text-2xl font-semibold">About Me</h2>
       <p className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg p-4 mb-6">
         I love empowering individuals to learn new technologies effortlessly,
@@ -89,7 +94,7 @@ function About() {
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
