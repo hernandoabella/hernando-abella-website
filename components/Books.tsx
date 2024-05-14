@@ -18,6 +18,7 @@ const BookList = () => {
               className="rounded-lg"
             />
           </div>
+
           <div className="w-full md:w-2/3 lg:w-3/4">
             <h2>250+ Killer JavaScript One-Liners</h2>
             <div className="flex mt-2">
@@ -52,11 +53,12 @@ const BookList = () => {
           </div>
         </div>
       </div>
+      <h3 className="text-2xl font-semibold mb-3">Featured</h3>
       <div className="grid grid-cols-3 gap-4">
         {/* First Book */}
         <div>
           <Image
-            src="/book1.jpg"
+            src="/50-javascript.jpg"
             alt="Book 1"
             layout="responsive"
             width={200}
@@ -68,7 +70,7 @@ const BookList = () => {
         {/* Second Book */}
         <div>
           <Image
-            src="/book2.jpg"
+            src="/50-python.jpg"
             alt="Book 2"
             layout="responsive"
             width={200}
@@ -80,7 +82,7 @@ const BookList = () => {
         {/* Third Book */}
         <div>
           <Image
-            src="/book3.jpg"
+            src="/50-c-sharp.jpg"
             alt="Book 3"
             layout="responsive"
             width={200}
