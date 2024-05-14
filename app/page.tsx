@@ -5,9 +5,10 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import DarkMode from "@/components/DarkMode";
 
 export default function Home() {
-  const [activeContent, setActiveContent] = useState("about"); // El contenido activo predeterminado es "about"
+  const [activeContent, setActiveContent] = useState("about");
 
   const buttonData = [
     { key: "about", label: "About me" },
@@ -39,6 +40,9 @@ export default function Home() {
 
   return (
     <main className="p-5 md:p-10 flex items-center justify-center h-screen">
+      <div className="absolute top-10 right-10">
+        <DarkMode />
+      </div>
       <div className="flex items-center justify-center gap-10 w-full">
         <div className="w-1/2 gap-10">
           <Hero />
