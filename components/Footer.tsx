@@ -12,7 +12,7 @@ import {
 const Footer = () => {
   return (
     <div>
-      <footer className="pt-20 flex gap-5">
+      <footer className="pt-10 flex gap-5">
         <Link href="https://www.x.com/hernandoabella">
           <FaTwitter className="text-3xl" />{" "}
         </Link>
