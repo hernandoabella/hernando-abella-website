@@ -4,7 +4,7 @@ import Image from "next/image";
 const Hero = () => {
   return (
     <div>
-      <div className="flex items-center gap-10 mb-10">
+      <div className="flex flex-col md:flex-row items-center gap-10 mb-10">
         <div>
           <Image
             className="rounded-full"
