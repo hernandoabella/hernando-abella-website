@@ -4,6 +4,9 @@ import { useState } from "react";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Books from "@/components/Books";
+import Resources from "@/components/Resources";
+import SideProjects from "@/components/SideProjects";
+import Videos from "@/components/Videos";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import DarkMode from "@/components/DarkMode";
@@ -27,7 +30,7 @@ export default function Home() {
       case "books":
         return <Books />;
       case "resources":
-        return <div>Resources</div>;
+        return <div><Resources /></div>;
       case "sideProjects":
         return <div>Side Projects content</div>;
       case "videos":
