@@ -12,7 +12,7 @@ const BookList = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="flex-shrink-0 w-1/2 md:w-1/3 lg:w-1/4 mr-4"
+            className="flex-shrink-0 w-full md:w-1/3 lg:w-1/4"
           >
             <Image
               src="/feat-book.jpg"
@@ -21,7 +21,7 @@ const BookList = () => {
               width={200}
               height={250}
               objectFit="cover"
-              className="rounded-lg"
+              className="rounded-lg w-full md:w-auto"
             />
           </motion.div>
 
@@ -29,7 +29,7 @@ const BookList = () => {
             <h2 className="text-2xl font-extrabold dark:text-white">
               250+ Killer JavaScript One-Liners
             </h2>
-            <div className="flex mt-2 gap-1">
+            <div className="flex mt-2 gap-">
               {[...Array(5)].map((_, index) => (
                 <FaStar key={index} className="text-yellow-500" />
               ))}
@@ -40,22 +40,22 @@ const BookList = () => {
               code snippets that will transform the way you write and think
               about JavaScript.
             </p>
-            <div className="flex mt-4">
+            <div className="mt-4">
               <a
                 href="/amazon-link"
-                className="flex items-center justify-center text-white bg-blue-500 hover:bg-blue-600 font-semibold py-2 px-4 rounded-lg shadow-md transition-colors duration-300 mr-2"
+                className="block w-full md:inline-block md:w-auto text-center text-white bg-blue-500 hover:bg-blue-600 font-semibold py-2 px-4 rounded-lg shadow-md transition-colors duration-300 mb-2 md:mb-0 md:mr-2 flex items-center justify-center"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Buy on Amazon
+                <i className="fab fa-amazon mr-2"></i> Buy on Amazon
               </a>
               <a
                 href="/gumroad-link"
-                className="flex items-center justify-center text-white bg-green-500 hover:bg-green-600 font-semibold py-2 px-4 rounded-lg shadow-md transition-colors duration-300"
+                className="block w-full md:inline-block md:w-auto text-center text-white bg-green-500 hover:bg-green-600 font-semibold py-2 px-4 rounded-lg shadow-md transition-colors duration-300 flex items-center justify-center"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Buy on Gumroad
+                <i className="fab fa-gumroad mr-2"></i> Buy on Gumroad
               </a>
             </div>
           </div>
