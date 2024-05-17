@@ -44,29 +44,26 @@ export default function Home() {
   };
 
   return (
-    <main className="p-5 md:p-10 flex items-center justify-center h-screen">
+    <main className="p-5 md:p-10 flex flex-col md:flex-row items-center justify-center md:h-screen">
       <div className="absolute top-10 right-10">
         <DarkMode />
       </div>
-      <div className="flex items-center justify-center gap-10 w-full">
-        <div className="w-1/2 gap-10">
-          <Hero />
-          <div className="flex gap-5">
-            {buttonData.map((button) => (
-              <Button
-                key={button.key}
-                onClick={() => setActiveContent(button.key)}
-                className={activeContent === button.key ? "active-btn" : ""}
-              >
-                {button.label}
-              </Button>
-            ))}
-          </div>
-
-          <Footer />
+      <div className="w-full max-w-screen-md mt-5 md:ml-5 md:w-1/2">
+        <Hero />
+        <div className="flex flex-wrap gap-5">
+          {buttonData.map((button) => (
+            <Button
+              key={button.key}
+              onClick={() => setActiveContent(button.key)}
+              className={activeContent === button.key ? "active-btn" : ""}
+            >
+              {button.label}
+            </Button>
+          ))}
         </div>
-        <div className="w-1/2">{renderContent()}</div>
+        <Footer />
       </div>
+      <div className="mt-5 md:w-1/2">{renderContent()}</div>
     </main>
   );
 }
