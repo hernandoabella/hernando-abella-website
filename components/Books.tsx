@@ -7,7 +7,7 @@ const BookList = () => {
     <div>
       <div className="">
         <h3 className="text-2xl font-semibold mb-3">Best Seller</h3>
-        <div className="flex items-center mb-4">
+        <div className="flex flex-col md:flex-row md:items-center mb-4 gap-5">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -29,7 +29,7 @@ const BookList = () => {
             <h2 className="text-2xl font-extrabold dark:text-white">
               250+ Killer JavaScript One-Liners
             </h2>
-            <div className="flex mt-2">
+            <div className="flex mt-2 gap-1">
               {[...Array(5)].map((_, index) => (
                 <FaStar key={index} className="text-yellow-500" />
               ))}
