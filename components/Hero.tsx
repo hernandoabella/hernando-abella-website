@@ -9,8 +9,8 @@ const Hero = () => {
           <Image
             className="rounded-full"
             src="/profile.jpg"
-            width={180}
-            height={180}
+            width={150}
+            height={150}
             alt="flag of colombia"
           />
         </div>
