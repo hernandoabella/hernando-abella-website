@@ -43,7 +43,7 @@ const BookList = () => {
             <div className="mt-4">
               <a
                 href="/amazon-link"
-                className="block w-full md:inline-block md:w-auto text-center text-white bg-blue-500 hover:bg-blue-600 font-semibold py-2 px-4 rounded-lg shadow-md transition-colors duration-300 mb-2 md:mb-0 md:mr-2 flex items-center justify-center"
+                className="block w-full md:inline-block md:w-auto text-center text-white bg-blue-500 hover:bg-blue-600 font-semibold py-2 px-4 rounded-lg shadow-md transition-colors duration-300 mb-2 md:mb-0 md:mr-2 items-center justify-center"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -51,7 +51,7 @@ const BookList = () => {
               </a>
               <a
                 href="/gumroad-link"
-                className="block w-full md:inline-block md:w-auto text-center text-white bg-green-500 hover:bg-green-600 font-semibold py-2 px-4 rounded-lg shadow-md transition-colors duration-300 flex items-center justify-center"
+                className="block w-full md:inline-block md:w-auto text-center text-white bg-green-500 hover:bg-green-600 font-semibold py-2 px-4 rounded-lg shadow-md transition-colors duration-300 items-center justify-center"
                 target="_blank"
                 rel="noopener noreferrer"
               >
