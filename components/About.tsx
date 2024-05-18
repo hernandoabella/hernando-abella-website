@@ -20,7 +20,7 @@ function About() {
   // Define an array of passions and interests
   const passionsAndInterests = [
     "Web development",
-    "Mobile app development",
+    "Mobile development",
     "Open-source projects",
     "Problem-solving",
     "Learning new technologies",
