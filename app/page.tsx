@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 import Hero from "@/app/components/Hero";
 import Footer from "@/app/components/Footer";
 import DarkMode from "@/app/components/DarkMode";
@@ -34,27 +34,30 @@ export default function Home() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.8 }}
         >
-          <Link href="https://github.com/hernandoabella/">
+          <Link href="https://github.com/hernandoabella/" target="_blank">
             <Button>
               <FaUser className="mr-2" /> About Me
             </Button>
           </Link>
-          <Link href="https://github.com/hernandoabella/">
+          <Link href="https://github.com/hernandoabella/" target="_blank">
             <Button>
               <FaFolder className="mr-2" /> Portfolio
             </Button>
           </Link>
-          <Link href="https://github.com/hernandoabella/books">
+          <Link href="https://github.com/hernandoabella/books" target="_blank">
             <Button>
               <FaBook className="mr-2" /> Books
             </Button>
           </Link>
-          <Link href="https://github.com/hernandoabella/side-projects">
+          <Link
+            href="https://github.com/hernandoabella/side-projects"
+            target="_blank"
+          >
             <Button>
               <FaRocket className="mr-2" /> Side Projects
             </Button>
           </Link>
-          <Link href="https://youtube.com/c/hernandoabella">
+          <Link href="https://youtube.com/c/hernandoabella" target="_blank">
             <Button>
               <FaYoutube className="mr-2" /> Videos
             </Button>
