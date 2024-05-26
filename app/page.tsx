@@ -1,3 +1,7 @@
+"use client"
+
+import React from 'react';
+import { motion } from 'framer-motion';
 import Hero from "@/app/components/Hero";
 import Footer from "@/app/components/Footer";
 import DarkMode from "@/app/components/DarkMode";
@@ -18,9 +22,18 @@ export default function Home() {
       <div className="absolute top-10 right-10">
         <DarkMode />
       </div>
-      <div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
         <Hero />
-        <div className="flex flex-wrap gap-5">
+        <motion.div
+          className="flex flex-wrap gap-5"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+        >
           <Link href="https://github.com/hernandoabella/">
             <Button>
               <FaUser className="mr-2" /> About Me
@@ -51,9 +64,9 @@ export default function Home() {
               <FaEnvelope className="mr-2" /> Contact Me
             </Button>
           </Link>
-        </div>
+        </motion.div>
         <Footer />
-      </div>
+      </motion.div>
     </main>
   );
 }
