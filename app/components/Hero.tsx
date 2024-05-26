@@ -1,5 +1,3 @@
-"use client"
-
 import React from "react";
 import Image from "next/image";
 import { ReactTyped } from "react-typed";
@@ -32,13 +30,14 @@ const Hero = () => {
               <ReactTyped
                 strings={[
                   "Creative Full-Stack Developer",
-                  "Frontend Developer",
-                  "Backend Developer",
+                  "Front-end Developer",
+                  "Back-end Developer",
                   "UI/UX Designer",
                   "Tech Enthusiast"
                 ]}
                 typeSpeed={60}
                 backSpeed={70}
+                startDelay={1000}
                 loop
               />
             </span>
