@@ -44,7 +44,7 @@ export default function Home() {
               <FaFolder className="mr-2" /> Portfolio
             </Button>
           </Link>
-          <Link href="https://github.com/hernandoabella/books" target="_blank">
+          <Link href="https://books-alpha-black.vercel.app/" target="_blank">
             <Button>
               <FaBook className="mr-2" /> Books
             </Button>
