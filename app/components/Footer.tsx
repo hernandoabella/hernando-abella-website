@@ -29,7 +29,7 @@ const Footer = () => {
               initial={{ opacity: 0, y: -20, scale: 0.8 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               whileHover={{ scale: 1.2 }}
-            
+              transition={{ delay, duration: 0.3 }}
               className="text-3xl cursor-pointer hover:text-orange-500"
             >
               <Component />
