@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <div>
       <div className="flex flex-col md:flex-row items-center gap-10 mb-10">
-        <div>
+        <div className="gradient-border box">
           <Image
             className="rounded-full"
             src="/profile.jpg"
