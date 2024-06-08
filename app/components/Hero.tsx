@@ -6,12 +6,12 @@ const Hero = () => {
   return (
     <div>
       <div className="flex flex-col md:flex-row items-center gap-10 mb-10">
-        <div className="gradient-border">
+        <div className="rounded-full p-2 bg-gradient-to-r from-orange-400 to-orange-600">
           <Image
             className="rounded-full"
             src="/profile.jpg"
-            width={150}
-            height={150}
+            width={180}
+            height={180}
             alt="profile"
             priority
           />
