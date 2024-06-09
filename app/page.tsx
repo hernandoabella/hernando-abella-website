@@ -7,6 +7,7 @@ import Footer from "@/app/components/Footer";
 import DarkMode from "@/app/components/DarkMode";
 import { Button } from "@/app/components/ui/button";
 import Link from "next/link";
+import ParticlesComponent from "./components/particles";
 import {
   FaBook,
   FaYoutube,
@@ -19,6 +20,7 @@ import {
 export default function Home() {
   return (
     <main className="p-5 md:p-10 flex flex-col md:flex-row items-center justify-center md:h-screen">
+      <ParticlesComponent id="particles" />
       <div className="absolute top-10 right-10">
         <DarkMode />
       </div>
@@ -39,7 +41,10 @@ export default function Home() {
               <FaUser className="mr-2" /> About Me
             </Button>
           </Link>
-          <Link href="https://github.com/hernandoabella/" target="_blank">
+          <Link
+            href="https://portfolio-hernandoabella.vercel.app/"
+            target="_blank"
+          >
             <Button>
               <FaFolder className="mr-2" /> Portfolio
             </Button>
