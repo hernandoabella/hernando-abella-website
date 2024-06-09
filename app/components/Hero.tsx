@@ -33,7 +33,7 @@ const Hero = () => {
                   "Front-end Developer",
                   "Back-end Developer",
                   "UI/UX Designer",
-                  "Tech Enthusiast"
+                  "Tech Enthusiast",
                 ]}
                 typeSpeed={60}
                 backSpeed={70}
