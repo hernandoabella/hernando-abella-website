@@ -5,7 +5,6 @@ Hello everyone this is my personal website: 😁
 
 ## Main Features:
 - Light / dark mode
-- Shadcn orange theme
 - Animations with motion 
 
 www.hernandoabella.com
