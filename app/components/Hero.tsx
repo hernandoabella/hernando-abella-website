@@ -31,7 +31,8 @@ const Hero = () => {
             <span className="underline underline-offset-3 decoration-8 decoration-orange-400 dark:decoration-orange-600">
               <ReactTyped
                 strings={[
-                  "Creative Full-Stack Developer",
+                  "Creative",
+                  "Full-Stack Developer",
                   "Front-end Developer",
                   "Back-end Developer",
                   "UI/UX Designer",
