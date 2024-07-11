@@ -70,7 +70,7 @@ export default function Home() {
           </Link>
           <Link href="https://calendly.com/hernandoabella" target="_blank">
             <Button>
-              <FaCalendar className="mr-2" /> Meet
+              <FaCalendar className="mr-2" /> Schedule Meet
             </Button>
           </Link>
           <Link href="mailto:hernandoabella@gmail.com">
