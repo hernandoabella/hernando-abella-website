@@ -18,11 +18,13 @@ const Hero = () => {
         </div>
         <div>
           <h1 className="text-5xl font-extrabold dark:text-white">
-            👋{" "}
+            👋
+            Hey there! {" "}
+            I&apos;m Hernando.
             <span className="text-transparent bg-clip-text bg-gradient-to-r to-orange-600 from-orange-400">
               Hey there!
             </span>{" "}
-            I&apos;m Hernando.
+            
           </h1>
           <h3 className="py-5 text-4xl font-bold dark:text-white">
             👨‍💻{" "}
