@@ -15,6 +15,7 @@ import {
   FaUser,
   FaFolder,
   FaRocket,
+  FaCalendar,
 } from "react-icons/fa";
 
 export default function Home() {
@@ -65,6 +66,11 @@ export default function Home() {
           <Link href="https://youtube.com/c/hernandoabella" target="_blank">
             <Button>
               <FaYoutube className="mr-2" /> Videos
+            </Button>
+          </Link>
+          <Link href="https://calendly.com/hernandoabella" target="_blank">
+            <Button>
+              <FaCalendar className="mr-2" /> Meet
             </Button>
           </Link>
           <Link href="mailto:hernandoabella@gmail.com">
