@@ -22,9 +22,9 @@ export default function Home() {
   return (
     <main className="p-5 md:p-10 flex flex-col md:flex-row items-center justify-center md:h-screen">
       <ParticlesComponent id="particles" />
-      <div className="absolute top-10 right-10">
+      {/* <div className="absolute top-10 right-10">
         <DarkMode />
-      </div>
+      </div> */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
