@@ -4,7 +4,7 @@ import { ReactTyped } from "react-typed";
 
 const Hero = () => {
   return (
-    <div>
+    <div className="flex justify-center">
       <div className="flex flex-col md:flex-row items-center gap-10 mb-10">
         <div className="rounded-full p-2 bg-gradient-to-r from-orange-400 to-orange-600">
           <Image
@@ -37,6 +37,7 @@ const Hero = () => {
                   "Back-end Developer",
                   "UI/UX Designer",
                   "Tech Enthusiast",
+                  "Artist"
                 ]}
                 typeSpeed={60}
                 backSpeed={70}
