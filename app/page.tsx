@@ -4,7 +4,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import Hero from "@/app/components/Hero";
 import Footer from "@/app/components/Footer";
-import DarkMode from "@/app/components/DarkMode";
 import { Button } from "@/app/components/ui/button";
 import Link from "next/link";
 import ParticlesComponent from "./components/particles";
@@ -17,14 +16,13 @@ import {
   FaRocket,
   FaCalendar,
 } from "react-icons/fa";
+import { FaServicestack } from "react-icons/fa6";
 
 export default function Home() {
   return (
-    <main className="p-5 md:p-10 flex flex-col md:flex-row items-center justify-center md:h-screen">
+    <main className="main p-5 md:p-10 flex flex-col md:flex-row items-center justify-center md:h-screen">
       <ParticlesComponent id="particles" />
-      {/* <div className="absolute top-10 right-10">
-        <DarkMode />
-      </div> */}
+      
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -40,6 +38,11 @@ export default function Home() {
           <Link href="https://github.com/hernandoabella/" target="_blank">
             <Button>
               <FaUser className="mr-2" /> About Me
+            </Button>
+          </Link>
+          <Link href="#">
+            <Button>
+              <FaServicestack className="mr-2" /> Services
             </Button>
           </Link>
           <Link
@@ -73,7 +76,7 @@ export default function Home() {
               <FaCalendar className="mr-2" /> Schedule Meet
             </Button>
           </Link>
-          <Link href="mailto:hernandoabella@gmail.com">
+          <Link href="#">
             <Button>
               <FaEnvelope className="mr-2" /> Contact Me
             </Button>
