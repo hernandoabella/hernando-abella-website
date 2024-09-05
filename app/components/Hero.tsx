@@ -18,13 +18,10 @@ const Hero = () => {
         </div>
         <div>
           <h1 className="text-5xl font-extrabold dark:text-white">
-            👋
-            Hey there! <br/> {" "}
-            I&apos;m 
-            {" "} <span className="text-transparent bg-clip-text bg-gradient-to-r to-orange-600 from-orange-400">
-            Hernando.
+            👋 Hey there! <br /> I&apos;m{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r to-orange-600 from-orange-400">
+              Hernando.
             </span>{" "}
-            
           </h1>
           <h3 className="py-5 text-4xl font-bold dark:text-white">
             👨‍💻{" "}
@@ -37,7 +34,7 @@ const Hero = () => {
                   "Back-end Developer",
                   "UI/UX Designer",
                   "Tech Enthusiast",
-                  "Artist"
+                  "Artist",
                 ]}
                 typeSpeed={60}
                 backSpeed={70}
