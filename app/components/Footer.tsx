@@ -22,7 +22,7 @@ const icons = [
 const Footer = () => {
   return (
     <div>
-      <footer className="pt-10 flex gap-5 text-center justify-center">
+      <footer className="pb-10 flex gap-5 text-center justify-center">
         {icons.map(({ Component, href, delay }, index) => (
           <Link key={index} href={href} passHref>
             <motion.div
