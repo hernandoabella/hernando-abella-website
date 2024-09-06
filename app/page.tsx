@@ -30,13 +30,13 @@ export default function Home() {
       >
         <div className="rounded-xl bg-gradient-to-b from-violet-500 p-10">
           <Hero />
+          <Footer />
           <NavigationButtons
             showContactForm={showContactForm}
             showServices={showServices}
             toggleContactForm={toggleContactForm}
             toggleServices={toggleServices}
           />
-          <Footer />
         </div>
       </motion.div>
     </main>
