@@ -25,16 +25,24 @@ const Hero = () => {
           </h1>
           <h3 className="py-5 text-2xl text-center md:text-4xl font-bold dark:text-white">
             👨‍💻{" "}
-            <span className="underline underline-offset-3 decoration-8 decoration-orange-400 dark:decoration-orange-600">
+            <span className="decoration-8 decoration-orange-400 dark:decoration-orange-600">
               <ReactTyped
                 strings={[
+                  "旦~~",
                   "Creative",
+                  "=^_^=",
                   "Full-Stack",
+                  "(~o~)",
                   "Front-end",
+                  "ˊ＿>ˋ",
                   "Back-end",
+                  "(*´▽｀*)",
                   "UI/UX",
+                  "(*￣m￣)",
                   "Tech Enthusiast",
+                  "¯\_(ツ)_/¯",
                   "Artist",
+                  "ノಠ益ಠ)ノ",
                 ]}
                 typeSpeed={60}
                 backSpeed={70}
