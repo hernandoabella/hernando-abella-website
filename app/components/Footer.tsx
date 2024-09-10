@@ -7,7 +7,8 @@ import {
   RiYoutubeFill,
   RiPinterestFill,
   RiGithubFill,
-  RiLinkedinFill
+  RiLinkedinFill,
+  RiWhatsappFill,
 } from "react-icons/ri";
 
 const icons = [
@@ -17,6 +18,7 @@ const icons = [
   { Component: RiPinterestFill, href: "https://www.pinterest.com/hernandoabella", delay: 0.6 },
   { Component: RiGithubFill, href: "https://www.github.com/hernandoabella", delay: 0.8 },
   { Component: RiLinkedinFill, href: "https://www.linkedin.com/in/hernandoabella", delay: 1 },
+  { Component: RiWhatsappFill, href: "https://wa.me/573043932597" },
 ];
 
 const Footer = () => {
