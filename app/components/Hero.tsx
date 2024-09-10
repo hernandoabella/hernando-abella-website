@@ -23,8 +23,8 @@ const Hero = () => {
               Hernando.
             </span>{" "}
           </h1>
-          <h3 className="py-5 text-2xl text-center md:text-4xl font-bold dark:text-white">
-            👨‍💻{" "}
+          <h3 className="py-5 text-2xl  md:text-4xl font-bold dark:text-white">
+            {" "}
             <span className="decoration-8 decoration-orange-400 dark:decoration-orange-600">
               <ReactTyped
                 strings={[
