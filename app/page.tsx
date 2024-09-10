@@ -4,8 +4,9 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Hero from "@/app/components/Hero";
 import Footer from "@/app/components/Footer";
-import ParticlesComponent from "./components/particles";
+// import ParticlesComponent from "./components/particles";
 import NavigationButtons from "./components/NavigationButtons";
+import BonusBtn from "./components/BonusBtn";
 
 export default function Home() {
   const [showContactForm, setShowContactForm] = useState(false);
@@ -22,7 +23,7 @@ export default function Home() {
   return (
     <main className="main p-5 md:p-10 flex flex-col md:flex-row items-center justify-center md:h-screen">
       {/* <ParticlesComponent id="particles" /> */}
-
+      <BonusBtn />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
