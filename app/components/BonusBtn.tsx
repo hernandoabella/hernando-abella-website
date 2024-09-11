@@ -2,11 +2,11 @@ const BonusBtn = () => {
   // Función para descargar los archivos PDF
   const downloadFiles = () => {
     const files = [
-      "/files/book1.pdf",
-      "/files/book2.pdf",
-      "/files/book3.pdf",
-      "/files/book4.pdf",
-      "/files/book5.pdf",
+      "/files/120 Advanced Javascript Interview Questions.pdf",
+      "/files/150+ Python Pattern Programs.pdf",
+      "/files/250+ Killer JS One-Liners.pdf",
+      "/files/50 Concepts Every Java Developer Should Know.pdf",
+      "/files/SQL Cookbook.pdf",
     ];
 
     // Filtra archivos vacíos o undefined
