@@ -2,11 +2,11 @@ const BonusBtn = () => {
   // Función para descargar los archivos PDF
   const downloadFiles = () => {
     const files = [
-      "/files/120 Advanced Javascript Interview Questions.pdf",
-      "/files/150+ Python Pattern Programs.pdf",
-      "/files/250+ Killer JS One-Liners.pdf",
-      "/files/50 Concepts Every Java Developer Should Know.pdf",
-      "/files/SQL Cookbook.pdf",
+      "/files/120-Advanced-Javascript-Interview-Questions.pdf",
+      "/files/150-Python-Pattern-Programs.pdf",
+      "/files/250-Killer-JS One-Liners.pdf",
+      "/files/50-Concepts-Every-Java-Developer-Should-Know.pdf",
+      "/files/SQL-Cookbook.pdf",
     ];
 
     // Filtra archivos vacíos o undefined
@@ -25,10 +25,10 @@ const BonusBtn = () => {
 
   return (
     <div className="fixed top-4 right-4 z-50">
-      <div className="voltage-button">
+      <div className="voltage-button font-bold">
         <button onClick={downloadFiles}>
           {" "}
-          🎁 Get Bonus Books!
+          🎁 Download Bonus Books Here!
         </button>
         <svg
           version="1.1"
