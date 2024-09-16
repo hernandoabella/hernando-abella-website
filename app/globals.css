@@ -78,9 +78,6 @@ body {
   position: absolute;
 }
 
-.form {
-  background: saddlebrown;
-}
 
 @media screen and (max-width: 768px) {
   .voltage-button button {
