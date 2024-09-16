@@ -25,10 +25,10 @@ const BonusBtn = () => {
 
   return (
     <div className="fixed top-4 right-4 z-50">
-      <div className="voltage-button font-bold">
+      <div className="voltage-button font-bold ">
         <button onClick={downloadFiles}>
           {" "}
-          🎁 Download Bonus Books Here!
+          🎁 Get bonus here!
         </button>
         <svg
           version="1.1"
