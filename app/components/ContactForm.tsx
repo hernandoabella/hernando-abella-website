@@ -1,9 +1,10 @@
 import React from "react";
 import { Button } from "@/app/components/ui/button";
 import { motion } from "framer-motion";
+import { FaPaperPlane, FaTimes } from "react-icons/fa"; // Importamos los íconos
 
 interface ContactFormProps {
-  onClose: () => void; // Define the type for the onClose prop
+  onClose: () => void;
 }
 
 const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
@@ -13,37 +14,50 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
-      <div className="form p-8 rounded-md shadow-lg relative">
+      <div className="p-8 rounded-md shadow-lg relative bg-white text-black md:w-1/3">
+        {/* Botón de cierre con ícono */}
         <button
-          className="absolute top-2 right-2 text-gray-600"
+          className="absolute top-2 right-2 text-gray-600 hover:text-black"
           onClick={onClose}
         >
-          Close
+          <FaTimes className="text-xl" /> {/* Ícono de cierre */}
         </button>
-        <h2 className="text-2xl mb-4">Contact Me</h2>
+
+        <h2 className="text-2xl mb-4 text-center font-bold">Contact Me</h2>
+
         <form>
           <div className="mb-4">
-            <label className="block text-sm font-medium">Name</label>
-            <input aria-label="name" name="name"
+            <input
+              placeholder="Name"
+              aria-label="name"
+              name="name"
               type="text"
-              className="w-full p-2 border border-gray-300 rounded"
+              className="w-full p-2 border border-gray-300 rounded bg-white text-black"
             />
           </div>
           <div className="mb-4">
-            <label className="block text-sm font-medium">Email</label>
-            <input aria-label="email" name="email"
+            <input
+              placeholder="Email"
+              aria-label="email"
+              name="email"
               type="email"
-              className="w-full p-2 border border-gray-300 rounded"
+              className="w-full p-2 border border-gray-300 rounded bg-white text-black"
             />
           </div>
           <div className="mb-4">
-            <label className="block text-sm font-medium">Message</label>
-            <textarea aria-label="message" name="message"
-              className="w-full p-2 border border-gray-300 rounded"
-              
+            <textarea
+              placeholder="Message"
+              aria-label="message"
+              name="message"
+              className="w-full p-2 border border-gray-300 rounded bg-white text-black"
             ></textarea>
           </div>
-          <Button type="submit">Send Message</Button>
+
+          {/* Botón de envío con ícono */}
+          <Button className="md:w-1/3 mx-auto flex items-center justify-center gap-2" type="submit">
+            <FaPaperPlane className="text-sm" /> {/* Ícono de envío */}
+            Send Message
+          </Button>
         </form>
       </div>
     </motion.div>
