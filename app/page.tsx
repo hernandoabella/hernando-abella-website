@@ -21,7 +21,7 @@ export default function Home() {
   };
 
   return (
-    <main className="main p-5 md:p-10 flex flex-col md:flex-row items-center justify-center md:h-screen">
+    <main className=" md:p-10 flex flex-col md:flex-row items-center justify-center md:h-screen">
       {/* <ParticlesComponent id="particles" /> */}
       <BonusBtn />
       <motion.div
@@ -29,7 +29,7 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <div className="rounded-xl bg-gradient-to-b from-violet-500 p-10">
+        <div className="rounded-xl bg-gradient-to-b from-violet-500">
           <Hero />
           <Footer />
           <NavigationButtons
