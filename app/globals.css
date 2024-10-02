@@ -62,15 +62,6 @@
   }
 }
 
-body {
-  background: indigo;
-}
-
-.main {
-  max-width: 800px;
-  margin: auto;
-}
-
 #particles canvas {
   z-index: -1;
   height: 100%;
@@ -79,7 +70,9 @@ body {
 }
 
 
-@media screen and (max-width: 768px) {
+
+
+@media screen and (max-width: 1200px) {
   .voltage-button button {
     display: none;
   }
