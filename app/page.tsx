@@ -21,15 +21,16 @@ export default function Home() {
   };
 
   return (
-    <main className=" md:p-10 flex flex-col md:flex-row items-center justify-center md:h-screen">
+    <main className="flex flex-col md:flex-row items-center justify-center">
       {/* <ParticlesComponent id="particles" /> */}
-      <BonusBtn />
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <div className="rounded-xl bg-gradient-to-b from-violet-500">
+        <div className="rounded p-10 bg-gradient-to-t from-cyan-500 lg:w-1/2 mx-auto w-screen">
+          <BonusBtn />
           <Hero />
           <Footer />
           <NavigationButtons
