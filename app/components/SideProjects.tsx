@@ -20,7 +20,7 @@ const projects = [
 
 const SideProjects = () => {
   return (
-    <section className="text-center dark:bg-[#131313] pb-60">
+    <section className="text-center dark:bg-[#131313] pb-60" id="projects">
       <div className="container">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-center">
           Side Projects
