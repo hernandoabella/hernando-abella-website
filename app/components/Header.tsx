@@ -68,6 +68,14 @@ const Header = () => {
             Services
           </a>
           <a
+            href="#testimonials"
+            className={`text-slate-500 hover:text-green-500 ${
+              activeSection === "contact" ? "text-blue-500 font-bold" : ""
+            }`}
+          >
+            Testimonials
+          </a>
+          <a
             href="#contact"
             className={`text-slate-500 hover:text-green-500 ${
               activeSection === "contact" ? "text-blue-500 font-bold" : ""
