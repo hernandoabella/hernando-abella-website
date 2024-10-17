@@ -33,7 +33,7 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 shadow-sm">
-      <div className="container mx-auto flex justify-between items-center p-5 border bg-gray-400  backdrop-filter backdrop-blur-sm bg-opacity-5 rounded-xl top-5 relative ">
+      <div className="container flex justify-between items-center p-5 border bg-gray-400  backdrop-filter backdrop-blur-sm bg-opacity-5 rounded-xl top-5 relative ">
         {/* Logo o Nombre */}
         <div className="flex items-center gap-1">
           <h1 className="text-3xl font-bold bg-gradient-to-r from-slate-600 via-green-500 to-slate-400 inline-block text-transparent bg-clip-text">
