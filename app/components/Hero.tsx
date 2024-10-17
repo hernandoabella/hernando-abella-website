@@ -29,7 +29,7 @@ const Hero = () => {
       {/* CTA Button */}
       <div className="mt-6 flex gap-5">
         <a
-          href="https://www.amazon.com/s?k=hernando+abella&i=digital-text&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=25MA841G5DY4U&sprefix=hernando+abell%2Cdigital-text%2C138&ref=nb_sb_noss_2"
+          href="https://portfolio-hernandoabella.vercel.app/"
           target="_blank"
         >
           <div className="flex items-center justify-center">
@@ -48,7 +48,7 @@ const Hero = () => {
         </a>
 
         <a
-          href="https://www.amazon.com/s?k=hernando+abella&i=digital-text&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=25MA841G5DY4U&sprefix=hernando+abell%2Cdigital-text%2C138&ref=nb_sb_noss_2"
+          href="#contact"
           target="_blank"
         >
           <div className="flex items-center justify-center">
