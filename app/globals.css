@@ -71,7 +71,6 @@
 
 
 
-
 @media screen and (max-width: 1200px) {
   .voltage-button button {
     display: none;
@@ -229,4 +228,19 @@
     opacity: 0;
     transform: translateY(3rem) scale(0.2);
   }
+}
+
+
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.icon {
+  @apply text-blue-500 text-5xl;
+  animation: floating 2s ease-in-out infinite;
 }
