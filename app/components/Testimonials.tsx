@@ -9,14 +9,14 @@ const testimonialsData = [
     name: "Raj Kachu",
     feedback:
       "Hernando built our company website from the ground up. His expertise in full-stack development and attention to detail made the entire process seamless. Our website now runs faster and looks more professional than ever.",
-    image: "/raj.jfif",
+    image: "/raj.jpg",
     website: "thevplan.com",
   },
   {
     name: "Nelson Daza",
     feedback:
       "I trusted Hernando with redesigning our website, and I couldn't be happier with the results. The site is visually appealing, user-friendly, and mobile-optimized. His expertise in web technologies is top-notch.",
-    image: "/nelson.jfif",
+    image: "/nelson.jpg",
     website: "aluna-publishing-house.com",
   },
   {
