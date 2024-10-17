@@ -32,7 +32,7 @@ const ContactForm = () => {
 
         {formSubmitted && (
           <div className="p-4 mb-4 text-green-800 bg-green-200 rounded container">
-            Thank you for your message! I'll get back to you soon.
+            Thank you for your message! I&apos;ll get back to you soon.
           </div>
         )}
 
