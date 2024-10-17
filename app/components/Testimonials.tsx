@@ -37,8 +37,9 @@ const Testimonials = () => {
           {testimonialsData.map((testimonial, index) => (
             <div
               key={index}
-              className="p-6 border rounded-lg shadow-lg text-center transition-transform transform hover:scale-105"
+              className="p-6 border rounded-lg  text-center transition-transform transform hover:scale-105 "
             >
+              
               {/* Rounded Image */}
               <div className="mb-4 flex justify-center items-center">
                 <Image
