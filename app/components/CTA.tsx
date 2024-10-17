@@ -26,7 +26,7 @@ const CTA = () => {
           Ready to Take Your Projects to the Next Level?
         </h2>
         <p className="mb-8 text-lg">
-          Let's work together to create something amazing. 
+          Let&apos;s work together to create something amazing. 
           
         </p>
         <div className="flex justify-center">
