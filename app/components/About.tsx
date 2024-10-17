@@ -6,16 +6,16 @@ const AboutMe = () => {
   return (
     <section
       id="about"
-      className="flex items-center justify-center py-16 px-6 bg-gray-50 text-gray-900 dark:text-gray-100 dark:bg-[#131313] min-h-screen"
+      className="flex items-center justify-center  bg-gray-50 text-gray-900 dark:text-gray-100 dark:bg-[#131313] min-h-screen"
     >
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+      <div className="container flex flex-col md:flex-row items-center justify-between gap-8">
         {/* Text Content */}
         <div className="w-full md:w-1/2 text-left">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
             About Me
           </h2>
           <p className="text-lg sm:text-xl md:text-2xl mb-6 leading-relaxed">
-            Hi, I'm Hernando, a passionate Full-Stack Developer with experience
+            Hi, I&apos;m Hernando, a passionate Full-Stack Developer with experience
             in designing and building dynamic web applications. My journey in
             development has allowed me to work with a wide variety of
             technologies, solving complex problems and creating innovative
@@ -23,8 +23,8 @@ const AboutMe = () => {
           </p>
 
           <p className="text-lg sm:text-xl md:text-2xl mb-6 leading-relaxed">
-            I'm always exploring new technologies and improving my skills to
-            deliver scalable and efficient code. When I'm not coding, you can
+            I&apos;m always exploring new technologies and improving my skills to
+            deliver scalable and efficient code. When I&apos;m not coding, you can
             find me learning about the latest tech trends or enjoying some time
             outdoors!
           </p>
