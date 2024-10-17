@@ -19,7 +19,7 @@ const Hero = () => {
 
       {/* Name and Static Text */}
       <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-        Hi, I'm Hernando!
+        Hi👋, I&apos;m Hernando!
       </h1>
 
       <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl  text-gray-300">
