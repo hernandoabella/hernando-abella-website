@@ -18,8 +18,9 @@ const ContactSection = () => {
             hernandoabella@gmail.com
           </a>
         </p>
-        
       </div>
+
+      <hr  className="mt-10 w-1/2 m-auto"/>
     </section>
   );
 };
