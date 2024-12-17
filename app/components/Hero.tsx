@@ -49,7 +49,6 @@ const Hero = () => {
 
         <a
           href="#contact"
-          target="_blank"
         >
           <div className="flex items-center justify-center">
             <div className="relative group">
