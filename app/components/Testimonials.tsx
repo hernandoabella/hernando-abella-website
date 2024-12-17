@@ -17,7 +17,7 @@ const testimonialsData = [
     feedback:
       "I trusted Hernando with redesigning our website, and I couldn't be happier with the results. The site is visually appealing, user-friendly, and mobile-optimized. His expertise in web technologies is top-notch.",
     image: "/nelson.jpg",
-    website: "aluna-publishing-house.com",
+    website: "alunapublishinghouse.com",
   },
   {
     name: "Gabriel Martínez",
